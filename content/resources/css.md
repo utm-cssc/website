@@ -1,7 +1,7 @@
 # CSS
 
 ## Motivation
-CSS, is an integral part of the modern web development process. It is a highly effective HTML tool that provides easy control over layout and presentation of website pages by separating content from design.
+CSS is an integral part of the modern web development process. It is a highly effective HTML tool that provides easy control over layout and presentation of website pages by separating content from design.
 
 CSS gives us the opportunity to play with a page layout, adjust colors and fonts, add effects to images, etc.
 
