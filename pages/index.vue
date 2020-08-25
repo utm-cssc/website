@@ -1,73 +1,61 @@
 <template>
   <div class="container">
+    <!-- Title -->
+    <div class="d-flex flex-column justify-content-center align-items-center hero-full-height">
+      <img src="@/assets/logo/cssc-logo.png" alt="UTM CSSC Logo">
+      <b-btn class="mt-4">Tech Of the Month →</b-btn>
+    </div>
+
+    <!-- What is CSSC -->
     <div>
-      <Logo />
-      <h1 class="title">
-        cssc
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <div class="cssc-heading">What is CSSC?</div>
+      <p class="cssc-subheading">
+        The Computer Science Student Community (CSSC) is an open space for Computer Science students to come in and ask questions about their university and post-university career. We act as liaisons to the Computer Science faculty to ensure that all students can seek appropriate support and guidance. The CSSC seeks to support students through community initiatives built upon inclusivity and empowerment.
+      </p>
+      <Grid-1-X-3 :children="features"></Grid-1-X-3>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => {
+    return {
+      features: [
+        {
+          title: 'Academic & Professional Growth',
+          desc: 'The CS Student Community aims to provide students with technological knowledge sought after by employers in the industry. We provide students with opportunities, space and resources to develop their academic and professional skills. The CSSC also looks to inform students of options they have post-graduation and how they can combine this degree with other fields.'
+        },
+        {
+          title: 'Development of Technology Resources',
+          desc: 'CSSC\'s technology team is devoted to developing processes and tools to help students succeed academically and professionally. We curate resources from across the internet and produce original content with the interest of students as our top priority.'
+        },
+        {
+          title: 'Collaboration with MCS Societies',
+          desc: 'We provide space and resources for MCS clubs that serve particular student needs and concerns. The CSSC works closely with other MCS Clubs and Societies in order to achieve common goals in the CS Community.'
+        }
+      ]
+    }
+  }
+}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style scoped>
+.hero-full-height {
+  height: 100vh;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.cssc-heading {
+  font-size: 96px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.cssc-subheading {
+  font-size: 32px;
 }
 
-.links {
-  padding-top: 15px;
+@media screen and (max-width: 768px) {
+  .hero-full-height {
+    min-height: 100vh;
+  }
 }
 </style>
