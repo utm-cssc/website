@@ -1,29 +1,28 @@
 <template>
   <div class="mb-5">
-    <div class="row d-flex justify-content-between">
+    <div class="row d-flex align-items-center">
       <div
-        class="col-md-5 py-5 px-4 d-flex justify-content-center"
-        :class="{'order-md-last': !reversed}"
+        class="col-md-5 col-lg-4 py-5 d-flex justify-content-start"
+        :class="{'order-md-last': !reversed, 'justify-content-md-end': !reversed, 'px-5': $md == 'sm'}"
       >
         <img
           class="feature-img"
           :src="imgSrc"
         >
       </div>
-      <div class="col-md-6 d-flex justify-content-center flex-column text-container">
+      <div class="col-md-7 col-lg-8 d-flex justify-content-center flex-column text-container" :class="{'px-5': $mq == 'sm', 'align-items-md-end': reversed}">
         <h3 v-if="title != ''" class="feature-title">
           {{ title }}
         </h3>
+        <p class="desc" :class="{'text-md-right': reversed && !($mq == 'md') && !($mq == 'sm')}">
+          {{ desc }}
+        </p>
         <div>
-          <p class="desc">
-            {{ desc }}
-          </p>
-          <div v-if="link">
-            <a
-              :href="link"
-              class="feature-btn"
-            >{{ button }}</a>
-          </div>
+          <b-btn
+            v-if="link"
+            :href="link"
+            class="p-3 feature-btn"
+          >{{ button }}</b-btn>
         </div>
       </div>
     </div>
@@ -54,22 +53,25 @@ export default {
 
 <style scoped>
 .feature-btn {
-  color: var(--color-gold) !important;
-  font-size: 1.1rem;
-  max-width: 200px;
+  background-color: #3273dc;
+  border-color: transparent;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
   text-align: left;
+  border-radius: 8px;
 }
 
 .feature-btn:hover {
-  text-decoration: underline;
+  background-color: #378dff;
 }
 
 .feature-img {
-  width: 275px;
+  width: 100%;
+  border-radius: 16px;
 }
 
 .desc {
-  color: var(--color-text);
   font-weight: 300;
   line-height: 1.75rem;
   opacity: 0.9;
