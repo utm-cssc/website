@@ -29,6 +29,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -60,7 +61,20 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    '@nuxt/content',
+    [
+        'nuxt-mq',
+      {
+        // Default breakpoint for SSR
+        defaultBreakpoint: 'xs',
+        breakpoints: {
+          sm: 576,
+          md: 768,
+          lg: 992,
+          xl: 1200
+        }
+      }
+    ]
   ],
   /*
   ** Axios module configuration
