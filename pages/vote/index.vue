@@ -2,50 +2,71 @@
 // import VueApexCharts from 'vue-apexcharts'
 export default {
   components: {
-    apexcharts: () => import('vue-apexcharts')
+    apexcharts: () => import('vue-apexcharts'),
+    optionList: {
+      props: {
+        voteList: Array
+      },
+      render (createElement) {
+        return createElement('div', {}, [
+          createElement('ul', {},
+            this.voteList.map(option => createElement('li', {
+              attrs: {
+                id: option + 'Name'
+              }
+            },
+            [`${option}`, createElement('button', {
+              attrs: {
+                id: option + 'Counter'
+              },
+              on: {
+                click: () => this.$parent.changeCounter(option)
+              }
+            }, '0')])
+            ))
+        ])
+      }
+    }
   },
   data () {
     return {
       options: {},
       series: [44, 55, 41, 17, 15],
-      vote: ['a', 'b', 'c'],
+      vote: {
+        a: 0,
+        b: 0,
+        c: 0
+      },
       first: '',
       second: '',
       counter: 0
     }
   },
   methods: {
-    setUp () {
-      const container = document.querySelector('#listContainer')
-      for (let i = 0; i < this.vote.length; i++) {
-        const listItem = document.createElement('li')
-        // const subText = document.createElement('a')
-        listItem.innerHTML = this.vote[i]
-        container.appendChild(listItem)
-      }
-    },
-    submitVote (name) {
-      // const radioButtons = document.getElementsByName('favorite_pet')
-      // for (let i = 0; i < radioButtons.length; i++) {
-      //   if (radioButtons[i].checked === true) {
-      //     alert(radioButtons[i].value)
-      //   }
-      // }
-
-      const test = document.getElementById(name + 'Name')
-
-      if (this.counter === 2) {
+    changeCounter (name) {
+      const test = document.getElementById(name + 'Counter')
+      const dictLen = Object.keys(this.vote).length
+      if (this.counter === dictLen) {
         this.counter = 1
       } else {
         this.counter += 1
       }
-      if (this.counter === 1) {
-        this.first = name
-      } else {
-        this.second = name
-      }
+      this.vote[name] = this.counter
       test.innerHTML = this.counter
-      alert(this.first + ' ' + this.second)
+      alert(JSON.stringify(this.vote))
+    },
+    submitVote () {
+      const dictLen = Object.keys(this.vote).length
+      const sortedArray = new Array(dictLen)
+      for (const key in this.vote) {
+        const arrayIndex = this.vote[key] - 1
+        if (sortedArray[arrayIndex] == null) {
+          sortedArray[arrayIndex] = key
+        } else {
+          alert('Please rank them properly')
+        }
+      }
+      alert(sortedArray.toString())
     }
   }
 }
@@ -57,7 +78,8 @@ export default {
     <h1>Vote</h1>
     <article>
       <div class="flex-col mr-2" id="container">
-        <ul id="listContainer">
+        <optionList v-bind:voteList="Object.keys(this.vote)"></optionList>
+          <!--
           <li @click="submitVote('a')" id="a">
             A
             <a id="aName"></a>
@@ -70,14 +92,8 @@ export default {
             C
             <a id="cName"></a>
           </li>
-        </ul>
-        <!-- <fieldset>
-          <h2>What is Your Favorite Pet?</h2>
-          <input type="radio" name="favorite_pet" value="Cats" checked />Cats<br />
-          <input type="radio" name="favorite_pet" value="Dogs" />Dogs<br />
-          <input type="radio" name="favorite_pet" value="Birds" />Birds<br />
-          <button type="button" @click="submitVote()">Click Me!</button>
-        </fieldset> -->
+          -->
+        <button @click="submitVote"> Submit </button>
       </div>
       <!-- Display result here, can use bar graph or pie char -->
     </article>
