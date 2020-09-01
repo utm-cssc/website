@@ -9,7 +9,6 @@
     <!-- Monthly Title -->
     <div>
       <div class="cssc-heading-center">September - Web Development</div>
-      <GridLink :children="resources"></GridLink>
       <ResourcesGrid :items="resources"/>
     </div>
     <div class="mb-5" />
@@ -18,11 +17,7 @@
 </template>
 
 <script>
-import GridLink from './GridLink.vue'
 export default {
-  components: {
-    GridLink
-  },
   data: () => {
     return {
       features: [
@@ -43,17 +38,20 @@ export default {
         {
           title: 'HTML',
           desc: 'Learn the base foundation of all websites',
-          link: 'http://localhost:3000/'
+          link: 'http://localhost:3000/',
+          icon: 'devicon-html5-plain-wordmark'
         },
         {
           title: 'CSS',
           desc: 'Learn how to style your HTML pages',
-          link: 'http://localhost:3000/'
+          link: 'http://localhost:3000/',
+          icon: 'devicon-css3-plain-wordmark'
         },
         {
           title: 'Javascript',
           desc: 'Learn how to implement scripts into your HTML page',
-          link: 'http://localhost:3000/'
+          link: 'http://localhost:3000/',
+          icon: 'devicon-javascript-plain'
         }
       ]
     }

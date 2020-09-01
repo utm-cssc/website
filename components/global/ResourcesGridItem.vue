@@ -6,8 +6,9 @@
     @mouseover="hovered = true"
     @mouseleave="hovered = false"
   >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
     <figure class="resource-icon">
-      <img class="icon" :src="`/icons/${iconFileName}`"></img>
+      <i :class="iconFileName"></i>
     </figure>
     <transition name="slide-out" mode="out-in">
       <div v-if="!hovered" class="resource-title">{{ title }}</div>
@@ -88,6 +89,8 @@ a {
   height: 42px;
   width: 42px;
   margin-left: 0;
+  font-size: 50px !important;
+  color: #fff;
 }
 
 .icon {
