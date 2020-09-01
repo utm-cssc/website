@@ -7,7 +7,7 @@
         to="/"
         @click.native="checked = false"
       >
-        <img class="logo" src="/logos/cssc-logo-without-title.svg"></img>
+        <img class="logo" src="/svg/cssc-logo-without-title.svg">UTM CSSC</img>
       </nuxt-link>
     </div>
     <div class="nav-btn">

@@ -6,7 +6,7 @@
     >
       <!-- <img src="@/assets/logo/cssc-logo.png" alt="UTM CSSC Logo"> -->
       <CenteredHero
-        icon="logos/cssc-logo-without-title.svg"
+        icon="svg/cssc-logo-without-title.svg"
         title="UTM CSSC"
         desc="Helping MCS Students"
         :button1="button1"
