@@ -1,21 +1,49 @@
+:root {
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --color-heading: #2f495e;
+  --color-body: #606f7b;
+  --color-primary-light: #00df96;
+  --color-primary: #00d097;
+  --color-primary-dark: #009b68;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+.cssc-heading {
+  color: var(--color-heading);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.cssc-subheadings {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
 .scrolling-wrapper {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
 }
+
 .scroll-child {
   flex: 0 0 auto;
   margin-right: 36px;
   font-size: 24px;
 }
 
-:root {
-  --font-heading: "Raleway", sans-serif;
-  --font-body: "Open Sans", sans-serif;
-}
-
-body {
-  font-family: var(--font-body);
+/* For mobile */
+@media (max-width: 576px) {
+  .cssc-heading {
+    font-size: 36px;
+  }
 }
 
 h1,

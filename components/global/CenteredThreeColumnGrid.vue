@@ -1,16 +1,16 @@
 <template>
   <div class="row">
-    <span
+    <div
       v-for="child in children"
       :key="child.title"
-      class="col-lg-4 pr-sm-4 pr-lg-5"
+      class="col-lg-4 d-flex justify-content-center"
     >
-      <ThreeColumnChild
+      <CenteredThreeColumnChild
         :title="child.title"
         :desc="child.desc"
         :icon="child.icon"
       />
-    </span>
+    </div>
   </div>
 </template>
 

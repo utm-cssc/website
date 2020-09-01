@@ -9,7 +9,7 @@
           'px-5': $mq == 'sm'
         }"
       >
-        <img class="feature-img" :src="imgSrc" />
+        <img class="feature-img" :src="imgSrc">
       </div>
       <div
         class="col-md-7 col-lg-8 d-flex justify-content-center flex-column text-container"
@@ -32,9 +32,11 @@
           {{ desc }}
         </p>
         <div>
-          <b-btn v-if="link" :href="link" class="py-2 px-3 feature-btn">{{
-            button
-          }}</b-btn>
+          <b-btn v-if="link" :href="link" class="py-2 px-3 feature-btn">
+            {{
+              button
+            }}
+          </b-btn>
         </div>
       </div>
     </div>
