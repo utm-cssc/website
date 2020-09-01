@@ -1,37 +1,10 @@
 <script>
 // import VueApexCharts from 'vue-apexcharts'
+import radioLayout from './radioLayout.vue'
 export default {
   components: {
     apexcharts: () => import('vue-apexcharts'),
-    optionList: {
-      props: {
-        voteList: Array
-      },
-      render (createElement) {
-        return createElement('div', {},
-          [Array.apply(null, { length: Object.keys(this.voteList).length }).map(Number.call, Number).map((num) => {
-            return this.voteList.map(option => createElement('div', {},
-              [`${num}`,
-                createElement('input', {
-                  attrs: {
-                    id: option + 'Button',
-                    type: 'radio',
-                    value: option,
-                    name: num
-                  }
-                }),
-                createElement('label', {
-                  attrs: {
-                    for: option
-                  }
-                },
-                `${option}`)
-              ]
-            ))
-          })
-          ])
-      }
-    }
+    radioLayout
   },
   data () {
     return {
@@ -42,35 +15,11 @@ export default {
         b: 0,
         c: 0
       },
+      test: ['a', 'b', 'c'],
       counter: 0
     }
   },
   methods: {
-    changeCounter (name) {
-      const test = document.getElementById(name + 'Counter')
-      const dictLen = Object.keys(this.vote).length
-      if (this.counter === dictLen) {
-        this.counter = 1
-      } else {
-        this.counter += 1
-      }
-      this.vote[name] = this.counter
-      test.innerHTML = this.counter
-      alert(JSON.stringify(this.vote))
-    },
-    submitVote () {
-      const dictLen = Object.keys(this.vote).length
-      const sortedArray = new Array(dictLen)
-      for (const key in this.vote) {
-        const arrayIndex = this.vote[key] - 1
-        if (sortedArray[arrayIndex] == null) {
-          sortedArray[arrayIndex] = key
-        } else {
-          alert('Please rank them properly')
-        }
-      }
-      alert(sortedArray.toString())
-    }
   }
 }
 </script>
@@ -81,22 +30,8 @@ export default {
     <h1>Vote</h1>
     <article>
       <div class="flex-col mr-2" id="container">
-        <optionList v-bind:voteList="Object.keys(this.vote)"></optionList>
-          <!--
-          <li @click="submitVote('a')" id="a">
-            A
-            <a id="aName"></a>
-          </li>
-          <li @click="submitVote('b')" id="b">
-            B
-            <a id="bName"></a>
-          </li>
-          <li @click="submitVote('c')" id="c">
-            C
-            <a id="cName"></a>
-          </li>
-          -->
-        <button @click="submitVote"> Submit </button>
+        <radioLayout :children="this.test" :titles="this.test"></radioLayout>
+        <button> Submit </button>
       </div>
       <!-- Display result here, can use bar graph or pie char -->
     </article>
