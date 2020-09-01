@@ -1,12 +1,16 @@
 <template>
-  <div class="container g-hero mt-5">
+  <div class="container hero">
     <div class="row d-flex justify-center">
-      <img :src="icon" alt="Grey Software's Icon" class="hero-img" />
+      <img :src="icon" alt="CSSC Icon" class="hero-img">
     </div>
     <div class="mt-3 mt-md-4 mt-lg-5 row d-flex flex-column align-items-center">
       <div class="col-lg-10 text-center">
-        <h1 class="hero-heading">{{ title }}</h1>
-        <p class="hero-tag">{{ desc }}</p>
+        <h1 class="hero-heading">
+          {{ title }}
+        </h1>
+        <p class="hero-tag">
+          {{ desc }}
+        </p>
       </div>
     </div>
     <div class="mt-3 d-flex justify-content-center">
@@ -16,7 +20,7 @@
         :size="gtmd"
         class="mr-4 btn-cta mb-3 d-flex align-items-center"
       >
-        <img v-if="button1.icon" class="btn-icon mx-2" :src="button1.icon" />
+        <img v-if="button1.icon" class="btn-icon mx-2" :src="button1.icon">
         {{ button1.label }}
       </b-button>
       <b-button
@@ -26,12 +30,12 @@
         variant="outline-primary"
         class="btn-cta-alt mb-3 d-flex align-items-center"
       >
-        <img v-if="button2.icon" class="btn-icon mx-2" :src="button2.icon" />
+        <img v-if="button2.icon" class="btn-icon mx-2" :src="button2.icon">
         {{ button2.label }}
       </b-button>
     </div>
     <div class="row d-flex justify-center">
-      <img id="arrow" src="/downarrow.png" alt="Down Arrow" />
+      <img id="arrow" src="/downarrow.png" alt="Down Arrow">
     </div>
   </div>
 </template>
@@ -83,21 +87,25 @@ export default {
 </script>
 
 <style scoped>
+.hero {
+  height: 88vh;
+}
+
 .btn-cta {
-  background-color: var(--color-gold) !important;
-  border-color: var(--color-gold) !important;
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
   outline: none;
   font-size: 1.42rem;
 }
 
 .btn-cta:active {
-  background-color: var(--color-gold) !important;
-  border-color: var(--color-gold) !important;
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
 }
 
 .btn:hover,
 .btn-cta:hover {
-  color: var(--color-gold-light) !important;
+  color: var(--color-primary-light) !important;
   background-color: var(--bg) !important;
   border-color: var(--color-light) !important;
 }
@@ -111,14 +119,14 @@ export default {
 }
 
 .g-btn-cta-alt:hover {
-  background-color: var(--color-gold) !important;
+  background-color: var(--color-primary) !important;
   color: #fff !important;
 }
 
 .hero-heading {
   font-weight: 700;
   font-family: var(--font-heading);
-  color: var(--color-text-dark);
+  color: var(--color-heading);
   letter-spacing: 0.025em;
   font-size: calc(12px + 4vw);
   line-height: 1.05;
@@ -138,7 +146,7 @@ export default {
 }
 
 .hero-img {
-  width: 200px;
+  height: 148px;
 }
 
 #arrow {

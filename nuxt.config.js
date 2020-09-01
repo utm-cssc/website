@@ -71,7 +71,7 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     [
-        'nuxt-mq',
+      'nuxt-mq',
       {
         // Default breakpoint for SSR
         defaultBreakpoint: 'xs',
