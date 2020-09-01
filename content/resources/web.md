@@ -120,4 +120,4 @@ Your web application is something that everyone should be able to use. Often, so
 
 Many regions have requirements for web content accessibility as part of their legislation (such as Ontario as part of the AODA). Luckily, the W3 Consortium has published international guidelines on web content accessibility in what is know as 'WCAG 2.0'
 
-<grid-1-x-2 desc="The WCAG2.0 is fairly extensive and provides a very comprehensive set of guidelines. Get started now!" button="Learn more about web content accessibility" img-Src="https://www.w3.org/blog/wp-content/uploads/2018/09/wcag_blog-1.png" link="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG"></grid-1-x-2>
+<grid-1-x-2 desc="The WCAG2.0 is fairly extensive and provides a very comprehensive set of guidelines. Get started now!" button="Learn more" img-Src="https://www.w3.org/blog/wp-content/uploads/2018/09/wcag_blog-1.png" link="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG"></grid-1-x-2>

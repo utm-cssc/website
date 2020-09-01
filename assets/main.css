@@ -1,0 +1,10 @@
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.scroll-child {
+  flex: 0 0 auto;
+  margin-right: 36px;
+  font-size: 24px;
+}
