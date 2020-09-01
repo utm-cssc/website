@@ -8,28 +8,23 @@ export default {
         voteList: Array
       },
       render (createElement) {
-        return createElement('div', {},
-          [Array.apply(null, { length: Object.keys(this.voteList).length }).map(Number.call, Number).map((num) => {
-            return this.voteList.map(option => createElement('div', {},
-              [`${num}`,
-                createElement('input', {
-                  attrs: {
-                    id: option + 'Button',
-                    type: 'radio',
-                    value: option,
-                    name: num
-                  }
-                }),
-                createElement('label', {
-                  attrs: {
-                    for: option
-                  }
-                },
-                `${option}`)
-              ]
+        return createElement('div', {}, [
+          createElement('ul', {},
+            this.voteList.map(option => createElement('li', {
+              attrs: {
+                id: option + 'Name'
+              }
+            },
+            [`${option}`, createElement('button', {
+              attrs: {
+                id: option + 'Counter'
+              },
+              on: {
+                click: () => this.$parent.changeCounter(option)
+              }
+            }, '0')])
             ))
-          })
-          ])
+        ])
       }
     }
   },
@@ -42,6 +37,8 @@ export default {
         b: 0,
         c: 0
       },
+      first: '',
+      second: '',
       counter: 0
     }
   },
