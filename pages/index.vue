@@ -10,13 +10,19 @@
     <!-- What is CSSC -->
     <div>
       <div class="cssc-heading">What is CSSC?</div>
-      <p class="cssc-subheading">
+      <p>
         The Computer Science Student Community (CSSC) is an open space for Computer Science students to come in and ask questions about their university and post-university career. We act as liaisons to the Computer Science faculty to ensure that all students can seek appropriate support and guidance. The CSSC seeks to support students through community initiatives built upon inclusivity and empowerment.
       </p>
     </div>
     <div>
       <div class="cssc-heading">How to contribute?</div>
+      <p>The CSSC is still setting up its near to long term infrastructure.</p>
+      <p class="my-2">At the moment, the best ways to get involved are:</p>
+      <li class="ml-4">Joining our digital communities on Discord or Microsoft Teams</li>
+      <li class="ml-4">Contributing to this website. Learn how!</li>
+      <li class="ml-4">Engaging with us in person by visiting our office at UTM in Deerfield Hall Room 2014. We'll be posting our office hours for the upcoming term soon!</li>
     </div>
+    <div class="mb-5" />
   </div>
 </template>
 
@@ -46,12 +52,6 @@ export default {
 <style scoped>
 .hero-full-height {
   height: 100vh;
-}
-
-.cssc-heading {
-  color: #00d097;
-  font-size: 50px;
-  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {

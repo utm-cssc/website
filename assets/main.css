@@ -1,3 +1,24 @@
+:root {
+  --color-heading: #00d097;
+}
+
+body {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.cssc-heading {
+  color: var(--color-heading);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.cssc-subheadings {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
 .scrolling-wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -7,4 +28,11 @@
   flex: 0 0 auto;
   margin-right: 36px;
   font-size: 24px;
+}
+
+/* For mobile */
+@media (max-width: 576px) { 
+  .cssc-heading {
+    font-size: 36px;
+  }
 }

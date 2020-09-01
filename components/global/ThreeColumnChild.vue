@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .title {
-  font-size: 32px;
+  font-size: 30px;
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.05;
