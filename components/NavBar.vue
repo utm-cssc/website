@@ -7,7 +7,8 @@
         to="/"
         @click.native="checked = false"
       >
-        <img class="logo" src="/logos/cssc-logo-without-title.svg"></img>
+        <img class="logo mr-2" src="/svg/cssc-logo-without-title.svg"></img>
+        <span class="logo-text">UTM CSSC</span>
       </nuxt-link>
     </div>
     <div class="nav-btn">
@@ -64,6 +65,10 @@ export default {
   font-weight: 500;
   font-family: var(--font-heading);
   text-transform: uppercase;
+}
+
+a:hover {
+  text-decoration: none;
 }
 </style>
 

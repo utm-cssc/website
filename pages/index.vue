@@ -6,17 +6,16 @@
     >
       <!-- <img src="@/assets/logo/cssc-logo.png" alt="UTM CSSC Logo"> -->
       <CenteredHero
-        icon="logos/cssc-logo-without-title.svg"
+        icon="svg/cssc-logo-without-title.svg"
         title="UTM CSSC"
         desc="Helping MCS Students"
         :button1="button1"
         :button2="button2"
       />
     </div>
-    <hr class="mt-4">
     <CenteredThreeColumnGrid :children="features" />
     <!-- What is CSSC -->
-    <div>
+    <div class="my-5">
       <div class="cssc-heading">
         What is CSSC?
       </div>
@@ -29,35 +28,6 @@
         through community initiatives built upon inclusivity and empowerment.
       </p>
     </div>
-    <div>
-      <div class="cssc-heading">
-        CSSC History
-      </div>
-      <p>
-        Formerly known as the Hacklab.
-      </p>
-    </div>
-    <div>
-      <div class="cssc-heading">
-        How to contribute?
-      </div>
-      <p>The CSSC is still setting up its near to long term infrastructure.</p>
-      <p class="my-2">
-        At the moment, the best ways to get involved are:
-      </p>
-      <li class="ml-4">
-        Joining our digital communities on Discord or Microsoft Teams
-      </li>
-      <li class="ml-4">
-        Contributing to this website. Learn how!
-      </li>
-      <li class="ml-4">
-        Engaging with us in person by visiting our office at UTM in Deerfield
-        Hall Room 2014. We'll be posting our office hours for the upcoming term
-        soon!
-      </li>
-    </div>
-    <div class="mb-5" />
   </div>
 </template>
 

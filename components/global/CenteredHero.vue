@@ -35,7 +35,7 @@
       </b-button>
     </div>
     <div class="row d-flex justify-center">
-      <img id="arrow" src="/downarrow.png" alt="Down Arrow">
+      <img id="arrow" src="/icons/arrow.svg" alt="Down Arrow">
     </div>
   </div>
 </template>
