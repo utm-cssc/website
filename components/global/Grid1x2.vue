@@ -6,7 +6,7 @@
         :class="{
           'order-md-last': !reversed,
           'justify-content-md-end': !reversed,
-          'px-5': $md == 'sm'
+          'px-5': $mq == 'sm'
         }"
       >
         <img class="feature-img" :src="imgSrc" />
