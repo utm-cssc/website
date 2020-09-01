@@ -8,3 +8,30 @@
   margin-right: 36px;
   font-size: 24px;
 }
+
+:root {
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+img {
+  border-radius: 8px;
+}
+
+iframe {
+  border-radius: 8px;
+  margin-top: 16px;
+}
