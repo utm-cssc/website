@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div class="mb-3 d-flex align-middle icon-size">
+  <div class="mb-3">
+    <div v-if="icon" class="mb-3 d-flex align-middle icon-size">
       <img :src="icon" class="col-icon" />
     </div>
     <p class="mb-2 mt-4 title">{{ title }}</p>
-    <p class="mt-1 desc">{{ desc }}</p>
+    <p class="desc">{{ desc }}</p>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .title {
-  font-size: 42px;
+  font-size: 32px;
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.05;

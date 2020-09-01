@@ -1,10 +1,11 @@
 <template>
   <div class="container">
     <!-- Title -->
-    <div class="d-flex flex-column justify-content-center align-items-center hero-full-height">
+    <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
       <img src="@/assets/logo/cssc-logo.png" alt="UTM CSSC Logo">
-      <b-btn class="mt-4">Tech Of the Month →</b-btn>
+      <b-btn class="mt-2">Tech Of the Month →</b-btn>
     </div>
+    <hr class="mt-4" />
     <Grid-1-X-3 :children="features"></Grid-1-X-3>
     <!-- What is CSSC -->
     <div>
@@ -51,10 +52,6 @@ export default {
   color: #00d097;
   font-size: 50px;
   font-weight: bold;
-}
-
-.cssc-subheading {
-  font-size: 30px;
 }
 
 @media screen and (max-width: 768px) {
