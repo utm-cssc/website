@@ -10,6 +10,7 @@
     <div>
       <div class="cssc-heading-center">September - Web Development</div>
       <GridLink :children="resources"></GridLink>
+      <ResourcesGrid :items="resources"/>
     </div>
     <div class="mb-5" />
     <div class="cssc-heading-center">Voting</div>
