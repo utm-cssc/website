@@ -20,7 +20,8 @@
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
     "nuxt": "^2.14.1",
-    "vue-apexcharts": "^1.6.0"
+    "vue-apexcharts": "^1.6.0",
+    "nuxt-mq": "^2.0.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",

@@ -35,45 +35,74 @@ export default {
     plugins: [
         { src: "@/plugins/vue-apexchart.js", ssr: false }
     ],
-    /*
-     ** Auto import components
-     ** See https://nuxtjs.org/api/configuration-components
-     */
-    components: true,
-    /*
-     ** Nuxt.js dev-modules
-     */
-    buildModules: [
-        // Doc: https://github.com/nuxt-community/eslint-module
-        '@nuxtjs/eslint-module',
-        // Doc: https://github.com/nuxt-community/stylelint-module
-        '@nuxtjs/stylelint-module',
-        '@nuxtjs/tailwindcss'
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/logos/cssc-logo-without-title.png' }
     ],
-    /*
-     ** Nuxt.js modules
-     */
-    modules: [
-        // Doc: https://bootstrap-vue.js.org
-        'bootstrap-vue/nuxt',
-        // Doc: https://axios.nuxtjs.org/usage
-        '@nuxtjs/axios',
-        // Doc: https://github.com/nuxt/content
-        '@nuxt/content'
-    ],
-    /*
-     ** Axios module configuration
-     ** See https://axios.nuxtjs.org/options
-     */
-    axios: {},
-    /*
-     ** Content module configuration
-     ** See https://content.nuxtjs.org/configuration
-     */
-    content: {},
-    /*
-     ** Build configuration
-     ** See https://nuxtjs.org/api/configuration-build/
-     */
-    build: {}
+  /*
+  ** Global CSS
+  */
+  css: [
+    '@/assets/main.css'
+  ],
+  /*
+  ** Plugins to load before mounting the App
+  ** https://nuxtjs.org/guide/plugins
+  */
+  plugins: [
+  ],
+  /*
+  ** Auto import components
+  ** See https://nuxtjs.org/api/configuration-components
+  */
+  components: true,
+  /*
+  ** Nuxt.js dev-modules
+  */
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module',
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    '@nuxtjs/stylelint-module',
+    '@nuxtjs/tailwindcss'
+  ],
+  /*
+  ** Nuxt.js modules
+  */
+  modules: [
+    // Doc: https://bootstrap-vue.js.org
+    'bootstrap-vue/nuxt',
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    // Doc: https://github.com/nuxt/content
+    '@nuxt/content',
+    [
+        'nuxt-mq',
+      {
+        // Default breakpoint for SSR
+        defaultBreakpoint: 'xs',
+        breakpoints: {
+          sm: 576,
+          md: 768,
+          lg: 992,
+          xl: 1200
+        }
+      }
+    ]
+  ],
+  /*
+  ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
+  */
+  axios: {},
+  /*
+  ** Content module configuration
+  ** See https://content.nuxtjs.org/configuration
+  */
+  content: {},
+  /*
+  ** Build configuration
+  ** See https://nuxtjs.org/api/configuration-build/
+  */
+  build: {
+  }
 }

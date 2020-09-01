@@ -1,15 +1,11 @@
 <template>
-  <div class="row">
+  <div class="row" id="monthly">
     <span
       v-for="child in children"
       :key="child.title"
-      class="col-lg-4 pr-sm-4 pr-lg-5"
+      class="col-lg-4"
     >
-      <ThreeColumnChild
-        :title="child.title"
-        :desc="child.desc"
-        :icon="child.icon"
-      />
+    <grid-1-x-2 :title="child.title" :desc="child.desc" :link="child.link" button="Check it out!"></grid-1-x-2>
     </span>
   </div>
 </template>
