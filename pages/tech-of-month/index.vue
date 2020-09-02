@@ -2,17 +2,17 @@
   <div class="container">
     <!-- Title -->
     <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
-      <div class="cssc-title">Technology of the Month</div>
+      <div class="cssc-heading">Technology of the Month</div>
     </div>
     <hr class="mt-4" />
     <Grid-1-X-3 :children="features"></Grid-1-X-3>
     <!-- Monthly Title -->
     <div>
-      <div class="cssc-heading-center">September - Web Development</div>
+      <div class="cssc-subheadings" style="text-align: center; font-size: 40px;">September - Web Development</div>
       <ResourcesGrid :items="resources"/>
     </div>
     <div class="mb-5" />
-    <div class="cssc-heading-center">Voting</div>
+    <div class="cssc-subheadings" style="text-align: center; font-size: 40px;">Voting</div>
   </div>
 </template>
 
