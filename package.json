@@ -8,8 +8,11 @@
     "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve",
+    "generate": "nuxt build --target static && nuxt export",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:js:fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
+    "lint:style:fix": "stylelint **/*.{vue,css} --ignore-path .gitignore --fix",
     "lint": "yarn lint:js && yarn lint:style"
   },
   "dependencies": {

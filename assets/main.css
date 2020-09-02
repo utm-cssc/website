@@ -1,10 +1,18 @@
 :root {
-  --color-heading: #00d097;
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --color-heading: #2f495e;
+  --color-body: #606f7b;
+  --color-primary-light: #00df96;
+  --color-primary: #00d097;
+  --color-primary-dark: #009b68;
 }
 
 body {
+  font-family: var(--font-body);
   font-size: 20px;
   line-height: 1.5;
+  color: var(--color-body);
 }
 
 .cssc-title {
@@ -38,6 +46,7 @@ body {
   flex-wrap: nowrap;
   overflow-x: auto;
 }
+
 .scroll-child {
   flex: 0 0 auto;
   margin-right: 36px;
@@ -45,7 +54,7 @@ body {
 }
 
 /* For mobile */
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
   .cssc-heading {
     font-size: 36px;
   }
@@ -62,4 +71,22 @@ body {
     font-weight: bold;
     text-align: left !important;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+img {
+  border-radius: 8px;
+}
+
+iframe {
+  border-radius: 8px;
+  margin-top: 16px;
 }
