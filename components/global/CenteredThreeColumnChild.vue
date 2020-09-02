@@ -1,11 +1,9 @@
 <template>
-  <div class="mb-3">
-    <div v-if="icon" class="mb-3 d-flex align-middle icon-size">
-      <img :src="icon" class="col-icon">
-    </div>
-    <p class="mb-2 mt-4 title">
+  <div class="mb-3 mt-4 flex-column align-items-center">
+    <img v-if="icon" class="mx-auto col-icon" :src="icon">
+    <h3 class="my-3 title">
       {{ title }}
-    </p>
+    </h3>
     <p class="desc">
       {{ desc }}
     </p>
@@ -32,16 +30,11 @@ export default {
 }
 
 .col-icon {
-  height: 96px;
+  height: 172px;
 }
 
 .desc {
   font-size: 20px;
   line-height: 1.5;
-}
-
-.icon-size {
-  width: 96px;
-  height: 96px;
 }
 </style>
