@@ -1,10 +1,10 @@
 <script>
 // import VueApexCharts from 'vue-apexcharts'
-import radioLayout from './radioLayout.vue'
+import RadioLayout from './RadioLayout.vue'
 export default {
   components: {
     apexcharts: () => import('vue-apexcharts'),
-    radioLayout
+    RadioLayout
   },
   data () {
     return {
@@ -15,11 +15,8 @@ export default {
         b: 0,
         c: 0
       },
-      test: ['a', 'b', 'c'],
-      counter: 0
+      title: ['First choice', 'Second choice', 'Third choice']
     }
-  },
-  methods: {
   }
 }
 </script>
@@ -30,7 +27,7 @@ export default {
     <h1>Vote</h1>
     <article>
       <div class="flex-col mr-2" id="container">
-        <radioLayout :children="this.test" :titles="this.test"></radioLayout>
+        <RadioLayout :children="Object.keys(this.vote)" :titles="this.title"></RadioLayout>
         <button> Submit </button>
       </div>
       <!-- Display result here, can use bar graph or pie char -->
@@ -41,37 +38,3 @@ export default {
 </template>
 
 </script>
-
-<style scoped>
-
-.content {
-  position: relative;
-}
-
-.title {
-  line-height: 1;
-  opacity: 1;
-  font-size: 2.6666667em;
-  margin: 0;
-  margin-top: 0;
-  margin-bottom: 0.875em;
-  color: #1a202c;
-  font-weight: 800;
-}
-
-.event-card {
-  border: solid 2px #343434;
-  border-radius: 8px;
-  padding: 12px 24px;
-}
-
-.img-event {
-  height: 209px;
-}
-
-@media (max-width: 600px) {
-  .img-event {
-    height: 108px;
-  }
-}
-</style>
