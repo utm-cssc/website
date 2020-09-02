@@ -32,14 +32,21 @@ export default {
   },
   data () {
     return {
-      previouslySelected: {
-        'First choice': '',
-        'Second choice': '',
-        'Third choice': ''
-      }
+      previouslySelected: {}
     }
   },
+  created () {
+    this.convertDictionary()
+  },
   methods: {
+    convertDictionary () {
+      const dictLen = Object.keys(this.titles).length
+      const tempDict = {}
+      for (let i = 0; i < dictLen; i++) {
+        tempDict[this.titles[i]] = ''
+      }
+      this.previouslySelected = tempDict
+    },
     disableButtions (className, title, status) {
       const radiosByClass = document.getElementsByClassName(className)
       for (let i = 0; i < radiosByClass.length; i++) {

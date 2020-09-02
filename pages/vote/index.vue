@@ -7,15 +7,16 @@ export default {
     RadioLayout
   },
   data () {
+    const setTitle = ['First choice', 'Second choice', 'Third choice']
     return {
-      title: ['First choice', 'Second choice', 'Third choice'],
+      title: setTitle,
       vote: {
         a: 0,
         b: 0,
         c: 0
       },
       options: {
-        labels: ['First choice', 'Second choice', 'Third choice']
+        labels: setTitle
       },
       series: [1, 1, 1]
     }
@@ -26,6 +27,7 @@ export default {
       const dictLen = Object.keys(this.vote).length
       const sortedArray = new Array(dictLen)
       const tempArray = new Array(3)
+      let status = true
 
       for (const key in this.vote) {
         const arrayIndex = this.vote[key] - 1
@@ -33,17 +35,21 @@ export default {
           sortedArray[arrayIndex] = key
         } else {
           alert('Please rank them properly')
+          status = false
         }
       }
 
-      let counter = 3
-      for (let i = 0; i < dictLen; i++) {
-        tempArray[i] = this.series[0] + counter
-        counter -= 1
+      if (status) {
+        let counter = 3
+        for (let i = 0; i < dictLen; i++) {
+          tempArray[i] = this.series[0] + counter
+          counter -= 1
+        }
+        this.series = tempArray
+        console.log(sortedArray.toString())
+        console.log(tempArray)
       }
-      this.series = tempArray
-      console.log(sortedArray.toString())
-      console.log(tempArray)
+
       // alert(sortedArray.toString())
     }
   }
