@@ -48,29 +48,33 @@ export default {
         }
       }
     },
+    addVote (title) {
+      if (title === this.titles[0]) {
+        return 1
+      } else if (title === this.titles[1]) {
+        return 2
+      } else if (title === this.titles[2]) {
+        return 3
+      } else {
+        return 0
+      }
+    },
     onChange (className, title) {
-      // document.getElementById(test).checked = false
-      // document.getElementById(test).disabled = true
-      // const radiosByName = document.getElementsByName(name)
-      // for (let j = 0; j < radiosByName.length; j++) {
-      //   radiosByName[j].disabled = false
-      // }
       let disabledStatus = true
       if (this.previouslySelected[title] === className) {
         document.getElementById(className + title).checked = false
         disabledStatus = false
         this.previouslySelected[title] = ''
+        this.$parent.vote[className] = 0
       } else if (this.previouslySelected[title] !== className && this.previouslySelected[title] !== '') {
         this.disableButtions(this.previouslySelected[title], title, false)
         this.previouslySelected[title] = className
+        this.$parent.vote[className] = this.addVote(title)
       } else {
         this.previouslySelected[title] = className
+        this.$parent.vote[className] = this.addVote(title)
       }
-
       this.disableButtions(className, title, disabledStatus)
-      // Setting other radio buttons status enable/disable
-
-      // alert(JSON.stringify(this.previouslySelected))
     }
   }
 }
