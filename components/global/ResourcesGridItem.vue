@@ -99,7 +99,7 @@ a {
 }
 
 .resource-title {
-  font-size: 20px;
+  font-size: 30px;
   color: #fff;
   font-weight: 500;
   max-width: 148px;
@@ -114,7 +114,7 @@ a {
 }
 
 .resource-desc {
-  font-size: 14px;
+  font-size: 18px;
   color: #fff;
   font-weight: 300;
   position: absolute;
