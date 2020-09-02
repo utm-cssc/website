@@ -35,7 +35,7 @@
       </b-button>
     </div>
     <div class="row d-flex justify-center">
-      <img id="arrow" src="/icons/arrow.svg" alt="Down Arrow">
+      <img class="bounce" id="arrow" src="/icons/arrow.svg" alt="Down Arrow">
     </div>
   </div>
 </template>
@@ -128,7 +128,7 @@ export default {
   font-family: var(--font-heading);
   color: var(--color-heading);
   letter-spacing: 0.025em;
-  font-size: calc(12px + 4vw);
+  font-size: 90px;
   line-height: 1.05;
 }
 
@@ -150,24 +150,60 @@ export default {
 }
 
 #arrow {
-  width: 75px;
   position: absolute;
   bottom: 50px;
+  width: 75px;
+}
+
+.bounce {
+  -webkit-animation: bounce 0.75s infinite;
+}
+
+@-webkit-keyframes bounce {
+  25% {
+    transform: scale(1, 0.9) translate(0, 0);
+  }
+
+  75% {
+    transform: scale(1, 1) translate(0, -10px);
+  }
 }
 
 @media screen and (max-width: 992px) {
   .hero-heading {
-    font-size: calc(12px + 8vw);
+    font-size: 80px;
     line-height: 1.05;
     z-index: 1000;
   }
 
   .hero-tag {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .hero-img {
     width: 100px;
+  }
+
+  #arrow {
+    width: 60px;
+  }
+
+  .btn-cta-alt {
+    font-size: 16px;
+  }
+
+  .btn-cta {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-heading {
+    font-size: 48px;
+  }
+
+  .hero-tag {
+    font-size: 20px;
   }
 
   #arrow {

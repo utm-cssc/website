@@ -4,7 +4,6 @@
     <div
       class="mt-5 d-flex flex-column justify-content-center align-items-center"
     >
-      <!-- <img src="@/assets/logo/cssc-logo.png" alt="UTM CSSC Logo"> -->
       <CenteredHero
         icon="svg/cssc-logo-without-title.svg"
         title="UTM CSSC"
