@@ -20,6 +20,9 @@
     </div>
 
     <div class="nav-links">
+      <form class="form-inline my-2 my-lg-0">
+        <ContentSearchBar />
+      </form>
       <nuxt-link
         to="/resources"
         class="g-nav-link nav-link mr-4"
