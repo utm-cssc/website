@@ -1,6 +1,6 @@
 <script>
 import RadioLayout from './RadioLayout.vue'
-import { getMonthVotes, addVote } from '~/assets/database/firebase.js'
+import { getMonthVotes, addVote, checkUser, addUser } from '~/assets/database/firebase.js'
 export default {
   components: {
     apexcharts: () => import('vue-apexcharts'),
@@ -29,6 +29,8 @@ export default {
     return {
       title: ['First Choice', 'Second Choice', 'Third Choice'],
       vote: {},
+      month: 'september',
+      utorid: 'test2',
       options: {
         // Labels is the legend of the pie chart
         // The labels and series index corresponds with another, first index of the label is first value of the series
@@ -56,7 +58,7 @@ export default {
       // This can be changed be to more efficient so it is not reading from the database again
       // This is updating the series array, AKA updating the pie chart
       const tempNum = []
-      await getMonthVotes('september')
+      await getMonthVotes(this.month)
         .then((result) => {
           const dictLen = Object.keys(result).length
           for (let i = 0; i < dictLen; i++) {
@@ -84,10 +86,22 @@ export default {
           status = false
         }
       }
+
+      // Checks to see if the user has already voted before
+      await checkUser(this.month, this.utorid)
+        .then((result) => {
+          if (result) {
+            console.log('user has already voted')
+            status = false
+          }
+        })
+
       console.log(sortedArray)
       if (status) {
+        // Update the votes in the database, adds user to the database and update series for piechart
         console.log('Updating vote and series')
-        await addVote('september', sortedArray)
+        await addVote(this.month, sortedArray)
+        await addUser(this.month, this.utorid)
         await this.updateSeries()
       }
     }
