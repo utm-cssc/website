@@ -1,71 +1,51 @@
-// export const firebase = require('firebase/app')
+import { db, firebase } from '~/plugins/firebase.js'
 
-// require('firebase/auth')
-// require('firebase/firestore')
+export function getMonthVotes (month) {
+  // Read from the database
+  // Retrieves a reference of the collection for the month
+  const monthRef = db.collection(month)
+  return monthRef.get()
+    .then((snapshot) => {
+      // Loop through each non-null document and creates a dictionary for each field including the document ID
+      if (snapshot.empty) {
+        console.log('No matching documents.')
+        return null
+      }
+      const optionList = []
+      // Will push each document information into an array and return that array at the end
+      snapshot.forEach((doc) => {
+        const option = {
+          // Document id is the name of the vote option, number is the number of votes
+          id: doc.id,
+          Number: doc.get('Number')
+        }
+        optionList.push(option)
+      })
+      return optionList
+    })
+    .catch((err) => {
+      console.log(err)
+      return null
+    })
+}
 
-// const firebaseConfig = {
-//     // Need to change this to match the correct key
-//     // apiKey: "AIzaSyADgf3-YaxKssgLTBBNnaP_wkliBD3-lMc",
-//     // authDomain: "project-app-builders-utm.firebaseapp.com",
-//     // databaseURL: "https://project-app-builders-utm.firebaseio.com",
-//     // projectId: "project-app-builders-utm",
-//     // storageBucket: "project-app-builders-utm.appspot.com",
-//     // messagingSenderId: "444041330162",
-//     // appId: "1:444041330162:web:e6931670f59cf41cc2ff6b",
-//     // measurementId: "G-9X8GX7K8J5"
-// };
-
-// try {
-//     firebase.initializeApp(firebaseConfig);
-// } catch (err) {
-//     if (!/already exists/.test(err.message)) {
-//         console.error("Firebase initialization error", err.stack);
-//     }
+// export async function addOptions (name) {
+//   const optionsRef = db.collection('month').doc(name)
+//   await optionsRef.set({
+//     Number: 0
+//   })
 // }
 
-// export function getMonthVotes() {
-//     let monthRef = db.collection('month')
-//     return monthRef.get()
-//         .then(snapshot => {
-//             if (snapshot.empty) {
-//                 console.log('No matching documents.');
-//                 return null;
-//             }
-//             var optionList = [];
-//             snapshot.forEach(doc => {
-//                 var option = {
-//                     "id": doc.id
-//                      OR we can do, this depends on if we want the document id to be a random id or have a name attribute, name as ID would make it easier
-//                     "name": doc.get("Name")
-// 
-//                      Number is the number of votes
-//                     "number": doc.get("Number"),
-//                 }
-//                 optionList.push(option);
-//             })
-
-//             return optionList;
-//         })
-//         .catch(err => {
-//             console.log('Error getting document', err);
-//             return null;
-//         })
-// }
-
-// export async function addOptions(vote, name) {
-
-//     let optionsRef = db.collection('month').doc();
-
-//     let setOption = await optionsRef.set({
-//         'Name': name,
-//         'Number': 0,
-//     })
-// }
-
-// export async function addVote(option) {
-//     Incrementing value by 1
-//     let optionsRef = db.collection('month').doc(option);
-//     let setOption = await optionsRef.update({
-//         'Number': firebase.firestore.FieldValue.increment(1)
-//     })
-// }
+export async function addVote (month, voteOptions) {
+  // Incrementing value by the counter
+  // Will loop through all the vote options and update accordingly.
+  // The value for the counter can be adjusted to be more fair
+  const optionsRef = db.collection(month)
+  let counter = 3
+  for (let i = 0; i < voteOptions.length; i++) {
+    await optionsRef.doc(voteOptions[i]).update({
+      Number: firebase.firestore.FieldValue.increment(counter)
+    })
+    counter -= 1
+  }
+}

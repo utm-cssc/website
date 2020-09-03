@@ -16,7 +16,6 @@
       :id="child+childTitle"
       :class="child"
       :value="child+childTitle"
-      v-model="selected"
       @click="onChange(child, childTitle)"/>
       <label>{{ child }}</label>
       </span>
@@ -32,6 +31,7 @@ export default {
   },
   data () {
     return {
+      // Using a dictionary so it is easier to check what was previously selected for each row
       previouslySelected: {}
     }
   },
@@ -40,6 +40,7 @@ export default {
   },
   methods: {
     convertDictionary () {
+      // Convery an array to a dictionary
       const dictLen = Object.keys(this.titles).length
       const tempDict = {}
       for (let i = 0; i < dictLen; i++) {
@@ -48,6 +49,7 @@ export default {
       this.previouslySelected = tempDict
     },
     disableButtions (className, title, status) {
+      // Disables/Enables all other radio buttons of the same class name
       const radiosByClass = document.getElementsByClassName(className)
       for (let i = 0; i < radiosByClass.length; i++) {
         if (radiosByClass[i].id !== className + title) {
@@ -56,6 +58,7 @@ export default {
       }
     },
     addVote (title) {
+      // Checks to see the rankings of the selections (If the user votes 'a' as 'First choice', then it will return 1)
       if (title === this.titles[0]) {
         return 1
       } else if (title === this.titles[1]) {
@@ -67,20 +70,27 @@ export default {
       }
     },
     onChange (className, title) {
+      // Function runs when the user clicks on any of hte button
       let disabledStatus = true
       if (this.previouslySelected[title] === className) {
+        // Checks to see if the user selected a radio button that is already checked
+        //  it will then uncheck the button and enable all the buttons of the same class name
         document.getElementById(className + title).checked = false
         disabledStatus = false
         this.previouslySelected[title] = ''
         this.$parent.vote[className] = 0
       } else if (this.previouslySelected[title] !== className && this.previouslySelected[title] !== '') {
+        // Checks to see if the user clicks on a radio button of the same row
+        // It will then enable all the buttons with previously checked class name and disable the newly checked button
         this.disableButtions(this.previouslySelected[title], title, false)
         this.previouslySelected[title] = className
         this.$parent.vote[className] = this.addVote(title)
       } else {
+        // If the user clicks an unchecked radio button
         this.previouslySelected[title] = className
         this.$parent.vote[className] = this.addVote(title)
       }
+      // Will either disable radio buttons of the same class name or enable them
       this.disableButtions(className, title, disabledStatus)
     }
   }
