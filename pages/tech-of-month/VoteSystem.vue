@@ -16,6 +16,8 @@ export default {
       vote: {},
       month: 'september',
       utorid: 'bbb',
+      errorStatus: true,
+      voteStatus: true,
       options: {
         // Labels is the legend of the pie chart
         // The labels and series index corresponds with another, first index of the label is first value of the series
@@ -66,6 +68,7 @@ export default {
         if (keyValue <= 0) {
           // console('Please rank them properly')
           status = false
+          this.errorStatus = false
           break
         }
       }
@@ -76,6 +79,7 @@ export default {
           if (result) {
             // console.log('user has already voted')
             status = false
+            this.voteStatus = false
           }
         })
 
@@ -85,6 +89,8 @@ export default {
         await addVote(this.month, this.vote)
         await addUser(this.month, this.utorid)
         await this.updateSeries()
+        this.errorStatus = true
+        this.voteStatus = true
       }
     }
   }
@@ -96,6 +102,8 @@ export default {
       <div class="flex-col mr-2" id="container">
         <!-- Displays the radio button layout -->
         <RadioLayout :children="Object.keys(this.vote)" :titles="this.title"></RadioLayout>
+        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="this.errorStatus">Please enter a vote for each choice</P>
+        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="this.voteStatus">You've already voted</P>
         <button @click="submitVote()" style="padding-left: 12px;"> Submit </button>
       </div>
       <!-- Display result here, can use bar graph or pie char -->
