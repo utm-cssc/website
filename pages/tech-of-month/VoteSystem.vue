@@ -1,6 +1,8 @@
 <script>
 import RadioLayout from './RadioLayout.vue'
-import { addVote, checkUser, addUser } from '~/assets/database/firebase.js'
+// Uncomment this when auth has been implemented
+// import { addVote, checkUser, addUser } from '~/assets/database/firebase.js'
+import { addVote } from '~/assets/database/firebase.js'
 export default {
   props: {
     databaseSeries: Array,
@@ -66,28 +68,27 @@ export default {
       for (const key in this.vote) {
         const keyValue = this.vote[key]
         if (keyValue <= 0) {
-          // console('Please rank them properly')
           status = false
           this.errorStatus = false
           break
         }
       }
-
+      // Uncomment this when auth has been implemented and edit it to work with the UofT auth
       // Checks to see if the user has already voted before
-      await checkUser(this.month, this.utorid)
-        .then((result) => {
-          if (result) {
-            // console.log('user has already voted')
-            status = false
-            this.voteStatus = false
-          }
-        })
+      // await checkUser(this.month, this.utorid)
+      //   .then((result) => {
+      //     if (result) {
+      //       // console.log('user has already voted')
+      //       status = false
+      //       this.voteStatus = false
+      //     }
+      //   })
 
       if (status) {
         // Update the votes in the database, adds user to the database and update series for piechart
-        // console.log('Updating vote and series')
         await addVote(this.month, this.vote)
-        await addUser(this.month, this.utorid)
+        // Uncomment this when auth has been implemented and edit it to work with the UofT auth
+        // await addUser(this.month, this.utorid)
         await this.updateSeries()
         this.errorStatus = true
         this.voteStatus = true
