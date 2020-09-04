@@ -17,7 +17,7 @@ export async function getMonthVotes (month) {
         const option = {
           // Document id is the name of the vote option, number is the number of votes
           id: doc.id,
-          Number: doc.get('Number')
+          Vote: doc.get('Vote')
         }
         optionList.push(option)
       })
@@ -67,11 +67,9 @@ export async function addVote (month, voteOptions) {
   // Will loop through all the vote options and update accordingly.
   // The value for the counter can be adjusted to be more fair
   const optionsRef = db.collection(month)
-  let counter = 3
-  for (let i = 0; i < voteOptions.length; i++) {
-    await optionsRef.doc(voteOptions[i]).update({
-      Number: firebase.firestore.FieldValue.increment(counter)
+  for (const key in voteOptions) {
+    await optionsRef.doc(key).update({
+      Number: firebase.firestore.FieldValue.increment(voteOptions[key])
     })
-    counter -= 1
   }
 }

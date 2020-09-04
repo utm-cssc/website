@@ -1,26 +1,32 @@
 <template>
-  <div class="mb-3 mt-4 flex-column align-items-center">
+  <div style="padding-left: 10px;">
     <div
       v-for="childTitle in titles"
       :key="childTitle"
       >
-      <h3 class="my-3 title">
+      <h3
+      class="my-3 title"
+      data-v-16201546=""
+      style="color: #606f7b; margin-bottom: 1rem !important;"
+      >
       {{ childTitle }}
       </h3>
-      <br>
-      <span
-        v-for="child in children"
-        :key="child"
-      >
-      <input
-      type="radio"
-      :name="childTitle"
-      :id="child+childTitle"
-      :class="child"
-      :value="child+childTitle"
-      @click="onChange(child, childTitle)"/>
-      <label class="desc">{{ child }}</label>
-      </span>
+      <div align="center">
+        <span
+          v-for="child in children"
+          :key="child"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+        <input
+        type="radio"
+        :name="childTitle"
+        :id="child+childTitle"
+        :class="child"
+        :value="child+childTitle"
+        @click="onChange(child, childTitle)"/>
+        <label class="desc" style="color: #606f7b;">{{ child }}</label>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -60,13 +66,13 @@ export default {
       }
     },
     addVote (title) {
-      // Checks to see the rankings of the selections (If the user votes 'a' as 'First choice', then it will return 1)
+      // Checks to see the rankings of the selections (If the user votes 'a' as 'First choice', then it will return 3)
       if (title === this.titles[0]) {
-        return 1
+        return 3
       } else if (title === this.titles[1]) {
         return 2
       } else if (title === this.titles[2]) {
-        return 3
+        return 1
       } else {
         return 0
       }

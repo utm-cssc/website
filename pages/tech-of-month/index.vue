@@ -18,14 +18,41 @@
     <div class="mb-5" />
     <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;">
       Voting
+      <VoteSystem :databaseSeries="series" :databaseLabels="labels"/>
     </div>
   </div>
 </template>
 
 <script>
+import VoteSystem from './VoteSystem.vue'
+import { getMonthVotes } from '~/assets/database/firebase.js'
 export default {
+  components: {
+    VoteSystem
+  },
+  async asyncData ({ params }) {
+    const tempTitle = []
+    const tempNum = []
+    // Read the votes from the month of september
+    await getMonthVotes('september')
+      .then((result) => {
+        console.log(JSON.stringify(result))
+        const dictLen = Object.keys(result).length
+        // Converts the dictionary to the appropriate array
+        for (let i = 0; i < dictLen; i++) {
+          tempTitle.push(result[i].id)
+          tempNum.push(result[i].Vote)
+        }
+      })
+    console.log(tempTitle.toString())
+    console.log(tempNum.toString())
+    // Set the labels and series of the pie chart
+    return { labels: tempTitle, series: tempNum }
+  },
   data: () => {
     return {
+      labels: [],
+      series: [],
       features: [
         {
           title: 'What is Technology of the month?',

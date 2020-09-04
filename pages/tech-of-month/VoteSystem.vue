@@ -1,43 +1,31 @@
 <script>
 import RadioLayout from './RadioLayout.vue'
-import { getMonthVotes, addVote, checkUser, addUser } from '~/assets/database/firebase.js'
+import { addVote, checkUser, addUser } from '~/assets/database/firebase.js'
 export default {
+  props: {
+    databaseSeries: Array,
+    databaseLabels: Array
+  },
   components: {
     apexcharts: () => import('vue-apexcharts'),
     RadioLayout
-  },
-  async asyncData ({ params }) {
-    const tempTitle = []
-    const tempNum = []
-    // Read the votes from the month of september
-    await getMonthVotes('september')
-      .then((result) => {
-        console.log(JSON.stringify(result))
-        const dictLen = Object.keys(result).length
-        // Converts the dictionary to the appropriate array
-        for (let i = 0; i < dictLen; i++) {
-          tempTitle.push(result[i].id)
-          tempNum.push(result[i].Number)
-        }
-      })
-    console.log(tempTitle.toString())
-    console.log(tempNum.toString())
-    // Set the labels and series of the pie chart
-    return { options: { labels: tempTitle }, series: tempNum }
   },
   data () {
     return {
       title: ['First Choice', 'Second Choice', 'Third Choice'],
       vote: {},
       month: 'september',
-      utorid: 'test2',
+      utorid: 'bbb',
       options: {
         // Labels is the legend of the pie chart
         // The labels and series index corresponds with another, first index of the label is first value of the series
-        labels: []
+        legend: {
+          position: 'bottom'
+        },
+        labels: this.databaseLabels
       },
       // Series is the numbers that will display onto the pie chart
-      series: [1, 1, 1]
+      series: this.databaseSeries
     }
   },
   created () {
@@ -54,36 +42,31 @@ export default {
       }
       this.vote = tempDict
     },
-    async updateSeries () {
+    updateSeries () {
       // This can be changed be to more efficient so it is not reading from the database again
       // This is updating the series array, AKA updating the pie chart
       const tempNum = []
-      await getMonthVotes(this.month)
-        .then((result) => {
-          const dictLen = Object.keys(result).length
-          for (let i = 0; i < dictLen; i++) {
-            tempNum.push(result[i].Number)
-          }
-        })
+      let index = 0
+      for (const key in this.vote) {
+        tempNum[index] = this.series[index] + this.vote[key]
+        index += 1
+      }
+
       this.series = tempNum
     },
     async submitVote () {
       // Submit the votes to the database, it will first rearrange the dictionary into an array where the head is the first choice
       // and the tail is the last choice
       // The number of votes can be adjusted so it is fair, currently it is just first place gets 3 votes, second place gets 2, and last place gets 1
-      console.log(JSON.stringify(this.vote))
-      const dictLen = Object.keys(this.vote).length
-      const sortedArray = new Array(dictLen)
+      // console.log(JSON.stringify(this.vote))
       let status = true
 
       for (const key in this.vote) {
-        const arrayIndex = this.vote[key] - 1
-        if (arrayIndex >= 0) {
-          sortedArray[arrayIndex] = key
-        } else {
-          // If the user didn't select a button, it won't update the votes
-          alert('Please rank them properly')
+        const keyValue = this.vote[key]
+        if (keyValue <= 0) {
+          // console('Please rank them properly')
           status = false
+          break
         }
       }
 
@@ -91,16 +74,15 @@ export default {
       await checkUser(this.month, this.utorid)
         .then((result) => {
           if (result) {
-            console.log('user has already voted')
+            // console.log('user has already voted')
             status = false
           }
         })
 
-      console.log(sortedArray)
       if (status) {
         // Update the votes in the database, adds user to the database and update series for piechart
-        console.log('Updating vote and series')
-        await addVote(this.month, sortedArray)
+        // console.log('Updating vote and series')
+        await addVote(this.month, this.vote)
         await addUser(this.month, this.utorid)
         await this.updateSeries()
       }
@@ -114,11 +96,22 @@ export default {
       <div class="flex-col mr-2" id="container">
         <!-- Displays the radio button layout -->
         <RadioLayout :children="Object.keys(this.vote)" :titles="this.title"></RadioLayout>
-        <button @click="submitVote()"> Submit </button>
+        <button @click="submitVote()" style="padding-left: 12px;"> Submit </button>
       </div>
       <!-- Display result here, can use bar graph or pie char -->
     </article>
-    <no-ssr> <apexcharts width="380" type="donut" :options="options" :series="series"></apexcharts> </no-ssr>
+    <br>
+    <no-ssr>
+      <div align="center">
+        <apexcharts
+        width="300"
+        type="donut"
+        :options="options"
+        :series="series"
+        id="apexChart"
+        style="position: center;"/>
+      </div>
+    </no-ssr>
 
   </div>
 </template>
