@@ -95,6 +95,7 @@ a {
 .icon {
   height: 56px;
   width: 56px;
+  color: #fff;
 }
 
 .resource-title {
