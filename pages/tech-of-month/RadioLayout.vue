@@ -11,7 +11,7 @@
       >
       {{ childTitle }}
       </h3>
-      <div align="center">
+      <div align="center" style="padding-bottom: 30px;">
         <span
           v-for="child in children"
           :key="child"

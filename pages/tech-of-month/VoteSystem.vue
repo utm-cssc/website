@@ -15,7 +15,7 @@ export default {
       title: ['First Choice', 'Second Choice', 'Third Choice'],
       vote: {},
       month: 'september',
-      utorid: 'bbb',
+      utorid: 'test',
       errorStatus: true,
       voteStatus: true,
       options: {
