@@ -47,20 +47,20 @@ export default {
         {
           title: 'HTML',
           desc: 'Learn the base foundation of all websites',
-          link: 'http://localhost:3000/resources/html',
-          icon: 'devicon-html5-plain-wordmark'
+          link: 'http://localhost:3000/tech-of-month',
+          icon: '/svg/html5.svg'
         },
         {
           title: 'CSS',
           desc: 'Learn how to style your HTML pages',
-          link: 'http://localhost:3000/resources/css',
-          icon: 'devicon-css3-plain-wordmark'
+          link: 'http://localhost:3000/tech-of-month',
+          icon: '/svg/css3.svg'
         },
         {
           title: 'Javascript',
           desc: 'Learn how to implement scripts into your HTML page',
-          link: 'http://localhost:3000/resources/javascript',
-          icon: 'devicon-javascript-plain'
+          link: 'http://localhost:3000/tech-of-month',
+          icon: '/svg/javascript.svg'
         }
       ]
     }
