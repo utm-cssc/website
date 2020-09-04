@@ -10,8 +10,10 @@
         desc="Helping MCS Students"
         :button1="button1"
         :button2="button2"
+        arrowLink="#cssc-moto"
       />
     </div>
+    <a id="cssc-moto"></a>
     <CenteredThreeColumnGrid :children="features" />
     <!-- What is CSSC -->
     <div class="my-5">
