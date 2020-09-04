@@ -1,12 +1,22 @@
 <template>
-  <!-- The resources grid -->
   <div>
-    <h1> Resource </h1>
+    <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
+      <CenteredHero
+        icon="svg/resources.svg"
+        title="Resources"
+        desc="Processes and tools to help you succeed! We curate from across the internet and produce original content for our community!"
+      />
+    </div>
+    <ResourcesGrid />
   </div>
 </template>
 
 <script>
 export default {
-
+  async asyncData ({ $content, params, error }) {
+    const resources = await $content('resources').fetch()
+    console.log(resources)
+    return { resources }
+  }
 }
 </script>

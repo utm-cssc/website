@@ -2,10 +2,10 @@
   <div class="resources-grid">
     <resources-grid-item
       v-for="item in items"
-      :key ="item.title"
+      :key="item.title"
       :title="item.title"
       :link="item.link"
-      :iconFileName="item.icon"
+      :icon-file-name="item.icon"
       :desc="item.desc"
       :color="color"
     />
