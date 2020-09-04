@@ -15,24 +15,10 @@ body {
   color: var(--color-body);
 }
 
-.cssc-title {
-  color: var(--color-heading);
-  font-size: 100px;
-  font-weight: bold;
-}
-
 .cssc-heading {
   color: var(--color-heading);
   font-size: 50px;
   font-weight: bold;
-}
-
-.cssc-heading-center {
-  color: var(--color-heading);
-  font-size: 50px;
-  padding-bottom: 50px;
-  font-weight: bold;
-  text-align: center !important;
 }
 
 .cssc-subheadings {
@@ -57,19 +43,6 @@ body {
 @media (max-width: 576px) {
   .cssc-heading {
     font-size: 36px;
-  }
-
-  .cssc-title {
-    color: var(--color-heading);
-    font-size: 50px;
-    font-weight: bold;
-  }
-
-  .cssc-heading-center {
-    font-size: 36px;
-    padding-bottom: 50px;
-    font-weight: bold;
-    text-align: left !important;
   }
 }
 
