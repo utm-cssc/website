@@ -7,7 +7,7 @@
     @mouseleave="hovered = false"
   >
     <figure class="resource-icon">
-      <img class="icon" :src="iconFileName" />
+      <img class="icon" :src="iconFileName" style="filter: brightness(0) invert(1);"/>
     </figure>
     <transition name="slide-out" mode="out-in">
       <div v-if="!hovered" class="resource-title">{{ title }}</div>
