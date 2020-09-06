@@ -18,14 +18,41 @@
     <div class="mb-5" />
     <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;">
       Voting
+      <VoteSystem :databaseSeries="series" :databaseLabels="labels"/>
     </div>
   </div>
 </template>
 
 <script>
+import VoteSystem from './VoteSystem.vue'
+import { getMonthVotes } from '~/assets/database/firebase.js'
 export default {
+  components: {
+    VoteSystem
+  },
+  async asyncData ({ params }) {
+    const tempTitle = []
+    const tempNum = []
+    // Read the votes from the month of september
+    await getMonthVotes('september')
+      .then((result) => {
+        console.log(JSON.stringify(result))
+        const dictLen = Object.keys(result).length
+        // Converts the dictionary to the appropriate array
+        for (let i = 0; i < dictLen; i++) {
+          tempTitle.push(result[i].id)
+          tempNum.push(result[i].Vote)
+        }
+      })
+    console.log(tempTitle.toString())
+    console.log(tempNum.toString())
+    // Set the labels and series of the pie chart
+    return { labels: tempTitle, series: tempNum }
+  },
   data: () => {
     return {
+      labels: [],
+      series: [],
       features: [
         {
           title: 'What is Technology of the month?',
@@ -47,20 +74,20 @@ export default {
         {
           title: 'HTML',
           desc: 'Learn the base foundation of all websites',
-          link: 'http://localhost:3000/resources/html',
-          icon: 'devicon-html5-plain-wordmark'
+          link: 'http://localhost:3000/tech-of-month',
+          icon: '/svg/html5.svg'
         },
         {
           title: 'CSS',
           desc: 'Learn how to style your HTML pages',
-          link: 'http://localhost:3000/resources/css',
-          icon: 'devicon-css3-plain-wordmark'
+          link: 'http://localhost:3000/tech-of-month',
+          icon: '/svg/css3.svg'
         },
         {
           title: 'Javascript',
           desc: 'Learn how to implement scripts into your HTML page',
-          link: 'http://localhost:3000/resources/javascript',
-          icon: 'devicon-javascript-plain'
+          link: 'http://localhost:3000/tech-of-month',
+          icon: '/svg/javascript.svg'
         }
       ]
     }
