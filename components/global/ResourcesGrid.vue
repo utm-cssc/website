@@ -1,5 +1,5 @@
 <template>
-  <div class="resources-grid">
+  <div class="container px-5 resources-grid">
     <resources-grid-item
       v-for="item in items"
       :key="item.title"

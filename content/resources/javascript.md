@@ -1,7 +1,7 @@
 ---
 title: JavaScript
 icon: /icons/javascript.svg
-desc: A web scripting language to create dynamically updating content, control multimedia and much more!
+desc: Make you websites dynamic by using a powerful modern scripting language!
 ---
 
 # Javascript

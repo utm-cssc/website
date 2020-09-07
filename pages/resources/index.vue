@@ -4,10 +4,10 @@
       <CenteredHero
         icon="svg/resources.svg"
         title="Resources"
-        desc="Processes and tools to help you succeed! We curate from across the internet and produce original content for our community!"
+        desc="We curate from across the internet and produce original content for our community!"
       />
     </div>
-    <ResourcesGrid />
+    <ResourcesGrid v-if="resourceGridItems" :items="resourceGridItems" />
   </div>
 </template>
 
@@ -16,7 +16,11 @@ export default {
   async asyncData ({ $content, params, error }) {
     const resources = await $content('resources').fetch()
     console.log(resources)
-    return { resources }
+    const resourceGridItems = resources.map((resource) => {
+      return { title: resource.title, desc: resource.desc, icon: resource.icon }
+    })
+    console.log(resourceGridItems)
+    return { resourceGridItems }
   }
 }
 </script>
