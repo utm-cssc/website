@@ -8,8 +8,8 @@
         icon="svg/cssc-logo-without-title.svg"
         title="UTM CSSC"
         desc="Helping MCS Students"
-        :button1="button1"
-        :button2="button2"
+        :button1="heroButton1"
+        :button2="heroButton2"
       />
     </div>
     <CenteredThreeColumnGrid :children="features" />
@@ -54,11 +54,11 @@ export default {
           icon: './svg/collaboration.svg'
         }
       ],
-      button1: {
+      heroButton1: {
         label: 'Tech of the month',
-        link: 'tech-of-month'
+        link: 'tech-of-the-month'
       },
-      button2: {
+      heroButton2: {
         label: 'How to contribute',
         link: 'contribute'
       }

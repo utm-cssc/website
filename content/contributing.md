@@ -1,3 +1,9 @@
+---
+title: Contributing
+icon: /icons/contributing.svg
+desc: Contribute to the CSSC website!
+---
+
 # How to contribute
 
 The CSSC website is built using the Nuxt Framework. 

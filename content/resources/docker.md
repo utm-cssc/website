@@ -1,3 +1,9 @@
+---
+title: Docker
+icon: /icons/docker.svg
+desc: Containerize your applications with ease and deploy them anywhere!
+---
+
 # Docker
 
 ## What is Docker?

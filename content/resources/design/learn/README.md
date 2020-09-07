@@ -1,3 +1,9 @@
+---
+title: Learning Resources
+icon: /icons/learning-resources.svg
+desc: Additional tools and resources to help you create better designs! 
+---
+
 # Learning Resources
 
 ## Booklets

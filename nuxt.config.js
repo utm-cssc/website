@@ -1,4 +1,3 @@
-
 export default {
   /*
   ** Nuxt rendering mode
@@ -44,6 +43,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '~/plugins/firebase.js'
   ],
   /*
   ** Auto import components
@@ -82,7 +82,7 @@ export default {
           xl: 1200
         }
       }
-    ]
+    ],
   ],
   /*
   ** Axios module configuration

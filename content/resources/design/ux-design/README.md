@@ -1,3 +1,9 @@
+---
+title: UX Design
+icon: /icons/ux-design.svg
+desc: Learn the design process when creating meaningful and relevant experiences for your users!
+---
+
 # UX Design
 
 User experience (UX) design is the process design teams use to create products that provide meaningful and relevant experiences to users. 
