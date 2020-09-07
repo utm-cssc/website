@@ -12,9 +12,9 @@
 <template>
   <div class="content">
     <h1 style="font-size: 50px;"> Ask an Upper Year! </h1>
-    <!-- <form action="https://formspree.io/xwkrdzyg" method="POST">-->
-    	<form action="http://individual.utoronto.ca/cgi-bin/formmail.pl" method="POST">
-	<input type="hidden" name="recipient" value="zain.kazmi@mail.utoronto.ca"/>
+    <form action="https://formspree.io/xwkrdzyg" method="POST">
+    <!--<form action="http://individual.utoronto.ca/cgi-bin/formmail.pl" method="POST">
+	<input type="hidden" name="recipient" value="zain.kazmi@mail.utoronto.ca"/> -->
 	<li style="list-style-type: none;"><label for="ask_alex">Ask Alex: TA and POST</label>
       	<input type="checkbox" name="ask alex" text="Ask Alex" id="ask_alex"/>
       	</li>
@@ -30,8 +30,10 @@
       	<label for=Question> Input your Question here </label> 
       	</li>
 	<li style="list-style-type: none;">
-	<textarea id="Question" name="Question" style="border-style: inset;"></textarea>
+	<!-- <textarea id="Question" name="Question" style="border-style: inset;"></textarea> -->
+	<b-form-textarea v-model="text" name="Question" placeholder="Enter your Question Here"></b-form-textarea>
 	</li>
+	<br>
 	<li style="list-style-type: none;">
 	<h2 style="font-size: 20px;">Tags:</h2>
 	</li>
@@ -47,6 +49,36 @@
 	<label for="tech">Technology</label>
 	<input type="checkbox" id="tech" name="Tech"/>
 	</li>
+	<li style="list-style-type: none;">
+        <label for="personal_proj">Personal Projects</label>
+        <input type="checkbox" id="personal_proj" name="Personal Projects"/>
+        </li>
+	<li style="list-style-type: none;">
+	<label for="Gen_questions">General Question About CS Courses (e.g., What to expect?, Course prerequisites?, etc, ...)</label>
+	<input type="checkbox" id="Gen_questions" name="General CS course questions"/>
+	</li>
+	<li style="list-style-type: none;">
+	<label for="academic_offences">Academic Offences</label>
+        <input type="checkbox" id="personal_proj" name="Academic Offences"/>
+        </li>
+	<li style="list-style-type: none;">
+	<label for="email_prof">Emailing Professors</label>
+	<input type="checkbox" id="email_prof" name="email profs"/>
+	</li>
+	<li style="list-style-type: none;">
+	<label for="mental_health">Accessibility and Mental health</label>
+	<input type="checkbox" id="mental_health" name="accesibility mental health"/>
+	</li>
+	<li style="list-style-type: none;">
+	<label for="cs_intern">CS Internships</label>
+	<input type="checkbox" id="cs_intern" name="CS Internships"/>
+	</li>
+	<li style="list-style-type: none;">
+	<label for="other">Other</label>
+	<input type="checkbox" id="other" name="Other"/>
+	</li>	
+	
+
 	<input type="submit" value="Submit" name="Submit"/>
 	<input type="reset" value="Reset"/>
       </form>
