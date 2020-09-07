@@ -1,25 +1,28 @@
 <template>
   <div>
-    <input
+    <b-form-input
       v-model="searchQuery"
       type="search"
       autocomplete="on"
       placeholder="Search Resources"
       class="form-control"
+      list="my-list-id"
     />
-    <ul
+    <datalist
+    id="my-list-id"
     v-if="articles.length"
     class="z-10 absolute w-full flex-1 bg-white dark:bg-gray-900 rounded-md border border-gray-300 dark:border-gray-700 overflow-hidden search-dropdown">
-      <li
-      @click="clearSearchQuery"
+      <option
+      class="px-2 search-item"
+      @click="clearSearchQuery(article)"
       v-for="article of articles"
-      :key="article.slug"
+      :key="article.path"
       >
         <NuxtLink :to="article.path">
         {{ article.slug }}
         </NuxtLink>
-      </li>
-    </ul>
+      </option>
+    </datalist>
   </div>
 </template>
 
@@ -33,7 +36,8 @@ export default {
     }
   },
   methods: {
-    clearSearchQuery () {
+    clearSearchQuery (article) {
+      this.$router.push(article.path)
       this.searchQuery = ''
     }
   },
@@ -57,4 +61,17 @@ export default {
   list-style-position: inside;
   width: 200px;
 }
+
+.search-item {
+  color: var(--color-primary);
+  display: block;
+  cursor: pointer;
+}
+
+.search-item:hover {
+  color: var(--color-primary-dark);
+  background-color: rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
 </style>
