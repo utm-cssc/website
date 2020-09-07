@@ -35,7 +35,7 @@
       </b-button>
     </div>
     <div class="row d-flex justify-center">
-      <img class="bounce" id="arrow" src="/icons/arrow.svg" alt="Down Arrow">
+      <a :href="arrowLink"><img class="bounce" id="arrow" src="/icons/arrow.svg" alt="Down Arrow"></a>
     </div>
   </div>
 </template>
@@ -73,6 +73,10 @@ export default {
         type: String,
         default: ''
       }
+    },
+    arrowLink: {
+      type: String,
+      default: ''
     }
   },
   computed: {

@@ -8,6 +8,10 @@
   --color-primary-dark: #009b68;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   font-size: 20px;
