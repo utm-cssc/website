@@ -13,14 +13,17 @@
         UTM Hacklab DH2014
       </div>
       <div class="footer-links">
-        <a href="https://discord.gg/SHwbmVg" class="footer-link ml-2">
+        <a href="https://discord.gg/SHwbmVg" class="footer-link">
           <DiscordIcon class="logo" />
         </a>
-        <a href="https://www.instagram.com/utm.cssc" class="footer-link ml-2 mr-2">
+        <a href="https://www.instagram.com/utm.cssc" class="footer-link ml-2">
           <InstagramIcon class="logo" />
         </a>
-        <a href="https://www.facebook.com/utmcssc/" class="footer-link">
+        <a href="https://www.facebook.com/utmcssc/" class="footer-link ml-2">
           <FacebookIcon class="logo" />
+        </a>
+        <a href="https://github.com/utm-cssc" class="footer-link ml-2">
+          <GithubIcon class="logo" />
         </a>
       </div>
     </div>
@@ -31,8 +34,9 @@
 import DiscordIcon from '../static/icons/discord.svg?inline'
 import InstagramIcon from '../static/icons/instagram.svg?inline'
 import FacebookIcon from '../static/icons/facebook.svg?inline'
+import GithubIcon from '../static/icons/github.svg?inline'
 export default {
-  components: { DiscordIcon, InstagramIcon, FacebookIcon }
+  components: { GithubIcon, DiscordIcon, InstagramIcon, FacebookIcon }
 }
 </script>
 
