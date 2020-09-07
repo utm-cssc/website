@@ -15,11 +15,9 @@
 export default {
   async asyncData ({ $content, params, error }) {
     const resources = await $content('resources').fetch()
-    console.log(resources)
     const resourceGridItems = resources.map((resource) => {
-      return { title: resource.title, desc: resource.desc, icon: resource.icon }
+      return { title: resource.title, desc: resource.desc, icon: resource.icon, link: `/resources/${resource.title.toLowerCase()}` }
     })
-    console.log(resourceGridItems)
     return { resourceGridItems }
   }
 }

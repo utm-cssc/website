@@ -1,11 +1,11 @@
 ---
 title: HTML
-icon: /icons/html.svg
-desc: Hyper Text Markup Language is the standard markup language for documents designed to be displayed on web browsers!
+icon: /icons/html5.svg
+desc: Hyper Text Markup Language is the standard markup language for documents to be displayed on web browsers!
 ---
 
 # Introduction
-<!-- <grid-1-x-2 :link="link" :img-src="img" :title="club" :desc="desc"></grid-1-x-2> -->
+
 ## What is HTML?
 ![An Image](https://www.edureka.co/blog/wp-content/uploads/2019/06/What-is-HTML.jpg)
 HyperText Markup Language, also known as HTML, is the building blocks of all websites. HTML is combined with [CSS](../css) and [Javascript](../Javascript) to further enhance both the functionality and the appearance of the website. 

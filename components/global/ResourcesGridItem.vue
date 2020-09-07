@@ -118,7 +118,7 @@ a {
   color: #fff;
   font-weight: 300;
   position: absolute;
-  max-width: 200px;
+  max-width: 250px;
 }
 
 .slide-out-enter-active {

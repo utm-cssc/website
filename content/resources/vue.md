@@ -16,7 +16,7 @@ It consists of an approachable core library that focuses on the view layer only,
 
 ### Why Vue.js
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/247494684?autoplay=1&color=4fc08d&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/247494684?autoplay=1&color=4fc08d&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 ## How do I get Started?
 
@@ -66,7 +66,7 @@ Cheat sheets save you time and energy by giving you essential syntax at your fin
 
 ### Vue VS Code Snippets
 
-<grid-1-x-2 reversed=true img-Src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/vue-snippet-hero.gif" link="https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets" button="Check it out!" desc="Snippets that will supercharge your Vue workflow"></grid-1-x-2>
+<grid-1-x-2 :reversed="true" img-Src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/vue-snippet-hero.gif" link="https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets" button="Check it out!" desc="Snippets that will supercharge your Vue workflow"></grid-1-x-2>
 
 ## Curated Libraries
 
@@ -76,4 +76,4 @@ Cheat sheets save you time and energy by giving you essential syntax at your fin
 
 ### AwesomeJS Libraries
 
-<grid-1-x-2 reversed=true img-Src="https://pbs.twimg.com/profile_images/1179900479054200832/GiffpVcI_400x400.png" link="https://awesomejs.dev/for/vue/" button="Check it out!" desc="Find awesome packages for Vue on AwesomeJS!"></grid-1-x-2>
+<grid-1-x-2 :reversed="true" img-Src="https://pbs.twimg.com/profile_images/1179900479054200832/GiffpVcI_400x400.png" link="https://awesomejs.dev/for/vue/" button="Check it out!" desc="Find awesome packages for Vue on AwesomeJS!"></grid-1-x-2>

@@ -1,5 +1,5 @@
 ---
-title: Android Development
+title: Android
 icon: /icons/android.svg
 desc: Build apps for phones, tablets, cars and the next billion mobile users on Android!
 ---
