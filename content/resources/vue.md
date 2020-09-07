@@ -1,3 +1,9 @@
+---
+title: Vue
+icon: /icons/vue.svg
+desc: Develop web applications easily with a community powered JavaScript framework!
+---
+
 # Vue
 
 ## What is Vue?

@@ -1,3 +1,9 @@
+---
+title: JavaScript
+icon: /icons/javascript.svg
+desc: A web scripting language to create dynamically updating content, control multimedia and much more!
+---
+
 # Javascript
 
 ### Prequisites for this module:

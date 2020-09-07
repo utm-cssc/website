@@ -1,3 +1,9 @@
+---
+title: Inspiration
+icon: /icons/inspiration.svg
+desc: Get inspired by designs shared by talented designers from around the world!
+---
+
 ## Design Inspiration
 
 Get inspired by designs shared by talented designers from around the world. 

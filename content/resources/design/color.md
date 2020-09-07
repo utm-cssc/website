@@ -1,3 +1,9 @@
+---
+title: Color
+icon: /icons/color.svg
+desc: Make your website more appealing by adding some color!
+---
+
 # Color
 
 A color that can evoke one reaction in one person may evoke the opposite reaction in another, due to culture, prior association, or even just personal preference. 

@@ -1,5 +1,7 @@
 ---
-sidebar: auto
+title: HTML
+icon: /icons/html.svg
+desc: Hyper Text Markup Language is the standard markup language for documents designed to be displayed on web browsers!
 ---
 
 # Introduction

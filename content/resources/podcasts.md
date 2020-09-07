@@ -1,3 +1,9 @@
+---
+title: Podcasts
+icon: /icons/podcasts.svg
+desc: Learn on the go with entertaining, informative, and awe-inspiring podcasts
+---
+
 # Podcasts
 
 ## Hacklab Podcasts

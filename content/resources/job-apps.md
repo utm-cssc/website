@@ -1,3 +1,9 @@
+---
+title: Job Applications
+icon: /icons/job-applications.svg
+desc: Learn how to make your resume stand out and where to apply!
+---
+
 # All About Job Applications
 
 ## Resume Help

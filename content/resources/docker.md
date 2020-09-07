@@ -1,7 +1,7 @@
 ---
 title: Docker
 icon: /icons/docker.svg
-desc: Put your applications in containers with ease and deploy them anywhere!
+desc: Containerize your applications with ease and deploy them anywhere!
 ---
 
 # Docker
