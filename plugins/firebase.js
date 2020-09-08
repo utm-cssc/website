@@ -3,14 +3,13 @@ export const firebase = require('firebase/app')
 require('firebase/firestore')
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCBcKiiiM45yhGhTfKEO56cz54_yvDHr5I',
-  authDomain: 'testing-c47c3.firebaseapp.com',
-  databaseURL: 'https://testing-c47c3.firebaseio.com',
-  projectId: 'testing-c47c3',
-  storageBucket: 'testing-c47c3.appspot.com',
-  messagingSenderId: '227759401353',
-  appId: '1:227759401353:web:b9433b7891b6d96ef59958',
-  measurementId: 'G-NXG6DB51L0'
+  apiKey: 'AIzaSyARA5yjg9uxiFis8tXmhFAkGF3V_KyTl4U',
+  authDomain: 'utm-cssc.firebaseapp.com',
+  databaseURL: 'https://utm-cssc.firebaseio.com',
+  projectId: 'utm-cssc',
+  storageBucket: 'utm-cssc.appspot.com',
+  messagingSenderId: '966034836059',
+  appId: '1:966034836059:web:c7242ced50f02f31c10d7e'
 }
 
 try {

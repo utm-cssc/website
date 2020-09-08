@@ -34,9 +34,8 @@ export default {
     const tempTitle = []
     const tempNum = []
     // Read the votes from the month of september
-    await getMonthVotes('september')
+    await getMonthVotes('September')
       .then((result) => {
-        console.log(JSON.stringify(result))
         const dictLen = Object.keys(result).length
         // Converts the dictionary to the appropriate array
         for (let i = 0; i < dictLen; i++) {
@@ -44,8 +43,6 @@ export default {
           tempNum.push(result[i].Vote)
         }
       })
-    console.log(tempTitle.toString())
-    console.log(tempNum.toString())
     // Set the labels and series of the pie chart
     return { labels: tempTitle, series: tempNum }
   },

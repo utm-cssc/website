@@ -16,7 +16,7 @@ export default {
     return {
       title: ['First Choice', 'Second Choice', 'Third Choice'],
       vote: {},
-      month: 'september',
+      month: 'September',
       utorid: 'test',
       errorStatus: true,
       voteStatus: true,
