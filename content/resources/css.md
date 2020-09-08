@@ -1,3 +1,10 @@
+---
+title: CSS
+icon: /icons/css3.svg
+desc: Learn how to style your webpages to be beautiful and delightful to use with CSS!
+---
+
+
 # CSS
 
 ## Motivation

@@ -1,3 +1,9 @@
+---
+title: Collections
+icon: /icons/collections.svg
+desc: The best content from the internet can help you filter the signal from the noise.
+---
+
 # Collections
 
 Curated collections of the best content from the internet can help you filter the signal from the noise.
@@ -6,7 +12,7 @@ We encourage you to explore these curated collections and subscribe to collectio
 
 ## Awesome Resources
 
-<grid-1-x-2 link="https://github.com/sindresorhus/awesome" button="Explore!" img-src="https://github.com/sindresorhus/awesome/raw/master/media/logo.png" desc="Awesome collections on Github are a a curation effort by users on Github to recognize the best resources around the internet. You'll find awesome collections for topics ranging from web development to mind-expanding books."></grid-1-x-2>
+<grid-1-x-2 link="https://github.com/sindresorhus/awesome" button="Explore!" img-src="https://raw.githubusercontent.com/sindresorhus/awesome/main/media/logo.svg" desc="Awesome collections on Github are a a curation effort by users on Github to recognize the best resources around the internet. You'll find awesome collections for topics ranging from web development to mind-expanding books."></grid-1-x-2>
 
 ## Startup Stash
 

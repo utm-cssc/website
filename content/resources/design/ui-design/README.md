@@ -1,3 +1,9 @@
+---
+title: UI Design
+icon: /icons/ui-design.svg
+desc: Learn how to create interactive and responsive UI's
+---
+
 # UI Design
 
 UI design stands for “user interface design.” 

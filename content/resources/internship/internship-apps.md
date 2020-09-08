@@ -1,3 +1,9 @@
+---
+title: Internship Applications
+icon: /icons/internship-applications.svg
+desc: Work at your dream company!
+---
+
 # Internship Applications
 
 ## [Angel List](https://angel.co/jobs)
