@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <!-- Title -->
-    <div
-      class="mt-5 d-flex flex-column justify-content-center align-items-center"
-    >
+    <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
       <CenteredHero
         icon="svg/cssc-logo-without-title.svg"
         title="UTM CSSC"
@@ -58,7 +56,7 @@ export default {
       ],
       button1: {
         label: 'Tech of the month',
-        link: 'tech-of-month'
+        link: 'tech-of-the-month'
       },
       button2: {
         label: 'How to contribute',
