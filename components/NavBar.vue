@@ -27,13 +27,6 @@
       >
         Resources
       </nuxt-link>
-      <nuxt-link
-        to="/blog"
-        class="g-nav-link nav-link mr-4"
-        @click.native="checked = false"
-      >
-        Blog
-      </nuxt-link>
     </div>
   </div>
 </template>

@@ -5,8 +5,10 @@
         icon="icons/resources.svg"
         title="Resources"
         desc="We curate from across the internet and produce original content for our community!"
+        arrowLink="#resourcesGrid"
       />
     </div>
+    <a id="resourcesGrid" />
     <ResourcesGrid v-if="resourceGridItems" :items="resourceGridItems" />
   </div>
 </template>
