@@ -16,7 +16,7 @@
       <ResourcesGrid :items="resources" />
     </div>
     <div class="mb-5" />
-    <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;">
+    <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;" hidden="true">
       Voting
       <VoteSystem :databaseSeries="series" :databaseLabels="labels"/>
     </div>
