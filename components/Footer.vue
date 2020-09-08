@@ -6,7 +6,7 @@
         <nuxt-link
           to="/"
         >
-          <img class="logo" src="/svg/cssc-logo-without-title.svg">
+          <img class="logo" src="/icons/cssc-logo-without-title.svg">
         </nuxt-link>
       </div>
       <div class="location">
