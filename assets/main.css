@@ -59,10 +59,6 @@ h6 {
   font-family: var(--font-heading);
 }
 
-img {
-  border-radius: 8px;
-}
-
 iframe {
   border-radius: 8px;
   margin-top: 16px;

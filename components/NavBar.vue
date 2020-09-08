@@ -115,7 +115,7 @@ a:hover {
 }
 
 .nav-link:hover {
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
 }
 
 .nav > #nav-check {
