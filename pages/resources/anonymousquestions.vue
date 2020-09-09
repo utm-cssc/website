@@ -3,15 +3,24 @@
 </script>
 
 <style>
-.content {
+/* .content {
   max-width: 500px;
   margin: auto;
-}
+} */
 </style>
  
 <template>
-  <div class="content">
-    <h1 style="font-size: 50px;"> Ask an Upper Year! </h1>
+
+  <div class="container">
+	<div class="mt-5 d-flex flex-column justify-content-center align-items-center">
+      <CenteredHero
+        icon="svg/cssc-logo-without-title.svg"
+        title="Ask an Upper Year!"
+        desc=""
+        arrowLink="#ask-upper-year-form"
+      />
+	</div>
+	<a id="ask-upper-year"></a>
     <form action="https://formspree.io/xwkrdzyg" method="POST">
     <!--<form action="http://individual.utoronto.ca/cgi-bin/formmail.pl" method="POST">
 	<input type="hidden" name="recipient" value="zain.kazmi@mail.utoronto.ca"/> -->
@@ -79,8 +88,8 @@
 	</li>	
 	
 
-	<input type="submit" value="Submit" name="Submit"/>
-	<input type="reset" value="Reset"/>
+	<b-button type="submit" name="Submit">Submit</b-button>
+	<b-button type="reset" value="Reset">Reset</b-button>
       </form>
 
   </div>
@@ -91,4 +100,3 @@ export default {
 
 }
 </script>
-~                                                                                                                       ~                                                                                                                       ~                             
