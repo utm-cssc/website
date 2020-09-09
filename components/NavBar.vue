@@ -27,6 +27,13 @@
       >
         Resources
       </nuxt-link>
+      <nuxt-link
+        to="/ask-upper-years"
+        class="g-nav-link nav-link mr-4"
+        @click.native="checked = false"
+      >
+        Ask an Upper Year
+      </nuxt-link>
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div>
     <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
       <CenteredHero
-        icon="icons/resources.svg"
+        icon="../../icons/resources.svg"
         title="Resources"
         desc="We curate from across the internet and produce original content for our community!"
         arrowLink="#resourcesGrid"
