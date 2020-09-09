@@ -15,12 +15,12 @@
 	</div>
 	<a id="ask-upper-year-form"></a>
 	<div class="cssc-heading" style="text-align: center;">
-        CSSC Upper Year Students!
+        CSSC Upper Year Students
     </div>
 	<CenteredThreeColumnGrid :children="features" :rounded="true" />
     <form action="https://formspree.io/xwkrdzyg" method="POST">
 	<div class="mb-3 cssc-heading">
-        Choose an upper year student!
+        Choose an upper year student
     </div>
 	<b-form-group>
 		<b-form-checkbox-group class="flex" id="ask-upper-year" v-model="selectedUpperYear" name="upper-year-student">
