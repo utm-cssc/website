@@ -1,11 +1,9 @@
 <template>
   <div class="container">
     <!-- Title -->
-    <div
-      class="mt-5 d-flex flex-column justify-content-center align-items-center"
-    >
+    <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
       <CenteredHero
-        icon="svg/cssc-logo-without-title.svg"
+        icon="icons/cssc-logo-without-title.svg"
         title="UTM CSSC"
         desc="Helping MCS Students"
         :button1="button1"
@@ -13,8 +11,7 @@
         arrowLink="#cssc-moto"
       />
     </div>
-    <a id="cssc-moto"></a>
-    <CenteredThreeColumnGrid :children="features" />
+    <a id="cssc-moto" />
     <!-- What is CSSC -->
     <div class="my-5">
       <div class="cssc-heading">
@@ -29,6 +26,7 @@
         through community initiatives built upon inclusivity and empowerment.
       </p>
     </div>
+    <CenteredThreeColumnGrid :children="features" />
   </div>
 </template>
 
@@ -41,28 +39,28 @@ export default {
           title: 'Growth',
           desc:
             'The CSSC is dedicated to your academic and professional growth! We\'re here for you with opportunities, space and resources to inform your computer science journey through University!',
-          icon: './svg/growth.svg'
+          icon: './icons/growth.svg'
         },
         {
           title: 'Resources',
           desc:
             'Our technology team is devoted to developing processes and tools to help you succeed! We curate from across the internet and produce original content for our community!',
-          icon: './svg/resources.svg'
+          icon: './icons/resources.svg'
         },
         {
           title: 'Collaboration',
           desc:
             'We work closely with other MCS Clubs and Societies in order to achieve common goals in the CS Community!',
-          icon: './svg/collaboration.svg'
+          icon: './icons/collaboration.svg'
         }
       ],
       button1: {
         label: 'Tech of the month',
-        link: 'tech-of-month'
+        link: 'tech-of-the-month'
       },
       button2: {
-        label: 'How to contribute',
-        link: 'contribute'
+        label: 'Resources',
+        link: 'resources'
       }
     }
   }

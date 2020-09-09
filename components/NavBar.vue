@@ -7,7 +7,7 @@
         to="/"
         @click.native="checked = false"
       >
-        <img class="logo mr-2" src="/svg/cssc-logo-without-title.svg"></img>
+        <img class="logo mr-2" src="/icons/cssc-logo-without-title.svg"></img>
         <span class="logo-text">UTM CSSC</span>
       </nuxt-link>
     </div>
@@ -26,13 +26,6 @@
         @click.native="checked = false"
       >
         Resources
-      </nuxt-link>
-      <nuxt-link
-        to="/blog"
-        class="g-nav-link nav-link mr-4"
-        @click.native="checked = false"
-      >
-        Blog
       </nuxt-link>
     </div>
   </div>
@@ -115,7 +108,7 @@ a:hover {
 }
 
 .nav-link:hover {
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
 }
 
 .nav > #nav-check {

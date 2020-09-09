@@ -1,3 +1,9 @@
+---
+title: Web Development
+icon: /icons/web.svg
+desc: Build sites and apps for the world's open and universal computing platform!
+---
+
 # Web Development
 
 Web development is when you create pages, sites or applications people can access over the internet. As a web developer, you have the option of a broad set of rapidly evolving tools to work with.
