@@ -2,6 +2,7 @@
 title: Web Development
 icon: /icons/web.svg
 desc: Build sites and apps for the world's open and universal computing platform!
+link: web
 ---
 
 # Web Development

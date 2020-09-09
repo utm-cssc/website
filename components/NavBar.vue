@@ -7,7 +7,7 @@
         to="/"
         @click.native="checked = false"
       >
-        <img class="logo mr-2" src="/icons/cssc-logo-without-title.svg"></img>
+        <img class="logo mr-2" src="/icons/cssc-logo-without-title.svg">
         <span class="logo-text">UTM CSSC</span>
       </nuxt-link>
     </div>
@@ -34,6 +34,7 @@
       >
         Ask an Upper Year
       </nuxt-link>
+      <SearchBar class="ml-2" />
     </div>
   </div>
 </template>

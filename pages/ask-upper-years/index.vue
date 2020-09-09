@@ -3,7 +3,6 @@
 </script>
  
 <template>
-
   <div class="container">
 	<div class="mt-5 d-flex flex-column justify-content-center align-items-center">
       <CenteredHero
@@ -30,7 +29,10 @@
 			</div>
 		</b-form-checkbox-group>
 	</b-form-group>	
-	<b-form-textarea v-model="text" name="Question" placeholder="Enter your Question Here" rows="3"></b-form-textarea>
+	<div class="mb-3 mt-2 cssc-heading">
+		Ask Your Question
+    </div>
+	<b-form-textarea v-model="question" name="Question" placeholder="Enter your Question Here" rows="3"></b-form-textarea>
 	<div class="mb-3 mt-2 cssc-heading">
     	Tags
     </div>
@@ -42,12 +44,33 @@
 			</div>
 		</b-form-checkbox-group>
 	</b-form-group>	
-	<div class="d-flex justify-content-center mb-4">
+	<div class="mt-3 cssc-heading">
+    	Share with us
+    </div>
+	<p class="mb-2">
+		Are you okay with us posting your question anonymously under our FAQ on our website, Discord and/or Instagram?
+	</p>
+	<b-form-checkbox-group id="ask-upper-year-share" v-model="shareQuestion" name="share-question" :state="share">
+		<div class="flex align-items-center mr-3" v-for="shareQuestionOption in shareQuestionOptions" :key="shareQuestionOption.value">
+			<b-form-checkbox :value="shareQuestionOption.value"></b-form-checkbox>
+			<span>{{shareQuestionOption.text}}</span>
+		</div>
+	</b-form-checkbox-group>
+		<div class="mt-3 cssc-heading">
+    	   Email
+        </div>
+	<p class="mb-2">
+		Please provide your utoronto email so we can contact you back!
+	</p>
+	<b-form-textarea v-model="email" name="Email" placeholder="user@mail.utoronto.ca" rows="1" max-rows="1"></b-form-textarea>
+	<div class="d-flex justify-content-center mb-4 mt-5">
 		<b-button size="lg" type="submit" name="Submit" class="button mr-3">Submit</b-button>
 		<b-button size="lg" type="reset" value="Reset" class="button ml-3">Reset</b-button>
 	</div>
       </form>
-
+	  <div class="mt-3 mb-4 cssc-heading">
+    	Frequently Asked Questions
+      </div>
   </div>
 </template>
 
@@ -55,10 +78,16 @@
 export default {
   data: () => {
     return {
-      labels: [],
-	  series: [],
+	  question: '',
+	  email: '',
+	  labels: [],
 	  selectedUpperYear: [],
 	  selectedTags: [],
+	  shareQuestion: [],
+	  shareQuestionOptions: [
+		  { text: "Yes", value: "Yes"},
+		  { text: "No", value: "No"}
+	  ],
 	  askUpperYearOptions: [
 		{ text: "Jessica Anderson", value: "Jess" },
 		{ text: "Chris Lim", value: "Chris" },
@@ -66,7 +95,7 @@ export default {
 		{ text: "Any Upper year", value: "Any Upper Year" },
 	  ],
 	  tagOptions: [
-		{ text: "Post", value: "Post" },
+		{ text: "POSt", value: "POSt" },
 		{ text: "Technology", value: "Technology" },
 		{ text: "Becoming a TA", value: "Becoming a TA" },
 		{ text: "Personal Projects", value: "Personal Projects" },

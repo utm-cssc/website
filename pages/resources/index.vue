@@ -5,10 +5,10 @@
         icon="../../icons/resources.svg"
         title="Resources"
         desc="We curate from across the internet and produce original content for our community!"
-        arrowLink="#resourcesGrid"
+        arrowLink="#resources-grid"
       />
     </div>
-    <a id="resourcesGrid" />
+    <a id="resources-grid" />
     <ResourcesGrid v-if="resourceGridItems" :items="resourceGridItems" />
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
   async asyncData ({ $content, params, error }) {
     const resources = await $content('resources').fetch()
     const resourceGridItems = resources.map((resource) => {
-      return { title: resource.title, desc: resource.desc, icon: resource.icon, link: `/resources/${resource.title.toLowerCase()}` }
+      return { title: resource.title, desc: resource.desc, icon: resource.icon, link: `/resources/${resource.link}` }
     })
     return { resourceGridItems }
   }
