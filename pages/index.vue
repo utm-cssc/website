@@ -11,8 +11,7 @@
         arrowLink="#cssc-moto"
       />
     </div>
-    <a id="cssc-moto"></a>
-    <CenteredThreeColumnGrid :children="features" />
+    <a id="cssc-moto" />
     <!-- What is CSSC -->
     <div class="my-5">
       <div class="cssc-heading">
@@ -27,6 +26,7 @@
         through community initiatives built upon inclusivity and empowerment.
       </p>
     </div>
+    <CenteredThreeColumnGrid :children="features" />
   </div>
 </template>
 
