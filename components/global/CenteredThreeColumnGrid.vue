@@ -9,6 +9,7 @@
         :title="child.title"
         :desc="child.desc"
         :icon="child.icon"
+        :rounded="rounded"
       />
     </div>
   </div>
@@ -17,7 +18,8 @@
 <script>
 export default {
   props: {
-    children: Array
+    children: Array,
+    rounded: Boolean
   }
 }
 </script>

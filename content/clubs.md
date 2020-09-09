@@ -2,7 +2,7 @@
 title: Clubs
 description: UTM MCS Clubs
 club: UTM MCSS
-link: https://utmmcss.com/
+link: clubs
 img: /logos/mcss.png
 desc: The MCSS encourages a social, academic and career-related support system among students and faculty. The Society encourages faculty and student interaction outside of the formal lecture, tutorial and lab setting.
 ---

@@ -2,6 +2,7 @@
 title: HTML
 icon: /icons/html5.svg
 desc: Learn the language that forms the skeleton of every webpage!
+link: html
 ---
 
 # Introduction

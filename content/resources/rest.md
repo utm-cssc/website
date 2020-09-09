@@ -2,6 +2,7 @@
 title: REST
 icon: /icons/rest.svg
 desc: A powerful and popular way for clients to communicate with servers!
+link: rest
 ---
 
 # Introduction

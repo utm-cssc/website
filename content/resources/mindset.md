@@ -2,6 +2,7 @@
 title: Mindset
 icon: /icons/mindset.svg
 desc: Cultivating a growth mindset can help us overcome limiting beliefs about our capabilities!
+link: mindset
 ---
 
 # Mindset

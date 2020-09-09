@@ -1,6 +1,6 @@
 <template>
   <div class="mb-3 mt-4 flex-column align-items-center">
-    <img v-if="icon" class="mx-auto col-icon" :src="icon">
+    <img v-if="icon" :class="{'round-photo': rounded}" class="mx-auto col-icon" :src="icon">
     <h3 class="my-3 title">
       {{ title }}
     </h3>
@@ -15,7 +15,8 @@ export default {
   props: {
     title: String,
     icon: String,
-    desc: String
+    desc: String,
+    rounded: Boolean
   }
 }
 </script>
@@ -31,6 +32,10 @@ export default {
 
 .col-icon {
   height: 172px;
+}
+
+.round-photo {
+  border-radius: 50%;
 }
 
 .desc {

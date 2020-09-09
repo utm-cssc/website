@@ -3,7 +3,7 @@
     <!-- Title -->
     <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
       <CenteredHero
-        icon="icons/cssc-logo-without-title.svg"
+        icon="../icons/cssc-logo-without-title.svg"
         title="UTM CSSC"
         desc="Helping MCS Students"
         :button1="button1"
@@ -26,7 +26,7 @@
         through community initiatives built upon inclusivity and empowerment.
       </p>
     </div>
-    <CenteredThreeColumnGrid :children="features" />
+    <CenteredThreeColumnGrid :children="features" :rounded="false" />
   </div>
 </template>
 

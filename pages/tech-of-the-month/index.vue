@@ -6,7 +6,7 @@
         Technology of the Month
       </div>
     </div>
-    <CenteredThreeColumnGrid :children="features" />
+    <CenteredThreeColumnGrid :children="features" :rounded="false" />
     <!-- Monthly Title -->
     <div>
       <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;">
