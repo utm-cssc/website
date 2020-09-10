@@ -59,8 +59,8 @@ export default {
         link: 'tech-of-the-month'
       },
       button2: {
-        label: 'Resources',
-        link: 'resources'
+        label: 'MCS Orientation E-Kit',
+        link: '../../resources/ekit/E-Kit For MCS Orientation 2020.pdf'
       }
     }
   }
