@@ -32,10 +32,11 @@
 	<div class="mb-3 mt-2 cssc-heading">
 		Ask Your Question
     </div>
-	<b-form-textarea v-model="question" name="Question" placeholder="Enter your Question Here" rows="3"></b-form-textarea>
-	<div class="mb-3 mt-2 cssc-heading">
+	<b-form-textarea v-model="question" name="Question" placeholder="Enter Your Question Here" rows="3"></b-form-textarea>
+	<div class="mt-2 cssc-heading">
     	Tags
     </div>
+	<p class="mb-3">Note: CSSC cannot answer any course content related questions!</p>
 	<b-form-group>
 		<b-form-checkbox-group id="ask-upper-year-tags" v-model="selectedTags" name="question-tags">
 			<div class="flex align-items-center mr-3" v-for="tagOption in tagOptions" :key="tagOption.value">
@@ -50,7 +51,7 @@
 	<p class="mb-2">
 		Are you okay with us posting your question anonymously under our FAQ on our website, Discord and/or Instagram?
 	</p>
-	<b-form-checkbox-group id="ask-upper-year-share" v-model="shareQuestion" name="share-question" :state="share">
+	<b-form-checkbox-group id="ask-upper-year-share" v-model="shareQuestion" name="share-question">
 		<div class="flex align-items-center mr-3" v-for="shareQuestionOption in shareQuestionOptions" :key="shareQuestionOption.value">
 			<b-form-checkbox :value="shareQuestionOption.value"></b-form-checkbox>
 			<span>{{shareQuestionOption.text}}</span>
@@ -92,7 +93,7 @@ export default {
 		{ text: "Jessica Anderson", value: "Jess" },
 		{ text: "Chris Lim", value: "Chris" },
 		{ text: "Alexandra Thompson", value: "Alex" },
-		{ text: "Any Upper year", value: "Any Upper Year" },
+		{ text: "Any Upper Year", value: "Any Upper Year" },
 	  ],
 	  tagOptions: [
 		{ text: "POSt", value: "POSt" },
