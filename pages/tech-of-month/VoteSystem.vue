@@ -47,7 +47,6 @@ export default {
       this.vote = tempDict
     },
     updateSeries () {
-      // This can be changed be to more efficient so it is not reading from the database again
       // This is updating the series array, AKA updating the pie chart
       const tempNum = []
       let index = 0
