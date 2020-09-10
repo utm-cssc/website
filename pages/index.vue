@@ -22,7 +22,7 @@
         Computer Science students to come in and ask questions about their
         university and post-university career. We act as liaisons to the
         Computer Science faculty to ensure that all students can seek
-        appropriate support and guidance. The CSSC seeks to support students
+        the appropriate support and guidance. CSSC seeks to support students
         through community initiatives built upon inclusivity and empowerment.
       </p>
     </div>
@@ -38,7 +38,7 @@ export default {
         {
           title: 'Growth',
           desc:
-            'The CSSC is dedicated to your academic and professional growth! We\'re here for you with opportunities, space and resources to inform your computer science journey through University!',
+            'CSSC is dedicated to your academic and professional growth! We\'re here for you with opportunities, spaces and resources to inform your computer science journey through university!',
           icon: './icons/growth.svg'
         },
         {
@@ -50,7 +50,7 @@ export default {
         {
           title: 'Collaboration',
           desc:
-            'We work closely with other MCS Clubs and Societies in order to achieve common goals in the CS Community!',
+            'We work closely with other MCS clubs and societies in order to achieve common goals in the CS community!',
           icon: './icons/collaboration.svg'
         }
       ],

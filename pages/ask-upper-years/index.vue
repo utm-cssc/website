@@ -19,7 +19,7 @@
 	<CenteredThreeColumnGrid :children="features" :rounded="true" />
     <form action="https://formspree.io/xwkrdzyg" method="POST">
 	<div class="mb-3 cssc-heading">
-        Choose an upper year student
+        Choose an Upper Year Student
     </div>
 	<b-form-group>
 		<b-form-checkbox-group class="flex" id="ask-upper-year" v-model="selectedUpperYear" name="upper-year-student">
@@ -46,7 +46,7 @@
 		</b-form-checkbox-group>
 	</b-form-group>	
 	<div class="mt-3 cssc-heading">
-    	Share with us
+    	Share With Us
     </div>
 	<p class="mb-2">
 		Are you okay with us posting your question anonymously under our FAQ on our website, Discord and/or Instagram?
