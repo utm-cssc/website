@@ -55,7 +55,7 @@ export default {
         }
       ],
       button1: {
-        label: 'Tech of the month',
+        label: 'Tech of the Month',
         link: 'tech-of-the-month'
       },
       button2: {
