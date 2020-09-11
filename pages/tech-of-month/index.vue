@@ -34,7 +34,7 @@ export default {
     const tempTitle = []
     const tempNum = []
     // Read the votes from the month of september
-    await getMonthVotes('September')
+    await getMonthVotes('2020', 'September')
       .then((result) => {
         const dictLen = Object.keys(result).length
         // Converts the dictionary to the appropriate array
