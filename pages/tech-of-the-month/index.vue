@@ -17,7 +17,7 @@
     <div class="mb-5" />
     <!-- Voting Title-->
     <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;" :disable="voteStatus" :hidden="voteStatus">
-      Voting
+      Voting for {{ this.month }}
       <VoteSystem :databaseSeries="series" :databaseLabels="labels" :month="month" :year="year" />
     </div>
   </div>
@@ -34,14 +34,15 @@ export default {
     // Fetch the data from the database
     const tempTitle = []
     const tempNum = []
-
+    // Change start date here
+    const startDate = 12
     // Fetch the current date and year and next month
     const currentDate = new Date()
     const nextMonth = new Date(currentDate.getUTCFullYear(), currentDate.getUTCMonth() + 1, 1).toLocaleString('default', { month: 'long' })
     const currentYear = currentDate.getUTCFullYear().toString()
     const currentDay = currentDate.getUTCDate()
     // Change the integer value if we want to change the start date for the voting system
-    if (currentDay >= 12) {
+    if (currentDay >= startDate) {
       let resultStatus = false
       // Fetch the votes from the current Month and Year
       await getMonthVotes(currentYear, nextMonth)
