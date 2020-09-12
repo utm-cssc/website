@@ -1,3 +1,10 @@
+---
+title: Mindset
+icon: /icons/mindset.svg
+desc: Cultivating a growth mindset can help us overcome limiting beliefs about our capabilities!
+link: mindset
+---
+
 # Mindset
 
 Our mindset shapes our belief in what we can and can't do.

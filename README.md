@@ -1,20 +1,9 @@
-# cssc
+<p align="center" width="100%">
+  <a href="https://cssc.utm.utoronto.ca/">
+    <img src="/assets/logo/cssc-logo.png" width="200px" align="center">
+  </a>
+</p>
 
-## Build Setup
-
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+<p align="center" width="100%">
+This is the repo for UTM CSSC Website. Check out the website by clicking <a href="https://cssc.utm.utoronto.ca/">here</a>! 
+</p>

@@ -1,4 +1,5 @@
 require('dotenv').config();
+const OG_IMAGE = "https://cssc.utm.utoronto.ca/logos/cssc-logo-without-title.png"
 export default {
   /*
   ** Nuxt rendering mode
@@ -19,7 +20,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { hid: 'og:title', name: 'og:title', content: 'UTM CSSC' },
+      { hid: 'og:image', name: 'og:image', content: OG_IMAGE },
+      { hid: 'og:url', name: 'og:url', content: 'https://cssc.utm.utoronto.ca/' },
+      { hid: 'og:type', name: 'og:type', content: 'website' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logos/cssc-logo-without-title.png' },
@@ -73,6 +78,7 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     '@nuxtjs/dotenv',
+    '@nuxtjs/svg',
     [
       'nuxt-mq',
       {

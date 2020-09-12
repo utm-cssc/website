@@ -1,9 +1,12 @@
 ---
-sidebar: auto
+title: HTML
+icon: /icons/html5.svg
+desc: Learn the language that forms the skeleton of every webpage!
+link: html
 ---
 
 # Introduction
-<!-- <grid-1-x-2 :link="link" :img-src="img" :title="club" :desc="desc"></grid-1-x-2> -->
+
 ## What is HTML?
 ![An Image](https://www.edureka.co/blog/wp-content/uploads/2019/06/What-is-HTML.jpg)
 HyperText Markup Language, also known as HTML, is the building blocks of all websites. HTML is combined with [CSS](../css) and [Javascript](../Javascript) to further enhance both the functionality and the appearance of the website. 

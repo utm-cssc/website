@@ -1,3 +1,10 @@
+---
+title: Robotics
+icon: /icons/robotics.svg
+desc: Embedded intelligence is everywhere... Robotics isn't just the future, it's the now!
+link: robotics
+---
+
 # Robotics
 
 The word “robot” comes from the Czech “robota”, meaning forced or hard labour.
