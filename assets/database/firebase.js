@@ -32,7 +32,7 @@ export async function checkUser (year, month, currentUtorid) {
   // Checks to see if the user has already voted or not
   // If they have not voted, they will be added to the databsae, then returning false
   // Return true otherwise
-  const userMonth = month + ' - Users'
+  const userMonth = month + 'Users'
   const userRef = db.collection('Voting').doc(year).collection(userMonth)
   return await userRef.where('utorid', '==', currentUtorid).limit(1).get()
     .then(async (snapshot) => {

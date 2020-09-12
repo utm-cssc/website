@@ -9,7 +9,7 @@ export default {
   props: {
     databaseSeries: {
       type: Array,
-      default: () => [0, 0, 0]
+      default: () => [1, 1, 1]
     },
     databaseLabels: {
       type: Array,
@@ -39,15 +39,17 @@ export default {
         legend: {
           position: 'bottom'
         },
-        labels: this.databaseLabels
+        labels: []
       },
       // Series is the numbers that will display onto the pie chart
-      series: this.databaseSeries
+      series: [1, 1, 1]
     }
   },
   created () {
     // Will run this function when the element is created
     this.convertDictionary()
+    this.series = this.databaseSeries
+    this.labels = this.databaseLabels
   },
   methods: {
     convertDictionary () {

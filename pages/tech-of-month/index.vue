@@ -35,29 +35,35 @@ export default {
     const tempTitle = []
     const tempNum = []
 
-    // Fetch the current month and year
+    // Fetch the current date and year and next month
     const currentDate = new Date()
-    const currentMonth = currentDate.toLocaleString('default', { month: 'long' })
+    const currentMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1).toLocaleString('default', { month: 'long' })
     const currentYear = currentDate.getFullYear().toString()
+    const currentDay = currentDate.getDate()
 
-    let resultStatus = false
-    // Fetch the votes from the current Month and Year
-    await getMonthVotes(currentYear, currentMonth)
-      .then((result) => {
-        if (result !== null) {
-          const dictLen = Object.keys(result).length
-          // Converts the dictionary to the appropriate array
-          for (let i = 0; i < dictLen; i++) {
-            tempTitle.push(result[i].id)
-            tempNum.push(result[i].Vote)
+    // Change the integer value if we want to change the start date for the voting system
+    if (currentDay >= 15) {
+      let resultStatus = false
+      // Fetch the votes from the current Month and Year
+      await getMonthVotes(currentYear, currentMonth)
+        .then((result) => {
+          if (result !== null) {
+            const dictLen = Object.keys(result).length
+            // Converts the dictionary to the appropriate array
+            for (let i = 0; i < dictLen; i++) {
+              tempTitle.push(result[i].id)
+              tempNum.push(result[i].Vote)
+            }
+          } else {
+            // Hide the vote system if there no available data
+            resultStatus = true
           }
-        } else {
-          // Hide the vote system if there no available data
-          resultStatus = true
-        }
-      })
-    // Set the dynamic data to the corresponding variable
-    return { labels: tempTitle, series: tempNum, month: currentMonth, year: currentYear, voteStatus: resultStatus }
+        })
+      // Set the dynamic data to the corresponding variable
+      return { labels: tempTitle, series: tempNum, month: currentMonth, year: currentYear, voteStatus: resultStatus }
+    }
+    // Hides the voting system if it is not the starting date of the month
+    return { voteStatus: true }
   },
   data: () => {
     return {
