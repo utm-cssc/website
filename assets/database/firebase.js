@@ -1,4 +1,4 @@
-import { db, firebase } from '~/plugins/firebase.js'
+import { db, firebase, auth, provider } from '~/plugins/firebase.js'
 
 export async function getMonthVotes (year, month) {
   // Read from the database
@@ -8,7 +8,6 @@ export async function getMonthVotes (year, month) {
     .then((snapshot) => {
       // Loop through each non-null document and creates a dictionary for each field including the document ID
       if (snapshot.empty) {
-        // console.log('No matching documents.')
         return null
       }
       const optionList = []
@@ -44,7 +43,6 @@ export async function checkUser (year, month, currentUtorid) {
   return await userRef.where('utorid', '==', currentUtorid).limit(1).get()
     .then(async (snapshot) => {
       if (snapshot.empty) {
-        // console.log('No matching documents.')
         await userRef.doc().set({
           utorid: currentUtorid
         })
@@ -77,4 +75,16 @@ export async function addVote (year, month, voteOptions) {
       Vote: firebase.firestore.FieldValue.increment(voteOptions[key])
     })
   }
+}
+
+export async function login () {
+  return await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+    .then(async function () {
+      const result = await auth.signInWithPopup(provider)
+      return result.user.uid
+    })
+    .catch((err) => {
+      console.log('Error getting document', err)
+      return ''
+    })
 }

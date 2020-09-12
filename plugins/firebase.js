@@ -1,6 +1,7 @@
 export const firebase = require('firebase/app')
 
 require('firebase/firestore')
+require('firebase/auth')
 
 const firebaseConfig = {
   apiKey: process.env.apiKey,
@@ -23,5 +24,7 @@ try {
 }
 
 export const db = firebase.firestore()
+export const provider = new firebase.auth.GoogleAuthProvider()
+export const auth = firebase.auth()
 
 export default firebase

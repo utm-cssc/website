@@ -44,7 +44,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '~/plugins/firebase.js'
+    '~/plugins/firebase.js',
+    { src: '~plugins/vue-apexchart.js', ssr: false }
   ],
   /*
   ** Auto import components

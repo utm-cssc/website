@@ -1,16 +1,21 @@
 <script>
 import RadioLayout from './RadioLayout.vue'
 // Uncomment this when auth has been implemented
-import { addVote, checkUser } from '~/assets/database/firebase.js'
-// import { addVote } from '~/assets/database/firebase.js'
+import { addVote, checkUser, login } from '~/assets/database/firebase.js'
 export default {
-  props: {
-    databaseSeries: Array,
-    databaseLabels: Array
-  },
   components: {
     apexcharts: () => import('vue-apexcharts'),
     RadioLayout
+  },
+  props: {
+    databaseSeries: {
+      type: Array,
+      default: () => [0, 0, 0]
+    },
+    databaseLabels: {
+      type: Array,
+      default: () => []
+    }
   },
   data () {
     return {
@@ -18,9 +23,10 @@ export default {
       vote: {},
       month: 'September',
       year: '2020',
-      utorid: 'test2',
+      googleID: '',
       errorStatus: true,
       userStatus: true,
+      signInStatus: true,
       options: {
         // Labels is the legend of the pie chart
         // The labels and series index corresponds with another, first index of the label is first value of the series
@@ -72,18 +78,31 @@ export default {
           return
         }
       }
-      // Uncomment this when auth has been implemented and edit it to work with the UofT auth
-      // Checks to see if the user has already voted before
-      await checkUser(this.year, this.month, this.utorid)
-        .then((result) => {
-          if (result) {
-            // console.log('user has already voted')
-            this.errorStatus = true
-            this.userStatus = false
-          }
+      await login()
+        .then((resultID) => {
+          this.googleID = resultID
         })
 
-      if (this.userStatus) {
+      // Uncomment this when auth has been implemented and edit it to work with the UofT auth
+      // Checks to see if the user has already voted before
+      if (this.googleID !== '') {
+        await checkUser(this.year, this.month, this.googleID)
+          .then((result) => {
+            if (result) {
+              // console.log('user has already voted')
+              this.userStatus = false
+            } else {
+              this.userStatus = true
+            }
+            this.signInStatus = true
+          })
+      } else {
+        this.signInStatus = false
+        this.userStatus = true
+      }
+
+      this.errorStatus = true
+      if (this.userStatus && this.signInStatus) {
         // Update the votes in the database, adds user to the database and update series for piechart
         await addVote(this.year, this.month, this.vote)
         this.updateSeries()
@@ -101,6 +120,7 @@ export default {
         <!-- Displays the radio button layout -->
         <RadioLayout :children="Object.keys(this.vote)" :titles="this.title"></RadioLayout>
         <p style="line-height: 0; font-size: 15px; color: red;" :hidden="this.errorStatus">Please enter a vote for each choice</P>
+        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="this.signInStatus">Please sign in if you wish to vote</P>
         <p style="line-height: 0; font-size: 15px; color: red;" :hidden="this.userStatus">You've already voted</P>
         <button @click="submitVote()" style="padding-left: 12px;"> Submit </button>
       </div>
