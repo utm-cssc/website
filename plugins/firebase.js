@@ -16,7 +16,7 @@ const firebaseConfig = {
 
 try {
   firebase.initializeApp(firebaseConfig)
-  console.log('Connected to firebase')
+  // console.log('Connected to firebase')
 } catch (err) {
   if (!/already exists/.test(err.message)) {
     console.error('Firebase initialization error', err.stack)

@@ -3,13 +3,13 @@
     <div
       v-for="childTitle in titles"
       :key="childTitle"
-      >
+    >
       <h3
-      class="my-3 title"
-      data-v-16201546=""
-      style="color: #606f7b; margin-bottom: 1rem !important;"
+        class="my-3 title"
+        data-v-16201546=""
+        style="color: #606f7b; margin-bottom: 1rem !important;"
       >
-      {{ childTitle }}
+        {{ childTitle }}
       </h3>
       <div align="center" style="padding-bottom: 30px;">
         <span
@@ -17,14 +17,15 @@
           :key="child"
           style="padding-left: 10px; padding-right: 10px;"
         >
-        <input
-        type="radio"
-        :name="childTitle"
-        :id="child+childTitle"
-        :class="child"
-        :value="child+childTitle"
-        @click="onChange(child, childTitle)"/>
-        <label class="desc" style="color: #606f7b;">{{ child }}</label>
+          <input
+            :id="child+childTitle"
+            type="radio"
+            :name="childTitle"
+            :class="child"
+            :value="child+childTitle"
+            @click="onChange(child, childTitle)"
+          ></input>
+          <label class="desc" style="color: #606f7b;">{{ child }}</label>
         </span>
       </div>
     </div>
@@ -34,8 +35,14 @@
 <script>
 export default {
   props: {
-    children: Array,
-    titles: Array
+    children: {
+      type: Array,
+      default: () => []
+    },
+    titles: {
+      type: Array,
+      default: () => []
+    }
   },
   data () {
     return {

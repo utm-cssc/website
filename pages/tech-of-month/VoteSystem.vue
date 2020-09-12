@@ -15,18 +15,25 @@ export default {
     databaseLabels: {
       type: Array,
       default: () => []
+    },
+    month: {
+      type: String,
+      default: ''
+    },
+    year: {
+      type: String,
+      default: ''
     }
   },
   data () {
     return {
       title: ['First Choice', 'Second Choice', 'Third Choice'],
       vote: {},
-      month: 'September',
-      year: '2020',
       googleID: '',
       errorStatus: true,
       userStatus: true,
       signInStatus: true,
+      voteStatus: true,
       options: {
         // Labels is the legend of the pie chart
         // The labels and series index corresponds with another, first index of the label is first value of the series
@@ -74,6 +81,7 @@ export default {
         const keyValue = this.vote[key]
         if (keyValue <= 0) {
           this.errorStatus = false
+          this.voteStatus = true
           this.userStatus = true
           return
         }
@@ -95,10 +103,12 @@ export default {
               this.userStatus = true
             }
             this.signInStatus = true
+            this.voteStatus = true
           })
       } else {
         this.signInStatus = false
         this.userStatus = true
+        this.voteStatus = true
       }
 
       this.errorStatus = true
@@ -108,6 +118,7 @@ export default {
         this.updateSeries()
         this.errorStatus = true
         this.userStatus = true
+        this.voteStatus = false
       }
     }
   }
@@ -116,13 +127,24 @@ export default {
 <template>
   <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto mt-5">
     <article>
-      <div class="flex-col mr-2" id="container">
+      <div class="flex-col mr-2">
         <!-- Displays the radio button layout -->
-        <RadioLayout :children="Object.keys(this.vote)" :titles="this.title"></RadioLayout>
-        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="this.errorStatus">Please enter a vote for each choice</P>
-        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="this.signInStatus">Please sign in if you wish to vote</P>
-        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="this.userStatus">You've already voted</P>
-        <button @click="submitVote()" style="padding-left: 12px;"> Submit </button>
+        <RadioLayout :children="Object.keys(vote)" :titles="title" />
+        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="errorStatus">
+          Please enter a vote for each choice
+        </P>
+        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="signInStatus">
+          Please sign in if you wish to vote
+        </P>
+        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="userStatus">
+          You've already voted
+        </P>
+        <p style="line-height: 0; font-size: 15px;" :hidden="voteStatus">
+          Vote has been submitted
+        </P>
+        <button style="padding-left: 12px;" @click="submitVote()">
+          Submit
+        </button>
       </div>
       <!-- Display result here, can use bar graph or pie char -->
     </article>
@@ -130,15 +152,15 @@ export default {
     <no-ssr>
       <div align="center">
         <apexcharts
-        width="300"
-        type="donut"
-        :options="options"
-        :series="series"
-        id="apexChart"
-        style="position: center;"/>
+          id="apexChart"
+          width="300"
+          type="donut"
+          :options="options"
+          :series="series"
+          style="position: center;"
+        />
       </div>
     </no-ssr>
-
   </div>
 </template>
 
