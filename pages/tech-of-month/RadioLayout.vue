@@ -1,5 +1,6 @@
 <template>
   <div style="padding-left: 10px;">
+  <!-- Row title -->
     <div
       v-for="childTitle in titles"
       :key="childTitle"
@@ -11,12 +12,14 @@
       >
         {{ childTitle }}
       </h3>
+      <!-- Radio button layout -->
       <div align="center" style="padding-bottom: 30px;">
         <span
           v-for="child in children"
           :key="child"
           style="padding-left: 10px; padding-right: 10px;"
         >
+        <!-- Individual radio button -->
           <input
             :id="child+childTitle"
             type="radio"
@@ -73,7 +76,7 @@ export default {
       }
     },
     addVote (title) {
-      // Checks to see the rankings of the selections (If the user votes 'a' as 'First choice', then it will return 3)
+      // Checks to see the rankings of the selections (If the user votes 'a' as 'First choice', then it will return 3 for 'a')
       if (title === this.titles[0]) {
         return 3
       } else if (title === this.titles[1]) {
@@ -85,11 +88,11 @@ export default {
       }
     },
     onChange (className, title) {
-      // Function runs when the user clicks on any of hte button
+      // Function runs when the user clicks on any of the radio buttons
       let disabledStatus = true
       if (this.previouslySelected[title] === className) {
         // Checks to see if the user selected a radio button that is already checked
-        //  it will then uncheck the button and enable all the buttons of the same class name
+        // It will then uncheck the button and enable all the buttons of the same class name
         document.getElementById(className + title).checked = false
         disabledStatus = false
         this.previouslySelected[title] = ''
@@ -105,7 +108,7 @@ export default {
         this.previouslySelected[title] = className
         this.$parent.vote[className] = this.addVote(title)
       }
-      // Will either disable radio buttons of the same class name or enable them
+      // Will either disable/enable radio buttons of the same class name
       this.disableButtions(className, title, disabledStatus)
     }
   }

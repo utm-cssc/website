@@ -1,8 +1,8 @@
 import { db, firebase, auth, provider } from '~/plugins/firebase.js'
 
 export async function getMonthVotes (year, month) {
-  // Read from the database
-  // Retrieves a reference of the collection for the month
+  // Fetch from the database
+  // Retrieves a reference of the collection for the year and month
   const monthRef = db.collection('Voting').doc(year).collection(month)
   return await monthRef.get()
     .then((snapshot) => {
@@ -28,16 +28,10 @@ export async function getMonthVotes (year, month) {
     })
 }
 
-// export async function addOptions (name) {
-//   const optionsRef = db.collection('month').doc(name)
-//   await optionsRef.set({
-//     Number: 0
-//   })
-// }
-
 export async function checkUser (year, month, currentUtorid) {
   // Checks to see if the user has already voted or not
-  // If they have not voted, they would not be in the user collection, therefore returning false
+  // If they have not voted, they will be added to the databsae, then returning false
+  // Return true otherwise
   const userMonth = month + ' - Users'
   const userRef = db.collection('Voting').doc(year).collection(userMonth)
   return await userRef.where('utorid', '==', currentUtorid).limit(1).get()
@@ -56,19 +50,9 @@ export async function checkUser (year, month, currentUtorid) {
     })
 }
 
-export async function addUser (year, month, newUtorid) {
-  // Adds the user to the database to prevent voting multiple times
-  const userMonth = month + ' - Users'
-  const userRef = db.collection('Voting').doc(year).collection(userMonth).doc()
-  await userRef.set({
-    utorid: newUtorid
-  })
-}
-
 export async function addVote (year, month, voteOptions) {
   // Incrementing value by the counter
   // Will loop through all the vote options and update accordingly.
-  // The value for the counter can be adjusted to be more fair
   const optionsRef = db.collection('Voting').doc(year).collection(month)
   for (const key in voteOptions) {
     await optionsRef.doc(key).update({
@@ -78,6 +62,7 @@ export async function addVote (year, month, voteOptions) {
 }
 
 export async function login () {
+  // Login using Google
   return await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
     .then(async function () {
       const result = await auth.signInWithPopup(provider)

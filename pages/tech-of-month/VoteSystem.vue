@@ -72,11 +72,8 @@ export default {
       this.series = tempNum
     },
     async submitVote () {
-      // Submit the votes to the database, it will first rearrange the dictionary into an array where the head is the first choice
-      // and the tail is the last choice
-      // The number of votes can be adjusted so it is fair, currently it is just first place gets 3 votes, second place gets 2, and last place gets 1
-      // console.log(JSON.stringify(this.vote))
 
+      // Checks if user selected a vote option for each row
       for (const key in this.vote) {
         const keyValue = this.vote[key]
         if (keyValue <= 0) {
@@ -91,13 +88,14 @@ export default {
           this.googleID = resultID
         })
 
-      // Uncomment this when auth has been implemented and edit it to work with the UofT auth
       // Checks to see if the user has already voted before
+      // If the user has not voted before, add the user to the database
+      // Currently working with google sign in
       if (this.googleID !== '') {
         await checkUser(this.year, this.month, this.googleID)
           .then((result) => {
             if (result) {
-              // console.log('user has already voted')
+              // User has already voted
               this.userStatus = false
             } else {
               this.userStatus = true
@@ -106,6 +104,7 @@ export default {
             this.voteStatus = true
           })
       } else {
+        // User did not properly sign in
         this.signInStatus = false
         this.userStatus = true
         this.voteStatus = true
@@ -113,7 +112,7 @@ export default {
 
       this.errorStatus = true
       if (this.userStatus && this.signInStatus) {
-        // Update the votes in the database, adds user to the database and update series for piechart
+        // Update the votes in the database, update series for piechart
         await addVote(this.year, this.month, this.vote)
         this.updateSeries()
         this.errorStatus = true
@@ -130,6 +129,7 @@ export default {
       <div class="flex-col mr-2">
         <!-- Displays the radio button layout -->
         <RadioLayout :children="Object.keys(vote)" :titles="title" />
+        <!-- Error messages -->
         <p style="line-height: 0; font-size: 15px; color: red;" :hidden="errorStatus">
           Please enter a vote for each choice
         </P>
@@ -146,7 +146,7 @@ export default {
           Submit
         </button>
       </div>
-      <!-- Display result here, can use bar graph or pie char -->
+      <!-- Display result here-->
     </article>
     <br>
     <no-ssr>

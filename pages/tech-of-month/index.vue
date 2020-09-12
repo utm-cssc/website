@@ -31,15 +31,17 @@ export default {
     VoteSystem
   },
   async asyncData ({ params }) {
+    // Fetch the data from the database
     const tempTitle = []
     const tempNum = []
 
+    // Fetch the current month and year
     const currentDate = new Date()
     const currentMonth = currentDate.toLocaleString('default', { month: 'long' })
     const currentYear = currentDate.getFullYear().toString()
 
     let resultStatus = false
-    // Read the votes from the current Month and Year
+    // Fetch the votes from the current Month and Year
     await getMonthVotes(currentYear, currentMonth)
       .then((result) => {
         if (result !== null) {
@@ -50,10 +52,11 @@ export default {
             tempNum.push(result[i].Vote)
           }
         } else {
+          // Hide the vote system if there no available data
           resultStatus = true
         }
       })
-    // Set the labels and series of the pie chart
+    // Set the dynamic data to the corresponding variable
     return { labels: tempTitle, series: tempNum, month: currentMonth, year: currentYear, voteStatus: resultStatus }
   },
   data: () => {
