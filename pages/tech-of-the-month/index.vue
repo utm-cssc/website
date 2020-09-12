@@ -15,15 +15,57 @@
       <ResourcesGrid :items="resources" />
     </div>
     <div class="mb-5" />
+    <!-- Voting Title-->
+    <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;" :hidden="voteStatus">
+      Voting
+      <VoteSystem :databaseSeries="series" :databaseLabels="labels" :month="month" :year="year" />
+    </div>
   </div>
 </template>
 
 <script>
+import VoteSystem from './VoteSystem.vue'
+import { getMonthVotes } from '~/assets/database/firebase.js'
 export default {
+  components: {
+    VoteSystem
+  },
+  async asyncData ({ params }) {
+    // Fetch the data from the database
+    const tempTitle = []
+    const tempNum = []
+
+    // Fetch the current month and year
+    const currentDate = new Date()
+    const currentMonth = currentDate.toLocaleString('default', { month: 'long' })
+    const currentYear = currentDate.getFullYear().toString()
+
+    let resultStatus = false
+    // Fetch the votes from the current Month and Year
+    await getMonthVotes(currentYear, currentMonth)
+      .then((result) => {
+        if (result !== null) {
+          const dictLen = Object.keys(result).length
+          // Converts the dictionary to the appropriate array
+          for (let i = 0; i < dictLen; i++) {
+            tempTitle.push(result[i].id)
+            tempNum.push(result[i].Vote)
+          }
+        } else {
+          // Hide the vote system if there no available data
+          resultStatus = true
+        }
+      })
+    // Set the dynamic data to the corresponding variable
+    return { labels: tempTitle, series: tempNum, month: currentMonth, year: currentYear, voteStatus: resultStatus }
+  },
   data: () => {
     return {
       labels: [],
       series: [],
+      month: '',
+      year: '',
+      voteStatus: false,
       features: [
         {
           title: 'What is Technology of the month?',
