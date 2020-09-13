@@ -161,6 +161,7 @@ export default {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  width: 190px;
 }
 
 input:focus {
