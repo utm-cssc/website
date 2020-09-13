@@ -90,10 +90,6 @@ a:hover {
   padding: 10px 10px 10px 10px;
 }
 
-.nav > .nav-btn {
-  display: none;
-}
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -147,14 +143,13 @@ a:hover {
     display: block;
     width: 25px;
     height: 10px;
-    border-top: 2px solid #eee;
+    border-top: 2px solid rgb(0, 0, 0);
   }
 
   .nav-links {
     position: absolute;
     display: block;
     width: 42%;
-    background-color: #333;
     border-radius: 6px;
     transition: all 0.2s ease-out;
     overflow-y: hidden;
@@ -170,11 +165,19 @@ a:hover {
 
   .nav > #nav-check:not(:checked) ~ .nav-links {
     opacity: 0;
+    z-index: -1;
   }
 
   .nav > #nav-check:checked ~ .nav-links {
     overflow-y: auto;
     opacity: 1;
+    z-index: 2;
+  }
+
+  .nav-link:hover,
+  .nav-link:active {
+    letter-spacing: 0;
+    transform: none;
   }
 }
 </style>
