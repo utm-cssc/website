@@ -1,21 +1,23 @@
 <template>
-  <a
-    class="box resource-box pb-3"
-    :href="link"
-    :style="{ background: color}"
-    @mouseover="hovered = true"
-    @mouseleave="hovered = false"
-  >
-    <figure class="resource-icon">
-      <img class="icon" :src="iconFileName" style="filter: brightness(0) invert(1);">
-    </figure>
-    <transition name="slide-out" mode="out-in">
-      <div v-if="!hovered" class="resource-title">{{ title }}</div>
-    </transition>
-    <transition name="slide-in">
-      <div v-show="hovered" class="resource-desc">{{ desc }}</div>
-    </transition>
-  </a>
+  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+    <a
+      class="box resource-box pb-3"
+      :href="link"
+      :style="{ background: color}"
+      @mouseover="hovered = true"
+      @mouseleave="hovered = false"
+    >
+      <figure class="resource-icon">
+        <img class="icon" :src="iconFileName" style="filter: brightness(0) invert(1);">
+      </figure>
+      <transition name="slide-out" mode="out-in">
+        <div v-if="!hovered" class="resource-title">{{ title }}</div>
+      </transition>
+      <transition name="slide-in">
+        <div v-show="hovered" class="resource-desc">{{ desc }}</div>
+      </transition>
+    </a>
+  </div>
 </template>
 
 <script>
@@ -71,7 +73,7 @@ a {
 }
 
 .box.resource-box {
-  height: 212px;
+  height: 230px;
   transition: all 0.2s ease-in-out;
   flex: 1 0 21%;
   margin: 5px !important;
@@ -102,7 +104,6 @@ a {
   font-size: 24px;
   color: #fff;
   font-weight: 500;
-  max-width: 200px;
   word-wrap: break-word;
   line-height: 1.2em;
   position: absolute;
@@ -118,7 +119,7 @@ a {
   color: #fff;
   font-weight: 300;
   position: absolute;
-  max-width: 250px;
+  max-width: 80%;
 }
 
 .slide-out-enter-active {
