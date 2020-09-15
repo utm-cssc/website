@@ -1,5 +1,10 @@
 <h1 align="center">
-  <p align="center">The UTM CSSC Website</p>
+  <p align="center">UTM CSSC Website</p>
+  <p align="center" width="100%">
+  <a href="https://cssc.utm.utoronto.ca/">
+    <img src="/assets/logo/cssc-logo.png" width="200px" align="center">
+  </a>
+</p>
   <h4 align="center">Supporting MCS Students</h4>
   <p align="center" width="100%">
     <a href="https://cssc.utm.utoronto.ca/">
