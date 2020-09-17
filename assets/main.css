@@ -6,14 +6,7 @@
   --color-primary-light: #00df96;
   --color-primary: #00d097;
   --color-primary-dark: #009b68;
-  --color-mcss: #6413d6;
-  --color-wisc: #f5e218;
-  --color-utmsam:#f28b05;
-  --color-dsc: #eb07a3;
-  --color-robotics: #0071db;
-  --bg: #fff;
-
-  /* Get colors for calendar for differesnt clubs */
+  --bg: #ffffff;
 }
 
 html {
