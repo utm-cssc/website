@@ -6,9 +6,15 @@
       @keydown.up="decrement"
       @keydown.enter="go"
     >
-      <label for="search" class="sr-only">Search</label>
+      <label
+        for="search"
+        class="sr-only"
+      >Search</label>
       <div class="search-container flex align-items-center py-1 px-2">
-        <img src="/icons/search.svg" class="icon-search mr-2"/>
+        <img
+          src="/icons/search.svg"
+          class="icon-search mr-2"
+        />
         <input
           id="search"
           ref="search"
@@ -20,7 +26,7 @@
           autocomplete="off"
           @focus="onFocus"
           @blur="onBlur"
-       />
+        />
       </div>
     </div>
     <ul
@@ -29,7 +35,10 @@
       :class="{ 'rounded-t-none': focus && (searching || articles.length) }"
       style="margin-top: 37px; list-style-position: inside;"
     >
-      <li v-if="searching && !articles.length" class="px-2">Searching...</li>
+      <li
+        v-if="searching && !articles.length"
+        class="px-2"
+      >Searching...</li>
       <li
         class="search-item text-capitalize"
         :class="{'focused-search-item': focusIndex == index }"
@@ -43,8 +52,14 @@
           class="flex px-2 py-2 items-center leading-5 transition ease-in-out duration-150 search-item"
           @click="focus = false"
         >
-          <span v-if="result.category" class="font-bold">{{ result.category }}</span>
-          <IconChevronRight v-if="result.category" class="w-3 h-3 mx-1" />
+          <span
+            v-if="result.category"
+            class="font-bold"
+          >{{ result.category }}</span>
+          <IconChevronRight
+            v-if="result.category"
+            class="w-3 h-3 mx-1"
+          />
           {{ result.slug }}
         </NuxtLink>
       </li>
@@ -128,7 +143,6 @@ export default {
 </script>
 
 <style scoped>
-
 .search-item {
   color: var(--color-body);
   display: block;
