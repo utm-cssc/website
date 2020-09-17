@@ -1,6 +1,7 @@
 <template>
-  <div class="container px-5 resources-grid">
-    <resources-grid-item
+  <div class="container px-5">
+    <div class="row d-flex flex-wrap">
+      <resources-grid-item
       v-for="item in items"
       :key="item.title"
       :title="item.title"
@@ -8,7 +9,8 @@
       :icon-file-name="item.icon"
       :desc="item.desc"
       :color="color"
-    />
+      />
+    </div>
   </div>
 </template>
 
@@ -31,11 +33,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.resources-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-</style>

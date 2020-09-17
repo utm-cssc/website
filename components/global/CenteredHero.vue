@@ -5,7 +5,7 @@
     </div>
     <div class="mt-3 mt-md-4 mt-lg-5 row d-flex flex-column align-items-center">
       <div class="col-lg-10 text-center">
-        <h1 class="hero-heading">
+        <h1 class="cssc-heading">
           {{ title }}
         </h1>
         <p class="hero-tag">
@@ -13,7 +13,7 @@
         </p>
       </div>
     </div>
-    <div class="mt-3 d-flex justify-content-center">
+    <div class="mt-4 mt-sm-5 d-flex justify-content-center">
       <b-button
         v-if="button1 && button1.link && button1.label"
         :href="button1.link"
@@ -34,7 +34,7 @@
         {{ button2.label }}
       </b-button>
     </div>
-    <div class="d-flex justify-center">
+    <div class="d-flex justify-center mt-10 mt-sm-20">
       <div id="arrow">
         <a :href="arrowLink"><img class="bounce" src="/icons/arrow.svg" alt="Down Arrow"></a>
       </div>
@@ -94,7 +94,7 @@ export default {
 
 <style scoped>
 .hero {
-  height: 88vh;
+  min-height: 88vh;
 }
 
 .btn-cta {
@@ -113,13 +113,13 @@ export default {
 .btn-cta:hover {
   color: var(--color-primary-light) !important;
   background-color: var(--bg) !important;
-  border-color: var(--color-light) !important;
+  border-color: var(--color-primary) !important;
 }
 
 .btn-cta-alt {
-  color: var(--color-gold) !important;
+  color: var(--color-heading) !important;
   background-color: var(--bg) !important;
-  border-color: var(--color-light) !important;
+  border-color: var(--color-heading) !important;
   outline: none;
   font-size: 1.42rem;
 }
@@ -129,21 +129,11 @@ export default {
   color: #fff !important;
 }
 
-.hero-heading {
-  font-weight: 700;
-  font-family: var(--font-heading);
-  color: var(--color-heading);
-  letter-spacing: 0.025em;
-  font-size: 90px;
-  line-height: 1.05;
-}
-
 .hero-tag {
   font-size: 32px;
   color: var(--color-text);
   letter-spacing: -0.032em;
   line-height: 1.5;
-  margin-top: 32px;
 }
 
 .btn-icon {
@@ -156,7 +146,6 @@ export default {
 }
 
 #arrow {
-  position: absolute;
   bottom: 50px;
   width: 75px;
 }
@@ -176,12 +165,6 @@ export default {
 }
 
 @media screen and (max-width: 992px) {
-  .hero-heading {
-    font-size: 80px;
-    line-height: 1.05;
-    z-index: 1000;
-  }
-
   .hero-tag {
     font-size: 25px;
   }
@@ -204,10 +187,6 @@ export default {
 }
 
 @media (max-width: 576px) {
-  .hero-heading {
-    font-size: 48px;
-  }
-
   .hero-tag {
     font-size: 20px;
   }
