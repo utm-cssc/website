@@ -56,7 +56,7 @@ export async function addVote (year, month, voteOptions) {
   const optionsRef = db.collection('Voting').doc(year).collection(month)
   for (const key in voteOptions) {
     await optionsRef.doc(key).update({
-      Vote: firebase.firestore.FieldValue.increment(voteOptions[key])
+      Vote: firebase.firestore.FieldValue.increment(parseInt(voteOptions[key]))
     })
   }
 }

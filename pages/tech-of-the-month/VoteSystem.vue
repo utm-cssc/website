@@ -63,7 +63,7 @@ export default {
       const tempNum = []
       let index = 0
       for (const key in this.vote) {
-        tempNum[index] = this.series[index] + this.vote[key]
+        tempNum[index] = this.series[index] + parseInt(this.vote[key])
         index += 1
       }
 
@@ -109,9 +109,9 @@ export default {
         // Update the votes in the database, update series for piechart
         await addVote(this.year, this.month, this.vote)
         this.updateSeries()
-        this.$refs.radioComponent.reset()
         this.errorStatus = true
         this.voteStatus = false
+        this.$refs.radioComponent.reset()
       }
     }
   }

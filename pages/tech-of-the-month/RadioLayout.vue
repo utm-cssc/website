@@ -92,7 +92,6 @@ export default {
     onChange (className, title) {
       // Function runs when the user clicks on any of the radio buttons
       const clickedItem = document.getElementById(className + title)
-      console.log(className, title)
       let disabledStatus = true
       // Checks to see if the user selected a radio button that is already checked
       if (this.previouslySelected[title] === className) {
