@@ -1,12 +1,10 @@
 <script>
-// import RadioLayout from './RadioLayout.vue'
-import RadioLayoutWIP from './RadioLayout WIP.vue'
+import RadioLayout from './RadioLayout.vue'
 import { addVote, checkUser, login } from '~/assets/database/firebase.js'
 export default {
   components: {
     apexcharts: () => import('vue-apexcharts'),
-    // RadioLayout,
-    RadioLayoutWIP
+    RadioLayout
   },
   props: {
     databaseSeries: {
@@ -30,7 +28,7 @@ export default {
     return {
       title: ['First Choice', 'Second Choice', 'Third Choice'],
       vote: {},
-      googleID: '',
+      userID: '',
       errorStatus: true,
       voteStatus: true,
       errorMessage: '',
@@ -84,14 +82,14 @@ export default {
       }
       await login()
         .then((resultID) => {
-          this.googleID = resultID
+          this.userID = resultID
         })
 
       // Checks to see if the user has already voted before
       // If the user has not voted before, add the user to the database
       // Currently working with google sign in
-      if (this.googleID !== '') {
-        await checkUser(this.year, this.month, this.googleID)
+      if (this.userID !== '') {
+        await checkUser(this.year, this.month, this.userID)
           .then((result) => {
             if (result) {
               // User has already voted
@@ -124,16 +122,15 @@ export default {
     <article>
       <div class="flex-col mr-2">
         <!-- Displays the radio button layout -->
-        <!-- <RadioLayout ref="radioComponent" :children="Object.keys(vote)" :titles="title" /> -->
-        <RadioLayoutWIP ref="radioComponent" :children="Object.keys(vote)" :titles="title" />
-        <!-- Error messages -->
+        <RadioLayout ref="radioComponent" :children="Object.keys(vote)" :titles="title" />
+        <!-- Error message -->
         <p style="line-height: 0; font-size: 15px; color: red;" :hidden="errorStatus">
           {{ errorMessage }}
         </P>
         <p style="line-height: 0; font-size: 15px;" :hidden="voteStatus">
           Vote has been submitted
         </P>
-        <button style="padding-left: 12px;" @click="submitVote()">
+        <button class="submitButton" style="padding-left: 12px;" @click="submitVote()">
           Submit
         </button>
       </div>
@@ -156,3 +153,20 @@ export default {
 </template>
 
 </script>
+
+</script>
+<style scoped>
+/* Hover effects */
+.submitButton:hover {
+  color: #00d097;
+  transition-duration: 0.5s;
+}
+
+@media (max-width: 576px) {
+  .submitButton {
+    font-size: 25px;
+    padding-bottom: 20px;
+  }
+}
+
+</style>

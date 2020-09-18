@@ -2,7 +2,7 @@
   <div style="padding-left: 10px;">
   <!-- Row title -->
     <div
-      v-for="childTitle in titles"
+      v-for="(childTitle, index) in titles"
       :key="childTitle"
     >
       <h3
@@ -13,22 +13,24 @@
         {{ childTitle }}
       </h3>
       <!-- Radio button layout -->
-      <div align="center" style="padding-bottom: 30px;">
+      <div class="container" align="center">
         <span
           v-for="child in children"
           :key="child"
-          style="padding-left: 10px; padding-right: 10px;"
+          style="padding-left: 20px; padding-right: 20px;"
         >
         <!-- Individual radio button -->
-          <input
-            :id="child+childTitle"
-            type="radio"
-            :name="childTitle"
-            :class="child"
-            :value="child+childTitle"
-            @click="onChange(child, childTitle)"
-          ></input>
-          <label class="desc" style="color: #606f7b;">{{ child }}</label>
+          <label class="descContainers" style="color: #606f7b;">{{ child }}
+              <input
+              :id="child+childTitle"
+              type="radio"
+              :name="childTitle"
+              :class="child"
+              :value="3 - index"
+              @click="onChange(child, childTitle)"
+            ></input>
+            <span class="radioBtn"></span>
+          </label>
         </span>
       </div>
     </div>
@@ -58,13 +60,13 @@ export default {
   },
   methods: {
     reset () {
+      // Resets all radio butotons
       const allRadios = document.getElementsByTagName('input')
-      console.log(this.children)
-      let index = 0
       for (let i = 0; i < allRadios.length; i++) {
         allRadios[i].disabled = false
         allRadios[i].checked = false
       }
+      let index = 0
       for (const key in this.previouslySelected) {
         this.previouslySelected[key] = ''
         this.$parent.vote[this.children[index]] = 0
@@ -74,11 +76,9 @@ export default {
     convertDictionary () {
       // Convery an array to a dictionary
       const dictLen = Object.keys(this.titles).length
-      const tempDict = {}
       for (let i = 0; i < dictLen; i++) {
-        tempDict[this.titles[i]] = ''
+        this.$set(this.previouslySelected, this.titles[i], '')
       }
-      this.previouslySelected = tempDict
     },
     disableButtions (className, title, status) {
       // Disables/Enables all other radio buttons of the same class name
@@ -89,38 +89,28 @@ export default {
         }
       }
     },
-    addVote (title) {
-      // Checks to see the rankings of the selections (If the user votes 'a' as 'First choice', then it will return 3 for 'a')
-      if (title === this.titles[0]) {
-        return 3
-      } else if (title === this.titles[1]) {
-        return 2
-      } else if (title === this.titles[2]) {
-        return 1
-      } else {
-        return 0
-      }
-    },
     onChange (className, title) {
       // Function runs when the user clicks on any of the radio buttons
+      const clickedItem = document.getElementById(className + title)
+      console.log(className, title)
       let disabledStatus = true
+      // Checks to see if the user selected a radio button that is already checked
       if (this.previouslySelected[title] === className) {
-        // Checks to see if the user selected a radio button that is already checked
         // It will then uncheck the button and enable all the buttons of the same class name
-        document.getElementById(className + title).checked = false
+        clickedItem.checked = false
         disabledStatus = false
         this.previouslySelected[title] = ''
         this.$parent.vote[className] = 0
+      // Checks to see if the user clicks on a radio button of the same row
       } else if (this.previouslySelected[title] !== className && this.previouslySelected[title] !== '') {
-        // Checks to see if the user clicks on a radio button of the same row
         // It will then enable all the buttons with previously checked class name and disable the newly checked button
         this.disableButtions(this.previouslySelected[title], title, false)
         this.previouslySelected[title] = className
-        this.$parent.vote[className] = this.addVote(title)
+        this.$parent.vote[className] = clickedItem.value
+      // If the user clicks an unchecked radio button
       } else {
-        // If the user clicks an unchecked radio button
         this.previouslySelected[title] = className
-        this.$parent.vote[className] = this.addVote(title)
+        this.$parent.vote[className] = clickedItem.value
       }
       // Will either disable/enable radio buttons of the same class name
       this.disableButtions(className, title, disabledStatus)
@@ -128,3 +118,96 @@ export default {
   }
 }
 </script>
+
+</script>
+<style scoped>
+.container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Customize the container */
+.descContainers {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.descContainers input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.radioBtn {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* Hover effects */
+.descContainers:hover input ~ .radioBtn {
+  background-color: #00d097;
+  transition-duration: 1s;
+}
+
+/* Checked radio button */
+.descContainers input:checked ~ .radioBtn {
+  background-color: #009b68;
+  transition-duration: 1s;
+}
+
+/* disabled radio button */
+.descContainers input:disabled ~ .radioBtn {
+  opacity: 50%;
+  background-color: gray;
+  transition-duration: 1s;
+}
+
+/* Create the indicator for when the button is checked */
+.radioBtn::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Style the indicator  */
+.descContainers .radioBtn::after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Show the indicator when checked */
+.descContainers input:checked ~ .radioBtn::after {
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .descContainers {
+    display: block;
+  }
+
+  .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+  }
+}
+</style>

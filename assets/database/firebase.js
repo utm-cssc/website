@@ -67,8 +67,7 @@ export async function login () {
     .then(async function () {
       const result = await auth.signInWithPopup(provider)
       console.log(result.user.uid)
-      return ''
-      // return result.user.uid
+      return result.user.uid
     })
     .catch((err) => {
       console.log('Login: Error getting document', err)

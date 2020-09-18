@@ -35,7 +35,7 @@ export default {
     const tempTitle = []
     const tempNum = []
     // Change start date here
-    const startDate = 12
+    const startDate = 15
     // Fetch the current date and year and next month
     const currentDate = new Date()
     const nextMonth = new Date(currentDate.getUTCFullYear(), currentDate.getUTCMonth() + 1, 1).toLocaleString('default', { month: 'long' })
