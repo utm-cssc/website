@@ -30,14 +30,13 @@ export default {
       vote: {},
       googleID: '',
       errorStatus: true,
-      userStatus: true,
-      signInStatus: true,
       voteStatus: true,
+      errorMessage: '',
       options: {
         // Labels is the legend of the pie chart
         // The labels and series index corresponds with another, first index of the label is first value of the series
         legend: {
-          position: 'bottom'
+          position: 'top'
         },
         labels: this.databaseLabels
       },
@@ -72,12 +71,12 @@ export default {
     },
     async submitVote () {
       // Checks if user selected a vote option for each row
+      this.voteStatus = true
       for (const key in this.vote) {
         const keyValue = this.vote[key]
         if (keyValue <= 0) {
+          this.errorMessage = 'Please enter a vote for each choice'
           this.errorStatus = false
-          this.voteStatus = true
-          this.userStatus = true
           return
         }
       }
@@ -94,27 +93,24 @@ export default {
           .then((result) => {
             if (result) {
               // User has already voted
-              this.userStatus = false
+              this.errorMessage = 'You have already voted'
+              this.errorStatus = false
             } else {
-              this.userStatus = true
+              this.errorStatus = true
             }
-            this.signInStatus = true
-            this.voteStatus = true
           })
       } else {
         // User did not properly sign in
-        this.signInStatus = false
-        this.userStatus = true
-        this.voteStatus = true
+        this.errorMessage = 'Please sign in if you wish to vote'
+        this.errorStatus = false
       }
 
-      this.errorStatus = true
-      if (this.userStatus && this.signInStatus) {
+      if (this.errorStatus) {
         // Update the votes in the database, update series for piechart
         await addVote(this.year, this.month, this.vote)
         this.updateSeries()
+        this.$refs.radioComponent.reset()
         this.errorStatus = true
-        this.userStatus = true
         this.voteStatus = false
       }
     }
@@ -126,16 +122,10 @@ export default {
     <article>
       <div class="flex-col mr-2">
         <!-- Displays the radio button layout -->
-        <RadioLayout :children="Object.keys(vote)" :titles="title" />
+        <RadioLayout ref="radioComponent" :children="Object.keys(vote)" :titles="title" />
         <!-- Error messages -->
         <p style="line-height: 0; font-size: 15px; color: red;" :hidden="errorStatus">
-          Please enter a vote for each choice
-        </P>
-        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="signInStatus">
-          Please sign in if you wish to vote
-        </P>
-        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="userStatus">
-          You've already voted
+          {{ errorMessage }}
         </P>
         <p style="line-height: 0; font-size: 15px;" :hidden="voteStatus">
           Vote has been submitted

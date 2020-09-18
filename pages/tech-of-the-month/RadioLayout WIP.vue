@@ -15,20 +15,19 @@
       <!-- Radio button layout -->
       <div align="center" style="padding-bottom: 30px;">
         <span
-          v-for="child in children"
-          :key="child"
           style="padding-left: 10px; padding-right: 10px;"
         >
         <!-- Individual radio button -->
-          <input
-            :id="child+childTitle"
-            type="radio"
-            :name="childTitle"
-            :class="child"
-            :value="child+childTitle"
-            @click="onChange(child, childTitle)"
-          ></input>
-          <label class="desc" style="color: #606f7b;">{{ child }}</label>
+          <b-form-group>
+            <b-form-radio-group
+              :id="childTitle"
+              v-model="selected[childTitle]"
+              :options="children"
+              :name="childTitle"
+              @input="onChange(childTitle)"
+            ></b-form-radio-group>
+          </b-form-group>
+          {{ selected }}
         </span>
       </div>
     </div>
@@ -50,21 +49,35 @@ export default {
   data () {
     return {
       // Using a dictionary so it is easier to check what was previously selected for each row
-      previouslySelected: {}
+      previouslySelected: {},
+      selected: {}
     }
   },
   created () {
     this.convertDictionary()
+    console.log(JSON.stringify(this.previouslySelected))
   },
   methods: {
+    reset () {
+      const allRadios = document.getElementsByTagName('input')
+      console.log(this.children)
+      let index = 0
+      for (let i = 0; i < allRadios.length; i++) {
+        allRadios[i].disabled = false
+        allRadios[i].checked = false
+      }
+      for (const key in this.previouslySelected) {
+        this.previouslySelected[key] = ''
+        this.$parent.vote[this.children[index]] = 0
+        index += 1
+      }
+    },
     convertDictionary () {
       // Convery an array to a dictionary
       const dictLen = Object.keys(this.titles).length
-      const tempDict = {}
       for (let i = 0; i < dictLen; i++) {
-        tempDict[this.titles[i]] = ''
+        this.$set(this.previouslySelected, this.titles[i], '')
       }
-      this.previouslySelected = tempDict
     },
     disableButtions (className, title, status) {
       // Disables/Enables all other radio buttons of the same class name
@@ -87,29 +100,10 @@ export default {
         return 0
       }
     },
-    onChange (className, title) {
-      // Function runs when the user clicks on any of the radio buttons
-      let disabledStatus = true
-      if (this.previouslySelected[title] === className) {
-        // Checks to see if the user selected a radio button that is already checked
-        // It will then uncheck the button and enable all the buttons of the same class name
-        document.getElementById(className + title).checked = false
-        disabledStatus = false
-        this.previouslySelected[title] = ''
-        this.$parent.vote[className] = 0
-      } else if (this.previouslySelected[title] !== className && this.previouslySelected[title] !== '') {
-        // Checks to see if the user clicks on a radio button of the same row
-        // It will then enable all the buttons with previously checked class name and disable the newly checked button
-        this.disableButtions(this.previouslySelected[title], title, false)
-        this.previouslySelected[title] = className
-        this.$parent.vote[className] = this.addVote(title)
-      } else {
-        // If the user clicks an unchecked radio button
-        this.previouslySelected[title] = className
-        this.$parent.vote[className] = this.addVote(title)
-      }
-      // Will either disable/enable radio buttons of the same class name
-      this.disableButtions(className, title, disabledStatus)
+    onChange (title) {
+      // console.log(JSON.stringify(this.previouslySelected))
+      console.log(title)
+      console.log(this.selected[title])
     }
   }
 }

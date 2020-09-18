@@ -24,7 +24,9 @@ try {
 }
 
 export const db = firebase.firestore()
-export const provider = new firebase.auth.GoogleAuthProvider()
+// export const provider = new firebase.auth.GoogleAuthProvider()
+export const provider = new firebase.auth.GithubAuthProvider()
+provider.addScope('user')
 export const auth = firebase.auth()
 
 export default firebase

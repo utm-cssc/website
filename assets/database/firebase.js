@@ -23,7 +23,7 @@ export async function getMonthVotes (year, month) {
       return optionList
     })
     .catch((err) => {
-      console.log(err)
+      console.log('GetMonthVotes: Error getting document', err)
       return null
     })
 }
@@ -45,7 +45,7 @@ export async function checkUser (year, month, currentUtorid) {
       return true
     })
     .catch((err) => {
-      console.log('Error getting document', err)
+      console.log('CheckUser: Error getting document', err)
       return null
     })
 }
@@ -66,10 +66,12 @@ export async function login () {
   return await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
     .then(async function () {
       const result = await auth.signInWithPopup(provider)
-      return result.user.uid
+      console.log(result.user.uid)
+      return ''
+      // return result.user.uid
     })
     .catch((err) => {
-      console.log('Error getting document', err)
+      console.log('Login: Error getting document', err)
       return ''
     })
 }

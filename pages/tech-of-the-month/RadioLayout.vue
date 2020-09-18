@@ -57,6 +57,20 @@ export default {
     this.convertDictionary()
   },
   methods: {
+    reset () {
+      const allRadios = document.getElementsByTagName('input')
+      console.log(this.children)
+      let index = 0
+      for (let i = 0; i < allRadios.length; i++) {
+        allRadios[i].disabled = false
+        allRadios[i].checked = false
+      }
+      for (const key in this.previouslySelected) {
+        this.previouslySelected[key] = ''
+        this.$parent.vote[this.children[index]] = 0
+        index += 1
+      }
+    },
     convertDictionary () {
       // Convery an array to a dictionary
       const dictLen = Object.keys(this.titles).length
