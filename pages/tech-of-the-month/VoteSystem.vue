@@ -1,10 +1,12 @@
 <script>
-import RadioLayout from './RadioLayout.vue'
+// import RadioLayout from './RadioLayout.vue'
+import RadioLayoutWIP from './RadioLayout WIP.vue'
 import { addVote, checkUser, login } from '~/assets/database/firebase.js'
 export default {
   components: {
     apexcharts: () => import('vue-apexcharts'),
-    RadioLayout
+    // RadioLayout,
+    RadioLayoutWIP
   },
   props: {
     databaseSeries: {
@@ -122,7 +124,8 @@ export default {
     <article>
       <div class="flex-col mr-2">
         <!-- Displays the radio button layout -->
-        <RadioLayout ref="radioComponent" :children="Object.keys(vote)" :titles="title" />
+        <!-- <RadioLayout ref="radioComponent" :children="Object.keys(vote)" :titles="title" /> -->
+        <RadioLayoutWIP ref="radioComponent" :children="Object.keys(vote)" :titles="title" />
         <!-- Error messages -->
         <p style="line-height: 0; font-size: 15px; color: red;" :hidden="errorStatus">
           {{ errorMessage }}
