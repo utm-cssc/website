@@ -22,12 +22,12 @@
         Choose an upper year student
     </div>
 	<b-form-group>
-		<b-form-checkbox-group class="flex" id="ask-upper-year" v-model="selectedUpperYear" name="upper-year-student">
+		<b-form-radio-group class="flex" id="ask-upper-year" v-model="selectedUpperYear" name="upper-year-student">
 			<div class="flex align-items-center mr-3" v-for="upperYearOption in askUpperYearOptions" :key="upperYearOption.value">
-				<b-form-checkbox :value="upperYearOption.value"></b-form-checkbox>
+				<b-form-radio :value="upperYearOption.value"></b-form-radio>
 				<span>{{upperYearOption.text}}</span>
 			</div>
-		</b-form-checkbox-group>
+		</b-form-radio-group>
 	</b-form-group>	
 	<div class="mb-3 mt-2 cssc-heading">
 		Ask Your Question
@@ -50,12 +50,12 @@
 	<p class="mb-2">
 		Are you okay with us posting your question anonymously under our FAQ on our website, Discord and/or Instagram?
 	</p>
-	<b-form-checkbox-group id="ask-upper-year-share" v-model="shareQuestion" name="share-question" :state="share">
+	<b-form-radio-group id="ask-upper-year-share" v-model="shareQuestion" name="share-question" :state="share">
 		<div class="flex align-items-center mr-3" v-for="shareQuestionOption in shareQuestionOptions" :key="shareQuestionOption.value">
-			<b-form-checkbox :value="shareQuestionOption.value"></b-form-checkbox>
-			<span>{{shareQuestionOption.text}}</span>
+			<b-form-radio :value="shareQuestionOption.value"></b-form-radio>
+			<span>{{shareQuestionOption.text}}</span> 
 		</div>
-	</b-form-checkbox-group>
+	</b-form-radio-group> 
 		<div class="mt-3 cssc-heading">
     	   Email
         </div>
