@@ -4,16 +4,16 @@
       <v-col>
         <v-sheet height="64">
           <v-toolbar flat color="var(--color-primary)">
-            <v-btn outlined color="#ffffff" class="mr-4" @click="setToday">
+            <v-btn outlined class="calendar_nav mr-4" @click="setToday">
               Today
             </v-btn>
-            <v-btn fab text small color="#ffffff" @click="prev">
+            <v-btn fab text small class="calendar_nav" @click="prev">
               <v-icon small>mdi-chevron-left</v-icon>
             </v-btn>
-            <v-btn fab text small color="#ffffff" @click="next">
+            <v-btn fab text small class="calendar_nav" @click="next">
               <v-icon small>mdi-chevron-right</v-icon>
             </v-btn>
-            <v-toolbar-title class="pl-3" v-if="$refs.calendar">
+            <v-toolbar-title class="pl-3 calendar_nav"  v-if="$refs.calendar">
               {{ $refs.calendar.title }}
             </v-toolbar-title>
             <v-spacer></v-spacer>
@@ -51,14 +51,14 @@
             ref="calendar"
             v-model="focus"
             color="var(--color-primary-light)"
-            :events="events"
+            :events="monthEvents"
             :event-color="getEventColor"
+            event-text-color="#ffffff"
             :type="type"
             @click:event="showEvent"
             @click:more="viewDay"
             @click:date="viewDay"
-            @change="updateRange"
-          />
+            @change="updateRange"/>
           <v-menu
             v-model="selectedOpen"
             :close-on-content-click="false"
@@ -108,6 +108,16 @@
 
 <script>
 export default {
+  async asyncData ({ $content, params, error }) {
+    const calendarData = await $content('calendar').fetch()
+    let allEvents = calendarData.map((club) => {
+      return club.body.map((event) => {
+        return { name: event.name, club_name: club.slug, start: `${event.start_date} ${event.start_time}:00`, end: `${event.end_date} ${event.end_time}:00` }
+      })
+    })
+    allEvents = allEvents.flat()
+    return { allEvents }
+  },
   data: () => ({
     focus: '',
     type: 'month',
@@ -120,10 +130,10 @@ export default {
     selectedEvent: {},
     selectedElement: null,
     selectedOpen: false,
-    events: [],
-    // colors: ['var(--color-primary)', 'var(--color-mcss)', 'var(--color-utmsam)', 'var(--color-dsc)', 'var(--color-wisc)', 'var(--color-robotics)'], // Change colors to from here (Cannot put names put hexadecimal values)
-    names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics'],
-    colors: { CSSC: 'var(--color-primary)', MCSS: 'var(--color-mcss)', UTMSAM: 'var(--color-utmsam)', DSC: 'var(--color-dsc)', WISC: 'var(--color-wisc)', Robotics: 'var(--color-robotics)' }
+    monthEvents: [],
+    allEvents: [],
+    colors: { CSSC: 'var(--color-primary)', MCSS: 'var(--color-mcss)', UTMSAM: 'var(--color-utmsam)', DSC: 'var(--color-dsc)', WISC: 'var(--color-wisc)', Robotics: 'var(--color-robotics)' },
+    names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics']
   }),
   mounted () {
     this.$refs.calendar.checkChange()
@@ -162,34 +172,30 @@ export default {
       nativeEvent.stopPropagation()
     },
     updateRange ({ start, end }) {
+      console.log(start)
+      console.log(end)
       const events = []
 
-      const min = new Date(`${start.date}T00:00:00`)
-      const max = new Date(`${end.date}T23:59:59`)
-      const days = (max.getTime() - min.getTime()) / 86400000
-      const eventCount = this.rnd(days, days + 20)
+      // const min = new Date(`${start.date}T00:00:00`)
+      // const max = new Date(`${end.date}T23:59:59`)
 
-      for (let i = 0; i < eventCount; i++) {
-        const allDay = this.rnd(0, 3) === 0
-        const firstTimestamp = this.rnd(min.getTime(), max.getTime())
-        const first = new Date(firstTimestamp - (firstTimestamp % 900000))
-        const secondTimestamp = this.rnd(2, allDay ? 288 : 8) * 900000
-        const second = new Date(first.getTime() + secondTimestamp)
-        const club = this.rnd(0, this.names.length - 1)
+      for (let i = 0; i < this.allEvents.length; i++) {
+        const event = this.allEvents[i]
         events.push({
-          name: this.names[club],
-          start: first,
-          end: second,
-          color: this.colors[this.names[club]],
-          timed: !allDay
+          name: event.name,
+          start: event.start,
+          end: event.end,
+          color: this.colors[event.club_name]
         })
       }
-
-      this.events = events
-    },
-    rnd (a, b) {
-      return Math.floor((b - a + 1) * Math.random()) + a
+      this.monthEvents = events
     }
   }
 }
 </script>
+
+<style scoped>
+  .calendar_nav {
+    color: white;
+  }
+</style>
