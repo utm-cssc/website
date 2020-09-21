@@ -76,7 +76,7 @@ Cheat sheets save you time and energy by giving you essential syntax at your fin
 <grid-1-x-2 :reversed=false desc="The library provides declarative routing for React" button="Check it out!" img-src="https://camo.githubusercontent.com/f63754b8412368e820601967af6dea84312b925b/68747470733a2f2f7265616374747261696e696e672e636f6d2f72656163742d726f757465722f616e64726f69642d6368726f6d652d313434783134342e706e67" link="https://github.com/ReactTraining/react-router"></grid-1-x-2>
 
 ### Using Google Maps in React
-<grid-1-x-2 desc="This library provides React.js Google Maps integration component that yu can use in your app" img-src="https://miro.medium.com/max/3200/1*qXcjSfRj0C0ir2yMsYiRyw.jpeg" link="https://github.com/tomchentw/react-google-maps" button="Check it out!"></grid-1-x-2>
+<grid-1-x-2 desc="This library provides React.js Google Maps integration component that you can use in your app" img-src="https://miro.medium.com/max/3200/1*qXcjSfRj0C0ir2yMsYiRyw.jpeg" link="https://github.com/tomchentw/react-google-maps" button="Check it out!"></grid-1-x-2>
 
 ### Official Documentation
 <grid-1-x-2 :reversed=false img-src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" link="https://reactjs.org/" button="Read Docs" desc="The official Reactjs documentation can help you understand important concepts and refer to the API"></grid-1-x-2>
@@ -85,12 +85,12 @@ Cheat sheets save you time and energy by giving you essential syntax at your fin
 <grid-1-x-2 img-src="/icons/github.svg" link="https://github.com/facebook/react" button="Check it out!" desc="The official Reactjs github repository for you to check out new updates and also contribute to repository in the future."></grid-1-x-2>
 
 ## Further Steps
-We at the Hacklab believe in learning by doing. So here are some ideas for a few projects that you can work on to hone your skills.
+We at the CSSC believe in learning by doing. So here are some ideas for a few projects that you can work on to hone your skills.
 
 ### Create a simple application
 
 #### Todo App
-<grid-1-x-2 desc="This is a simple Todo App that lets a user create, read, update and delete to-do tasks. In the application user can also categories the tasks as shown in the image" img-src="https://miro.medium.com/max/2848/1*bubW56HD3dK44Uj2Jvs-UA.png"></grid-1-x-2>
+<grid-1-x-2 desc="This is a simple Todo App that lets a user create, read, update and delete to-do tasks. In the application, a user can categorize the tasks as shown in the image." img-src="https://miro.medium.com/max/2848/1*bubW56HD3dK44Uj2Jvs-UA.png"></grid-1-x-2>
 
 #### SnapShot
 <grid-1-x-2 desc="This application searches and displays the pictures that the user searches for." img-src="https://github.com/Yog9/SnapShot/raw/master/snapscout.png"></grid-1-x-2>
@@ -105,4 +105,4 @@ We at the Hacklab believe in learning by doing. So here are some ideas for a few
 <grid-1-x-2 :reversed=false desc="React Native allows you to create native apps for Android and iOS. Entend your knowledge to make mobile applications." img-src="https://www.mindinventory.com/blog/wp-content/uploads/2018/11/ios-android-development-using-react-native.png" button="Check it out!" link="/resources/react-native"></grid-1-x-2>
 
 ### Create your own project
-If you have a good application idea, and don't know where to start, Contact us at [Microsoft Teams](/microsoft-teams/) or meet us at room 2014 in UTM's Deerfield Hall building.
+If you have a good application idea and don't know where to start, contact us at [Microsoft Teams](/microsoft-teams/) or meet us at room 2014 in UTM's Deerfield Hall building.
