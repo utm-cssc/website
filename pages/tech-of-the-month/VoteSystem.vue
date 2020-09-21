@@ -130,7 +130,7 @@ export default {
         <p style="line-height: 0; font-size: 15px;" :hidden="voteStatus">
           Vote has been submitted
         </P>
-        <button class="submitButton" style="padding-left: 12px;" @click="submitVote()">
+        <button class="submitButton" @click="submitVote()">
           Submit
         </button>
       </div>
