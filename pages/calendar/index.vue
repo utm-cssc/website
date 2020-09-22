@@ -108,17 +108,6 @@
 
 <script>
 export default {
-  // async asyncData ({ $content, params, error }) {
-  //   const calendarData = await $content('calendar').fetch()
-  //   console.log(calendarData)
-  //   let allEvents = calendarData.map((club) => {
-  //     return club.body.map((event) => {
-  //       return { name: event.name, club_name: club.slug, start: `${event.start_date} ${event.start_time}:00`, end: `${event.end_date} ${event.end_time}:00` }
-  //     })
-  //   })
-  //   allEvents = allEvents.flat()
-  //   return { allEvents }
-  // },
   data: () => ({
     focus: '',
     type: 'month',
@@ -138,7 +127,6 @@ export default {
     combinedStr: ''
   }),
   mounted () {
-    this.$refs.calendar.checkChange()
     this.readCSVData(this.combinedStr)
   },
   methods: {
@@ -175,30 +163,30 @@ export default {
       nativeEvent.stopPropagation()
     },
     readCSVData (data) {
-      const introLine = 'name, description, start_date, start_time, end_date, end_time\n'
       const lines = data.split('\n')
-      const fields = lines[0].split(', ')
       const output = []
-      for (let i = 1; i < lines.length; i++) {
-        if (lines !== introLine) {
-          const current = lines[i].split(', ')
-          const doc = {}
-          for (let j = 0; j < fields.length; j++) {
-            doc[fields[j]] = current[j]
-          }
-          output.push(doc)
+      for (let i = 1; i < lines.length - 1; i++) {
+        const current = lines[i].split(', ')
+        const doc = {
+          club_name: current[0],
+          name: current[1],
+          start: `${current[3]} ${current[4]}:00`,
+          end: `${current[5]} ${current[6]}:00`
         }
+        output.push(doc)
       }
-      console.log(output)
+      this.allEvents = output
+      console.log('All Events')
+      console.log(this.allEvents)
     },
-    updateRange ({ start, end }) {
-      console.log(start)
-      console.log(end)
+    updateRange () {
+      // console.log(start)
+      // console.log(end)
       const events = []
 
       // const min = new Date(`${start.date}T00:00:00`)
       // const max = new Date(`${end.date}T23:59:59`)
-
+      console.log(this.allEvents)
       for (let i = 0; i < this.allEvents.length; i++) {
         const event = this.allEvents[i]
         events.push({
@@ -207,15 +195,20 @@ export default {
           end: event.end,
           color: this.colors[event.club_name]
         })
+        console.log(event)
       }
       this.monthEvents = events
     }
   },
   async asyncData ({ $axios }) {
     const cssc = await $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv')
-    const mcss = await $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/MCSS.csv')
-    const combinedStr = cssc + mcss
+    const combinedStr = cssc
     return { combinedStr }
+  },
+  watch: {
+    allEvents (newValue) {
+      this.updateRange()
+    }
   }
 }
 </script>
