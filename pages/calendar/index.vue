@@ -108,16 +108,17 @@
 
 <script>
 export default {
-  async asyncData ({ $content, params, error }) {
-    const calendarData = await $content('calendar').fetch()
-    let allEvents = calendarData.map((club) => {
-      return club.body.map((event) => {
-        return { name: event.name, club_name: club.slug, start: `${event.start_date} ${event.start_time}:00`, end: `${event.end_date} ${event.end_time}:00` }
-      })
-    })
-    allEvents = allEvents.flat()
-    return { allEvents }
-  },
+  // async asyncData ({ $content, params, error }) {
+  //   const calendarData = await $content('calendar').fetch()
+  //   console.log(calendarData)
+  //   let allEvents = calendarData.map((club) => {
+  //     return club.body.map((event) => {
+  //       return { name: event.name, club_name: club.slug, start: `${event.start_date} ${event.start_time}:00`, end: `${event.end_date} ${event.end_time}:00` }
+  //     })
+  //   })
+  //   allEvents = allEvents.flat()
+  //   return { allEvents }
+  // },
   data: () => ({
     focus: '',
     type: 'month',
@@ -133,10 +134,12 @@ export default {
     monthEvents: [],
     allEvents: [],
     colors: { CSSC: 'var(--color-primary)', MCSS: 'var(--color-mcss)', UTMSAM: 'var(--color-utmsam)', DSC: 'var(--color-dsc)', WISC: 'var(--color-wisc)', Robotics: 'var(--color-robotics)' },
-    names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics']
+    names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics'],
+    combinedStr: ''
   }),
   mounted () {
     this.$refs.calendar.checkChange()
+    this.readCSVData(this.combinedStr)
   },
   methods: {
     viewDay ({ date }) {
@@ -171,6 +174,23 @@ export default {
 
       nativeEvent.stopPropagation()
     },
+    readCSVData (data) {
+      const introLine = 'name, description, start_date, start_time, end_date, end_time\n'
+      const lines = data.split('\n')
+      const fields = lines[0].split(', ')
+      const output = []
+      for (let i = 1; i < lines.length; i++) {
+        if (lines !== introLine) {
+          const current = lines[i].split(', ')
+          const doc = {}
+          for (let j = 0; j < fields.length; j++) {
+            doc[fields[j]] = current[j]
+          }
+          output.push(doc)
+        }
+      }
+      console.log(output)
+    },
     updateRange ({ start, end }) {
       console.log(start)
       console.log(end)
@@ -190,6 +210,12 @@ export default {
       }
       this.monthEvents = events
     }
+  },
+  async asyncData ({ $axios }) {
+    const cssc = await $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv')
+    const mcss = await $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/MCSS.csv')
+    const combinedStr = cssc + mcss
+    return { combinedStr }
   }
 }
 </script>
