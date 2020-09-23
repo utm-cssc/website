@@ -124,10 +124,10 @@ export default {
     allEvents: [],
     colors: { CSSC: 'var(--color-primary)', MCSS: 'var(--color-mcss)', UTMSAM: 'var(--color-utmsam)', DSC: 'var(--color-dsc)', WISC: 'var(--color-wisc)', Robotics: 'var(--color-robotics)' },
     names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics'],
-    combinedStr: ''
+    eventData: ''
   }),
   mounted () {
-    this.readCSVData(this.combinedStr)
+    this.readCSVData(this.eventData)
   },
   methods: {
     viewDay ({ date }) {
@@ -167,26 +167,19 @@ export default {
       const output = []
       for (let i = 1; i < lines.length - 1; i++) {
         const current = lines[i].split(', ')
-        const doc = {
+        const event = {
           club_name: current[0],
           name: current[1],
+          details: current[2],
           start: `${current[3]} ${current[4]}:00`,
           end: `${current[5]} ${current[6]}:00`
         }
-        output.push(doc)
+        output.push(event)
       }
       this.allEvents = output
-      console.log('All Events')
-      console.log(this.allEvents)
     },
     updateRange () {
-      // console.log(start)
-      // console.log(end)
       const events = []
-
-      // const min = new Date(`${start.date}T00:00:00`)
-      // const max = new Date(`${end.date}T23:59:59`)
-      console.log(this.allEvents)
       for (let i = 0; i < this.allEvents.length; i++) {
         const event = this.allEvents[i]
         events.push({
@@ -195,15 +188,13 @@ export default {
           end: event.end,
           color: this.colors[event.club_name]
         })
-        console.log(event)
       }
       this.monthEvents = events
     }
   },
   async asyncData ({ $axios }) {
-    const cssc = await $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv')
-    const combinedStr = cssc
-    return { combinedStr }
+    const eventData = await $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv')
+    return { eventData }
   },
   watch: {
     allEvents (newValue) {
