@@ -1,9 +1,9 @@
 <template>
-  <div class="container nav g-header pt-4 px-2 flex align-items-center">
-    <input id="nav-check" v-model="checked" type="checkbox"></input>
+  <div class="container nav g-header pt-4 px-2 d-flex align-items-end">
+    <input id="nav-check" v-model="checked" type="checkbox">
     <div class="nav-header">
       <nuxt-link
-        class="d-flex align-items-center ml-1"
+        class="d-flex align-items-end ml-1"
         to="/"
         @click.native="checked = false"
       >
@@ -11,7 +11,8 @@
         <span class="logo-text">UTM CSSC</span>
       </nuxt-link>
     </div>
-    <div class="nav-btn">
+    <div class="nav-btn d-flex align-self-end align-items-end">
+      <SearchBar class="mr-2 d-none d-md-block d-lg-none" />
       <label for="nav-check">
         <span />
         <span />
@@ -22,19 +23,19 @@
     <div class="nav-links">
       <nuxt-link
         to="/resources"
-        class="g-nav-link nav-link mr-4"
+        class="nav-link mr-4"
         @click.native="checked = false"
       >
         Resources
       </nuxt-link>
       <nuxt-link
         to="/ask-upper-years"
-        class="g-nav-link nav-link mr-4"
+        class="nav-link mr-4"
         @click.native="checked = false"
       >
         Ask an Upper Year
       </nuxt-link>
-      <SearchBar class="ml-2" />
+      <SearchBar class="mx-2 d-none d-lg-block d-xl-block" />
     </div>
   </div>
 </template>
@@ -71,9 +72,7 @@ export default {
 a:hover {
   text-decoration: none;
 }
-</style>
 
-<style>
 .nav {
   width: 100%;
   position: relative;
@@ -81,17 +80,6 @@ a:hover {
 
 .nav > .nav-header {
   display: inline;
-}
-
-.nav > .nav-header > .nav-title {
-  display: inline-block;
-  font-size: 22px;
-  color: var(--color-body);
-  padding: 10px 10px 10px 10px;
-}
-
-.nav > .nav-btn {
-  display: none;
 }
 
 .nav-links {
@@ -124,10 +112,16 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .nav-link {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
   .nav > .nav-btn {
-    float: right;
-    align-self: end;
     margin-left: auto;
+    align-self: center;
+    justify-self: end;
   }
 
   .nav > .nav-btn > label {
@@ -136,6 +130,7 @@ a:hover {
     height: 50px;
     padding: 13px;
     border-radius: 8px;
+    margin: 0;
   }
 
   .nav > .nav-btn > label:hover,
@@ -147,19 +142,18 @@ a:hover {
     display: block;
     width: 25px;
     height: 10px;
-    border-top: 2px solid #eee;
+    border-top: 2px solid var(--color-heading);
   }
 
   .nav-links {
     position: absolute;
     display: block;
-    width: 42%;
-    background-color: #333;
+    background: var(--bg);
     border-radius: 6px;
     transition: all 0.2s ease-out;
     overflow-y: hidden;
-    top: 50px;
-    right: 50px;
+    top: 12vh;
+    right: 8px;
   }
 
   .nav-link {
@@ -170,11 +164,18 @@ a:hover {
 
   .nav > #nav-check:not(:checked) ~ .nav-links {
     opacity: 0;
+    z-index: -1;
   }
 
   .nav > #nav-check:checked ~ .nav-links {
     overflow-y: auto;
     opacity: 1;
+    z-index: 2;
+  }
+
+  .nav-link:hover,
+  .nav-link:active {
+    letter-spacing: 0;
   }
 }
 </style>

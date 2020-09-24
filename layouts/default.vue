@@ -1,18 +1,19 @@
 <template>
   <div>
-    <nav-bar />
-    <Nuxt />
-    <Footer />
+    <cssc-nav />
+    <nuxt />
+    <cssc-footer />
   </div>
 </template>
 
 <script>
-import { NavBar } from '@/components/NavBar'
-import { Footer } from '@/components/Footer'
+import CsscNav from '@/components/CsscNav'
+import CsscFooter from '@/components/CsscFooter'
+
 export default {
   components: {
-    NavBar,
-    Footer
+    CsscNav,
+    CsscFooter
   }
 }
 // /* eslint-disable */
