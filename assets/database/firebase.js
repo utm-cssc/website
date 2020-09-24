@@ -28,7 +28,7 @@ export async function getMonthVotes (year, month) {
     })
 }
 
-export async function checkUser (year, month, currentUtorid) {
+export async function checkUser (year, month, currentUtorid, voteOptions) {
   // Checks to see if the user has already voted or not
   // If they have not voted, they will be added to the databsae, then returning false
   // Return true otherwise
@@ -40,9 +40,15 @@ export async function checkUser (year, month, currentUtorid) {
         await userRef.doc().set({
           utorid: currentUtorid
         })
-        return false
+        return [false]
       }
-      return true
+      const voteList = {}
+      snapshot.forEach((doc) => {
+        voteOptions.map((option) => { voteList[option] = (doc.get(option)) })
+      })
+
+      console.log(JSON.stringify(voteList))
+      return [true, voteList]
     })
     .catch((err) => {
       console.log('CheckUser: Error getting document', err)

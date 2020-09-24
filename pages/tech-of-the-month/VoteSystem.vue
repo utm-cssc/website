@@ -89,11 +89,16 @@ export default {
       // If the user has not voted before, add the user to the database
       // Currently working with google sign in
       if (this.userID !== '') {
-        await checkUser(this.year, this.month, this.userID)
+        await checkUser(this.year, this.month, this.userID, this.databaseLabels)
           .then((result) => {
-            if (result) {
+            if (result[0]) {
               // User has already voted
               this.errorMessage = 'You have already voted'
+              // Subtract vote from the database if they want to change vote, and add the new vote
+              for (const key in this.vote) {
+                this.vote[key] = this.vote[key] - result[1][key]
+              }
+              console.log(JSON.stringify(this.vote))
               this.errorStatus = false
             } else {
               this.errorStatus = true
@@ -105,14 +110,12 @@ export default {
         this.errorStatus = false
       }
 
-      if (this.errorStatus) {
-        // Update the votes in the database, update series for piechart
-        await addVote(this.year, this.month, this.vote)
-        this.updateSeries()
-        this.errorStatus = true
-        this.voteStatus = false
-        this.$refs.radioComponent.reset()
-      }
+      // Update the votes in the database, update series for piechart
+      await addVote(this.year, this.month, this.vote)
+      this.updateSeries()
+      this.errorStatus = true
+      this.voteStatus = false
+      this.$refs.radioComponent.reset()
     }
   }
 }

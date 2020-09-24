@@ -27,6 +27,7 @@
               :name="childTitle"
               :class="child"
               :value="3 - index"
+              autocomplete="off"
               @click="onChange(child, childTitle)"
             ></input>
             <span class="radioBtn"></span>
