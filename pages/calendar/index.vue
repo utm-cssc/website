@@ -75,28 +75,19 @@
                   :color="selectedEvent.color"
                   dark
                 >
-                  <v-btn icon>
-                    <v-icon>mdi-pencil</v-icon>
-                  </v-btn>
                   <v-toolbar-title v-html="selectedEvent.name"></v-toolbar-title>
                   <v-spacer></v-spacer>
-                  <v-btn icon>
-                    <v-icon>mdi-heart</v-icon>
-                  </v-btn>
-                  <v-btn icon>
-                    <v-icon>mdi-dots-vertical</v-icon>
-                  </v-btn>
                 </v-toolbar>
                 <v-card-text>
-                  <span v-html="selectedEvent.details"></span>
+                  <span style="font-size: 16px;" v-html="selectedEvent.details"></span>
                 </v-card-text>
                 <v-card-actions>
                   <v-btn
                     text
-                    color="var(--color-primary)"
+                    :color="selectedEvent.color"
                     @click="selectedOpen = false"
                   >
-                    Cancel
+                    Close
                   </v-btn>
                 </v-card-actions>
               </v-card>
@@ -125,11 +116,15 @@ export default {
     monthEvents: [],
     allEvents: [],
     colors: { CSSC: 'var(--color-primary)', MCSS: 'var(--color-mcss)', UTMSAM: 'var(--color-utmsam)', DSC: 'var(--color-dsc)', WISC: 'var(--color-wisc)', Robotics: 'var(--color-robotics)' },
-    names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics'],
-    eventData: ''
+    names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics']
   }),
   mounted () {
-    this.readCSVData(this.eventData)
+    this.readCSVData(this.mcss, 'MCSS')
+    this.readCSVData(this.wisc, 'WISC')
+    this.readCSVData(this.utmsam, 'UTMSAM')
+    this.readCSVData(this.dsc, 'DSC')
+    this.readCSVData(this.cssc, 'CSSC')
+    this.readCSVData(this.robotics, 'Robotics')
   },
   methods: {
     viewDay ({ date }) {
@@ -164,21 +159,21 @@ export default {
 
       nativeEvent.stopPropagation()
     },
-    readCSVData (data) {
+    readCSVData (data, clubName) {
       const lines = data.split('\n')
       const output = []
       for (let i = 1; i < lines.length - 1; i++) {
         const current = lines[i].split(', ')
         const event = {
-          club_name: current[0],
-          name: current[1],
-          details: current[2],
-          start: `${current[3]} ${current[4]}:00`,
-          end: `${current[5]} ${current[6]}:00`
+          club_name: clubName,
+          name: current[0],
+          details: current[1],
+          start: `${current[2]} ${current[3]}:00`,
+          end: `${current[4]} ${current[5]}:00`
         }
         output.push(event)
       }
-      this.allEvents = output
+      this.allEvents.push(...output)
     },
     updateRange () {
       const events = []
@@ -191,14 +186,21 @@ export default {
           end: event.end,
           color: this.colors[event.club_name]
         })
+        console.log(event)
       }
       this.monthEvents = events
     }
   },
   async asyncData ({ $axios }) {
-    const BASE_URL = 'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv'
-    const eventData = await $axios.$get(BASE_URL)
-    return { eventData }
+    const [wisc, mcss, utmsam, cssc, robotics, dsc] = await Promise.all([
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/WISC.csv'),
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/MCSS.csv'),
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/UTMSAM.csv'),
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv'),
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/Robotics.csv'),
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/DSC.csv')
+    ])
+    return { wisc, mcss, utmsam, cssc, robotics, dsc }
   },
   watch: {
     allEvents (newValue) {
