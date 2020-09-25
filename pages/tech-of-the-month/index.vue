@@ -45,19 +45,19 @@ export default {
         {
           title: 'HTML',
           desc: 'Learn the base foundation of all websites',
-          link: '/resources/tech-of-month',
+          link: '/resources/html',
           icon: '/icons/html5.svg'
         },
         {
           title: 'CSS',
           desc: 'Learn how to style your HTML pages',
-          link: '/resources/tech-of-month',
+          link: '/resources/css',
           icon: '/icons/css3.svg'
         },
         {
           title: 'Javascript',
           desc: 'Learn how to implement scripts into your HTML page',
-          link: '/resources/tech-of-month',
+          link: '/resources/javascript',
           icon: '/icons/javascript.svg'
         }
       ]

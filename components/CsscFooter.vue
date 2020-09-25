@@ -3,26 +3,39 @@
     <hr>
     <div class="g-header d-flex justify-content-between align-items-center">
       <div>
-        <nuxt-link
-          to="/"
-        >
-          <img class="logo" src="/icons/cssc-logo-without-title.svg">
+        <nuxt-link to="/">
+          <img
+            class="logo"
+            src="/icons/cssc-logo-without-title.svg"
+          >
         </nuxt-link>
       </div>
       <div class="location">
         UTM Hacklab DH2014
       </div>
       <div class="footer-links">
-        <a href="https://discord.gg/SHwbmVg" class="footer-link">
+        <a
+          href="https://discord.gg/SHwbmVg"
+          class="footer-link"
+        >
           <DiscordIcon class="logo" />
         </a>
-        <a href="https://www.instagram.com/utm.cssc" class="footer-link ml-2">
+        <a
+          href="https://www.instagram.com/utm.cssc"
+          class="footer-link ml-2"
+        >
           <InstagramIcon class="logo" />
         </a>
-        <a href="https://www.facebook.com/utmcssc/" class="footer-link ml-2">
+        <a
+          href="https://www.facebook.com/utmcssc/"
+          class="footer-link ml-2"
+        >
           <FacebookIcon class="logo" />
         </a>
-        <a href="https://github.com/utm-cssc" class="footer-link ml-2">
+        <a
+          href="https://github.com/utm-cssc"
+          class="footer-link ml-2"
+        >
           <GithubIcon class="logo" />
         </a>
       </div>
