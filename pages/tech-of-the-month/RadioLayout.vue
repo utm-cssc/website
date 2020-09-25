@@ -70,7 +70,7 @@ export default {
       let index = 0
       for (const key in this.previouslySelected) {
         this.previouslySelected[key] = ''
-        this.$parent.vote[this.children[index]] = 0
+        this.$parent.voteOrder[this.children[index]] = 0
         index += 1
       }
     },
@@ -100,17 +100,17 @@ export default {
         clickedItem.checked = false
         disabledStatus = false
         this.previouslySelected[title] = ''
-        this.$parent.vote[className] = 0
+        this.$parent.voteOrder[className] = 0
       // Checks to see if the user clicks on a radio button of the same row
       } else if (this.previouslySelected[title] !== className && this.previouslySelected[title] !== '') {
         // It will then enable all the buttons with previously checked class name and disable the newly checked button
         this.disableButtions(this.previouslySelected[title], title, false)
         this.previouslySelected[title] = className
-        this.$parent.vote[className] = clickedItem.value
+        this.$parent.voteOrder[className] = clickedItem.value
       // If the user clicks an unchecked radio button
       } else {
         this.previouslySelected[title] = className
-        this.$parent.vote[className] = clickedItem.value
+        this.$parent.voteOrder[className] = clickedItem.value
       }
       // Will either disable/enable radio buttons of the same class name
       this.disableButtions(className, title, disabledStatus)

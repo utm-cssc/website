@@ -47,7 +47,6 @@ export async function checkUser (year, month, currentUtorid, voteOptions) {
         voteOptions.map((option) => { voteList[option] = (doc.get(option)) })
       })
 
-      console.log(JSON.stringify(voteList))
       return [true, voteList]
     })
     .catch((err) => {
@@ -56,13 +55,41 @@ export async function checkUser (year, month, currentUtorid, voteOptions) {
     })
 }
 
-export async function addVote (year, month, voteOptions) {
+async function getDocID (year, month, currentUtorid) {
+  const userMonth = month + 'Users'
+  const userRef = db.collection('Voting').doc(year).collection(userMonth)
+  return await userRef.where('utorid', '==', currentUtorid).limit(1).get()
+    .then((snapshot) => {
+      if (snapshot.empty) {
+        return null
+      }
+      let result = null
+      snapshot.forEach((doc) => {
+        result = doc.id
+      })
+
+      return result
+    })
+    .catch((err) => {
+      console.log('CheckUser: Error getting document', err)
+      return null
+    })
+}
+export async function addVote (year, month, voteValue, voteOrder, currentUtorid) {
   // Incrementing value by the counter
   // Will loop through all the vote options and update accordingly.
   const optionsRef = db.collection('Voting').doc(year).collection(month)
-  for (const key in voteOptions) {
+  const userMonth = month + 'Users'
+  console.log(JSON.stringify(voteValue))
+  console.log(JSON.stringify(voteOrder))
+  getDocID(year, month, currentUtorid)
+    .then((result) => {
+      db.collection('Voting').doc(year).collection(userMonth).doc(result).update(voteOrder)
+    })
+
+  for (const key in voteValue) {
     await optionsRef.doc(key).update({
-      Vote: firebase.firestore.FieldValue.increment(parseInt(voteOptions[key]))
+      Vote: firebase.firestore.FieldValue.increment(parseInt(voteValue[key]))
     })
   }
 }

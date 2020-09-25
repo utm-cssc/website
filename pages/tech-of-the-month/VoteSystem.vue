@@ -27,7 +27,8 @@ export default {
   data () {
     return {
       title: ['First Choice', 'Second Choice', 'Third Choice'],
-      vote: {},
+      voteOrder: {},
+      voteValue: {},
       userID: '',
       errorStatus: true,
       voteStatus: true,
@@ -52,18 +53,16 @@ export default {
     convertDictionary () {
       // Convert the label array to a dictionary so that it can be used to create the radio button layout
       const dictLen = Object.keys(this.options.labels).length
-      const tempDict = {}
       for (let i = 0; i < dictLen; i++) {
-        tempDict[this.options.labels[i]] = 0
+        this.$set(this.voteOrder, this.options.labels[i], 0)
       }
-      this.vote = tempDict
     },
     updateSeries () {
       // This is updating the series array, AKA updating the pie chart
       const tempNum = []
       let index = 0
-      for (const key in this.vote) {
-        tempNum[index] = this.series[index] + parseInt(this.vote[key])
+      for (const key in this.voteValue) {
+        tempNum[index] = this.series[index] + parseInt(this.voteValue[key])
         index += 1
       }
 
@@ -72,8 +71,8 @@ export default {
     async submitVote () {
       // Checks if user selected a vote option for each row
       this.voteStatus = true
-      for (const key in this.vote) {
-        const keyValue = this.vote[key]
+      for (const key in this.voteOrder) {
+        const keyValue = this.voteOrder[key]
         if (keyValue <= 0) {
           this.errorMessage = 'Please enter a vote for each choice'
           this.errorStatus = false
@@ -95,12 +94,12 @@ export default {
               // User has already voted
               this.errorMessage = 'You have already voted'
               // Subtract vote from the database if they want to change vote, and add the new vote
-              for (const key in this.vote) {
-                this.vote[key] = this.vote[key] - result[1][key]
+              for (const key in this.voteOrder) {
+                this.voteValue[key] = this.voteOrder[key] - result[1][key]
               }
-              console.log(JSON.stringify(this.vote))
               this.errorStatus = false
             } else {
+              this.voteValue = this.voteOrder
               this.errorStatus = true
             }
           })
@@ -111,7 +110,7 @@ export default {
       }
 
       // Update the votes in the database, update series for piechart
-      await addVote(this.year, this.month, this.vote)
+      await addVote(this.year, this.month, this.voteValue, this.voteOrder, this.userID)
       this.updateSeries()
       this.errorStatus = true
       this.voteStatus = false
@@ -125,7 +124,7 @@ export default {
     <article>
       <div class="flex-col mr-2">
         <!-- Displays the radio button layout -->
-        <RadioLayout ref="radioComponent" :children="Object.keys(vote)" :titles="title" />
+        <RadioLayout ref="radioComponent" :children="Object.keys(voteOrder)" :titles="title" />
         <!-- Error message -->
         <p style="line-height: 0; font-size: 15px; color: red;" :hidden="errorStatus">
           {{ errorMessage }}
@@ -152,6 +151,9 @@ export default {
         />
       </div>
     </no-ssr>
+    <v-alert type="success">
+      I'm a success alert.
+    </v-alert>
   </div>
 </template>
 
