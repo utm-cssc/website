@@ -72,6 +72,24 @@
 	  <div class="mt-3 mb-4 cssc-heading">
     	Frequently Asked Questions
       </div>
+	<div class="accordion mb-1" v-for="(faq, index) in allFAQ" :key="index">
+      <b-button class="faq-question" block v-b-toggle="'accordion-' + index">
+		  Q: {{ faq.question }}
+	  </b-button>
+      <b-collapse :id="'accordion-' + index" visible accordion="my-accordion">
+        <b-card-body class="faq-answer">
+          <b-card-text>
+		   A: {{ faq.answer }}
+		  </b-card-text>
+        </b-card-body>
+      </b-collapse>
+        <!-- <div class="mt-1 faq-question">
+			Q: {{faq.question}}
+		</div>
+		<div class="mb-4">
+			A: {{faq.answer}}
+		</div>	 -->
+    </div>
   </div>
 </template>
 
@@ -126,7 +144,22 @@ export default {
           icon: '../../profile-pics/AlexThompson.jpg'
         }
       ]
-    }
+	}
+  },
+  async asyncData({ $axios }) {
+	const allFAQ = []
+	const faq = await $axios.$get('https://raw.githubusercontent.com/utm-cssc/faq/master/faq.csv').then((response) => {
+		const lines = response.split('\n')
+		for (let i = 0; i < lines.length; i++ ) {
+			const currentFAQ = lines[i].split('|')
+			const FAQ = {
+				question: currentFAQ[0],
+				answer: currentFAQ[1]
+				}
+		    allFAQ.push(FAQ)
+		}
+	  })
+	  return { allFAQ }
   }
 }
 </script>
@@ -140,7 +173,30 @@ export default {
   border: none;
 }
 
-.button:hover {
-  background-color: var(--color-primary-dark);
+.button:hover,
+.button:active {
+  background-color: var(--color-primary-dark) !important;
+  box-shadow: none !important;
 }
+
+.faq-question {
+  font-size: 20px;
+  color: var(--color-heading);
+  background-color: rgba(0, 0, 0, 0.04);
+  outline: none !important;
+  border: none;
+  text-align: left;
+}
+
+.faq-question:hover,
+.faq-question:active {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--color-body) !important;
+}
+
+.faq-answer {
+  font-size: 20px;
+  text-align: left;
+}
+
 </style>
