@@ -76,7 +76,7 @@
       <b-button class="faq-question" block v-b-toggle="'accordion-' + index">
 		  Q: {{ faq.question }}
 	  </b-button>
-      <b-collapse :id="'accordion-' + index" visible accordion="my-accordion">
+      <b-collapse :id="'accordion-' + index" :visible=false accordion="my-accordion">
         <b-card-body class="faq-answer">
           <b-card-text>
 		   A: {{ faq.answer }}
