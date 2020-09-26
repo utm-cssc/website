@@ -27,12 +27,16 @@ export default {
   data () {
     return {
       title: ['First Choice', 'Second Choice', 'Third Choice'],
+      // Higher order = higher choice, i.e 3 is first choice, 2 is second choice, 1 is last choice
       voteOrder: {},
       voteValue: {},
       userID: '',
-      errorStatus: true,
-      voteStatus: true,
-      errorMessage: '',
+      primaryMessage: '',
+      secondaryMessage: '',
+      revote: false,
+      bgColour: '',
+      primaryAlert: false,
+      secondaryAlert: false,
       options: {
         // Labels is the legend of the pie chart
         // The labels and series index corresponds with another, first index of the label is first value of the series
@@ -70,20 +74,22 @@ export default {
     },
     async submitVote () {
       // Checks if user selected a vote option for each row
-      this.voteStatus = true
       for (const key in this.voteOrder) {
         const keyValue = this.voteOrder[key]
         if (keyValue <= 0) {
-          this.errorMessage = 'Please enter a vote for each choice'
-          this.errorStatus = false
+          this.primaryMessage = 'Please enter a vote for each choice'
+          this.primaryAlert = true
+          this.bgColour = '#f55252'
           return
         }
       }
-      await login()
-        .then((resultID) => {
-          this.userID = resultID
-        })
-
+      // If revote is false, that means the user has not signed in before, if true, then the user has signed in already and wants to change their vote
+      if (!this.revote) {
+        await login()
+          .then((resultID) => {
+            this.userID = resultID
+          })
+      }
       // Checks to see if the user has already voted before
       // If the user has not voted before, add the user to the database
       // Currently working with google sign in
@@ -92,29 +98,49 @@ export default {
           .then((result) => {
             if (result[0]) {
               // User has already voted
-              this.errorMessage = 'You have already voted'
               // Subtract vote from the database if they want to change vote, and add the new vote
+              let displayMessage = ''
+              const sortedArray = Array(this.title.length)
               for (const key in this.voteOrder) {
                 this.voteValue[key] = this.voteOrder[key] - result[1][key]
+                sortedArray[this.title.length - result[1][key]] = key
               }
-              this.errorStatus = false
+
+              for (let i = 0; i < this.title.length; i++) {
+                displayMessage += this.title[i] + ': ' + sortedArray[i] + ', '
+              }
+              // If it is a revote, do no display the error message again
+              if (!this.revote) {
+                this.secondaryAlert = true
+                this.secondaryMessage = displayMessage
+              }
             } else {
-              this.voteValue = this.voteOrder
-              this.errorStatus = true
+              this.primaryAlert = false
             }
           })
       } else {
         // User did not properly sign in
-        this.errorMessage = 'Please sign in if you wish to vote'
-        this.errorStatus = false
+        this.primaryMessage = 'Please sign in if you wish to vote'
+        this.primaryAlert = true
+        this.bgColour = '#f55252'
       }
 
-      // Update the votes in the database, update series for piechart
-      await addVote(this.year, this.month, this.voteValue, this.voteOrder, this.userID)
-      this.updateSeries()
-      this.errorStatus = true
-      this.voteStatus = false
-      this.$refs.radioComponent.reset()
+      console.log('primaryAlert:', this.primaryAlert, 'secondaryAlert:', this.secondaryAlert)
+      console.log('value:', this.voteValue)
+      console.log('order:', this.voteOrder)
+      // In order to submit the vote, the primaryAlert and the secondaryAlert has to be false
+      if (!this.primaryAlert && !this.secondaryAlert) {
+        console.log('voted')
+        // Update the votes in the database, update series for piechart
+        await addVote(this.year, this.month, this.voteValue, this.voteOrder, this.userID)
+        this.updateSeries()
+        this.primaryMessage = 'Vote has been submitted'
+        this.revote = !this.revote
+        this.bgColour = '#00d097'
+        this.$refs.radioComponent.reset()
+      } else {
+        console.log('no vote')
+      }
     }
   }
 }
@@ -126,12 +152,6 @@ export default {
         <!-- Displays the radio button layout -->
         <RadioLayout ref="radioComponent" :children="Object.keys(voteOrder)" :titles="title" />
         <!-- Error message -->
-        <p style="line-height: 0; font-size: 15px; color: red;" :hidden="errorStatus">
-          {{ errorMessage }}
-        </P>
-        <p style="line-height: 0; font-size: 15px;" :hidden="voteStatus">
-          Vote has been submitted
-        </P>
         <button class="submitButton" @click="submitVote()">
           Submit
         </button>
@@ -151,9 +171,55 @@ export default {
         />
       </div>
     </no-ssr>
-    <v-alert type="success">
-      I'm a success alert.
-    </v-alert>
+    <v-btn
+      color="primary"
+      @click="secondaryAlert = !secondaryAlert"
+    >
+      Toggle
+    </v-btn>
+    <div class="fixed-bottom" style="left: 25%; width: 50%;">
+      <v-alert
+        v-model="secondaryAlert"
+        border="left"
+        close-text="Close Alert"
+        dismissible
+        dark
+        style="background-color: #009b68;"
+        transition="scale-transition"
+      >
+        You have already voted, your current votes are: <br>
+        {{ secondaryMessage }}
+        <v-col class="shrink">
+          <v-btn
+            small
+            style="background-color: white; color: black;"
+            @click="revote = true; secondaryAlert = !secondaryAlert; submitVote();"
+          >
+            Yes
+          </v-btn>
+          <v-btn
+            small
+            style="background-color: white; color: black;"
+            @click="secondaryAlert = !secondaryAlert"
+          >
+            No
+          </v-btn>
+        </v-col>
+      </v-alert>
+    </div>
+    <div class="fixed-bottom" style="left: 25%; width: 50%;">
+      <v-alert
+        v-model="primaryAlert"
+        border="left"
+        close-text="Close Alert"
+        dismissible
+        dark
+        :style="'background-color:' + bgColour"
+        transition="scale-transition"
+      >
+        {{ primaryMessage }}
+      </v-alert>
+    </div>
   </div>
 </template>
 

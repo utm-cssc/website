@@ -80,8 +80,6 @@ export async function addVote (year, month, voteValue, voteOrder, currentUtorid)
   // Will loop through all the vote options and update accordingly.
   const optionsRef = db.collection('Voting').doc(year).collection(month)
   const userMonth = month + 'Users'
-  console.log(JSON.stringify(voteValue))
-  console.log(JSON.stringify(voteOrder))
   getDocID(year, month, currentUtorid)
     .then((result) => {
       db.collection('Voting').doc(year).collection(userMonth).doc(result).update(voteOrder)
