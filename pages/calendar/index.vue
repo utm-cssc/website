@@ -58,8 +58,7 @@
               :type="type"
               @click:event="showEvent"
               @click:more="viewDay"
-              @click:date="viewDay"
-              @change="updateRange"/>
+              @click:date="viewDay"/>
             <v-menu
               v-model="selectedOpen"
               :close-on-content-click="false"
@@ -160,52 +159,45 @@ export default {
       nativeEvent.stopPropagation()
     },
     readCSVData (data, clubName) {
-      const lines = data.split('\n')
-      const output = []
-      for (let i = 1; i < lines.length - 1; i++) {
-        const current = lines[i].split(', ')
-        const event = {
-          club_name: clubName,
-          name: current[0],
-          details: current[1],
-          start: `${current[2]} ${current[3]}:00`,
-          end: `${current[4]} ${current[5]}:00`
+      console.log(data)
+      // checks if the event data is returned properly
+      if (typeof data === 'string' && data.length > 0) {
+        const lines = data.split('\n')
+        const output = []
+        for (let i = 1; i < lines.length - 1; i++) {
+          const current = lines[i].split(', ')
+          // checks for error in the event
+          if (current.length === 6) {
+            const event = {
+              color: this.colors[clubName],
+              name: current[0],
+              details: current[1],
+              start: `${current[2]} ${current[3]}:00`,
+              end: `${current[4]} ${current[5]}:00`
+            }
+            output.push(event)
+          }
         }
-        output.push(event)
+        this.monthEvents.push(...output)
       }
-      this.allEvents.push(...output)
-    },
-    updateRange () {
-      const events = []
-      for (let i = 0; i < this.allEvents.length; i++) {
-        const event = this.allEvents[i]
-        events.push({
-          name: event.name,
-          start: event.start,
-          details: event.details,
-          end: event.end,
-          color: this.colors[event.club_name]
-        })
-        console.log(event)
-      }
-      this.monthEvents = events
     }
   },
   async asyncData ({ $axios }) {
-    const [wisc, mcss, utmsam, cssc, robotics, dsc] = await Promise.all([
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/WISC.csv'),
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/MCSS.csv'),
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/UTMSAM.csv'),
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv'),
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/Robotics.csv'),
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/DSC.csv')
+    let wisc = ''
+    let mcss = ''
+    let utmsam = ''
+    let cssc = ''
+    let robotics = ''
+    let dsc = ''
+    await Promise.all([
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/WISC.csv').then((res) => { wisc = res }).catch(() => { wisc = '' }),
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/MCSS.csv').then((res) => { mcss = res }).catch(() => { mcss = '' }),
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/UTMSAM.csv').then((res) => { utmsam = res }).catch(() => { utmsam = '' }),
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv').then((res) => { cssc = res }).catch(() => { cssc = '' }),
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/Robotics.csv').then((res) => { robotics = res }).catch(() => { robotics = '' }),
+      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/DSC.csv').then((res) => { dsc = res }).catch(() => { dsc = '' })
     ])
     return { wisc, mcss, utmsam, cssc, robotics, dsc }
-  },
-  watch: {
-    allEvents (newValue) {
-      this.updateRange()
-    }
   }
 }
 </script>
