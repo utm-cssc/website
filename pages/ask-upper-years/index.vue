@@ -152,11 +152,13 @@ export default {
 		const lines = response.split('\n')
 		for (let i = 0; i < lines.length; i++ ) {
 			const currentFAQ = lines[i].split('|')
-			const FAQ = {
-				question: currentFAQ[0],
-				answer: currentFAQ[1]
+			if (currentFAQ[0] != "" && currentFAQ[1] != "") {
+				const FAQ = {
+					question: currentFAQ[0],
+					answer: currentFAQ[1]
 				}
-		    allFAQ.push(FAQ)
+			    allFAQ.push(FAQ)
+			}
 		}
 	  })
 	  return { allFAQ }
