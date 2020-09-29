@@ -32,7 +32,7 @@
 	<div class="mb-3 mt-2 cssc-heading">
 		Ask Your Question
     </div>
-	<b-form-textarea v-model="question" name="Question" placeholder="Enter your Question Here" rows="3"></b-form-textarea>
+	<b-form-textarea v-model="question" name="Question" placeholder="Enter your Question Here" required="required" rows="3"></b-form-textarea>
 	<div class="mb-3 mt-2 cssc-heading">
     	Tags
     </div>
@@ -62,7 +62,7 @@
 	<p class="mb-2">
 		Please provide your utoronto email so we can contact you back!
 	</p>
-	<b-form-textarea v-model="email" name="Email" placeholder="user@mail.utoronto.ca" rows="1" max-rows="1"></b-form-textarea>
+	<b-form-textarea v-model="email" name="Email" placeholder="user@mail.utoronto.ca" required="required" rows="1" max-rows="1"></b-form-textarea>
 	<div class="d-flex justify-content-center mb-4 mt-5">
 		<b-button size="lg" type="submit" name="Submit" class="button mr-3">Submit</b-button>
 		<b-button size="lg" type="reset" value="Reset" class="button ml-3">Reset</b-button>
