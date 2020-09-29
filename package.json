@@ -1,6 +1,7 @@
 {
   "name": "cssc",
   "version": "1.0.0",
+  "description": "Helping MCS Students",
   "private": true,
   "scripts": {
     "dev": "nuxt",

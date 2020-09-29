@@ -6,6 +6,7 @@
   --color-primary-light: #00df96;
   --color-primary: #00d097;
   --color-primary-dark: #009b68;
+  --bg: #fff;
 }
 
 html {
@@ -21,7 +22,7 @@ body {
 
 .cssc-heading {
   color: var(--color-heading);
-  font-size: 50px;
+  font-size: 72px;
   font-weight: bold;
 }
 
@@ -43,10 +44,26 @@ body {
   font-size: 24px;
 }
 
+/* < Lg Size */
+@media screen and (max-width: 992px) {
+  .cssc-heading {
+    font-size: 80px;
+    line-height: 1.05;
+  }
+
+  .cssc-subheadings {
+    font-size: 25px;
+  }
+}
+
 /* For mobile */
 @media (max-width: 576px) {
   .cssc-heading {
-    font-size: 36px;
+    font-size: 48px;
+  }
+
+  .cssc-subheadings {
+    font-size: 20px;
   }
 }
 
