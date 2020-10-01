@@ -5,37 +5,42 @@
             "desc": "Finding the perfect club for you!",
             "logo": "https://avatars3.githubusercontent.com/u/64863952?s=400&u=293c427becbc89d1388ece6182462f14ad81d3a5&v=4",
             "repo": "https://github.com/2ofClubsApp",
-            "demo": "https://2ofclubs.app"
+            "demo": "https://2ofclubs.app",
+            "type": "Frontend"
         }  
     ],
     "students": [
         {
-            "name": "2ofClubsApp",
-            "desc": "Finding the perfect club for you!",
+            "name": "AI",
+            "desc": "Ai Project!",
             "logo": "https://avatars3.githubusercontent.com/u/64863952?s=400&u=293c427becbc89d1388ece6182462f14ad81d3a5&v=4",
             "repo": "https://github.com/2ofClubsApp",
-            "demo": "https://2ofclubs.app"
+            "demo": "https://2ofclubs.app",
+            "type": "AI"
         },
         {
-            "name": "2ofClubsApp",
-            "desc": "Finding the perfect club for you!",
+            "name": "Docker",
+            "desc": "Docker Project",
             "logo": "https://avatars3.githubusercontent.com/u/64863952?s=400&u=293c427becbc89d1388ece6182462f14ad81d3a5&v=4",
             "repo": "https://github.com/2ofClubsApp",
-            "demo": "https://2ofclubs.app"
+            "demo": "https://2ofclubs.app",
+            "type": "Docker"
         },
         {
-            "name": "2ofClubsApp",
-            "desc": "Finding the perfect club for you!",
+            "name": "CSC492 Project",
+            "desc": "CSC492 Project",
             "logo": "https://avatars3.githubusercontent.com/u/64863952?s=400&u=293c427becbc89d1388ece6182462f14ad81d3a5&v=4",
             "repo": "https://github.com/2ofClubsApp",
-            "demo": "https://2ofclubs.app"
+            "demo": "https://2ofclubs.app",
+            "type": "CSC492"
         },
         {
-            "name": "2ofClubsApp",
-            "desc": "Finding the perfect club for you!",
+            "name": "CSC398 Project",
+            "desc": "CSC398 Project",
             "logo": "https://avatars3.githubusercontent.com/u/64863952?s=400&u=293c427becbc89d1388ece6182462f14ad81d3a5&v=4",
             "repo": "https://github.com/2ofClubsApp",
-            "demo": "https://2ofclubs.app"
+            "demo": "https://2ofclubs.app",
+            "type": "CSC398"
         }
     ]
 }
