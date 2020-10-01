@@ -14,7 +14,7 @@
       <p>{{ project.desc }}</p>
     </div>
 
-    <div class="d-flex mt-4 justify-content-center">
+    <div class="d-flex mt-4">
       <b-button
         size="lg"
         class="button mr-2 d-flex"
@@ -29,17 +29,6 @@
         :href="project.demo"
         target="_blank"
       >Demo
-      </b-button>
-      <b-button
-        size="lg"
-        class="button"
-        :href="project.demo"
-        target="_blank"
-      >
-        <fa-icon
-          class="mr-2"
-          :icon="['fas', 'play']"
-        />Docs
       </b-button>
     </div>
   </div>

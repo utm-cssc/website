@@ -17,8 +17,6 @@
     "lint": "yarn lint:js && yarn lint:style"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/vue-fontawesome": "^2.0.0",
     "@nuxt/content": "^1.6.0",
     "@nuxtjs/axios": "^5.12.1",
     "@tailwindcss/typography": "^0.2.0",
