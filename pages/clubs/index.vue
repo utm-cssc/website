@@ -5,13 +5,13 @@
       <CenteredHero
         icon="../icons/cssc-logo-without-title.svg"
         title="Clubs"
-        desc="Representation of all clubs"
+        desc="Get involved in the community!"
         arrowLink="#top"
       />
     </div>
     <div id="top"></div>
     <Grid1X2
-    v-for="club in clubsDataStore[0].clubsData"
+    v-for="club in clubs[0].clubsData"
     :key="club.name"
     :title="club.name"
     :desc="club.desc"
@@ -26,8 +26,8 @@
 <script>
 export default {
   async asyncData ({ $content, params, error }) {
-    const clubsDataStore = await $content('clubs').fetch()
-    return { clubsDataStore }
+    const clubs = await $content('clubs').fetch()
+    return { clubs }
   }
 }
 </script>
