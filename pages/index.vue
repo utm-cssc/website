@@ -27,6 +27,7 @@
       </p>
     </div>
     <CenteredThreeColumnGrid :children="features" :rounded="false" />
+    <Collabrators />
   </div>
 </template>
 
