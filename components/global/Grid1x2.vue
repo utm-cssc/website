@@ -32,7 +32,7 @@
           {{ desc }}
         </p>
         <div class="mt-2 mt-lg-4">
-          <b-btn v-if="link" :href="link" class="py-2 px-3 feature-btn">
+          <b-btn target="_blank" v-if="link" :href="link" class="py-2 px-3 feature-btn">
             {{
               button
             }}
