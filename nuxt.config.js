@@ -62,8 +62,13 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/vuetify'
   ],
+  vuetify: {
+    customVariables: ['@/assets/main.css'],
+    treeShake: true
+  },
   /*
   ** Nuxt.js modules
   */

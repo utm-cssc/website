@@ -54,6 +54,7 @@ export default {
 .button {
   background: var(--color-primary);
   border: none;
+  color: white;
 }
 
 .button:hover,
@@ -85,6 +86,7 @@ export default {
   font-size: 32px;
   line-height: 1.2;
   font-weight: 800;
+  color: var(--color-heading);
 }
 
 .description {
@@ -93,5 +95,6 @@ export default {
   height: 72px;
   width: 335px;
   overflow: hidden;
+  color: var(--color-body);
 }
 </style>
