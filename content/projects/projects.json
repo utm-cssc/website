@@ -1,41 +1,34 @@
-{
-    "dsc": [
-        {
-            "name": "2ofClubsApp",
-            "desc": "Finding the perfect club for you!",
-            "logo": "https://avatars3.githubusercontent.com/u/64863952?s=400&u=293c427becbc89d1388ece6182462f14ad81d3a5&v=4",
-            "repo": "https://github.com/2ofClubsApp",
-            "demo": "https://2ofclubs.app"
-        }  
-    ],
-    "students": [
-        {
-            "name": "2ofClubsApp",
-            "desc": "Finding the perfect club for you!",
-            "logo": "https://avatars3.githubusercontent.com/u/64863952?s=400&u=293c427becbc89d1388ece6182462f14ad81d3a5&v=4",
-            "repo": "https://github.com/2ofClubsApp",
-            "demo": "https://2ofclubs.app"
-        },
-        {
-            "name": "2ofClubsApp",
-            "desc": "Finding the perfect club for you!",
-            "logo": "https://avatars3.githubusercontent.com/u/64863952?s=400&u=293c427becbc89d1388ece6182462f14ad81d3a5&v=4",
-            "repo": "https://github.com/2ofClubsApp",
-            "demo": "https://2ofclubs.app"
-        },
-        {
-            "name": "2ofClubsApp",
-            "desc": "Finding the perfect club for you!",
-            "logo": "https://avatars3.githubusercontent.com/u/64863952?s=400&u=293c427becbc89d1388ece6182462f14ad81d3a5&v=4",
-            "repo": "https://github.com/2ofClubsApp",
-            "demo": "https://2ofclubs.app"
-        },
-        {
-            "name": "2ofClubsApp",
-            "desc": "Finding the perfect club for you!",
-            "logo": "https://avatars3.githubusercontent.com/u/64863952?s=400&u=293c427becbc89d1388ece6182462f14ad81d3a5&v=4",
-            "repo": "https://github.com/2ofClubsApp",
-            "demo": "https://2ofclubs.app"
-        }
-    ]
-}
+[
+    {
+        "name": "Toonin",
+        "desc": "Share or stream audio and video over the web in real time.",
+        "repo": "https://github.com/grey-software/toonin",
+        "demo": "https://www.toonin.ml",
+        "logo": "/projects/toonin/logo.svg",
+        "tags": ["web", "app", "open-source", "grey-software"]
+    },
+    {
+        "name": "Material Math",
+        "desc": "Practice math problems in a fun, beautiful, material experience!",
+        "repo": "https://github.com/grey-software/material-math",
+        "demo": "https://material-math.grey.software",
+        "logo": "/projects/material-math/logo.png",
+        "tags": ["web", "app", "open-source", "grey-software"]
+    },
+    {
+        "name": "Twitter Focus",
+        "desc": "Hide the feed and What's Happening panel on Twitter so you can focus and control your experience!",
+        "logo": "/projects/twitter-focus/logo.png",
+        "repo": "https://github.com/grey-software/Twitter-Focus",
+        "demo": "https://chrome.google.com/webstore/detail/twitter-focus/kmdpomipbibobgdgfeidajmnlecloeml?hl=en&authuser=2",
+        "tags": ["web", "extension", "open-source", "grey-software"]
+    },
+    {
+        "name": "LinkedIn Focus",
+        "desc": "Hide the news feed and news panel on LinkedIn so you can focus on your career!",
+        "logo": "/projects/linkedin-focus/logo.png",
+        "repo": "https://github.com/grey-software/LinkedIn-Focus",
+        "demo": "https://chrome.google.com/webstore/detail/linkedin-focus/cmafljjdkloacahjddlpaognhjpacdff?hl=en&authuser=2",
+        "tags": ["web", "extension", "open-source", "grey-software"]
+    }
+]
