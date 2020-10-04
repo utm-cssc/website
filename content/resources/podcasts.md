@@ -3,6 +3,8 @@ title: Podcasts
 icon: /icons/podcast.svg
 desc: Learn on the go with entertaining, informative, and awe-inspiring podcasts
 link: podcasts
+tags:
+  - community
 ---
 
 # Podcasts

@@ -1,5 +1,5 @@
 <template>
-  <div class="container px-5">
+  <div class="container">
     <div class="row d-flex flex-wrap">
       <resources-grid-item
       v-for="item in items"

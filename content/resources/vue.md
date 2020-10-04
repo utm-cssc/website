@@ -3,6 +3,10 @@ title: Vue
 icon: /icons/vue.svg
 desc: Develop web applications easily with a community powered JavaScript framework!
 link: vue
+tags:
+  - web
+  - frontend
+  - framework
 ---
 
 # Vue
