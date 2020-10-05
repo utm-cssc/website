@@ -1,6 +1,6 @@
 ---
 name: Code Refactor
-about: Use this template to propose enhancements to the codebase
+about: Please use this template to propose enhancements to the codebase
 title: "\U0001F6E0️  Refactor: {{Enter Title}}"
 labels: 'Domain: Dev Experience, Role: Software Engineer'
 assignees: ''
