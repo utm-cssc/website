@@ -52,7 +52,6 @@ export default {
   methods: {
     resourcesForTag (tag) {
       const filteredResources = this.resources.filter(resource => resource.tags.includes(tag))
-      console.log(filteredResources)
       return filteredResources
     }
   }
