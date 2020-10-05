@@ -3,6 +3,9 @@ title: JavaScript
 icon: /icons/javascript.svg
 desc: Make you websites dynamic by using a powerful modern scripting language!
 link: javascript
+tags:
+  - web
+  - language
 ---
 
 # Javascript

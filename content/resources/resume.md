@@ -3,6 +3,8 @@ title: Resume
 icon: /icons/resume.svg
 desc: Learn how to stand out with the first piece of information employers see about you.
 link: resume
+tags:
+  - career
 ---
 
 # Resume Help
