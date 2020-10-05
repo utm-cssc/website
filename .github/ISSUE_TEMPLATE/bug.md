@@ -1,6 +1,6 @@
 ---
 name: Bug
-about: Use this template to file a bug you find on our website!
+about: Please use this template to file a bug you find on our website!
 title: "\U0001F41B Bug: {{Enter Bug Title}}"
 labels: 'Type: Bug'
 assignees: ''
@@ -10,22 +10,32 @@ assignees: ''
 <!--- Thank you for filing this bug report! Your contributions make open source software development happen! -->
 
 ### Expected Behavior 🧭
-<!--- Tell us what should happen -->
+<!--- A description of what should happen. -->
 
-(Write your answer here.)
+(Please write your answer here.)
 
 
 ### Current Behavior 🔍 
-<!--- Tell us what happens instead of the expected behavior -->
+<!--- A description happens instead of the expected behavior. -->
 
-(Write your answer here.)
+(Please write your answer here.)
+
+### Steps to Reproduce 🔢 
+<!--- An unambiguous set of steps to reproduce this bug, or a link to a video recording of the bug ocurring. -->
+
+(Please write your answer here.)
+
+1.
+2.
+3.
+4.
 
 
 **Acceptence Criteria for Fix ✅**
 
-<!--- Break down the expected behavior into points to better help understand the solution-->
+<!--- A checklist of points that break down the expected behavior of a solution that fixes the bug. -->
 
-(Write your answer here.)
+(Please write your answer here.)
 
 
 - [ ] 
@@ -35,31 +45,24 @@ assignees: ''
 ### Possible Solution 🛠️ 
 <!---  Do you have an idea for how to fix the bug? -->
 
-(Write your answer here.)
+(Please write your answer here.)
 
 
 **Implementation Details 🧰**
-<!--- Not obligatory, but suggest an idea for implementing addition or change -->
+<!--- Not obligatory, but you may suggest an idea for implementing additions or changes that would fix this bug. -->
 
-(Write your answer here.)
+(Please write your answer here.)
 
 
 - 
 - 
 - 
-
-### Steps to Reproduce 🔢 
-<!--- Provide a link to a live example, or an unambiguous set of steps to reproduce this bug. -->
-
-(Write your answer here.)
-
-1.
-2.
-3.
-4.
-
 
 ### Additional details ℹ️ 
-<!--- Is there anything else you'd like us to know? -->
 
-(Write your answer here.)
+<!--
+  Is there anything else you can add about this bugs?
+  You might want to link to related issues here, if you haven't already.
+-->
+
+(Please write your answer here.)
