@@ -204,6 +204,6 @@ export default {
 
 <style scoped>
   .calendar_nav {
-    color: white;
+    color: white !important;
   }
 </style>
