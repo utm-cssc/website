@@ -7,29 +7,29 @@ assignees: ''
 
 ---
 
-# Code Refactor Task proposal
-
 ### Motivation 🏁
 
 <!--
-Provide a clear and concise description of the refactoring task. Are you refactoring code for better readability? Are you restructuring a bloated system into components?
+A clear and concise description of the motovation for this refactoring task. 
+Are you refactoring code for better readability? 
+Are you restructuring a bloated system into components?
 -->
 
-(Write your motivation here.)
+(Please write your motivation here.)
 
 ### Describe your refactoring solution 🛠️ 
 
 <!--
-  Provide a clear and concise description of the refactoring task. Are you refactoring code for better readability? Are you restructing a bloated system into components? Is this an architectural change that would require images?
+A clear and concise description of the refactor. 
 -->
 
-(Describe your proposed solution here.)
+(Please describe your proposed solution here.)
 
 ### Additional details ℹ️
 
 <!--
-  Is there anything else you can add about the proposal?
+  Is there anything else you can add about the refactor?
   You might want to link to related issues here, if you haven't already.
 -->
 
-(Provide additional details here.)
+(Please provide additional details here.)
