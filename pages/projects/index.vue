@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
+    <div
+      class="mt-5 d-flex flex-column justify-content-center align-items-center"
+    >
       <CenteredHero
         icon="../../icons/projects.svg"
         title="Projects"
@@ -9,84 +11,45 @@
       />
     </div>
     <a id="projects" />
-    <v-app>
-      <v-combobox
-        v-model="chips"
-        :items="items"
-        chips
-        clearable
-        label="Filter projects by categories"
-        multiple
-        prepend-icon="mdi-filter-variant"
-        solo
-      >
-        <template v-slot:selection="{ attrs, item, select, selected }">
-          <v-chip
-            v-bind="attrs"
-            :input-value="selected"
-            close
-            @click="select"
-            @click:close="remove(item)"
-          >
-            <strong>{{ item }}</strong>&nbsp;
-            <span>(interest)</span>
-          </v-chip>
-        </template>
-      </v-combobox>
-      <div class="mt-2 cssc-heading">
-        DSC
+      <div v-for="tag in tags" :key="tag" class="container px-5">
+        <div class="mt-2 mb-5 cssc-heading resource-tag">
+          {{ tag.replace("-", " ") }}
+        </div>
+        <div class="project-cards-container" >
+          <ProjectCard v-for="(project, index) in projectsForTag(tag)" :key="index" :project="project" />
+        </div>
       </div>
-      <div class="project-cards-container">
-        <ProjectCard
-          v-for="(dscProject,id) in dscProjects"
-          :key="id"
-          :project="dscProject"
-        />
-      </div>
-      <div class="mt-2 mb-3 cssc-heading">
-        Student Made
-      </div>
-      <div class="project-cards-container">
-        <ProjectCard
-          v-for="(studentProject,id) in searching"
-          :key="id"
-          :project="studentProject"
-        />
-      </div>
-    </v-app>
   </div>
 </template>
 
 <script>
 export default {
-  data: () => {
-    return {
-      chips: [],
-      items: ['Docker', 'AI', 'CSC492', 'CSC398']
-    }
-  },
   async asyncData ({ $content, params, error }) {
     const projectsDataStore = await $content('projects').fetch()
-    return { dscProjects: projectsDataStore[0].dsc, studentProjects: projectsDataStore[0].students }
-  },
-  computed: {
-    searching () {
-      if (this.chips.length === 0) {
-        return this.studentProjects
+    console.log(projectsDataStore)
+    const tags = new Set()
+    const projects = []
+    for (const projectData of projectsDataStore[0].projects) {
+      const project = {
+        name: projectData.name,
+        desc: projectData.desc,
+        repo: projectData.repo,
+        logo: projectData.logo,
+        demo: projectData.demo,
+        tags: projectData.tags
       }
-      const projects = []
-      for (let i = 0; i < this.studentProjects.length; i++) {
-        if (this.chips.includes(this.studentProjects[i].type)) {
-          projects.push(this.studentProjects[i])
-        }
-      }
-      return projects
+      project.tags.forEach((tag) => {
+        tags.add(tag)
+      })
+      projects.push(project)
     }
+    return { projects, tags }
   },
   methods: {
-    remove (item) {
-      this.chips.splice(this.chips.indexOf(item), 1)
-      this.chips = [...this.chips]
+    projectsForTag (tag) {
+      const filteredProjects = this.projects.filter(project => project.tags.includes(tag))
+      console.log(filteredProjects)
+      return filteredProjects
     }
   }
 }
@@ -98,16 +61,7 @@ export default {
   flex-wrap: wrap;
 }
 
-.v-application .pl-4 {
-  padding-left: 1.5rem !important;
+.resource-tag {
+  text-transform: capitalize;
 }
-
-.v-application .mb-4 {
-  margin-bottom: 1.5rem !important;
-}
-
-.v-application .mr-4 {
-  margin-right: 1.5rem !important;
-}
-
 </style>

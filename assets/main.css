@@ -80,3 +80,7 @@ iframe {
   border-radius: 8px;
   margin-top: 16px;
 }
+
+.flex {
+  display: flex;
+}
