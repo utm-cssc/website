@@ -10,25 +10,23 @@ assignees: ''
 ### Motivation 🏁
 
 <!--
-Provide a clear and concise motivation for this initiative? How will this help execute the vision of the org.
+A  clear and concise motivation for this initiative? How will this help execute the vision of the org?
 -->
+
+(Please write your answer here.)
 
 ### Initiative Overview 👁️‍🗨️ 
 
 <!--
-  Provide a clear and concise description of what the initiative
+  A clear and concise description of what the initiative is.
 -->
 
-### Possible Solution 🛠️ 
-<!---  Do you have an idea for how to fix the bug? -->
+(Please write your answer here.)
 
-(Write your answer here.)
-
-
-**Execution Details 🧰**
+**Implementation Details 🛠️ **
 <!--- Please share a plan to help realize this initiative -->
 
-(Write your answer here.)
+(Please write your answer here.)
 
 
 - 
@@ -39,10 +37,10 @@ Provide a clear and concise motivation for this initiative? How will this help e
 ### Describe alternatives you've considered 🔍
 
 <!--
-  Let us know about other solutions you've tried or researched.
+  An outline of other solutions you've tried or researched.
 -->
 
-(Write your answer here.)
+(Please write your answer here.)
 
 ### Additional details ℹ️
 
@@ -51,4 +49,4 @@ Provide a clear and concise motivation for this initiative? How will this help e
   You might want to link to related issues here, if you haven't already.
 -->
 
-(Write your answer here.)
+(Please write your answer here.)
