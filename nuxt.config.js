@@ -1,4 +1,4 @@
-const OG_IMAGE = "https://cssc.utm.utoronto.ca/logos/cssc-logo-without-title.png"
+const OG_IMAGE = 'https://cssc.utm.utoronto.ca/logos/cssc-logo-without-title.png'
 export default {
   /*
   ** Nuxt rendering mode
