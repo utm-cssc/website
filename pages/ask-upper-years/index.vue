@@ -1,7 +1,7 @@
 <script>
 /* eslint-disable */
 </script>
- 
+
 <template>
   <div class="container">
 	<div class="mt-5 d-flex flex-column justify-content-center align-items-center">
@@ -28,7 +28,7 @@
 				<span>{{upperYearOption.text}}</span>
 			</div>
 		</b-form-radio-group>
-	</b-form-group>	
+	</b-form-group>
 	<div class="mb-3 mt-2 cssc-heading">
 		Ask Your Question
     </div>
@@ -44,7 +44,7 @@
 				<span>{{tagOption.text}}</span>
 			</div>
 		</b-form-checkbox-group>
-	</b-form-group>	
+	</b-form-group>
 	<div class="mt-3 cssc-heading">
     	Share With Us
     </div>
@@ -54,9 +54,9 @@
 	<b-form-checkbox-group id="ask-upper-year-share" v-model="shareQuestion" name="share-question">
 		<div class="flex align-items-center mr-3" v-for="shareQuestionOption in shareQuestionOptions" :key="shareQuestionOption.value">
 			<b-form-radio :value="shareQuestionOption.value"></b-form-radio>
-			<span>{{shareQuestionOption.text}}</span> 
+			<span>{{shareQuestionOption.text}}</span>
 		</div>
-	</b-form-checkbox-group> 
+	</b-form-checkbox-group>
 		<div class="mt-3 cssc-heading">
     	   Email
         </div>
@@ -148,7 +148,7 @@ export default {
   },
   async asyncData({ $axios }) {
 	const allFAQ = []
-	const faq = await $axios.$get('https://raw.githubusercontent.com/utm-cssc/faq/master/faq.csv').then((response) => {
+	await $axios.$get('https://raw.githubusercontent.com/utm-cssc/faq/master/faq.csv').then((response) => {
 		const lines = response.split('\n')
 		for (let i = 0; i < lines.length; i++ ) {
 			const currentFAQ = lines[i].split('|')
@@ -166,13 +166,11 @@ export default {
 }
 </script>
 <style scoped>
-.custom-control-inline {
-  margin-right: 0.15rem;
-}
 
 .button {
   background-color: var(--color-primary);
   border: none;
+  color: white;
 }
 
 .button:hover,
