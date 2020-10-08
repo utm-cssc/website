@@ -3,6 +3,8 @@ title: Collections
 icon: /icons/collections.svg
 desc: The best content from the internet can help you filter the signal from the noise.
 link: collections
+tags:
+  - community
 ---
 
 # Collections

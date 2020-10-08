@@ -12,8 +12,6 @@
   --color-dsc: #eb07a3;
   --color-robotics: #0071db;
   --bg: #fff;
-
-  /* Get colors for calendar for differesnt clubs */
 }
 
 html {
@@ -29,7 +27,7 @@ body {
 
 .cssc-heading {
   color: var(--color-heading);
-  font-size: 90px;
+  font-size: 72px;
   font-weight: bold;
 }
 
@@ -86,4 +84,8 @@ h6 {
 iframe {
   border-radius: 8px;
   margin-top: 16px;
+}
+
+.flex {
+  display: flex;
 }

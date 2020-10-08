@@ -22,18 +22,18 @@
         Choose an Upper Year Student
     </div>
 	<b-form-group>
-		<b-form-checkbox-group class="flex" id="ask-upper-year" v-model="selectedUpperYear" name="upper-year-student">
+		<b-form-radio-group class="flex" id="ask-upper-year" v-model="selectedUpperYear" name="upper-year-student">
 			<div class="flex align-items-center mr-3" v-for="upperYearOption in askUpperYearOptions" :key="upperYearOption.value">
-				<b-form-checkbox :value="upperYearOption.value"></b-form-checkbox>
+				<b-form-radio :value="upperYearOption.value"></b-form-radio>
 				<span>{{upperYearOption.text}}</span>
 			</div>
-		</b-form-checkbox-group>
+		</b-form-radio-group>
 	</b-form-group>	
 	<div class="mb-3 mt-2 cssc-heading">
 		Ask Your Question
     </div>
-	<b-form-textarea v-model="question" name="Question" placeholder="Enter Your Question Here" rows="3"></b-form-textarea>
-	<div class="mt-2 cssc-heading">
+	<b-form-textarea v-model="question" name="Question" placeholder="Enter your Question Here" required="required" rows="3"></b-form-textarea>
+	<div class="mb-3 mt-2 cssc-heading">
     	Tags
     </div>
 	<p class="mb-3">Note: CSSC cannot answer any course content related questions!</p>
@@ -53,17 +53,17 @@
 	</p>
 	<b-form-checkbox-group id="ask-upper-year-share" v-model="shareQuestion" name="share-question">
 		<div class="flex align-items-center mr-3" v-for="shareQuestionOption in shareQuestionOptions" :key="shareQuestionOption.value">
-			<b-form-checkbox :value="shareQuestionOption.value"></b-form-checkbox>
-			<span>{{shareQuestionOption.text}}</span>
+			<b-form-radio :value="shareQuestionOption.value"></b-form-radio>
+			<span>{{shareQuestionOption.text}}</span> 
 		</div>
-	</b-form-checkbox-group>
+	</b-form-checkbox-group> 
 		<div class="mt-3 cssc-heading">
     	   Email
         </div>
 	<p class="mb-2">
 		Please provide your utoronto email so we can contact you back!
 	</p>
-	<b-form-textarea v-model="email" name="Email" placeholder="user@mail.utoronto.ca" rows="1" max-rows="1"></b-form-textarea>
+	<b-form-textarea v-model="email" name="Email" placeholder="user@mail.utoronto.ca" required="required" rows="1" max-rows="1"></b-form-textarea>
 	<div class="d-flex justify-content-center mb-4 mt-5">
 		<b-button size="lg" type="submit" name="Submit" class="button mr-3">Submit</b-button>
 		<b-button size="lg" type="reset" value="Reset" class="button ml-3">Reset</b-button>
@@ -72,6 +72,24 @@
 	  <div class="mt-3 mb-4 cssc-heading">
     	Frequently Asked Questions
       </div>
+	<div class="accordion mb-1" v-for="(faq, index) in allFAQ" :key="index">
+      <b-button class="faq-question" block v-b-toggle="'accordion-' + index">
+		  Q: {{ faq.question }}
+	  </b-button>
+      <b-collapse :id="'accordion-' + index" :visible=false accordion="my-accordion">
+        <b-card-body class="faq-answer">
+          <b-card-text>
+		   A: {{ faq.answer }}
+		  </b-card-text>
+        </b-card-body>
+      </b-collapse>
+        <!-- <div class="mt-1 faq-question">
+			Q: {{faq.question}}
+		</div>
+		<div class="mb-4">
+			A: {{faq.answer}}
+		</div>	 -->
+    </div>
   </div>
 </template>
 
@@ -126,7 +144,24 @@ export default {
           icon: '../../profile-pics/AlexThompson.jpg'
         }
       ]
-    }
+	}
+  },
+  async asyncData({ $axios }) {
+	const allFAQ = []
+	const faq = await $axios.$get('https://raw.githubusercontent.com/utm-cssc/faq/master/faq.csv').then((response) => {
+		const lines = response.split('\n')
+		for (let i = 0; i < lines.length; i++ ) {
+			const currentFAQ = lines[i].split('|')
+			if (currentFAQ[0] != "" && currentFAQ[1] != "") {
+				const FAQ = {
+					question: currentFAQ[0],
+					answer: currentFAQ[1]
+				}
+			    allFAQ.push(FAQ)
+			}
+		}
+	  })
+	  return { allFAQ }
   }
 }
 </script>
@@ -140,7 +175,30 @@ export default {
   border: none;
 }
 
-.button:hover {
-  background-color: var(--color-primary-dark);
+.button:hover,
+.button:active {
+  background-color: var(--color-primary-dark) !important;
+  box-shadow: none !important;
 }
+
+.faq-question {
+  font-size: 20px;
+  color: var(--color-heading);
+  background-color: rgba(0, 0, 0, 0.04);
+  outline: none !important;
+  border: none;
+  text-align: left;
+}
+
+.faq-question:hover,
+.faq-question:active {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--color-body) !important;
+}
+
+.faq-answer {
+  font-size: 20px;
+  text-align: left;
+}
+
 </style>
