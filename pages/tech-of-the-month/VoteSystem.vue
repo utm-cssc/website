@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       title: ['First Choice', 'Second Choice', 'Third Choice'],
-      // Higher order = higher choice, i.e 3 is first choice, 2 is second choice, 1 is last choice
+      // Higher order = higher value, i.e first choice is worth 3, second choice is worth 2, and third choice is worth 1
       voteOrder: {},
       voteValue: {},
       userID: '',
@@ -83,6 +83,7 @@ export default {
           return
         }
       }
+
       // If revote is false, that means the user has not signed in before, if true, then the user has signed in already and wants to change their vote
       if (!this.revote) {
         await login()
@@ -90,15 +91,15 @@ export default {
             this.userID = resultID
           })
       }
+
       // Checks to see if the user has already voted before
       // If the user has not voted before, add the user to the database
-      // Currently working with google sign in
       if (this.userID !== '') {
         await checkUser(this.year, this.month, this.userID, this.databaseLabels)
           .then((result) => {
+            // If result[0] is true, then the user has already voted, ask the user if they wish to revote
             if (result[0]) {
-              // User has already voted
-              // Subtract vote from the database if they want to change vote, and add the new vote
+              // Update the vote accordingly. (If the user changes a vote from First choice to third choice, substract 2, and from third choice to first choice add 2)
               let displayMessage = ''
               const sortedArray = Array(this.title.length)
               for (const key in this.voteOrder) {
@@ -109,13 +110,16 @@ export default {
               for (let i = 0; i < this.title.length; i++) {
                 displayMessage += this.title[i] + ': ' + sortedArray[i] + ', '
               }
-              // If it is a revote, do no display the error message again
+              // Displays the resubmission form. If the current submission is a revote, do no display the error message again
               if (!this.revote) {
                 this.secondaryAlert = true
                 this.secondaryMessage = displayMessage
               }
-            } else {
-              this.primaryAlert = false
+            // Internal server error if there was trouble retrieving user data
+            } else if ((result) == null) {
+              this.primaryMessage = 'Internal server error. Please try again'
+              this.primaryAlert = true
+              this.bgColour = '#f55252'
             }
           })
       } else {
@@ -125,21 +129,24 @@ export default {
         this.bgColour = '#f55252'
       }
 
-      console.log('primaryAlert:', this.primaryAlert, 'secondaryAlert:', this.secondaryAlert)
-      console.log('value:', this.voteValue)
-      console.log('order:', this.voteOrder)
-      // In order to submit the vote, the primaryAlert and the secondaryAlert has to be false
+      // In order to submit the vote, the primaryAlert and the secondaryAlert has to be false (No errors)
       if (!this.primaryAlert && !this.secondaryAlert) {
-        console.log('voted')
-        // Update the votes in the database, update series for piechart
-        await addVote(this.year, this.month, this.voteValue, this.voteOrder, this.userID)
-        this.updateSeries()
-        this.primaryMessage = 'Vote has been submitted'
-        this.revote = !this.revote
-        this.bgColour = '#00d097'
-        this.$refs.radioComponent.reset()
-      } else {
-        console.log('no vote')
+        this.voteValue = this.voteOrder
+        // Update the votes in the database, update series for piechart and reset all values
+        const voteResult = await addVote(this.year, this.month, this.voteValue, this.voteOrder, this.userID)
+        // If addVote returns false, then there was an internal server error while retrieving/writing data
+        if (!voteResult) {
+          this.primaryMessage = 'Internal server error. Please try again'
+          this.primaryAlert = true
+          this.bgColour = '#f55252'
+        } else {
+          this.updateSeries()
+          this.primaryMessage = 'Vote has been submitted'
+          this.primaryAlert = true
+          this.bgColour = '#00d097'
+          this.revote = !this.revote
+          this.$refs.radioComponent.reset()
+        }
       }
     }
   }
@@ -151,12 +158,11 @@ export default {
       <div class="flex-col mr-2">
         <!-- Displays the radio button layout -->
         <RadioLayout ref="radioComponent" :children="Object.keys(voteOrder)" :titles="title" />
-        <!-- Error message -->
         <button class="submitButton" @click="submitVote()">
           Submit
         </button>
       </div>
-      <!-- Display result here-->
+      <!-- Pie Chart-->
     </article>
     <br>
     <no-ssr>
@@ -171,12 +177,8 @@ export default {
         />
       </div>
     </no-ssr>
-    <v-btn
-      color="primary"
-      @click="secondaryAlert = !secondaryAlert"
-    >
-      Toggle
-    </v-btn>
+    <!-- Alerts-->
+    <!-- Secondary alert is for the resubmission form-->
     <div class="fixed-bottom" style="left: 25%; width: 50%;">
       <v-alert
         v-model="secondaryAlert"
@@ -207,7 +209,8 @@ export default {
         </v-col>
       </v-alert>
     </div>
-    <div class="fixed-bottom" style="left: 25%; width: 50%;">
+    <!-- Primary alert is for main messages-->
+    <div class="fixed-bottom">
       <v-alert
         v-model="primaryAlert"
         border="left"
@@ -233,10 +236,20 @@ export default {
   transition-duration: 0.5s;
 }
 
+.fixed-bottom {
+  left: 25%;
+  width: 50%;
+}
+
 @media (max-width: 576px) {
   .submitButton {
     font-size: 25px;
     padding-bottom: 20px;
+  }
+
+  .fixed-bottom {
+    left: 0;
+    width: 100%;
   }
 }
 
