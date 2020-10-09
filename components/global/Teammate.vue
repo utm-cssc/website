@@ -1,19 +1,30 @@
 <template>
-  <div class="team-container col-12 col-md-6 col-xl-4">
-    <div class="pt-4 d-flex align-items-center mb-2">
-      <img :src="imgSrc" :alt="imgAlt" class="circle mr-4">
+  <div
+  class="flip
+  team-container
+  d-flex
+  align-items-center
+  justify-content-center
+  col-12
+  col-md-4
+  col-xl-3
+  my-3">
+    <div class="front d-flex flex-col justify-content-between align-items-center">
+      <div class="mt-3">
+        <img :src="imgSrc" :alt="imgAlt" class="circle">
+      </div>
       <div>
         <div class="name">{{ name }}</div>
-        <div class="position">{{ position }}</div>
-        <div class="d-flex mt-2">
-          <DiscordIcon @click="copyToClipboard" v-b-tooltip.hover :title="isCopied" class="logo mr-1" />
-          <a :href="emailAddress">
-            <EmailIcon class="logo" />
-          </a>
-        </div>
+        <div class="position text-center">{{ position }}</div>
+      </div>
+      <div class="d-flex mb-4">
+        <DiscordIcon @click="copyToClipboard" v-b-tooltip.hover :title="isCopied" class="logo mr-3" />
+        <a :href="emailAddress">
+          <EmailIcon class="logo" />
+        </a>
       </div>
     </div>
-    <div class="message pb-4 pb-md-0">
+    <div class="back message text-center">
       {{ message }}
     </div>
   </div>
@@ -85,6 +96,42 @@ export default {
 </script>
 
 <style>
+.flip {
+  position: relative;
+}
+
+.front,
+.back {
+  display: block;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 0.5s;
+  transition-property: transform, opacity;
+}
+
+.flip > .back {
+  position: absolute;
+  opacity: 0;
+  width: 80%;
+  height: 80%;
+  transform: rotateY(-180deg);
+}
+
+.front {
+  position: relative;
+  min-height: 300px;
+  transform: rotateY(0deg);
+}
+
+.flip:hover > .front {
+  opacity: -1;
+  transform: rotateY(180deg);
+}
+
+.flip:hover > .back {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
 .team-container {
   min-height: 350px;
   border-radius: 12px;
@@ -112,8 +159,8 @@ export default {
 }
 
 .logo {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
 }
 
 svg:hover {
