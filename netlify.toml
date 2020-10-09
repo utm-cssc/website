@@ -9,3 +9,9 @@ from = "/github"
 to = "https://github.com/utm-cssc/website"
 status = 301
 force = false
+
+[[redirects]]
+from = "/*"
+to = "http://cssc.utm.utoronto.ca/"
+status = 404
+force = false
