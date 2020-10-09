@@ -3,3 +3,9 @@ from = "/discord"
 to = "https://discord.gg/SHwbmVg"
 status = 301
 force = false
+
+[[redirects]]
+from = "/github"
+to = "https://github.com/utm-cssc/website"
+status = 301
+force = false
