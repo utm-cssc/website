@@ -3,6 +3,11 @@ title: React Native
 icon: /icons/react-native.svg
 desc: A JavaScript framework for writing natively rendering mobile applications for iOS and Android!
 link: react-native
+tags:
+  - web
+  - frontend
+  - framework
+  - mobile
 ---
 
 # React Native

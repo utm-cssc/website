@@ -1,6 +1,6 @@
 <template>
   <div class="mb-5">
-    <div class="row d-flex align-items-center">
+    <div class="row d-flex align-items-center justify-content-center">
       <div
         class="col-md-5 col-lg-4 d-flex justify-content-start"
         :class="{
@@ -9,10 +9,10 @@
           'px-5': $mq == 'sm'
         }"
       >
-        <img class="feature-img" :src="imgSrc">
+        <img class="feature-img mb-5 mb-md-0" :src="imgSrc">
       </div>
       <div
-        class="col-md-7 col-lg-8 d-flex justify-content-center flex-column text-container"
+        class="col-md-7 d-flex justify-content-center flex-column text-container"
         :class="{
           'px-5': $mq == 'sm',
           'align-items-md-end': reversed,
@@ -20,7 +20,7 @@
           'right-padded-desc': !reversed
         }"
       >
-        <h3 v-if="title != ''" class="feature-title">
+        <h3 v-if="title != ''" class="feature-title mb-2">
           {{ title }}
         </h3>
         <p
@@ -31,8 +31,8 @@
         >
           {{ desc }}
         </p>
-        <div>
-          <b-btn v-if="link" :href="link" class="py-2 px-3 feature-btn">
+        <div class="mt-2 mt-lg-4">
+          <b-btn target="_blank" v-if="link" :href="link" class="py-2 px-3 feature-btn">
             {{
               button
             }}
