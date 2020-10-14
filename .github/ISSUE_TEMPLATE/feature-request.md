@@ -1,36 +1,30 @@
 ---
 name: Feature Request
-about: Use this template to request a new feature for our website
+about: Please use this template to request a new feature for the futurist network website
 title: "\U0001F680 Feature Request: {{Feature Request Title}}"
 labels: 'Type: Enhancement'
 assignees: ''
-
 ---
 
 ### Problem Overview 👁️‍🗨️ 
 
-<!--
-  Provide a clear and concise description of what the problem is.
-  For example, "I'm always frustrated when..."
--->
+<!-- A clear and concise description of what why you would like this feature. -->
 
-(Write your answer here.)
+(Please write your answer here.)
 
-### Describe what you'd like 🧰
+### What would you like? 🧰
 
-<!--
-  Provide a clear and concise description of what you want to happen.
--->
+<!-- A clear and concise description of what you'd like to see. -->
 
-(Describe your proposed solution here.)
+(Please describe your proposed solution here.)
 
-### Describe alternatives you've considered 🔍
+### What alternatives have you considered? 🔍
 
 <!--
-  Let us know about other solutions you've tried or researched.
+  A description of other solutions you've tried or researched.
 -->
 
-(Write your answer here.)
+(Please write your answer here.)
 
 ### Additional details ℹ️
 
@@ -39,4 +33,4 @@ assignees: ''
   You might want to link to related issues here, if you haven't already.
 -->
 
-(Write your answer here.)
+(Please write your answer here.)

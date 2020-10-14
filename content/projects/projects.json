@@ -1,0 +1,67 @@
+{
+    "projects": [
+      {
+        "name": "Toonin",
+        "desc": "Share or stream audio and video over the web in real time.",
+        "repo": "https://github.com/grey-software/toonin",
+        "demo": "https://www.toonin.ml",
+        "logo": "/logos/projects/toonin.svg",
+        "tags": ["grey-software"]
+      },
+      {
+        "name": "Material Math",
+        "desc": "Practice math problems in a fun, beautiful, material experience!",
+        "repo": "https://github.com/grey-software/material-math",
+        "demo": "https://material-math.grey.software",
+        "logo": "/logos/projects/material-math.png",
+        "tags": ["grey-software"]
+      },
+      {
+        "name": "Twitter Focus",
+        "desc": "Hide the feed and What's Happening panel on Twitter so you can focus and control your experience!",
+        "logo": "/logos/projects/twitter-focus.png",
+        "repo": "https://github.com/grey-software/Twitter-Focus",
+        "demo": "https://chrome.google.com/webstore/detail/twitter-focus/kmdpomipbibobgdgfeidajmnlecloeml?hl=en&authuser=2",
+        "tags": ["grey-software"]
+      },
+      {
+        "name": "LinkedIn Focus",
+        "desc": "Hide the news feed and news panel on LinkedIn so you can focus on your career!",
+        "logo": "/logos/projects/linkedin-focus.png",
+        "repo": "https://github.com/grey-software/LinkedIn-Focus",
+        "demo": "https://chrome.google.com/webstore/detail/linkedin-focus/cmafljjdkloacahjddlpaognhjpacdff?hl=en&authuser=2",
+        "tags": ["grey-software"]
+      },
+      {
+        "name": "Futurist Network",
+        "desc": "An online community for futurists to propose, fund and work on ",
+        "logo": "/logos/projects/futurist-network.png",
+        "repo": "https://github.com/grey-software/futurist.network",
+        "demo": "http://www.futurist.network",
+        "tags": ["grey-software"]
+      },
+      {
+        "name": "Nox",
+        "desc": "With Nox, students and professors can have better lectures through real-time questions and feedback!",
+        "logo": "/logos/projects/nox.png",
+        "repo": "https://github.com/ShoaibAhmadKhan/Nox",
+        "tags": ["student"]
+      },
+      {
+        "name": "ViaPlanner",
+        "desc": "Viaplanner is designed to simplify and optimizes the course selection process for UofT students.",
+        "logo": "/logos/projects/viaplanner.png",
+        "repo": "https://github.com/VIAplanner/via-timetable",
+        "demo": "https://timetable.viaplanner.ca/about",
+        "tags": ["student"]
+      },
+      {
+        "name": "Proformance",
+        "desc": "Proformance allows squash coaches to analyse their players' performance on Android.",
+        "logo": "/logos/projects/proformance.svg",
+        "repo": "https://github.com/OsamaSaleh289/Squash-Video-Analysis-Project",
+        "tags": ["student"]
+      }
+    ]
+  }
+  

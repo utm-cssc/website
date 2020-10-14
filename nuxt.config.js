@@ -1,4 +1,4 @@
-const OG_IMAGE = "https://cssc.utm.utoronto.ca/logos/cssc-logo-without-title.png"
+const OG_IMAGE = 'https://cssc.utm.utoronto.ca/logos/cssc-logo-without-title.png'
 export default {
   /*
   ** Nuxt rendering mode
@@ -62,7 +62,8 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Nuxt.js modules

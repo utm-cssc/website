@@ -3,6 +3,10 @@ title: React
 icon: /icons/react.svg
 desc: A JavaScript library for building dynamic user interfaces
 link: react
+tags:
+  - web
+  - frontend
+  - framework
 ---
 
 # React
