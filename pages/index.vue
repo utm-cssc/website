@@ -27,10 +27,10 @@
       </p>
     </div>
     <CenteredThreeColumnGrid :children="features" :rounded="false" />
-    <!-- Collabrators Section -->
+    <!-- Collabutors Section -->
     <div class="my-3">
       <div class="cssc-heading">
-        Collabrators
+        Contributors
       </div>
       <Contributors :contributors="contributors" />
     </div>
