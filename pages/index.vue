@@ -34,13 +34,15 @@
       </div>
       <div class="d-flex flex-wrap">
         <Teammate
-        imgSrc="/team/lebron.jpg"
-        name="Lebron James"
-        position="Tech Lead"
-        message="Chris is our tech lead! He recently finished a CSC492 project where he created a tinder-like application for students to match with school clubs! If you need help with your personal projects or want to learn a new technology, he's your go to man!"
-        discord="username"
-        email="lebron.james@mail.utoronto.ca"
-        linkedin="https://www.linkedin.com/in/milindvishnoi/"/>
+          v-for="mate in currentTeam"
+          :key="mate.name"
+          :imgSrc="mate.imgSrc"
+          :name="mate.name"
+          :position="mate.position"
+          :message="mate.message"
+          :discord="mate.discord"
+          :email="mate.email"
+          :linkedin="mate.linkedin"/>
       </div>
     </div>
   </div>
@@ -79,6 +81,12 @@ export default {
         link: '../../resources/ekit/E-Kit For MCS Orientation 2020.pdf'
       }
     }
+  },
+  async asyncData ({ $content, params, error }) {
+    const team = await $content('team').fetch()
+    console.log(team)
+    const currentTeam = team[0].current
+    return { currentTeam }
   }
 }
 </script>
