@@ -27,7 +27,13 @@
       </p>
     </div>
     <CenteredThreeColumnGrid :children="features" :rounded="false" />
-    <Collabrators />
+    <!-- Collabrators Section -->
+    <div class="my-3">
+      <div class="cssc-heading">
+        Collabrators
+      </div>
+      <Contributors :contributors="contributors" />
+    </div>
   </div>
 </template>
 
@@ -64,6 +70,29 @@ export default {
         link: '../../resources/ekit/E-Kit For MCS Orientation 2020.pdf'
       }
     }
+  },
+  async asyncData ({ $axios }) {
+    const contributors = []
+    await $axios
+      .$get('https://api.github.com/repos/utm-cssc/website/contributors')
+      .then((res) => {
+        for (const c of res) {
+          const contributor = {
+            login: c.login,
+            imgSrc: c.avatar_url,
+            url: c.html_url
+          }
+          contributors.push(contributor)
+        }
+        console.log(contributors)
+      })
+      .catch((e) => {
+        console.log(e.message)
+        console.log({ statusCode: 404, message: 'Something went wrong' })
+      })
+    console.log('Final Contributors')
+    console.log(contributors)
+    return { contributors }
   }
 }
 </script>
