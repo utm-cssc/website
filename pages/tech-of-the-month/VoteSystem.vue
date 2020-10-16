@@ -1,6 +1,6 @@
 <script>
 import RadioLayout from './RadioLayout.vue'
-import { addVote, checkUser, login } from '~/assets/database/firebase.js'
+import { addVote, checkUser, login, addEmail, removeEmail } from '~/assets/database/firebase.js'
 export default {
   components: {
     apexcharts: () => import('vue-apexcharts'),
@@ -22,11 +22,15 @@ export default {
     year: {
       type: String,
       default: ''
+    },
+    voteStatus: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
     return {
-      title: ['First Choice', 'Second Choice', 'Third Choice'],
+      title: [],
       // Higher order = higher value, i.e first choice is worth 3, second choice is worth 2, and third choice is worth 1
       voteOrder: {},
       voteValue: {},
@@ -37,6 +41,8 @@ export default {
       bgColour: '',
       primaryAlert: false,
       secondaryAlert: false,
+      thirdAlert: false,
+      email: '',
       options: {
         // Labels is the legend of the pie chart
         // The labels and series index corresponds with another, first index of the label is first value of the series
@@ -59,6 +65,7 @@ export default {
       const dictLen = Object.keys(this.options.labels).length
       for (let i = 0; i < dictLen; i++) {
         this.$set(this.voteOrder, this.options.labels[i], 0)
+        this.title.push((i + 1).toString())
       }
     },
     updateSeries () {
@@ -71,6 +78,38 @@ export default {
       }
 
       this.series = tempNum
+    },
+    async subscribe () {
+      if (this.email === '') {
+        this.primaryMessage = 'Invalid email!'
+        this.primaryAlert = true
+        this.bgColour = '#f55252'
+        return
+      }
+      await addEmail(this.email)
+        .then((result) => {
+          if (!result) {
+            this.primaryMessage = 'Subscribed!'
+            this.primaryAlert = true
+            this.bgColour = '#00d097'
+          } else {
+            this.thirdAlert = true
+          }
+        })
+    },
+    async unsubscribe () {
+      await removeEmail(this.email)
+        .then((result) => {
+          if (!result) {
+            this.primaryMessage = 'You are not subscribed'
+            this.primaryAlert = true
+            this.bgColour = '#f55252'
+          } else {
+            this.primaryMessage = 'Unsubscribed!'
+            this.primaryAlert = true
+            this.bgColour = '#00d097'
+          }
+        })
     },
     async submitVote () {
       // Checks if user selected a vote option for each row
@@ -153,12 +192,12 @@ export default {
 }
 </script>
 <template>
-  <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto mt-5">
+  <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto">
     <article>
       <div class="flex-col mr-2">
         <!-- Displays the radio button layout -->
-        <RadioLayout ref="radioComponent" :children="Object.keys(voteOrder)" :titles="title" />
-        <button class="submitButton" @click="submitVote()">
+        <RadioLayout ref="radioComponent" :children="Object.keys(voteOrder)" :titles="title" :hidden="voteStatus"/>
+        <button class="submitButton" @click="submitVote()" :hidden="voteStatus">
           Submit
         </button>
       </div>
@@ -177,6 +216,12 @@ export default {
         />
       </div>
     </no-ssr>
+    <!-- Subscribe input -->
+    <form @submit.prevent="subscribe" style="font-size: 15px;">
+      Enter an email to receive notifications about the upcoming voting periods
+      <input type="email" class="form-control" placeholder="example@email.com" v-model="email" style="display: inline; width: 50%;"/>
+      <button>Submit</button>
+    </form>
     <!-- Alerts-->
     <!-- Secondary alert is for the resubmission form-->
     <div class="fixed-bottom" style="left: 25%; width: 50%;">
@@ -203,6 +248,36 @@ export default {
             small
             style="background-color: white; color: black;"
             @click="secondaryAlert = !secondaryAlert"
+          >
+            No
+          </v-btn>
+        </v-col>
+      </v-alert>
+    </div>
+    <!-- Third alert is for the unsubscribing -->
+    <div class="fixed-bottom" style="left: 25%; width: 50%;">
+      <v-alert
+        v-model="thirdAlert"
+        border="left"
+        close-text="Close Alert"
+        dismissible
+        dark
+        style="background-color: #f55252;"
+        transition="scale-transition"
+      >
+        You are already subscribed, would you like to unsubscribe:
+        <v-col class="shrink">
+          <v-btn
+            small
+            style="background-color: white; color: black;"
+            @click="thirdAlert = !thirdAlert; unsubscribe();"
+          >
+            Yes
+          </v-btn>
+          <v-btn
+            small
+            style="background-color: white; color: black;"
+            @click="thirdAlert = !thirdAlert"
           >
             No
           </v-btn>

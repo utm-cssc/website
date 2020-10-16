@@ -16,10 +16,23 @@
     </div>
     <div class="mb-5" />
     <!-- Voting Title-->
-    <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;" :disable="voteStatus" :hidden="voteStatus">
-      Voting for {{ this.month }}
-      <VoteSystem :databaseSeries="series" :databaseLabels="labels" :month="month" :year="year" />
+    <div class="cssc-subheadings" style="text-align: center; font-size: 40px;">
+      <span v-if="voteStatus">
+        Voting has ended for {{ this.month }} <br>
+        <span style="font-size: 20px;">The next vote will start on the 15th and will be available until the end of the month</span> <br><br>
+        Results:
+      </span>
+      <span v-else>
+        Voting for {{ this.month }}
+      </span>
     </div>
+    <VoteSystem
+      :databaseSeries="series"
+      :databaseLabels="labels"
+      :month="month"
+      :year="year"
+      :voteStatus="voteStatus"
+      style="text-align: center;"/>
   </div>
 </template>
 
@@ -35,35 +48,31 @@ export default {
     const tempTitle = []
     const tempNum = []
     // Change start date here
-    const startDate = 15
+    const startDate = 12
     // Fetch the current date and year and next month
     const currentDate = new Date()
-    const nextMonth = new Date(currentDate.getUTCFullYear(), currentDate.getUTCMonth() + 1, 1).toLocaleString('default', { month: 'long' })
-    const currentYear = currentDate.getUTCFullYear().toString()
     const currentDay = currentDate.getUTCDate()
-    // Change the integer value if we want to change the start date for the voting system
-    if (currentDay >= startDate) {
-      let resultStatus = false
-      // Fetch the votes from the current Month and Year
-      await getMonthVotes(currentYear, nextMonth)
-        .then((result) => {
-          if (result !== null) {
-            const dictLen = Object.keys(result).length
-            // Converts the dictionary to the appropriate array
-            for (let i = 0; i < dictLen; i++) {
-              tempTitle.push(result[i].id)
-              tempNum.push(result[i].Vote)
-            }
-          } else {
-            // Hide and disables the vote system if there no available data
-            resultStatus = true
+    const nextMonth = new Date(currentDate.getUTCFullYear(), currentDate.getUTCMonth() + 1, 1).toLocaleString('default', { month: 'long' })
+    const getMonth = ((currentDay <= startDate) ? nextMonth : currentDate.toLocaleString('default', { month: 'long' }))
+    const getYear = ((nextMonth === 'January') ? (currentDate.getUTCFullYear() + 1).toString() : currentDate.getUTCFullYear().toString())
+    let resultStatus = (currentDay >= startDate)
+    // Fetch the votes from the specified Month and Year
+    await getMonthVotes(getYear, getMonth)
+      .then((result) => {
+        if (result !== null) {
+          const dictLen = Object.keys(result).length
+          // Converts the dictionary to the appropriate array
+          for (let i = 0; i < dictLen; i++) {
+            tempTitle.push(result[i].id)
+            tempNum.push(result[i].Vote)
           }
-        })
-      // Set the dynamic data to the corresponding variable
-      return { labels: tempTitle, series: tempNum, month: nextMonth, year: currentYear, voteStatus: resultStatus }
-    }
-    // Hides and disables the voting system if it is not the starting date of the month
-    return { voteStatus: true }
+        } else {
+          // No avaliable data for the month retrieving
+          resultStatus = true
+        }
+      })
+    // Set the dynamic data to the corresponding variable
+    return { labels: tempTitle, series: tempNum, month: getMonth, year: getYear, voteStatus: resultStatus }
   },
   data: () => {
     return {

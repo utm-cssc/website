@@ -22,8 +22,7 @@ export async function getMonthVotes (year, month) {
       })
       return optionList
     })
-    .catch((err) => {
-      console.log('GetMonthVotes: Error getting document', err)
+    .catch(() => {
       return null
     })
 }
@@ -49,8 +48,7 @@ export async function checkUser (year, month, currentUtorid, voteOptions) {
 
       return [true, voteList]
     })
-    .catch((err) => {
-      console.log('CheckUser: Error getting document', err)
+    .catch(() => {
       return null
     })
 }
@@ -71,8 +69,7 @@ async function getDocID (year, month, currentUtorid) {
 
       return result
     })
-    .catch((err) => {
-      console.log('getDocID: Error getting document', err)
+    .catch(() => {
       return null
     })
 }
@@ -100,21 +97,53 @@ export async function addVote (year, month, voteValue, voteOrder, currentUtorid)
       })
     }
     return true
-  } else {
-    return false
   }
+  return false
 }
 
+// Add the user's email to the subscription list
+export async function addEmail (email) {
+  const emailRef = db.collection('Voting').doc('Subscription').collection('Email')
+  return await emailRef.where('Email', '==', email).limit(1).get()
+    .then(async (snapshot) => {
+      if (snapshot.empty) {
+        await emailRef.doc().set({
+          Email: email
+        })
+        return false
+      }
+      return true
+    })
+    .catch(() => {
+      return null
+    })
+}
+
+// Add the user's email to the subscription list
+export async function removeEmail (email) {
+  const emailRef = db.collection('Voting').doc('Subscription').collection('Email')
+  return await emailRef.where('Email', '==', email).limit(1).get()
+    .then((snapshot) => {
+      if (snapshot.empty) {
+        return false
+      }
+      snapshot.forEach((doc) => {
+        emailRef.doc(doc.id).delete()
+      })
+      return true
+    })
+    .catch(() => {
+      return null
+    })
+}
 // Login using the provider specified (Currently github)
 export async function login () {
   return await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
     .then(async function () {
       const result = await auth.signInWithPopup(provider)
-      console.log(result.user.uid)
       return result.user.uid
     })
-    .catch((err) => {
-      console.log('Login: Error getting document', err)
+    .catch(() => {
       return ''
     })
 }

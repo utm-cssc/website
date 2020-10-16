@@ -10,7 +10,7 @@
         data-v-16201546=""
         style="color: #606f7b; margin-bottom: 1rem !important;"
       >
-        {{ childTitle }}
+        {{ "Choice #" + childTitle }}
       </h3>
       <!-- Radio button layout -->
       <div class="container" align="center">
@@ -26,7 +26,7 @@
               type="radio"
               :name="childTitle"
               :class="child"
-              :value="3 - index"
+              :value="titles.length - index"
               autocomplete="off"
               @click="onChange(child, childTitle)"
             ></input>
