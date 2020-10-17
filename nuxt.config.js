@@ -16,6 +16,9 @@ export default {
   */
   head: {
     title: 'CSSC Website',
+    script: [
+      { src: 'https://plausible.io/js/plausible.js', async: true, defer: true }
+    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
