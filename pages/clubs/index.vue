@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-  <!-- Title -->
-    <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
+    <!-- Title -->
+    <div
+      class="mt-5 d-flex flex-column justify-content-center align-items-center"
+    >
       <CenteredHero
         icon="../icons/cssc-logo-without-title.svg"
         title="Clubs"
@@ -10,16 +12,9 @@
       />
     </div>
     <div id="top"></div>
-    <Grid1X2
-    v-for="(club, index) in clubs"
-    :key="club.name"
-    :title="club.name"
-    :desc="club.desc"
-    :imgSrc="club.imgSrc"
-    :button="club.button"
-    :link="club.link"
-    :reversed="index % 2 != 0"
-    />
+    <div class="clubs-cards-container">
+      <ClubCard v-for="club in clubs" :key="club.name" :club="club" />
+    </div>
   </div>
 </template>
 
@@ -31,3 +26,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.clubs-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
