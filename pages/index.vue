@@ -27,6 +27,24 @@
       </p>
     </div>
     <CenteredThreeColumnGrid :children="features" :rounded="false" />
+    <!-- Tech Team -->
+    <div class="my-5">
+      <div class="cssc-heading">
+        Meet the Team
+      </div>
+      <div class="d-flex flex-wrap">
+        <Teammate
+          v-for="mate in currentTeam"
+          :key="mate.name"
+          :imgSrc="mate.imgSrc"
+          :name="mate.name"
+          :position="mate.position"
+          :message="mate.message"
+          :discord="mate.discord"
+          :email="mate.email"
+          :linkedin="mate.linkedin"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -63,6 +81,12 @@ export default {
         link: '../../resources/ekit/E-Kit For MCS Orientation 2020.pdf'
       }
     }
+  },
+  async asyncData ({ $content, params, error }) {
+    const team = await $content('team').fetch()
+    console.log(team)
+    const currentTeam = team[0].current
+    return { currentTeam }
   }
 }
 </script>
