@@ -21,7 +21,7 @@
         <img :src="imgSrc" :alt="imgAlt" class="circle">
       </div>
       <div class="pointer" @click="isClicked = !isClicked">
-        <div class="name">{{ name }}</div>
+        <div class="name text-center">{{ name }}</div>
         <div class="position text-center">{{ position }}</div>
       </div>
       <div class="d-flex mb-4">
@@ -99,11 +99,10 @@ export default {
   },
   methods: {
     copyToClipboard (e) {
-      const text = navigator.clipboard
+      navigator.clipboard
         .writeText(this.discord)
         .then(() => {
           this.isCopied = 'Copied!'
-          console.log(this.isCopied)
           setTimeout(() => {
             this.isCopied = 'Click to copy username'
           }, 5000)
@@ -114,7 +113,6 @@ export default {
             this.isCopied = 'Click to copy username'
           }, 1000)
         })
-      console.log('Copy ' + text)
     }
   }
 }

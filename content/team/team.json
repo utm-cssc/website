@@ -1,13 +1,31 @@
 {
   "current": [
     {
-      "name": "Lebron James",
-      "imgSrc": "/team/lebron.jpg",
-      "position": "Tech Lead",
+      "name": "Alexandra Thompson",
+      "imgSrc": "../../profile-pics/AlexThompson.jpg",
+      "position": "General Manager",
+      "message": "Alexandra found her passion for working with students in her time as an undergraduate Computer Science teaching assistant. She enjoys conversations on the ups and downs of student life and her experience as an undergraduate. Alexandra loves to share her tips on overcoming struggles in university.",
+      "discord": "LovecraftsSiren#8059",
+      "email": "jenniferalexandrathompson@mail.utoronto.ca",
+      "linkedin": "https://www.linkedin.com/in/jenalexthompson"
+    },
+    {
+      "name": "Chris Lim",
+      "imgSrc": "https://avatars1.githubusercontent.com/u/24628243?s=400&u=0edf079732c29b3c8cdd0358a39210d57d301002&v=4",
+      "position": "Technical Director",
       "message": "Chris is our tech lead! He recently finished a CSC492 project where he created a tinder-like application for students to match with school clubs! If you need help with your personal projects or want to learn a new technology, he's your go to man!",
-      "discord": "username",
-      "email": "lebron.james@mail.utoronto.ca",
-      "linkedin": "https://www.linkedin.com/in/milindvishnoi/"
+      "discord": "Eat My Shuriken#0781",
+      "email": "christopher.limtungtseung@mail.utoronto.ca",
+      "linkedin": "https://www.linkedin.com/in/hiimchrislim"
+    },
+    {
+      "name": "Jessica Anderson",
+      "imgSrc": "https://scontent.fyyz1-1.fna.fbcdn.net/v/t1.0-9/53421307_422837641797498_4304438682435190784_n.jpg?_nc_cat=103&_nc_sid=174925&_nc_ohc=PNNt6wDk8fIAX_Ivtbx&_nc_oc=AQkYBQz4FbrqeeWYV-K5xdFq5Wn7-DeBgJDorZQBJ7F9IB7-E7A88a5LtgmGgqGNHiwNb5iTUR1uGq7V7oj6tKJK&_nc_ht=scontent.fyyz1-1.fna&oh=2129d75a3918d714fe942f762788dde1&oe=5F7E5C5E",
+      "position": "Operations Officer",
+      "message": "Jessica was accepted into UTM as an Accounting Student, but ended up wanting to do Computer Science, so she is ready to tackle any of your POSt questions. She always struggles to choose which courses are most important to take and she\\'s ready to share her findings!",
+      "discord": "janders#8886",
+      "email": "jess.anderson@mail.utoronto.ca",
+      "linkedin": "https://www.linkedin.com/in/janders"
     }
   ]
 }
