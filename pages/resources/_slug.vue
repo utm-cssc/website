@@ -10,9 +10,12 @@
 <script>
 export default {
   async asyncData ({ $content, params, error }) {
-    console.log(params.slug)
     const page = await $content('resources', params.slug).fetch()
-
+    for (let i = 0; i < page.toc.length; i++) {
+      if (page.toc[i].depth === 2) {
+        console.log(page.toc[i])
+      }
+    }
     return { page }
   }
 }
