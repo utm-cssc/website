@@ -48,14 +48,14 @@ export default {
     const tempTitle = []
     const tempNum = []
     // Change start date here
-    const startDate = 12
+    const startDate = 15
     // Fetch the current date and year and next month
     const currentDate = new Date()
     const currentDay = currentDate.getUTCDate()
     const nextMonth = new Date(currentDate.getUTCFullYear(), currentDate.getUTCMonth() + 1, 1).toLocaleString('default', { month: 'long' })
-    const getMonth = ((currentDay <= startDate) ? nextMonth : currentDate.toLocaleString('default', { month: 'long' }))
+    const getMonth = ((currentDay <= startDate) ? currentDate.toLocaleString('default', { month: 'long' }) : nextMonth)
     const getYear = ((nextMonth === 'January') ? (currentDate.getUTCFullYear() + 1).toString() : currentDate.getUTCFullYear().toString())
-    let resultStatus = (currentDay >= startDate)
+    let resultStatus = (currentDay <= startDate)
     // Fetch the votes from the specified Month and Year
     await getMonthVotes(getYear, getMonth)
       .then((result) => {
