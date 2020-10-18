@@ -1,5 +1,6 @@
 <template>
   <article class="mt-5 pb-5">
+    <SideBar :toc="toc" :title="page.title"/>
     <nuxt-content
       class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto"
       :document="page"
@@ -11,12 +12,7 @@
 export default {
   async asyncData ({ $content, params, error }) {
     const page = await $content('resources', params.slug).fetch()
-    for (let i = 0; i < page.toc.length; i++) {
-      if (page.toc[i].depth === 2) {
-        console.log(page.toc[i])
-      }
-    }
-    return { page }
+    return { page, toc: page.toc }
   }
 }
 </script>
