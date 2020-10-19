@@ -8,19 +8,19 @@
     },
     {
       "name": "UTM Robotics",
-      "desc": "With a new Robotics faculty at UTM, the Robotics club seeks to empower the club's members and the broader student community to collaborate effectively on robotics projects. We hope to create a place for innovation for applied computer science, and promote interest in robotics and its applications for students at UTM.",
+      "desc": "The Robotics club seeks to empower the club's members and the broader student community to collaborate on robotics projects. We hope to create a place for innovation for applied computer science, and promote interest in robotics and its applications at UTM.",
       "logo": "/logos/robotics.png",
       "link": "https://utmrobotics.com"
     },
     {
       "name": "UTM WISC",
-      "desc": "The Women in Science and Computing club (WiSC) exists to create a welcoming space for those who identify as female in STEM. We hope to retain female students in STEM programs and build a connected support community and prepare them for their future.",
+      "desc": "The Women in Science and Computing Club exists to create a welcoming space for those who identify as female in STEM. We hope to retain female students in STEM programs and build a connected support community to prepare them for their future.",
       "logo": "/logos/wisc.png",
       "link": "https://linktr.ee/WISCUTM"
     },
     {
       "name": "UTM DSC",
-      "desc": "Developer Student Clubs (DSC) is a student lead community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.",
+      "desc": "Developer Student Clubs is a student led community backed by Google Developers aimed at empowering undergraduates from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from Google.",
       "logo": "/logos/dsc.png",
       "link": "https://linktr.ee/DSCUTM"
     },
