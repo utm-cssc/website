@@ -27,6 +27,24 @@
       </p>
     </div>
     <CenteredThreeColumnGrid :children="features" :rounded="false" />
+    <!-- Tech Team -->
+    <div class="my-5">
+      <div class="cssc-heading">
+        Meet the Team
+      </div>
+      <div class="d-flex flex-wrap">
+        <Teammate
+          v-for="mate in currentTeam"
+          :key="mate.name"
+          :imgSrc="mate.imgSrc"
+          :name="mate.name"
+          :position="mate.position"
+          :message="mate.message"
+          :discord="mate.discord"
+          :email="mate.email"
+          :linkedin="mate.linkedin"/>
+      </div>
+    </div>
     <!-- Collabutors Section -->
     <div class="my-3">
       <div class="cssc-heading">
@@ -71,7 +89,9 @@ export default {
       }
     }
   },
-  async asyncData ({ $axios }) {
+  async asyncData ({ $axios, $content, params, error }) {
+    const teamDataStore = await $content('team').fetch()
+    const currentTeam = teamDataStore[0].team
     const contributors = []
     await $axios
       .$get('https://api.github.com/repos/utm-cssc/website/contributors')
@@ -84,7 +104,6 @@ export default {
           }
           contributors.push(contributor)
         }
-        console.log(contributors)
       })
       .catch((e) => {
         console.log(e.message)
@@ -92,7 +111,7 @@ export default {
       })
     console.log('Final Contributors')
     console.log(contributors)
-    return { contributors }
+    return { contributors, currentTeam }
   }
 }
 </script>
