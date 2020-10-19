@@ -21,8 +21,9 @@
 <script>
 export default {
   async asyncData ({ $content, params, error }) {
-    const clubs = await $content('clubs').only('body').fetch()
-    return { clubs: clubs[0].body }
+    const clubs = await $content('clubs').fetch()
+    console.log(clubs)
+    return { clubs: clubs[0].clubs }
   }
 }
 </script>
@@ -31,5 +32,6 @@ export default {
 .clubs-cards-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 </style>
