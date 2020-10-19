@@ -83,9 +83,8 @@ export default {
     }
   },
   async asyncData ({ $content, params, error }) {
-    const team = await $content('team').fetch()
-    console.log(team)
-    const currentTeam = team[0].current
+    const teamDataStore = await $content('team').fetch()
+    const currentTeam = teamDataStore[0].team
     return { currentTeam }
   }
 }

@@ -1,8 +1,17 @@
 {
-  "current": [
+  "team": [
+    {
+      "name": "Michael Liut",
+      "imgSrc": "/team/Michael.png",
+      "position": "Faculty Advisor",
+      "message": "Michael is a Computer Science educator who prides himself in fostering an environment of educational excellence through active and experiential learning. In recent years he has assisted in the development and implementation of active learning materials/strategies in several Computer Science courses at UTM. Michael enjoys travelling, and is an avid scuba diver.",
+      "discord": "Mike's Here#5684",
+      "email": " michael.liut@utoronto.ca",
+      "linkedin": "https://www.linkedin.com/in/mliut"
+    },
     {
       "name": "Alexandra Thompson",
-      "imgSrc": "../../profile-pics/AlexThompson.jpg",
+      "imgSrc": "/team/AlexThompson.jpg",
       "position": "General Manager",
       "message": "Alexandra found her passion for working with students in her time as an undergraduate Computer Science teaching assistant. She enjoys conversations on the ups and downs of student life and her experience as an undergraduate. Alexandra loves to share her tips on overcoming struggles in university.",
       "discord": "LovecraftsSiren#8059",
@@ -20,7 +29,7 @@
     },
     {
       "name": "Jessica Anderson",
-      "imgSrc": "https://scontent.fyyz1-1.fna.fbcdn.net/v/t1.0-9/53421307_422837641797498_4304438682435190784_n.jpg?_nc_cat=103&_nc_sid=174925&_nc_ohc=PNNt6wDk8fIAX_Ivtbx&_nc_oc=AQkYBQz4FbrqeeWYV-K5xdFq5Wn7-DeBgJDorZQBJ7F9IB7-E7A88a5LtgmGgqGNHiwNb5iTUR1uGq7V7oj6tKJK&_nc_ht=scontent.fyyz1-1.fna&oh=2129d75a3918d714fe942f762788dde1&oe=5F7E5C5E",
+      "imgSrc": "/team/Jess.jpg",
       "position": "Operations Officer",
       "message": "Jessica was accepted into UTM as an Accounting Student, but ended up wanting to do Computer Science, so she is ready to tackle any of your POSt questions. She always struggles to choose which courses are most important to take and she\\'s ready to share her findings!",
       "discord": "janders#8886",

@@ -42,7 +42,7 @@
     <div
       class="card back message text-center pointer"
       @click="isClicked = !isClicked">
-      <p class="px-3 py-4">{{ message }}</p>
+      <p class="px-3 py-2">{{ message }}</p>
     </div>
   </div>
 </template>
