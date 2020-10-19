@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Please use this template to request a new feature for the futurist network website
+about: Please use this template to request a new feature for the UTM CSSC website
 title: "\U0001F680 Feature Request: {{Feature Request Title}}"
 labels: 'Type: Enhancement'
 assignees: ''
