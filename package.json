@@ -11,10 +11,13 @@
     "serve": "nuxt serve",
     "generate": "nuxt build --target static && nuxt export",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint:js:fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
-    "lint:style:fix": "stylelint **/*.{vue,css} --ignore-path .gitignore --fix",
-    "lint": "yarn lint:js && yarn lint:style"
+    "lint": "yarn lint:js && yarn lint:style",
+    "fix": "yarn fix:js && yarn fix:css",
+    "fix:js": "yarn fix:eslint && yarn fix:prettier",
+    "fix:eslint": "eslint --ext .js,.vue --fix ",
+    "fix:prettier": "prettier -l --write \"{*.js,**/*.js,**/*.vue}\"",
+    "fix:css": "stylelint -f --fix **/*.{vue,css}"
   },
   "dependencies": {
     "@nuxt/content": "^1.6.0",
@@ -33,8 +36,9 @@
     "@nuxtjs/tailwindcss": "^3.0.0",
     "@nuxtjs/vuetify": "^1.11.2",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.2.0",
+    "eslint": "^7.11.0",
     "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-config-prettier": "^6.13.0",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0"
   }
