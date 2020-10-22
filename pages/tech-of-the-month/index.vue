@@ -10,28 +10,31 @@
     <!-- Monthly Title -->
     <div>
       <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;">
-        October - Web Development
+        {{ this.currentMonth }} - Web Development
       </div>
       <ResourcesGrid :items="resources" />
     </div>
     <div class="mb-5" />
     <!-- Voting Title-->
     <div class="cssc-subheadings" style="text-align: center; font-size: 40px;">
-      <span v-if="voteStatus">
-        Voting has ended for {{ this.month }} <br>
+      <span v-if="voteEnded && retrievedData">
+        Voting has ended for {{ this.votingMonth }} <br>
         <span style="font-size: 20px;">The next vote will start on the 15th and will be available until the end of the month</span> <br><br>
         Results:
       </span>
+      <span v-else-if="!retrievedData">
+        Unable to retrieve current voting options. Please try again.
+      </span>
       <span v-else>
-        Voting for {{ this.month }}
+        Voting for {{ this.votingMonth }}
       </span>
     </div>
     <VoteSystem
-      :databaseSeries="series"
-      :databaseLabels="labels"
-      :month="month"
-      :year="year"
-      :voteStatus="voteStatus"
+      :databaseSeries="Object.values(voteOptions)"
+      :databaseLabels="Object.keys(voteOptions)"
+      :month="votingMonth"
+      :year="votingYear"
+      :voteStatus="voteEnded"
       style="text-align: center;"/>
   </div>
 </template>
@@ -40,43 +43,32 @@
 import { getMonthVotes } from '~/assets/database/firebase.js'
 export default {
   async asyncData ({ params }) {
-    // Fetch the data from the database
-    const tempTitle = []
-    const tempNum = []
+    // Storing options and their associated vote count
+    let voteOptions = {}
     // Change start date here
     const startDate = 15
     // Fetch the current date and year and next month
     const currentDate = new Date()
     const currentDay = currentDate.getUTCDate()
+    const currentMonth = currentDate.toLocaleString('default', { month: 'long' })
     const nextMonth = new Date(currentDate.getUTCFullYear(), currentDate.getUTCMonth() + 1, 1).toLocaleString('default', { month: 'long' })
-    const getMonth = ((currentDay <= startDate) ? currentDate.toLocaleString('default', { month: 'long' }) : nextMonth)
-    const getYear = ((nextMonth === 'January') ? (currentDate.getUTCFullYear() + 1).toString() : currentDate.getUTCFullYear().toString())
-    let resultStatus = (currentDay <= startDate)
+    const votingMonth = currentDay <= startDate ? currentMonth : nextMonth
+    const votingYear = (currentDate.getUTCFullYear() + (nextMonth === 'January' ? 1 : 0)).toString()
+    const voteEnded = (currentDay <= startDate)
+    let retrievedData = false
     // Fetch the votes from the specified Month and Year
-    await getMonthVotes(getYear, getMonth)
+    await getMonthVotes(votingYear, votingMonth)
       .then((result) => {
         if (result !== null) {
-          const dictLen = Object.keys(result).length
-          // Converts the dictionary to the appropriate array
-          for (let i = 0; i < dictLen; i++) {
-            tempTitle.push(result[i].id)
-            tempNum.push(result[i].Vote)
-          }
-        } else {
-          // No avaliable data for the month retrieving
-          resultStatus = true
+          retrievedData = true
+          voteOptions = result
         }
       })
     // Set the dynamic data to the corresponding variable
-    return { labels: tempTitle, series: tempNum, month: getMonth, year: getYear, voteStatus: resultStatus }
+    return { voteOptions, votingMonth, votingYear, voteEnded, currentMonth, retrievedData }
   },
   data: () => {
     return {
-      labels: [],
-      series: [],
-      month: '',
-      year: '',
-      voteStatus: false,
       features: [
         {
           title: 'What is Technology of the month?',
