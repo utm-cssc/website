@@ -10,7 +10,7 @@
     <!-- Monthly Title -->
     <div>
       <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;">
-        September - Web Development
+        October - Web Development
       </div>
       <ResourcesGrid :items="resources" />
     </div>
@@ -108,10 +108,22 @@ export default {
           icon: '/icons/css3.svg'
         },
         {
-          title: 'Javascript',
+          title: 'JavaScript',
           desc: 'Learn how to implement scripts into your HTML page',
           link: '/resources/javascript',
           icon: '/icons/javascript.svg'
+        },
+        {
+          title: 'Vue',
+          desc: 'Develop web applications easily with a community powered JavaScript framework!',
+          link: '/resources/vue',
+          icon: '/icons/vue.svg'
+        },
+        {
+          title: 'React JS',
+          desc: 'A JavaScript library for building dynamic user interfaces',
+          link: '/resources/react',
+          icon: '/icons/react.svg'
         }
       ]
     }
