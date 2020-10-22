@@ -59,10 +59,8 @@ export default {
     // Fetch the votes from the specified Month and Year
     await getMonthVotes(votingYear, votingMonth)
       .then((result) => {
-        if (result !== null) {
           retrievedData = true
           voteOptions = result
-        }
       })
     // Set the dynamic data to the corresponding variable
     return { voteOptions, votingMonth, votingYear, voteEnded, currentMonth, retrievedData }

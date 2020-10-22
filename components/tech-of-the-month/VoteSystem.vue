@@ -111,7 +111,7 @@
 </script>
 <script>
 import RadioLayout from './RadioLayout.vue'
-import { addVote, checkUser, login, addEmail, removeEmail } from '~/assets/database/firebase.js'
+import { addVote, userVoted, login, addEmail, removeEmail } from '~/assets/database/firebase.js'
 export default {
   components: {
     apexcharts: () => import('vue-apexcharts'),
@@ -245,7 +245,7 @@ export default {
       // Checks to see if the user has already voted before
       // If the user has not voted before, add the user to the database
       if (this.userID !== '') {
-        await checkUser(this.year, this.month, this.userID, this.databaseLabels)
+        await userVoted(this.year, this.month, this.userID, this.databaseLabels)
           .then((result) => {
             // If result[0] is true, then the user has already voted, ask the user if they wish to revote
             if (result[0]) {

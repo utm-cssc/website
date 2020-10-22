@@ -4,65 +4,41 @@ import { db, firebase, auth, provider } from '~/plugins/firebase.js'
 export async function getMonthVotes(year, month) {
     // Retrieves a reference of the collection for the year and month
     const monthRef = db.collection('Voting').doc(year).collection(month)
+    const voteOptions = {}
     return await monthRef.get()
         .then((snapshot) => {
-            // Loop through each non-null document and creates a dictionary for each field including the document ID
-            if (snapshot.empty) {
-                return null
-            }
-            let optionList = {}
-                // Will push each document information into an array and return that array at the end
             snapshot.forEach((doc) => {
-                optionList[doc.id] = doc.get('Vote')
+                voteOptions[doc.id] = doc.get('Vote')
             })
-            return optionList
+            return voteOptions
         })
         .catch(() => {
-            return null
+            return voteOptions
         })
 }
 
 // Checks to see if the user has already voted or not
-// If they have not voted, they will be added to the databsae, then returning false
-// Return true otherwise
-export async function checkUser(year, month, currentUtorid, voteOptions) {
-    const userMonth = month + 'Users'
-    const userRef = db.collection('Voting').doc(year).collection(userMonth)
-    return await userRef.where('utorid', '==', currentUtorid).limit(1).get()
+// If they have not voted, they will be added to the database
+export async function userVoted(year, month, currentUtorid, voteOptions) {
+    // Collection of users who voted for that month (e.g. NovemberUsers)
+    const userMonthCollection = month + 'Users'
+    const allUsers = db.collection('Voting').doc(year).collection(userMonthCollection)
+    const userInfo = {}
+    return await allUsers.where('utorid', '==', currentUtorid).limit(1).get()
         .then(async(snapshot) => {
             if (snapshot.empty) {
-                await userRef.doc().set({
+                await allUsers.doc().set({
                     utorid: currentUtorid
+                }).catch(() => {
+                    return null
                 })
-                return [false]
+                return userInfo
             }
-            const voteList = {}
             snapshot.forEach((doc) => {
-                voteOptions.map((option) => { voteList[option] = (doc.get(option)) })
+                userInfo['id'] = doc.id
+                voteOptions.map((option) => { userInfo[option] = doc.get(option) })
             })
-
-            return [true, voteList]
-        })
-        .catch(() => {
-            return null
-        })
-}
-
-// Return the document id of the user's document on the database
-async function getDocID(year, month, currentUtorid) {
-    const userMonth = month + 'Users'
-    const userRef = db.collection('Voting').doc(year).collection(userMonth)
-    return await userRef.where('utorid', '==', currentUtorid).limit(1).get()
-        .then((snapshot) => {
-            if (snapshot.empty) {
-                return null
-            }
-            let result = null
-            snapshot.forEach((doc) => {
-                result = doc.id
-            })
-
-            return result
+            return userInfo
         })
         .catch(() => {
             return null
@@ -71,61 +47,64 @@ async function getDocID(year, month, currentUtorid) {
 
 // Add the user's vote to the database
 export async function addVote(year, month, voteValue, voteOrder, currentUtorid) {
-    // Incrementing value by the counter
-    // Will loop through all the vote options and update accordingly.
     const optionsRef = db.collection('Voting').doc(year).collection(month)
     const userMonth = month + 'Users'
     let error = false
-    getDocID(year, month, currentUtorid)
-        .then((result) => {
+    userVoted(year, month, currentUtorid)
+        .then(async(result) => {
             // If result is null, there was an internal server error when reading the document
             if (result == null) {
                 error = true
             } else {
-                db.collection('Voting').doc(year).collection(userMonth).doc(result).update(voteOrder)
+                await db.collection('Voting').doc(year).collection(userMonth).doc(result['id']).update(voteOrder)
+                    .catch(() => {
+                        return null
+                    })
             }
         })
-    if (!error) {
-        for (const key in voteValue) {
-            await optionsRef.doc(key).update({
+    if (error) {
+        return false
+    }
+    for (const key in voteValue) {
+        await optionsRef.doc(key).update({
                 Vote: firebase.firestore.FieldValue.increment(parseInt(voteValue[key]))
             })
-        }
-        return true
+            .catch(() => {
+                return null
+            })
     }
-    return false
+    return true
+
 }
 
-// Add the user's email to the subscription list
-export async function addEmail(email) {
+// Add/Remove the user's email to the subscription list
+export async function setEmail(email, operation) {
     const emailRef = db.collection('Voting').doc('Subscription').collection('Email')
     return await emailRef.where('Email', '==', email).limit(1).get()
         .then(async(snapshot) => {
-            if (snapshot.empty) {
-                await emailRef.doc().set({
-                    Email: email
-                })
-                return false
+            switch (operation) {
+                case "Add":
+                    if (!snapshot.empty) {
+                        return false
+                    }
+                    await emailRef.doc().set({
+                        Email: email
+                    }).catch(() => {
+                        return null
+                    })
+                    return true
+                case "Delete":
+                    if (snapshot.empty) {
+                        return false
+                    }
+                    snapshot.forEach(async(doc) => {
+                        await emailRef.doc(doc.id).delete()
+                            .catch(() => {
+                                return null
+                            })
+                    })
+                    return true
             }
-            return true
-        })
-        .catch(() => {
-            return null
-        })
-}
-
-// Add the user's email to the subscription list
-export async function removeEmail(email) {
-    const emailRef = db.collection('Voting').doc('Subscription').collection('Email')
-    return await emailRef.where('Email', '==', email).limit(1).get()
-        .then((snapshot) => {
-            if (snapshot.empty) {
-                return false
-            }
-            snapshot.forEach((doc) => {
-                emailRef.doc(doc.id).delete()
-            })
-            return true
         })
         .catch(() => {
             return null
@@ -134,7 +113,7 @@ export async function removeEmail(email) {
 // Login using the provider specified (Currently github)
 export async function login() {
     return await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
-        .then(async function() {
+        .then(async() => {
             const result = await auth.signInWithPopup(provider)
             return result.user.uid
         })
