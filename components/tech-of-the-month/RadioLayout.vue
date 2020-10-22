@@ -1,6 +1,6 @@
 <template>
   <div style="padding-left: 10px;">
-  <!-- Row title -->
+    <!-- Row title -->
     <div
       v-for="(childTitle, index) in titles"
       :key="childTitle"
@@ -19,9 +19,9 @@
           :key="child"
           style="padding-left: 20px; padding-right: 20px;"
         >
-        <!-- Individual radio button -->
+          <!-- Individual radio button -->
           <label class="descContainers" style="color: #606f7b;">{{ child }}
-              <input
+            <input
               :id="child+childTitle"
               type="radio"
               :name="childTitle"
@@ -29,7 +29,7 @@
               :value="titles.length - index"
               autocomplete="off"
               @click="onChange(child, childTitle)"
-            ></input>
+            >
             <span class="radioBtn"></span>
           </label>
         </span>
@@ -119,7 +119,6 @@ export default {
 }
 </script>
 
-</script>
 <style scoped>
 .container {
   padding-top: 40px;

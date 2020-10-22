@@ -1,3 +1,114 @@
+<template>
+  <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto">
+    <article>
+      <div class="flex-col mr-2">
+        <!-- Displays the radio button layout -->
+        <RadioLayout ref="radioComponent" :children="Object.keys(voteOrder)" :titles="title" :hidden="voteStatus"/>
+        <button class="submitButton" @click="submitVote()" :hidden="voteStatus">
+          Submit
+        </button>
+      </div>
+      <!-- Pie Chart-->
+    </article>
+    <br>
+    <no-ssr>
+      <div align="center">
+        <apexcharts
+          id="apexChart"
+          width="300"
+          type="donut"
+          :options="options"
+          :series="series"
+          style="position: center;"
+        />
+      </div>
+    </no-ssr>
+    <!-- Subscribe input -->
+    <form @submit.prevent="subscribe" style="font-size: 15px;">
+      Enter an email to receive notifications about the upcoming voting periods
+      <input type="email" class="form-control" placeholder="example@email.com" v-model="email" style="display: inline; width: 50%;"/>
+      <button>Submit</button>
+    </form>
+    <!-- Alerts-->
+    <!-- Secondary alert is for the resubmission form-->
+    <div class="fixed-bottom" style="left: 25%; width: 50%;">
+      <v-alert
+        v-model="secondaryAlert"
+        border="left"
+        close-text="Close Alert"
+        dismissible
+        dark
+        style="background-color: #009b68;"
+        transition="scale-transition"
+      >
+        You have already voted, your current votes are: <br>
+        {{ secondaryMessage }}
+        <v-col class="shrink">
+          <v-btn
+            small
+            style="background-color: white; color: black;"
+            @click="revote = true; secondaryAlert = !secondaryAlert; submitVote();"
+          >
+            Yes
+          </v-btn>
+          <v-btn
+            small
+            style="background-color: white; color: black;"
+            @click="secondaryAlert = !secondaryAlert"
+          >
+            No
+          </v-btn>
+        </v-col>
+      </v-alert>
+    </div>
+    <!-- Third alert is for the unsubscribing -->
+    <div class="fixed-bottom" style="left: 25%; width: 50%;">
+      <v-alert
+        v-model="thirdAlert"
+        border="left"
+        close-text="Close Alert"
+        dismissible
+        dark
+        style="background-color: #f55252;"
+        transition="scale-transition"
+      >
+        You are already subscribed, would you like to unsubscribe:
+        <v-col class="shrink">
+          <v-btn
+            small
+            style="background-color: white; color: black;"
+            @click="thirdAlert = !thirdAlert; unsubscribe();"
+          >
+            Yes
+          </v-btn>
+          <v-btn
+            small
+            style="background-color: white; color: black;"
+            @click="thirdAlert = !thirdAlert"
+          >
+            No
+          </v-btn>
+        </v-col>
+      </v-alert>
+    </div>
+    <!-- Primary alert is for main messages-->
+    <div class="fixed-bottom">
+      <v-alert
+        v-model="primaryAlert"
+        border="left"
+        close-text="Close Alert"
+        dismissible
+        dark
+        :style="'background-color:' + bgColour"
+        transition="scale-transition"
+      >
+        {{ primaryMessage }}
+      </v-alert>
+    </div>
+  </div>
+</template>
+
+</script>
 <script>
 import RadioLayout from './RadioLayout.vue'
 import { addVote, checkUser, login, addEmail, removeEmail } from '~/assets/database/firebase.js'
@@ -190,117 +301,6 @@ export default {
     }
   }
 }
-</script>
-<template>
-  <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto">
-    <article>
-      <div class="flex-col mr-2">
-        <!-- Displays the radio button layout -->
-        <RadioLayout ref="radioComponent" :children="Object.keys(voteOrder)" :titles="title" :hidden="voteStatus"/>
-        <button class="submitButton" @click="submitVote()" :hidden="voteStatus">
-          Submit
-        </button>
-      </div>
-      <!-- Pie Chart-->
-    </article>
-    <br>
-    <no-ssr>
-      <div align="center">
-        <apexcharts
-          id="apexChart"
-          width="300"
-          type="donut"
-          :options="options"
-          :series="series"
-          style="position: center;"
-        />
-      </div>
-    </no-ssr>
-    <!-- Subscribe input -->
-    <form @submit.prevent="subscribe" style="font-size: 15px;">
-      Enter an email to receive notifications about the upcoming voting periods
-      <input type="email" class="form-control" placeholder="example@email.com" v-model="email" style="display: inline; width: 50%;"/>
-      <button>Submit</button>
-    </form>
-    <!-- Alerts-->
-    <!-- Secondary alert is for the resubmission form-->
-    <div class="fixed-bottom" style="left: 25%; width: 50%;">
-      <v-alert
-        v-model="secondaryAlert"
-        border="left"
-        close-text="Close Alert"
-        dismissible
-        dark
-        style="background-color: #009b68;"
-        transition="scale-transition"
-      >
-        You have already voted, your current votes are: <br>
-        {{ secondaryMessage }}
-        <v-col class="shrink">
-          <v-btn
-            small
-            style="background-color: white; color: black;"
-            @click="revote = true; secondaryAlert = !secondaryAlert; submitVote();"
-          >
-            Yes
-          </v-btn>
-          <v-btn
-            small
-            style="background-color: white; color: black;"
-            @click="secondaryAlert = !secondaryAlert"
-          >
-            No
-          </v-btn>
-        </v-col>
-      </v-alert>
-    </div>
-    <!-- Third alert is for the unsubscribing -->
-    <div class="fixed-bottom" style="left: 25%; width: 50%;">
-      <v-alert
-        v-model="thirdAlert"
-        border="left"
-        close-text="Close Alert"
-        dismissible
-        dark
-        style="background-color: #f55252;"
-        transition="scale-transition"
-      >
-        You are already subscribed, would you like to unsubscribe:
-        <v-col class="shrink">
-          <v-btn
-            small
-            style="background-color: white; color: black;"
-            @click="thirdAlert = !thirdAlert; unsubscribe();"
-          >
-            Yes
-          </v-btn>
-          <v-btn
-            small
-            style="background-color: white; color: black;"
-            @click="thirdAlert = !thirdAlert"
-          >
-            No
-          </v-btn>
-        </v-col>
-      </v-alert>
-    </div>
-    <!-- Primary alert is for main messages-->
-    <div class="fixed-bottom">
-      <v-alert
-        v-model="primaryAlert"
-        border="left"
-        close-text="Close Alert"
-        dismissible
-        dark
-        :style="'background-color:' + bgColour"
-        transition="scale-transition"
-      >
-        {{ primaryMessage }}
-      </v-alert>
-    </div>
-  </div>
-</template>
-
 </script>
 
 </script>

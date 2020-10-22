@@ -37,12 +37,8 @@
 </template>
 
 <script>
-import VoteSystem from './VoteSystem.vue'
 import { getMonthVotes } from '~/assets/database/firebase.js'
 export default {
-  components: {
-    VoteSystem
-  },
   async asyncData ({ params }) {
     // Fetch the data from the database
     const tempTitle = []
