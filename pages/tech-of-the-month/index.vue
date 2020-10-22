@@ -34,7 +34,7 @@
       :databaseLabels="Object.keys(voteOptions)"
       :month="votingMonth"
       :year="votingYear"
-      :voteStatus="voteEnded"
+      :voteEnded="voteEnded"
       style="text-align: center;"/>
   </div>
 </template>

@@ -93,7 +93,7 @@ export async function setEmail(email, operation) {
                         return null
                     })
                     return true
-                case "Delete":
+                case "Remove":
                     if (snapshot.empty) {
                         return false
                     }

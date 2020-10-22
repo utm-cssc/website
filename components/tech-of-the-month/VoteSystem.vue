@@ -3,8 +3,8 @@
     <article>
       <div class="flex-col mr-2">
         <!-- Displays the radio button layout -->
-        <RadioLayout ref="radioComponent" :children="Object.keys(voteOrder)" :titles="title" :hidden="voteStatus"/>
-        <button class="submitButton" @click="submitVote()" :hidden="voteStatus">
+        <RadioLayout ref="radioComponent" :children="Object.keys(voteOrder)" :titles="title" :hidden="voteEnded"/>
+        <button class="submitButton" @click="submitVote()" :hidden="voteEnded">
           Submit
         </button>
       </div>
@@ -120,7 +120,7 @@ export default {
   props: {
     databaseSeries: {
       type: Array,
-      default: () => [0, 0, 0]
+      default: () => []
     },
     databaseLabels: {
       type: Array,
@@ -134,7 +134,7 @@ export default {
       type: String,
       default: ''
     },
-    voteStatus: {
+    voteEnded: {
       type: Boolean,
       default: false
     }
@@ -156,7 +156,7 @@ export default {
       email: '',
       options: {
         // Labels is the legend of the pie chart
-        // The labels and series index corresponds with another, first index of the label is first value of the series
+        // The labels and series index corresponds with one another, first index of the label is first value of the series
         legend: {
           position: 'top'
         },
@@ -167,12 +167,10 @@ export default {
     }
   },
   created () {
-    // Will run this function when the element is created
-    this.convertDictionary()
+    this.setupLabels()
   },
   methods: {
-    convertDictionary () {
-      // Convert the label array to a dictionary so that it can be used to create the radio button layout
+    setupLabels() {
       const dictLen = Object.keys(this.options.labels).length
       for (let i = 0; i < dictLen; i++) {
         this.$set(this.voteOrder, this.options.labels[i], 0)
@@ -181,14 +179,13 @@ export default {
     },
     updateSeries () {
       // This is updating the series array, AKA updating the pie chart
-      const tempNum = []
+      const newData = []
       let index = 0
       for (const key in this.voteValue) {
-        tempNum[index] = this.series[index] + parseInt(this.voteValue[key])
+        newData[index] = this.series[index] + parseInt(this.voteValue[key])
         index += 1
       }
-
-      this.series = tempNum
+      this.series = newData
     },
     async subscribe () {
       if (this.email === '') {
@@ -197,9 +194,9 @@ export default {
         this.bgColour = '#f55252'
         return
       }
-      await addEmail(this.email)
-        .then((result) => {
-          if (!result) {
+      await setEmail(this.email, "Add")
+        .then((emailAdded) => {
+          if (emailAdded) {
             this.primaryMessage = 'Subscribed!'
             this.primaryAlert = true
             this.bgColour = '#00d097'
@@ -209,16 +206,16 @@ export default {
         })
     },
     async unsubscribe () {
-      await removeEmail(this.email)
-        .then((result) => {
-          if (!result) {
-            this.primaryMessage = 'You are not subscribed'
-            this.primaryAlert = true
-            this.bgColour = '#f55252'
-          } else {
+      await setEmail(this.email, "Remove")
+        .then((emailRemoved) => {
+          if (emailRemoved) {
             this.primaryMessage = 'Unsubscribed!'
             this.primaryAlert = true
             this.bgColour = '#00d097'
+          } else {
+            this.primaryMessage = 'You are not subscribed'
+            this.primaryAlert = true
+            this.bgColour = '#f55252'
           }
         })
     },
@@ -247,26 +244,32 @@ export default {
       if (this.userID !== '') {
         await userVoted(this.year, this.month, this.userID, this.databaseLabels)
           .then((result) => {
-            // If result[0] is true, then the user has already voted, ask the user if they wish to revote
-            if (result[0]) {
-              // Update the vote accordingly. (If the user changes a vote from First choice to third choice, substract 2, and from third choice to first choice add 2)
+            // If result is nonempty, then the user has already voted, ask the user if they wish to revote
+            if (Object.keys(result).length != 0) {
+              // Update the vote accordingly. 
+              // (e.g If the user changes a vote from first choice to third choice, substract 2, and from third choice to first choice add 2)
               let displayMessage = ''
               const sortedArray = Array(this.title.length)
               for (const key in this.voteOrder) {
-                this.voteValue[key] = this.voteOrder[key] - result[1][key]
-                sortedArray[this.title.length - result[1][key]] = key
+                this.voteValue[key] = this.voteOrder[key] - result[key]
+                // Reversing order since higher weight => higher choice (i.e. [HTML: 3, "CSS": 1] represents HTML got picked first)
+                sortedArray[this.title.length - result[key]] = key
               }
 
               for (let i = 0; i < this.title.length; i++) {
-                displayMessage += this.title[i] + ': ' + sortedArray[i] + ', '
+                displayMessage += this.title[i] + ': ' + sortedArray[i]
+                if (i !== this.title.length-1) {
+                  displayMessage += ", "
+                }
               }
-              // Displays the resubmission form. If the current submission is a revote, do no display the error message again
+              displayMessage += '\n Would you like to revote?'
+              // Displays the resubmission form. If the current submission is a revote, do not display the error message again
               if (!this.revote) {
                 this.secondaryAlert = true
                 this.secondaryMessage = displayMessage
               }
             // Internal server error if there was trouble retrieving user data
-            } else if ((result) == null) {
+            } else if (result == null) {
               this.primaryMessage = 'Internal server error. Please try again'
               this.primaryAlert = true
               this.bgColour = '#f55252'
