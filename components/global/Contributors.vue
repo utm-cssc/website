@@ -34,7 +34,7 @@
     <div class="mr-3" v-for="c in contributors" :key="c.login">
       <a target="_blank" :href="c.url">
         <div class="d-flex flex-col align-items-center">
-          <img class="profile-pic" :src="c.imgSrc" :alt="imgAlt(c.login)">
+          <img class="profile-pic" :src="c.imgSrc" :alt="imgAlt(c.login)" />
           <p>{{ c.login }}</p>
         </div>
       </a>
@@ -47,20 +47,20 @@ export default {
   props: {
     contributors: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
-    imgAlt (login) {
+    imgAlt(login) {
       return login + "'s Image"
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style scoped>
 p {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 a {
@@ -74,7 +74,7 @@ img:hover {
 
 .profile-pic {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 </style>
