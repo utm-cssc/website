@@ -45,6 +45,13 @@
           :linkedin="mate.linkedin"/>
       </div>
     </div>
+    <!-- Collabutors Section -->
+    <div class="my-3">
+      <div class="cssc-heading">
+        Contributors
+      </div>
+      <Contributors :contributors="contributors" />
+    </div>
   </div>
 </template>
 
@@ -82,10 +89,29 @@ export default {
       }
     }
   },
-  async asyncData ({ $content, params, error }) {
+  async asyncData ({ $axios, $content, params, error }) {
     const teamDataStore = await $content('team').fetch()
     const currentTeam = teamDataStore[0].team
-    return { currentTeam }
+    const contributors = []
+    await $axios
+      .$get('https://api.github.com/repos/utm-cssc/website/contributors')
+      .then((res) => {
+        for (const c of res) {
+          const contributor = {
+            login: c.login,
+            imgSrc: c.avatar_url,
+            url: c.html_url
+          }
+          contributors.push(contributor)
+        }
+      })
+      .catch((e) => {
+        console.log(e.message)
+        console.log({ statusCode: 404, message: 'Something went wrong' })
+      })
+    console.log('Final Contributors')
+    console.log(contributors)
+    return { contributors, currentTeam }
   }
 }
 </script>
