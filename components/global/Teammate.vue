@@ -1,5 +1,5 @@
 <template>
-<!-- Precondition: To use this component with responsivity please use a div with class d-flex and flex-wrap -->
+  <!-- Precondition: To use this component with responsivity please use a div with class d-flex and flex-wrap -->
   <div
     class="flip
     d-flex
@@ -8,7 +8,7 @@
     my-3
     mx-3"
     :class="{flipping: isClicked}"
-    >
+  >
     <div
       class="front
       card
@@ -18,7 +18,7 @@
       align-items-center"
     >
       <div class="mt-3 pointer" @click="isClicked = !isClicked">
-        <img :src="imgSrc" :alt="imgAlt" class="circle">
+        <img :src="imgSrc" :alt="imgAlt" class="circle" />
       </div>
       <div class="pointer" @click="isClicked = !isClicked">
         <div class="name text-center">{{ name }}</div>
@@ -41,7 +41,8 @@
     </div>
     <div
       class="card back message text-center pointer"
-      @click="isClicked = !isClicked">
+      @click="isClicked = !isClicked"
+    >
       <p class="px-3 py-2">{{ message }}</p>
     </div>
   </div>
@@ -53,52 +54,52 @@ import EmailIcon from '../../static/icons/email.svg?inline'
 import LinkedinIcon from '../../static/icons/linkedin.svg?inline'
 
 export default {
-  components: { DiscordIcon, EmailIcon, LinkedinIcon },
-  data () {
+  components: {DiscordIcon, EmailIcon, LinkedinIcon},
+  data() {
     return {
       isCopied: 'Click to copy username',
-      isClicked: false
+      isClicked: false,
     }
   },
   props: {
     imgSrc: {
       type: String,
-      required: true
+      required: true,
     },
     name: {
       type: String,
-      required: true
+      required: true,
     },
     position: {
       type: String,
-      required: true
+      required: true,
     },
     message: {
-      type: String
+      type: String,
     },
     email: {
       type: String,
-      required: true
+      required: true,
     },
     discord: {
       type: String,
-      required: true
+      required: true,
     },
     linkedin: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
-    imgAlt () {
+    imgAlt() {
       return this.name + "'s Img"
     },
-    emailAddress () {
+    emailAddress() {
       return 'mailto:' + this.email
-    }
+    },
   },
   methods: {
-    copyToClipboard (e) {
+    copyToClipboard(e) {
       navigator.clipboard
         .writeText(this.discord)
         .then(() => {
@@ -113,91 +114,91 @@ export default {
             this.isCopied = 'Click to copy username'
           }, 1000)
         })
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style>
-  .team-container {
-    width: 250px;
-    min-height: 350px;
-  }
+.team-container {
+  width: 250px;
+  min-height: 350px;
+}
 
-  .pointer {
-    cursor: pointer;
-  }
+.pointer {
+  cursor: pointer;
+}
 
-  .flip {
-    position: relative;
-  }
+.flip {
+  position: relative;
+}
 
-  .front,
-  .flip > .back {
-    display: block;
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition-duration: 0.5s;
-    transition-property: transform, opacity;
-  }
+.front,
+.flip > .back {
+  display: block;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 0.5s;
+  transition-property: transform, opacity;
+}
 
-  .flip > .back {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-    width: 250px;
-    height: 80%;
-    transform: rotateY(-180deg);
-  }
+.flip > .back {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 250px;
+  height: 80%;
+  transform: rotateY(-180deg);
+}
 
-  .front {
-    position: relative;
-    width: 250px;
-    min-height: 350px;
-    transform: rotateY(0deg);
-  }
+.front {
+  position: relative;
+  width: 250px;
+  min-height: 350px;
+  transform: rotateY(0deg);
+}
 
-  .flipping > .front {
-    opacity: -1;
-    transform: rotateY(180deg);
-  }
+.flipping > .front {
+  opacity: -1;
+  transform: rotateY(180deg);
+}
 
-  .flipping > .back {
-    opacity: 1;
-    z-index: 1;
-    transform: rotateY(0deg);
-  }
+.flipping > .back {
+  opacity: 1;
+  z-index: 1;
+  transform: rotateY(0deg);
+}
 
-  .card {
-    min-height: 350px;
-    border-radius: 12px;
-    box-shadow: 7px 0 29px 0 rgba(0, 0, 0, 0.19);
-  }
+.card {
+  min-height: 350px;
+  border-radius: 12px;
+  box-shadow: 7px 0 29px 0 rgba(0, 0, 0, 0.19);
+}
 
-  .circle {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-  }
+.circle {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
 
-  .name {
-    font-weight: 700;
-  }
+.name {
+  font-weight: 700;
+}
 
-  .position {
-    font-style: italic;
-    font-size: 15px;
-  }
+.position {
+  font-style: italic;
+  font-size: 15px;
+}
 
-  .message {
-    font-size: 16px;
-  }
+.message {
+  font-size: 16px;
+}
 
-  .logo {
-    height: 35px;
-    width: 35px;
-  }
+.logo {
+  height: 35px;
+  width: 35px;
+}
 
-  svg:hover {
-    fill: var(--color-primary-dark);
-  }
+svg:hover {
+  fill: var(--color-primary-dark);
+}
 </style>

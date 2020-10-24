@@ -1,21 +1,37 @@
 <template>
-    <div>
-        <div class="d-flex flex-wrap horizontal-grid">
-            <span v-for="img in images" :key="img">
-                <img v-if="img.width && img.height" :src="img.src" :width="img.width" :height="img.height" class="image-property">
-                <img v-else-if="img.width" :src="img.src" :width="img.width" class="image-property">
-                <img v-else-if="img.height" :src="img.src" :height="img.height" class="image-property">
-                <img v-else :src="img.src" class="image-property">
-            </span>
-        </div>
+  <div>
+    <div class="d-flex flex-wrap horizontal-grid">
+      <span v-for="img in images" :key="img">
+        <img
+          v-if="img.width && img.height"
+          :src="img.src"
+          :width="img.width"
+          :height="img.height"
+          class="image-property"
+        />
+        <img
+          v-else-if="img.width"
+          :src="img.src"
+          :width="img.width"
+          class="image-property"
+        />
+        <img
+          v-else-if="img.height"
+          :src="img.src"
+          :height="img.height"
+          class="image-property"
+        />
+        <img v-else :src="img.src" class="image-property" />
+      </span>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
   props: {
-    images: Array
-  }
+    images: Array,
+  },
 }
 </script>
 

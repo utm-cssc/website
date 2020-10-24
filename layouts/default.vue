@@ -13,8 +13,8 @@ import CsscFooter from '@/components/CsscFooter'
 export default {
   components: {
     CsscNav,
-    CsscFooter
-  }
+    CsscFooter,
+  },
 }
 // /* eslint-disable */
 // export default {

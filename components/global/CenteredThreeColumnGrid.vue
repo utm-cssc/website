@@ -19,7 +19,7 @@
 export default {
   props: {
     children: Array,
-    rounded: Boolean
-  }
+    rounded: Boolean,
+  },
 }
 </script>

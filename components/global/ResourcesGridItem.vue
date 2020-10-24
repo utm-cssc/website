@@ -3,12 +3,16 @@
     <a
       class="box resource-box pb-3"
       :href="link"
-      :style="{ background: color}"
+      :style="{background: color}"
       @mouseover="hovered = true"
       @mouseleave="hovered = false"
     >
       <figure class="resource-icon">
-        <img class="icon" :src="iconFileName" style="filter: brightness(0) invert(1);">
+        <img
+          class="icon"
+          :src="iconFileName"
+          style="filter: brightness(0) invert(1);"
+        />
       </figure>
       <transition name="slide-out" mode="out-in">
         <div v-if="!hovered" class="resource-title">{{ title }}</div>
@@ -26,31 +30,31 @@ export default {
   props: {
     link: {
       type: String,
-      required: true
+      required: true,
     },
     iconFileName: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     desc: {
       type: String,
-      required: true
+      required: true,
     },
     color: {
       type: String,
       required: false,
-      default: '#11991c'
+      default: '#11991c',
+    },
+  },
+  data() {
+    return {
+      hovered: false,
     }
   },
-  data () {
-    return {
-      hovered: false
-    }
-  }
 }
 </script>
 
@@ -64,8 +68,7 @@ a {
 .box {
   background-color: #fff;
   border-radius: 6px;
-  box-shadow:
-    0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0 0 1px rgba(10, 10, 10, 0.02);
   color: #4a4a4a;
   display: block;
@@ -159,5 +162,4 @@ a {
   /* transform: translateX(-20px); */
   opacity: 1;
 }
-
 </style>

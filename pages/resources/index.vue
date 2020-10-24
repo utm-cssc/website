@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  async asyncData ({ $content, params, error }) {
+  async asyncData({$content, params, error}) {
     const resourcesDataStore = await $content('resources').fetch()
     const tags = new Set()
     const resources = []
@@ -32,29 +32,34 @@ export default {
         desc: resourceData.desc,
         icon: resourceData.icon,
         link: `/resources/${resourceData.link}`,
-        tags: resourceData.tags
+        tags: resourceData.tags,
       }
-      resource.tags.forEach((tag) => {
+      resource.tags.forEach(tag => {
         tags.add(tag)
       })
       resources.push(resource)
     }
-    return { resources, tags }
+    return {resources, tags}
   },
   computed: {
-    sortedTags () {
+    sortedTags() {
       const sortedTags = Array.from(this.tags).sort()
       // Resources with more items should show up higher.
-      sortedTags.sort((a, b) => this.resourcesForTag(b).length - this.resourcesForTag(a).length)
+      sortedTags.sort(
+        (a, b) =>
+          this.resourcesForTag(b).length - this.resourcesForTag(a).length,
+      )
       return sortedTags
-    }
+    },
   },
   methods: {
-    resourcesForTag (tag) {
-      const filteredResources = this.resources.filter(resource => resource.tags.includes(tag))
+    resourcesForTag(tag) {
+      const filteredResources = this.resources.filter(resource =>
+        resource.tags.includes(tag),
+      )
       return filteredResources
-    }
-  }
+    },
+  },
 }
 </script>
 

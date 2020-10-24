@@ -9,11 +9,11 @@
 
 <script>
 export default {
-  async asyncData ({ $content, params, error }) {
+  async asyncData({$content, params, error}) {
     console.log(params.slug)
     const page = await $content('resources', params.slug).fetch()
 
-    return { page }
-  }
+    return {page}
+  },
 }
 </script>

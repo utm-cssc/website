@@ -1,13 +1,13 @@
 <template>
   <div class="container nav g-header pt-4 px-2 d-flex align-items-end">
-    <input id="nav-check" v-model="checked" type="checkbox">
+    <input id="nav-check" v-model="checked" type="checkbox" />
     <div class="nav-header">
       <nuxt-link
         class="d-flex align-items-end ml-1"
         to="/"
         @click.native="checked = false"
       >
-        <img class="logo mr-2" src="/icons/cssc-logo-without-title.svg">
+        <img class="logo mr-2" src="/icons/cssc-logo-without-title.svg" />
         <span class="logo-text">UTM CSSC</span>
       </nuxt-link>
     </div>
@@ -42,11 +42,11 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      checked: false
+      checked: false,
     }
-  }
+  },
 }
 </script>
 

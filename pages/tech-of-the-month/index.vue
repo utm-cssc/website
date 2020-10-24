@@ -9,7 +9,10 @@
     <CenteredThreeColumnGrid :children="features" :rounded="false" />
     <!-- Monthly Title -->
     <div>
-      <div class="cssc-subheadings mt-4 mb-4" style="text-align: center; font-size: 40px;">
+      <div
+        class="cssc-subheadings mt-4 mb-4"
+        style="text-align: center; font-size: 40px;"
+      >
         October - Web Development
       </div>
       <ResourcesGrid :items="resources" />
@@ -27,53 +30,56 @@ export default {
       features: [
         {
           title: 'What is Technology of the month?',
-          desc: 'A monthly learning opportunity to explore different areas of CS and to create cool projects to compete in a showcase competition!',
-          icon: '/icons/tech-of-the-month.svg'
+          desc:
+            'A monthly learning opportunity to explore different areas of CS and to create cool projects to compete in a showcase competition!',
+          icon: '/icons/tech-of-the-month.svg',
         },
         {
           title: 'Workshops',
-          desc: 'These workshops are designed to help students learn the basic fundamentals, or help polish their skills. No prior knowledge is needed!',
-          icon: '/icons/workshop.svg'
+          desc:
+            'These workshops are designed to help students learn the basic fundamentals, or help polish their skills. No prior knowledge is needed!',
+          icon: '/icons/workshop.svg',
         },
         {
           title: 'Voting',
           desc: 'Want to have a say in the upcoming workshop? Vote below!',
-          icon: '/icons/vote.svg'
-        }
+          icon: '/icons/vote.svg',
+        },
       ],
       resources: [
         {
           title: 'HTML',
           desc: 'Learn the base foundation of all websites',
           link: '/resources/html',
-          icon: '/icons/html5.svg'
+          icon: '/icons/html5.svg',
         },
         {
           title: 'CSS',
           desc: 'Learn how to style your HTML pages',
           link: '/resources/css',
-          icon: '/icons/css3.svg'
+          icon: '/icons/css3.svg',
         },
         {
           title: 'JavaScript',
           desc: 'Learn how to implement scripts into your HTML page',
           link: '/resources/javascript',
-          icon: '/icons/javascript.svg'
+          icon: '/icons/javascript.svg',
         },
         {
           title: 'Vue',
-          desc: 'Develop web applications easily with a community powered JavaScript framework!',
+          desc:
+            'Develop web applications easily with a community powered JavaScript framework!',
           link: '/resources/vue',
-          icon: '/icons/vue.svg'
+          icon: '/icons/vue.svg',
         },
         {
           title: 'React JS',
           desc: 'A JavaScript library for building dynamic user interfaces',
           link: '/resources/react',
-          icon: '/icons/react.svg'
-        }
-      ]
+          icon: '/icons/react.svg',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
