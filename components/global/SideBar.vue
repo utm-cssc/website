@@ -1,12 +1,12 @@
 <template>
-  <div class="ml-4 tableOfContents">
+  <div class="tableOfContents d-flex mb-4">
     <div class="heading">
       {{ title }}
     </div>
     <li v-for="tocItem in toc" :key="tocItem.id">
       <NuxtLink
         :to="`#${tocItem.id}`"
-        class="block text-sm scrollactive-item transition-transform ease-in-out duration-300 transform hover:translate-x-1"
+        class="block mt-1 text-sm scrollactive-item transition-transform ease-in-out duration-300 transform hover:translate-x-1"
         :class="{
           'py-2 subheading': tocItem.depth === 2,
           'ml-2 pb-2 innerSubHeading': tocItem.depth === 3
@@ -56,10 +56,24 @@ export default {
   }
 
   .tableOfContents {
-    width: 20%;
-    box-sizing: content-box;
+    width: 220px;
     position: fixed;
-    z-index: 2;
+    overflow-y: scroll;
+    z-index: 1;
+    flex-direction: column;
+    margin-left: 50px;
+    top: 150px;
+    bottom: 50px;
+  }
+
+  @media (max-width: 1200px) {
+    .tableOfContents {
+      width: auto;
+      z-index: 0;
+      position: static;
+      align-items: center;
+      margin: 0 30px 0 30px;
+    }
   }
 
 </style>
