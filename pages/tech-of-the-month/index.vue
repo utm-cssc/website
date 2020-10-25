@@ -30,8 +30,7 @@
       </span>
     </div>
     <VoteSystem
-      :databaseSeries="Object.values(voteOptions)"
-      :databaseLabels="Object.keys(voteOptions)"
+      :databaseInfo="voteOptions"
       :month="votingMonth"
       :year="votingYear"
       :voteEnded="voteEnded"

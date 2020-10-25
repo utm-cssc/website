@@ -8,7 +8,9 @@ export async function getMonthVotes(year, month) {
     return await monthRef.get()
         .then((snapshot) => {
             snapshot.forEach((doc) => {
-                voteOptions[doc.id] = doc.get('Vote')
+                if (doc.get("Active")){
+                    voteOptions[doc.id] = doc.get('Vote')
+                }
             })
             return voteOptions
         })
@@ -36,7 +38,13 @@ export async function userVoted(year, month, currentUtorid, voteOptions) {
             }
             snapshot.forEach((doc) => {
                 userInfo['id'] = doc.id
-                voteOptions.map((option) => { userInfo[option] = doc.get(option) })
+                voteOptions.map((option) => {
+                    if (doc.get(option) == undefined) {
+                        userInfo[option] = 0
+                    } else {
+                        userInfo[option] = doc.get(option)
+                    }
+                })
             })
             return userInfo
         })
@@ -50,7 +58,8 @@ export async function addVote(year, month, voteValue, voteOrder, currentUtorid) 
     const optionsRef = db.collection('Voting').doc(year).collection(month)
     const userMonth = month + 'Users'
     let error = false
-    userVoted(year, month, currentUtorid)
+    const updatedVotes = []
+    userVoted(year, month, currentUtorid, Object.keys(voteOrder))
         .then(async(result) => {
             // If result is null, there was an internal server error when reading the document
             if (result == null) {

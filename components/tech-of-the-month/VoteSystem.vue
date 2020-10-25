@@ -3,7 +3,7 @@
     <article>
       <div class="flex-col mr-2">
         <!-- Displays the radio button layout -->
-        <RadioLayout ref="radioComponent" :children="Object.keys(voteOrder)" :titles="title" :hidden="voteEnded"/>
+        <RadioLayout ref="radioComponent" :options="Object.keys(voteOrder)" :titles="title" :hidden="voteEnded"/>
         <button class="submitButton" @click="submitVote()" :hidden="voteEnded">
           Submit
         </button>
@@ -30,67 +30,20 @@
       <button>Submit</button>
     </form>
     <!-- Alerts-->
-    <!-- Secondary alert is for the resubmission form-->
-    <div class="fixed-bottom" style="left: 25%; width: 50%;">
-      <v-alert
-        v-model="secondaryAlert"
-        border="left"
-        close-text="Close Alert"
-        dismissible
-        dark
-        style="background-color: #009b68;"
-        transition="scale-transition"
-      >
-        You have already voted, your current votes are: <br>
-        {{ secondaryMessage }}
-        <v-col class="shrink">
-          <v-btn
-            small
-            style="background-color: white; color: black;"
-            @click="revote = true; secondaryAlert = !secondaryAlert; submitVote();"
-          >
-            Yes
-          </v-btn>
-          <v-btn
-            small
-            style="background-color: white; color: black;"
-            @click="secondaryAlert = !secondaryAlert"
-          >
-            No
-          </v-btn>
-        </v-col>
-      </v-alert>
-    </div>
-    <!-- Third alert is for the unsubscribing -->
-    <div class="fixed-bottom" style="left: 25%; width: 50%;">
-      <v-alert
-        v-model="thirdAlert"
-        border="left"
-        close-text="Close Alert"
-        dismissible
-        dark
-        style="background-color: #f55252;"
-        transition="scale-transition"
-      >
-        You are already subscribed, would you like to unsubscribe:
-        <v-col class="shrink">
-          <v-btn
-            small
-            style="background-color: white; color: black;"
-            @click="thirdAlert = !thirdAlert; unsubscribe();"
-          >
-            Yes
-          </v-btn>
-          <v-btn
-            small
-            style="background-color: white; color: black;"
-            @click="thirdAlert = !thirdAlert"
-          >
-            No
-          </v-btn>
-        </v-col>
-      </v-alert>
-    </div>
+    <!-- Seceondary alert for revoting form-->
+    <InteractiveAlerts
+      :alertStatus.sync="secondaryAlert"
+      :alertRecieveInput="true"
+      :alertMessage = "'You have already voted, your current votes are: \n' + secondaryMessage"
+      :alertYesFunction="resubmitVote"
+      @update="secondaryAlert = $event;" />
+    <!-- Third alert is for the unsubscribing form -->
+    <InteractiveAlerts
+      :alertStatus.sync="thirdAlert"
+      :alertRecieveInput="true"
+      :alertMessage = "'You are already subscribed, would you like to unsubscribe:'"
+      :alertYesFunction="unsubscribe"
+      @update="thirdAlert = $event;" />
     <!-- Primary alert is for main messages-->
     <div class="fixed-bottom">
       <v-alert
@@ -111,20 +64,16 @@
 </script>
 <script>
 import RadioLayout from './RadioLayout.vue'
-import { addVote, userVoted, login, addEmail, removeEmail } from '~/assets/database/firebase.js'
+import { addVote, userVoted, login, setEmail } from '~/assets/database/firebase.js'
 export default {
   components: {
     apexcharts: () => import('vue-apexcharts'),
     RadioLayout
   },
   props: {
-    databaseSeries: {
-      type: Array,
-      default: () => []
-    },
-    databaseLabels: {
-      type: Array,
-      default: () => []
+    databaseInfo: {
+      type: Object,
+      default: () => {}
     },
     month: {
       type: String,
@@ -160,10 +109,10 @@ export default {
         legend: {
           position: 'top'
         },
-        labels: this.databaseLabels
+        labels: Object.keys(this.databaseInfo)
       },
       // Series is the numbers that will display onto the pie chart
-      series: this.databaseSeries
+      series: Object.values(this.databaseInfo)
     }
   },
   created () {
@@ -179,18 +128,21 @@ export default {
     },
     updateSeries () {
       // This is updating the series array, AKA updating the pie chart
-      const newData = []
-      let index = 0
       for (const key in this.voteValue) {
-        newData[index] = this.series[index] + parseInt(this.voteValue[key])
-        index += 1
+        this.databaseInfo[key] = parseInt(this.databaseInfo[key]) + parseInt(this.voteValue[key])
       }
-      this.series = newData
+      this.options["labels"] = Object.keys(this.databaseInfo)
+      this.series = Object.values(this.databaseInfo)
+    },
+    setAlertVisibility(primary, secondary, third) {
+      this.primaryAlert = primary
+      this.secondaryAlert = secondary
+      this.thirdAlert = third
     },
     async subscribe () {
       if (this.email === '') {
         this.primaryMessage = 'Invalid email!'
-        this.primaryAlert = true
+        this.setAlertVisibility(true, false, false)
         this.bgColour = '#f55252'
         return
       }
@@ -198,10 +150,10 @@ export default {
         .then((emailAdded) => {
           if (emailAdded) {
             this.primaryMessage = 'Subscribed!'
-            this.primaryAlert = true
+            this.setAlertVisibility(true, false, false)
             this.bgColour = '#00d097'
           } else {
-            this.thirdAlert = true
+            this.setAlertVisibility(false, false, true)
           }
         })
     },
@@ -210,22 +162,27 @@ export default {
         .then((emailRemoved) => {
           if (emailRemoved) {
             this.primaryMessage = 'Unsubscribed!'
-            this.primaryAlert = true
+            this.setAlertVisibility(true, false, false)
             this.bgColour = '#00d097'
           } else {
             this.primaryMessage = 'You are not subscribed'
-            this.primaryAlert = true
+            this.setAlertVisibility(true, false, false)
             this.bgColour = '#f55252'
           }
         })
+    },
+    resubmitVote() {
+      this.revote = true
+      this.submitVote()
     },
     async submitVote () {
       // Checks if user selected a vote option for each row
       for (const key in this.voteOrder) {
         const keyValue = this.voteOrder[key]
         if (keyValue <= 0) {
-          this.primaryMessage = 'Please enter a vote for each choice'
-          this.primaryAlert = true
+          console.log(key)
+          this.primaryMessage = "Please select an option for each choice"
+          this.setAlertVisibility(true, false, false)
           this.bgColour = '#f55252'
           return
         }
@@ -242,62 +199,70 @@ export default {
       // Checks to see if the user has already voted before
       // If the user has not voted before, add the user to the database
       if (this.userID !== '') {
-        await userVoted(this.year, this.month, this.userID, this.databaseLabels)
+        await userVoted(this.year, this.month, this.userID, Object.keys(this.databaseInfo))
           .then((result) => {
             // If result is nonempty, then the user has already voted, ask the user if they wish to revote
             if (Object.keys(result).length != 0) {
               // Update the vote accordingly. 
               // (e.g If the user changes a vote from first choice to third choice, substract 2, and from third choice to first choice add 2)
               let displayMessage = ''
-              const sortedArray = Array(this.title.length)
-              for (const key in this.voteOrder) {
-                this.voteValue[key] = this.voteOrder[key] - result[key]
-                // Reversing order since higher weight => higher choice (i.e. [HTML: 3, "CSS": 1] represents HTML got picked first)
-                sortedArray[this.title.length - result[key]] = key
+              const sortedArray = Array(Object.keys(result).length - 1)
+              for (const key in result) {
+                if (key != "id") {
+                  this.voteValue[key] = this.voteOrder[key] - result[key]
+                  // Reversing order since higher weight => higher choice (i.e. [HTML: 3, "CSS": 1] represents HTML got picked first)
+                  sortedArray[Object.keys(result).length - result[key] - 1] = key
+                }
               }
-
-              for (let i = 0; i < this.title.length; i++) {
-                displayMessage += this.title[i] + ': ' + sortedArray[i]
+              let overcountingError = 0
+              for (let i = 0; i < Object.keys(result).length - 1; i++) {
+                if (sortedArray[i] == null) {
+                  i += 1
+                  overcountingError += 1
+                }
+                displayMessage += (parseInt(this.title[i]) - overcountingError).toString() + ': ' + sortedArray[i]
                 if (i !== this.title.length-1) {
                   displayMessage += ", "
-                }
+                }                  
               }
               displayMessage += '\n Would you like to revote?'
               // Displays the resubmission form. If the current submission is a revote, do not display the error message again
               if (!this.revote) {
-                this.secondaryAlert = true
+                this.setAlertVisibility(false, true, false)
                 this.secondaryMessage = displayMessage
               }
+            }
+            else if (Object.keys(result).length == 0) {
+              this.voteValue = JSON.parse(JSON.stringify(this.voteOrder))
             // Internal server error if there was trouble retrieving user data
             } else if (result == null) {
               this.primaryMessage = 'Internal server error. Please try again'
-              this.primaryAlert = true
+              this.setAlertVisibility(true, false, false)
               this.bgColour = '#f55252'
             }
           })
       } else {
         // User did not properly sign in
         this.primaryMessage = 'Please sign in if you wish to vote'
-        this.primaryAlert = true
+        this.setAlertVisibility(true, false, false)
         this.bgColour = '#f55252'
       }
 
       // In order to submit the vote, the primaryAlert and the secondaryAlert has to be false (No errors)
       if (!this.primaryAlert && !this.secondaryAlert) {
-        this.voteValue = this.voteOrder
         // Update the votes in the database, update series for piechart and reset all values
         const voteResult = await addVote(this.year, this.month, this.voteValue, this.voteOrder, this.userID)
         // If addVote returns false, then there was an internal server error while retrieving/writing data
         if (!voteResult) {
           this.primaryMessage = 'Internal server error. Please try again'
-          this.primaryAlert = true
-          this.bgColour = '#f55252'
+          this.setAlertVisibility(true, false, false)
+          this.bgColour  = '#f55252'
         } else {
           this.updateSeries()
           this.primaryMessage = 'Vote has been submitted'
-          this.primaryAlert = true
+          this.setAlertVisibility(true, false, false)
           this.bgColour = '#00d097'
-          this.revote = !this.revote
+          this.revote = false
           this.$refs.radioComponent.reset()
         }
       }

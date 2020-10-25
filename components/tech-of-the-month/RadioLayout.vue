@@ -70,7 +70,7 @@ export default {
       let index = 0
       for (const key in this.previouslySelected) {
         this.previouslySelected[key] = ''
-        this.$parent.voteOrder[this.children[index]] = 0
+        this.$parent.voteOrder[this.options[index]] = 0
         index += 1
       }
     },
