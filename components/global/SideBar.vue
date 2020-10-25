@@ -1,10 +1,10 @@
 <template>
-  <div class="ml-4">
+  <div class="ml-4 tableOfContents">
     <div class="heading">
       {{ title }}
     </div>
     <li v-for="tocItem in toc" :key="tocItem.id">
-      <nuxt-link
+      <NuxtLink
         :to="`#${tocItem.id}`"
         class="block text-sm scrollactive-item transition-transform ease-in-out duration-300 transform hover:translate-x-1"
         :class="{
@@ -13,7 +13,7 @@
         }"
       >
         {{ tocItem.text }}
-      </nuxt-link>
+      </NuxtLink>
     </li>
   </div>
 </template>
@@ -54,4 +54,12 @@ export default {
   a:hover {
     text-decoration: none;
   }
+
+  .tableOfContents {
+    width: 20%;
+    box-sizing: content-box;
+    position: fixed;
+    z-index: 2;
+  }
+
 </style>
