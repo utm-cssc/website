@@ -36,7 +36,7 @@ export default {
           desc: "Intro to Computer Science"
         },,{
           title: "STA256",
-          icon: "mat102.svg",
+          icon: "sta256.svg",
           link: "/resources/sta256/",
           desc: "Probability and Statistics I"
         },
