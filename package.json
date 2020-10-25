@@ -20,13 +20,14 @@
     "fix:css": "stylelint -f --fix **/*.{vue,css}"
   },
   "dependencies": {
-    "@nuxt/content": "^1.6.0",
+    "@nuxt/content": "^1.10.0",
     "@nuxtjs/axios": "^5.12.1",
     "@tailwindcss/typography": "^0.2.0",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
-    "nuxt": "^2.14.1",
-    "nuxt-mq": "^2.0.1"
+    "nuxt": "^2.14.7",
+    "nuxt-mq": "^2.0.1",
+    "vue-typed-js": "^0.1.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
@@ -37,12 +38,12 @@
     "@nuxtjs/vuetify": "^1.11.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.11.0",
-    "eslint-plugin-nuxt": "^1.0.0",
     "eslint-config-prettier": "^6.13.0",
-    "stylelint": "^13.6.1",
-    "stylelint-config-standard": "^20.0.0",
+    "eslint-plugin-nuxt": "^1.0.0",
     "husky": "^4.3.0",
-    "lint-staged": "^10.4.0"
+    "lint-staged": "^10.4.0",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0"
   },
   "husky": {
     "hooks": {
