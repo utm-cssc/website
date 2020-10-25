@@ -56,9 +56,10 @@ export default {
   }
 
   .tableOfContents {
-    width: 220px;
+    width: 230px;
     position: fixed;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     z-index: 1;
     flex-direction: column;
     margin-left: 50px;
