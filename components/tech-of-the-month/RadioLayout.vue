@@ -2,33 +2,33 @@
   <div style="padding-left: 10px;">
     <!-- Row title -->
     <div
-      v-for="(childTitle, index) in titles"
-      :key="childTitle"
+      v-for="(rowTitle, index) in titles"
+      :key="rowTitle"
     >
       <h3
         class="my-3 title"
         data-v-16201546=""
         style="color: #606f7b; margin-bottom: 1rem !important;"
       >
-        {{ "Choice #" + childTitle }}
+        {{ "Choice #" + rowTitle }}
       </h3>
       <!-- Radio button layout -->
       <div class="container" align="center">
         <span
-          v-for="child in children"
-          :key="child"
+          v-for="option in options"
+          :key="option"
           style="padding-left: 20px; padding-right: 20px;"
         >
           <!-- Individual radio button -->
-          <label class="descContainers" style="color: #606f7b;">{{ child }}
+          <label class="descContainers" style="color: #606f7b;">{{ option }}
             <input
-              :id="child+childTitle"
+              :id="option+rowTitle"
               type="radio"
-              :name="childTitle"
-              :class="child"
+              :name="rowTitle"
+              :class="option"
               :value="titles.length - index"
               autocomplete="off"
-              @click="onChange(child, childTitle)"
+              @click="onChange(option, rowTitle)"
             >
             <span class="radioBtn"></span>
           </label>
@@ -41,7 +41,7 @@
 <script>
 export default {
   props: {
-    children: {
+    options: {
       type: Array,
       default: () => []
     },
@@ -57,7 +57,7 @@ export default {
     }
   },
   created () {
-    this.convertDictionary()
+    this.setupLabels()
   },
   methods: {
     reset () {
@@ -74,14 +74,14 @@ export default {
         index += 1
       }
     },
-    convertDictionary () {
-      // Convery an array to a dictionary
+    // Keeping track of the option that you selected in a particular row
+    setupLabels () {
       const dictLen = Object.keys(this.titles).length
       for (let i = 0; i < dictLen; i++) {
         this.$set(this.previouslySelected, this.titles[i], '')
       }
     },
-    disableButtions (className, title, status) {
+    toggleButtons (className, title, status) {
       // Disables/Enables all other radio buttons of the same class name
       const radiosByClass = document.getElementsByClassName(className)
       for (let i = 0; i < radiosByClass.length; i++) {
@@ -91,7 +91,6 @@ export default {
       }
     },
     onChange (className, title) {
-      // Function runs when the user clicks on any of the radio buttons
       const clickedItem = document.getElementById(className + title)
       let disabledStatus = true
       // Checks to see if the user selected a radio button that is already checked
@@ -102,9 +101,10 @@ export default {
         this.previouslySelected[title] = ''
         this.$parent.voteOrder[className] = 0
       // Checks to see if the user clicks on a radio button of the same row
+      // If you selected something different from your previous selection
       } else if (this.previouslySelected[title] !== className && this.previouslySelected[title] !== '') {
         // It will then enable all the buttons with previously checked class name and disable the newly checked button
-        this.disableButtions(this.previouslySelected[title], title, false)
+        this.toggleButtons(this.previouslySelected[title], title, false)
         this.previouslySelected[title] = className
         this.$parent.voteOrder[className] = clickedItem.value
       // If the user clicks an unchecked radio button
@@ -113,7 +113,7 @@ export default {
         this.$parent.voteOrder[className] = clickedItem.value
       }
       // Will either disable/enable radio buttons of the same class name
-      this.disableButtions(className, title, disabledStatus)
+      this.toggleButtons(className, title, disabledStatus)
     }
   }
 }
