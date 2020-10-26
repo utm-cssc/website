@@ -73,13 +73,13 @@
         Email
       </div>
       <p class="mb-2">
-        Please provide your utoronto email so we can contact you back!
+        Feel free to provide your utoronto email so we can contact you back!
+        (Optional)
       </p>
       <b-form-textarea
         v-model="email"
         name="Email"
         placeholder="user@mail.utoronto.ca"
-        required="required"
         rows="1"
         max-rows="1"
       ></b-form-textarea>
