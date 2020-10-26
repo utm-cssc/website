@@ -12,7 +12,7 @@
   </p>
 </h1>
 <p align="center">
-  <a href="http://cssc.utm.utoronto.ca/"><img src="https://api.netlify.com/api/v1/badges/96222078-9b07-4beb-86fa-a982c73ba4cf/deploy-status" alt="UTMCSSC Website"></a>
+  <a href="http://cssc.utm.utoronto.ca/"><img src="https://api.netlify.com/api/v1/badges/9e91f5db-d9f7-420c-8dd9-c4b901cbe250/deploy-status" alt="UTMCSSC Website"></a>
 </p>
 
 
