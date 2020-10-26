@@ -84,7 +84,7 @@ import {
   login,
   setEmail,
   deleteAttribute,
-} from '~/assets/database/firebase.js'
+} from '~/database/firebase.js'
 export default {
   components: {
     apexcharts: () => import('vue-apexcharts'),
@@ -199,7 +199,6 @@ export default {
       for (const key in this.voteOrder) {
         const keyValue = this.voteOrder[key]
         if (keyValue <= 0) {
-          console.log(key)
           this.primaryMessage = 'Please select an option for each choice'
           this.setAlertVisibility(true, false, false)
           this.bgColour = '#f55252'
@@ -233,7 +232,6 @@ export default {
               for (const key in result) {
                 if (key != 'id') {
                   if (key in this.voteOrder) {
-                    console.log(key)
                     this.voteValue[key] = this.voteOrder[key] - result[key]
                     // Reversing order since higher weight => higher choice (i.e. [HTML: 3, "CSS": 1] represents HTML got picked first)
                     sortedArray[
@@ -303,7 +301,6 @@ export default {
       // In order to submit the vote, the primaryAlert and the secondaryAlert has to be false (No errors)
       if (!this.primaryAlert && !this.secondaryAlert) {
         // Update the votes in the database, update series for piechart and reset all values
-        console.log(this.voteValue)
         const voteResult = await addVote(
           this.year,
           this.month,

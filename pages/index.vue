@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <!-- Title -->
-    <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
+    <div
+      class="mt-5 d-flex flex-column justify-content-center align-items-center"
+    >
       <CenteredHero
         icon="../icons/cssc-logo-without-title.svg"
         title="UTM CSSC"
@@ -21,9 +23,9 @@
         The Computer Science Student Community (CSSC) is an open space for
         Computer Science students to come in and ask questions about their
         university and post-university career. We act as liaisons to the
-        Computer Science faculty to ensure that all students can seek
-        the appropriate support and guidance. CSSC seeks to support students
-        through community initiatives built upon inclusivity and empowerment.
+        Computer Science faculty to ensure that all students can seek the
+        appropriate support and guidance. CSSC seeks to support students through
+        community initiatives built upon inclusivity and empowerment.
       </p>
     </div>
     <CenteredThreeColumnGrid :children="features" :rounded="false" />
@@ -42,7 +44,8 @@
           :message="mate.message"
           :discord="mate.discord"
           :email="mate.email"
-          :linkedin="mate.linkedin"/>
+          :linkedin="mate.linkedin"
+        />
       </div>
     </div>
     <!-- Collabutors Section -->
@@ -63,56 +66,54 @@ export default {
         {
           title: 'Growth',
           desc:
-            'CSSC is dedicated to your academic and professional growth! We\'re here for you with opportunities, spaces and resources to inform your computer science journey through university!',
-          icon: './icons/growth.svg'
+            "CSSC is dedicated to your academic and professional growth! We're here for you with opportunities, spaces and resources to inform your computer science journey through university!",
+          icon: './icons/growth.svg',
         },
         {
           title: 'Resources',
           desc:
             'Our technology team is devoted to developing processes and tools to help you succeed! We curate from across the internet and produce original content for our community!',
-          icon: './icons/resources.svg'
+          icon: './icons/resources.svg',
         },
         {
           title: 'Collaboration',
           desc:
             'We work closely with other MCS clubs and societies in order to achieve common goals in the CS community!',
-          icon: './icons/collaboration.svg'
-        }
+          icon: './icons/collaboration.svg',
+        },
       ],
       button1: {
         label: 'Tech of the Month',
-        link: 'tech-of-the-month'
+        link: 'tech-of-the-month',
       },
       button2: {
         label: 'MCS Orientation E-Kit',
-        link: '../../resources/ekit/E-Kit For MCS Orientation 2020.pdf'
-      }
+        link: '../../resources/ekit/E-Kit For MCS Orientation 2020.pdf',
+      },
     }
   },
-  async asyncData ({ $axios, $content, params, error }) {
+  async asyncData({$axios, $content, params, error}) {
     const teamDataStore = await $content('team').fetch()
     const currentTeam = teamDataStore[0].team
     const contributors = []
     await $axios
       .$get('https://api.github.com/repos/utm-cssc/website/contributors')
-      .then((res) => {
+      .then(res => {
         for (const c of res) {
           const contributor = {
             login: c.login,
             imgSrc: c.avatar_url,
-            url: c.html_url
+            url: c.html_url,
           }
           contributors.push(contributor)
         }
       })
-      .catch((e) => {
+      .catch(e => {
         console.log(e.message)
-        console.log({ statusCode: 404, message: 'Something went wrong' })
+        console.log({statusCode: 404, message: 'Something went wrong'})
       })
-    console.log('Final Contributors')
-    console.log(contributors)
-    return { contributors, currentTeam }
-  }
+    return {contributors, currentTeam}
+  },
 }
 </script>
 

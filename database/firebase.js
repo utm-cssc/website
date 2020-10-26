@@ -87,7 +87,12 @@ export async function deleteAttribute(
         removeOptions.map(option => {
           removeDict[option] = firebase.firestore.FieldValue.delete()
         })
-        allUsers.doc(doc.id).update(removeDict)
+        allUsers
+          .doc(doc.id)
+          .update(removeDict)
+          .catch(() => {
+            return null
+          })
       })
       return userInfo
     })
