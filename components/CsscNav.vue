@@ -1,13 +1,13 @@
 <template>
   <div class="container nav g-header pt-4 px-2 d-flex align-items-end">
-    <input id="nav-check" v-model="checked" type="checkbox">
+    <input id="nav-check" v-model="checked" type="checkbox" />
     <div class="nav-header">
       <nuxt-link
         class="d-flex align-items-end ml-1"
         to="/"
         @click.native="checked = false"
       >
-        <img class="logo mr-2" src="/icons/cssc-logo-without-title.svg">
+        <img class="logo mr-2" src="/icons/cssc-logo-without-title.svg" />
         <span class="logo-text">UTM CSSC</span>
       </nuxt-link>
     </div>
@@ -29,11 +29,25 @@
         Resources
       </nuxt-link>
       <nuxt-link
-        to="/ask-upper-years"
+        to="/ask-jack"
         class="nav-link mr-4"
         @click.native="checked = false"
       >
-        Ask an Upper Year
+        Ask Jack
+      </nuxt-link>
+      <nuxt-link
+        to="/calendar"
+        class="nav-link mr-4"
+        @click.native="checked = false"
+      >
+        Calendar
+      </nuxt-link>
+      <nuxt-link
+        to="/clubs"
+        class="nav-link mr-4"
+        @click.native="checked = false"
+      >
+        MCS Clubs
       </nuxt-link>
       <SearchBar class="mx-2 d-none d-lg-block d-xl-block" />
     </div>
@@ -42,11 +56,11 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      checked: false
+      checked: false,
     }
-  }
+  },
 }
 </script>
 
