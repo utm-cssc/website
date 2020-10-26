@@ -25,14 +25,14 @@ export async function getMonthVotes(year, month) {
 
 // Checks to see if the user has already voted or not
 // If they have not voted, they will be added to the database
-export async function userVoted(year, month, currentUtorid, voteOptions) {
+export async function userVoted(year, month, currentUtorid) {
   // Collection of users who voted for that month (e.g. NovemberUsers)
   const userMonthCollection = month + 'Users'
   const allUsers = db
     .collection('Voting')
     .doc(year)
     .collection(userMonthCollection)
-  const userInfo = {}
+  let userInfo = {}
   return await allUsers
     .where('utorid', '==', currentUtorid)
     .limit(1)
@@ -50,14 +50,44 @@ export async function userVoted(year, month, currentUtorid, voteOptions) {
         return userInfo
       }
       snapshot.forEach(doc => {
+        userInfo = doc.data()
+        delete userInfo['utorid']
         userInfo['id'] = doc.id
-        voteOptions.map(option => {
-          if (doc.get(option) == undefined) {
-            userInfo[option] = 0
-          } else {
-            userInfo[option] = doc.get(option)
-          }
+      })
+      return userInfo
+    })
+    .catch(() => {
+      return null
+    })
+}
+
+export async function deleteAttribute(
+  year,
+  month,
+  currentUtorid,
+  removeOptions,
+) {
+  // Collection of users who voted for that month (e.g. NovemberUsers)
+  const userMonthCollection = month + 'Users'
+  const allUsers = db
+    .collection('Voting')
+    .doc(year)
+    .collection(userMonthCollection)
+  let userInfo = {}
+  return await allUsers
+    .where('utorid', '==', currentUtorid)
+    .limit(1)
+    .get()
+    .then(async snapshot => {
+      if (snapshot.empty) {
+        return null
+      }
+      snapshot.forEach(doc => {
+        const removeDict = {}
+        removeOptions.map(option => {
+          removeDict[option] = firebase.firestore.FieldValue.delete()
         })
+        allUsers.doc(doc.id).update(removeDict)
       })
       return userInfo
     })
@@ -80,24 +110,22 @@ export async function addVote(
     .collection(month)
   const userMonth = month + 'Users'
   let error = false
-  userVoted(year, month, currentUtorid, Object.keys(voteOrder)).then(
-    async result => {
-      // If result is null, there was an internal server error when reading the document
-      if (result == null) {
-        error = true
-      } else {
-        await db
-          .collection('Voting')
-          .doc(year)
-          .collection(userMonth)
-          .doc(result['id'])
-          .update(voteOrder)
-          .catch(() => {
-            return null
-          })
-      }
-    },
-  )
+  userVoted(year, month, currentUtorid).then(async result => {
+    // If result is null, there was an internal server error when reading the document
+    if (result == null) {
+      error = true
+    } else {
+      await db
+        .collection('Voting')
+        .doc(year)
+        .collection(userMonth)
+        .doc(result['id'])
+        .update(voteOrder)
+        .catch(() => {
+          return null
+        })
+    }
+  })
   if (error) {
     return false
   }

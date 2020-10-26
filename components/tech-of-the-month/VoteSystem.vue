@@ -45,9 +45,7 @@
     <InteractiveAlerts
       :alertStatus.sync="secondaryAlert"
       :alertRecieveInput="true"
-      :alertMessage="
-        'You have already voted, your current votes are: \n' + secondaryMessage
-      "
+      :alertMessage="secondaryMessage"
       :alertYesFunction="resubmitVote"
       @update="secondaryAlert = $event"
     />
@@ -85,6 +83,7 @@ import {
   userVoted,
   login,
   setEmail,
+  deleteAttribute,
 } from '~/assets/database/firebase.js'
 export default {
   components: {
@@ -218,25 +217,46 @@ export default {
       // Checks to see if the user has already voted before
       // If the user has not voted before, add the user to the database
       if (this.userID !== '') {
-        await userVoted(
-          this.year,
-          this.month,
-          this.userID,
-          Object.keys(this.databaseInfo),
-        ).then(result => {
+        await userVoted(this.year, this.month, this.userID).then(result => {
           // If result is nonempty, then the user has already voted, ask the user if they wish to revote
           if (Object.keys(result).length != 0) {
             // Update the vote accordingly.
             // (e.g If the user changes a vote from first choice to third choice, substract 2, and from third choice to first choice add 2)
-            let displayMessage = ''
+            let displayMessage =
+              'You have already voted, your current votes are: \n'
             const sortedArray = Array(Object.keys(result).length - 1)
-            for (const key in result) {
-              if (key != 'id') {
+            const removeOptions = Array(Object.keys(result).length - 1)
+            if (
+              Object.keys(result).length - 1 >
+              Object.keys(this.voteOrder).length
+            ) {
+              for (const key in result) {
+                if (key != 'id') {
+                  if (key in this.voteOrder) {
+                    console.log(key)
+                    this.voteValue[key] = this.voteOrder[key] - result[key]
+                    // Reversing order since higher weight => higher choice (i.e. [HTML: 3, "CSS": 1] represents HTML got picked first)
+                    sortedArray[
+                      Object.keys(result).length - result[key] - 1
+                    ] = key
+                  } else {
+                    displayMessage =
+                      'The options were recently changed, please revote, your current votes are: \n'
+                    removeOptions.push(key)
+                  }
+                }
+              }
+            } else {
+              for (const key in this.voteOrder) {
+                if (!(key in result)) {
+                  result[key] = 0
+                }
                 this.voteValue[key] = this.voteOrder[key] - result[key]
                 // Reversing order since higher weight => higher choice (i.e. [HTML: 3, "CSS": 1] represents HTML got picked first)
                 sortedArray[Object.keys(result).length - result[key] - 1] = key
               }
             }
+
             let overcountingError = 0
             for (let i = 0; i < Object.keys(result).length - 1; i++) {
               if (sortedArray[i] == null) {
@@ -244,10 +264,8 @@ export default {
                 overcountingError += 1
               }
               displayMessage +=
-                (parseInt(this.title[i]) - overcountingError).toString() +
-                ': ' +
-                sortedArray[i]
-              if (i !== this.title.length - 1) {
+                (i + 1 - overcountingError).toString() + ': ' + sortedArray[i]
+              if (i !== this.title.length) {
                 displayMessage += ', '
               }
             }
@@ -256,6 +274,15 @@ export default {
             if (!this.revote) {
               this.setAlertVisibility(false, true, false)
               this.secondaryMessage = displayMessage
+            } else {
+              if (removeOptions.length != 0) {
+                deleteAttribute(
+                  this.year,
+                  this.month,
+                  this.userID,
+                  removeOptions,
+                )
+              }
             }
           } else if (Object.keys(result).length == 0) {
             this.voteValue = JSON.parse(JSON.stringify(this.voteOrder))
@@ -276,6 +303,7 @@ export default {
       // In order to submit the vote, the primaryAlert and the secondaryAlert has to be false (No errors)
       if (!this.primaryAlert && !this.secondaryAlert) {
         // Update the votes in the database, update series for piechart and reset all values
+        console.log(this.voteValue)
         const voteResult = await addVote(
           this.year,
           this.month,
