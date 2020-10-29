@@ -1,20 +1,22 @@
 <template>
-  <div class="tableOfContents d-flex mb-4">
-    <div class="heading">
-      {{ title }}
+  <div class="toc-container">
+    <div class="tableOfContents mb-4">
+      <div class="heading">
+        {{ title }}
+      </div>
+      <li v-for="tocItem in toc" :key="tocItem.id">
+        <NuxtLink
+          :to="`#${tocItem.id}`"
+          class="block mt-1 text-sm scrollactive-item transition-transform ease-in-out duration-300 transform hover:translate-x-2"
+          :class="{
+            'py-2 subheading': tocItem.depth === 2,
+            'ml-2 pb-2 innerSubheading': tocItem.depth === 3
+          }"
+        >
+          {{ tocItem.text }}
+        </NuxtLink>
+      </li>
     </div>
-    <li v-for="tocItem in toc" :key="tocItem.id">
-      <NuxtLink
-        :to="`#${tocItem.id}`"
-        class="block mt-1 text-sm scrollactive-item transition-transform ease-in-out duration-300 transform hover:translate-x-1"
-        :class="{
-          'py-2 subheading': tocItem.depth === 2,
-          'ml-2 pb-2 innerSubHeading': tocItem.depth === 3
-        }"
-      >
-        {{ tocItem.text }}
-      </NuxtLink>
-    </li>
   </div>
 </template>
 
@@ -46,8 +48,8 @@ export default {
     color: var(--color-primary);
   }
 
-  .innerSubHeading:hover,
-  .innerSubHeading:active {
+  .innerSubheading:hover,
+  .innerSubheading:active {
     color: var(--color-primary-dark);
   }
 
@@ -55,26 +57,26 @@ export default {
     text-decoration: none;
   }
 
+  .toc-container {
+    position: relative;
+  }
+
   .tableOfContents {
-    width: 230px;
-    position: fixed;
-    overflow-y: auto;
+    max-width: 350px;
+    position: sticky;
+    overflow-y: scroll;
     overflow-x: hidden;
-    z-index: 1;
-    flex-direction: column;
-    margin-left: 50px;
-    top: 150px;
-    bottom: 50px;
+    max-height: 80vh;
+    top: 0;
   }
 
   @media (max-width: 1200px) {
     .tableOfContents {
-      width: auto;
-      z-index: 0;
-      position: static;
-      align-items: center;
+      max-width: 600px;
+      max-height: 100%;
       margin: 0 30px 0 30px;
+      overflow-y: none;
+      overflow-x: hidden;
     }
   }
-
 </style>
