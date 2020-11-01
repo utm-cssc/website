@@ -20,6 +20,7 @@ export default {
     title: 'CSSC Website',
     script: [
       {src: 'https://plausible.io/js/plausible.js', async: true, defer: true},
+      {src: 'https://script.opentracker.net', async: true, defer: true},
     ],
     meta: [
       {charset: 'utf-8'},
