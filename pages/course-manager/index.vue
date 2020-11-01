@@ -6,12 +6,12 @@
       <v-list v-if="courses.length > 0">
         <v-list-item-group v-model="selectedIndex">
           <course-list-item
-            v-for="course in courses"
-            :key="course"
+            v-for="(course, index) in courses"
+            :key="index"
             :name="course.code"
             :courseMark="course.mark"
             :percentage="course.percentage"
-            @click="selectedIndex = index"
+            @removeMe="removeCourse(index)"
           />
         </v-list-item-group>
       </v-list>
@@ -57,16 +57,8 @@ export default {
         percentage: 10,
       })
     },
-    removeCourse(courseIndex) {
-      if (courseIndex != this.courseToDeleteIndex) {
-        this.courseToDeleteIndex = courseIndex
-        return
-      }
-      this.courses.splice(courseIndex, 1)
-      if (courseIndex == this.selectedIndex) {
-        this.selectedIndex = -1
-      }
-      this.courseToDeleteIndex = -1
+    removeCourse() {
+      this.courses.splice(this.selectedIndex, 1)
     },
   },
 }
