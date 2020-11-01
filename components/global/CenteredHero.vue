@@ -1,7 +1,7 @@
 <template>
   <div class="container hero">
     <div class="row d-flex justify-center">
-      <img :src="icon" alt="CSSC Icon" class="hero-img">
+      <img :src="icon" alt="CSSC Icon" class="hero-img" />
     </div>
     <div class="mt-3 mt-md-4 mt-lg-5 row d-flex flex-column align-items-center">
       <div class="col-lg-10 text-center">
@@ -20,7 +20,7 @@
         :size="gtmd"
         class="mr-4 btn-cta mb-3 d-flex align-items-center"
       >
-        <img v-if="button1.icon" class="btn-icon mx-2" :src="button1.icon">
+        <img v-if="button1.icon" class="btn-icon mx-2" :src="button1.icon" />
         {{ button1.label }}
       </b-button>
       <b-button
@@ -30,13 +30,15 @@
         variant="outline-primary"
         class="btn-cta-alt mb-3 d-flex align-items-center"
       >
-        <img v-if="button2.icon" class="btn-icon mx-2" :src="button2.icon">
+        <img v-if="button2.icon" class="btn-icon mx-2" :src="button2.icon" />
         {{ button2.label }}
       </b-button>
     </div>
     <div class="d-flex justify-center mt-10 mt-sm-20">
       <div id="arrow">
-        <a :href="arrowLink"><img class="bounce" src="/icons/arrow.svg" alt="Down Arrow"></a>
+        <a :href="arrowLink"
+          ><img class="bounce" src="/icons/arrow.svg" alt="Down Arrow"
+        /></a>
       </div>
     </div>
   </div>
@@ -51,44 +53,44 @@ export default {
     button1: {
       label: {
         type: String,
-        default: ''
+        default: '',
       },
       link: {
         type: String,
-        default: ''
+        default: '',
       },
       icon: {
         type: String,
-        default: ''
-      }
+        default: '',
+      },
     },
     button2: {
       label: {
         type: String,
-        default: ''
+        default: '',
       },
       link: {
         type: String,
-        default: ''
+        default: '',
       },
       icon: {
         type: String,
-        default: ''
-      }
+        default: '',
+      },
     },
     arrowLink: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
-    gtmd () {
+    gtmd() {
       if (this.$mq === 'sm' || this.$mq === 'xs' || this.$mq === 'md') {
         return 'md'
       }
       return 'lg'
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -102,6 +104,7 @@ export default {
   border-color: var(--color-primary) !important;
   outline: none;
   font-size: 1.42rem;
+  color: var(--color-text);
 }
 
 .btn-cta:active {

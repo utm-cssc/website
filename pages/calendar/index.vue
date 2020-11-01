@@ -125,7 +125,6 @@ export default {
     this.readCSVData(this.dsc, 'DSC')
     this.readCSVData(this.cssc, 'CSSC')
     this.readCSVData(this.robotics, 'Robotics')
-    this.$nuxt.$vuetify.theme.dark = this.$nuxt.$colorMode.value == 'dark'
   },
   methods: {
     viewDay({date}) {
