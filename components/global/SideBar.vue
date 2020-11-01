@@ -7,7 +7,7 @@
       <li v-for="tocItem in toc" :key="tocItem.id">
         <NuxtLink
           :to="`#${tocItem.id}`"
-          class="block mt-1 text-sm scrollactive-item transition-transform ease-in-out duration-300 transform hover:translate-x-2"
+          class="block mt-1 mr-3 text-sm scrollactive-item transition-transform ease-in-out duration-300 transform hover:translate-x-2"
           :class="{
             'py-2 subheading': tocItem.depth === 2,
             'ml-2 pb-2 innerSubheading': tocItem.depth === 3,
