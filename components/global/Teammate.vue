@@ -122,6 +122,7 @@ export default {
   .team-container {
     width: 250px;
     min-height: 350px;
+    background-color: var(--bg);
   }
 
   .pointer {
@@ -138,6 +139,7 @@ export default {
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-duration: 0.5s;
     transition-property: transform, opacity;
+    background-color: var(--bg);
   }
 
   .flip > .back {
@@ -154,6 +156,7 @@ export default {
     width: 250px;
     min-height: 350px;
     transform: rotateY(0deg);
+    background-color: var(--bg);
   }
 
   .flipping > .front {

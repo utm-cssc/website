@@ -11,6 +11,7 @@
         arrowLink="#cssc-moto"
       />
     </div>
+    <DarkModeButton />
     <a id="cssc-moto" />
     <!-- What is CSSC -->
     <div class="my-5">

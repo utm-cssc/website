@@ -75,6 +75,7 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/vuetify',
+    '@nuxtjs/color-mode'
   ],
   /*
    ** Nuxt.js modules
@@ -115,5 +116,5 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {}
 }
