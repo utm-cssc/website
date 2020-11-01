@@ -34,6 +34,11 @@ export default {
           icon: "csc148.svg",
           link: "/resources/csc148/",
           desc: "Intro to Computer Science"
+        },,{
+          title: "STA256",
+          icon: "sta256.svg",
+          link: "/resources/sta256/",
+          desc: "Probability and Statistics I"
         },
       ]
     }
