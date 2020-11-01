@@ -21,7 +21,7 @@ export default {
     script: [
       {src: 'https://plausible.io/js/plausible.js', async: true, defer: true},
       {
-        src: 'https://script.opentracker.net',
+        src: 'https://script.opentracker.net/?site=cssc.utm.utoronto.ca',
         defer: true,
         type: 'text/javascript',
       },
