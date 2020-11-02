@@ -1,20 +1,37 @@
 <template>
   <div>
-    <cssc-nav />
+    <cssc-nav v-if="$mq === 'lg' || $mq === 'xl'"></cssc-nav>
+    <div v-else>
+      <cssc-nav-mobile></cssc-nav-mobile>
+      <aside
+        class="drawer transform top-0 right-0 fixed h-full overflow-auto z-40"
+        :class="drawerOpen ? 'drawer-open' : 'drawer-closed'"
+      >
+        <nav-drawer />
+      </aside>
+    </div>
     <nuxt />
     <cssc-footer />
   </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import CsscNav from '@/components/CsscNav'
+import CsscNavMobile from '@/components/CsscNavMobile'
 import CsscFooter from '@/components/CsscFooter'
+import NavDrawer from '@/components/NavDrawer.vue'
 
 export default {
   components: {
     CsscNav,
-    CsscFooter
-  }
+    CsscFooter,
+    NavDrawer,
+    CsscNavMobile,
+  },
+  computed: {
+    ...mapState(['drawerOpen']),
+  },
 }
 // /* eslint-disable */
 // export default {
@@ -32,3 +49,20 @@ export default {
 //   }
 // }
 </script>
+
+<style>
+.drawer {
+  width: 256px;
+  transition: all 0.2s ease-out;
+}
+
+.drawer-open {
+  margin-left: 0;
+  opacity: 1;
+}
+
+.drawer-closed {
+  margin-right: -343px;
+  opacity: 0;
+}
+</style>
