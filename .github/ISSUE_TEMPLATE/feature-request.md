@@ -1,12 +1,13 @@
 ---
 name: Feature Request
-about: Please use this template to request a new feature for the UTM CSSC website
+about:
+  Please use this template to request a new feature for the UTM CSSC website
 title: "\U0001F680 Feature Request: {{Feature Request Title}}"
 labels: 'Type: Enhancement'
 assignees: ''
 ---
 
-### Problem Overview 👁️‍🗨️ 
+### Problem Overview 👁️‍🗨️
 
 <!-- A clear and concise description of what why you would like this feature. -->
 

@@ -1,15 +1,6 @@
 {
   "team": [
     {
-      "name": "Michael Liut",
-      "imgSrc": "/team/Michael.png",
-      "position": "Faculty Advisor",
-      "message": "Michael is a Computer Science educator who prides himself in fostering an environment of educational excellence through active and experiential learning. In recent years he has assisted in the development and implementation of active learning materials/strategies in several Computer Science courses at UTM. Michael enjoys travelling, and is an avid scuba diver.",
-      "discord": "Mike's Here#5684",
-      "email": " michael.liut@utoronto.ca",
-      "linkedin": "https://www.linkedin.com/in/mliut"
-    },
-    {
       "name": "Alexandra Thompson",
       "imgSrc": "/team/AlexThompson.jpg",
       "position": "General Manager",
@@ -31,10 +22,19 @@
       "name": "Jessica Anderson",
       "imgSrc": "/team/Jess.jpg",
       "position": "Operations Officer",
-      "message": "Jessica was accepted into UTM as an Accounting Student, but ended up wanting to do Computer Science, so she is ready to tackle any of your POSt questions. She always struggles to choose which courses are most important to take and she\\'s ready to share her findings!",
+      "message": "Jessica was accepted into UTM as an Accounting Student, but ended up wanting to do Computer Science, so she is ready to tackle any of your POSt questions. She always struggles to choose which courses are most important to take and she's ready to share her findings!",
       "discord": "janders#8886",
       "email": "jess.anderson@mail.utoronto.ca",
       "linkedin": "https://www.linkedin.com/in/janders"
+    },
+    {
+      "name": "Michael Liut",
+      "imgSrc": "/team/Michael.png",
+      "position": "Faculty Advisor",
+      "message": "Michael is a Computer Science educator who prides himself in fostering an environment of educational excellence through active and experiential learning. In recent years he has assisted in the development and implementation of active learning materials/strategies in several Computer Science courses at UTM. Michael enjoys travelling, and is an avid scuba diver.",
+      "discord": "Mike's Here#5684",
+      "email": " michael.liut@utoronto.ca",
+      "linkedin": "https://www.linkedin.com/in/mliut"
     }
   ]
 }

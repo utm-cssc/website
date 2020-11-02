@@ -20,11 +20,11 @@
 
 <script>
 export default {
-  async asyncData ({ $content, params, error }) {
+  async asyncData({$content, params, error}) {
     const clubs = await $content('clubs').fetch()
     console.log(clubs)
-    return { clubs: clubs[0].clubs }
-  }
+    return {clubs: clubs[0].clubs}
+  },
 }
 </script>
 

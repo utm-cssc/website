@@ -5,7 +5,7 @@
       <p
         class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto text-center"
       >
-        What is <span class="typing"></span>?
+        What is <span class="typing ml-1"></span>?
       </p>
     </vue-typed-js>
   </div>
