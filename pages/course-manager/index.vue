@@ -57,8 +57,8 @@ export default {
         percentage: 10,
       })
     },
-    removeCourse() {
-      this.courses.splice(this.selectedIndex, 1)
+    removeCourse(index) {
+      this.courses.splice(index, 1)
     },
   },
 }
