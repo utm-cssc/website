@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <v-app>
     <cssc-nav />
     <nuxt />
     <cssc-footer />
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -13,8 +13,8 @@ import CsscFooter from '@/components/CsscFooter'
 export default {
   components: {
     CsscNav,
-    CsscFooter
-  }
+    CsscFooter,
+  },
 }
 // /* eslint-disable */
 // export default {
