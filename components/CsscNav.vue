@@ -55,11 +55,15 @@
 </template>
 
 <script>
+import SearchBar from './global/SearchBar'
 export default {
   data() {
     return {
       checked: false,
     }
+  },
+  components: {
+    SearchBar: SearchBar,
   },
 }
 </script>
