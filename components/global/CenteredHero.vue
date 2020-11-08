@@ -104,7 +104,7 @@ export default {
   border-color: var(--color-primary) !important;
   outline: none;
   font-size: 1.42rem;
-  color: var(--color-text);
+  color: #fff;
 }
 
 .btn-cta:active {

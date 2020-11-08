@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="myFonts">
     <cssc-nav />
     <nuxt />
     <cssc-footer />
@@ -22,7 +22,9 @@ export default {
   },
   watch: {
     nuxtColorMode(value) {
+      console.log(value)
       this.$nuxt.$vuetify.theme.dark = value == 'dark'
+      console.log(this.$nuxt.$vuetify.theme.dark)
     },
   },
 }
@@ -46,5 +48,14 @@ export default {
 <style>
 .theme--light.v-application {
   background: inherit;
+}
+
+.myFonts {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--font-body) !important;
+}
+
+.v-application {
+  background: var(--bg);
 }
 </style>

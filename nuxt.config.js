@@ -132,5 +132,17 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
+  vuetify: {
+    theme: {
+      themes: {
+        dark: {
+          primary: '#00d097',
+        },
+        light: {
+          primary: '#00d097',
+        },
+      },
+    },
+  },
   build: {},
 }
