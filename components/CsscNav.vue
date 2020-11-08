@@ -12,7 +12,8 @@
       </nuxt-link>
     </div>
     <div class="nav-btn d-flex align-self-end align-items-end">
-      <SearchBar class="mr-2 d-none d-md-block d-lg-none" />
+      <SearchBar class="align-self-center mr-2 d-none d-md-block d-lg-none" />
+      <DarkModeButton class="align-self-center mr-2 d-block d-lg-none" />
       <label for="nav-check">
         <span />
         <span />
@@ -50,6 +51,7 @@
         MCS Clubs
       </nuxt-link>
       <SearchBar class="mx-2 d-none d-lg-block d-xl-block" />
+      <DarkModeButton class="mx-2 d-none d-lg-block d-xl-block" />
     </div>
   </div>
 </template>

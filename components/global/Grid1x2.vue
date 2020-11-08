@@ -91,13 +91,14 @@ export default {
   opacity: 0.9;
   font-size: 24px;
   margin-top: 0;
+  color: var(--color-body);
 }
 
 .feature-title {
   font-weight: 600;
   line-height: 1.25;
   font-size: 42px;
-  color: var(--color-text-dark);
+  color: var(--color-heading);
 }
 
 .right-padded-desc {

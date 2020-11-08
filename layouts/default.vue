@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <v-app class="myFonts">
     <cssc-nav />
     <nuxt />
     <cssc-footer />
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -13,8 +13,20 @@ import CsscFooter from '@/components/CsscFooter'
 export default {
   components: {
     CsscNav,
-    CsscFooter
-  }
+    CsscFooter,
+  },
+  computed: {
+    nuxtColorMode() {
+      return this.$nuxt.$colorMode.value
+    },
+  },
+  watch: {
+    nuxtColorMode(value) {
+      console.log(value)
+      this.$nuxt.$vuetify.theme.dark = value == 'dark'
+      console.log(this.$nuxt.$vuetify.theme.dark)
+    },
+  },
 }
 // /* eslint-disable */
 // export default {
@@ -32,3 +44,18 @@ export default {
 //   }
 // }
 </script>
+
+<style>
+.theme--light.v-application {
+  background: inherit;
+}
+
+.myFonts {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--font-body) !important;
+}
+
+.v-application {
+  background: var(--bg);
+}
+</style>
