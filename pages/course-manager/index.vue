@@ -3,18 +3,14 @@
     <v-data-table :headers="headers" :items="tests" class="elevation-1">
       <template v-slot:top>
         <v-toolbar flat>
-          <v-toolbar-title>Grades</v-toolbar-title>
+          <v-toolbar-title>
+            Grades
+          </v-toolbar-title>
           <v-spacer />
           <v-dialog v-model="dialog" max-width="500px">
             <template v-slot:activator="{on, attrs}">
-              <v-btn
-                color="var(--color-primary)"
-                text
-                class="mb-2"
-                v-bind="attrs"
-                v-on="on"
-              >
-                <v-icon color="var(--color-primary)">
+              <v-btn color="primary" text class="mb-2" v-bind="attrs" v-on="on">
+                <v-icon color="primary">
                   mdi-plus
                 </v-icon>
                 Add Test
@@ -54,7 +50,7 @@
                 </v-card-text>
 
                 <v-card-actions>
-                  <v-spacer></v-spacer>
+                  <v-spacer />
                   <v-btn color="primary" text @click="close">
                     Cancel
                   </v-btn>
@@ -72,16 +68,16 @@
           </v-dialog>
           <v-dialog v-model="dialogDelete" max-width="500px">
             <v-card>
-              <v-card-title class="headline"
-                >Are you sure you want to delete this item?</v-card-title
-              >
+              <v-card-title class="headline">
+                Are you sure you want to delete this item?
+              </v-card-title>
               <v-card-actions>
-                <v-spacer></v-spacer>
+                <v-spacer />
                 <v-btn color="primary" text @click="closeDelete">Cancel</v-btn>
-                <v-btn color="primary" text @click="deleteItemConfirm"
-                  >OK</v-btn
-                >
-                <v-spacer></v-spacer>
+                <v-btn color="primary" text @click="deleteItemConfirm">
+                  OK
+                </v-btn>
+                <v-spacer />
               </v-card-actions>
             </v-card>
           </v-dialog>
@@ -117,14 +113,6 @@
         >
       </div>
     </v-form>
-    <v-alert
-      :value="alert"
-      color="pink"
-      border="top"
-      transition="scale-transition"
-    >
-      {{ errorMessage }}
-    </v-alert>
     <v-dialog v-model="showGrades" max-width="500px">
       <v-card>
         <v-card-title class="headline pb-5">Grade Summary</v-card-title>
@@ -158,7 +146,6 @@ export default {
     validExpectedScore: true,
     validValues: false,
     alert: false,
-    errorMessage: '',
     scoreRequired: 0,
     percentLeft: 0,
     percentageLost: 0,
@@ -173,10 +160,23 @@ export default {
     dialog: false,
     dialogDelete: false,
     headers: [
-      {text: 'Test Name', value: 'test_name'},
-      {text: 'Grade', value: 'grade'},
-      {text: 'Weightage', value: 'weightage'},
-      {text: 'Actions', value: 'actions', sortable: false},
+      {
+        text: 'Test Name',
+        value: 'test_name',
+      },
+      {
+        text: 'Grade',
+        value: 'grade',
+      },
+      {
+        text: 'Weightage',
+        value: 'weightage',
+      },
+      {
+        text: 'Actions',
+        value: 'actions',
+        sortable: false,
+      },
     ],
     tests: [
       {
@@ -268,34 +268,25 @@ export default {
     },
     calculateGrades() {
       const scoreWanted = parseInt(this.expectedScore)
-      if (!isNaN(this.expectedScore) && (scoreWanted > 100 || scoreWanted < 0))
-        this.callToError(
-          'Expected Score not a number or is not between 0 to 100. Please remove or change the expected value.',
-        )
-      else {
-        this.currentPercent = 0
-        let overallWeightage = 0
-        console.log(this.tests)
-        this.tests.forEach(test => {
-          const grade = parseInt(test.grade)
-          const weightage = parseInt(test.weightage)
-          if (!(isNaN(grade) || isNaN(weightage))) {
-            overallWeightage += weightage
-            this.currentPercent += (grade / 100) * weightage
-          }
-        })
-        this.percentLeft = 100 - overallWeightage
-        this.percentageLost = overallWeightage - this.currentPercent
-        this.scoreRequired =
-          (scoreWanted - this.currentPercent) * (100 / this.percentLeft)
-        this.showGrades = true
-      }
-    },
-    callToError(errorMessage) {
-      console.log('Error')
-      this.errorMessage = errorMessage
-      this.alert = true
-      setTimeout(() => (this.alert = false), 3000)
+      this.currentPercent = 0
+      let overallWeightage = 0
+      console.log(this.tests)
+      // Loop through the grades and add all the accumulated percentages together
+      this.tests.forEach(test => {
+        const grade = parseInt(test.grade)
+        const weightage = parseInt(test.weightage)
+        // To stop from adding a string that is not number
+        if (!(isNaN(grade) || isNaN(weightage))) {
+          overallWeightage += weightage
+          this.currentPercent += (grade / 100) * weightage
+        }
+      })
+      // Overall Percentages
+      this.percentLeft = 100 - overallWeightage
+      this.percentageLost = overallWeightage - this.currentPercent
+      this.scoreRequired =
+        (scoreWanted - this.currentPercent) * (100 / this.percentLeft)
+      this.showGrades = true
     },
   },
 }
