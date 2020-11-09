@@ -55,11 +55,11 @@
 
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn color="blue darken-1" text @click="close">
+                  <v-btn color="primary" text @click="close">
                     Cancel
                   </v-btn>
                   <v-btn
-                    color="blue darken-1"
+                    color="primary"
                     text
                     @click="save"
                     :disabled="!validValues"
@@ -77,10 +77,8 @@
               >
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text @click="closeDelete"
-                  >Cancel</v-btn
-                >
-                <v-btn color="blue darken-1" text @click="deleteItemConfirm"
+                <v-btn color="primary" text @click="closeDelete">Cancel</v-btn>
+                <v-btn color="primary" text @click="deleteItemConfirm"
                   >OK</v-btn
                 >
                 <v-spacer></v-spacer>
@@ -111,7 +109,8 @@
           :rules="scoreRules"
         />
         <v-btn
-          color="var(--color-primary)"
+          dark
+          color="primary"
           :disabled="!validExpectedScore"
           @click="calculateGrades()"
           >Get Grades!</v-btn
@@ -128,16 +127,26 @@
     </v-alert>
     <v-dialog v-model="showGrades" max-width="500px">
       <v-card>
-        <v-card-title class="headline">Grade Summary</v-card-title>
+        <v-card-title class="headline pb-5">Grade Summary</v-card-title>
         <v-card-subtitle
-          >Need to score: {{ scoreRequired }}% in the rest of {{ percentLeft }}%
-          to get {{ expectedScore }}%</v-card-subtitle
-        >
+          >Need to score:
+          <span class="font-weight-bold">{{ scoreRequired }}%</span>
+          in the rest of
+          <span class="font-weight-bold">{{ percentLeft }}%</span>
+          to get
+          <span class="font-weight-bold">{{ expectedScore }}%</span>
+        </v-card-subtitle>
         <v-card-text>
           Scored: {{ currentPercent }}% <br />
           Lost: {{ percentageLost }}% <br />
           Percent of course completed: {{ currentPercent + percentageLost }}%
         </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn color="primary" text @click="closeGrades">
+            OK
+          </v-btn>
+        </v-card-actions>
       </v-card>
     </v-dialog>
   </div>
@@ -218,7 +227,6 @@ export default {
   },
 
   methods: {
-    checkForm() {},
     closeGrades() {
       this.showGrades = false
     },
