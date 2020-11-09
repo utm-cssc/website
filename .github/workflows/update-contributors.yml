@@ -1,0 +1,24 @@
+# This workflow updates the contributors data model and is triggered periodically
+
+name: Update Contributors
+
+on:
+  on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '0 0 * * *'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  update-contributors:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a single command using the runners shell
+      - name: Run contributors update script
+        run: yarn run update:contributors
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated contributors data model

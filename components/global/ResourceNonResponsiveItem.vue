@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+  <div class="item-container">
     <a
       class="box resource-box pb-3"
       :href="link"
@@ -7,11 +7,13 @@
       @mouseover="hovered = true"
       @mouseleave="hovered = false"
     >
-      <img
-        class="resource-icon"
-        :src="iconFileName"
-        style="filter: brightness(0) invert(1);"
-      />
+      <figure class="resource-icon">
+        <img
+          class="icon"
+          :src="iconFileName"
+          style="filter: brightness(0) invert(1);"
+        />
+      </figure>
       <transition name="slide-out" mode="out-in">
         <div v-if="!hovered" class="resource-title">{{ title }}</div>
       </transition>
@@ -57,6 +59,10 @@ export default {
 </script>
 
 <style scoped>
+.item-container {
+  min-width: 350px;
+}
+
 a {
   text-decoration: none !important;
   min-height: 148px;
@@ -78,7 +84,6 @@ a {
   transition: all 0.2s ease-in-out;
   flex: 1 0 21%;
   margin: 5px !important;
-  min-width: 156px;
 }
 
 .box.resource-box:hover {
@@ -88,12 +93,18 @@ a {
 .resource-icon {
   margin-bottom: 32px;
   display: block;
+  position: relative;
   height: 42px;
   width: 42px;
   margin-left: 0;
   font-size: 50px !important;
   color: #fff;
-  margin-top: unset;
+}
+
+.icon {
+  height: 56px;
+  width: 56px;
+  color: #fff;
 }
 
 .resource-title {
@@ -115,7 +126,7 @@ a {
   color: #fff;
   font-weight: 300;
   position: absolute;
-  max-width: 72%;
+  max-width: 80%;
 }
 
 .slide-out-enter-active {

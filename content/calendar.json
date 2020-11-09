@@ -1,0 +1,20 @@
+[
+  {
+    "name": "WISC' Master Chef Q/A",
+    "description": "Two professors four dishes ONE champion",
+    "start_date": "2020-09-13",
+    "start_time": "19:00",
+    "end_date": "2020-09-13",
+    "end_time": "20:00",
+    "club": "wisc"
+  },
+  {
+    "name": "Orientaion",
+    "description": "Intro to UTMSAM",
+    "start_date": "2020-09-14",
+    "start_time": "19:00",
+    "end_date": "2020-09-16",
+    "end_time": "20:00",
+    "club": "utmsam"
+  }
+]
