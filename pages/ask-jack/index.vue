@@ -49,27 +49,6 @@
         </b-form-checkbox-group>
       </b-form-group>
       <div class="mt-3 cssc-heading">
-        Share With Us
-      </div>
-      <p class="mb-2">
-        Are you okay with us posting your question anonymously under our FAQ on
-        our website, Discord and/or Instagram?
-      </p>
-      <b-form-checkbox-group
-        id="ask-upper-year-share"
-        v-model="shareQuestion"
-        name="share-question"
-      >
-        <div
-          class="flex align-items-center mr-3"
-          v-for="shareQuestionOption in shareQuestionOptions"
-          :key="shareQuestionOption.value"
-        >
-          <b-form-radio :value="shareQuestionOption.value"></b-form-radio>
-          <span>{{ shareQuestionOption.text }}</span>
-        </div>
-      </b-form-checkbox-group>
-      <div class="mt-3 cssc-heading">
         Email
       </div>
       <p class="mb-2">
