@@ -51,8 +51,8 @@ export default {
 }
 
 .myFonts {
-  font-family: 'Open Sans', sans-serif;
-  color: var(--font-body) !important;
+  font-family: 'Open Sans', sans-serif !important;
+  color: var(--color-body) !important;
 }
 
 .v-application {
