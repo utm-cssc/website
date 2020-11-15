@@ -15,8 +15,43 @@
       />
     </div>
     <a id="ask-upper-year-form"></a>
+    <div class="mb-3 mt-2 cssc-heading">
+      Ask Jack
+    </div>
+    <p class="mb-3">
+      Hello everyone! It’s nice to meet you all! My name is Jack, I use he/him
+      pronouns, and I’m here to answer all your questions! You can ask me
+      anything you want about academics, internships and PEY, access to other
+      resources like accessibilities or department policies, and much more! You
+      can either send in your question down below or send them in the CSSC
+      Discord in the Ask Jack channels (Links at the bottom of this page.)
+      Puzzle pieces are just like humans: sometimes we might make mistakes. But
+      I’ll try my best to answer all your burning questions! Until then, this is
+      Jack signing off!
+    </p>
+    <div class="jack_cheer_container">
+      <img
+        class="feature-img mb-5 mb-md-0 jack_cheer"
+        src="~/static/ask-jack/jack_cheer.png"
+      />
+    </div>
+    <div class="mb-3 mt-2 cssc-heading">
+      Behind the Scenes
+    </div>
+    <p class="mb-5">
+      Ask Jack is an initiative created by CSSC for students and driven by
+      students. Our goal is to answer student questions with the help of the MCS
+      Department and Faculty members. Most answers will be from upper-year
+      students, but for more specific questions that require expert advice,
+      please be assured we will be working with the department to provide the
+      most updated and accurate answers as possible. We hope that this program
+      will help ease student uncertainty when dealing with their academic,
+      social, and professional life. If you’re curious about the people behind
+      Ask Jack, feel free to check us out under the Meet the Team section on our
+      homepage!
+    </p>
     <form action="https://formspree.io/xwkrdzyg" method="POST">
-      <div class="mb-3 mt-2 cssc-heading">
+      <div class="mb-3 mt-3 cssc-heading">
         Ask Your Question
       </div>
       <b-form-textarea
@@ -165,5 +200,16 @@ export default {
 
 .v-expansion-panel-header {
   font-size: 20px;
+}
+
+.jack_cheer_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.jack_cheer {
+  box-sizing: border-box;
 }
 </style>
