@@ -20,6 +20,11 @@ export default {
     title: 'CSSC Website',
     script: [
       {src: 'https://plausible.io/js/plausible.js', async: true, defer: true},
+      {
+        src: 'https://script.opentracker.net/?site=cssc.utm.utoronto.ca',
+        defer: true,
+        type: 'text/javascript',
+      },
     ],
     meta: [
       {charset: 'utf-8'},
@@ -60,7 +65,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ['@/plugins/vue-typed-js.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -76,6 +81,7 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/vuetify',
+    '@nuxtjs/color-mode',
   ],
   /*
    ** Nuxt.js modules
@@ -126,5 +132,17 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
+  vuetify: {
+    theme: {
+      themes: {
+        dark: {
+          primary: '#00d097',
+        },
+        light: {
+          primary: '#00d097',
+        },
+      },
+    },
+  },
   build: {},
 }

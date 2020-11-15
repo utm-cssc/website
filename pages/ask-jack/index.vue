@@ -49,27 +49,6 @@
         </b-form-checkbox-group>
       </b-form-group>
       <div class="mt-3 cssc-heading">
-        Share With Us
-      </div>
-      <p class="mb-2">
-        Are you okay with us posting your question anonymously under our FAQ on
-        our website, Discord and/or Instagram?
-      </p>
-      <b-form-checkbox-group
-        id="ask-upper-year-share"
-        v-model="shareQuestion"
-        name="share-question"
-      >
-        <div
-          class="flex align-items-center mr-3"
-          v-for="shareQuestionOption in shareQuestionOptions"
-          :key="shareQuestionOption.value"
-        >
-          <b-form-radio :value="shareQuestionOption.value"></b-form-radio>
-          <span>{{ shareQuestionOption.text }}</span>
-        </div>
-      </b-form-checkbox-group>
-      <div class="mt-3 cssc-heading">
         Email
       </div>
       <p class="mb-2">
@@ -95,26 +74,18 @@
     <div class="mt-3 mb-4 cssc-heading">
       Frequently Asked Questions
     </div>
-    <div class="accordion mb-1" v-for="(faq, index) in allFAQ" :key="index">
-      <b-button class="faq-question" block v-b-toggle="'accordion-' + index">
-        Q: {{ faq.question }}
-      </b-button>
-      <b-collapse
-        :id="'accordion-' + index"
-        :visible="false"
-        accordion="my-accordion"
-      >
-        <b-card-body class="faq-answer">
-          <b-card-text> A: {{ faq.answer }} </b-card-text>
-        </b-card-body>
-      </b-collapse>
-      <!-- <div class="mt-1 faq-question">
-			Q: {{faq.question}}
-		</div>
-		<div class="mb-4">
-			A: {{faq.answer}}
-		</div>	 -->
-    </div>
+    <v-row justify="center">
+      <v-expansion-panels inset>
+        <v-expansion-panel v-for="(faq, index) in allFAQ" :key="index">
+          <v-expansion-panel-header>
+            Q: {{ faq.question }}
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            A: {{ faq.answer }}
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-row>
   </div>
 </template>
 
@@ -178,6 +149,7 @@ export default {
   },
 }
 </script>
+
 <style scoped>
 .button {
   background-color: var(--color-primary);
@@ -191,23 +163,7 @@ export default {
   box-shadow: none !important;
 }
 
-.faq-question {
+.v-expansion-panel-header {
   font-size: 20px;
-  color: var(--color-heading);
-  background-color: rgba(0, 0, 0, 0.04);
-  outline: none !important;
-  border: none;
-  text-align: left;
-}
-
-.faq-question:hover,
-.faq-question:active {
-  background-color: rgba(0, 0, 0, 0.1) !important;
-  color: var(--color-body) !important;
-}
-
-.faq-answer {
-  font-size: 20px;
-  text-align: left;
 }
 </style>
