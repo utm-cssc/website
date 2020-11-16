@@ -16,6 +16,21 @@ other students.
 
 To begin adding resources, please look at the following guidelines for guidance.
 
+## Pre-requisites
+
+### Markdown
+
+Markdown, the simple and easy-to-use markup language you can use to format
+virtually any document.
+
+In nuxt we use Markdown to create a resource.
+
+<grid-1-x-2
+img-Src="/contribution-guide/md.svg"
+desc="You can check out this markdown tutorial to get started."
+button="Start Learning!"
+link="https://www.markdowntutorial.com/"></grid-1-x-2>
+
 ## Starting/Appending resources
 
 To create or extend a resource we have provided:

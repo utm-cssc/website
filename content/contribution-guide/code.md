@@ -92,3 +92,11 @@ CSSC members for getting back to you:
 - Start Implementing!
 
 Check out [docs]() for understanding out code!
+
+### Starting a Resource
+
+<grid-1-x-2
+img-Src="/contribution-guide/doc.svg"
+desc="This guide will help you understand how to create a resource for CSSC Website."
+button="Check out it!"
+link="/contribution-guide/resource"></grid-1-x-2>

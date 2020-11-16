@@ -38,7 +38,7 @@ export default {
           icon: './icons/collaboration.svg',
           button: {
             label: 'Check out our guide',
-            link: '/contributing/guide',
+            link: '/contribution-guide/code',
           },
         },
       ],
