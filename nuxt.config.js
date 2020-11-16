@@ -65,7 +65,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ['@/plugins/vue-typed-js.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -81,6 +81,7 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/vuetify',
+    '@nuxtjs/color-mode',
   ],
   /*
    ** Nuxt.js modules
@@ -131,5 +132,17 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
+  vuetify: {
+    theme: {
+      themes: {
+        dark: {
+          primary: '#00d097',
+        },
+        light: {
+          primary: '#00d097',
+        },
+      },
+    },
+  },
   build: {},
 }

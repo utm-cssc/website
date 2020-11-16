@@ -14,18 +14,13 @@
               <v-btn fab text small class="calendar_nav" @click="next">
                 <v-icon small>mdi-chevron-right</v-icon>
               </v-btn>
-              <v-toolbar-title class="pl-3 calendar_nav"  v-if="$refs.calendar">
+              <v-toolbar-title class="pl-3 calendar_nav" v-if="$refs.calendar">
                 {{ $refs.calendar.title }}
               </v-toolbar-title>
               <v-spacer></v-spacer>
               <v-menu bottom right>
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn
-                    outlined
-                    color="#ffffff"
-                    v-bind="attrs"
-                    v-on="on"
-                  >
+                <template v-slot:activator="{on, attrs}">
+                  <v-btn outlined color="#ffffff" v-bind="attrs" v-on="on">
                     <span>{{ typeToLabel[type] }}</span>
                     <v-icon right>mdi-menu-down</v-icon>
                   </v-btn>
@@ -58,27 +53,26 @@
               :type="type"
               @click:event="showEvent"
               @click:more="viewDay"
-              @click:date="viewDay"/>
+              @click:date="viewDay"
+            />
             <v-menu
               v-model="selectedOpen"
               :close-on-content-click="false"
               :activator="selectedElement"
               offset-x
             >
-              <v-card
-                color="grey lighten-4"
-                min-width="350px"
-                flat
-              >
-                <v-toolbar
-                  :color="selectedEvent.color"
-                  dark
-                >
-                  <v-toolbar-title v-html="selectedEvent.name"></v-toolbar-title>
+              <v-card color="grey lighten-4" min-width="350px" flat>
+                <v-toolbar :color="selectedEvent.color" dark>
+                  <v-toolbar-title
+                    v-html="selectedEvent.name"
+                  ></v-toolbar-title>
                   <v-spacer></v-spacer>
                 </v-toolbar>
                 <v-card-text>
-                  <span style="font-size: 16px;" v-html="selectedEvent.details"></span>
+                  <span
+                    style="font-size: 16px;"
+                    v-html="selectedEvent.details"
+                  ></span>
                 </v-card-text>
                 <v-card-actions>
                   <v-btn
@@ -107,17 +101,24 @@ export default {
       month: 'Month',
       week: 'Week',
       day: 'Day',
-      '4day': '4 Days'
+      '4day': '4 Days',
     },
     selectedEvent: {},
     selectedElement: null,
     selectedOpen: false,
     monthEvents: [],
     allEvents: [],
-    colors: { CSSC: 'var(--color-primary)', MCSS: 'var(--color-mcss)', UTMSAM: 'var(--color-utmsam)', DSC: 'var(--color-dsc)', WISC: 'var(--color-wisc)', Robotics: 'var(--color-robotics)' },
-    names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics']
+    colors: {
+      CSSC: 'var(--color-primary)',
+      MCSS: 'var(--color-mcss)',
+      UTMSAM: 'var(--color-utmsam)',
+      DSC: 'var(--color-dsc)',
+      WISC: 'var(--color-wisc)',
+      Robotics: 'var(--color-robotics)',
+    },
+    names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics'],
   }),
-  mounted () {
+  mounted() {
     this.readCSVData(this.mcss, 'MCSS')
     this.readCSVData(this.wisc, 'WISC')
     this.readCSVData(this.utmsam, 'UTMSAM')
@@ -126,23 +127,23 @@ export default {
     this.readCSVData(this.robotics, 'Robotics')
   },
   methods: {
-    viewDay ({ date }) {
+    viewDay({date}) {
       this.focus = date
       this.type = 'day'
     },
-    getEventColor (event) {
+    getEventColor(event) {
       return event.color
     },
-    setToday () {
+    setToday() {
       this.focus = ''
     },
-    prev () {
+    prev() {
       this.$refs.calendar.prev()
     },
-    next () {
+    next() {
       this.$refs.calendar.next()
     },
-    showEvent ({ nativeEvent, event }) {
+    showEvent({nativeEvent, event}) {
       const open = () => {
         this.selectedEvent = event
         this.selectedElement = nativeEvent.target
@@ -158,7 +159,7 @@ export default {
 
       nativeEvent.stopPropagation()
     },
-    readCSVData (data, clubName) {
+    readCSVData(data, clubName) {
       console.log(data)
       // checks if the event data is returned properly
       if (typeof data === 'string' && data.length > 0) {
@@ -173,16 +174,16 @@ export default {
               name: current[0],
               details: current[1],
               start: `${current[2]} ${current[3]}:00`,
-              end: `${current[4]} ${current[5]}:00`
+              end: `${current[4]} ${current[5]}:00`,
             }
             output.push(event)
           }
         }
         this.monthEvents.push(...output)
       }
-    }
+    },
   },
-  async asyncData ({ $axios }) {
+  async asyncData({$axios}) {
     let wisc = ''
     let mcss = ''
     let utmsam = ''
@@ -190,20 +191,74 @@ export default {
     let robotics = ''
     let dsc = ''
     await Promise.all([
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/WISC.csv').then((res) => { wisc = res }).catch(() => { wisc = '' }),
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/MCSS.csv').then((res) => { mcss = res }).catch(() => { mcss = '' }),
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/UTMSAM.csv').then((res) => { utmsam = res }).catch(() => { utmsam = '' }),
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv').then((res) => { cssc = res }).catch(() => { cssc = '' }),
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/Robotics.csv').then((res) => { robotics = res }).catch(() => { robotics = '' }),
-      $axios.$get('https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/DSC.csv').then((res) => { dsc = res }).catch(() => { dsc = '' })
+      $axios
+        .$get(
+          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/WISC.csv',
+        )
+        .then(res => {
+          wisc = res
+        })
+        .catch(() => {
+          wisc = ''
+        }),
+      $axios
+        .$get(
+          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/MCSS.csv',
+        )
+        .then(res => {
+          mcss = res
+        })
+        .catch(() => {
+          mcss = ''
+        }),
+      $axios
+        .$get(
+          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/UTMSAM.csv',
+        )
+        .then(res => {
+          utmsam = res
+        })
+        .catch(() => {
+          utmsam = ''
+        }),
+      $axios
+        .$get(
+          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv',
+        )
+        .then(res => {
+          cssc = res
+        })
+        .catch(() => {
+          cssc = ''
+        }),
+      $axios
+        .$get(
+          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/Robotics.csv',
+        )
+        .then(res => {
+          robotics = res
+        })
+        .catch(() => {
+          robotics = ''
+        }),
+      $axios
+        .$get(
+          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/DSC.csv',
+        )
+        .then(res => {
+          dsc = res
+        })
+        .catch(() => {
+          dsc = ''
+        }),
     ])
-    return { wisc, mcss, utmsam, cssc, robotics, dsc }
-  }
+    return {wisc, mcss, utmsam, cssc, robotics, dsc}
+  },
 }
 </script>
 
 <style scoped>
-  .calendar_nav {
-    color: white !important;
-  }
+.calendar_nav {
+  color: white !important;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-app class="myFonts">
     <cssc-nav v-if="$mq === 'lg' || $mq === 'xl'"></cssc-nav>
     <div v-else>
       <cssc-nav-mobile></cssc-nav-mobile>
@@ -10,9 +10,10 @@
         <nav-drawer />
       </aside>
     </div>
+
     <nuxt />
     <cssc-footer />
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -31,6 +32,16 @@ export default {
   },
   computed: {
     ...mapState(['drawerOpen']),
+    nuxtColorMode() {
+      return this.$nuxt.$colorMode.value
+    },
+  },
+  watch: {
+    nuxtColorMode(value) {
+      console.log(value)
+      this.$nuxt.$vuetify.theme.dark = value == 'dark'
+      console.log(this.$nuxt.$vuetify.theme.dark)
+    },
   },
 }
 // /* eslint-disable */
@@ -64,5 +75,16 @@ export default {
 .drawer-closed {
   margin-right: -343px;
   opacity: 0;
+.theme--light.v-application {
+  background: inherit;
+}
+
+.myFonts {
+  font-family: 'Open Sans', sans-serif !important;
+  color: var(--color-body) !important;
+}
+
+.v-application {
+  background: var(--bg);
 }
 </style>

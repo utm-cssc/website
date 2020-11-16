@@ -15,8 +15,43 @@
       />
     </div>
     <a id="ask-upper-year-form"></a>
+    <div class="mb-3 mt-2 cssc-heading">
+      Ask Jack
+    </div>
+    <p class="mb-3">
+      Hello everyone! It’s nice to meet you all! My name is Jack, I use he/him
+      pronouns, and I’m here to answer all your questions! You can ask me
+      anything you want about academics, internships and PEY, access to other
+      resources like accessibilities or department policies, and much more! You
+      can either send in your question down below or send them in the CSSC
+      Discord in the Ask Jack channels (Links at the bottom of this page.)
+      Puzzle pieces are just like humans: sometimes we might make mistakes. But
+      I’ll try my best to answer all your burning questions! Until then, this is
+      Jack signing off!
+    </p>
+    <div class="jack_cheer_container">
+      <img
+        class="feature-img mb-5 mb-md-0 jack_cheer"
+        src="~/static/ask-jack/jack_cheer.png"
+      />
+    </div>
+    <div class="mb-3 mt-2 cssc-heading">
+      Behind the Scenes
+    </div>
+    <p class="mb-5">
+      Ask Jack is an initiative created by CSSC for students and driven by
+      students. Our goal is to answer student questions with the help of the MCS
+      Department and Faculty members. Most answers will be from upper-year
+      students, but for more specific questions that require expert advice,
+      please be assured we will be working with the department to provide the
+      most updated and accurate answers as possible. We hope that this program
+      will help ease student uncertainty when dealing with their academic,
+      social, and professional life. If you’re curious about the people behind
+      Ask Jack, feel free to check us out under the Meet the Team section on our
+      homepage!
+    </p>
     <form action="https://formspree.io/xwkrdzyg" method="POST">
-      <div class="mb-3 mt-2 cssc-heading">
+      <div class="mb-3 mt-3 cssc-heading">
         Ask Your Question
       </div>
       <b-form-textarea
@@ -49,27 +84,6 @@
         </b-form-checkbox-group>
       </b-form-group>
       <div class="mt-3 cssc-heading">
-        Share With Us
-      </div>
-      <p class="mb-2">
-        Are you okay with us posting your question anonymously under our FAQ on
-        our website, Discord and/or Instagram?
-      </p>
-      <b-form-checkbox-group
-        id="ask-upper-year-share"
-        v-model="shareQuestion"
-        name="share-question"
-      >
-        <div
-          class="flex align-items-center mr-3"
-          v-for="shareQuestionOption in shareQuestionOptions"
-          :key="shareQuestionOption.value"
-        >
-          <b-form-radio :value="shareQuestionOption.value"></b-form-radio>
-          <span>{{ shareQuestionOption.text }}</span>
-        </div>
-      </b-form-checkbox-group>
-      <div class="mt-3 cssc-heading">
         Email
       </div>
       <p class="mb-2">
@@ -95,26 +109,18 @@
     <div class="mt-3 mb-4 cssc-heading">
       Frequently Asked Questions
     </div>
-    <div class="accordion mb-1" v-for="(faq, index) in allFAQ" :key="index">
-      <b-button class="faq-question" block v-b-toggle="'accordion-' + index">
-        Q: {{ faq.question }}
-      </b-button>
-      <b-collapse
-        :id="'accordion-' + index"
-        :visible="false"
-        accordion="my-accordion"
-      >
-        <b-card-body class="faq-answer">
-          <b-card-text> A: {{ faq.answer }} </b-card-text>
-        </b-card-body>
-      </b-collapse>
-      <!-- <div class="mt-1 faq-question">
-			Q: {{faq.question}}
-		</div>
-		<div class="mb-4">
-			A: {{faq.answer}}
-		</div>	 -->
-    </div>
+    <v-row justify="center">
+      <v-expansion-panels inset>
+        <v-expansion-panel v-for="(faq, index) in allFAQ" :key="index">
+          <v-expansion-panel-header>
+            Q: {{ faq.question }}
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            A: {{ faq.answer }}
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-row>
   </div>
 </template>
 
@@ -178,6 +184,7 @@ export default {
   },
 }
 </script>
+
 <style scoped>
 .button {
   background-color: var(--color-primary);
@@ -191,23 +198,18 @@ export default {
   box-shadow: none !important;
 }
 
-.faq-question {
+.v-expansion-panel-header {
   font-size: 20px;
-  color: var(--color-heading);
-  background-color: rgba(0, 0, 0, 0.04);
-  outline: none !important;
-  border: none;
-  text-align: left;
 }
 
-.faq-question:hover,
-.faq-question:active {
-  background-color: rgba(0, 0, 0, 0.1) !important;
-  color: var(--color-body) !important;
+.jack_cheer_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.faq-answer {
-  font-size: 20px;
-  text-align: left;
+.jack_cheer {
+  box-sizing: border-box;
 }
 </style>

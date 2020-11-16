@@ -6,10 +6,10 @@
         :class="{
           'order-md-last': !reversed,
           'justify-content-md-end': !reversed,
-          'px-5': $mq == 'sm'
+          'px-5': $mq == 'sm',
         }"
       >
-        <img class="feature-img mb-5 mb-md-0" :src="imgSrc">
+        <img class="feature-img mb-5 mb-md-0" :src="imgSrc" />
       </div>
       <div
         class="col-md-7 d-flex justify-content-center flex-column text-container"
@@ -17,7 +17,7 @@
           'px-5': $mq == 'sm',
           'align-items-md-end': reversed,
           'left-padded-desc': reversed,
-          'right-padded-desc': !reversed
+          'right-padded-desc': !reversed,
         }"
       >
         <h3 v-if="title != ''" class="feature-title mb-2">
@@ -26,16 +26,19 @@
         <p
           class="desc"
           :class="{
-            'text-md-right': reversed && !($mq == 'md') && !($mq == 'sm')
+            'text-md-right': reversed && !($mq == 'md') && !($mq == 'sm'),
           }"
         >
           {{ desc }}
         </p>
         <div class="mt-2 mt-lg-4">
-          <b-btn target="_blank" v-if="link" :href="link" class="py-2 px-3 feature-btn">
-            {{
-              button
-            }}
+          <b-btn
+            target="_blank"
+            v-if="link"
+            :href="link"
+            class="py-2 px-3 feature-btn"
+          >
+            {{ button }}
           </b-btn>
         </div>
       </div>
@@ -49,19 +52,19 @@ export default {
     imgSrc: String,
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     desc: String,
     reversed: {
       type: Boolean,
-      default: false
+      default: false,
     },
     button: String,
     link: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>
 
@@ -91,13 +94,14 @@ export default {
   opacity: 0.9;
   font-size: 24px;
   margin-top: 0;
+  color: var(--color-body);
 }
 
 .feature-title {
   font-weight: 600;
   line-height: 1.25;
   font-size: 42px;
-  color: var(--color-text-dark);
+  color: var(--color-heading);
 }
 
 .right-padded-desc {
