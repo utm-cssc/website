@@ -10,7 +10,6 @@
         <nav-drawer />
       </aside>
     </div>
-
     <nuxt />
     <cssc-footer />
   </v-app>
@@ -29,6 +28,11 @@ export default {
     CsscFooter,
     NavDrawer,
     CsscNavMobile,
+  },
+  data() {
+    return {
+      nav: false,
+    }
   },
   computed: {
     ...mapState(['drawerOpen']),
@@ -75,6 +79,8 @@ export default {
 .drawer-closed {
   margin-right: -343px;
   opacity: 0;
+}
+
 .theme--light.v-application {
   background: inherit;
 }

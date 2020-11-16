@@ -13,7 +13,7 @@
         </p>
       </div>
     </div>
-    <div class="mt-4 mt-sm-5 flex justify-center">
+    <div class="mt-4 mt-sm-5 flex justify-center flex-wrap">
       <v-btn
         v-if="button1 && button1.link && button1.label"
         :href="button1.link"

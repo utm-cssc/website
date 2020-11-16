@@ -1,63 +1,53 @@
 <template>
-  <div class="container nav g-header pt-4 px-2 flex align-end">
-    <input id="nav-check" v-model="checked" type="checkbox" />
-    <div class="nav-header">
-      <nuxt-link
-        class="flex align-end ml-1"
-        to="/"
-        @click.native="checked = false"
+  <div class="container nav pt-4 px-2 flex align-center z-30">
+    <nuxt-link
+      class="flex align-center nav-home mr-5"
+      to="/"
+      @click.native="checked = false"
+    >
+      <img class="logo" src="/icons/cssc-logo-without-title.svg" />
+      <span class="logo-text">UTM CSSC</span>
+    </nuxt-link>
+    <div class="nav-internal">
+      <nuxt-link @click.native="checked = false" to="/vision" class="nav-link"
+        >Resources</nuxt-link
       >
-        <img class="logo mr-2" src="/icons/cssc-logo-without-title.svg" />
-        <span class="logo-text">UTM CSSC</span>
-      </nuxt-link>
+      <nuxt-link
+        @click.native="checked = false"
+        to="/apprentice"
+        class="nav-link"
+        v-if="$mq === 'lg' || $mq === 'xl'"
+        >Calendar</nuxt-link
+      >
     </div>
-    <div class="nav-btn flex align-self-end align-end">
-      <SearchBar class="align-self-center mr-2 d-none d-md-block d-lg-none" />
-      <DarkModeButton class="align-self-center mr-2 d-block d-lg-none" />
-      <label for="nav-check">
-        <span />
-        <span />
-        <span />
-      </label>
-    </div>
-
-    <div class="nav-links">
-      <nuxt-link
-        to="/resources"
-        class="nav-link mr-4"
-        @click.native="checked = false"
-      >
-        Resources
-      </nuxt-link>
-      <nuxt-link
-        to="/ask-jack"
-        class="nav-link mr-4"
-        @click.native="checked = false"
-      >
-        Ask Jack
-      </nuxt-link>
-      <nuxt-link
-        to="/calendar"
-        class="nav-link mr-4"
-        @click.native="checked = false"
-      >
-        Calendar
-      </nuxt-link>
-      <nuxt-link
-        to="/clubs"
-        class="nav-link mr-4"
-        @click.native="checked = false"
-      >
-        MCS Clubs
-      </nuxt-link>
-      <SearchBar class="mx-2 d-none d-lg-block d-xl-block" />
-      <DarkModeButton class="mx-2 d-none d-lg-block d-xl-block" />
+    <div class="navbar-spacer"></div>
+    <div class="nav-external ml-auto">
+      <SearchBar class="mx-4" />
+      <a href="https://discord.gg/SHwbmVg" class="footer-link">
+        <DiscordIcon class="nav-icon" />
+      </a>
+      <a href="https://www.instagram.com/utm.cssc" class="footer-link ml-4">
+        <InstagramIcon class="nav-icon" />
+      </a>
+      <a href="https://www.facebook.com/utmcssc/" class="footer-link ml-4">
+        <FacebookIcon class="nav-icon" />
+      </a>
+      <a href="https://github.com/utm-cssc" class="footer-link ml-4">
+        <GithubIcon class="nav-icon" />
+      </a>
+      <DarkModeButton class="mx-4 d-none d-lg-block d-xl-block" />
     </div>
   </div>
 </template>
 
 <script>
+import DiscordIcon from '../static/icons/discord.svg?inline'
+import InstagramIcon from '../static/icons/instagram.svg?inline'
+import FacebookIcon from '../static/icons/facebook.svg?inline'
+import GithubIcon from '../static/icons/github.svg?inline'
 export default {
+  components: {GithubIcon, DiscordIcon, InstagramIcon, FacebookIcon},
+
   data() {
     return {
       checked: false,
@@ -67,8 +57,19 @@ export default {
 </script>
 
 <style scoped>
-.g-header {
+.nav {
   height: 12vh;
+  color: #efefef;
+  position: relative;
+}
+
+.nav-home {
+  max-width: max-content;
+}
+
+.navbar-spacer {
+  flex-grow: 1;
+  max-width: 72px;
 }
 
 .logo {
@@ -78,120 +79,117 @@ export default {
 }
 
 .logo-text {
-  font-size: 26px;
-  color: var(--color-primary);
+  font-size: 22px;
+  color: var(--color-text);
   font-weight: 500;
   font-family: var(--font-heading);
   text-transform: uppercase;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-.nav {
-  width: 100%;
-  position: relative;
-}
-
-.nav > .nav-header {
-  display: inline;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  float: right;
-  margin-left: auto;
-  font-size: 18px;
 }
 
 .nav-link {
   display: inline-block;
-  padding: 13px 10px 13px 10px;
   text-decoration: none;
   height: fit-content;
-  font-size: 1.125rem;
-  color: var(--color-body);
-  font-weight: 500;
-  font-family: var(--font-heading);
-  text-transform: uppercase;
-  transition: all 0.2s ease-out;
+  font-size: 22px;
+  padding: 8px;
 }
 
-.nav-link:hover {
-  color: var(--color-primary);
-}
-
-.nav > #nav-check {
-  display: none;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .nav-link {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
-@media (max-width: 992px) {
-  .nav > .nav-btn {
-    margin-left: auto;
-    align-self: center;
-    justify-self: end;
+.nav-internal {
+  display: flex;
+}
+
+.icon-label-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-external {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.donate-menu {
+  right: 0;
+  top: 6vh;
+  transition: all 1s ease-out;
+  opacity: 0;
+  width: min-content;
+}
+
+.donate-link {
+  background: #efefef;
+  color: var(--color-bg);
+  fill: var(--color-bg);
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 232px;
+}
+
+.donate-link:hover {
+  background: var(--color-bg);
+  color: #efefef;
+  fill: #efefef;
+  cursor: pointer;
+}
+
+#donate:hover {
+  cursor: pointer;
+}
+
+#donate:hover .donate-menu {
+  display: block;
+  opacity: 1;
+}
+
+.donate-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.donate-link:hover .donate-icon {
+  fill: #fff;
+}
+
+.nav-link-icon {
+  min-width: 24px;
+  height: 24px;
+  width: 24px;
+}
+
+.nav-icon {
+  height: 32px;
+  width: 32px;
+}
+</style>
+
+<style scoped>
+@media (max-width: 1200px) {
+  .nav-link-icon {
+    min-width: 20px;
+    height: 20px;
+    width: 20px;
   }
 
-  .nav > .nav-btn > label {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    padding: 13px;
-    border-radius: 8px;
-    margin: 0;
+  .logo {
+    height: 36px;
+    width: 36px;
+    margin-right: 16px;
   }
 
-  .nav > .nav-btn > label:hover,
-  .nav #nav-check:checked ~ .nav-btn > label {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-
-  .nav > .nav-btn > label > span {
-    display: block;
-    width: 25px;
-    height: 10px;
-    border-top: 2px solid var(--color-heading);
-  }
-
-  .nav-links {
-    position: absolute;
-    display: block;
-    background: var(--bg);
-    border-radius: 6px;
-    transition: all 0.2s ease-out;
-    overflow-y: hidden;
-    top: 12vh;
-    right: 8px;
-  }
-
-  .nav-link {
-    display: block;
-    width: 100%;
-    padding-left: 16px;
-  }
-
-  .nav > #nav-check:not(:checked) ~ .nav-links {
-    opacity: 0;
-    z-index: -1;
-  }
-
-  .nav > #nav-check:checked ~ .nav-links {
-    overflow-y: auto;
-    opacity: 1;
-    z-index: 2;
-  }
-
-  .nav-link:hover,
-  .nav-link:active {
-    letter-spacing: 0;
+  .logo-text {
+    font-size: 18px;
+    color: var(--color-text);
+    font-weight: 500;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
   }
 }
 </style>
