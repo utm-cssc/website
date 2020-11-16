@@ -8,6 +8,14 @@ link: code
 
 ## Pre-requisites
 
+### SignUp to GitHub
+
+<grid-1-x-2
+img-Src="/icons/github.svg"
+desc="If you don't already have an account on GitHub sign up to contribute to CSSC Website"
+button="SignUp!"
+link="https://github.com/"></grid-1-x-2>
+
 ### HTML/CSS/JS
 
 <ResourcesGrid :items="[
@@ -30,6 +38,14 @@ link: code
           icon: '/icons/javascript.svg',
         }]"
         :responsive="true"> </ResourcesGrid>
+
+### Install NodeJS
+
+<grid-1-x-2
+img-Src="https://nodejs.org/static/images/logo.svg"
+desc="Install NodeJS to run CSSC website on your machine."
+button="Download here!"
+link="https://nodejs.org/en/"></grid-1-x-2>
 
 ### Vue
 
