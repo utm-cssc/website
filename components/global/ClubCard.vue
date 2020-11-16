@@ -1,6 +1,6 @@
 <template>
   <div class="club-card pl-4 p-2 mr-4 mb-4 pb-3">
-    <div class="flex align-items-center my-3">
+    <div class="flex align-center my-3">
       <img class="logo justify-start" :src="club.logo" />
       <div class="ml-3">
         <h5 class="club-heading">{{ club.name }}</h5>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="flex mt-2 ml-auto">
-      <b-button
+      <v-btn
         size="lg"
         class="button mr-2 flex align-content-center"
         :href="club.link"
@@ -39,7 +39,7 @@
         <div>
           LinkTree
         </div>
-      </b-button>
+      </v-btn>
     </div>
   </div>
 </template>

@@ -4,9 +4,7 @@
 
 <template>
   <div class="container">
-    <div
-      class="mt-5 d-flex flex-column justify-content-center align-items-center"
-    >
+    <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../../icons/quiz.svg"
         title="Ask Jack!"
@@ -74,7 +72,7 @@
           name="question-tags"
         >
           <div
-            class="flex align-items-center mr-3"
+            class="flex align-center mr-3"
             v-for="tagOption in tagOptions"
             :key="tagOption.value"
           >
@@ -97,12 +95,12 @@
         rows="1"
         max-rows="1"
       ></b-form-textarea>
-      <div class="d-flex justify-content-center mb-4 mt-5">
-        <b-button size="lg" type="submit" name="Submit" class="button mr-3"
-          >Submit</b-button
+      <div class="flex justify-center mb-4 mt-5">
+        <v-btn size="lg" type="submit" name="Submit" class="button mr-3"
+          >Submit</v-btn
         >
-        <b-button size="lg" type="reset" value="Reset" class="button ml-3"
-          >Reset</b-button
+        <v-btn size="lg" type="reset" value="Reset" class="button ml-3"
+          >Reset</v-btn
         >
       </div>
     </form>

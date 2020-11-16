@@ -3,7 +3,7 @@
     <div
       v-for="child in children"
       :key="child.title"
-      class="col-lg-4 d-flex justify-content-center"
+      class="col-lg-4 flex justify-center"
     >
       <CenteredThreeColumnChild
         :title="child.title"
@@ -19,7 +19,7 @@
 export default {
   props: {
     children: Array,
-    rounded: Boolean
-  }
+    rounded: Boolean,
+  },
 }
 </script>

@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <!-- Title -->
-    <div
-      class="mt-5 d-flex flex-column justify-content-center align-items-center"
-    >
+    <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../icons/cssc-logo-without-title.svg"
         title="Clubs"

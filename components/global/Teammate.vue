@@ -1,30 +1,17 @@
 <template>
-  <!-- Precondition: To use this component with responsivity please use a div with class d-flex and flex-wrap -->
   <div
-    class="flip
-    d-flex
-    align-items-center
-    justify-content-center
-    my-3
-    mx-3"
+    class="flip flex align-center justify-center my-3 mx-3"
     :class="{flipping: isClicked}"
   >
-    <div
-      class="front
-      card
-      d-flex
-      flex-col
-      justify-content-between
-      align-items-center"
-    >
-      <div class="mt-3 pointer" @click="isClicked = !isClicked">
+    <div class="front card flex flex-col justify-between align-center">
+      <div class="mt-5 pointer mb-4" @click="isClicked = !isClicked">
         <img :src="imgSrc" :alt="imgAlt" class="circle" />
       </div>
-      <div class="pointer" @click="isClicked = !isClicked">
+      <div class="pointe mb-5" @click="isClicked = !isClicked">
         <div class="name text-center">{{ name }}</div>
         <div class="position text-center">{{ position }}</div>
       </div>
-      <div class="d-flex mb-4">
+      <div class="flex mb-4">
         <DiscordIcon
           @click="copyToClipboard"
           v-b-tooltip.hover
@@ -136,7 +123,7 @@ export default {
 
 .front,
 .flip > .back {
-  display: block;
+  display: flex;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-duration: 0.5s;
   transition-property: transform, opacity;
@@ -172,7 +159,7 @@ export default {
 }
 
 .card {
-  min-height: 350px;
+  min-height: 343px;
   border-radius: 12px;
   box-shadow: 7px 0 29px 0 rgba(0, 0, 0, 0.19);
 }
