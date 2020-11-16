@@ -90,6 +90,12 @@
         Feel free to provide your utoronto email so we can contact you back!
         (Optional)
       </p>
+      <p class="mb-2">
+        Note: Unless an email address is provided, all questions and answers
+        will be posted anonymously on the #general-guidance channel on
+        <a href="https://cssc.utm.utoronto.ca/discord">CSSC's Discord.</a>
+      </p>
+
       <b-form-textarea
         v-model="email"
         name="Email"
@@ -97,6 +103,7 @@
         rows="1"
         max-rows="1"
       ></b-form-textarea>
+
       <div class="d-flex justify-content-center mb-4 mt-5">
         <b-button size="lg" type="submit" name="Submit" class="button mr-3"
           >Submit</b-button
