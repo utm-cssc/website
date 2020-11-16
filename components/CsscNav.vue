@@ -1,9 +1,9 @@
 <template>
-  <div class="container nav g-header pt-4 px-2 d-flex align-items-end">
+  <div class="container nav g-header pt-4 px-2 flex align-end">
     <input id="nav-check" v-model="checked" type="checkbox" />
     <div class="nav-header">
       <nuxt-link
-        class="d-flex align-items-end ml-1"
+        class="flex align-end ml-1"
         to="/"
         @click.native="checked = false"
       >
@@ -11,7 +11,7 @@
         <span class="logo-text">UTM CSSC</span>
       </nuxt-link>
     </div>
-    <div class="nav-btn d-flex align-self-end align-items-end">
+    <div class="nav-btn flex align-self-end align-end">
       <SearchBar class="align-self-center mr-2 d-none d-md-block d-lg-none" />
       <DarkModeButton class="align-self-center mr-2 d-block d-lg-none" />
       <label for="nav-check">

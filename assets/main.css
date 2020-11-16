@@ -1,6 +1,6 @@
 :root {
-  --font-heading: "Raleway", sans-serif;
-  --font-body: "Open Sans", sans-serif;
+  --font-heading: 'Raleway', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
   --color-heading: #2f495e;
   --color-body: #606f7b;
   --color-primary-light: #00df96;
@@ -15,8 +15,8 @@
 }
 
 .dark-mode {
-  --font-heading: "Raleway", sans-serif;
-  --font-body: "Open Sans", sans-serif;
+  --font-heading: 'Raleway', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
   --color-heading: rgb(165, 190, 210);
   --color-body: #a39b8f;
   --color-primary-light: #00df96;
@@ -106,4 +106,9 @@ iframe {
 
 .flex {
   display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }

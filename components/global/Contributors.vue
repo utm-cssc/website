@@ -30,11 +30,15 @@
     return { contributors }
   }
   } -->
-  <div class="d-flex flex-wrap">
-    <div class="mr-3" v-for="c in contributors" :key="c.login">
+  <div class="flex flex-wrap p-2">
+    <div class="mr-5" v-for="c in contributors" :key="c.login">
       <a target="_blank" :href="c.url">
-        <div class="d-flex flex-col align-items-center">
-          <img class="profile-pic" :src="c.imgSrc" :alt="imgAlt(c.login)" />
+        <div class="flex flex-col align-center">
+          <img
+            class="profile-pic mb-4"
+            :src="c.imgSrc"
+            :alt="imgAlt(c.login)"
+          />
           <p>{{ c.login }}</p>
         </div>
       </a>
@@ -60,7 +64,7 @@ export default {
 
 <style scoped>
 p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a {

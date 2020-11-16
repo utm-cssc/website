@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!-- Title -->
-    <div class="d-flex flex-column justify-content-center align-items-center">
+    <div class="flex flex-column justify-center align-center">
       <div class="cssc-heading mt-4 mb-4" style="text-align: center;">
         Technology of the Month
       </div>

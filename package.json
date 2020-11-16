@@ -26,8 +26,6 @@
     "@nuxtjs/firebase": "^6.1.1",
     "@tailwindcss/typography": "^0.2.0",
     "apexcharts": "^3.20.0",
-    "bootstrap": "^4.5.2",
-    "bootstrap-vue": "^2.16.0",
     "nuxt": "^2.14.7",
     "nuxt-mq": "^2.0.1",
     "vue-typed-js": "^0.1.2",

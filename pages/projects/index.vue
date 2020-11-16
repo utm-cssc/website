@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <div
-      class="mt-5 d-flex flex-column justify-content-center align-items-center"
-    >
+    <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../../icons/projects.svg"
         title="Projects"
@@ -11,20 +9,24 @@
       />
     </div>
     <a id="projects" />
-      <div v-for="tag in tags" :key="tag" class="container px-5">
-        <div class="mt-2 mb-5 cssc-heading resource-tag">
-          {{ tag.replace("-", " ") }}
-        </div>
-        <div class="project-cards-container" >
-          <ProjectCard v-for="(project, index) in projectsForTag(tag)" :key="index" :project="project" />
-        </div>
+    <div v-for="tag in tags" :key="tag" class="container px-5">
+      <div class="mt-2 mb-5 cssc-heading resource-tag">
+        {{ tag.replace('-', ' ') }}
       </div>
+      <div class="project-cards-container">
+        <ProjectCard
+          v-for="(project, index) in projectsForTag(tag)"
+          :key="index"
+          :project="project"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  async asyncData ({ $content, params, error }) {
+  async asyncData({$content, params, error}) {
     const projectsDataStore = await $content('projects').fetch()
     console.log(projectsDataStore)
     const tags = new Set()
@@ -36,22 +38,24 @@ export default {
         repo: projectData.repo,
         logo: projectData.logo,
         demo: projectData.demo,
-        tags: projectData.tags
+        tags: projectData.tags,
       }
-      project.tags.forEach((tag) => {
+      project.tags.forEach(tag => {
         tags.add(tag)
       })
       projects.push(project)
     }
-    return { projects, tags }
+    return {projects, tags}
   },
   methods: {
-    projectsForTag (tag) {
-      const filteredProjects = this.projects.filter(project => project.tags.includes(tag))
+    projectsForTag(tag) {
+      const filteredProjects = this.projects.filter(project =>
+        project.tags.includes(tag),
+      )
       console.log(filteredProjects)
       return filteredProjects
-    }
-  }
+    },
+  },
 }
 </script>
 

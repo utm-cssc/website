@@ -1,23 +1,23 @@
 <template>
   <div class="mb-5">
-    <div class="row d-flex align-items-center justify-content-center">
+    <div class="row flex align-center justify-center">
       <div
-        class="col-md-5 col-lg-4 d-flex justify-content-start"
+        class="col-md-5 col-lg-4 flex justify-start"
         :class="{
           'order-md-last': !reversed,
-          'justify-content-md-end': !reversed,
-          'px-5': $mq == 'sm'
+          'justify-md-end': !reversed,
+          'px-5': $mq == 'sm',
         }"
       >
-        <img class="feature-img mb-5 mb-md-0" :src="imgSrc">
+        <img class="feature-img mb-5 mb-md-0" :src="imgSrc" />
       </div>
       <div
-        class="col-md-7 d-flex justify-content-center flex-column text-container"
+        class="col-md-7 flex justify-center flex-column text-container"
         :class="{
           'px-5': $mq == 'sm',
-          'align-items-md-end': reversed,
+          'align-md-end': reversed,
           'left-padded-desc': reversed,
-          'right-padded-desc': !reversed
+          'right-padded-desc': !reversed,
         }"
       >
         <h3 v-if="title != ''" class="feature-title mb-2">
@@ -26,16 +26,19 @@
         <p
           class="desc"
           :class="{
-            'text-md-right': reversed && !($mq == 'md') && !($mq == 'sm')
+            'text-md-right': reversed && !($mq == 'md') && !($mq == 'sm'),
           }"
         >
           {{ desc }}
         </p>
         <div class="mt-2 mt-lg-4">
-          <b-btn target="_blank" v-if="link" :href="link" class="py-2 px-3 feature-btn">
-            {{
-              button
-            }}
+          <b-btn
+            target="_blank"
+            v-if="link"
+            :href="link"
+            class="py-2 px-3 feature-btn"
+          >
+            {{ button }}
           </b-btn>
         </div>
       </div>
@@ -49,19 +52,19 @@ export default {
     imgSrc: String,
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     desc: String,
     reversed: {
       type: Boolean,
-      default: false
+      default: false,
     },
     button: String,
     link: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>
 

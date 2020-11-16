@@ -1,6 +1,11 @@
 <template>
-  <div class="mb-3 mt-4 flex-column align-items-center">
-    <img v-if="icon" :class="{'round-photo': rounded}" class="mx-auto col-icon" :src="icon">
+  <div class="mb-3 mt-4 flex-column align-center">
+    <img
+      v-if="icon"
+      :class="{'round-photo': rounded}"
+      class="mx-auto col-icon"
+      :src="icon"
+    />
     <h3 class="my-3 title">
       {{ title }}
     </h3>
@@ -16,8 +21,8 @@ export default {
     title: String,
     icon: String,
     desc: String,
-    rounded: Boolean
-  }
+    rounded: Boolean,
+  },
 }
 </script>
 
