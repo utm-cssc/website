@@ -1,10 +1,7 @@
 ---
 title: Firebase
-icon: /icons/csc108.svg
-desc: Introduction to Computer Programming
+desc: In depth tutorial on how to set up Firebase
 link: Firebase
-tags:
-  - utm-cs
 ---
 
 ### Behind the Scenes with Voting
