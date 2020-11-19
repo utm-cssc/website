@@ -1,10 +1,5 @@
 [
   {
-    "code": "CSC104",
-    "title": "The Why and How of Computing",
-    "desc": "A broad introduction to the field of computer science, intended for non-computer scientists. Topics include: history of computing; digital information representations; computer chip logic design; cryptography; social issues in computing; operating systems; problem solving and algorithms; a challenging programming introduction. This is a rigorous course intended to teach computer science, and will not teach the use of any particular software products. A robust understanding of modern computers and their use is assumed."
-  },
-  {
     "code": "CSC108",
     "title": "Introduction to Computer Programming",
     "desc": "Structure of computers; the computing environment. Programming in a language such as Python. Program structure: elementary data types, statements, control flow, functions, classes, objects, methods, fields. List: searching, sorting and complexity.",
@@ -14,14 +9,9 @@
   {
     "code": "CSC148",
     "title": "Introduction to Computer Science",
-    "desc": "Abstract data types and data structures for implementing them. Linked data structures. Encapsulation and information-hiding. Object-oriented programming. Specifications. Analyzing the efficiency of programs. Recursion. This course assumes programming experience in a language such as Python, C++, or Java, as provided by CSC108H5. Students who already have this background may consult the Computer Science faculty advisor for advice about skipping CSC108H5.",
+    "desc": "Abstract data types and data structures for implementing them. Linked data structures. Encapsulation and information-hiding. Object-oriented programming. Specifications. Analyzing the efficiency of programs. Recursion. This course assumes programming experience in a language such as Python, C++, or Java, as provided by CSC108H5.",
     "link": true,
     "courseId": "22802"
-  },
-  {
-    "code": "CSC199",
-    "title": "Computer Science Seminar",
-    "desc": "Introduction to a topic of current interest in computer science intended for a general audience. Content will vary from year to year."
   },
   {
     "code": "CSC207",
@@ -61,19 +51,14 @@
   {
     "code": "CSC290",
     "title": "Communication Skills for Computer Scientists",
-    "desc": "Targeted instruction and significant practice in the communications required for careers in computer science. The curriculum covers written, oral and interpersonal communication. Students will hand in short pieces of writing each week, will make oral presentations several times in the semester, and will work together in simulated project meetings and other realistic scenarios of pair and small group interaction. This can be used to satisfy the writing requirement in CSC programs.",
+    "desc": "Targeted instruction and significant practice in the communications required for careers in computer science. The curriculum covers written, oral and interpersonal communication. Students will hand in short pieces of writing each week, will make oral presentations several times in the semester, and will work together in simulated project meetings and other realistic scenarios of pair and small group interaction.",
     "link": true,
     "courseId": "23170"
   },
   {
-    "code": "CSC299",
-    "title": "Research Opportunity Program",
-    "desc": "This courses provides a richly rewarding opportunity for students in their second year to work in the research project of a professor in return for 299Y course credit. Students enrolled have an opportunity to become involved in original research, learn research methods and share in the excitement and discovery of acquiring new knowledge. Participating faculty members post their project descriptions for the following summer and fall/winter sessions in early February and students are invited to apply in early March. See Experiential and International Opportunities for more details."
-  },
-  {
     "code": "CSC300",
     "title": "Computers and Society",
-    "desc": "Privacy and Freedom of Information; recent Canadian legislation and reports. Computers and work; employment levels, quality of working life. Electronic fund transfer systems; transborder data flows. Computers and bureaucratization. Computers in the home; public awareness about computers. Robotics. Professionalism and the ethics of computers. The course is designed not only for science students, but also those in social sciences or humanities."
+    "desc": "Privacy and Freedom of Information; recent Canadian legislation and reports. Computers and work; employment levels, quality of working life. Electronic fund transfer systems; transborder data flows. Computers and bureaucratization. Computers in the home; public awareness about computers. Robotics. Professionalism and the ethics of computers."
   },
   {
     "code": "CSC301",
@@ -88,30 +73,10 @@
     "courseId": "22096"
   },
   {
-    "code": "CSC310",
-    "title": "Information Theory",
-    "desc": "An introduction to reliable and accurate transmission of information. Entropy, lossless and lossy data compression, optimal compression, information channels, channel capacity, error-correcting codes, and digital fountain codes. Course concepts form the basis for practical applications such as ZIP and MP3 compression, channel coding for DSL lines, communication in deep space and to mobile devices, CDs and disk drives, the development of the Internet, as well as linguistics and human perception."
-  },
-  {
     "code": "CSC311",
     "title": "Introduction to Machine Learning",
     "desc": "An introduction to methods for automated learning of relationships on the basis of empirical data. Classification and regression using nearest neighbour methods, decision trees, linear models, and neural networks. Clustering algorithms. Problems of overfitting and of assessing accuracy. Basics of reinforcement learning.",
     "courseId": "20771"
-  },
-  {
-    "code": "CSC318",
-    "title": "The Design of Interactive Computational Media",
-    "desc": "User-centered design of interactive systems. Methodologies, principles, metaphors, task analysis, and other topics. Interdisciplinary design; the role of industrial design and the behavioural sciences. Interactive hardware and software; concepts from computer graphics. Classes of direct manipulation systems, extensible systems, rapid prototyping tools. Additional topics in interactive computational media. Students work on projects in interdisciplinary teams. Enrolment limited, but non-computer scientists welcome."
-  },
-  {
-    "code": "CSC320",
-    "title": "Introduction to Visual Computing",
-    "desc": "A unified introduction to image synthesis and image analysis aimed at students with an interest in computer graphics, computer vision or the visual arts. Focus on three major topics: (1) visual computing principles - computational and mathematical methods for creating, capturing, analyzing and manipulating digital photographs (raster algorithms, image acquisition, basic image processing, image warping, anti-aliasing); (2) digital special effects - applying these principles to create special effects found in movies and commercials; (3) visual programming - using Java and Swing/Graphics2D or C/C++ and OpenGL to create graphical user interfaces for synthesizing and manipulating photographs."
-  },
-  {
-    "code": "CSC322",
-    "title": "Introduction to Algebraic Cryptography",
-    "desc": "The course will take students on a journey through the methods of algebra and number theory in cryptography, from Euclid to Zero Knowledge Proofs. Topics include: block ciphers and the Advanced Encryption Standard (AES); algebraic and number-theoretic techniques and algorithms in cryptography, including methods for primality testing and factoring large numbers; encryption and digital signature systems based on RSA, factoring, elliptic curves and integer lattices; and zero-knowledge proofs."
   },
   {
     "code": "CSC324",
@@ -120,15 +85,9 @@
     "courseId": "23298"
   },
   {
-    "code": "CSC333",
-    "title": "Forensic Computing",
-    "desc": "Introduction to the tools and techniques of the digital detective. Electronic discovery of digital data, including field investigation methods of the computer crime scene. Focus on the computer science behind computer forensics, network forensics and data forensics. Forensic topics include: computer structure, data acquisition from storage media, file system analysis, network intrusion detection, electronic evidence, Canadian computer crime case law.",
-    "courseId": "20781"
-  },
-  {
     "code": "CSC338",
     "title": "Numerical Methods",
-    "desc": "Computational methods for solving numerical problems in science, engineering and business. Linear and non-linear equations, approximation, optimization, interpolation, integration and differentiation. The aim is to give students a basic understanding of floating-point arithmetic and the implementation of algorithms used to solve numerical problems, as well as a familiarity with current numerical computing environments.Course concepts are crucial to a wide range of practical applications such as computational finance and portfolio management, graphics and special effects, data mining and machine learning, as well as robotics, bioinformatics, medical imaging and others.",
+    "desc": "Computational methods for solving numerical problems in science, engineering and business. Linear and non-linear equations, approximation, optimization, interpolation, integration and differentiation. The aim is to give students a basic understanding of floating-point arithmetic and the implementation of algorithms used to solve numerical problems, as well as a familiarity with current numerical computing environments. Course concepts are crucial to a wide range of practical applications such as computational finance and portfolio management, graphics and special effects, data mining and machine learning, as well as robotics, bioinformatics, medical imaging and others.",
     "courseId": " 21521"
   },
   {
@@ -147,7 +106,8 @@
     "code": "CSC358",
     "title": "Principles of Computer Networks",
     "desc": "Introduction to computer networks and systems programming of networks. Basic understanding of computer networks and network protocols. Network hardware and software, routing, addressing, congestion control, reliable data transfer, and socket programming.",
-    "courseId": "22046"
+    "courseId": "22046",
+    "link": true
   },
   {
     "code": "CSC363",
@@ -170,7 +130,7 @@
   {
     "code": "CSC373",
     "title": "Algorithm Design and Analysis",
-    "desc": "Standard algorithm design techniques: divide-and-conquer, greedy strategies, dynamic programming, linear programming, randomization, network flows, approximation algorithms and others (if time permits). Students will be expected to show good design principles and adequate skills at reasoning about the correctness and complexity of algorithms.",
+    "desc": "Standard algorithm design techniques: divide-and-conquer, greedy strategies, dynamic programming, linear programming, randomization, network flows, approximation algorithms and others. Students will be expected to show good design principles and adequate skills at reasoning about the correctness and complexity of algorithms.",
     "courseId": "23662"
   },
   {
@@ -213,11 +173,6 @@
     "desc": "This course provides a richly rewarding opportunity for students in their third or fourth year to work in the research project of a professor in return for 399Y course credit. Students enrolled have an opportunity to become involved in original research, learn research methods and share in the excitement and discovery of acquiring new knowledge. Participating faculty members post their project descriptions for the following summer and fall/winter sessions in early February and students are invited to apply in early March. See Experiential and International Opportunities for more details."
   },
   {
-    "code": "CSC404",
-    "title": "Video Game Design",
-    "desc": "An introduction to the concepts and techniques for the design and development of electronic games. Topics include: game history, social issues and story elements. The software engineering, artificial intelligence and graphics elements for video games. Level and model design. Audio elements. Real-world aspects of the gaming industry, including the business of game development, design teams and game promotion. Assignments test practical skills in game development, with a team implementation of a complete"
-  },
-  {
     "code": "STA256",
     "title": "Probability and Statistics I",
     "desc": "This course covers probability including its role in statistical modeling. Topics include probability distributions, expectation, continuous and discrete random variables and vectors, distribution functions. Basic limiting results and the normal distribution presented with a view to their applications in statistics."
@@ -225,22 +180,22 @@
   {
     "code": "MAT132",
     "title": "Differential Calculus for Life Sciences",
-    "desc": "Review of functions and their graphs, trigonometry, exponentials and logarithms. Limits and continuity of functions of a single variable. Derivatives and differentiation techniques. Applications of differentiation, including extreme values, related rates and optimization. Life science applications are emphasized."
+    "desc": "Review of functions and their graphs, trigonometry, exponentials and logarithms. Limits and continuity of functions of a single variable. Derivatives and differentiation techniques. Applications of differentiation, including extreme values, related rates and optimization."
   },
   {
     "code": "MAT134",
     "title": "Integral Calculus for Life Sciences",
-    "desc": "Antiderivatives and indefinite integrals in one variable, definite integrals and the fundamental theorem of calculus. Integration techniques and applications of integration. Infinite sequences, series and convergence tests. Power series, Taylor and Maclaurin series. Life science applications are emphasized."
+    "desc": "Antiderivatives and indefinite integrals in one variable, definite integrals and the fundamental theorem of calculus. Integration techniques and applications of integration. Infinite sequences, series and convergence tests. Power series, Taylor and Maclaurin series."
   },
   {
     "code": "MAT135",
     "title": "Differential Calculus",
-    "desc": "Review of functions and their graphs, trigonometry, exponentials and logarithms. Limits and continuity of functions of a single variable. Derivatives and differentiation techniques. Applications of differentiation, including extreme values, related rates and optimization. A wide range of applications from the sciences will be discussed."
+    "desc": "Review of functions and their graphs, trigonometry, exponentials and logarithms. Limits and continuity of functions of a single variable. Derivatives and differentiation techniques. Applications of differentiation, including extreme values, related rates and optimization."
   },
   {
     "code": "MAT136",
     "title": "Integral Calculus",
-    "desc": "Antiderivatives and indefinite integrals in one variable, definite integrals and the fundamental theorem of calculus. Integration techniques and applications of integration. Infinite sequences, series and convergence tests. Power series, Taylor and Maclaurin series. A wide range of applications from the sciences will be discussed."
+    "desc": "Antiderivatives and indefinite integrals in one variable, definite integrals and the fundamental theorem of calculus. Integration techniques and applications of integration. Infinite sequences, series and convergence tests. Power series, Taylor and Maclaurin series."
   },
   {
     "code": "MAT157",
@@ -270,12 +225,12 @@
   {
     "code": "MAT257",
     "title": "Analysis II",
-    "desc": "A theoretical second course in calculus for students with a serious interest in mathematics. Topology of R^n; compactness, functions and continuity, extreme value theorem. Derivatives; inverse and implicit function theorems, maxima and minima, Lagrange multipliers. Integration; Fubini's theorem, partitions of unity, change of variables. Differential forms. Manifolds in R^n; integration on manifolds; Stokes' theorem for differential forms and classical versions."
+    "desc": "A theoretical second year course in calculus for students with a serious interest in mathematics. Topology of R^n; compactness, functions and continuity, extreme value theorem. Derivatives; inverse and implicit function theorems, maxima and minima, Lagrange multipliers. Integration; Fubini's theorem, partitions of unity, change of variables. Differential forms. Manifolds in R^n; integration on manifolds; Stokes' theorem for differential forms and classical versions."
   },
   {
     "code": "MAT301",
     "title": "Groups and Symmetries",
-    "desc": "Permutations and permutation groups. Linear groups. Abstract groups, homomorphisms, subgroups. Symmetry groups of regular polygons and platonic solids, wallpaper groups. Group actions, class formula. Cosets, Lagrange's theorem. Normal subgroups, quotient groups. Classification of finitely generated Abelian Groups. Emphasis on examples and calculations."
+    "desc": "Permutations and permutation groups. Linear groups. Abstract groups, homomorphisms, subgroups. Symmetry groups of regular polygons and platonic solids, wallpaper groups. Group actions, class formula. Cosets, Lagrange's theorem. Normal subgroups, quotient groups. Classification of finitely generated Abelian Groups."
   },
   {
     "code": "MAT302",

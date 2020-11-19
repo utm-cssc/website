@@ -17,25 +17,30 @@
         <b-card-body class="info-desc" v-if="courses[info]">
           <b-card-text style="margin-top: 0 !important;">
             {{ courses[info].desc }}
-            <br />
-            <a
-              :href="'./' + info.toString().toLowerCase()"
-              v-if="courses[info].link"
-            >
-              Check out the resource page!
-            </a>
-            <br />
-            <br />
-            <a
-              :href="
-                'https\://student.utm.utoronto.ca/CourseInfo/index.php?session_cd=\'\'&department_id=7&hightlight=' +
-                  courses[info].courseId +
-                  '&download=1'
-              "
-              v-if="courses[info].courseId"
-            >
-              Check out the past Syllabi!
-            </a>
+            <div class="mt-2">
+              <b-btn
+                target="_blank"
+                v-if="courses[info].link"
+                :href="'./' + info.toString().toLowerCase()"
+                class="py-2 px-3 feature-btn"
+              >
+                Check out the resource page!
+              </b-btn>
+            </div>
+            <div class="mt-2">
+              <b-btn
+                target="_blank"
+                v-if="courses[info].courseId"
+                :href="
+                  'https\://student.utm.utoronto.ca/CourseInfo/index.php?session_cd=\'\'&department_id=7&hightlight=' +
+                    courses[info].courseId +
+                    '&download=1'
+                "
+                class="py-2 px-3 feature-btn"
+              >
+                Check out the past Syllabi!
+              </b-btn>
+            </div>
           </b-card-text>
         </b-card-body>
       </b-collapse>
@@ -58,8 +63,6 @@ export default {
     }
   },
   created() {
-    console.log(this.data)
-    console.log(this.courseId)
     const courses = {}
     for (const courseData of coursesDataStore) {
       if (this.data.includes(courseData.code)) {
@@ -95,5 +98,19 @@ export default {
 .info-desc {
   font-size: 20px;
   text-align: left;
+}
+
+.feature-btn {
+  background-color: #3273dc;
+  border-color: transparent;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.feature-btn:hover {
+  background-color: #378dff;
 }
 </style>
