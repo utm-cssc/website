@@ -44,8 +44,8 @@ Example:
 
 <grid-1-x-2 
     title="Component title"
-    img-src="Link to image"
-    link="https://i.imgur.com/pX2adkj.png"
+    img-src="https://i.imgur.com/pX2adkj.png"
+    link="https://cssc.utm.utoronto.ca/"
     desc="Component description"
     button="Button Description"> </grid-1-x-2>
 
