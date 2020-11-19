@@ -13,7 +13,7 @@
                 <v-icon color="primary">
                   mdi-plus
                 </v-icon>
-                Add Test
+                Add Assignment
               </v-btn>
             </template>
             <v-card>
@@ -28,7 +28,7 @@
                       <v-col cols="12" sm="6" md="4">
                         <v-text-field
                           v-model="editedItem.test_name"
-                          label="Test Name"
+                          label="Assignment Name"
                         ></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="4">
@@ -161,7 +161,7 @@ export default {
     dialogDelete: false,
     headers: [
       {
-        text: 'Test Name',
+        text: 'Assignment Name',
         value: 'test_name',
       },
       {
@@ -185,24 +185,24 @@ export default {
         weightage: 20,
       },
       {
-        test_name: 'Test 2',
+        test_name: 'Assignment 2',
         grade: 100,
         weightage: 20,
       },
       {
-        test_name: 'Test 3',
+        test_name: 'Assignment 3',
         grade: 90,
         weightage: 20,
       },
     ],
     editedIndex: -1,
     editedItem: {
-      test_name: 'Test',
+      test_name: 'Assignment',
       weightage: 0,
       grade: 0,
     },
     defaultItem: {
-      test_name: 'Test',
+      test_name: 'Assignment',
       weightage: 0,
       grade: 0,
     },
@@ -210,7 +210,7 @@ export default {
 
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? 'New Test' : 'Edit Test'
+      return this.editedIndex === -1 ? 'New Assignment' : 'Edit Assignment'
     },
   },
 
