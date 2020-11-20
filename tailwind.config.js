@@ -6,29 +6,31 @@
  */
 module.exports = {
   theme: {
-    typography: (theme) => ({
+    typography: theme => ({
       default: {
-        css: [{
-          color: 'var(--color-body)',
-          h1: {
-            color: 'var(--color-heading)',
+        css: [
+          {
+            color: 'var(--color-body)',
+            h1: {
+              color: 'var(--color-heading)',
+            },
+            h2: {
+              color: 'var(--color-heading)',
+            },
+            h3: {
+              color: 'var(--color-heading)',
+            },
+            p: {
+              color: 'var(--color-body)',
+            },
+            strong: {
+              color: 'var(--color-heading)',
+            },
+            th: {
+              color: 'var(--color-heading)',
+            },
           },
-          h2: {
-            color: 'var(--color-heading)',
-          },
-          h3: {
-            color: 'var(--color-heading)',
-          },
-          h4: {
-            color: 'var(--color-heading)',
-          },
-          h5: {
-            color: 'var(--color-heading)',
-          },
-          h6: {
-            color: 'var(--color-heading)',
-          },
-        }],
+        ],
       },
     }),
   },

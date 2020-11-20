@@ -35,8 +35,12 @@ name, description, start_date, start_time, end_date, end_time
 CSSC's Games & Tips for First Years, A series of games and fun puzzles for our first years!, 2020-09-10, 19:00, 2020-09-10, 20:00
 ```
 
-**Note:** Please follow this format for editting CSV files. | Data | Format |
-|------|------------| | Date | YYYY-MM-DD | | Time | hh-mm |
+**Note:** Please follow this format for editting CSV files.
+
+| Data | Format     |
+| ---- | ---------- |
+| Date | YYYY-MM-DD |
+| Time | hh-mm      |
 
 ### Calendar Event Data
 
