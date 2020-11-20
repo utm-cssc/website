@@ -1,7 +1,7 @@
 ---
-title: GridComponents
+title: Grid Components
 desc: Informs users how to use the grid components
-link: GridComponents
+link: grid-components
 ---
 
 # Grid Components

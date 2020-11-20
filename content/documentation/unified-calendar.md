@@ -56,7 +56,7 @@ The events data required by the vuetify calendar is in following format:
 }
 ```
 
-### Parsing [CSV to Calendar Event Data]
+### Parsing (CSV to Calendar Event Data)
 
 We are using readCSVData method that parses the events in csv to vuetify
 calendar format. This data is then reflected by the vuetify calendar component.

@@ -1,8 +1,10 @@
 ---
 title: Firebase
 desc: In depth tutorial on how to set up Firebase
-link: Firebase
+link: firebase
 ---
+
+# Firebase
 
 ### Behind the Scenes with Voting
 
