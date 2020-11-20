@@ -52,11 +52,13 @@ export const state = () => ({
 export const mutations = {
   deleteAssessment(state, payload) {
     const courseCode = payload.courseCode
-    const assessmentName = payload.assessmentName
+    const assessmentName = payload.assessment.name
+    console.log(payload)
     const courseIndex = state.courses.findIndex(
       course => course.code === courseCode,
     )
     if (courseIndex === -1) {
+      console.log('Not found')
       return
     }
     const indexToDelete = state.courses[courseIndex].assessments.findIndex(
@@ -68,23 +70,27 @@ export const mutations = {
   addAssessment(state, payload) {
     const courseCode = payload.courseCode
     const assessment = payload.assessment
-    state.courses[courseCode].assessments.push(assessment)
-  },
-  editAssessment(state, payload) {
-    const courseCode = payload.courseCode
-    const assessment = payload.assessment
-    console.log(courseCode)
-    console.log(assessment)
     const courseIndex = state.courses.findIndex(
       course => course.code === courseCode,
     )
     if (courseIndex === -1) {
       return
     }
-    const indexToEdit = state.courses[courseIndex].assessments.findIndex(
-      element => element.name === assessment.name,
+    state.courses[courseIndex].assessments.push(assessment)
+  },
+  addCourse(state, payload) {
+    state.courses.push(payload.course)
+  },
+  deleteCourse(state, payload) {
+    state.courses = state.courses.filter(
+      course => course.code !== payload.courseCode,
     )
-    console.log(indexToEdit)
-    state.courses[courseIndex].assessments[indexToEdit] = assessment
+  },
+}
+
+export const actions = {
+  editAssessment: (context, payload) => {
+    context.commit('deleteAssessment', payload)
+    context.commit('addAssessment', payload)
   },
 }
