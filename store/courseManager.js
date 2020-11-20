@@ -53,11 +53,17 @@ export const mutations = {
   deleteAssessment(state, payload) {
     const courseCode = payload.courseCode
     const assessmentName = payload.assessmentName
-    state.courses[courseCode].assessments = state.courses[
-      courseCode
-    ].assessments.filter(assessment => {
-      assessment.name !== assessmentName
-    })
+    const courseIndex = state.courses.findIndex(
+      course => course.code === courseCode,
+    )
+    if (courseIndex === -1) {
+      return
+    }
+    const indexToDelete = state.courses[courseIndex].assessments.findIndex(
+      element => element.name === assessmentName,
+    )
+    console.log(indexToDelete)
+    state.courses[courseIndex].assessments.splice(indexToDelete, 1)
   },
   addAssessment(state, payload) {
     const courseCode = payload.courseCode
@@ -67,9 +73,18 @@ export const mutations = {
   editAssessment(state, payload) {
     const courseCode = payload.courseCode
     const assessment = payload.assessment
-    const indexToEdit = state.courses[courseCode].assessments.findIndex(
+    console.log(courseCode)
+    console.log(assessment)
+    const courseIndex = state.courses.findIndex(
+      course => course.code === courseCode,
+    )
+    if (courseIndex === -1) {
+      return
+    }
+    const indexToEdit = state.courses[courseIndex].assessments.findIndex(
       element => element.name === assessment.name,
     )
-    state.courses[courseCode].assessments[indexToEdit] = assessment
+    console.log(indexToEdit)
+    state.courses[courseIndex].assessments[indexToEdit] = assessment
   },
 }

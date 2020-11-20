@@ -46,7 +46,9 @@
             <v-card>
               <v-form v-model="validValues">
                 <v-card-title>
-                  <span class="headline">{{ formTitle }}</span>
+                  <span class="headline">{{
+                    isDialogEditing ? 'Edit Assessment' : 'New Assessment'
+                  }}</span>
                 </v-card-title>
 
                 <v-card-text>
@@ -56,7 +58,7 @@
                         <v-text-field
                           v-model="itemUnderEdit.name"
                           label="Assessment Name"
-                          :rules="assessmentNameRules"
+                          :rules="isDialogEditing ? [] : assessmentNameRules"
                         ></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="4">
@@ -102,7 +104,7 @@
               <v-card-actions>
                 <v-spacer />
                 <v-btn color="primary" text @click="closeDelete">Cancel</v-btn>
-                <v-btn color="primary" text @click="dialogDelete">
+                <v-btn color="primary" text @click="deleteItem">
                   OK
                 </v-btn>
                 <v-spacer />
@@ -115,7 +117,7 @@
         <v-icon small class="mr-2" @click="editItem(item)">
           mdi-pencil
         </v-icon>
-        <v-icon small @click="showDeleteDialog(item)">
+        <v-icon small @click="showDeleteDialog(item.name)">
           mdi-delete
         </v-icon>
       </template>
@@ -134,62 +136,56 @@ export default {
       required: true,
     },
   },
-  data: () => ({
-    validExpectedScore: true,
-    validValues: false,
-    alert: false,
-    scoreRules: [
-      value =>
-        (!isNaN(value) && parseInt(value) <= 100 && parseInt(value) >= 0) ||
-        'You must input a integer between 0 and 100 (inclusive)',
-    ],
-    assessmentNameRules: [
-      value =>
-        this.course.assessments.findIndex(
-          assessment => assessment.name === value,
-        ) === -1 || 'An assessment with this name already exists',
-    ],
-    dialog: false,
-    dialogDelete: false,
-    headers: [
-      {
-        text: 'Assessment Name',
-        value: 'name',
+  data() {
+    const validateAssessmentName = this.validateAssessmentName
+    return {
+      validExpectedScore: true,
+      validValues: false,
+      alert: false,
+      scoreRules: [
+        value =>
+          (!isNaN(value) && parseInt(value) <= 100 && parseInt(value) >= 0) ||
+          'You must input a integer between 0 and 100 (inclusive)',
+      ],
+      assessmentNameRules: [validateAssessmentName],
+      dialog: false,
+      dialogDelete: false,
+      headers: [
+        {
+          text: 'Assessment Name',
+          value: 'name',
+        },
+        {
+          text: 'Grade',
+          value: 'grade',
+        },
+        {
+          text: 'Weight',
+          value: 'weight',
+        },
+        {
+          text: 'Actions',
+          value: 'actions',
+          sortable: false,
+        },
+      ],
+      gpaDenoms: gpaDenoms,
+      assessmentUnderEditName: '',
+      itemUnderEdit: {
+        name: '',
+        weight: 0,
+        grade: 0,
       },
-      {
-        text: 'Grade',
-        value: 'grade',
+      defaultItem: {
+        name: '',
+        weight: 0,
+        grade: 0,
       },
-      {
-        text: 'Weight',
-        value: 'weight',
-      },
-      {
-        text: 'Actions',
-        value: 'actions',
-        sortable: false,
-      },
-    ],
-    gpaDenoms: gpaDenoms,
-    editedIndex: -1,
-    assessmentUnderEditName: '',
-    itemUnderEdit: {
-      name: '',
-      weight: 0,
-      grade: 0,
-    },
-    defaultItem: {
-      name: '',
-      weight: 0,
-      grade: 0,
-    },
-  }),
-
+    }
+  },
   computed: {
-    formTitle() {
-      return this.assessmentUnderEditName === ''
-        ? 'New Assessment'
-        : 'Edit Assessment'
+    isDialogEditing() {
+      return this.itemUnderEdit.name !== ''
     },
   },
 
@@ -211,53 +207,58 @@ export default {
       'deleteAssessment', //also supports payload `this.nameOfMutation(amount)`
       'editAssessment', //also supports payload `this.nameOfMutation(amount)`
     ]),
+    validateAssessmentName(value) {
+      return (
+        this.course.assessments.findIndex(
+          assessment => assessment.name === value,
+        ) === -1 || 'An assessment with this name already exists'
+      )
+    },
     closeGrades() {
       this.showGrades = false
     },
     editItem(item) {
-      this.editedIndex = this.course.assessments.indexOf(item)
       console.log(this.course)
-      const assessmentUnderEditIndex = this.course.assessments.findIndex(
-        assessment => assessment.name === item.name,
-      )
-      this.assessmentUnderEditName = this.course.assessments[
-        assessmentUnderEditIndex
-      ]
-      this.editAssessment({
-        courseCode: this.course.code,
-        assessment: item,
-      })
-      this.itemUnderEdit = Object.assign({}, item)
+      Object.assign(this.itemUnderEdit, item)
+      this.assessmentUnderEditName = item.name
       this.dialog = true
     },
-    showDeleteDialog(item) {
-      // this.editedIndex = course.assessments.indexOf(item)
-      this.itemUnderEdit = Object.assign({}, item)
+    showDeleteDialog(assessmentName) {
+      this.assessmentUnderEditName = assessmentName
       this.dialogDelete = true
     },
     deleteItem() {
-      this.courses.assessments.splice(this.editedIndex, 1)
+      this.deleteAssessment({
+        courseCode: this.course.code,
+        assessmentName: this.assessmentUnderEditName,
+      })
+      this.assessmentUnderEditName = ''
       this.closeDelete()
     },
     close() {
       this.dialog = false
       this.$nextTick(() => {
         this.itemUnderEdit = Object.assign({}, this.defaultItem)
-        this.editedIndex = -1
       })
     },
     closeDelete() {
       this.dialogDelete = false
       this.$nextTick(() => {
         this.itemUnderEdit = Object.assign({}, this.defaultItem)
-        this.editedIndex = -1
       })
     },
     save(course) {
-      if (this.editedIndex > -1) {
+      if (this.assessmentUnderEditName !== '') {
+        // index causing error
         // Ensure data model types are consistent
-        Object.assign(course.assessments[this.editedIndex], this.itemUnderEdit)
+        console.log('editing')
+        this.editAssessment({
+          courseCode: this.course.code,
+          assessment: this.itemUnderEdit,
+        })
+        this.assessmentUnderEditName = ''
       } else {
+        console.log('adding')
         course.assessments.push(this.itemUnderEdit)
       }
       this.close()
