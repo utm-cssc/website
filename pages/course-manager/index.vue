@@ -19,14 +19,15 @@
                 <v-row>
                   <v-col cols="12" sm="6" md="4">
                     <v-text-field
-                      v-model="courseToAdd.name"
+                      v-model="courseUnderEdit.name"
                       label="Course Name"
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
                     <v-text-field
-                      v-model="courseToAdd.code"
+                      v-model="courseUnderEdit.code"
                       label="Course Code"
+                      :rules="courseCodeRule"
                     ></v-text-field>
                   </v-col>
                 </v-row>
@@ -35,7 +36,7 @@
 
             <v-card-actions>
               <v-spacer />
-              <v-btn color="primary" text @click="newCourseDialog = false">
+              <v-btn color="primary" text @click="addCourseDialog = false">
                 Cancel
               </v-btn>
               <v-btn
@@ -119,11 +120,16 @@ export default {
       valuesValid: false,
       addCourseDialog: false,
       deleteCourseDialog: false,
-      courseToAdd: {
+      courseUnderEdit: {
         code: '',
         name: '',
         assessments: [],
       },
+      courseCodeRule: [
+        value =>
+          this.courses.findIndex(course => course.code === value) === -1 ||
+          'A course with this name already exists',
+      ],
       courseToDelete: {},
     }
   },
@@ -145,12 +151,22 @@ export default {
       commitDeleteCourse: 'deleteCourse',
     }),
     addCourse() {
-      this.commitAddCourse({course: this.courseToAdd})
+      this.commitAddCourse({course: this.courseUnderEdit})
       this.addCourseDialog = false
+      this.courseUnderEdit = {
+        code: '',
+        name: '',
+        assessments: [],
+      }
     },
     deleteCourse() {
       this.commitDeleteCourse({courseCode: this.courseToDelete.code})
       this.deleteCourseDialog = false
+      this.courseUnderEdit = {
+        code: '',
+        name: '',
+        assessments: [],
+      }
     },
   },
 }
