@@ -1,56 +1,59 @@
 <template>
   <div>
     <div class="container" v-if="loaded">
-      <v-dialog v-model="addCourseDialog" max-width="500px">
-        <template v-slot:activator="{on, attrs}">
-          <v-btn color="primary" text class="mb-2" v-bind="attrs" v-on="on">
-            <v-icon color="primary"> mdi-plus </v-icon>
-            Add Course
-          </v-btn>
-        </template>
-        <v-card>
-          <v-form v-model="valuesValid">
-            <v-card-title>
-              <span class="headline">New Course</span>
-            </v-card-title>
+      <div class="cssc-heading mb-5">Course Manager</div>
+      <div class="d-flex justify-content-end">
+        <v-dialog v-model="addCourseDialog" max-width="500px">
+          <template v-slot:activator="{on, attrs}">
+            <v-btn color="primary" text class="mb-2" v-bind="attrs" v-on="on">
+              <v-icon color="primary"> mdi-plus </v-icon>
+              Add Course
+            </v-btn>
+          </template>
+          <v-card>
+            <v-form v-model="valuesValid">
+              <v-card-title>
+                <span class="headline">New Course</span>
+              </v-card-title>
 
-            <v-card-text>
-              <v-container>
-                <v-row>
-                  <v-col cols="12" sm="6" md="4">
-                    <v-text-field
-                      v-model="courseUnderEdit.name"
-                      label="Course Name"
-                    ></v-text-field>
-                  </v-col>
-                  <v-col cols="12" sm="6" md="4">
-                    <v-text-field
-                      v-model="courseUnderEdit.code"
-                      label="Course Code"
-                      :rules="courseCodeRule"
-                    ></v-text-field>
-                  </v-col>
-                </v-row>
-              </v-container>
-            </v-card-text>
+              <v-card-text>
+                <v-container>
+                  <v-row>
+                    <v-col cols="12" sm="6" md="4">
+                      <v-text-field
+                        v-model="courseUnderEdit.name"
+                        label="Course Name"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="4">
+                      <v-text-field
+                        v-model="courseUnderEdit.code"
+                        label="Course Code"
+                        :rules="courseCodeRule"
+                      ></v-text-field>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </v-card-text>
 
-            <v-card-actions>
-              <v-spacer />
-              <v-btn color="primary" text @click="addCourseDialog = false">
-                Cancel
-              </v-btn>
-              <v-btn
-                color="primary"
-                text
-                @click="addCourse()"
-                :disabled="!valuesValid"
-              >
-                Add
-              </v-btn>
-            </v-card-actions>
-          </v-form>
-        </v-card>
-      </v-dialog>
+              <v-card-actions>
+                <v-spacer />
+                <v-btn color="primary" text @click="addCourseDialog = false">
+                  Cancel
+                </v-btn>
+                <v-btn
+                  color="primary"
+                  text
+                  @click="addCourse()"
+                  :disabled="!valuesValid"
+                >
+                  Add
+                </v-btn>
+              </v-card-actions>
+            </v-form>
+          </v-card>
+        </v-dialog>
+      </div>
       <v-dialog v-model="deleteCourseDialog" max-width="500px">
         <v-card>
           <v-card-title class="headline">

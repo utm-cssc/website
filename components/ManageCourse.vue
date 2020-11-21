@@ -6,6 +6,21 @@
     </div>
     <div v-else>
       <h3 class="font-weight-bold mb-3">
+        Completed: {{ 100 - calculatePercentageLeft(course) }} %
+        <br />
+        Scored: {{ calculatePercentageScored(course) }} %
+        <br />
+        Lost:
+        {{
+          (
+            100 -
+            calculatePercentageLeft(course) -
+            calculatePercentageScored(course)
+          ).toFixed(2)
+        }}
+        %
+      </h3>
+      <h3 class="font-weight-bold mb-3">
         In the remaining {{ calculatePercentageLeft(course) }}% of the course,
         you need
       </h3>
@@ -319,6 +334,14 @@ export default {
       }, 0)
       console.log('totalPercent ' + totalPercent)
       return 100 - totalPercent
+    },
+    calculatePercentageScored(course) {
+      const totalPercent = course.assessments.reduce((total, assessment) => {
+        console.log(assessment.weight)
+        return total + (assessment.grade / 100) * assessment.weight
+      }, 0)
+      console.log('totalPercent ' + totalPercent)
+      return totalPercent.toFixed(2)
     },
   },
 }
