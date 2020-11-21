@@ -47,14 +47,6 @@ A collection of example student resumes from UTM.
 
 </div>
 
-<div class="scroll-child">
-
-[**Nina Ricci Lu**](https://drive.google.com/open?id=15pqPuFUKOC-g_lWwHRj-B6jlWevddRR2)
-
-<iframe src="https://drive.google.com/file/d/15pqPuFUKOC-g_lWwHRj-B6jlWevddRR2/preview" width="480" height="640"></iframe>
-
-</div>
-
 </div>
 
 ## Resume templates
