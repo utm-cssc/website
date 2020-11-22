@@ -16,9 +16,9 @@ We can use a script to get data from content folder.
 
 ```
 async asyncData ({ $content, params, error }) {
-    const page = await $content('name', params.slug).fetch()
+    const data = await $content('name', params.slug).fetch()
 
-    return { page }
+    return { data }
   },
 ```
 
@@ -27,6 +27,23 @@ content folder.
 
 We can also filter the data we request for by using additional functions
 provided by nuxt [here](https://content.nuxtjs.org/fetching/)
+
+### Example Data (CSV)
+
+```
+{
+    "projects": [
+      {
+        "name": "Toonin",
+        "desc": "Share or stream audio and video over the web in real time.",
+        "repo": "https://github.com/grey-software/toonin",
+        "demo": "https://www.toonin.ml",
+        "logo": "/logos/projects/toonin.svg",
+        "tags": ["grey-software"]
+      },
+    ]
+}
+```
 
 ## md Files
 
