@@ -14,7 +14,7 @@
       @keydown.enter="go"
     >
       <label for="search" class="sr-only">Search</label>
-      <div class="search-container flex align-center py-1 px-2">
+      <div class="search-input-container flex align-center py-1 px-2">
         <img src="/icons/search.svg" class="icon-search mr-2" />
         <input
           id="search"
@@ -168,7 +168,7 @@ export default {
   height: 24px;
 }
 
-.search-container {
+.search-input-container {
   border: 1px solid #e2e8f0;
   border-radius: 0.375rem;
 }

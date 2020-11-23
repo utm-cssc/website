@@ -99,10 +99,10 @@ export default {
         // Default breakpoint for SSR
         defaultBreakpoint: 'xs',
         breakpoints: {
-          sm: 576,
-          md: 768,
-          lg: 992,
-          xl: 1200,
+          sm: 600,
+          md: 900,
+          lg: 1200,
+          xl: 1600,
         },
       },
     ],

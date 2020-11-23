@@ -1,57 +1,43 @@
 <template>
-  <div class="container nav pt-4 px-2 flex align-center z-30">
+  <div class="container nav pt-4 px-4 flex align-center z-50">
     <nuxt-link
       class="flex align-center nav-home mr-5"
       to="/"
       @click.native="checked = false"
     >
       <img class="logo" src="/icons/cssc-logo-without-title.svg" />
-      <span class="logo-text">UTM CSSC</span>
     </nuxt-link>
-    <div class="nav-internal">
-      <nuxt-link @click.native="checked = false" to="/vision" class="nav-link"
-        >Resources</nuxt-link
-      >
-      <nuxt-link
-        @click.native="checked = false"
-        to="/apprentice"
-        class="nav-link"
-        v-if="$mq === 'lg' || $mq === 'xl'"
-        >Calendar</nuxt-link
-      >
-    </div>
-    <div class="navbar-spacer"></div>
-    <div class="nav-external ml-auto">
-      <SearchBar class="mx-4" />
-      <a href="https://discord.gg/SHwbmVg" class="footer-link">
-        <DiscordIcon class="nav-icon" />
-      </a>
-      <a href="https://www.instagram.com/utm.cssc" class="footer-link ml-4">
-        <InstagramIcon class="nav-icon" />
-      </a>
-      <a href="https://www.facebook.com/utmcssc/" class="footer-link ml-4">
-        <FacebookIcon class="nav-icon" />
-      </a>
-      <a href="https://github.com/utm-cssc" class="footer-link ml-4">
-        <GithubIcon class="nav-icon" />
-      </a>
-      <DarkModeButton class="mx-4 d-none d-lg-block d-xl-block" />
-    </div>
+    <SearchBar class="mx-auto search" />
+
+    <button class="toggle-icon ml-5" type="button" @click="toggleDrawer">
+      <close-icon v-if="drawerOpen" class="close-icon"></close-icon>
+      <menu-icon v-if="!drawerOpen" class="menu-icon"></menu-icon>
+    </button>
   </div>
 </template>
 
 <script>
-import DiscordIcon from '../static/icons/discord.svg?inline'
-import InstagramIcon from '../static/icons/instagram.svg?inline'
-import FacebookIcon from '../static/icons/facebook.svg?inline'
-import GithubIcon from '../static/icons/github.svg?inline'
-export default {
-  components: {GithubIcon, DiscordIcon, InstagramIcon, FacebookIcon},
+import {mapState} from 'vuex'
+import MenuIcon from '@/static/icons/menu.svg?inline'
+import CloseIcon from '@/static/icons/close.svg?inline'
 
+export default {
+  components: {
+    MenuIcon,
+    CloseIcon,
+  },
   data() {
     return {
       checked: false,
     }
+  },
+  methods: {
+    toggleDrawer() {
+      this.$store.commit('toggleDrawer')
+    },
+  },
+  computed: {
+    ...mapState(['drawerOpen']),
   },
 }
 </script>
@@ -171,25 +157,27 @@ export default {
 </style>
 
 <style scoped>
-@media (max-width: 1200px) {
-  .nav-link-icon {
-    min-width: 20px;
-    height: 20px;
-    width: 20px;
-  }
+.menu-icon {
+  height: 36px;
+  width: 36px;
+  display: inline-block;
+  z-index: 70;
+}
 
-  .logo {
-    height: 36px;
-    width: 36px;
-    margin-right: 16px;
-  }
+.close-icon {
+  height: 24px;
+  width: 24px;
+  z-index: 70;
+  display: inline-block;
+}
 
-  .logo-text {
-    font-size: 18px;
-    color: var(--color-text);
-    font-weight: 500;
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-  }
+.toggle-icon {
+  width: max-content;
+  height: max-content;
+  z-index: 50;
+}
+
+button:focus {
+  outline: none;
 }
 </style>

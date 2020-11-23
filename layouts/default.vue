@@ -1,21 +1,41 @@
 <template>
   <v-app class="myFonts">
-    <cssc-nav />
+    <cssc-nav v-if="$mq === 'lg' || $mq === 'xl'"></cssc-nav>
+    <div v-else>
+      <cssc-nav-mobile></cssc-nav-mobile>
+      <aside
+        class="drawer transform top-0 right-0 fixed h-full overflow-auto z-40"
+        :class="drawerOpen ? 'drawer-open' : 'drawer-closed'"
+      >
+        <nav-drawer />
+      </aside>
+    </div>
     <nuxt />
     <cssc-footer />
   </v-app>
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import CsscNav from '@/components/CsscNav'
+import CsscNavMobile from '@/components/CsscNavMobile'
 import CsscFooter from '@/components/CsscFooter'
+import NavDrawer from '@/components/NavDrawer.vue'
 
 export default {
   components: {
     CsscNav,
     CsscFooter,
+    NavDrawer,
+    CsscNavMobile,
+  },
+  data() {
+    return {
+      nav: false,
+    }
   },
   computed: {
+    ...mapState(['drawerOpen']),
     nuxtColorMode() {
       return this.$nuxt.$colorMode.value
     },
@@ -46,6 +66,21 @@ export default {
 </script>
 
 <style>
+.drawer {
+  width: 256px;
+  transition: all 0.2s ease-out;
+}
+
+.drawer-open {
+  margin-left: 0;
+  opacity: 1;
+}
+
+.drawer-closed {
+  margin-right: -343px;
+  opacity: 0;
+}
+
 .theme--light.v-application {
   background: inherit;
 }

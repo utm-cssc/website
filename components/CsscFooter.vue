@@ -53,7 +53,7 @@
         </li>
       </div>
 
-      <div class="d-flex flex-column col">
+      <div class="flex-column">
         <li>
           <p class="more pt-5 pb-3">More Links</p>
           <div class="links">
