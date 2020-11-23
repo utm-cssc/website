@@ -1,9 +1,9 @@
 <template>
   <div class="container mt-5">
-    <div class="mt-5 d-flex flex-row flex-wrap justify-space-between row-0">
-      <div class="flex-col col col-md-12 col-lg-9 col-12">
+    <div class="mt-5 flex flex-row flex-wrap justify-space-between row-0">
+      <div class="flex-col">
         <nuxt-link to="/">
-          <li class="d-flex align-items-center link">
+          <li class="flex align-items-center link">
             <img src="/icons/cssc-logo-without-title.svg" />
             <h1>UTM CSSC</h1>
           </li>
@@ -55,7 +55,7 @@
 
       <div class="d-flex flex-column col">
         <li>
-          <p class="more pt-5 pb-3">More Links.</p>
+          <p class="more pt-5 pb-3">More Links</p>
           <div class="links">
             <nuxt-link to="/resources">
               Resourses
@@ -106,6 +106,7 @@ svg:hover {
 .footer-links {
   display: flex;
   font-size: 17px;
+  text-align: right;
 }
 
 a {
@@ -140,7 +141,7 @@ p {
 
 .desc {
   padding: 40px 0 15px 0;
-  max-width: 600px;
+  max-width: 420px;
   margin-bottom: 0;
 }
 
