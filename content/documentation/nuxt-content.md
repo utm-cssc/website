@@ -22,13 +22,13 @@ async asyncData ({ $content, params, error }) {
   },
 ```
 
-**Note:** Here 'name' can by the name of the folder you want to fetch from
-content folder.
+**Note:** 'name' can be the name of the folder/directory that you want to fetch
+from content folder.
 
 We can also filter the data we request for by using additional functions
-provided by nuxt [here](https://content.nuxtjs.org/fetching/)
+provided by [Nuxt](https://content.nuxtjs.org/fetching/)
 
-### Example Data (CSV)
+### Example Data (JSON)
 
 ```
 {
@@ -79,7 +79,7 @@ to display these md files.
 
 ### Editting md Files
 
-We can use YAML to provide additional information as props:
+We can use YAML to provide additional metadata to our documents:
 
 ```
 ---

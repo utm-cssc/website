@@ -16,14 +16,14 @@ It consists of 2 major sections:
 
 ## UI/UX
 
-It uses a vuetify component for creating a calendar UI. You can read more about
+It uses a Vuetify component for creating a calendar UI. You can read more about
 this component [here](https://vuetifyjs.com/en/components/calendars/#calendars).
 
 ## Data
 
 We have created an unified-calendar-data repo
 [here](https://github.com/utm-cssc/unified-calendar-data) where each club can
-push their event data in CSV format.
+push their event data in a CSV format.
 
 Using async axios calls we get all the data from the CSVs in the repo mentioned
 above.
@@ -44,7 +44,7 @@ CSSC's Games & Tips for First Years, A series of games and fun puzzles for our f
 
 ### Calendar Event Data
 
-The events data required by the vuetify calendar is in following format:
+The events data required by the Vuetify calendar is in following format:
 
 ```
 {
@@ -58,5 +58,6 @@ The events data required by the vuetify calendar is in following format:
 
 ### Parsing (CSV to Calendar Event Data)
 
-We are using readCSVData method that parses the events in csv to vuetify
-calendar format. This data is then reflected by the vuetify calendar component.
+We are using the readCSVData method which parses the events in the CSV to the
+Vuetify calendar format. This data is then reflected by the Vuetify calendar
+component.
