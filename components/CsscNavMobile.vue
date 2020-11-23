@@ -1,5 +1,5 @@
 <template>
-  <div class="container nav pt-4 px-4 flex align-center z-50">
+  <div class="container nav pt-4 px-4 flex align-center">
     <nuxt-link
       class="flex align-center nav-home mr-5"
       to="/"
@@ -8,11 +8,12 @@
       <img class="logo" src="/icons/cssc-logo-without-title.svg" />
     </nuxt-link>
     <SearchBar class="mx-auto search" />
+    <dark-mode-button class="mx-4" />
 
-    <button class="toggle-icon ml-5" type="button" @click="toggleDrawer">
+    <div class="toggle-icon ml-5" @click="toggleDrawer">
       <close-icon v-if="drawerOpen" class="close-icon"></close-icon>
       <menu-icon v-if="!drawerOpen" class="menu-icon"></menu-icon>
-    </button>
+    </div>
   </div>
 </template>
 
@@ -20,11 +21,13 @@
 import {mapState} from 'vuex'
 import MenuIcon from '@/static/icons/menu.svg?inline'
 import CloseIcon from '@/static/icons/close.svg?inline'
+import DarkModeButton from '@/components/global/DarkModeButton'
 
 export default {
   components: {
     MenuIcon,
     CloseIcon,
+    DarkModeButton,
   },
   data() {
     return {

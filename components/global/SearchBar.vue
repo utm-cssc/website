@@ -1,13 +1,6 @@
 <template>
   <div class="relative flex flex-col justify-between">
-    <v-autocomplete
-      :items="articles"
-      :search-input.sync="searchQuery"
-      color="white"
-      placeholder="Start typing to Search"
-      prepend-icon="mdi-magnify"
-    ></v-autocomplete>
-    <!-- <div
+    <div
       class="relative"
       @keydown.down="increment"
       @keydown.up="decrement"
@@ -57,7 +50,7 @@
           {{ result.slug }}
         </NuxtLink>
       </li>
-    </ul> -->
+    </ul>
   </div>
 </template>
 
@@ -89,7 +82,7 @@ export default {
         .search('title', searchQuery)
         .fetch()
 
-      this.articles = searchResult.map(result => result.slug)
+      this.articles = searchResult
       console.log(this.articles)
       this.searching = false
     },

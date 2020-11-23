@@ -48,17 +48,21 @@
       Ask Jack, feel free to check us out under the Meet the Team section on our
       homepage!
     </p>
-    <form action="https://formspree.io/xwkrdzyg" method="POST">
+    <v-form
+      v-model="valid"
+      action="https://formspree.io/xwkrdzyg"
+      method="POST"
+    >
       <div class="mb-3 mt-3 cssc-heading">
         Ask Your Question
       </div>
-      <b-form-textarea
+      <v-text-field
         v-model="question"
         name="Question"
         placeholder="Enter your Question Here"
-        required="required"
+        required
         rows="3"
-      ></b-form-textarea>
+      ></v-text-field>
       <div class="mb-3 mt-2 cssc-heading">
         Tags
       </div>
@@ -76,7 +80,7 @@
             v-for="tagOption in tagOptions"
             :key="tagOption.value"
           >
-            <b-form-checkbox :value="tagOption.value"></b-form-checkbox>
+            <v-checkbox :value="tagOption.value"></v-checkbox>
             <span>{{ tagOption.text }}</span>
           </div>
         </b-form-checkbox-group>
@@ -94,13 +98,13 @@
         <a href="https://cssc.utm.utoronto.ca/discord">CSSC's Discord.</a>
       </p>
 
-      <b-form-textarea
+      <v-text-field
         v-model="email"
         name="Email"
         placeholder="user@mail.utoronto.ca"
         rows="1"
         max-rows="1"
-      ></b-form-textarea>
+      ></v-text-field>
       <div class="flex justify-center mb-4 mt-5">
         <v-btn size="lg" type="submit" name="Submit" class="button mr-3"
           >Submit</v-btn
@@ -109,7 +113,7 @@
           >Reset</v-btn
         >
       </div>
-    </form>
+    </v-form>
     <div class="mt-3 mb-4 cssc-heading" id="faq">
       Frequently Asked Questions
     </div>

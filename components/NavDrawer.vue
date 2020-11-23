@@ -11,7 +11,19 @@
         >Calendar</nuxt-link
       >
       <nuxt-link @click.native="toggleDrawer" to="/clubs" class="drawer-link"
-        >Clubs</nuxt-link
+        >MCS Clubs</nuxt-link
+      >
+      <nuxt-link @click.native="toggleDrawer" to="/ask-jack" class="drawer-link"
+        >Ask Jack</nuxt-link
+      >
+      <nuxt-link
+        @click.native="toggleDrawer"
+        to="/course-manager"
+        class="drawer-link"
+        >Course Manager</nuxt-link
+      >
+      <nuxt-link @click.native="toggleDrawer" to="/faq" class="drawer-link"
+        >FAQ</nuxt-link
       >
     </div>
   </div>
