@@ -30,6 +30,10 @@ export default {
 </script>
 
 <style scoped>
+.v-application a {
+  color: var(--color-heading);
+}
+
 li {
   list-style-type: none;
 }

@@ -1,7 +1,7 @@
 <template>
   <article class="mt-5 pb-5">
     <nuxt-content
-      class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto"
+      class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl dark:prose-dark mx-auto"
       :document="page"
     />
   </article>
