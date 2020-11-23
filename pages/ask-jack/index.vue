@@ -113,7 +113,7 @@
         >
       </div>
     </form>
-    <div class="mt-3 mb-4 cssc-heading">
+    <div class="mt-3 mb-4 cssc-heading" id="faq">
       Frequently Asked Questions
     </div>
     <v-row justify="center">
