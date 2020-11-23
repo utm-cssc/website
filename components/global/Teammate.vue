@@ -34,7 +34,7 @@
         <a :href="emailAddress">
           <EmailIcon class="logo mr-3" />
         </a>
-        <a :href="linkedin">
+        <a v-if="linkedin" :href="linkedin">
           <LinkedinIcon class="logo" />
         </a>
       </div>
@@ -87,7 +87,6 @@ export default {
     },
     linkedin: {
       type: String,
-      required: true,
     },
   },
   computed: {
