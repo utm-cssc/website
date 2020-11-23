@@ -26,12 +26,14 @@
     "@nuxtjs/firebase": "^6.1.1",
     "@tailwindcss/typography": "^0.2.0",
     "apexcharts": "^3.20.0",
-    "nuxt": "^2.14.7",
-    "nuxt-mq": "^2.0.1",
-    "vue-typed-js": "^0.1.2",
     "dotenv": "^8.2.0",
     "firebase": "^7.19.1",
-    "vue-apexcharts": "^1.6.0"
+    "nuxt": "^2.14.7",
+    "nuxt-mq": "^2.0.1",
+    "vue-apexcharts": "^1.6.0",
+    "vue-typed-js": "^0.1.2",
+    "vuex": "^3.5.1",
+    "vuex-persistedstate": "^4.0.0-beta.1"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.0.0",

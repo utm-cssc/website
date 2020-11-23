@@ -1,0 +1,240 @@
+[
+  {
+    "code": "CSC108",
+    "title": "Introduction to Computer Programming",
+    "desc": "Structure of computers; the computing environment. Programming in a language such as Python. Program structure: elementary data types, statements, control flow, functions, classes, objects, methods, fields. List: searching, sorting and complexity.",
+    "link": true,
+    "courseId": "23562"
+  },
+  {
+    "code": "CSC148",
+    "title": "Introduction to Computer Science",
+    "desc": "Abstract data types and data structures for implementing them. Linked data structures. Encapsulation and information-hiding. Object-oriented programming. Specifications. Analyzing the efficiency of programs. Recursion. This course assumes programming experience in a language such as Python, C++, or Java, as provided by CSC108H5.",
+    "link": true,
+    "courseId": "22802"
+  },
+  {
+    "code": "CSC207",
+    "title": "Software Design",
+    "desc": "An introduction to software design and development concepts, methods, and tools using a statically-typed object-oriented programming language such as Java. Topics from: version control, build management, unit testing, refactoring, object-oriented design and development, design patterns, advanced IDE usage, regular expressions, and reflection. Representation of floating-point numbers and introduction to numerical computation.",
+    "link": true,
+    "courseId": "22800"
+  },
+  {
+    "code": "CSC209",
+    "title": "Software Tools and Systems Programming",
+    "desc": "Software tools and development in a Unix/Linux environment, using a machine-oriented programming language (typically C). Core topics: software tools (shell utilities and make), processes and program execution, the memory model, system calls, file processing, interprocess communication (pipes and signals), and an introduction to concurrency, including multithreading.",
+    "link": true,
+    "courseId": "21855"
+  },
+  {
+    "code": "CSC236",
+    "title": "Introduction to the Theory of Computation",
+    "desc": "Mathematical induction; correctness proofs for iterative and recursive algorithms; recurrence equations and their solutions (including the Master Theorem); introduction to automata and formal languages.",
+    "link": true,
+    "courseId": "23752"
+  },
+  {
+    "code": "CSC258",
+    "title": "Computer Organization",
+    "desc": "An introduction to computer organization and architecture, using a common CPU architecture (typically MIPS). Core topics: boolean expressions and logic gates, numerical representations, design and analysis of combinational and sequential circuits, the control unit and datapath, the memory hierarchy, instruction set architectures, and assembly programming. Students will design circuits and program using assembly.",
+    "link": true,
+    "courseId": "21469"
+  },
+  {
+    "code": "CSC263",
+    "title": "Data Structures and Analysis",
+    "desc": "Algorithm analysis: worst-case, average-case, and amortized complexity. Standard abstract data types, such as graphs, dictionaries, priority queues and disjoint sets. A variety of data structures for implementing these abstract data types, such as balanced search trees, hashing, heaps and disjoint forests. Design, implementation and comparison of data structures. Introduction to lower bounds.",
+    "link": true,
+    "courseId": "21713"
+  },
+  {
+    "code": "CSC290",
+    "title": "Communication Skills for Computer Scientists",
+    "desc": "Targeted instruction and significant practice in the communications required for careers in computer science. The curriculum covers written, oral and interpersonal communication. Students will hand in short pieces of writing each week, will make oral presentations several times in the semester, and will work together in simulated project meetings and other realistic scenarios of pair and small group interaction.",
+    "link": true,
+    "courseId": "23170"
+  },
+  {
+    "code": "CSC300",
+    "title": "Computers and Society",
+    "desc": "Privacy and Freedom of Information; recent Canadian legislation and reports. Computers and work; employment levels, quality of working life. Electronic fund transfer systems; transborder data flows. Computers and bureaucratization. Computers in the home; public awareness about computers. Robotics. Professionalism and the ethics of computers."
+  },
+  {
+    "code": "CSC301",
+    "title": "Introduction to Software Engineering",
+    "desc": "An introduction to agile development methods appropriate for medium-sized teams and rapidly-moving projects. Basic software development infrastructure; requirements elicitation and tracking; estimation and prioritization; teamwork skills; basic UML; design patterns and refactoring; security.",
+    "courseId": " 21620"
+  },
+  {
+    "code": "CSC309",
+    "title": "Programming on the Web",
+    "desc": "An introduction to software development on the web. Concepts underlying the development of programs that operate on the web; survey of technological alternatives; greater depth on some technologies. Operational concepts of the internet and the web, static client content, dynamic client content, dynamically served content, n-tiered architectures, web development processes, and security on the web. Assignments involve increasingly more complex web-based programs.",
+    "courseId": "22096"
+  },
+  {
+    "code": "CSC311",
+    "title": "Introduction to Machine Learning",
+    "desc": "An introduction to methods for automated learning of relationships on the basis of empirical data. Classification and regression using nearest neighbour methods, decision trees, linear models, and neural networks. Clustering algorithms. Problems of overfitting and of assessing accuracy. Basics of reinforcement learning.",
+    "courseId": "20771"
+  },
+  {
+    "code": "CSC324",
+    "title": "Principles of Programming Languages",
+    "desc": "Major topics in the development of modern programming languages. Syntax specification, type systems, type inference, exception handling, information hiding, structural recursion, run-time storage management, and programming paradigms. Two non-procedural programming paradigms: functional programming (illustrated by languages such as Lisp, Scheme, ML or Haskell) and logic programming (illustrated by languages such as Prolog, XSB or Coral).",
+    "courseId": "23298"
+  },
+  {
+    "code": "CSC338",
+    "title": "Numerical Methods",
+    "desc": "Computational methods for solving numerical problems in science, engineering and business. Linear and non-linear equations, approximation, optimization, interpolation, integration and differentiation. The aim is to give students a basic understanding of floating-point arithmetic and the implementation of algorithms used to solve numerical problems, as well as a familiarity with current numerical computing environments. Course concepts are crucial to a wide range of practical applications such as computational finance and portfolio management, graphics and special effects, data mining and machine learning, as well as robotics, bioinformatics, medical imaging and others.",
+    "courseId": " 21521"
+  },
+  {
+    "code": "CSC343",
+    "title": "Introduction to Databases",
+    "desc": "Introduction to database management systems. The relational data model. Relational algebra. Querying and updating databases: the query language SQL. Application programming with SQL. Integrity constraints, normal forms, and database design. Elements of database system technology: query processing, transaction management.",
+    "courseId": " 21864"
+  },
+  {
+    "code": "CSC347",
+    "title": "Introduction to Information Security",
+    "desc": "An investigation of many aspects of modern information security. Major topics cover: Techniques to identify and avoid common software development flaws which leave software vulnerable to crackers. Utilizing modern operating systems security features to deploy software in a protected environment. Common threats to networks and networked computers and tools to deal with them. Cryptography and the role it plays in software development, systems security and network security.",
+    "courseId": "23713"
+  },
+  {
+    "code": "CSC358",
+    "title": "Principles of Computer Networks",
+    "desc": "Introduction to computer networks and systems programming of networks. Basic understanding of computer networks and network protocols. Network hardware and software, routing, addressing, congestion control, reliable data transfer, and socket programming.",
+    "courseId": "22046",
+    "link": true
+  },
+  {
+    "code": "CSC363",
+    "title": "Computational Complexity and Computability",
+    "desc": "Introduction to the theory of computability: Turing machines, Church's thesis, computable and non-computable functions, recursive and recursively enumerable sets, reducibility. Introduction to complexity theory: models of computation, P, NP, polynomial time reducibility, NP-completeness, further topics in complexity theory.",
+    "courseId": "21553"
+  },
+  {
+    "code": "CSC367",
+    "title": "Parallel Programming",
+    "desc": "Introduction to aspects of parallel programming. Topics include computer instruction execution, instruction-level parallelism, memory system performance, task and data parallelism, parallel models (shared memory, message passing), synchronization, scalability and Amdahl's law, Flynn taxonomy, vector processing and parallel computing architectures.",
+    "courseId": "22872"
+  },
+  {
+    "code": "CSC369",
+    "title": "Operating Systems",
+    "desc": "Principles of operating systems. The operating system as a control program and as a resource allocator. Core topics: processes and threads, concurrency (synchronization, mutual exclusion, deadlock), processor, scheduling, memory management, file systems, and protection.",
+    "courseId": "22909"
+  },
+  {
+    "code": "CSC373",
+    "title": "Algorithm Design and Analysis",
+    "desc": "Standard algorithm design techniques: divide-and-conquer, greedy strategies, dynamic programming, linear programming, randomization, network flows, approximation algorithms and others. Students will be expected to show good design principles and adequate skills at reasoning about the correctness and complexity of algorithms.",
+    "courseId": "23662"
+  },
+  {
+    "code": "CSC375",
+    "title": "Programming Mechatronic Systems",
+    "desc": "Programming of mechatronic systems. Students will build a mobile robot from provided components as well as control software for it. Topics include real-time constraints, sensor data, memory management, and concurrency; analysis of mechatronics problems; and structured presentation of software projects using UML.",
+    "courseId": "23776"
+  },
+  {
+    "code": "CSC376",
+    "title": "Fundamentals of Robotics",
+    "desc": "An introduction to designing robot systems. Topics include sensors, actuators, and manipulators; kinematics and dynamics; motion planning; modeling; and intelligent control. Topics covered in lecture will be implemented and explored in a practical environment using robots from different application domains.",
+    "courseId": "23418"
+  },
+  {
+    "code": "CSC384",
+    "title": "Introduction to Artificial Intelligence",
+    "desc": "A broad introduction to the sub-disciplines of AI. Core topics: search methods, game playing and rule-based systems. Overview of: natural language understanding, knowledge representation, reasoning, planning, vision, robotics, learning and neural networks. Assignments provide practical experience, both theory and programming, of the core topics.",
+    "courseId": "21906"
+  },
+  {
+    "code": "CSC392",
+    "title": "Computer Science Implementation Project",
+    "desc": "This course involves a significant implementation project in any area of Computer Science. The project may be undertaken individually or in small groups. The project is offered by arrangement with a Computer Science faculty member."
+  },
+  {
+    "code": "CSC393",
+    "title": "Computer Science Expository Work",
+    "desc": "This course involves a significant literature search and expository work in any area of Computer Science. This work must be undertaken individually. It is offered by arrangement with a Computer Science faculty member."
+  },
+  {
+    "code": "CSC398",
+    "title": "Topics in Computer Science",
+    "desc": "Introduction to a topic of current interest in computer science intended for CSC majors and specialists. Content will vary from year to year. This course may include a practical or tutorial component, depending on the topic chosen for the year.",
+    "courseId": "23602"
+  },
+  {
+    "code": "CSC399",
+    "title": "Research Opportunity Program",
+    "desc": "This course provides a richly rewarding opportunity for students in their third or fourth year to work in the research project of a professor in return for 399Y course credit. Students enrolled have an opportunity to become involved in original research, learn research methods and share in the excitement and discovery of acquiring new knowledge. Participating faculty members post their project descriptions for the following summer and fall/winter sessions in early February and students are invited to apply in early March. See Experiential and International Opportunities for more details."
+  },
+  {
+    "code": "STA256",
+    "title": "Probability and Statistics I",
+    "desc": "This course covers probability including its role in statistical modeling. Topics include probability distributions, expectation, continuous and discrete random variables and vectors, distribution functions. Basic limiting results and the normal distribution presented with a view to their applications in statistics."
+  },
+  {
+    "code": "MAT132",
+    "title": "Differential Calculus for Life Sciences",
+    "desc": "Review of functions and their graphs, trigonometry, exponentials and logarithms. Limits and continuity of functions of a single variable. Derivatives and differentiation techniques. Applications of differentiation, including extreme values, related rates and optimization."
+  },
+  {
+    "code": "MAT134",
+    "title": "Integral Calculus for Life Sciences",
+    "desc": "Antiderivatives and indefinite integrals in one variable, definite integrals and the fundamental theorem of calculus. Integration techniques and applications of integration. Infinite sequences, series and convergence tests. Power series, Taylor and Maclaurin series."
+  },
+  {
+    "code": "MAT135",
+    "title": "Differential Calculus",
+    "desc": "Review of functions and their graphs, trigonometry, exponentials and logarithms. Limits and continuity of functions of a single variable. Derivatives and differentiation techniques. Applications of differentiation, including extreme values, related rates and optimization."
+  },
+  {
+    "code": "MAT136",
+    "title": "Integral Calculus",
+    "desc": "Antiderivatives and indefinite integrals in one variable, definite integrals and the fundamental theorem of calculus. Integration techniques and applications of integration. Infinite sequences, series and convergence tests. Power series, Taylor and Maclaurin series."
+  },
+  {
+    "code": "MAT157",
+    "title": "Analysis I",
+    "desc": "A theoretical course in calculus for students with a very serious interest in mathematics; emphasizing proofs and techniques, as well as geometric and physical understanding. Trigonometric identities. Limits and continuity; least upper bounds, intermediate and extreme value theorems. Derivatives, mean value and inverse function theorems. Integrals; fundamental theorem; elementary transcendental functions. Techniques of integration. Taylor's theorem; sequences and series; uniform convergence and power series."
+  },
+  {
+    "code": "MAT223",
+    "title": "Linear Algebra I",
+    "desc": "Systems of linear equations, matrix algebra, determinants. Vector geometry in R2 and R3. Complex numbers. Rn: subspaces, linear independence, bases, dimension, column spaces, null spaces, rank and dimension formula. Orthogonality, orthonormal sets, Gram-Schmidt orthogonalization process, least square approximation. Linear transformations from Rn to Rm. The determinant, classical adjoint, Cramer's rule. Eigenvalues, eigenvectors, eigenspaces, diagonalization. Function spaces and applications to a system of linear differential equations. The real and complex number fields."
+  },
+  {
+    "code": "MAT232",
+    "title": "Calculus of Several Variables",
+    "desc": "Differential and integral calculus of several variables: partial differentiation, chain rule, extremal problems, Lagrange multipliers, classification of critical points. Multiple integrals, Green's theorem and related topics"
+  },
+  {
+    "code": "MAT224",
+    "title": "Linear Algebra II",
+    "desc": "Abstract vector spaces: subspaces, dimension theory. Linear mappings: kernel, image, dimension theorem, isomorphisms, matrix of a linear transformation. Change of basis, invariant subspaces, direct sums, cyclic subspaces, Cayley-Hamilton theorem. Inner product spaces, orthogonal transformations, orthogonal diagonalization, quadratic forms, positive definite matrices. Complex operators: Hermitian, unitary and normal. Spectral Theorem. Isometries of R2 and R3."
+  },
+  {
+    "code": "MAT240",
+    "title": "Algebra I",
+    "desc": "A theoretical approach to Linear Algebra and its foundations, aimed at students with a serious interest in Mathematics. Topics to be covered: Vector spaces over arbitrary fields (including C and finite fields), linear equations and matrices, bases and linear independence, linear transformations, determinants, eigenvalues and eigenvectors, similarity, change of basis, diagonalization, the characteristic and minimal polynomials, the Cayley-Hamilton theorem."
+  },
+  {
+    "code": "MAT257",
+    "title": "Analysis II",
+    "desc": "A theoretical second year course in calculus for students with a serious interest in mathematics. Topology of R^n; compactness, functions and continuity, extreme value theorem. Derivatives; inverse and implicit function theorems, maxima and minima, Lagrange multipliers. Integration; Fubini's theorem, partitions of unity, change of variables. Differential forms. Manifolds in R^n; integration on manifolds; Stokes' theorem for differential forms and classical versions."
+  },
+  {
+    "code": "MAT301",
+    "title": "Groups and Symmetries",
+    "desc": "Permutations and permutation groups. Linear groups. Abstract groups, homomorphisms, subgroups. Symmetry groups of regular polygons and platonic solids, wallpaper groups. Group actions, class formula. Cosets, Lagrange's theorem. Normal subgroups, quotient groups. Classification of finitely generated Abelian Groups."
+  },
+  {
+    "code": "MAT302",
+    "title": "Introduction to Algebraic Cryptography",
+    "desc": "The course will take students on a journey through the methods of algebra and number theory in cryptography, from Euclid to Zero Knowledge Proofs. Topics include: block ciphers and the Advanced Encryption Standard (AES); algebraic and number-theoretic techniques and algorithms in cryptography, including methods for primality testing and factoring large numbers; encryption and digital signature systems based on RSA, factoring, elliptic curves and integer lattices; and zero-knowledge proofs."
+  }
+]
