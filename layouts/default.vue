@@ -58,4 +58,8 @@ export default {
 .v-application {
   background: var(--bg);
 }
+
+.v-application--is-ltr .v-list-group--no-action > .v-list-group__items > .v-list-item {
+  padding-left: 16px;
+}
 </style>
