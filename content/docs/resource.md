@@ -1,6 +1,7 @@
 ---
 title: Contributing Resource
 desc: It's a guide to contribute to CSSC website's resources.
+icon: /icons/android.svg
 link: code
 ---
 
@@ -36,8 +37,11 @@ link="https://www.markdowntutorial.com/"></grid-1-x-2>
 To create or extend a resource we have provided:
 
 1. A template which makes it easier to get started (you don't have to follow it
-   explicitly).
+   strictly).
 2. We have also provided a list of Do's and Don'ts
+
+**Note:** The following is a generic template that our resources should follow
+more or less to ensure layout consistency.
 
 ### Course Resource
 
@@ -84,13 +88,16 @@ To create or extend a resource we have provided:
   [3x1](https://github.com/utm-cssc/website/blob/master/components/global/Grid1x3.vue))
   for better designs.
 
-### Unit Testing Guide
+#### Example
 
-<!-- Chris please complete this as I am not sure how unit testing works in Vue -->
+The following is a sample of the Docker resource page layout:
 
-#### Template
+- What is Docker?
+- What are Containers?
+- Why Docker?
+- How do I get started?
+  - Docker101 for developers!
+- Cheat Sheets
 
-- Why Unit test?
-- How does unit testing on the web work compared to backend unit testing?
-- Resources for unit testing (Link to Vue mastery)
-- Perhaps give a small outline/sample of a Unit test for a small component
+You can checkout the complete Docker page layout
+[here](https://cssc.utm.utoronto.ca/resources/docker)

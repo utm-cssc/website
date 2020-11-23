@@ -1,6 +1,7 @@
 ---
 title: Grid Components
 desc: Informs users how to use the grid components
+icon: /icons/android.svg
 link: grid-components
 ---
 

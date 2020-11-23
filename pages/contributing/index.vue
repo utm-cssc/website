@@ -12,7 +12,7 @@ export default {
         {
           title: 'File a Bug',
           desc:
-            'See an issue with the website, please notify us by submitting an issue on GitHub.',
+            'If you notice any issues with the website, you can file a bug report by submitting an issue on GitHub.',
           icon: '/contribution-guide/bug.svg',
           button: {
             label: 'Submit an Issue',
@@ -23,7 +23,7 @@ export default {
         {
           title: 'Request a Feature',
           desc:
-            'We would love to create helpful resources for students. Tell us what you would like to see on this website.',
+            'Do you have an idea of what you would like to see on the website? If so, you can submit a feature request!',
           icon: '/icons/resources.svg',
           button: {
             label: 'Feature Request',
@@ -37,8 +37,8 @@ export default {
             'Help us by creating implementing features for other students and make UTM a more open source community.',
           icon: '/icons/collaboration.svg',
           button: {
-            label: 'Check out our guide',
-            link: '/contribution-guide/code',
+            label: 'Check out our guide and docs',
+            link: '/docs',
           },
         },
       ],

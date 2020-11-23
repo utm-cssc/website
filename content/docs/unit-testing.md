@@ -1,6 +1,7 @@
 ---
 title: Unit Testing
-desc: Test your components
+desc: Test your components to verify their functionality
+icon: /icons/android.svg
 link: unit-testing
 ---
 

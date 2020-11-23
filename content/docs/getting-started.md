@@ -1,7 +1,8 @@
 ---
-title: Contributing Guide
-desc: It's a guide to contribute to CSSC website.
-link: code
+title: Getting Started
+desc: Get started with contributing to the website
+icon: /icons/android.svg
+link: getting-started
 ---
 
 # Contributing Guide

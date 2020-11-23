@@ -1,6 +1,7 @@
 ---
 title: Nuxt Content
 desc: Informs users how to use nuxt content components
+icon: /icons/android.svg
 link: nuxt-content
 ---
 
@@ -49,8 +50,8 @@ provided by [Nuxt](https://content.nuxtjs.org/fetching/)
 
 ### Displaying md files
 
-We use the script that we should before for asscessing md file data, which is
-places in \_slug.vue file.
+We use the following script in a \_slug.md file which fetches the md files and
+displays it with a /filename
 
 ```
 <template>
