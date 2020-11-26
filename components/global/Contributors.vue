@@ -31,7 +31,7 @@
   }
   } -->
   <div class="d-flex flex-wrap">
-    <div class="mr-3" v-for="c in contributors" :key="c.login">
+    <div class="ml-5 mr-5" v-for="c in contributors" :key="c.login">
       <a target="_blank" :href="c.url">
         <div class="d-flex flex-col align-items-center">
           <img class="profile-pic" :src="c.imgSrc" :alt="imgAlt(c.login)" />
@@ -60,12 +60,13 @@ export default {
 
 <style scoped>
 p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a {
   text-emphasis: none;
   text-decoration: none;
+  color: var(--color-primary);
 }
 
 img:hover {

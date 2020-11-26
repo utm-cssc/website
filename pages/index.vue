@@ -10,7 +10,6 @@
         desc="Helping MCS Students"
         :button1="button1"
         :button2="button2"
-        arrowLink="#cssc-moto"
       />
     </div>
     <a id="cssc-moto" />

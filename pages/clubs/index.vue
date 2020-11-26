@@ -8,7 +8,6 @@
         icon="../icons/cssc-logo-without-title.svg"
         title="Clubs"
         desc="Get involved in the community!"
-        arrowLink="#top"
       />
     </div>
     <div id="top"></div>

@@ -34,13 +34,6 @@
         {{ button2.label }}
       </b-button>
     </div>
-    <div class="d-flex justify-center mt-10 mt-sm-20">
-      <div id="arrow">
-        <a :href="arrowLink"
-          ><img class="bounce" src="/icons/arrow.svg" alt="Down Arrow"
-        /></a>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -77,10 +70,6 @@ export default {
         type: String,
         default: '',
       },
-    },
-    arrowLink: {
-      type: String,
-      default: '',
     },
   },
   computed: {
@@ -153,20 +142,6 @@ export default {
   width: 75px;
 }
 
-.bounce {
-  -webkit-animation: bounce 0.75s infinite;
-}
-
-@-webkit-keyframes bounce {
-  25% {
-    transform: scale(1, 0.9) translate(0, 0);
-  }
-
-  75% {
-    transform: scale(1, 1) translate(0, -10px);
-  }
-}
-
 @media screen and (max-width: 992px) {
   .hero-tag {
     font-size: 25px;
@@ -174,10 +149,6 @@ export default {
 
   .hero-img {
     width: 100px;
-  }
-
-  #arrow {
-    width: 60px;
   }
 
   .btn-cta-alt {
