@@ -11,7 +11,6 @@
         icon="../../icons/quiz.svg"
         title="Ask Jack!"
         desc="Ask all of your university and computer science questions to upper year students who have been in your shoes!"
-        arrowLink="#ask-upper-year-form"
       />
     </div>
     <a id="ask-upper-year-form"></a>

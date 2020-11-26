@@ -13,25 +13,32 @@ tags:
 
 ## What is Docker?
 
-Docker is a virtualization platform used to create and deploy applications by using containers.
+Docker is a virtualization platform used to create and deploy applications by
+using containers.
 
-It is widely used in the industry as it provides developers an easy way of packaging and effortlessly deploying their applications on many systems!
+It is widely used in the industry as it provides developers an easy way of
+packaging and effortlessly deploying their applications on many systems!
 
-Docker accelerates a developer's workflow while providing the flexibility with using their choice of tools, deployment variables and much more!
+Docker accelerates a developer's workflow while providing the flexibility with
+using their choice of tools, deployment variables and much more!
 
 ## What are Containers?
 
-Containers are lightweight, standalone, executable packages that can be easily run from one computer to the next.
- 
-Inside a container, it contains all of the necessary libraries and dependencies required.
- 
-Containers make use of a shared underlying OS kernel to run their applications as opposed to traditionally running multiple VMs each with their own individual OS.
+Containers are lightweight, standalone, executable packages that can be easily
+run from one computer to the next.
+
+Inside a container, it contains all of the necessary libraries and dependencies
+required.
+
+Containers make use of a shared underlying OS kernel to run their applications
+as opposed to traditionally running multiple VMs each with their own individual
+OS.
 
 <grid-1-x-2 button="Check it out!" :reversed="true" link="https://www.netapp.com/us/info/what-are-containers.aspx" img-src="https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-and-vm-transparent-bg.png" desc="Find out more about containers and their benefits!"></grid-1-x-2>
 
 ## Why Docker?
 
-<div style="padding:0 0 0 0;position:relative;"><iframe width="560" height="315" src="https://www.youtube.com/embed/_dfLOzuIg2o?controls=0&amp;start=18&end=242" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<VideoContainer vid-src="https://www.youtube.com/embed/_dfLOzuIg2o"></VideoContainer>
 
 ## How do I get started?
 
@@ -41,7 +48,8 @@ Containers make use of a shared underlying OS kernel to run their applications a
 
 ## Cheat Sheets
 
-Cheat sheets save you time and energy by giving you essential syntax at your fingertips.
+Cheat sheets save you time and energy by giving you essential syntax at your
+fingertips.
 
 <div class="scrolling-wrapper">
   
@@ -66,27 +74,34 @@ Cheat sheets save you time and energy by giving you essential syntax at your fin
 ## Interactive Labs
 
 ### Katacoda
+
 <grid-1-x-2 img-Src="https://raw.githubusercontent.com/katacoda/scenario-examples/master/assets/avatar.png" link="https://www.katacoda.com/courses/docker" button="Check it out!" desc="Get more hands on experience with Docker and containers through interactive labs and scenarios!"></grid-1-x-2>
 
 ### Play with Docker
+
 <grid-1-x-2 :reversed="true" img-Src="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2020-01/Moby-and-Friends.jpeg?itok=pwBxOtY6" link="https://training.play-with-docker.com/" button="Check it out!" desc="More labs and tutorials that are specific to Developers, System Administrators and more!"></grid-1-x-2>
 
 ## Docker Tools
 
 ### Portainer.io
+
 <grid-1-x-2 img-Src="https://raw.githubusercontent.com/portainer/portainer/develop/app/assets/images/logo_alt.png" link="https://www.portainer.io/" button="Check it out!" desc="Setup and deploy your containers with a click of a button!"></grid-1-x-2>
 
 ## Curated Libraries
 
 ### Awesome Docker
+
 <grid-1-x-2 :reversed="true" img-Src="https://deploybot.com/assets/blog/Using-Docker-Containersposting.png" link="https://github.com/veggiemonk/awesome-docker#contents-" button="Check it out!" desc="A curated list of awesome resources, projects, tools and other things related to Docker!"></grid-1-x-2>
 
 ## Next Steps: Container Orchestration
-Comfortable with Docker and want to take your learning to the next step?
-Deploy and scale your applications with container orchestration systems!
+
+Comfortable with Docker and want to take your learning to the next step? Deploy
+and scale your applications with container orchestration systems!
 
 ### Kubernetes
+
 <grid-1-x-2 img-Src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" link="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/" button="Explore Kubernetes!" desc="The most popular container orchestration system used to launch and scale your applications!"></grid-1-x-2>
 
 ### Docker Swarm
+
 <grid-1-x-2 :reversed="true" img-Src="https://raw.githubusercontent.com/play-with-docker/play-with-docker/master/www/assets/swarm.png" link="https://rominirani.com/docker-swarm-tutorial-b67470cf8872" button="Explore Docker Swarm!" desc="Another widely used orchestration system for managing containers!"></grid-1-x-2>

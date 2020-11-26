@@ -11,43 +11,46 @@
       />
     </div>
     <a id="resources-grid" />
-    <v-app>
-      <v-container>
-        <v-combobox
-          v-model="selected"
-          :items="sortedTags"
-          chips
-          clearable
-          label="Search for resources!"
-          multiple
-          prepend-icon="mdi-filter-variant"
-          solo
-          class="resource-tag"
-        >
-          <template v-slot:selection="{attrs, item, select, selected}">
-            <v-chip
-              v-bind="attrs"
-              :input-value="selected"
-              close
-              @click="select"
-              @click:close="removeFilterOption(item)"
-            >
-              <strong class="resource-tag">{{ item }}</strong>
-            </v-chip>
-          </template>
-        </v-combobox>
+    <v-container>
+      <v-combobox
+        v-model="selected"
+        :items="sortedTags"
+        chips
+        clearable
+        label="Search for resources!"
+        multiple
+        prepend-icon="mdi-filter-variant"
+        solo
+        class="resource-tag"
+      >
+        <template v-slot:selection="{attrs, item, select, selected}">
+          <v-chip
+            v-bind="attrs"
+            :input-value="selected"
+            close
+            @click="select"
+            @click:close="removeFilterOption(item)"
+          >
+            <strong class="resource-tag" :class="{caps: containsUTM(item)}">{{
+              item
+            }}</strong>
+          </v-chip>
+        </template>
+      </v-combobox>
+      <div
+        v-for="tag in selected.length === 0 ? sortedTags : selected"
+        :key="tag"
+        class="container px-5"
+      >
         <div
-          v-for="tag in selected.length === 0 ? sortedTags : selected"
-          :key="tag"
-          class="container px-5"
+          class="mt-2 mb-3 ml-3 cssc-heading resource-tag"
+          :class="{caps: containsUTM(tag)}"
         >
-          <div class="mt-2 mb-3 ml-3 cssc-heading resource-tag">
-            {{ tag.replace('-', ' ') }}
-          </div>
-          <ResourcesGrid :items="resourcesForTag(tag)" />
+          {{ tag.replace('-', ' ') }}
         </div>
-      </v-container>
-    </v-app>
+        <ResourcesGrid :items="resourcesForTag(tag)" />
+      </div>
+    </v-container>
   </div>
 </template>
 
@@ -99,6 +102,10 @@ export default {
       this.selected.splice(this.selected.indexOf(item), 1)
       this.selected = [...this.selected]
     },
+    containsUTM(item) {
+      if (item.replace('-', ' ').search('utm') === -1) return false
+      return true
+    },
   },
 }
 </script>
@@ -106,5 +113,9 @@ export default {
 <style scoped>
 .resource-tag {
   text-transform: capitalize;
+}
+
+.caps {
+  text-transform: uppercase;
 }
 </style>
