@@ -86,8 +86,8 @@ export default {
         link: 'tech-of-the-month',
       },
       button2: {
-        label: 'MCS Orientation E-Kit',
-        link: '../../resources/ekit/E-Kit For MCS Orientation 2020.pdf',
+        label: 'MCS Townhall Notes',
+        link: '../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf',
       },
     }
   },
