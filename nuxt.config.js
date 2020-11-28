@@ -50,7 +50,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/main.css'],
+  css: ['@/assets/styles/main.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -124,10 +124,10 @@ export default {
     theme: {
       themes: {
         dark: {
-          primary: '#00d097',
+          primary: '#D1D5DB',
         },
         light: {
-          primary: '#00d097',
+          primary: '#059669',
         },
       },
     },

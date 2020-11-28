@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col justify-between">
+  <!-- <div class="relative flex flex-col justify-between">
     <div
       class="relative"
       @keydown.down="increment"
@@ -51,7 +51,32 @@
         </NuxtLink>
       </li>
     </ul>
-  </div>
+  </div> -->
+  <v-autocomplete
+    solid
+    solo
+    hide-details="true"
+    prepend-inner-icon="mdi-magnify"
+    hide-no-data
+    :append-icon="false"
+    label="Explore Our Resources & Glossary"
+    :search-input.sync="searchQuery"
+    :items="searchResults"
+    :loading="searching"
+  >
+    <template v-slot:item="data">
+      <template v-if="typeof data.item !== 'object'">
+        <v-list-item-content v-text="data.item"></v-list-item-content>
+      </template>
+      <template v-else>
+        <v-list-item-content
+          @click="$router.push(`resources/${data.item.value}`)"
+        >
+          <v-list-item-title v-html="data.item.text"></v-list-item-title>
+        </v-list-item-content>
+      </template>
+    </template>
+  </v-autocomplete>
 </template>
 
 <script>
@@ -63,8 +88,18 @@ export default {
       focusIndex: -1,
       open: false,
       searching: false,
-      articles: [],
+      searchEntries: [],
     }
+  },
+  computed: {
+    searchResults() {
+      return this.searchEntries.map(result => {
+        return {
+          text: result.title,
+          value: result.slug,
+        }
+      })
+    },
   },
   watch: {
     async searchQuery(searchQuery) {
@@ -77,58 +112,11 @@ export default {
       if (this.searching) return
       this.searching = true
 
-      const searchResult = await this.$content('resources')
+      this.searchEntries = await this.$content('resources')
         .limit(8)
         .search('title', searchQuery)
         .fetch()
-
-      this.articles = searchResult
-      console.log(this.articles)
       this.searching = false
-    },
-  },
-  mounted() {
-    window.addEventListener('keyup', this.keyup)
-  },
-  beforeDestroy() {
-    window.removeEventListener('keyup', this.keyup)
-  },
-  methods: {
-    onFocus() {
-      this.focus = true
-      this.$emit('focus', true)
-    },
-    onBlur() {
-      this.focus = false
-      this.$emit('focus', false)
-    },
-    keyup(e) {
-      if (e.key === '/') {
-        this.$refs.search.focus()
-      }
-    },
-    increment() {
-      if (this.focusIndex < this.articles.length - 1) {
-        this.focusIndex++
-      }
-    },
-    decrement() {
-      if (this.focusIndex >= 0) {
-        this.focusIndex--
-      }
-    },
-    go() {
-      if (this.articles.length === 0) {
-        return
-      }
-      const result =
-        this.focusIndex === -1
-          ? this.articles[0]
-          : this.articles[this.focusIndex]
-      this.$router.push(result.path)
-      // Unfocus the input and reset the query.
-      this.$refs.search.blur()
-      this.searchQuery = ''
     },
   },
 }

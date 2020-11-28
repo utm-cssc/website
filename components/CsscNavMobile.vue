@@ -47,7 +47,6 @@ export default {
 
 <style scoped>
 .nav {
-  height: 12vh;
   color: #efefef;
   position: relative;
 }

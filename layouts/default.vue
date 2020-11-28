@@ -1,6 +1,11 @@
 <template>
   <v-app class="myFonts">
-    <cssc-nav v-if="$mq === 'lg' || $mq === 'xl'"></cssc-nav>
+    <cssc-nav></cssc-nav>
+    <v-navigation-drawer v-model="drawerOpen" app right> </v-navigation-drawer>
+    <v-main>
+      <nuxt />
+    </v-main>
+    <!-- 
     <div v-else>
       <cssc-nav-mobile></cssc-nav-mobile>
       <aside
@@ -9,8 +14,7 @@
       >
         <nav-drawer />
       </aside>
-    </div>
-    <nuxt />
+    </div> -->
     <cssc-footer />
   </v-app>
 </template>
@@ -18,16 +22,16 @@
 <script>
 import {mapState} from 'vuex'
 import CsscNav from '@/components/CsscNav'
-import CsscNavMobile from '@/components/CsscNavMobile'
+// import CsscNavMobile from '@/components/CsscNavMobile'
 import CsscFooter from '@/components/CsscFooter'
-import NavDrawer from '@/components/NavDrawer.vue'
+// import NavDrawer from '@/components/NavDrawer.vue'
 
 export default {
   components: {
     CsscNav,
     CsscFooter,
-    NavDrawer,
-    CsscNavMobile,
+    // NavDrawer,
+    // CsscNavMobile,
   },
   data() {
     return {
@@ -66,6 +70,8 @@ export default {
 </script>
 
 <style>
+@import '@/assets/styles/customize-vuetify.css';
+
 .drawer {
   width: 256px;
   transition: all 0.2s ease-out;
@@ -94,10 +100,10 @@ export default {
   background: var(--bg);
 }
 
-.v-application--is-ltr
+/* .v-application--is-ltr
   .v-list-group--no-action
   > .v-list-group__items
   > .v-list-item {
   padding-left: 16px;
-}
+} */
 </style>

@@ -5,7 +5,7 @@
       <CenteredHero
         icon="../icons/cssc-logo-without-title.svg"
         title="UTM CSSC"
-        desc="Helping MCS Students"
+        desc="Your UTM Computer Science Community Website"
         :button1="button1"
         :button2="button2"
         arrowLink="#cssc-moto"
@@ -81,12 +81,12 @@ export default {
         },
       ],
       button1: {
-        label: 'Tech of the Month',
-        link: 'tech-of-the-month',
+        label: 'Resources',
+        link: 'resources',
       },
       button2: {
-        label: 'MCS Orientation E-Kit',
-        link: '../../resources/ekit/E-Kit For MCS Orientation 2020.pdf',
+        label: 'Calendar',
+        link: 'calendar',
       },
     }
   },

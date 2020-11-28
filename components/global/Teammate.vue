@@ -106,7 +106,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .team-container {
   width: 250px;
   min-height: 350px;

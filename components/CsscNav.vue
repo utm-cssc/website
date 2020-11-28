@@ -1,14 +1,14 @@
 <template>
-  <div class="container nav pt-4 px-2 flex align-center z-30">
+  <v-app-bar app elevate-on-scroll flat>
     <nuxt-link
       class="flex align-center nav-home mr-5"
       to="/"
       @click.native="checked = false"
     >
       <img class="logo" src="/icons/cssc-logo-without-title.svg" />
-      <span class="logo-text">UTM CSSC</span>
+      <span class="logo-text font-bold">UTM CSSC</span>
     </nuxt-link>
-    <div class="nav-internal">
+    <div class="nav-internal" v-if="$mq === 'lg' || $mq === 'xl'">
       <nuxt-link @click.native="checked = false" to="/vision" class="nav-link"
         >Resources</nuxt-link
       >
@@ -21,44 +21,53 @@
       >
     </div>
     <div class="navbar-spacer"></div>
-    <div class="nav-external ml-auto">
-      <SearchBar class="mx-4" />
-      <a href="https://discord.gg/SHwbmVg" class="footer-link">
-        <DiscordIcon class="nav-icon" />
+    <SearchBar class="mx-4" />
+
+    <div class="nav-external ml-auto" v-if="$mq === 'lg' || $mq === 'xl'">
+      <a href="https://discord.gg/SHwbmVg">
+        <DiscordIcon :fill="navIconFillColor" class="nav-icon" />
       </a>
-      <a href="https://www.instagram.com/utm.cssc" class="footer-link ml-4">
-        <InstagramIcon class="nav-icon" />
+      <a href="https://github.com/utm-cssc" class="ml-4">
+        <GithubIcon :fill="navIconFillColor" class="nav-icon" />
       </a>
-      <a href="https://www.facebook.com/utmcssc/" class="footer-link ml-4">
-        <FacebookIcon class="nav-icon" />
-      </a>
-      <a href="https://github.com/utm-cssc" class="footer-link ml-4">
-        <GithubIcon class="nav-icon" />
-      </a>
-      <DarkModeButton class="mx-4 d-none d-lg-block d-xl-block" />
     </div>
-  </div>
+    <DarkModeButton class="mx-4" />
+
+    <v-app-bar-nav-icon
+      class="ml-auto"
+      @click="toggleDrawer"
+    ></v-app-bar-nav-icon>
+  </v-app-bar>
 </template>
 
 <script>
-import DiscordIcon from '../static/icons/discord.svg?inline'
-import InstagramIcon from '../static/icons/instagram.svg?inline'
-import FacebookIcon from '../static/icons/facebook.svg?inline'
-import GithubIcon from '../static/icons/github.svg?inline'
+import {mapState} from 'vuex'
+import DiscordIcon from '@/static/icons/discord.svg?inline'
+import GithubIcon from '@/static/icons/github.svg?inline'
 export default {
-  components: {GithubIcon, DiscordIcon, InstagramIcon, FacebookIcon},
+  components: {GithubIcon, DiscordIcon},
 
   data() {
     return {
       checked: false,
     }
   },
+  methods: {
+    toggleDrawer() {
+      this.$store.commit('toggleDrawer')
+    },
+  },
+  computed: {
+    ...mapState(['drawerOpen']),
+    navIconFillColor() {
+      return this.$nuxt.$vuetify.theme.dark ? '#d1d5db' : '#059669'
+    },
+  },
 }
 </script>
 
 <style scoped>
 .nav {
-  height: 12vh;
   color: #efefef;
   position: relative;
 }
@@ -81,7 +90,6 @@ export default {
 .logo-text {
   font-size: 22px;
   color: var(--color-text);
-  font-weight: 500;
   font-family: var(--font-heading);
   text-transform: uppercase;
 }
@@ -115,49 +123,6 @@ export default {
   position: relative;
 }
 
-.donate-menu {
-  right: 0;
-  top: 6vh;
-  transition: all 1s ease-out;
-  opacity: 0;
-  width: min-content;
-}
-
-.donate-link {
-  background: #efefef;
-  color: var(--color-bg);
-  fill: var(--color-bg);
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  width: 232px;
-}
-
-.donate-link:hover {
-  background: var(--color-bg);
-  color: #efefef;
-  fill: #efefef;
-  cursor: pointer;
-}
-
-#donate:hover {
-  cursor: pointer;
-}
-
-#donate:hover .donate-menu {
-  display: block;
-  opacity: 1;
-}
-
-.donate-icon {
-  height: 24px;
-  width: 24px;
-}
-
-.donate-link:hover .donate-icon {
-  fill: #fff;
-}
-
 .nav-link-icon {
   min-width: 24px;
   height: 24px;
@@ -187,7 +152,6 @@ export default {
   .logo-text {
     font-size: 18px;
     color: var(--color-text);
-    font-weight: 500;
     font-family: var(--font-heading);
     text-transform: uppercase;
   }

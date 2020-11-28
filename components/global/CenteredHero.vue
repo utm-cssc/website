@@ -18,7 +18,7 @@
         v-if="button1 && button1.link && button1.label"
         :href="button1.link"
         class="mr-4 btn-cta mb-3"
-        large
+        x-large
       >
         <img v-if="button1.icon" class="btn-icon mx-2" :src="button1.icon" />
         {{ button1.label }}
@@ -29,7 +29,7 @@
         :size="gtmd"
         variant="outline-primary"
         class="btn-cta-alt mb-3"
-        large
+        x-large
       >
         <img v-if="button2.icon" class="btn-icon mx-2" :src="button2.icon" />
         {{ button2.label }}

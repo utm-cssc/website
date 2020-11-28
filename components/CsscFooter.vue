@@ -5,7 +5,7 @@
         <nuxt-link to="/">
           <li class="flex align-items-center link">
             <img src="/icons/cssc-logo-without-title.svg" />
-            <h1>UTM CSSC</h1>
+            <h1 class="font-bold">UTM CSSC</h1>
           </li>
         </nuxt-link>
 
