@@ -130,7 +130,7 @@ how to highlight your achievements:**
   during the hiring process, (like a portfolio), your recruiter will work with
   you to collect it
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BYUy1yvjHxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<VideoContainer vid-src="https://www.youtube.com/embed/BYUy1yvjHxE"></VideoContainer>
 
 ## Christina Ng's Guidance
 

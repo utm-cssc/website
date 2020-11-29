@@ -18,11 +18,11 @@ of rapidly evolving tools to work with.
 
 ### What is the World Wide Web?
 
-<iframe src="https://www.youtube.com/embed/guvsH5OFizE" width="560" height="315" frameborder="0"></iframe>
+<VideoContainer vid-src="https://www.youtube.com/embed/guvsH5OFizE"></VideoContainer>
 
 ### What are Web Pages, Websites and Web applications?
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ylbQrYhfa18" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<VideoContainer vid-src="https://www.youtube.com/embed/ylbQrYhfa18"></VideoContainer>
 
 ### What are Web Pages made of?
 

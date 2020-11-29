@@ -70,6 +70,7 @@ p {
 a {
   text-emphasis: none;
   text-decoration: none;
+  color: var(--color-primary);
 }
 
 img:hover {

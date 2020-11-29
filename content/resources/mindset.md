@@ -1,7 +1,9 @@
 ---
 title: Mindset
 icon: /icons/mindset.svg
-desc: Cultivating a growth mindset can help us overcome limiting beliefs about our capabilities!
+desc:
+  Cultivating a growth mindset can help us overcome limiting beliefs about our
+  capabilities!
 link: mindset
 tags:
   - self-development
@@ -11,9 +13,11 @@ tags:
 
 Our mindset shapes our belief in what we can and can't do.
 
-**People with a fixed mindset believe** they are born naturally gifted at some things, and incapable at others.
+**People with a fixed mindset believe** they are born naturally gifted at some
+things, and incapable at others.
 
-**People with a growth mindset believe** they can master anything if they try hard and persist.
+**People with a growth mindset believe** they can master anything if they try
+hard and persist.
 
 ## Infographics
 
@@ -25,14 +29,14 @@ Our mindset shapes our belief in what we can and can't do.
 
 ## Videos
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qjBdcyueom8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<VideoContainer vid-src="https://www.youtube.com/embed/qjBdcyueom8"></VideoContainer>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KUWn_TJTrnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<VideoContainer vid-src="https://www.youtube.com/embed/KUWn_TJTrnU"></VideoContainer>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hiiEeMN7vbQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<VideoContainer vid-src="https://www.youtube.com/embed/hiiEeMN7vbQ"></VideoContainer>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-71zdXCMU6A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<VideoContainer vid-src="https://www.youtube.com/embed/-71zdXCMU6A"></VideoContainer>
 
 ## Books
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/T4PHa6w3Rto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<VideoContainer vid-src="https://www.youtube.com/embed/T4PHa6w3Rto"></VideoContainer>

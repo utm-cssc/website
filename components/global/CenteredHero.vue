@@ -79,10 +79,6 @@ export default {
         default: '',
       },
     },
-    arrowLink: {
-      type: String,
-      default: '',
-    },
   },
   computed: {
     gtmd() {
@@ -154,20 +150,6 @@ export default {
   width: 75px;
 }
 
-.bounce {
-  -webkit-animation: bounce 0.75s infinite;
-}
-
-@-webkit-keyframes bounce {
-  25% {
-    transform: scale(1, 0.9) translate(0, 0);
-  }
-
-  75% {
-    transform: scale(1, 1) translate(0, -10px);
-  }
-}
-
 @media screen and (max-width: 992px) {
   .hero-tag {
     font-size: 25px;
@@ -175,10 +157,6 @@ export default {
 
   .hero-img {
     width: 100px;
-  }
-
-  #arrow {
-    width: 60px;
   }
 
   .btn-cta-alt {
