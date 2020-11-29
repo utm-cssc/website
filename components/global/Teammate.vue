@@ -34,7 +34,7 @@
         <a :href="emailAddress">
           <EmailIcon class="logo mr-3" />
         </a>
-        <a :href="linkedin">
+        <a v-if="linkedin" :href="linkedin">
           <LinkedinIcon class="logo" />
         </a>
       </div>
@@ -87,7 +87,6 @@ export default {
     },
     linkedin: {
       type: String,
-      required: true,
     },
   },
   computed: {
@@ -135,21 +134,29 @@ export default {
 }
 
 .front,
+.back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front,
 .flip > .back {
   display: block;
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition-duration: 0.5s;
-  transition-property: transform, opacity;
+  transition: all 0.5s ease;
   background-color: var(--bg);
 }
 
 .flip > .back {
   position: absolute;
   opacity: 0;
-  z-index: -1;
+  z-index: 1;
   width: 250px;
   height: 80%;
   transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
 }
 
 .front {
@@ -162,12 +169,20 @@ export default {
 
 .flipping > .front {
   opacity: -1;
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
 .flipping > .back {
   opacity: 1;
   z-index: 1;
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
 
