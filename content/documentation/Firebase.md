@@ -23,32 +23,35 @@ link: firebase
     ![Add project page](https://i.imgur.com/EdKEsRc.png)
 - Once the project has been created, select the project to navigate to the
   project's home page
-- Create a new web application:
+- **Create a new web application:**
   - Select the web application icon
     ![Create web application](https://i.imgur.com/yXfcNHI.png)
   - Select the web development
   - Register application under the displayed instructions
   - Copy the credentials that are given (They should match the Environment
     Variables)
-- Create new firestore
+- **Create new firestore:**
   - Select cloud firestore on the sidebar
     ![Cloud Firestore Side Bar](https://i.imgur.com/Djsjrq3.png)
   - Select 'create database'
   - Start in test mode
   - Select a location
   - Click enable
-- Set up database
-  - Voting (Collection)
-    - 2020 (Document)
-      - Month (Collection)
-        - Option 1 (Document)
-          - Active: true/false (Field)
-          - Vote: 0 (Field)
-        - Option 2
-          - Active: true/false
-          - Vote: 0
-    - Subscription (Document)
-      - Email
+- **Set up database:**
+
+```
+  |-Voting (Collection)
+    |- 2020 (Document)
+      |- Month (Collection)
+        |- Option 1 (Document)
+          |- Active: true/false (Field)
+          |- Vote: 0 (Field)
+        |- Option 2
+          |- Active: true/false
+          |- Vote: 0
+    |- Subscription (Document)
+      |- Email
+```
 
 Notes:
 
@@ -89,7 +92,8 @@ User can switch between the authentications (Github/google).
 
 .env
 
-- All the values can be retrieved from firebase
+- The .env file is used to load in our environment variables to connect to
+  Firebase. This file is not meant to be exposed to the public
 
 | Env Name            | About                     |
 | ------------------- | ------------------------- |
@@ -103,21 +107,27 @@ User can switch between the authentications (Github/google).
 
 ### Possible Responses
 
-#### Possible errors:
-
-- Could not connect to the database
-- Reading/Writing errors
-- Server errors
-- User did not select an option
-- User has previously voted
-- User's email is already in the system
-- User did not sign in properly
-- Invalid email
-- User has not subscribed to the emailing list
-
 #### Successful messages:
 
-- Vote submited
-- Unsubscribed
-- Subcribed
-- Would you like to revote
+The following are success messages you may encounter when voting or subscribing
+to the email list
+
+- Vote has been submitted
+- Unsubscribed!
+- Subcribed!
+
+#### Failure Messages:
+
+The following are failure messages you may encounter when voting, subscribing to
+the email list, or if there was an internal server error
+
+- Could not connect to the database
+- Internal server error. Please try again
+- Please sign in if you wish to vote
+- Please select an option for each choice
+- You have already voted, your current votes are...
+- The options were recently changed, please revote, your current votes are...
+  Would you like to revote?
+- You are already subscribed, would you like to unsubscribe
+- Invalid email
+- You are not subscribed

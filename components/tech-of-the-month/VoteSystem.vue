@@ -162,7 +162,7 @@ export default {
     },
     async subscribe() {
       if (this.email === '') {
-        this.primaryMessage = 'Invalid email!'
+        this.primaryMessage = 'Invalid email'
         this.setAlertVisibility(true, false, false)
         this.bgColour = '#f55252'
         return

@@ -6,7 +6,9 @@ link: grid-components
 
 # Grid Components
 
-#### How to use:
+The grid component is used in many different pages to display features.
+
+### How to use:
 
 Users can use the grid component by simply calling:
 
