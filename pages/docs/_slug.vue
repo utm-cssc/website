@@ -13,7 +13,7 @@
 <script>
 export default {
   async asyncData({$content, params, error}) {
-    const page = await $content('documentation', params.slug).fetch()
+    const page = await $content('docs', params.slug).fetch()
     return {page, toc: page.toc}
   },
 }
