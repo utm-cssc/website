@@ -118,6 +118,7 @@ export default {
 
 .flip {
   position: relative;
+  max-width: 250px;
 }
 
 .front,
@@ -139,7 +140,6 @@ export default {
   position: absolute;
   opacity: 0;
   z-index: 1;
-  width: 250px;
   height: 80%;
   transform: rotateY(-180deg);
   -ms-transform: rotateY(-180deg);

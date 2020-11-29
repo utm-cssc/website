@@ -108,14 +108,14 @@ export default {
 
 .drawer-link {
   display: flex;
-  padding: 12px 0;
-  transition: all 0.3s ease-out;
+  padding: 10px 0;
+  transition: all 0.2s ease-out;
+  font-size: 18px;
 }
 
 .drawer-link:hover {
   display: flex;
   padding: 12px 6px;
-  background: #fff;
   color: var(--color-primary-light);
 }
 

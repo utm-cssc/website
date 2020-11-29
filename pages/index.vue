@@ -31,7 +31,7 @@
       <div class="cssc-heading">
         Meet the Team
       </div>
-      <div class="flex flex-wrap">
+      <div class="teams">
         <Teammate
           v-for="mate in currentTeam"
           :key="mate.name"
@@ -115,6 +115,12 @@ export default {
 </script>
 
 <style scoped>
+.teams {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .hero-full-height {
   height: 100vh;
 }
@@ -122,6 +128,16 @@ export default {
 @media screen and (max-width: 768px) {
   .hero-full-height {
     min-height: 100vh;
+  }
+
+  .teams {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1904px) {
+  .teams {
+    justify-content: initial;
   }
 }
 </style>
