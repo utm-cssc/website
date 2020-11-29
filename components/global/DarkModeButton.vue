@@ -28,9 +28,9 @@ export default {
 
 <style scoped>
 .logo {
-  width: 36px;
-  height: 36px;
-  fill: var(--color-body);
+  width: 32px;
+  height: 32px;
+  fill: var(--color-primary);
   transition: all 0.3s ease;
 }
 

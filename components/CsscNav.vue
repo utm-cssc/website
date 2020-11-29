@@ -28,16 +28,16 @@
 
     <div class="nav-external ml-auto" v-if="$mq === 'lg' || $mq === 'xl'">
       <a href="https://discord.gg/SHwbmVg">
-        <DiscordIcon :fill="navIconFillColor" class="nav-icon" />
+        <DiscordIcon class="nav-icon" />
       </a>
       <a href="https://github.com/utm-cssc" class="ml-4">
-        <GithubIcon :fill="navIconFillColor" class="nav-icon" />
+        <GithubIcon class="nav-icon" />
       </a>
     </div>
     <DarkModeButton class="mx-4" />
 
     <v-app-bar-nav-icon
-      class="ml-auto"
+      class="ml-auto app-bar-icon"
       x-large
       @click="toggleDrawer"
     ></v-app-bar-nav-icon>
@@ -68,9 +68,6 @@ export default {
       set(value) {
         this.$store.commit('setDrawerOpen', {drawerOpen: value})
       },
-    },
-    navIconFillColor() {
-      return this.$nuxt.$vuetify.theme.dark ? '#d1d5db' : '#059669'
     },
   },
 }
@@ -142,10 +139,13 @@ export default {
 .nav-icon {
   height: 32px;
   width: 32px;
+  fill: var(--color-primary);
 }
-</style>
 
-<style scoped>
+.nav-icon:hover {
+  fill: var(--color-primary-dark);
+}
+
 @media (max-width: 1200px) {
   .nav-link-icon {
     min-width: 20px;

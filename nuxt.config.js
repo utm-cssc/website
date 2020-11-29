@@ -124,10 +124,10 @@ export default {
     theme: {
       themes: {
         dark: {
-          primary: '#D1D5DB',
+          primary: '#00d097',
         },
         light: {
-          primary: '#059669',
+          primary: '#00d097',
         },
       },
     },

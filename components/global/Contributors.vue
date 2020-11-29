@@ -31,14 +31,10 @@
   }
   } -->
   <div class="flex flex-wrap p-2">
-    <div class="mr-5" v-for="c in contributors" :key="c.login">
+    <div class="mx-5" v-for="c in contributors" :key="c.login">
       <a target="_blank" :href="c.url">
         <div class="flex flex-col align-center">
-          <img
-            class="profile-pic mb-4"
-            :src="c.imgSrc"
-            :alt="imgAlt(c.login)"
-          />
+          <img class="profile-pic" :src="c.imgSrc" :alt="imgAlt(c.login)" />
           <p>{{ c.login }}</p>
         </div>
       </a>
@@ -81,5 +77,6 @@ img:hover {
   border-radius: 50%;
   width: 100px;
   height: 100px;
+  margin-bottom: 8px;
 }
 </style>
