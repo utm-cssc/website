@@ -1,6 +1,7 @@
 ---
 title: Course Resource
 desc: Informs users on how to create Course Resources
+icon: /docs/online-course.svg
 link: course-resource
 ---
 

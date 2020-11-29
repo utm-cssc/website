@@ -1,7 +1,7 @@
 ---
 title: Video Container
 desc: This is a responsive video container
-icon: /icons/android.svg
+icon: /docs/film.svg
 link: video-container
 ---
 

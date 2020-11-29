@@ -1,7 +1,7 @@
 ---
 title: Unified Calendar
 desc: Informs you about the implementation of unified calendar.
-icon: /icons/android.svg
+icon: /docs/calendar.svg
 link: unified-calendar
 ---
 

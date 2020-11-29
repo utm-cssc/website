@@ -1,7 +1,7 @@
 ---
 title: Installation
 desc: It tells you what you need for running the code.
-icon: /icons/android.svg
+icon: /docs/installation.svg
 link: installation
 ---
 

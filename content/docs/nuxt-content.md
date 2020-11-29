@@ -1,7 +1,7 @@
 ---
 title: Nuxt Content
 desc: Informs users how to use nuxt content components
-icon: /icons/android.svg
+icon: /docs/content.svg
 link: nuxt-content
 ---
 

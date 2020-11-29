@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 desc: Get started with contributing to the website
-icon: /icons/android.svg
+icon: /docs/play-button.svg
 link: getting-started
 ---
 

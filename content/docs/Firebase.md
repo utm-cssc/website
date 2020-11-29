@@ -1,7 +1,7 @@
 ---
 title: Firebase
 desc: In depth tutorial on how to set up Firebase
-icon: /icons/android.svg
+icon: /docs/user.svg
 link: firebase
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Contributing Resource
 desc: It's a guide to contribute to CSSC website's resources.
-icon: /icons/android.svg
+icon: /docs/group.svg
 link: resources
 ---
 

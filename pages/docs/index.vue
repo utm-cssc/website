@@ -4,7 +4,7 @@
       class="mt-5 d-flex flex-column justify-content-center align-items-center"
     >
       <CenteredHero
-        icon="../../icons/resources.svg"
+        icon="../../docs/configuration.svg"
         title="Documentation"
         desc="Contribute to our website!"
         arrow-link="#docs-grid"

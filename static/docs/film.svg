@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><script>
+        // Catch errors if signal is already set by user agent or other extension
+        try {
+            Object.defineProperty(navigator, 'globalPrivacyControl', {
+                value: false,
+                enumerable: true
+            })
+            // Remove script tag after execution
+            document.currentScript.parentElement.removeChild(document.currentScript)
+        } catch (e) {}</script><path xmlns="http://www.w3.org/2000/svg" d="m497 0h-482c-8.285156 0-15 6.714844-15 15v397.445312c0 8.285157 6.714844 15 15 15h482c8.285156 0 15-6.714843 15-15v-397.445312c0-8.285156-6.714844-15-15-15zm-335.4375 371.328125v26.117187h-50.332031v-26.117187zm30 0h50.332031v26.117187h-50.332031zm80.332031 0h50.335938v26.117187h-50.335938zm80.335938 0h50.332031v26.117187h-50.332031zm-322.230469-30v-255.210937h452v255.210937zm322.230469-285.210937v-26.117188h50.332031v26.117188zm-30 0h-50.335938v-26.117188h50.335938zm-80.335938 0h-50.332031v-26.117188h50.332031zm-80.332031 0h-50.332031v-26.117188h50.332031zm320.4375 0h-49.4375v-26.117188h49.4375zm-400.769531-26.117188v26.117188h-51.230469v-26.117188zm-51.230469 341.328125h51.230469v26.117187h-51.230469zm402.5625 26.117187v-26.117187h49.4375v26.117187zm0 0" fill="#ffffff" data-original="#000000" style="" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m311.472656 198.269531c-.40625-.296875-.832031-.574219-1.269531-.828125l-85.828125-50.101562c-6.21875-4.066406-14.390625-4.527344-21.109375-1.105469-6.617187 3.363281-10.726563 9.929687-10.726563 17.132813v100.714843c0 7.203125 4.109376 13.765625 10.726563 17.132813 3.007813 1.53125 6.308594 2.285156 9.59375 2.285156 4.050781 0 8.082031-1.144531 11.515625-3.394531l85.828125-50.097657c.4375-.253906.863281-.53125 1.269531-.828124 5.074219-3.699219 7.988282-9.328126 7.988282-15.453126s-2.914063-11.761718-7.988282-15.457031zm-88.929687 48.167969v-65.429688l56.046875 32.714844zm0 0" fill="#ffffff" data-original="#000000" style="" class=""/><script>try {
+                        Object.defineProperty(screen, "availTop", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availLeft", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availWidth", { value: 1920 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availHeight", { value: 1080 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "colorDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "pixelDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "keyboard", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "hardwareConcurrency", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "deviceMemory", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitTemporaryStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitPersistentStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "appVersion", { value: "5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36" });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "doNotTrack", { value: null });
+                    } catch (e) {}
+                    
+                navigator.getBattery = function getBattery () {
+                let battery = {"charging":true,"chargingTime":0,"dischargingTime":null,"level":1}
+            
+                try {
+                    Object.defineProperty(battery, 'onchargingchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onchargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'ondischargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onlevelchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                    battery.addEventListener = function addEventListener () {
+                        return
+                    }
+                
+                return Promise.resolve(battery)
+                }
+            
+            try {
+                window.screenY = 0
+            } catch (e) { }
+        
+            try {
+                window.screenTop = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerHeight = window.screen.height
+            } catch (e) { }
+        
+            try {
+                window.screenX = 0
+            } catch (e) { }
+        
+            try {
+                window.screenLeft = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerWidth = 960
+            } catch (e) { }
+        </script></g></svg>

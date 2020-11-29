@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 16.933333 16.933333" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><script>
+        // Catch errors if signal is already set by user agent or other extension
+        try {
+            Object.defineProperty(navigator, 'globalPrivacyControl', {
+                value: false,
+                enumerable: true
+            })
+            // Remove script tag after execution
+            document.currentScript.parentElement.removeChild(document.currentScript)
+        } catch (e) {}</script><g xmlns="http://www.w3.org/2000/svg" id="layer2"><path id="path3474" d="m4.4975219.00000101c-.44345 0-.7927501.35754-.7927501.79269v.26612999h-1.32451c-.72834 0-1.32193.58217-1.32193 1.32184v13.230311c0 .73347.59359 1.32236 1.32193 1.32236h12.1722892c.72835 0 1.32245-.58993 1.32245-1.32236v-13.230311c0-.7283-.5879-1.32184-1.32245-1.32184h-1.32399v-.26612999c0-.43515-.35085-.79269-.79327-.79269-.44241 0-.792739.35754-.792739.79269v.26612999h-6.3517701v-.26612999c0-.43515-.3498202-.79269-.79326-.79269zm0 .52915c.1439198 0 .2635599.11239.2635599.26354v1.05881999c0 .15115-.1226301.26561-.2635599.26561-.1409301 0-.26563-.11446-.26563-.26561v-1.05881999c0-.15115.1216998-.26354.26563-.26354zm7.9377691 0c.14393 0 .26356.11239.26356.26354v1.05881999c0 .15115-.1186.26561-.26356.26561s-.26562-.11446-.26562-.26561v-1.05881999c0-.15115.1217-.26354.26562-.26354zm-10.0550291 1.05881999h1.32451v.26354c0 .43515.3470898.7947601.79275.7947601.4456599 0 .79326-.3596101.79326-.7947601v-.26354h6.3517701v.26354c0 .43515.352399.7947601.792739.7947601.44035 0 .79327-.3596101.79327-.7947601v-.26354h1.32399c.43813 0 .79326.34839.79326.79269v1.32443h-13.7582891v-1.32443c0-.4381.34841-.79269.79274-.79269zm4.2345098.79269c-.36078 0-.36078.5291499 0 .5291499h3.7032703c.360789 0 .360789-.5291499 0-.5291499zm-5.0272498 1.8515099h13.7582891v7.4101711h-1.85163c-.73565 0-1.32451.5853-1.32451 1.32236v1.851h-9.7894091c-.4341 0-.79274-.3484-.79274-.7927zm1.58807 1.0588201c-.2947899 0-.5297.24057-.5297.52915v1.0583c0 .29684.24111.5296699.5297.5296699h1.0563001c.2968598 0 .52919-.2411.52919-.5296699v-1.0583c0-.28858-.2343999-.52915-.52919-.52915zm3.1735598 0c-.29479 0-.5291899.24057-.5291899.52915v1.0583c0 .2947699.2405999.5296699.5291899.5296699h1.05889c.2989202 0 .5291801-.2411.5291801-.5296699v-1.0583c0-.28858-.2333601-.52915-.5291801-.52915zm3.1761401 0c-.2958201 0-.52918.24057-.52918.52915v1.0583c0 .2989098.2405899.5296699.52918.5296699h1.0583692c.29686 0 .5297-.2411.5297-.5296699v-1.0583c0-.28858-.23594-.52915-.5297-.52915zm3.1735592 0c-.29479 0-.52918.24057-.52918.52915v1.0583c0 .2885699.23439.5296699.52918.5296699h1.05889c.29789 0 .52919-.2411.52919-.5296699v-1.0583c0-.28858-.23336-.52915-.52919-.52915zm-9.523259.52915h1.0563v1.0583h-1.0563002zm3.1735598 0h1.05889v1.0583h-1.05889zm3.17614 0h1.0583692v1.0583h-1.0583692zm3.1735592 0h1.05889v1.0583h-1.05889zm-9.5232592 2.6462699c-.2999599 0-.5296999.2410901-.5296999.5296605v1.0583006c0 .28858.23387.52916.5296999.52916h1.0563001c.29893 0 .5291899-.24058.5291899-.52916v-1.0583006c0-.2885704-.23129-.5296605-.5291899-.5296605zm3.1735599 0c-.29479 0-.5291899.2410901-.5291899.5296605v1.0583006c0 .28858.2343999.52916.5291899.52916h1.05889c.29582 0 .5291801-.24058.5291801-.52916v-1.0583006c0-.2885704-.23232-.5296605-.5291801-.5296605zm3.1761401 0c-.28859 0-.52918.23076-.52918.5296605v1.0583006c0 .29374.2405899.52916.52918.52916h1.0583692c.2886 0 .5297-.23438.5297-.52916v-1.0583006c0-.2885704-.2338-.5296605-.5297-.5296605zm3.1735592 0c-.29582 0-.52918.2410901-.52918.5296605v1.0583006c0 .29064.24059.52916.52918.52916h1.05889c.28859 0 .52919-.23542.52919-.52916v-1.0583006c0-.2885704-.23233-.5296605-.52919-.5296605zm-9.5232592.5296605h1.0563001v1.0583006h-1.0563001zm3.1735599 0h1.05889v1.0583006h-1.05889zm3.1761401 0h1.0583692v1.0583006h-1.0583692zm3.1735592 0h1.05889v1.0583006h-1.05889zm-9.5232592 2.6462706c-.2885899 0-.5296999.23851-.5296999.52709v1.05881c0 .29891.24111.52916.5296999.52915h1.0563001c.2885898 0 .5291899-.23334.5291899-.52915v-1.05881c0-.28858-.2406002-.52709-.5291899-.52709zm3.1735599 0c-.29479 0-.5291899.23851-.5291899.52709v1.05881c0 .29374.2405999.52915.5291899.52915h1.05889c.2968601 0 .5291801-.24057.5291801-.52915v-1.05881c0-.28858-.2332802-.52709-.5291801-.52709zm3.1761401 0c-.2958201 0-.52918.23851-.52918.52709v1.05881c0 .28858.2274399.52915.52918.52915h1.0583692c.29583 0 .5297-.24057.5297-.52915v-1.05881c0-.28341-.23087-.52709-.5297-.52709zm-6.3496999.52709h1.0563001v1.05881h-1.0563002zm3.1735598 0h1.05889v1.05881h-1.05889zm3.1761401 0h1.0583692v1.05881h-1.0583692zm3.9688892 0h1.47852l-2.27385 2.27369v-1.47842c0-.43706.351-.79527.79533-.79527zm1.85163.37516v3.06638c0 .4319-.34893.79269-.79326.79269h-12.1722891c-.43296 0-.79274-.34839-.79274-.79269v-.5369c.22167.16777.49435.27129.79274.27129h10.0550291c.0704-.00001.13794-.0281.1876-.078z" font-variant-ligatures="normal" font-variant-position="normal" font-variant-caps="normal" font-variant-numeric="normal" font-variant-alternates="normal" font-feature-settings="normal" text-indent="0" text-align="start" text-decoration-line="none" text-decoration-style="solid" text-decoration-color="rgb(0,0,0)" text-transform="none" text-orientation="mixed" white-space="normal" shape-padding="0" isolation="auto" mix-blend-mode="normal" solid-color="rgb(0,0,0)" solid-opacity="1" vector-effect="none" fill="#ffffff" data-original="#000000" style=""/></g><script>try {
+                        Object.defineProperty(screen, "availTop", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availLeft", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availWidth", { value: 1920 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availHeight", { value: 1080 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "colorDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "pixelDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "keyboard", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "hardwareConcurrency", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "deviceMemory", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitTemporaryStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitPersistentStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "appVersion", { value: "5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36" });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "doNotTrack", { value: null });
+                    } catch (e) {}
+                    
+                navigator.getBattery = function getBattery () {
+                let battery = {"charging":true,"chargingTime":0,"dischargingTime":null,"level":1}
+            
+                try {
+                    Object.defineProperty(battery, 'onchargingchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onchargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'ondischargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onlevelchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                    battery.addEventListener = function addEventListener () {
+                        return
+                    }
+                
+                return Promise.resolve(battery)
+                }
+            
+            try {
+                window.screenY = 0
+            } catch (e) { }
+        
+            try {
+                window.screenTop = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerHeight = window.screen.height
+            } catch (e) { }
+        
+            try {
+                window.screenX = 0
+            } catch (e) { }
+        
+            try {
+                window.screenLeft = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerWidth = 960
+            } catch (e) { }
+        </script></g></svg>

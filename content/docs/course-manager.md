@@ -1,7 +1,7 @@
 ---
 title: Course Manager
 desc: Allows users to calculate percentage of their courses.
-icon: /icons/android.svg
+icon: /docs/best.svg
 link: course-manager
 ---
 
