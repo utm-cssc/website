@@ -1,11 +1,12 @@
 <template>
-  <div class="flex mt-5 pb-5 toc-display">
-    <SideBar class="pr-5" :toc="toc" :title="page.title" />
-    <article>
-      <nuxt-content
-        class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto"
-        :document="page"
-      />
+  <div class="resource-article-container container mt-5 pb-5">
+    <table-of-contents
+      class="pr-5"
+      :toc="toc"
+      :title="page.title"
+    ></table-of-contents>
+    <article class="w-3/5">
+      <nuxt-content class="markdown-body mx-auto" :document="page" />
     </article>
   </div>
 </template>
@@ -20,14 +21,15 @@ export default {
 </script>
 
 <style scoped>
-.toc-display {
-  justify-content: center;
+.resource-article-container {
+  display: flex;
 }
 
-@media (max-width: 1200px) {
-  .toc-display {
+@media (max-width: 800px) {
+  .resource-article-container {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
   }
 
   .pr-5 {

@@ -1,7 +1,8 @@
 <template>
   <v-app class="myFonts">
     <cssc-nav></cssc-nav>
-    <v-navigation-drawer v-model="drawerOpen" app right> </v-navigation-drawer>
+    <v-navigation-drawer disable-resize-watcher v-model="drawerOpen" app right>
+    </v-navigation-drawer>
     <v-main>
       <nuxt />
     </v-main>

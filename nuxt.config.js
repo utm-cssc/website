@@ -50,7 +50,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/styles/main.css'],
+  css: ['@/assets/styles/main.css', '@/assets/styles/github-markdown.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins

@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-5">
+  <div class="markdown-body mb-5">
     <div class="row flex align-center justify-center">
       <div
         class="col-md-5 col-lg-4 flex justify-start"
@@ -88,37 +88,11 @@ export default {
   border-radius: 16px;
 }
 
-.desc {
-  font-weight: 300;
-  line-height: 1.75rem;
-  opacity: 0.9;
-  font-size: 24px;
-  margin-top: 0;
-  color: var(--color-body);
-}
-
-.feature-title {
-  font-weight: 600;
-  line-height: 1.25;
-  font-size: 42px;
-  color: var(--color-heading);
-}
-
 .right-padded-desc {
   padding-right: 48px;
 }
 
 .left-padded-desc {
   padding-left: 48px;
-}
-
-@media screen and (max-width: 768px) {
-  .feature-title {
-    font-size: 32px;
-  }
-
-  .desc {
-    font-size: 20px;
-  }
 }
 </style>

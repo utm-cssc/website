@@ -17,7 +17,7 @@
       </template>
       <template v-else>
         <v-list-item-content
-          @click="$router.push(`resources/${data.item.value}`)"
+          @click="$router.push(`/resources/${data.item.value}`)"
         >
           <v-list-item-title v-html="data.item.text"></v-list-item-title>
         </v-list-item-content>
