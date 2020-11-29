@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
 import DiscordIcon from '@/static/icons/discord.svg?inline'
 import GithubIcon from '@/static/icons/github.svg?inline'
 export default {
@@ -54,11 +53,18 @@ export default {
   },
   methods: {
     toggleDrawer() {
-      this.$store.commit('toggleDrawer')
+      this.drawerOpen = !this.drawerOpen
     },
   },
   computed: {
-    ...mapState(['drawerOpen']),
+    drawerOpen: {
+      get() {
+        return this.$store.state.drawerOpen
+      },
+      set(value) {
+        this.$store.commit('setDrawerOpen', {drawerOpen: value})
+      },
+    },
     navIconFillColor() {
       return this.$nuxt.$vuetify.theme.dark ? '#d1d5db' : '#059669'
     },

@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
 import CsscNav from '@/components/CsscNav'
 // import CsscNavMobile from '@/components/CsscNavMobile'
 import CsscFooter from '@/components/CsscFooter'
@@ -33,40 +32,25 @@ export default {
     // NavDrawer,
     // CsscNavMobile,
   },
-  data() {
-    return {
-      nav: false,
-    }
-  },
   computed: {
-    ...mapState(['drawerOpen']),
+    drawerOpen: {
+      get() {
+        return this.$store.state.drawerOpen
+      },
+      set(value) {
+        this.$store.commit('setDrawerOpen', {drawerOpen: value})
+      },
+    },
     nuxtColorMode() {
       return this.$nuxt.$colorMode.value
     },
   },
   watch: {
     nuxtColorMode(value) {
-      console.log(value)
       this.$nuxt.$vuetify.theme.dark = value == 'dark'
-      console.log(this.$nuxt.$vuetify.theme.dark)
     },
   },
 }
-// /* eslint-disable */
-// export default {
-//   created () {
-//     // eslint-disable-next-line
-//     document.addEventListener('keyup', (e) => {
-//       if (e.key === 'd') {
-//         // eslint-disable-next-line
-//         [].forEach.call(document.querySelectorAll('*'), function (a) {
-//           a.style.outline =
-//             '1px solid #' + (~~(Math.random() * (1 << 24))).toString(16)
-//         })
-//       }
-//     })
-//   }
-// }
 </script>
 
 <style>
