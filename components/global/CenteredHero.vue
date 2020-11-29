@@ -1,10 +1,8 @@
 <template>
-  <div class="container hero">
-    <div class="row flex justify-center">
-      <img :src="icon" alt="CSSC Icon" class="hero-img" />
-    </div>
+  <div class="container hero grid place-items-center">
     <div class="mt-3 mt-md-4 mt-lg-5 row flex flex-column align-center">
-      <div class="col-lg-10 text-center">
+      <img :src="icon" alt="CSSC Icon" class="hero-img" />
+      <div class="text-center">
         <h1 class="cssc-heading">
           {{ title }}
         </h1>
@@ -13,7 +11,7 @@
         </p>
       </div>
     </div>
-    <div class="mt-4 mt-sm-5 flex justify-center flex-wrap">
+    <div class="mt-4 flex justify-center flex-wrap">
       <v-btn
         v-if="button1 && button1.link && button1.label"
         :href="button1.link"
