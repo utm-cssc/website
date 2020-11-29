@@ -1,7 +1,8 @@
 ---
 title: Web Development
 icon: /icons/web.svg
-desc: Build sites and apps for the world's open and universal computing platform!
+desc:
+  Build sites and apps for the world's open and universal computing platform!
 link: web
 tags:
   - web
@@ -9,7 +10,9 @@ tags:
 
 # Web Development
 
-Web development is when you create pages, sites or applications people can access over the internet. As a web developer, you have the option of a broad set of rapidly evolving tools to work with.
+Web development is when you create pages, sites or applications people can
+access over the internet. As a web developer, you have the option of a broad set
+of rapidly evolving tools to work with.
 
 ## Web Fundamentals
 
@@ -23,11 +26,17 @@ Web development is when you create pages, sites or applications people can acces
 
 ### What are Web Pages made of?
 
-The content of a webpage is rendered using HTML. HTML is a markup language which means its purpose is to render information in the format you specified using HTML syntax.
+The content of a webpage is rendered using HTML. HTML is a markup language which
+means its purpose is to render information in the format you specified using
+HTML syntax.
 
-These pages can be enhanced to look more user-friendly by adding color, frames and other aesthetic features using something called Cascading Style Sheets (CSS).
+These pages can be enhanced to look more user-friendly by adding color, frames
+and other aesthetic features using something called Cascading Style Sheets
+(CSS).
 
-If you want give your page some functionality when users interact with it (such as by changing content on the click of a button), you generally use a programming language called Javascript that runs in the browser.
+If you want give your page some functionality when users interact with it (such
+as by changing content on the click of a button), you generally use a
+programming language called Javascript that runs in the browser.
 
 ### Web Demystified
 
@@ -35,7 +44,10 @@ If you want give your page some functionality when users interact with it (such 
 
 ## Frontend Development
 
-Frontend Development is the process of implementing user interfaces for web applications. As a frontend developer, you create the portion of the website that people interact with and ensure that the design requirements for how your application should 'look' and 'feel' are met.
+Frontend Development is the process of implementing user interfaces for web
+applications. As a frontend developer, you create the portion of the website
+that people interact with and ensure that the design requirements for how your
+application should 'look' and 'feel' are met.
 
 ### Frontend Masters
 
@@ -43,11 +55,15 @@ Frontend Development is the process of implementing user interfaces for web appl
 
 ## Backend Development
 
-Backend Development is the process of developing the business logic and functionality of your tool.
+Backend Development is the process of developing the business logic and
+functionality of your tool.
 
-As a backend developer, your responsibility is to write clean and scalable code which allows the transfer of data between the web browser and database server as per your application's description.
+As a backend developer, your responsibility is to write clean and scalable code
+which allows the transfer of data between the web browser and database server as
+per your application's description.
 
-Usually, this involves working with databases to store data from users which is then extracted from the database and used in other parts of the application.
+Usually, this involves working with databases to store data from users which is
+then extracted from the database and used in other parts of the application.
 
 ### What You Need to Know to be a Backend Developer
 
@@ -71,13 +87,13 @@ Usually, this involves working with databases to store data from users which is 
 
 <div class="scrolling-wrapper">
   <div class="scroll-child">
-   <iframe src="https://lifeyourway.net/printables/blogging-html-cheat-sheet.pdf" width="550px" height="500px"></iframe>
+   <iframe src="https://lifeyourway.net/printables/blogging-html-cheat-sheet.pdf" style="width:550px;height:500px;"></iframe>
   </div>
   <div class="scroll-child">
-    <iframe src="https://courses.cs.washington.edu/courses/cse154/16sp/cheat-sheets/css-cheat-sheet.pdf" width="580px" height="500px"></iframe>
+    <iframe src="https://courses.cs.washington.edu/courses/cse154/16sp/cheat-sheets/css-cheat-sheet.pdf" style="width:580px;height:500px;"></iframe>
   </div>
   <div class="scroll-child">
-   <iframe src="https://cheatography.com/davechild/cheat-sheets/javascript/pdf/" width="600px" height="500px"></iframe>
+   <iframe src="https://cheatography.com/davechild/cheat-sheets/javascript/pdf/" style="width:600px;height:500px;"></iframe>
   </div>
 </div>
 
@@ -85,9 +101,17 @@ Usually, this involves working with databases to store data from users which is 
 
 ### Web Frameworks
 
-A web framework is a tool that you could use as the skeleton for your application. It's helpful to use web frameworks because often, they have built-in features (such as user authentication capabilities) which you can use for development thus saving you time and increasing productivity.
+A web framework is a tool that you could use as the skeleton for your
+application. It's helpful to use web frameworks because often, they have
+built-in features (such as user authentication capabilities) which you can use
+for development thus saving you time and increasing productivity.
 
-Furthermore, frameworks are helpful when building larger applications because they are "scalable". This means you can easily implement features to your application in a way that follows a pattern such that other portions of your application are not impacted and your code is easily understandable if you want to make changes in the future. Frameworks are available for both backend and frontend development.
+Furthermore, frameworks are helpful when building larger applications because
+they are "scalable". This means you can easily implement features to your
+application in a way that follows a pattern such that other portions of your
+application are not impacted and your code is easily understandable if you want
+to make changes in the future. Frameworks are available for both backend and
+frontend development.
 
 ### Top 10 Frontend Libraries
 
@@ -99,7 +123,9 @@ Furthermore, frameworks are helpful when building larger applications because th
 
 ### Web development tools you should know
 
-When you start developing your web application, you will need an array of tools to keep help your development agile and your code scalable. This includes using version control (like Git) and deployment containers (like Docker).
+When you start developing your web application, you will need an array of tools
+to keep help your development agile and your code scalable. This includes using
+version control (like Git) and deployment containers (like Docker).
 
 <grid-1-x-2 :reversed="true" desc="Here are some essential tools you should definetly know before you start your next project!" link="https://www.freecodecamp.org/news/handy-web-development-toolkit/" img-Src="https://www.freecodecamp.org/news/content/images/size/w2000/2020/04/screely-1586183781361.png" button="Check it out!"></grid-1-x-2>
 
@@ -119,14 +145,22 @@ When you start developing your web application, you will need an array of tools 
 
 ### Django
 
-Django is a Python-based web framework well-known for its scalability as well as its built-in components for authentication and data connections. Django is becoming extremely popular due to python being the default language for most Machine Learning developers.
+Django is a Python-based web framework well-known for its scalability as well as
+its built-in components for authentication and data connections. Django is
+becoming extremely popular due to python being the default language for most
+Machine Learning developers.
 
 <grid-1-x-2 :reversed="true" desc="If you would like to get started with django, here are step-by-step tutorials on building various types of applications" link="https://realpython.com/tutorials/django/" button="Get started with Django" img-Src="https://www.sayonetech.com/media/uploads/zinnia/Python-Django-Web-Development.jpg"></grid-1-x-2>
 
 ## Web Content Accessibility Guide 2.0 (WCAG 2.0)
 
-Your web application is something that everyone should be able to use. Often, some of your users may require certain accesibility features on your web application so that they may experience the full benefits of your application. 
+Your web application is something that everyone should be able to use. Often,
+some of your users may require certain accesibility features on your web
+application so that they may experience the full benefits of your application.
 
-Many regions have requirements for web content accessibility as part of their legislation (such as Ontario as part of the AODA). Luckily, the W3 Consortium has published international guidelines on web content accessibility in what is know as 'WCAG 2.0'
+Many regions have requirements for web content accessibility as part of their
+legislation (such as Ontario as part of the AODA). Luckily, the W3 Consortium
+has published international guidelines on web content accessibility in what is
+know as 'WCAG 2.0'
 
 <grid-1-x-2 desc="The WCAG2.0 is fairly extensive and provides a very comprehensive set of guidelines. Get started now!" button="Learn more" img-Src="https://www.w3.org/blog/wp-content/uploads/2018/09/wcag_blog-1.png" link="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG"></grid-1-x-2>

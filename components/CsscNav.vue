@@ -35,6 +35,7 @@
 
     <v-app-bar-nav-icon
       class="ml-auto"
+      x-large
       @click="toggleDrawer"
     ></v-app-bar-nav-icon>
   </v-app-bar>

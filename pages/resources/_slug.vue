@@ -29,7 +29,6 @@ export default {
   .resource-article-container {
     display: flex;
     flex-direction: column;
-    align-items: start;
   }
 
   .pr-5 {

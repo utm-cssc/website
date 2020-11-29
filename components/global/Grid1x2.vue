@@ -2,7 +2,7 @@
   <div class="markdown-body mb-5">
     <div class="row flex align-center justify-center">
       <div
-        class="col-md-5 col-lg-4 flex justify-start"
+        class="flex justify-start"
         :class="{
           'order-md-last': !reversed,
           'justify-md-end': !reversed,
@@ -12,7 +12,7 @@
         <img class="feature-img mb-5 mb-md-0" :src="imgSrc" />
       </div>
       <div
-        class="col-md-7 flex justify-center flex-column text-container"
+        class="flex justify-center flex-column text-container"
         :class="{
           'px-5': $mq == 'sm',
           'align-md-end': reversed,
@@ -32,14 +32,9 @@
           {{ desc }}
         </p>
         <div class="mt-2 mt-lg-4">
-          <b-btn
-            target="_blank"
-            v-if="link"
-            :href="link"
-            class="py-2 px-3 feature-btn"
-          >
+          <v-btn target="_blank" v-if="link" :href="link" color="primary" large>
             {{ button }}
-          </b-btn>
+          </v-btn>
         </div>
       </div>
     </div>
