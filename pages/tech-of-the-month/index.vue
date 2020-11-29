@@ -30,7 +30,7 @@
         Results:
       </span>
       <span v-else-if="!retrievedData">
-        Unable to retrieve current voting options. Please try again.
+        There is no vote for the current month
       </span>
       <span v-else> Voting for {{ this.votingMonth }} </span>
     </div>
@@ -69,9 +69,12 @@ export default {
     let retrievedData = false
     // Fetch the votes from the specified Month and Year
     await getMonthVotes(votingYear, votingMonth).then(result => {
-      retrievedData = true
-      voteOptions = result
+      if (result != null) {
+        retrievedData = true
+        voteOptions = result
+      }
     })
+    console.log(retrievedData)
     // Set the dynamic data to the corresponding variable
     return {
       voteOptions,

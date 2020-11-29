@@ -11,6 +11,9 @@ export async function getMonthVotes(year, month) {
   return await monthRef
     .get()
     .then(snapshot => {
+      if (snapshot.empty) {
+        return null
+      }
       snapshot.forEach(doc => {
         if (doc.get('Active')) {
           voteOptions[doc.id] = doc.get('Vote')
