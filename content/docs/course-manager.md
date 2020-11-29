@@ -1,6 +1,6 @@
 ---
 title: Course Manager
-desc: Test your components to verify their functionality
+desc: Allows users to calculate percentage of their courses.
 icon: /icons/android.svg
 link: course-manager
 ---
