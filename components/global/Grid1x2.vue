@@ -1,6 +1,42 @@
 <template>
   <div class="markdown-body mb-5">
-    <div class="row flex align-center justify-center">
+    <div class="flex justify-between items-center py-6">
+      <div
+        :class="{
+          'order-md-last': !reversed,
+          'justify-md-end': !reversed,
+        }"
+        class="w-full sm:w-1/2 px-8 py-8 sm:py-0"
+      >
+        <img class="feature-img mb-5 mb-md-0" :src="imgSrc" />
+      </div>
+      <div class="w-1/2 hidden sm:flex flex-col justify-end">
+        <h3 v-if="title != ''" class="text-xl font-bold">
+          {{ title }}
+        </h3>
+        <p
+          class="desc"
+          :class="{
+            'text-md-right': reversed && !($mq == 'md') && !($mq == 'sm'),
+          }"
+        >
+          {{ desc }}
+        </p>
+        <div
+          :class="{
+            'align-self-end': reversed,
+            'left-padded-desc': reversed,
+            'right-padded-desc': !reversed,
+          }"
+          class="mt-2"
+        >
+          <v-btn target="_blank" v-if="link" :href="link" color="primary" large>
+            {{ button }}
+          </v-btn>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row flex align-center justify-center">
       <div
         class="flex justify-start"
         :class="{
@@ -37,7 +73,7 @@
           </v-btn>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

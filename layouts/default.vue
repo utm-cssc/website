@@ -2,6 +2,7 @@
   <v-app class="myFonts">
     <cssc-nav></cssc-nav>
     <v-navigation-drawer disable-resize-watcher v-model="drawerOpen" app right>
+      <nav-drawer />
     </v-navigation-drawer>
     <v-main>
       <nuxt />
@@ -24,13 +25,13 @@
 import CsscNav from '@/components/CsscNav'
 // import CsscNavMobile from '@/components/CsscNavMobile'
 import CsscFooter from '@/components/CsscFooter'
-// import NavDrawer from '@/components/NavDrawer.vue'
+import NavDrawer from '@/components/NavDrawer.vue'
 
 export default {
   components: {
     CsscNav,
     CsscFooter,
-    // NavDrawer,
+    NavDrawer,
     // CsscNavMobile,
   },
   computed: {
