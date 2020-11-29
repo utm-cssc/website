@@ -22,22 +22,6 @@
       >
         Calendar
       </nuxt-link>
-      <nuxt-link
-        to="/clubs"
-        class="nav-link mr-4"
-        @click.native="checked = false"
-      >
-        MCS Clubs
-      </nuxt-link>
-      <nuxt-link
-        to="/course-manager"
-        class="nav-link mr-4"
-        @click.native="checked = false"
-      >
-        Course Manager
-      </nuxt-link>
-      <SearchBar class="mx-2 d-none d-lg-block d-xl-block" />
-      <DarkModeButton class="mx-2 d-none d-lg-block d-xl-block" />
     </div>
     <div class="navbar-spacer"></div>
     <SearchBar class="mx-4" />

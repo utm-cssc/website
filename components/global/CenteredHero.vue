@@ -35,13 +35,6 @@
         {{ button2.label }}
       </v-btn>
     </div>
-    <div class="flex justify-center mt-10 mt-sm-20">
-      <div id="arrow">
-        <a :href="arrowLink"
-          ><img class="bounce" src="/icons/arrow.svg" alt="Down Arrow"
-        /></a>
-      </div>
-    </div>
   </div>
 </template>
 
