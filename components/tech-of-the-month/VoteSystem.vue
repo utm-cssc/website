@@ -9,7 +9,7 @@
           :titles="title"
           :hidden="voteEnded"
         />
-        <button class="submitButton" @click="submitVote()" :hidden="voteEnded">
+        <button class="submitButton" @click="submitVote()" v-if="voteEnded">
           Submit
         </button>
       </div>
@@ -17,7 +17,7 @@
     </article>
     <br />
     <no-ssr>
-      <div align="center">
+      <div align="center" v-if="voteEnded">
         <apexcharts
           id="apexChart"
           width="300"
