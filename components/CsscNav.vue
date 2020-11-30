@@ -100,6 +100,10 @@ export default {
   padding: 8px;
 }
 
+.nav-link:hover {
+  color: var(--color-primary-dark);
+}
+
 @media (max-width: 1200px) {
   .nav-link {
     font-size: 18px;

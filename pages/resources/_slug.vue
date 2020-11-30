@@ -1,11 +1,13 @@
 <template>
-  <div class="resource-article-container container mt-5 pb-5">
+  <div
+    class="resource-article-container flex justify-center container mt-5 pb-5"
+  >
     <table-of-contents
       class="pr-5"
       :toc="toc"
       :title="page.title"
     ></table-of-contents>
-    <article class="w-3/5">
+    <article class="w-full md:w-3/5">
       <nuxt-content class="markdown-body mx-auto" :document="page" />
     </article>
   </div>

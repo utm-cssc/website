@@ -8,7 +8,7 @@ a new concept.
 
 ## Web
 
-### HTML <faq-search query="What is HTML?"></faq-search>
+### HTML <faq-search query="What is HTML?"> </faq-search>
 
 HyperText Markup Language is the document standard of the World Wide Web for
 creating web pages and web applications.
