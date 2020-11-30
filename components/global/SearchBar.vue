@@ -47,7 +47,6 @@ export default {
   },
   watch: {
     async searchQuery(searchQuery) {
-      console.log(searchQuery)
       if (!searchQuery) {
         this.articles = []
         return
@@ -56,10 +55,11 @@ export default {
       if (this.searching) return
       this.searching = true
 
-      this.searchEntries = await this.$content('resources')
+      this.searchEntries = await this.$content('resources', {deep: true})
         .limit(8)
         .search('title', searchQuery)
         .fetch()
+      console.log(this.searchEntries)
       this.searching = false
     },
   },

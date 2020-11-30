@@ -10,7 +10,7 @@
     <SearchBar class="mx-auto search" />
     <dark-mode-button class="mx-4" />
 
-    <div class="toggle-icon ml-5" @click="toggleDrawer">
+    <div class="toggle-icon ml-5">
       <close-icon v-if="drawerOpen" class="close-icon"></close-icon>
       <menu-icon v-if="!drawerOpen" class="menu-icon"></menu-icon>
     </div>
@@ -33,11 +33,6 @@ export default {
     return {
       checked: false,
     }
-  },
-  methods: {
-    toggleDrawer() {
-      this.$store.commit('toggleDrawer')
-    },
   },
   computed: {
     ...mapState(['drawerOpen']),

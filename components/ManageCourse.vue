@@ -5,20 +5,21 @@
       {{ calculateGradeData(course, 100).percentScored }}
     </div>
     <div v-else>
-      <h3 class="font-weight-bold mb-3">
-        Completed: {{ 100 - calculatePercentageLeft(course) }} %
-        <br />
-        Scored: {{ calculatePercentageScored(course) }} %
-        <br />
-        Lost:
-        {{
-          (
-            100 -
-            calculatePercentageLeft(course) -
-            calculatePercentageScored(course)
-          ).toFixed(2)
-        }}
-        %
+      <h3 class="flex align-items-center text-xl font-bold mb-4">
+        {{ 100 - calculatePercentageLeft(course) }}% Completed:
+        <span class="text-green-500 ml-3"
+          ><v-icon>mdi-arrow-up</v-icon>{{ calculatePercentageScored(course) }}%
+        </span>
+        <span class="text-red-500"
+          ><v-icon>mdi-arrow-down</v-icon
+          >{{
+            (
+              100 -
+              calculatePercentageLeft(course) -
+              calculatePercentageScored(course)
+            ).toFixed(2)
+          }}%
+        </span>
       </h3>
       <h3 class="font-weight-bold mb-3">
         In the remaining {{ calculatePercentageLeft(course) }}% of the course,
@@ -130,7 +131,7 @@
           </v-dialog>
         </v-toolbar>
       </template>
-      <template v-slot:item.actions="{item}">
+      <template v-slot:[`item.actions`]="{item}">
         <v-icon small class="mr-2" @click="editAssessment(item)">
           mdi-pencil
         </v-icon>

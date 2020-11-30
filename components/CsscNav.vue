@@ -1,74 +1,65 @@
 <template>
-  <v-app-bar app elevate-on-scroll flat>
-    <nuxt-link
-      class="flex align-center nav-home mr-5"
-      to="/"
-      @click.native="checked = false"
-    >
-      <img class="logo" src="/icons/cssc-logo-without-title.svg" />
-      <span class="logo-text font-bold">UTM CSSC</span>
-    </nuxt-link>
-    <div class="nav-internal" v-if="$mq === 'lg' || $mq === 'xl'">
+  <div>
+    <v-app-bar app elevate-on-scroll flat>
       <nuxt-link
-        @click.native="checked = false"
-        to="/resources"
-        class="nav-link"
-        >Resources</nuxt-link
-      >
-      <nuxt-link
-        to="/calendar"
-        class="nav-link mr-4"
+        class="flex align-center nav-home mr-5"
+        to="/"
         @click.native="checked = false"
       >
-        Calendar
+        <img class="logo" src="/icons/cssc-logo-without-title.svg" />
+        <span class="logo-text font-bold">UTM CSSC</span>
       </nuxt-link>
-    </div>
-    <div class="navbar-spacer"></div>
-    <SearchBar class="mx-4" />
+      <div class="nav-internal" v-if="$mq === 'lg' || $mq === 'xl'">
+        <nuxt-link
+          @click.native="checked = false"
+          to="/resources"
+          class="nav-link"
+          >Resources</nuxt-link
+        >
+        <nuxt-link
+          to="/calendar"
+          class="nav-link mr-4"
+          @click.native="checked = false"
+        >
+          Calendar
+        </nuxt-link>
+      </div>
+      <div class="navbar-spacer"></div>
+      <SearchBar class="mx-4" />
 
-    <div class="nav-external ml-auto" v-if="$mq === 'lg' || $mq === 'xl'">
-      <a href="https://discord.gg/SHwbmVg">
-        <DiscordIcon class="nav-icon" />
-      </a>
-      <a href="https://github.com/utm-cssc" class="ml-4">
-        <GithubIcon class="nav-icon" />
-      </a>
-    </div>
-    <DarkModeButton class="mx-4" />
-
-    <v-app-bar-nav-icon
-      class="ml-auto app-bar-icon"
-      x-large
-      @click="toggleDrawer"
-    ></v-app-bar-nav-icon>
-  </v-app-bar>
+      <div class="nav-external ml-auto" v-if="$mq === 'lg' || $mq === 'xl'">
+        <a href="https://discord.gg/SHwbmVg">
+          <DiscordIcon class="nav-icon" />
+        </a>
+        <a href="https://github.com/utm-cssc" class="ml-4">
+          <GithubIcon class="nav-icon" />
+        </a>
+      </div>
+      <DarkModeButton class="mx-4" />
+      <v-app-bar-nav-icon
+        class="ml-auto"
+        x-large
+        @click="drawerOpen = !drawerOpen"
+      ></v-app-bar-nav-icon>
+    </v-app-bar>
+    <v-navigation-drawer disable-resize-watcher app v-model="drawerOpen" right>
+      <nav-drawer />
+    </v-navigation-drawer>
+  </div>
 </template>
 
 <script>
 import DiscordIcon from '@/static/icons/discord.svg?inline'
 import GithubIcon from '@/static/icons/github.svg?inline'
+import NavDrawer from '@/components/NavDrawer'
+
 export default {
-  components: {GithubIcon, DiscordIcon},
+  components: {GithubIcon, DiscordIcon, NavDrawer},
 
   data() {
     return {
-      checked: false,
+      drawerOpen: false,
     }
-  },
-  methods: {
-    toggleDrawer() {
-      this.drawerOpen = !this.drawerOpen
-    },
-  },
-  computed: {
-    drawerOpen: {
-      get() {
-        return this.$store.state.drawerOpen
-      },
-      set(value) {
-        this.$store.commit('setDrawerOpen', {drawerOpen: value})
-      },
-    },
   },
 }
 </script>

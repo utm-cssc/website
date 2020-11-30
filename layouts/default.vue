@@ -1,48 +1,28 @@
 <template>
-  <v-app class="myFonts">
+  <v-app>
     <cssc-nav></cssc-nav>
-    <v-navigation-drawer disable-resize-watcher v-model="drawerOpen" app right>
-      <nav-drawer />
-    </v-navigation-drawer>
     <v-main>
       <nuxt />
     </v-main>
-    <!-- 
-    <div v-else>
-      <cssc-nav-mobile></cssc-nav-mobile>
-      <aside
-        class="drawer transform top-0 right-0 fixed h-full overflow-auto z-40"
-        :class="drawerOpen ? 'drawer-open' : 'drawer-closed'"
-      >
-        <nav-drawer />
-      </aside>
-    </div> -->
     <cssc-footer />
   </v-app>
 </template>
 
 <script>
 import CsscNav from '@/components/CsscNav'
-// import CsscNavMobile from '@/components/CsscNavMobile'
 import CsscFooter from '@/components/CsscFooter'
-import NavDrawer from '@/components/NavDrawer.vue'
 
 export default {
   components: {
     CsscNav,
     CsscFooter,
-    NavDrawer,
-    // CsscNavMobile,
+  },
+  data() {
+    return {
+      drawerOpen: false,
+    }
   },
   computed: {
-    drawerOpen: {
-      get() {
-        return this.$store.state.drawerOpen
-      },
-      set(value) {
-        this.$store.commit('setDrawerOpen', {drawerOpen: value})
-      },
-    },
     nuxtColorMode() {
       return this.$nuxt.$colorMode.value
     },
@@ -77,13 +57,10 @@ export default {
   background: inherit;
 }
 
-.myFonts {
-  font-family: 'Open Sans', sans-serif !important;
-  color: var(--color-body) !important;
-}
-
 .v-application {
   background: var(--bg);
+  font-family: 'Open Sans', sans-serif !important;
+  color: var(--color-body) !important;
 }
 
 /* .v-application--is-ltr

@@ -1,46 +1,20 @@
 <template>
   <v-list dense nav>
-    <v-list-item v-for="item in navItems" :key="item.title" link>
-      <v-list-item-content>
-        <v-list-item-title>
-          <nuxt-link
-            @click.native="toggleDrawer"
-            :to="item.link"
-            class="drawer-link mr-1"
-            >{{ item.title }}</nuxt-link
-          >
-        </v-list-item-title>
-      </v-list-item-content>
-    </v-list-item>
+    <nuxt-link
+      v-for="item in navItems"
+      :key="item.title"
+      :to="item.link"
+      class="drawer-link mr-1"
+    >
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title>
+            {{ item.title }}
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </nuxt-link>
   </v-list>
-  <!-- <div class="nav-drawer p-5 bg-white">
-    <div class="nav-internal flex-col pt-5 mt-5">
-      <nuxt-link
-        @click.native="toggleDrawer"
-        to="/resources"
-        class="drawer-link mr-1"
-        >Resources</nuxt-link
-      >
-      <nuxt-link @click.native="toggleDrawer" to="/calendar" class="drawer-link"
-        >Calendar</nuxt-link
-      >
-      <nuxt-link @click.native="toggleDrawer" to="/clubs" class="drawer-link"
-        >MCS Clubs</nuxt-link
-      >
-      <nuxt-link @click.native="toggleDrawer" to="/ask-jack" class="drawer-link"
-        >Ask Jack</nuxt-link
-      >
-      <nuxt-link
-        @click.native="toggleDrawer"
-        to="/course-manager"
-        class="drawer-link"
-        >Course Manager</nuxt-link
-      >
-      <nuxt-link @click.native="toggleDrawer" to="/faq" class="drawer-link"
-        >FAQ</nuxt-link
-      >
-    </div>
-  </div> -->
 </template>
 
 <script>
@@ -74,11 +48,6 @@ export default {
         },
       ],
     }
-  },
-  methods: {
-    toggleDrawer() {
-      this.$store.commit('toggleDrawer')
-    },
   },
 }
 </script>

@@ -1,11 +1,15 @@
 <template>
   <div>
     <LightIcon
-      class="logo light"
+      class="btn-dark-mode light"
       v-if="isDark"
       @click="$colorMode.preference = 'light'"
     />
-    <DarkIcon class="logo" v-else @click="$colorMode.preference = 'dark'" />
+    <DarkIcon
+      class="btn-dark-mode"
+      v-else
+      @click="$colorMode.preference = 'dark'"
+    />
   </div>
 </template>
 
@@ -27,11 +31,11 @@ export default {
 </script>
 
 <style scoped>
-.logo {
+.btn-dark-mode {
   width: 32px;
   height: 32px;
   fill: var(--color-primary);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 svg:hover {

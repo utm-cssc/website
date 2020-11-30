@@ -72,7 +72,7 @@
             <nuxt-link to="/clubs">
               MCS Clubs
             </nuxt-link>
-            <nuxt-link to="/ask-jack#faq">
+            <nuxt-link to="/faq">
               FAQ
             </nuxt-link>
           </div>
