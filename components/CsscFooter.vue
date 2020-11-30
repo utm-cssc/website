@@ -72,9 +72,6 @@
             <nuxt-link to="/clubs">
               MCS Clubs
             </nuxt-link>
-            <nuxt-link to="/faq">
-              FAQ
-            </nuxt-link>
           </div>
         </li>
       </div>

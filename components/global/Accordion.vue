@@ -3,7 +3,7 @@
     <v-expansion-panels accordion>
       <v-expansion-panel v-for="(info, index) in data" :key="index">
         <v-expansion-panel-header
-          >{{ info }}: {{ courses[info].title }}</v-expansion-panel-header
+          >{{ info }} : {{ courses[info].title }}</v-expansion-panel-header
         >
         <v-expansion-panel-content>
           {{ courses[info].desc }}
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import coursesDataStore from '~/assets/courses.json'
+import coursesDataStore from '@/assets/courses.json'
 export default {
   props: {
     data: {

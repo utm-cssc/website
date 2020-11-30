@@ -44,11 +44,6 @@ export default {
           title: 'Clubs',
           link: '/clubs',
         },
-
-        {
-          title: 'FAQ',
-          link: '/faq',
-        },
         {
           title: 'Documentation',
           link: '/docs',
