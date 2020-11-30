@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><script>
+        // Catch errors if signal is already set by user agent or other extension
+        try {
+            Object.defineProperty(navigator, 'globalPrivacyControl', {
+                value: false,
+                enumerable: true
+            })
+            // Remove script tag after execution
+            document.currentScript.parentElement.removeChild(document.currentScript)
+        } catch (e) {}</script><g xmlns="http://www.w3.org/2000/svg" id="Outline"><rect x="248" y="448" width="16" height="16" fill="#ffffff" data-original="#000000" style="" class=""/><path d="M56,192H85.438l53.914,38.512a8,8,0,0,0,12.492-8.082L145.758,192H200a40.047,40.047,0,0,0,40-40V56a40.047,40.047,0,0,0-40-40H56A40.047,40.047,0,0,0,16,56v96A40.047,40.047,0,0,0,56,192ZM32,56A24.027,24.027,0,0,1,56,32H200a24.027,24.027,0,0,1,24,24v96a24.027,24.027,0,0,1-24,24H136a8,8,0,0,0-7.844,9.57l4.032,20.16-39.54-28.242A8,8,0,0,0,88,176H56a24.027,24.027,0,0,1-24-24Z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="M72,96v48a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8v-3.055l20.422,10.211A8,8,0,0,0,184,144V96a8,8,0,0,0-11.578-7.156L152,99.055V96c0-.133-.069-.244-.076-.375A27.962,27.962,0,1,0,112,56.466,27.962,27.962,0,1,0,72.076,95.625C72.069,95.756,72,95.867,72,96Zm64,40H88V104h48Zm32-27.055v22.11l-16-8v-6.11ZM132,64a12,12,0,1,1-12,12A12.013,12.013,0,0,1,132,64ZM92,64A12,12,0,1,1,80,76,12.013,12.013,0,0,1,92,64Z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="M456,80H383.191A40.067,40.067,0,0,0,344,48H256V64h88a23.96,23.96,0,0,1,22.526,16H296a40.047,40.047,0,0,0-40,40v96a40.047,40.047,0,0,0,40,40h62.242l-6.086,30.43a8,8,0,0,0,12.492,8.082L368,292.118v32.57l-22.344-22.344a36.283,36.283,0,1,0-51.312,51.312L341.688,401a75.171,75.171,0,0,0-7.513,15H128v40a40.047,40.047,0,0,0,40,40H448a8,8,0,0,0,8-8V336.32a87.6,87.6,0,0,0-21.422-57.527l-17.022-22.074,1.006-.719H456a40.047,40.047,0,0,0,40-40V120A40.047,40.047,0,0,0,456,80ZM296,96H456a24.027,24.027,0,0,1,24,24v81.052l-35.562-23.708a8.01,8.01,0,0,0-8.876,0L392.273,206.2,332.8,161.6a7.992,7.992,0,0,0-9.594,0L272,200V120A24.027,24.027,0,0,1,296,96ZM144,456V432H329.716a77.928,77.928,0,0,0,7.806,48H168A24.027,24.027,0,0,1,144,456ZM422.219,288.941A72,72,0,0,1,440,336.32V480H356.039a61.984,61.984,0,0,1-8.687-53.727,60.021,60.021,0,0,1,7.687-16.453l3.6-5.359a8,8,0,0,0-.985-10.117l-52-52a20.284,20.284,0,0,1,28.688-28.684l68,68,11.312-11.312L384,340.688v-60l20.528-14.663ZM456,240H416a8,8,0,0,0-4.648,1.488l-39.54,28.242,4.032-20.16A8,8,0,0,0,368,240H296a23.973,23.973,0,0,1-23.625-20.285L328,178l59.2,44.4a7.991,7.991,0,0,0,9.235.258L440,193.613l39.6,26.4A23.986,23.986,0,0,1,456,240Z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="M392,176a32,32,0,1,0-32-32A32.034,32.034,0,0,0,392,176Zm0-48a16,16,0,1,1-16,16A16.019,16.019,0,0,1,392,128Z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="M56,400H184a40.047,40.047,0,0,0,40-40V312a40.047,40.047,0,0,0-40-40h-5.75l5.508-22.059a8,8,0,0,0-11.727-8.886L117.875,272H56a40.047,40.047,0,0,0-40,40v48A40.047,40.047,0,0,0,56,400ZM32,312a24.027,24.027,0,0,1,24-24h64a8,8,0,0,0,3.969-1.055l39.726-22.7-3.453,13.813A8,8,0,0,0,168,288h16a24.027,24.027,0,0,1,24,24v48a24.027,24.027,0,0,1-24,24H56a24.027,24.027,0,0,1-24-24Z" fill="#ffffff" data-original="#000000" style="" class=""/><rect x="48" y="312" width="88" height="16" fill="#ffffff" data-original="#000000" style="" class=""/><rect x="152" y="312" width="40" height="16" fill="#ffffff" data-original="#000000" style="" class=""/><rect x="48" y="344" width="144" height="16" fill="#ffffff" data-original="#000000" style="" class=""/></g><script>try {
+                        Object.defineProperty(screen, "availTop", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availLeft", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availWidth", { value: 1920 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availHeight", { value: 1080 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "colorDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "pixelDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "keyboard", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "hardwareConcurrency", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "deviceMemory", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitTemporaryStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitPersistentStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "appVersion", { value: "5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36" });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "doNotTrack", { value: null });
+                    } catch (e) {}
+                    
+                navigator.getBattery = function getBattery () {
+                let battery = {"charging":true,"chargingTime":0,"dischargingTime":null,"level":1}
+            
+                try {
+                    Object.defineProperty(battery, 'onchargingchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onchargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'ondischargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onlevelchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                    battery.addEventListener = function addEventListener () {
+                        return
+                    }
+                
+                return Promise.resolve(battery)
+                }
+            
+            try {
+                window.screenY = 0
+            } catch (e) { }
+        
+            try {
+                window.screenTop = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerHeight = window.screen.height
+            } catch (e) { }
+        
+            try {
+                window.screenX = 0
+            } catch (e) { }
+        
+            try {
+                window.screenLeft = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerWidth = 960
+            } catch (e) { }
+        </script></g></svg>
