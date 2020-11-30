@@ -25,7 +25,7 @@ export default {
         },
         {
           title: 'Ask Jack',
-          link: '/ask-jack',
+          link: '/ask-jack/',
         },
         {
           title: 'Tech of the Month',
