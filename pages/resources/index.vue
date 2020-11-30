@@ -1,8 +1,6 @@
 <template>
   <div class="pb-5">
-    <div
-      class="mt-5 d-flex flex-column justify-content-center align-items-center"
-    >
+    <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../../icons/resources.svg"
         title="Resources"
@@ -40,7 +38,7 @@
       <div
         v-for="tag in selected.length === 0 ? sortedTags : selected"
         :key="tag"
-        class="container px-5"
+        class="px-5"
       >
         <div
           class="mt-2 mb-3 ml-3 cssc-heading resource-tag"

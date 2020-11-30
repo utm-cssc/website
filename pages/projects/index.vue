@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <div
-      class="mt-5 d-flex flex-column justify-content-center align-items-center"
-    >
+    <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../../icons/projects.svg"
         title="Projects"

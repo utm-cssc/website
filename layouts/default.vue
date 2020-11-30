@@ -1,7 +1,9 @@
 <template>
-  <v-app class="myFonts">
-    <cssc-nav />
-    <nuxt />
+  <v-app>
+    <cssc-nav></cssc-nav>
+    <v-main>
+      <nuxt />
+    </v-main>
     <cssc-footer />
   </v-app>
 </template>
@@ -15,6 +17,11 @@ export default {
     CsscNav,
     CsscFooter,
   },
+  data() {
+    return {
+      drawerOpen: false,
+    }
+  },
   computed: {
     nuxtColorMode() {
       return this.$nuxt.$colorMode.value
@@ -22,44 +29,44 @@ export default {
   },
   watch: {
     nuxtColorMode(value) {
-      console.log(value)
       this.$nuxt.$vuetify.theme.dark = value == 'dark'
-      console.log(this.$nuxt.$vuetify.theme.dark)
     },
   },
 }
-// /* eslint-disable */
-// export default {
-//   created () {
-//     // eslint-disable-next-line
-//     document.addEventListener('keyup', (e) => {
-//       if (e.key === 'd') {
-//         // eslint-disable-next-line
-//         [].forEach.call(document.querySelectorAll('*'), function (a) {
-//           a.style.outline =
-//             '1px solid #' + (~~(Math.random() * (1 << 24))).toString(16)
-//         })
-//       }
-//     })
-//   }
-// }
 </script>
 
 <style>
+@import '@/assets/styles/customize-vuetify.css';
+
+.drawer {
+  width: 256px;
+  transition: all 0.2s ease-out;
+}
+
+.drawer-open {
+  margin-left: 0;
+  opacity: 1;
+}
+
+.drawer-closed {
+  margin-right: -343px;
+  opacity: 0;
+}
+
 .theme--light.v-application {
   background: inherit;
 }
 
-.myFonts {
+.v-application {
+  background: var(--bg);
   font-family: 'Open Sans', sans-serif !important;
   color: var(--color-body) !important;
 }
 
-.v-application {
-  background: var(--bg);
-}
-
-.v-application--is-ltr .v-list-group--no-action > .v-list-group__items > .v-list-item {
+/* .v-application--is-ltr
+  .v-list-group--no-action
+  > .v-list-group__items
+  > .v-list-item {
   padding-left: 16px;
-}
+} */
 </style>

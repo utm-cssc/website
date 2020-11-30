@@ -99,7 +99,7 @@
         </v-list-group>
       </v-list>
     </div>
-    <div class="w-100 flex justify-center" v-else>
+    <div class="w-100 h-screen flex align-center justify-center" v-else>
       <v-progress-circular
         :size="70"
         :width="7"

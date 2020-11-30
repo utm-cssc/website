@@ -4,14 +4,20 @@
       target="_blank"
       v-for="engine in searchEngines"
       :key="engine.name"
-      v-b-tooltip.hover
-      :title="`${engine.name} : ${query}`"
       :href="getQueryLink(engine.name)"
       class="mr-3 search-engine"
-      @mouseover="hovered = true"
-      @mouseleave="hovered = false"
     >
-      <img class="icon mt-0 mb-0" :src="`/icons/${engine.icon}`" />
+      <v-tooltip top>
+        <template v-slot:activator="{on, attrs}">
+          <img
+            class="icon mt-0 mb-0"
+            :src="`/icons/${engine.icon}`"
+            v-bind="attrs"
+            v-on="on"
+          />
+        </template>
+        <span>{{ engine.name }} : {{ query }}</span>
+      </v-tooltip>
     </a>
   </div>
 </template>

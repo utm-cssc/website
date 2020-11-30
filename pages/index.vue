@@ -1,13 +1,11 @@
 <template>
   <div class="container">
     <!-- Title -->
-    <div
-      class="mt-5 d-flex flex-column justify-content-center align-items-center"
-    >
+    <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../icons/cssc-logo-without-title.svg"
         title="UTM CSSC"
-        desc="Helping MCS Students"
+        desc="Your UTM Computer Science Community Website"
         :button1="button1"
         :button2="button2"
       />
@@ -33,7 +31,7 @@
       <div class="cssc-heading">
         Meet the Team
       </div>
-      <div class="d-flex flex-wrap">
+      <div class="teams">
         <Teammate
           v-for="mate in currentTeam"
           :key="mate.name"
@@ -82,12 +80,12 @@ export default {
         },
       ],
       button1: {
-        label: 'Tech of the Month',
-        link: 'tech-of-the-month',
+        label: 'Resources',
+        link: 'resources',
       },
       button2: {
-        label: 'MCS Townhall Notes',
-        link: '../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf',
+        label: 'Calendar',
+        link: 'calendar',
       },
     }
   },
@@ -117,6 +115,12 @@ export default {
 </script>
 
 <style scoped>
+.teams {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .hero-full-height {
   height: 100vh;
 }
@@ -124,6 +128,16 @@ export default {
 @media screen and (max-width: 768px) {
   .hero-full-height {
     min-height: 100vh;
+  }
+
+  .teams {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1904px) {
+  .teams {
+    justify-content: initial;
   }
 }
 </style>

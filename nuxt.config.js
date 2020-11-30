@@ -3,16 +3,6 @@ const OG_IMAGE =
   'https://cssc.utm.utoronto.ca/logos/cssc-logo-without-title.png'
 export default {
   /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
-  mode: 'universal',
-  /*
-   ** Nuxt target
-   ** See https://nuxtjs.org/api/configuration-target
-   */
-  target: 'static',
-  /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
    */
@@ -60,7 +50,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/main.css'],
+  css: ['@/assets/styles/main.css', '@/assets/styles/github-markdown.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -87,8 +77,6 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://bootstrap-vue.js.org
-    'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
@@ -101,10 +89,10 @@ export default {
         // Default breakpoint for SSR
         defaultBreakpoint: 'xs',
         breakpoints: {
-          sm: 576,
-          md: 768,
-          lg: 992,
-          xl: 1200,
+          sm: 600,
+          md: 900,
+          lg: 1200,
+          xl: 1600,
         },
       },
     ],
@@ -127,7 +115,9 @@ export default {
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration
    */
-  content: {},
+  content: {
+    nestedProperties: ['resources.tags'],
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

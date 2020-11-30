@@ -1,57 +1,31 @@
 <template>
-  <div class="relative flex flex-col justify-between">
-    <div
-      class="relative"
-      @keydown.down="increment"
-      @keydown.up="decrement"
-      @keydown.enter="go"
-    >
-      <label for="search" class="sr-only">Search</label>
-      <div class="search-container flex align-items-center py-1 px-2">
-        <img src="/icons/search.svg" class="icon-search mr-2" />
-        <input
-          id="search"
-          ref="search"
-          v-model="searchQuery"
-          class="search-input pb-1"
-          :class="{'rounded-b-none': focus && (searching || articles.length)}"
-          placeholder="Search Resources"
-          type="search"
-          autocomplete="off"
-          @focus="onFocus"
-          @blur="onBlur"
-        />
-      </div>
-    </div>
-    <ul
-      v-show="focus && (searching || articles.length)"
-      class="search-results-container z-10 w-100 absolute top-0 overflow-hidden"
-      :class="{'rounded-t-none': focus && (searching || articles.length)}"
-      style="margin-top: 37px; list-style-position: inside;"
-    >
-      <li v-if="searching && !articles.length" class="px-2">Searching...</li>
-      <li
-        class="search-item text-capitalize"
-        :class="{'focused-search-item': focusIndex == index}"
-        v-for="(result, index) of articles"
-        :key="result.path"
-        @mouseenter="focusIndex = index"
-        @mousedown="go"
-      >
-        <NuxtLink
-          :to="result.path"
-          class="flex px-2 py-2 items-center leading-5 transition ease-in-out duration-150 search-item"
-          @click="focus = false"
+  <v-autocomplete
+    solid
+    solo
+    hide-details="true"
+    prepend-inner-icon="mdi-magnify"
+    hide-no-data
+    append-icon=""
+    label="Explore Our Resources & Glossary"
+    :search-input.sync="searchQuery"
+    :items="searchResults"
+    :loading="searching"
+    no-filter
+    clearable
+  >
+    <template v-slot:item="data">
+      <template v-if="typeof data.item !== 'object'">
+        <v-list-item-content v-text="data.item"></v-list-item-content>
+      </template>
+      <template v-else>
+        <v-list-item-content
+          @click="$router.push(`/resources/${data.item.value}`)"
         >
-          <span v-if="result.category" class="font-bold">{{
-            result.category
-          }}</span>
-          <IconChevronRight v-if="result.category" class="w-3 h-3 mx-1" />
-          {{ result.slug }}
-        </NuxtLink>
-      </li>
-    </ul>
-  </div>
+          <v-list-item-title v-html="data.item.text"></v-list-item-title>
+        </v-list-item-content>
+      </template>
+    </template>
+  </v-autocomplete>
 </template>
 
 <script>
@@ -59,74 +33,57 @@ export default {
   data() {
     return {
       searchQuery: '',
-      focus: false,
-      focusIndex: -1,
-      open: false,
       searching: false,
-      articles: [],
+      searchEntries: [],
     }
+  },
+  computed: {
+    searchResults() {
+      const searchResults = this.searchEntries.map(result => {
+        return {
+          text: `Resources > ${result.title}`,
+          value: result.slug,
+        }
+      })
+      console.log(searchResults)
+      return searchResults
+    },
   },
   watch: {
     async searchQuery(searchQuery) {
-      console.log(searchQuery)
-      this.focusIndex = -1
       if (!searchQuery) {
-        this.searching = false
         this.articles = []
         return
       }
+      if (this.articles.length > 0) return
+      if (this.searching) return
       this.searching = true
-      this.articles = await this.$content('resources')
-        .limit(8)
-        .search('title', searchQuery)
+      // const titleSearchResults = this.getTitleSearchResults(searchQuery)
+      // const tagsSearchResults = this.getTagsSearchResults(searchQuery)
+
+      this.searchEntries = await this.$content('resources')
+        .where({tags: {$contains: searchQuery}})
         .fetch()
-      console.log(this.articles)
 
       this.searching = false
     },
   },
-  mounted() {
-    window.addEventListener('keyup', this.keyup)
-  },
-  beforeDestroy() {
-    window.removeEventListener('keyup', this.keyup)
-  },
   methods: {
-    onFocus() {
-      this.focus = true
-      this.$emit('focus', true)
-    },
-    onBlur() {
-      this.focus = false
-      this.$emit('focus', false)
-    },
-    keyup(e) {
-      if (e.key === '/') {
-        this.$refs.search.focus()
-      }
-    },
-    increment() {
-      if (this.focusIndex < this.articles.length - 1) {
-        this.focusIndex++
-      }
-    },
-    decrement() {
-      if (this.focusIndex >= 0) {
-        this.focusIndex--
-      }
-    },
-    go() {
-      if (this.articles.length === 0) {
-        return
-      }
-      const result =
-        this.focusIndex === -1
-          ? this.articles[0]
-          : this.articles[this.focusIndex]
-      this.$router.push(result.path)
-      // Unfocus the input and reset the query.
-      this.$refs.search.blur()
-      this.searchQuery = ''
+    // async getTitleSearchResults(searchQuery) {
+    //   const titleSearchResults = await this.$content('resources')
+    //     .search('title', searchQuery)
+    //     .fetch()
+
+    //   console.log(titleSearchResults)
+    //   return titleSearchResults
+    // },
+    async getTagsSearchResults(searchQuery) {
+      const tagsSearchResults = await this.$content('resources')
+        .where({tags: {$contains: searchQuery}})
+        .fetch()
+
+      console.log(tagsSearchResults)
+      return tagsSearchResults
     },
   },
 }
@@ -159,7 +116,7 @@ export default {
   height: 24px;
 }
 
-.search-container {
+.search-input-container {
   border: 1px solid #e2e8f0;
   border-radius: 0.375rem;
 }

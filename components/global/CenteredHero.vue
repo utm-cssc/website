@@ -1,10 +1,8 @@
 <template>
-  <div class="container hero">
-    <div class="row d-flex justify-center">
+  <div class="container hero grid place-items-center">
+    <div class="mt-3 mt-md-4 mt-lg-5 row flex flex-column align-center">
       <img :src="icon" alt="CSSC Icon" class="hero-img" />
-    </div>
-    <div class="mt-3 mt-md-4 mt-lg-5 row d-flex flex-column align-items-center">
-      <div class="col-lg-10 text-center">
+      <div class="text-center">
         <h1 class="cssc-heading">
           {{ title }}
         </h1>
@@ -13,26 +11,27 @@
         </p>
       </div>
     </div>
-    <div class="mt-4 mt-sm-5 d-flex justify-content-center">
-      <b-button
+    <div class="mt-4 flex justify-center flex-wrap">
+      <v-btn
         v-if="button1 && button1.link && button1.label"
         :href="button1.link"
-        :size="gtmd"
-        class="mr-4 btn-cta mb-3 d-flex align-items-center"
+        class="mr-4 btn-cta mb-3"
+        x-large
       >
         <img v-if="button1.icon" class="btn-icon mx-2" :src="button1.icon" />
         {{ button1.label }}
-      </b-button>
-      <b-button
+      </v-btn>
+      <v-btn
         v-if="button2 && button2.link && button2.label"
         :href="button2.link"
         :size="gtmd"
         variant="outline-primary"
-        class="btn-cta-alt mb-3 d-flex align-items-center"
+        class="btn-cta-alt mb-3"
+        x-large
       >
         <img v-if="button2.icon" class="btn-icon mx-2" :src="button2.icon" />
         {{ button2.label }}
-      </b-button>
+      </v-btn>
     </div>
   </div>
 </template>

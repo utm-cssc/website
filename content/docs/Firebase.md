@@ -2,7 +2,7 @@
 title: Firebase
 desc: Setting up Firebase for the voting system
 icon: /docs/user.svg
-link: firebase
+link: Firebase
 ---
 
 # Firebase

@@ -1,7 +1,7 @@
 <template>
   <div class="mb-3">
-    <div v-if="icon" class="mb-3 d-flex align-middle icon-size">
-      <img :src="icon" class="col-icon">
+    <div v-if="icon" class="mb-3 flex align-middle icon-size">
+      <img :src="icon" class="col-icon" />
     </div>
     <p class="mb-2 mt-4 title">
       {{ title }}
@@ -17,8 +17,8 @@ export default {
   props: {
     title: String,
     icon: String,
-    desc: String
-  }
+    desc: String,
+  },
 }
 </script>
 

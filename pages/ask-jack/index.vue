@@ -4,9 +4,7 @@
 
 <template>
   <div class="container">
-    <div
-      class="mt-5 d-flex flex-column justify-content-center align-items-center"
-    >
+    <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../../icons/quiz.svg"
         title="Ask Jack!"
@@ -14,9 +12,7 @@
       />
     </div>
     <a id="ask-upper-year-form"></a>
-    <div class="mb-3 mt-2 cssc-heading">
-      Ask Jack
-    </div>
+    <div class="mb-3 mt-2 cssc-heading">Ask Jack</div>
     <p class="mb-3">
       Hello everyone! It’s nice to meet you all! My name is Jack, I use he/him
       pronouns, and I’m here to answer all your questions! You can ask me
@@ -34,9 +30,7 @@
         src="~/static/ask-jack/jack_cheer.png"
       />
     </div>
-    <div class="mb-3 mt-2 cssc-heading">
-      Behind the Scenes
-    </div>
+    <div class="mb-3 mt-2 cssc-heading">Behind the Scenes</div>
     <p class="mb-5">
       Ask Jack is an initiative created by CSSC for students and driven by
       students. Our goal is to answer student questions with the help of the MCS
@@ -49,42 +43,35 @@
       Ask Jack, feel free to check us out under the Meet the Team section on our
       homepage!
     </p>
-    <form action="https://formspree.io/xwkrdzyg" method="POST">
-      <div class="mb-3 mt-3 cssc-heading">
-        Ask Your Question
-      </div>
-      <b-form-textarea
+    <v-form
+      v-model="valid"
+      action="https://formspree.io/xwkrdzyg"
+      method="POST"
+    >
+      <div class="mb-3 mt-3 cssc-heading">Ask Your Question</div>
+      <v-text-field
         v-model="question"
         name="Question"
         placeholder="Enter your Question Here"
-        required="required"
+        required
         rows="3"
-      ></b-form-textarea>
-      <div class="mb-3 mt-2 cssc-heading">
-        Tags
-      </div>
+      ></v-text-field>
+      <div class="mb-3 mt-2 cssc-heading">Tags</div>
       <p class="mb-3">
         Note: CSSC cannot answer any course content related questions!
       </p>
-      <b-form-group>
-        <b-form-checkbox-group
-          id="ask-upper-year-tags"
+      <div
+        class="flex align-center mr-3"
+        v-for="tagOption in tagOptions"
+        :key="tagOption.value"
+      >
+        <v-checkbox
           v-model="selectedTags"
-          name="question-tags"
-        >
-          <div
-            class="flex align-items-center mr-3"
-            v-for="tagOption in tagOptions"
-            :key="tagOption.value"
-          >
-            <b-form-checkbox :value="tagOption.value"></b-form-checkbox>
-            <span>{{ tagOption.text }}</span>
-          </div>
-        </b-form-checkbox-group>
-      </b-form-group>
-      <div class="mt-3 cssc-heading">
-        Email
+          :value="tagOption.value"
+        ></v-checkbox>
+        <span>{{ tagOption.text }}</span>
       </div>
+      <div class="mt-3 cssc-heading">Email</div>
       <p class="mb-2">
         Feel free to provide your utoronto email so we can contact you back!
         (Optional)
@@ -95,24 +82,23 @@
         <a href="https://cssc.utm.utoronto.ca/discord">CSSC's Discord.</a>
       </p>
 
-      <b-form-textarea
+      <v-text-field
         v-model="email"
         name="Email"
         placeholder="user@mail.utoronto.ca"
         rows="1"
         max-rows="1"
-      ></b-form-textarea>
-
-      <div class="d-flex justify-content-center mb-4 mt-5">
-        <b-button size="lg" type="submit" name="Submit" class="button mr-3"
-          >Submit</b-button
+      ></v-text-field>
+      <div class="flex justify-center mb-4 mt-5">
+        <v-btn size="lg" type="submit" name="Submit" class="button mr-3"
+          >Submit</v-btn
         >
-        <b-button size="lg" type="reset" value="Reset" class="button ml-3"
-          >Reset</b-button
+        <v-btn size="lg" type="reset" value="Reset" class="button ml-3"
+          >Reset</v-btn
         >
       </div>
-    </form>
-    <div class="mt-3 mb-4 cssc-heading">
+    </v-form>
+    <div class="mt-3 mb-4 cssc-heading" id="faq">
       Frequently Asked Questions
     </div>
     <v-row justify="center">

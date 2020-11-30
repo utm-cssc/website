@@ -1,26 +1,17 @@
 <template>
-  <div class="mb-5">
-    <div class="row d-flex align-items-center justify-content-center">
+  <div class="markdown-body mb-5">
+    <div class="flex justify-between items-center py-6">
       <div
-        class="col-md-5 col-lg-4 d-flex justify-content-start justify-content-center"
         :class="{
           'order-md-last': !reversed,
-          'justify-content-md-end': !reversed,
-          'px-5': $mq == 'sm',
+          'justify-md-end': !reversed,
         }"
+        class="w-full sm:w-1/2 px-8 py-8 sm:py-0"
       >
         <img class="feature-img mb-5 mb-md-0" :src="imgSrc" />
       </div>
-      <div
-        class="col-md-7 d-flex justify-content-center flex-column text-container"
-        :class="{
-          'px-5': $mq == 'sm',
-          'align-items-md-end': reversed,
-          'left-padded-desc': reversed,
-          'right-padded-desc': !reversed,
-        }"
-      >
-        <h3 v-if="title != ''" class="feature-title mb-2">
+      <div class="w-1/2 hidden sm:flex flex-col justify-end">
+        <h3 v-if="title != ''" class="text-xl font-bold">
           {{ title }}
         </h3>
         <p
@@ -31,15 +22,17 @@
         >
           {{ desc }}
         </p>
-        <div class="mt-2 mt-lg-4">
-          <b-btn
-            target="_blank"
-            v-if="link"
-            :href="link"
-            class="py-2 px-3 feature-btn"
-          >
+        <div
+          :class="{
+            'align-self-end': reversed,
+            'left-padded-desc': reversed,
+            'right-padded-desc': !reversed,
+          }"
+          class="mt-2"
+        >
+          <v-btn target="_blank" v-if="link" :href="link" color="primary" large>
             {{ button }}
-          </b-btn>
+          </v-btn>
         </div>
       </div>
     </div>
@@ -89,42 +82,11 @@ export default {
   max-height: 250px;
 }
 
-.desc {
-  font-weight: 300;
-  line-height: 1.75rem;
-  opacity: 0.9;
-  font-size: 24px;
-  margin-top: 0;
-  color: var(--color-body);
-}
-
-.feature-title {
-  font-weight: 600;
-  line-height: 1.25;
-  font-size: 42px;
-  color: var(--color-heading);
-}
-
 .right-padded-desc {
   padding-right: 48px;
 }
 
 .left-padded-desc {
   padding-left: 48px;
-}
-
-@media screen and (max-width: 768px) {
-  .feature-title {
-    font-size: 32px;
-  }
-
-  .desc {
-    font-size: 20px;
-  }
-
-  .feature-img {
-    max-width: 70%;
-    max-height: 300px;
-  }
 }
 </style>

@@ -13,16 +13,15 @@
       {{ desc }}
     </p>
     <div class="d-flex justify-content-center">
-      <b-button
+      <v-btn
         v-if="button && button.link && button.label"
         :href="button.link"
-        size="md"
-        variant="outline-primary"
-        class="btn-cta mb-3 d-flex align-items-center"
+        large
+        color="primary"
       >
         <img v-if="button.icon" class="btn-icon mx-2" :src="button.icon" />
         {{ button.label }}
-      </b-button>
+      </v-btn>
     </div>
   </div>
 </template>

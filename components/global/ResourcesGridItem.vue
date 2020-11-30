@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
     <a
       class="box resource-box pb-3"
       :href="link"
@@ -68,7 +68,6 @@ a {
 .box {
   background-color: #fff;
   border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
   color: #4a4a4a;
   display: block;
   padding: 1.25rem;
@@ -122,8 +121,7 @@ a {
   font-size: 18px;
   color: #fff;
   font-weight: 300;
-  position: absolute;
-  max-width: 80%;
+  max-width: 100%;
 }
 
 .slide-out-enter-active {

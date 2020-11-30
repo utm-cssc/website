@@ -6,9 +6,9 @@ where everyone knows what they’re talking about—except, of course, you.
 Sometimes a short and simple explanation is all you need to get your head around
 a new concept.
 
-## Web
+### HTML
 
-### HTML <faq-search query="What is HTML?"></faq-search>
+<faq-search query="What is HTML?"></faq-search>
 
 HyperText Markup Language is the document standard of the World Wide Web for
 creating web pages and web applications.
@@ -19,7 +19,9 @@ a web page semantically.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### CSS <faq-search query="What is CSS?"/>
+### CSS
+
+<faq-search query="What is CSS?"></faq-search>
 
 A stylesheet language that is used for presentation and formatting content on
 the web-pages, including font, size, color, spacing, border and location of HTML
@@ -27,13 +29,17 @@ information.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Javascript <faq-search query="What is Javascript?"/>
+### Javascript
+
+<faq-search query="What is Javascript?"></faq-search>
 
 A client-side scripting language primarily used to make web pages interactive.
 In other words, it's responsible for the 'behavior' of a website, i.e. how HTML
 elements and CSS style animate and move around on the page.
 
-### Node.js <faq-search query="What is Node.js?"/>
+### Node.js
+
+<faq-search query="What is Node.js?"></faq-search>
 
 Node.js is an open-source, cross-platform, JavaScript runtime environment that
 executes JavaScript code outside of a web browser.
@@ -46,24 +52,32 @@ Consequently, Node.js represents a "JavaScript everywhere" paradigm, unifying
 web-application development around a single programming language, rather than
 different languages for server-side and client-side scripts.
 
-### Vue.js <faq-search query="What is Vue.js?"/>
+### Vue.js
+
+<faq-search query="What is Vue.js?"></faq-search>
 
 Vue.js is an open-source Model–View–Viewmodel JavaScript framework for building
 user interfaces and single-page applications.
 
-### React.js <faq-search query="What is React.js?"/>
+### React.js
+
+<faq-search query="What is React.js?"></faq-search>
 
 React is a JavaScript library for building user interfaces.
 
 React can also render on the server using Node and power mobile apps using React
 Native.
 
-### Angular <faq-search query="Angular framework"/>
+### Angular
+
+<faq-search query="Angular framework"></faq-search>
 
 A client-side JavaScript framework which is based on MVC architecture. It
 simplifies web development by offering automatic view/model synchronization.
 
-### Semantic Markup <faq-search query="Semantic Markup"/>
+### Semantic Markup
+
+<faq-search query="Semantic Markup"></faq-search>
 
 Semantics refers to the correct interpretation of the meaning of a word or
 sentence.
@@ -77,9 +91,9 @@ tags.
 
 [Read more about Semantic Markup in HTML](https://html.com/semantic-markup/)
 
-## Data Science
+### Bayesian Statistics
 
-### Bayesian Statistics <faq-search query="Bayesian Stats"/>
+<faq-search query="Bayesian Stats"></faq-search>
 
 Bayesian statistics is a theory in the field of statistics based on the Bayesian
 interpretation of probability where probability expresses a degree of belief in
@@ -87,7 +101,9 @@ an event.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Big Data <faq-search query="Big Data"/>
+### Big Data
+
+<faq-search query="Big Data"></faq-search>
 
 A term that describes the large volume of data – both structured and
 unstructured – that inundates a business on a day-to-day basis. Can be analyzed
@@ -95,7 +111,9 @@ for insights that lead to better decisions and strategic business moves.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Computer Vision <faq-search query="Computer Vision"/>
+### Computer Vision
+
+<faq-search query="Computer Vision"></faq-search>
 
 Computer vision is a field of computer science that works on enabling computers
 to see, identify, and process images in the same way that human vision does, and
@@ -103,7 +121,9 @@ then provide appropriate output.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Convolutional Neural Network <faq-search query="ConvNet"/>
+### Convolutional Neural Network
+
+<faq-search query="ConvNet"></faq-search>
 
 Convolutional neural network (CNN, or ConvNet) is a class of deep neural
 networks, most commonly applied to analyzing visual imagery.
@@ -113,7 +133,9 @@ image classification, medical image analysis, and natural language processing.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Data Structure <faq-search query="Data Structure"/>
+### Data Structure
+
+<faq-search query="Data Structure"></faq-search>
 
 A specialized format for organizing and storing data. Serves as the basis for
 abstract data types.
@@ -123,7 +145,9 @@ the tree, and so on.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Data Visualization <faq-search query="Data Visualization"/>
+### Data Visualization
+
+<faq-search query="Data Visualization"></faq-search>
 
 Data visualization is the graphical representation of information and data.
 
@@ -133,7 +157,9 @@ in data.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Hadoop <faq-search query="Hadoop"/>
+### Hadoop
+
+<faq-search query="Hadoop"></faq-search>
 
 An open-source software framework that is used for distributed storage and
 processing of big data sets across clusters of computers using simple
@@ -141,7 +167,9 @@ programming models.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Neural Networks <faq-search query="Neural Networks"/>
+### Neural Networks
+
+<faq-search query="Neural Networks"></faq-search>
 
 Neural networks(NN) are a set of algorithms, modeled loosely after the human
 brain, that are designed to recognize patterns. They interpret sensory data
@@ -149,7 +177,9 @@ through a kind of machine perception, labeling or clustering raw input.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Pattern Recognition <faq-search query="Pattern Recognition"/>
+### Pattern Recognition
+
+<faq-search query="Pattern Recognition"></faq-search>
 
 Pattern recognition is the process of recognizing patterns by using machine
 learning algorithm.
@@ -160,7 +190,9 @@ and/or their representation.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Random Forest <faq-search query="Random Forest"/>
+### Random Forest
+
+<faq-search query="Random Forest"></faq-search>
 
 Pattern recognition is the process of recognizing patterns by using machine
 learning algorithm.
@@ -171,7 +203,9 @@ and/or their representation.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Statistical Modeling <faq-search query="Statistical Modeling"/>
+### Statistical Modeling
+
+<faq-search query="Statistical Modeling"></faq-search>
 
 Statistical modeling is a simplified, mathematically-formalized way to
 approximate reality (i.e. what generates your data) and optionally to make
@@ -181,7 +215,9 @@ The statistical model is the mathematical equation that is used.
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-### Time Series Analysis <faq-search query="Time series analysis "/>
+### Time Series Analysis
+
+<faq-search query="Time series analysis "></faq-search>
 
 Time series analysis is a statistical technique that deals with time series
 data, or trend analysis.
@@ -194,9 +230,13 @@ There are two main goals of time series analysis:
 
 _From [Glossary Tech](https://glossarytech.com/)_
 
-## Blockchain <faq-search query="Blockchain"/>
+### Blockchain
 
-### Altcoin <faq-search query="Altcoin"/>
+<faq-search query="Blockchain"></faq-search>
+
+### Altcoin
+
+<faq-search query="Altcoin"></faq-search>
 
 Altcoin is an abbreviation of “Bitcoin alternative”.
 
@@ -209,7 +249,9 @@ maximum number of coins and different hashing algorithm.
 
 _From [Blockchain Hub](https://blockchainhub.net/blockchain-glossary/)_
 
-### ASIC <faq-search query="ASIC Blockchain"/>
+### ASIC
+
+<faq-search query="ASIC Blockchain"></faq-search>
 
 An “Application Specific Integrated Circuit” is a silicon chip specifically
 designed to do a single task.
@@ -223,7 +265,9 @@ results in higher electricity bills.
 
 _From [Blockchain Hub](https://blockchainhub.net/blockchain-glossary/)_
 
-### Bitcoin <faq-search query="Bitcoin"/>
+### Bitcoin
+
+<faq-search query="Bitcoin"></faq-search>
 
 Bitcoin is a decentralized digital currency without a central bank or single
 administrator that can be sent from user to user on the peer-to-peer bitcoin
@@ -239,7 +283,9 @@ Bitcoin is a cryptocurrency that:
 
 _From [Blockchain Hub](https://blockchainhub.net/blockchain-glossary/)_
 
-### Ethereum <faq-search query="Ethereum"/>
+### Ethereum
+
+<faq-search query="Ethereum"></faq-search>
 
 Ethereum is an open software platform based on blockchain technology that
 enables developers to write smart contracts and build and deploy decentralized

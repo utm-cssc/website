@@ -1,55 +1,46 @@
 <template>
   <div>
-    <div class="accordion mb-1" v-for="(info, index) in data" :key="index">
-      <b-button
-        class="info-title"
-        block
-        v-b-toggle="'accordion-' + index"
-        v-if="courses[info]"
-      >
-        {{ info }}: {{ courses[info].title }}
-      </b-button>
-      <b-collapse
-        :id="'accordion-' + index"
-        :visible="false"
-        accordion="my-accordion"
-      >
-        <b-card-body class="info-desc" v-if="courses[info]">
-          <b-card-text style="margin-top: 0 !important;">
-            {{ courses[info].desc }}
-            <div class="mt-2">
-              <b-btn
-                target="_blank"
-                v-if="courses[info].link"
-                :href="'./' + info.toString().toLowerCase()"
-                class="py-2 px-3 feature-btn"
-              >
-                Check out the resource page!
-              </b-btn>
-            </div>
-            <div class="mt-2">
-              <b-btn
-                target="_blank"
-                v-if="courses[info].courseId"
-                :href="
-                  'https\://student.utm.utoronto.ca/CourseInfo/index.php?session_cd=\'\'&department_id=7&hightlight=' +
-                    courses[info].courseId +
-                    '&download=1'
-                "
-                class="py-2 px-3 feature-btn"
-              >
-                Check out the past Syllabi!
-              </b-btn>
-            </div>
-          </b-card-text>
-        </b-card-body>
-      </b-collapse>
-    </div>
+    <v-expansion-panels accordion>
+      <v-expansion-panel v-for="(info, index) in data" :key="index">
+        <v-expansion-panel-header
+          >{{ info }} : {{ courses[info].title }}</v-expansion-panel-header
+        >
+        <v-expansion-panel-content>
+          {{ courses[info].desc }}
+          <div class="mt-2">
+            <v-btn
+              target="_blank"
+              large
+              color="primary"
+              v-if="courses[info].link"
+              :href="'./' + info.toString().toLowerCase()"
+            >
+              Check out the resource page!
+            </v-btn>
+          </div>
+          <div class="mt-2">
+            <v-btn
+              target="_blank"
+              color="primary"
+              large
+              v-if="courses[info].courseId"
+              :href="
+                'https\://student.utm.utoronto.ca/CourseInfo/index.php?session_cd=\'\'&department_id=7&hightlight=' +
+                  courses[info].courseId +
+                  '&download=1'
+              "
+            >
+              Check out the past Syllabi!
+            </v-btn>
+          </div>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
   </div>
 </template>
 
 <script>
-import coursesDataStore from '~/assets/courses.json'
+import coursesDataStore from '@/assets/courses.json'
 export default {
   props: {
     data: {

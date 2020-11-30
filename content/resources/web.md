@@ -87,13 +87,13 @@ then extracted from the database and used in other parts of the application.
 
 <div class="scrolling-wrapper">
   <div class="scroll-child">
-   <iframe src="https://lifeyourway.net/printables/blogging-html-cheat-sheet.pdf" width="550px" height="500px"></iframe>
+   <iframe src="https://lifeyourway.net/printables/blogging-html-cheat-sheet.pdf" style="width:550px;height:500px;"></iframe>
   </div>
   <div class="scroll-child">
-    <iframe src="https://courses.cs.washington.edu/courses/cse154/16sp/cheat-sheets/css-cheat-sheet.pdf" width="580px" height="500px"></iframe>
+    <iframe src="https://courses.cs.washington.edu/courses/cse154/16sp/cheat-sheets/css-cheat-sheet.pdf" style="width:580px;height:500px;"></iframe>
   </div>
   <div class="scroll-child">
-   <iframe src="https://cheatography.com/davechild/cheat-sheets/javascript/pdf/" width="600px" height="500px"></iframe>
+   <iframe src="https://cheatography.com/davechild/cheat-sheets/javascript/pdf/" style="width:600px;height:500px;"></iframe>
   </div>
 </div>
 
