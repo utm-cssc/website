@@ -47,14 +47,6 @@ A collection of example student resumes from UTM.
 
 </div>
 
-<div class="scroll-child">
-
-[**Nina Ricci Lu**](https://drive.google.com/open?id=15pqPuFUKOC-g_lWwHRj-B6jlWevddRR2)
-
-<iframe src="https://drive.google.com/file/d/15pqPuFUKOC-g_lWwHRj-B6jlWevddRR2/preview" width="480" height="640"></iframe>
-
-</div>
-
 </div>
 
 ## Resume templates
@@ -138,7 +130,7 @@ how to highlight your achievements:**
   during the hiring process, (like a portfolio), your recruiter will work with
   you to collect it
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BYUy1yvjHxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<VideoContainer vid-src="https://www.youtube.com/embed/BYUy1yvjHxE"></VideoContainer>
 
 ## Christina Ng's Guidance
 

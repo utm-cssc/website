@@ -61,5 +61,5 @@ yarn run dev
 
 You can contact us through these channels:
 
-- [Email](mailto:cssc.utm.utoronto.ca)
+- [Email](mailto:cssc.utm@utoronto.ca)
 - [Github Issues](https://github.com/utm-cssc/website/issues)

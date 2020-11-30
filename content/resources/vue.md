@@ -1,7 +1,8 @@
 ---
 title: Vue
 icon: /icons/vue.svg
-desc: Develop web applications easily with a community powered JavaScript framework!
+desc:
+  Develop web applications easily with a community powered JavaScript framework!
 link: vue
 tags:
   - web
@@ -13,15 +14,19 @@ tags:
 
 ## What is Vue?
 
-Vue (pronounced like view) is a progressive framework for building user interfaces.
+Vue (pronounced like view) is a progressive framework for building user
+interfaces.
 
-It is designed from the ground up to be incrementally adoptable, and can easily scale between a library and a framework depending on different use cases.
+It is designed from the ground up to be incrementally adoptable, and can easily
+scale between a library and a framework depending on different use cases.
 
-It consists of an approachable core library that focuses on the view layer only, and an ecosystem of supporting libraries that helps you tackle complexity in large Single-Page Applications.
+It consists of an approachable core library that focuses on the view layer only,
+and an ecosystem of supporting libraries that helps you tackle complexity in
+large Single-Page Applications.
 
 ### Why Vue.js
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/247494684?autoplay=1&color=4fc08d&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<VideoContainer vid-src="https://player.vimeo.com/video/247494684?autoplay=1&color=4fc08d&title=0&byline=0&portrait=0"></VideoContainer>
 
 ## How do I get Started?
 
@@ -32,7 +37,8 @@ It consists of an approachable core library that focuses on the view layer only,
 
 ## Cheat Sheets
 
-Cheat sheets save you time and energy by giving you essential syntax at your fingertips.
+Cheat sheets save you time and energy by giving you essential syntax at your
+fingertips.
 
 <div class="scrolling-wrapper">
   

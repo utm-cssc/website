@@ -6,21 +6,15 @@
       @keydown.up="decrement"
       @keydown.enter="go"
     >
-      <label
-        for="search"
-        class="sr-only"
-      >Search</label>
+      <label for="search" class="sr-only">Search</label>
       <div class="search-container flex align-items-center py-1 px-2">
-        <img
-          src="/icons/search.svg"
-          class="icon-search mr-2"
-        />
+        <img src="/icons/search.svg" class="icon-search mr-2" />
         <input
           id="search"
           ref="search"
           v-model="searchQuery"
           class="search-input pb-1"
-          :class="{ 'rounded-b-none': focus && (searching || articles.length) }"
+          :class="{'rounded-b-none': focus && (searching || articles.length)}"
           placeholder="Search Resources"
           type="search"
           autocomplete="off"
@@ -31,17 +25,14 @@
     </div>
     <ul
       v-show="focus && (searching || articles.length)"
-      class="search-results-container z-10 w-100 absolute top-0 bg-white overflow-hidden"
-      :class="{ 'rounded-t-none': focus && (searching || articles.length) }"
+      class="search-results-container z-10 w-100 absolute top-0 overflow-hidden"
+      :class="{'rounded-t-none': focus && (searching || articles.length)}"
       style="margin-top: 37px; list-style-position: inside;"
     >
-      <li
-        v-if="searching && !articles.length"
-        class="px-2"
-      >Searching...</li>
+      <li v-if="searching && !articles.length" class="px-2">Searching...</li>
       <li
         class="search-item text-capitalize"
-        :class="{'focused-search-item': focusIndex == index }"
+        :class="{'focused-search-item': focusIndex == index}"
         v-for="(result, index) of articles"
         :key="result.path"
         @mouseenter="focusIndex = index"
@@ -52,14 +43,10 @@
           class="flex px-2 py-2 items-center leading-5 transition ease-in-out duration-150 search-item"
           @click="focus = false"
         >
-          <span
-            v-if="result.category"
-            class="font-bold"
-          >{{ result.category }}</span>
-          <IconChevronRight
-            v-if="result.category"
-            class="w-3 h-3 mx-1"
-          />
+          <span v-if="result.category" class="font-bold">{{
+            result.category
+          }}</span>
+          <IconChevronRight v-if="result.category" class="w-3 h-3 mx-1" />
           {{ result.slug }}
         </NuxtLink>
       </li>
@@ -69,18 +56,18 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       searchQuery: '',
       focus: false,
       focusIndex: -1,
       open: false,
       searching: false,
-      articles: []
+      articles: [],
     }
   },
   watch: {
-    async searchQuery (searchQuery) {
+    async searchQuery(searchQuery) {
       console.log(searchQuery)
       this.focusIndex = -1
       if (!searchQuery) {
@@ -96,55 +83,64 @@ export default {
       console.log(this.articles)
 
       this.searching = false
-    }
+    },
   },
-  mounted () {
+  mounted() {
     window.addEventListener('keyup', this.keyup)
   },
-  beforeDestroy () {
+  beforeDestroy() {
     window.removeEventListener('keyup', this.keyup)
   },
   methods: {
-    onFocus () {
+    onFocus() {
       this.focus = true
       this.$emit('focus', true)
     },
-    onBlur () {
+    onBlur() {
       this.focus = false
       this.$emit('focus', false)
     },
-    keyup (e) {
+    keyup(e) {
       if (e.key === '/') {
         this.$refs.search.focus()
       }
     },
-    increment () {
+    increment() {
       if (this.focusIndex < this.articles.length - 1) {
         this.focusIndex++
       }
     },
-    decrement () {
+    decrement() {
       if (this.focusIndex >= 0) {
         this.focusIndex--
       }
     },
-    go () {
+    go() {
       if (this.articles.length === 0) {
         return
       }
-      const result = this.focusIndex === -1 ? this.articles[0] : this.articles[this.focusIndex]
+      const result =
+        this.focusIndex === -1
+          ? this.articles[0]
+          : this.articles[this.focusIndex]
       this.$router.push(result.path)
       // Unfocus the input and reset the query.
       this.$refs.search.blur()
       this.searchQuery = ''
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style scoped>
+.v-application ul,
+.v-application ol {
+  padding: 0;
+}
+
 .search-item {
   color: var(--color-body);
+  background: var(--bg);
   display: block;
   cursor: pointer;
   text-decoration: none;

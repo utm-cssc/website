@@ -5,7 +5,42 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
-  theme: {},
+  theme: {
+    typography: theme => ({
+      default: {
+        css: [
+          {
+            color: 'var(--color-body)',
+            h1: {
+              color: 'var(--color-heading)',
+            },
+            h2: {
+              color: 'var(--color-heading)',
+            },
+            h3: {
+              color: 'var(--color-heading)',
+            },
+            p: {
+              color: 'var(--color-body)',
+            },
+            strong: {
+              color: 'var(--color-heading)',
+            },
+            th: {
+              color: 'var(--color-heading)',
+            },
+          },
+        ],
+      },
+      sm: {
+        css: [
+          {
+            padding: '0 20px 0 20px',
+          },
+        ],
+      },
+    }),
+  },
   variants: {},
   plugins: [require('@tailwindcss/typography')],
   purge: {
