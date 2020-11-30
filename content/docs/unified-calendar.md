@@ -1,6 +1,6 @@
 ---
 title: Unified Calendar
-desc: Informs you about the implementation of unified calendar.
+desc: Learn about the implementation of our unified calendar
 icon: /docs/calendar.svg
 link: unified-calendar
 ---
@@ -22,12 +22,12 @@ this component [here](https://vuetifyjs.com/en/components/calendars/#calendars).
 
 ## Data
 
-We have created an unified-calendar-data repo
-[here](https://github.com/utm-cssc/unified-calendar-data) where each club can
-push their event data in a CSV format.
+We have created an unified-calendar-data repo where each club can add their
+events! For more information about the unified-calendar-data event format, you
+can check it out [here](https://github.com/utm-cssc/unified-calendar-data)!
 
-Using async axios calls we get all the data from the CSVs in the repo mentioned
-above.
+Using async axios calls, we can get all of the data from the CSVs in the repo
+mentioned above.
 
 ### Event Data (CSV)
 
@@ -45,7 +45,7 @@ CSSC's Games & Tips for First Years, A series of games and fun puzzles for our f
 
 ### Calendar Event Data
 
-The events data required by the Vuetify calendar is in following format:
+The event data required by the Vuetify calendar is in following format:
 
 ```
 {
@@ -57,8 +57,8 @@ The events data required by the Vuetify calendar is in following format:
 }
 ```
 
-### Parsing (CSV to Calendar Event Data)
+### Parsing CSVs to Calendar Event Data
 
-We are using the readCSVData method which parses the events in the CSV to the
-Vuetify calendar format. This data is then reflected by the Vuetify calendar
-component.
+We are using the readCSVData method which parses and then converts the events in
+our CSV format to the Vuetify calendar format. This data is then reflected by
+the Vuetify calendar component.

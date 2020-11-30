@@ -1,6 +1,6 @@
 ---
 title: Video Container
-desc: This is a responsive video container
+desc: Using the video container in your resource pages
 icon: /docs/film.svg
 link: video-container
 ---
@@ -8,7 +8,7 @@ link: video-container
 # Video Container
 
 This is a repsonsive video container making it easy to add videos on our
-resources.
+resource pages!
 
 ## How to use:
 
@@ -21,9 +21,9 @@ can adjust the element by passing in specific prop values
 
 ### Props
 
-| Name    | Type   | Description                                     |
-| ------- | ------ | ----------------------------------------------- |
-| vid-src | string | We put the url of the iframe we want to display |
+| Name    | Type   | Description                                  |
+| ------- | ------ | -------------------------------------------- |
+| vid-src | String | Put the url of the iframe we want to display |
 
 ### Example
 

@@ -1,30 +1,28 @@
 ---
-title: Contributing Resource
-desc: It's a guide to contribute to CSSC website's resources.
+title: Contributing Resources
+desc: Guidelines when creating a website resource page
 icon: /docs/group.svg
 link: resources
 ---
 
 # Contributing Resources
 
-Our resources are highly dependent on contributors. These pages are created by
-the students to make their computer science journey a little bit easier. These
-resources can help you learn a new technology and gain better marks in courses
-through the resources provided in the course resources.
+Our resources are highly dependent on our contributors. These pages were created
+by students to make their computer science journey a little bit easier.
 
-These pages are never complete and you are encouraged to contribute to help
-other students.
+Our resource pages are constantly being developed/improved upon and we highly
+encourage you to contribute to improve the quality of our resources!
 
-To begin adding resources, please look at the following guidelines for guidance.
+To begin adding resources, take a look at the following guidelines.
 
-## Pre-requisites
+## Prerequisites
 
 ### Markdown
 
-Markdown, the simple and easy-to-use markup language you can use to format
-virtually any document.
+Markdown is a simple and easy-to-use markup language that you can use to format
+virtually any document/.
 
-In nuxt we use Markdown to create a resource.
+In Nuxt, we use Markdown to create our resources!
 
 <grid-1-x-2
 img-Src="/contribution-guide/md.svg"
@@ -34,20 +32,20 @@ link="https://www.markdowntutorial.com/"></grid-1-x-2>
 
 ## Starting/Appending resources
 
-To create or extend a resource we have provided:
+To create or extend a resource, we have provided:
 
 1. A template which makes it easier to get started (you don't have to follow it
    strictly).
-2. We have also provided a list of Do's and Don'ts
+2. A list of Do's and Don'ts
 
 **Note:** The following is a generic template that our resources should follow
-more or less to ensure layout consistency.
+more or less to ensure the page layout consistency.
 
 ### Course Resource
 
 #### Template
 
-- Prereq
+- Prerequisites
 - Course Website
 - What is it about?
 - Topics Covered
@@ -56,9 +54,9 @@ more or less to ensure layout consistency.
 
 #### Don’t
 
-- Cannot put a lab/prep on the website
-- Cannot put any course content/ course resources on the website (including
-  lecture recordings, lecture notes, slides, etc)
+- You can't put any labs on the website
+- You can't put any course content/course resources on the website (including
+  lecture recordings, lecture notes, slides, etc.)
 
 #### Dos
 
@@ -66,7 +64,8 @@ more or less to ensure layout consistency.
   ([2x1](https://github.com/utm-cssc/website/blob/master/components/global/Grid1x2.vue),
   [3x1](https://github.com/utm-cssc/website/blob/master/components/global/Grid1x3.vue))
   for better designs.
-- Try to follow the template for consistency across the website.
+- Try to follow our templates to maintain page layout consistency across the
+  website.
 
 ### Technology Resource
 
@@ -99,5 +98,5 @@ The following is a sample of the Docker resource page layout:
   - Docker101 for developers!
 - Cheat Sheets
 
-You can checkout the complete Docker page layout
+You can check out the complete Docker page layout
 [here](https://cssc.utm.utoronto.ca/resources/docker)

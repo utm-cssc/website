@@ -14,18 +14,18 @@ the functionality of their components/project when it's deployed live.
 
 ## Why are Unit Tests important?
 
-The purpose of Unit Tests are to validate that each unit of the software
-performs as designed. When working on a large project, there is the potential
-chance of creating side effects where other components can cause an unexpected
-behaviour.
+The purpose of Unit Tests are to validate that each component of the software
+performs as designed. When working on a large scale project, there is the
+potential chance of creating side effects where other components can cause an
+unexpected behaviour.
 
 ## Getting started
 
-<grid-1-x-2 title="Quick start to unit testing!" img-src="https://res.cloudinary.com/practicaldev/image/fetch/s--glpQtpEZ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/lkqogyvxhgxdkajirreg.png" link="https://www.vuemastery.com/courses/unit-testing/what-to-test/" desc="Learn how to write tests for your components!" button="Check it out!"></grid-1-x-2>
+<grid-1-x-2 title="A quick start to unit testing!" img-src="https://res.cloudinary.com/practicaldev/image/fetch/s--glpQtpEZ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/lkqogyvxhgxdkajirreg.png" link="https://www.vuemastery.com/courses/unit-testing/what-to-test/" desc="Learn how to write tests for your components!" button="Check it out!"></grid-1-x-2>
 
 ## Unit Test structure
 
-All test files should belong under **components/tests** and should be named as
+All test files should belong under **/components/tests** and should be named as
 **[component].spec.js**
 
 | Function Name | About                                                    |
@@ -80,5 +80,5 @@ the developer to manually run the following command each time
 yarn run test
 ```
 
-For more information on Jest and its capabilities, check out the link
+For more information about Jest and its capabilities, you can check it out
 [here](https://jestjs.io/docs/en/getting-started.html)!

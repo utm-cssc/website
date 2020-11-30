@@ -1,14 +1,11 @@
 ---
 title: Installation
-desc: It tells you what you need for running the code.
+desc: Setup and configure the website locally!
 icon: /docs/installation.svg
 link: installation
 ---
 
 # Installation
-
-This is the guide to install the CSSC repository on your local machine and to
-get started on contributing!
 
 ## Requirements
 
@@ -20,7 +17,7 @@ Note: Only the core requirements are listed
 - Yarn >= v1.22.4
 - Vue >= v2.6.12
 - Nuxt >= v2.14.7
-- Bootstrap >= v4.5.2
+- Tailwind >= v3.0.0
 - Vuetify >= v2.0.0
 
 ### Backend

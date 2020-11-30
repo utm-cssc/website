@@ -1,6 +1,6 @@
 ---
 title: Nuxt Content
-desc: Informs users how to use nuxt content components
+desc: Learn how to use Nuxt content components
 icon: /docs/content.svg
 link: nuxt-content
 ---
@@ -8,12 +8,13 @@ link: nuxt-content
 # Nuxt Content
 
 Nuxt content is a Git-based Headless CMS, which allows you to fetch your
-Markdown, JSON, YAML, XML and CSV files through a MongoDB like API from /content
+Markdown, JSON, YAML, XML and CSV files through a MongoDB like API from the
+**/content** folder.
+
+## Accessing content data
+
+We can use the following function to obtain our data from the **/content**
 folder.
-
-## Assessing content data
-
-We can use a script to get data from content folder.
 
 ```
 async asyncData ({ $content, params, error }) {
@@ -24,7 +25,7 @@ async asyncData ({ $content, params, error }) {
 ```
 
 **Note:** 'name' can be the name of the folder/directory that you want to fetch
-from content folder.
+your data from
 
 We can also filter the data we request for by using additional functions
 provided by [Nuxt](https://content.nuxtjs.org/fetching/)
@@ -46,11 +47,11 @@ provided by [Nuxt](https://content.nuxtjs.org/fetching/)
 }
 ```
 
-## md Files
+## .md Files
 
-### Displaying md files
+### Displaying .md files
 
-We use the following script in a \_slug.md file which fetches the md files and
+We use the following script in a \_slug.vue file which fetches the .md files and
 displays it with a /filename
 
 ```
@@ -74,18 +75,19 @@ displays it with a /filename
 </script>
 ```
 
-We use
+We use the
 [TailwindCSS Typography module](https://github.com/tailwindlabs/tailwindcss-typography)
-to display these md files.
+to display our .md files.
 
-### Editting md Files
+### Editting .md Files
 
 We can use YAML to provide additional metadata to our documents:
 
 ```
 ---
 title: Nuxt Content
-desc: Informs users how to use nuxt content components
+desc: Learn how to use Nuxt content components
+icon: /docs/content.svg
 link: nuxt-content
 ---
 ```
