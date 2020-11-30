@@ -10,6 +10,8 @@
     :search-input.sync="searchQuery"
     :items="searchResults"
     :loading="searching"
+    no-filter
+    clearable
   >
     <template v-slot:item="data">
       <template v-if="typeof data.item !== 'object'">
@@ -37,12 +39,14 @@ export default {
   },
   computed: {
     searchResults() {
-      return this.searchEntries.map(result => {
+      const searchResults = this.searchEntries.map(result => {
         return {
-          text: result.title,
+          text: `Resources > ${result.title}`,
           value: result.slug,
         }
       })
+      console.log(searchResults)
+      return searchResults
     },
   },
   watch: {
@@ -54,13 +58,32 @@ export default {
       if (this.articles.length > 0) return
       if (this.searching) return
       this.searching = true
+      // const titleSearchResults = this.getTitleSearchResults(searchQuery)
+      // const tagsSearchResults = this.getTagsSearchResults(searchQuery)
 
-      this.searchEntries = await this.$content('resources', {deep: true})
-        .limit(8)
-        .search('title', searchQuery)
+      this.searchEntries = await this.$content('resources')
+        .where({tags: {$contains: searchQuery}})
         .fetch()
-      console.log(this.searchEntries)
+
       this.searching = false
+    },
+  },
+  methods: {
+    // async getTitleSearchResults(searchQuery) {
+    //   const titleSearchResults = await this.$content('resources')
+    //     .search('title', searchQuery)
+    //     .fetch()
+
+    //   console.log(titleSearchResults)
+    //   return titleSearchResults
+    // },
+    async getTagsSearchResults(searchQuery) {
+      const tagsSearchResults = await this.$content('resources')
+        .where({tags: {$contains: searchQuery}})
+        .fetch()
+
+      console.log(tagsSearchResults)
+      return tagsSearchResults
     },
   },
 }
