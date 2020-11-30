@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-3 mt-4 flex-column align-center">
+  <div class="mb-3 mt-4 flex-column align-items-center">
     <img
       v-if="icon"
       :class="{'round-photo': rounded}"
@@ -12,6 +12,18 @@
     <p class="desc">
       {{ desc }}
     </p>
+    <div class="d-flex justify-content-center">
+      <b-button
+        v-if="button && button.link && button.label"
+        :href="button.link"
+        size="md"
+        variant="outline-primary"
+        class="btn-cta mb-3 d-flex align-items-center"
+      >
+        <img v-if="button.icon" class="btn-icon mx-2" :src="button.icon" />
+        {{ button.label }}
+      </b-button>
+    </div>
   </div>
 </template>
 
@@ -22,6 +34,20 @@ export default {
     icon: String,
     desc: String,
     rounded: Boolean,
+    button: {
+      label: {
+        type: String,
+        default: '',
+      },
+      link: {
+        type: String,
+        default: '',
+      },
+      icon: {
+        type: String,
+        default: '',
+      },
+    },
   },
 }
 </script>
@@ -46,5 +72,25 @@ export default {
 .desc {
   font-size: 20px;
   line-height: 1.5;
+}
+
+.btn-cta {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  outline: none;
+  font-size: 1.42rem;
+  color: #fff;
+}
+
+.btn-cta:active {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.btn:hover,
+.btn-cta:hover {
+  color: var(--color-primary-light) !important;
+  background-color: var(--bg) !important;
+  border-color: var(--color-primary) !important;
 }
 </style>

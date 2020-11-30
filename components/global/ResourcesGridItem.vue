@@ -71,6 +71,7 @@ a {
   color: #4a4a4a;
   display: block;
   padding: 1.25rem;
+  min-width: 156px;
 }
 
 .box.resource-box {
@@ -87,12 +88,12 @@ a {
 .resource-icon {
   margin-bottom: 32px;
   display: block;
-  position: relative;
   height: 42px;
   width: 42px;
   margin-left: 0;
   font-size: 50px !important;
   color: #fff;
+  margin-top: unset;
 }
 
 .icon {
@@ -108,6 +109,7 @@ a {
   word-wrap: break-word;
   line-height: 1.2em;
   position: absolute;
+  max-width: 72%;
 }
 
 .resource-title-hovered {

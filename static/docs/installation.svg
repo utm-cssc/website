@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 510.952 510.952" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><script>
+        // Catch errors if signal is already set by user agent or other extension
+        try {
+            Object.defineProperty(navigator, 'globalPrivacyControl', {
+                value: false,
+                enumerable: true
+            })
+            // Remove script tag after execution
+            document.currentScript.parentElement.removeChild(document.currentScript)
+        } catch (e) {}</script><g xmlns="http://www.w3.org/2000/svg"><g><path d="m93.154 282.735h289.688c17.439 0 31.626-14.188 31.626-31.627 0-17.438-14.188-31.626-31.626-31.626h-289.688c-17.439 0-31.626 14.188-31.626 31.626 0 17.44 14.187 31.627 31.626 31.627zm301.315-31.627c0 6.411-5.216 11.627-11.626 11.627h-40.618v-23.253h40.618c6.41 0 11.626 5.216 11.626 11.626zm-301.315-11.626h229.071v23.253h-229.071c-6.411 0-11.626-5.216-11.626-11.627 0-6.41 5.215-11.626 11.626-11.626z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m179.54 199.585h1.367c16.352 0 29.655-13.304 29.655-29.655 0-7.535-2.83-14.418-7.476-19.655 4.646-5.237 7.476-12.12 7.476-19.655 0-16.352-13.303-29.655-29.655-29.655h-1.367c-16.352 0-29.655 13.304-29.655 29.655 0 7.535 2.83 14.418 7.476 19.655-4.646 5.237-7.476 12.12-7.476 19.655-.001 16.351 13.303 29.655 29.655 29.655zm1.367-20h-1.367c-5.324 0-9.655-4.331-9.655-9.655s4.332-9.655 9.655-9.655h1.367c5.324 0 9.655 4.331 9.655 9.655s-4.331 9.655-9.655 9.655zm-1.367-58.621h1.367c5.324 0 9.655 4.331 9.655 9.655s-4.332 9.655-9.655 9.655h-1.367c-5.324 0-9.655-4.331-9.655-9.655s4.331-9.655 9.655-9.655z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m251.144 199.585h3.28c15.825 0 28.699-12.874 28.699-28.698v-41.224c0-15.825-12.874-28.699-28.699-28.699h-3.28c-15.825 0-28.699 12.874-28.699 28.699v41.224c.001 15.824 12.875 28.698 28.699 28.698zm-8.698-69.922c0-4.797 3.902-8.699 8.699-8.699h3.28c4.796 0 8.699 3.902 8.699 8.699v41.224c0 4.796-3.902 8.698-8.699 8.698h-3.28c-4.796 0-8.699-3.902-8.699-8.698z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m305.435 197.049c4.067 3.626 10.493 3.257 14.119-.809l37.177-41.697c3.676-4.123 3.313-10.444-.809-14.119-4.123-3.676-10.444-3.313-14.119.809l-37.177 41.697c-3.676 4.123-3.313 10.444.809 14.119z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m302.856 151.71c2.093 5.029 8.018 7.503 13.06 5.41 5.029-2.088 7.498-8.024 5.41-13.06-2.086-5.03-8.026-7.5-13.06-5.41-5.021 2.084-7.508 8.029-5.41 13.06z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m358.506 185.761c-1.638-3.935-5.716-6.462-9.971-6.145-4.355.325-8.048 3.52-9.015 7.775-1.98 8.718 8.177 15.514 15.498 10.367 3.769-2.65 5.265-7.735 3.488-11.997z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m495.104 379.76c-1.503-5.765-7.948-8.994-13.473-6.729-7.351 3.013-15.891.093-19.872-6.801-3.984-6.896-2.243-15.75 4.05-20.595 2.798-2.154 3.899-5.319 3.899-8.745v-272.61-27.119-.001c0-20.49-16.598-37.16-37.001-37.16h-383.179c-20.22 0-37.152 16.918-37.152 37.161v362.659c0 23.021 18.729 41.75 41.75 41.75h241.016c1.85.323 3.768.114 5.512-.584 7.337-3.005 15.867-.077 19.842 6.808 3.964 6.87 2.246 15.71-3.999 20.563-4.697 3.65-5.128 10.821-.895 15.007 13.134 12.985 29.447 22.406 47.176 27.244 5.736 1.563 11.73-2.39 12.54-8.286 1.077-7.836 7.873-13.745 15.808-13.745s14.731 5.909 15.808 13.745c.807 5.877 6.8 9.852 12.539 8.286 17.732-4.837 34.047-14.258 47.183-27.244 4.229-4.182 3.806-11.354-.895-15.007-6.246-4.854-7.966-13.693-4-20.562 3.976-6.885 12.506-9.815 19.844-6.809 5.516 2.258 11.951-.964 13.46-6.716 2.33-8.875 3.511-18.07 3.511-27.331 0-9.196-1.168-18.34-3.472-27.179zm-419.567-359.758v34.278h-43.159v-17.12c0-9.343 7.832-17.159 17.158-17.159zm-21.411 401.568c-11.993 0-21.75-9.757-21.75-21.75v-325.54h53.161 240.849c5.523 0 10-4.478 10-10s-4.477-10-10-10h-230.849v-34.279h337.169c9.375 0 17.002 7.698 17.002 17.16v17.119h-35.345c-5.523 0-10 4.478-10 10s4.477 10 10 10h35.345v242.234c-9.339-5.845-19.588-10.334-30.217-13.24-5.763-1.578-11.775 2.432-12.551 8.345-1.035 7.886-7.834 13.832-15.815 13.832-7.859 0-14.791-6.03-15.815-13.832-.778-5.916-6.788-9.921-12.553-8.344-17.755 4.854-34.175 14.379-47.25 27.331-4.236 4.195-3.786 11.385.931 15.023 6.293 4.854 8.038 13.709 4.058 20.599-3.733 6.463-11.475 9.435-18.483 7.298-6.026-1.843-12.998-.937-14.866 6.236-3.538 13.6-4.365 27.886-2.473 41.808zm423.5-1.694c-13.201-.714-26.267 5.938-33.185 17.919-6.904 11.954-6.151 26.568 1.047 37.647-6.759 5.369-14.276 9.713-22.275 12.873-5.992-11.776-18.274-19.738-32.086-19.738s-26.094 7.961-32.086 19.737c-7.997-3.16-15.513-7.504-22.271-12.872 7.194-11.077 7.947-25.69 1.047-37.646-6.917-11.98-19.964-18.647-33.172-17.921-1.26-8.514-1.276-17.208-.033-25.724 13.215.74 26.281-5.927 33.204-17.917 6.932-12.006 6.153-26.658-1.108-37.746 6.728-5.353 14.27-9.727 22.265-12.894 6.045 12.013 18.7 19.858 32.153 19.858 13.454 0 26.111-7.85 32.153-19.859 7.999 3.169 15.513 7.519 22.266 12.892-7.266 11.087-8.043 25.74-1.104 37.75 6.924 11.989 19.993 18.657 33.205 17.915.619 4.222.93 8.499.93 12.791 0 4.344-.318 8.67-.95 12.935z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m391.126 362.008c-24.776 0-44.933 20.156-44.933 44.933s20.157 44.934 44.933 44.934 44.933-20.157 44.933-44.934-20.156-44.933-44.933-44.933zm0 69.866c-13.748 0-24.933-11.186-24.933-24.934s11.185-24.933 24.933-24.933 24.933 11.185 24.933 24.933-11.185 24.934-24.933 24.934z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m109.384 314.68h-29.97c-5.523 0-10 4.478-10 10s4.477 10 10 10h29.97c5.523 0 10-4.478 10-10s-4.478-10-10-10z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m272.576 314.68h-119.676c-5.523 0-10 4.478-10 10s4.477 10 10 10h119.676c5.523 0 10-4.478 10-10s-4.477-10-10-10z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m109.384 360.579h-29.97c-5.523 0-10 4.478-10 10s4.477 10 10 10h29.97c5.523 0 10-4.478 10-10s-4.478-10-10-10z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m252.784 360.579h-99.884c-5.523 0-10 4.478-10 10s4.477 10 10 10h99.885c5.523 0 10-4.478 10-10s-4.478-10-10.001-10z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m361.796 68.101c2.065 5.032 8.042 7.505 13.06 5.41 5.027-2.099 7.493-8.008 5.41-13.051-2.081-5.038-8.025-7.504-13.06-5.42-5.026 2.081-7.503 8.034-5.41 13.061z" fill="#ffffff" data-original="#000000" style="" class=""/></g></g><script>try {
+                        Object.defineProperty(screen, "availTop", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availLeft", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availWidth", { value: 1920 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availHeight", { value: 1080 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "colorDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "pixelDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "keyboard", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "hardwareConcurrency", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "deviceMemory", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitTemporaryStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitPersistentStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "appVersion", { value: "5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36" });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "doNotTrack", { value: null });
+                    } catch (e) {}
+                    
+                navigator.getBattery = function getBattery () {
+                let battery = {"charging":true,"chargingTime":0,"dischargingTime":null,"level":1}
+            
+                try {
+                    Object.defineProperty(battery, 'onchargingchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onchargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'ondischargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onlevelchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                    battery.addEventListener = function addEventListener () {
+                        return
+                    }
+                
+                return Promise.resolve(battery)
+                }
+            
+            try {
+                window.screenY = 0
+            } catch (e) { }
+        
+            try {
+                window.screenTop = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerHeight = window.screen.height
+            } catch (e) { }
+        
+            try {
+                window.screenX = 0
+            } catch (e) { }
+        
+            try {
+                window.screenLeft = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerWidth = 960
+            } catch (e) { }
+        </script></g></svg>

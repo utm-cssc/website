@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 520 520" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><script>
+        // Catch errors if signal is already set by user agent or other extension
+        try {
+            Object.defineProperty(navigator, 'globalPrivacyControl', {
+                value: false,
+                enumerable: true
+            })
+            // Remove script tag after execution
+            document.currentScript.parentElement.removeChild(document.currentScript)
+        } catch (e) {}</script><g xmlns="http://www.w3.org/2000/svg" id="_x39_54_x2C__Cloud_x2C__Hosting_x2C__Internet_x2C__Online"><g><path d="m462.168 422.576c7.872-7.084 12.832-17.343 12.832-28.741v-232.667c0-21.321-17.346-38.666-38.667-38.666h-51.333v-51.5c0-18.472-15.028-33.5-33.5-33.5h-183c-18.472 0-33.5 15.028-33.5 33.5v51.5h-51.334c-21.32 0-38.666 17.345-38.666 38.666v232.667c0 11.398 4.96 21.657 12.833 28.741-18.293 1.124-32.833 16.356-32.833 34.926 0 19.299 15.701 35 35 35h400c19.299 0 35-15.701 35-35 0-18.57-14.54-33.802-32.832-34.926zm-32.168-140.074h-40c-2.762 0-5 2.238-5 5 0 2.761 2.238 5 5 5h40v10h-40c-2.762 0-5 2.238-5 5 0 2.761 2.238 5 5 5h40v10h-40c-2.762 0-5 2.238-5 5 0 2.761 2.238 5 5 5h40v10h-40c-2.762 0-5 2.238-5 5 0 2.761 2.238 5 5 5h40v10h-40c-2.762 0-5 2.238-5 5 0 2.761 2.238 5 5 5h40v10h-340v-10h40c2.761 0 5-2.239 5-5 0-2.762-2.239-5-5-5h-40v-10h40c2.761 0 5-2.239 5-5 0-2.762-2.239-5-5-5h-40v-10h40c2.761 0 5-2.239 5-5 0-2.762-2.239-5-5-5h-40v-10h40c2.761 0 5-2.239 5-5 0-2.762-2.239-5-5-5h-40v-10h40c2.761 0 5-2.239 5-5 0-2.762-2.239-5-5-5h-40v-110.001h45v61.5c0 18.472 15.028 33.501 33.5 33.501h183c18.472 0 33.5-15.028 33.5-33.501v-61.5h45zm-55-48.501c0 12.958-10.542 23.501-23.5 23.501h-183c-12.958 0-23.5-10.543-23.5-23.501v-126.5h230zm-206.5-186.5h183c12.958 0 23.5 10.542 23.5 23.5v26.5h-230v-26.5c0-12.958 10.542-23.5 23.5-23.5zm-113.5 346.334v-232.667c0-15.807 12.86-28.667 28.666-28.667h51.334v30h-50c-2.761 0-5 2.239-5 5v220.001c0 2.761 2.239 5 5 5h350c2.762 0 5-2.239 5-5v-220.001c0-2.761-2.238-5-5-5h-50v-30h51.333c15.807 0 28.667 12.86 28.667 28.667v232.667c0 15.807-12.86 28.667-28.667 28.667-37.645 0-315.112 0-352.667 0-15.806 0-28.666-12.86-28.666-28.667zm325 38.667h45v10h-45zm-165 0h90v10h-90zm-120 0h45v10h-45zm365 50h-400c-13.785 0-25-11.215-25-25s11.215-25 25-25h25v15c0 2.761 2.239 5 5 5h55c2.761 0 5-2.239 5-5v-15h55v15c0 2.761 2.239 5 5 5h100c2.762 0 5-2.239 5-5v-15h55v15c0 2.761 2.238 5 5 5h55c2.762 0 5-2.239 5-5v-15h25c13.785 0 25 11.215 25 25s-11.215 25-25 25z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m205 197.501c2.761 0 5-2.239 5-5 0-27.57 22.43-50 50-50s50 22.43 50 50c0 2.761 2.238 5 5 5s5-2.239 5-5c0-33.084-26.916-60-60-60s-60 26.916-60 60c0 2.762 2.239 5 5 5z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m297.773 188.341-15-10c-2.298-1.533-5.402-.911-6.934 1.387-1.532 2.297-.911 5.402 1.387 6.934l8.76 5.84-8.76 5.84c-2.298 1.532-2.919 4.636-1.387 6.934 1.537 2.305 4.643 2.914 6.934 1.387l15-10c1.391-.927 2.227-2.488 2.227-4.16 0-1.673-.836-3.234-2.227-4.162z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m244.16 179.728c-1.531-2.298-4.637-2.918-6.934-1.387l-15 10c-2.962 1.974-2.971 6.34 0 8.32l15 10c2.288 1.525 5.396.921 6.934-1.387 1.532-2.297.911-5.402-1.387-6.934l-8.76-5.84 8.76-5.84c2.298-1.53 2.919-4.635 1.387-6.932z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m271.581 157.758c-2.615-.87-5.451.542-6.324 3.163l-20.001 60c-.873 2.62.543 5.451 3.163 6.325 2.615.872 5.449-.538 6.325-3.163l19.999-60c.873-2.62-.542-5.452-3.162-6.325z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m345 87.502c8.271 0 15-6.729 15-15s-6.729-15-15-15c-8.272 0-15 6.729-15 15s6.728 15 15 15zm0-20c2.757 0 5 2.243 5 5s-2.243 5-5 5-5-2.243-5-5 2.243-5 5-5z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m305 87.502c8.271 0 15-6.729 15-15s-6.729-15-15-15c-8.272 0-15 6.729-15 15s6.728 15 15 15zm0-20c2.757 0 5 2.243 5 5s-2.243 5-5 5-5-2.243-5-5 2.243-5 5-5z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m165 77.502h95c2.762 0 5-2.239 5-5s-2.238-5-5-5h-95c-2.761 0-5 2.239-5 5s2.239 5 5 5z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m455 82.502c13.785 0 25-11.215 25-25s-11.215-25-25-25-25 11.215-25 25 11.215 25 25 25zm0-40.001c8.271 0 15 6.729 15 15s-6.729 15-15 15c-8.272 0-15-6.729-15-15s6.728-15 15-15z" fill="#ffffff" data-original="#000000" style="" class=""/><path d="m72.5 112.502c17.92 0 32.5-14.58 32.5-32.5s-14.58-32.5-32.5-32.5-32.5 14.579-32.5 32.5 14.58 32.5 32.5 32.5zm0-55.001c12.407 0 22.5 10.093 22.5 22.5s-10.093 22.5-22.5 22.5-22.5-10.093-22.5-22.499c0-12.407 10.093-22.501 22.5-22.501z" fill="#ffffff" data-original="#000000" style="" class=""/><circle cx="407.5" cy="55" r="7.5" fill="#ffffff" data-original="#000000" style="" class=""/><circle cx="472.5" cy="110" r="7.5" fill="#ffffff" data-original="#000000" style="" class=""/><circle cx="112.5" cy="40" r="7.5" fill="#ffffff" data-original="#000000" style="" class=""/><circle cx="37.5" cy="125" r="7.5" fill="#ffffff" data-original="#000000" style="" class=""/></g></g><script>try {
+                        Object.defineProperty(screen, "availTop", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availLeft", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availWidth", { value: 1920 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availHeight", { value: 1080 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "colorDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "pixelDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "keyboard", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "hardwareConcurrency", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "deviceMemory", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitTemporaryStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitPersistentStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "appVersion", { value: "5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36" });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "doNotTrack", { value: null });
+                    } catch (e) {}
+                    
+                navigator.getBattery = function getBattery () {
+                let battery = {"charging":true,"chargingTime":0,"dischargingTime":null,"level":1}
+            
+                try {
+                    Object.defineProperty(battery, 'onchargingchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onchargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'ondischargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onlevelchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                    battery.addEventListener = function addEventListener () {
+                        return
+                    }
+                
+                return Promise.resolve(battery)
+                }
+            
+            try {
+                window.screenY = 0
+            } catch (e) { }
+        
+            try {
+                window.screenTop = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerHeight = window.screen.height
+            } catch (e) { }
+        
+            try {
+                window.screenX = 0
+            } catch (e) { }
+        
+            try {
+                window.screenLeft = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerWidth = 960
+            } catch (e) { }
+        </script></g></svg>

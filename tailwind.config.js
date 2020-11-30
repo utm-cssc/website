@@ -20,13 +20,13 @@ module.exports = {
             h3: {
               color: 'var(--color-heading)',
             },
-            h4: {
+            p: {
+              color: 'var(--color-body)',
+            },
+            strong: {
               color: 'var(--color-heading)',
             },
-            h5: {
-              color: 'var(--color-heading)',
-            },
-            h6: {
+            th: {
               color: 'var(--color-heading)',
             },
           },

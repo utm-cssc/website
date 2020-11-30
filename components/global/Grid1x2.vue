@@ -36,44 +36,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="row flex align-center justify-center">
-      <div
-        class="flex justify-start"
-        :class="{
-          'order-md-last': !reversed,
-          'justify-md-end': !reversed,
-          'px-5': $mq == 'sm',
-        }"
-      >
-        <img class="feature-img mb-5 mb-md-0" :src="imgSrc" />
-      </div>
-      <div
-        class="flex justify-center flex-column text-container"
-        :class="{
-          'px-5': $mq == 'sm',
-          'align-md-end': reversed,
-          'left-padded-desc': reversed,
-          'right-padded-desc': !reversed,
-        }"
-      >
-        <h3 v-if="title != ''" class="feature-title mb-2">
-          {{ title }}
-        </h3>
-        <p
-          class="desc"
-          :class="{
-            'text-md-right': reversed && !($mq == 'md') && !($mq == 'sm'),
-          }"
-        >
-          {{ desc }}
-        </p>
-        <div class="mt-2 mt-lg-4">
-          <v-btn target="_blank" v-if="link" :href="link" color="primary" large>
-            {{ button }}
-          </v-btn>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -117,6 +79,7 @@ export default {
 .feature-img {
   width: 100%;
   border-radius: 16px;
+  max-height: 250px;
 }
 
 .right-padded-desc {
