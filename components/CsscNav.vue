@@ -52,10 +52,9 @@
 import DiscordIcon from '@/static/icons/discord.svg?inline'
 import GithubIcon from '@/static/icons/github.svg?inline'
 import NavDrawer from '@/components/NavDrawer'
-import SearchBar from '@/components/SearchBar'
 
 export default {
-  components: {GithubIcon, DiscordIcon, NavDrawer, SearchBar},
+  components: {GithubIcon, DiscordIcon, NavDrawer},
 
   data() {
     return {

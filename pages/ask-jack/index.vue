@@ -12,9 +12,7 @@
       />
     </div>
     <a id="ask-upper-year-form"></a>
-    <div class="mb-3 mt-2 cssc-heading">
-      Ask Jack
-    </div>
+    <div class="mb-3 mt-2 cssc-heading">Ask Jack</div>
     <p class="mb-3">
       Hello everyone! It’s nice to meet you all! My name is Jack, I use he/him
       pronouns, and I’m here to answer all your questions! You can ask me
@@ -32,9 +30,7 @@
         src="~/static/ask-jack/jack_cheer.png"
       />
     </div>
-    <div class="mb-3 mt-2 cssc-heading">
-      Behind the Scenes
-    </div>
+    <div class="mb-3 mt-2 cssc-heading">Behind the Scenes</div>
     <p class="mb-5">
       Ask Jack is an initiative created by CSSC for students and driven by
       students. Our goal is to answer student questions with the help of the MCS
@@ -52,9 +48,7 @@
       action="https://formspree.io/xwkrdzyg"
       method="POST"
     >
-      <div class="mb-3 mt-3 cssc-heading">
-        Ask Your Question
-      </div>
+      <div class="mb-3 mt-3 cssc-heading">Ask Your Question</div>
       <v-text-field
         v-model="question"
         name="Question"
@@ -62,31 +56,22 @@
         required
         rows="3"
       ></v-text-field>
-      <div class="mb-3 mt-2 cssc-heading">
-        Tags
-      </div>
+      <div class="mb-3 mt-2 cssc-heading">Tags</div>
       <p class="mb-3">
         Note: CSSC cannot answer any course content related questions!
       </p>
-      <b-form-group>
-        <b-form-checkbox-group
-          id="ask-upper-year-tags"
+      <div
+        class="flex align-center mr-3"
+        v-for="tagOption in tagOptions"
+        :key="tagOption.value"
+      >
+        <v-checkbox
           v-model="selectedTags"
-          name="question-tags"
-        >
-          <div
-            class="flex align-center mr-3"
-            v-for="tagOption in tagOptions"
-            :key="tagOption.value"
-          >
-            <v-checkbox :value="tagOption.value"></v-checkbox>
-            <span>{{ tagOption.text }}</span>
-          </div>
-        </b-form-checkbox-group>
-      </b-form-group>
-      <div class="mt-3 cssc-heading">
-        Email
+          :value="tagOption.value"
+        ></v-checkbox>
+        <span>{{ tagOption.text }}</span>
       </div>
+      <div class="mt-3 cssc-heading">Email</div>
       <p class="mb-2">
         Feel free to provide your utoronto email so we can contact you back!
         (Optional)

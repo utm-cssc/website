@@ -16,10 +16,6 @@ export default {
     return {
       navItems: [
         {
-          title: 'Tech of the Month',
-          link: '/tech-of-the-month',
-        },
-        {
           title: 'Resources',
           link: '/resources',
         },
@@ -28,24 +24,38 @@ export default {
           link: '/calendar',
         },
         {
-          title: 'Clubs',
-          link: '/clubs',
-        },
-        {
           title: 'Ask Jack',
           link: '/ask-jack',
         },
         {
-          title: 'Course Manager',
-          link: '/course-manager',
+          title: 'Tech of the Month',
+          link: '/tech-of-the-month',
         },
         {
           title: 'Projects',
           link: '/projects',
         },
         {
+          title: 'Course Manager',
+          link: '/course-manager',
+        },
+
+        {
+          title: 'Clubs',
+          link: '/clubs',
+        },
+
+        {
           title: 'FAQ',
           link: '/faq',
+        },
+        {
+          title: 'Documentation',
+          link: '/docs',
+        },
+        {
+          title: 'Contributing',
+          link: '/contributing',
         },
       ],
     }
