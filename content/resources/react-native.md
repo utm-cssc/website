@@ -31,16 +31,9 @@ iOS simultaneously.
 
 <VideoContainer vid-src="https://www.youtube.com/embed/FJ6tXatsq1c"></VideoContainer>
 
-<!-- ### Companies using React Native
-<ImagesGridHorizontal :images="
-[{src:'https://reactnative.dev/img/showcase/instagram.png', width:'95px', height:'100px'},
-{src:'https://reactnative.dev/img/showcase/skype.png', width:'100px', height:'100px'},
-{src:'https://reactnative.dev/img/showcase/discord.png', width:'100px', height:'100px'},
-{src:'https://reactnative.dev/img/showcase/tesla.png', width:'100px', height:'100px'},
-{src:'https://reactnative.dev/img/showcase/walmart.png', width:'100px', height:'100px'},
-{src:'https://reactnative.dev/img/showcase/ubereats.png', width:'100px', height:'100px'},
-{src:'https://reactnative.dev/img/showcase/pinterest.png', width:'100px', height:'100px'}
-]" /> -->
+### Companies using React Native
+
+<LogoGrid :logos="['instagram', 'skype', 'facebook', 'discord']"></LogoGrid>
 
 ## Getting Started
 

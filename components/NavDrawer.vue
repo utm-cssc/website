@@ -1,19 +1,12 @@
 <template>
   <v-list dense nav>
-    <nuxt-link
-      v-for="item in navItems"
-      :key="item.title"
-      :to="item.link"
-      class="drawer-link mr-1"
-    >
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title>
-            {{ item.title }}
-          </v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </nuxt-link>
+    <v-list-item v-for="item in navItems" :key="item.title" :to="item.link">
+      <v-list-item-content>
+        <div class="drawer-link">
+          {{ item.title }}
+        </div>
+      </v-list-item-content>
+    </v-list-item>
   </v-list>
 </template>
 
@@ -22,6 +15,10 @@ export default {
   data() {
     return {
       navItems: [
+        {
+          title: 'Tech of the Month',
+          link: '/tech-of-the-month',
+        },
         {
           title: 'Resources',
           link: '/resources',
@@ -43,6 +40,10 @@ export default {
           link: '/course-manager',
         },
         {
+          title: 'Projects',
+          link: '/projects',
+        },
+        {
           title: 'FAQ',
           link: '/faq',
         },
@@ -52,7 +53,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .nav-drawer {
   height: 100vh;
   z-index: 40;

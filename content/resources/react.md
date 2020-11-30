@@ -48,14 +48,7 @@ a user clicking a button) and selectively updates the DOM only.
 
 ### Companies using React
 
-<ImagesGridHorizontal :images="
-[{src:'https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png', width:'95px', height:'100px'}, 
-{src:'https://miro.medium.com/max/3150/1*ty4NvNrGg4ReETxqU2N3Og.png', width:'130px', height:'100px'},
-{src:'https://image.flaticon.com/icons/svg/1383/1383269.svg', width:'100px', height:'100px'}, 
-{src:'https://image.flaticon.com/icons/png/512/37/37150.png', width:'100px', height:'100px'}, 
-{src:'https://i.pcmag.com/imagery/reviews/01eqrJlwTzs4ACRmWo01fCt-9.fit_scale.size_1028x578.v_1569483324.jpg', width:'125px', height:'100px'}, 
-{src:'https://pngimg.com/uploads/microsoft/microsoft_PNG18.png', width:'95px', height:'100px'},
-]"></ImagesGridHorizontal>
+<LogoGrid :logos="['netflix', 'apple', 'dropbox', 'microsoft', 'facebook']"></LogoGrid>
 
 ### React is Awesome
 
