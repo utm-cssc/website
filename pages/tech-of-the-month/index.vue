@@ -30,7 +30,7 @@
         Results:
       </span>
       <span v-else-if="!retrievedData">
-        There is no vote for the current month
+        There is no voting for the current month
       </span>
       <span v-else> Voting for {{ this.votingMonth }} </span>
     </div>
