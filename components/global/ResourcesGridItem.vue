@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+  <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
     <a
       class="box resource-box pb-3"
       :href="link"
