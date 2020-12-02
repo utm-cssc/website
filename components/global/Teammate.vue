@@ -14,7 +14,6 @@
       <div class="flex mb-4">
         <DiscordIcon
           @click="copyToClipboard"
-          v-b-tooltip.hover
           :title="isCopied"
           class="logo mr-3 pointer"
         />

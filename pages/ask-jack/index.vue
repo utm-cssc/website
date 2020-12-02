@@ -43,11 +43,7 @@
       Ask Jack, feel free to check us out under the Meet the Team section on our
       homepage!
     </p>
-    <v-form
-      v-model="valid"
-      action="https://formspree.io/xwkrdzyg"
-      method="POST"
-    >
+    <v-form action="https://formspree.io/xwkrdzyg" method="POST">
       <div class="mb-3 mt-3 cssc-heading">Ask Your Question</div>
       <v-text-field
         v-model="question"
