@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import coursesDataStore from '@/assets/courses.json'
+import coursesDataStore from '~/assets/courses.json'
 export default {
   props: {
     data: {

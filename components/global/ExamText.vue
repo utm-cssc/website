@@ -4,7 +4,6 @@
     <div class="exam-icon-container">
       <a
         target="_blank"
-        v-b-tooltip.hover
         :title="'Past Exam For: ' + classCode"
         :href="
           'https\:\/\/exams-library-utoronto-ca.myaccess.library.utoronto.ca/simple-search?query=title:' +
