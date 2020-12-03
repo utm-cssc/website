@@ -28,7 +28,7 @@
       <SearchBar class="mx-4" />
 
       <div class="nav-external ml-auto" v-if="$mq === 'lg' || $mq === 'xl'">
-        <a href="https://discord.gg/SHwbmVg">
+        <a href="https://cssc.utm.utoronto.ca/discord">
           <DiscordIcon class="nav-icon" />
         </a>
         <a href="https://github.com/utm-cssc" class="ml-4">
@@ -49,9 +49,9 @@
 </template>
 
 <script>
-import DiscordIcon from '@/static/icons/discord.svg?inline'
-import GithubIcon from '@/static/icons/github.svg?inline'
-import NavDrawer from '@/components/NavDrawer'
+import DiscordIcon from '~/static/icons/discord.svg?inline'
+import GithubIcon from '~/static/icons/github.svg?inline'
+import NavDrawer from '~/components/NavDrawer'
 
 export default {
   components: {GithubIcon, DiscordIcon, NavDrawer},

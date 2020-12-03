@@ -2,9 +2,10 @@ module.exports = {
   // tell Jest to handle `*.vue` files
   moduleFileExtensions: ['js', 'vue'],
   moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/$1',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__mocks__/fileMock.js',
+    '^~/(.*)$': '<rootDir>/',
     '^~~/(.*)$': '<rootDir>/$1',
-    '^@/(.*)$': '<rootDir>/$1',
   },
   transform: {
     //   process js with `babel-jest`
