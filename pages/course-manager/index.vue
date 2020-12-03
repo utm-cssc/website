@@ -178,7 +178,7 @@ export default {
 <style scoped>
 @media screen and (max-width: 600px) {
   .v-application--is-ltr
-    .v-list-group--no-action
+    > .v-list-group--no-action
     > .v-list-group__items
     > .v-list-item {
     padding-left: 5px;

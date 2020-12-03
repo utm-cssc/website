@@ -151,23 +151,20 @@ export default {
       ],
     }
   },
-  async asyncData({$axios}) {
+  async asyncData({}) {
     const allFAQ = []
-    await $axios
-      .$get('https://raw.githubusercontent.com/utm-cssc/faq/master/faq.csv')
-      .then(response => {
-        const lines = response.split('\n')
-        for (let i = 0; i < lines.length; i++) {
-          const currentFAQ = lines[i].split('|')
-          if (currentFAQ[0] != '' && currentFAQ[1] != '') {
-            const FAQ = {
-              question: currentFAQ[0],
-              answer: currentFAQ[1],
-            }
-            allFAQ.push(FAQ)
-          }
+    const faqs = await $content('faq/faq.csv').fetch()
+    const response = response.split('\n')
+    for (let i = 0; i < lines.length; i++) {
+      const currentFAQ = lines[i].split('|')
+      if (currentFAQ[0] != '' && currentFAQ[1] != '') {
+        const FAQ = {
+          question: currentFAQ[0],
+          answer: currentFAQ[1],
         }
-      })
+        allFAQ.push(FAQ)
+      }
+    }
     return {allFAQ}
   },
 }
