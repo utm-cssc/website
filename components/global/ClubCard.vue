@@ -19,7 +19,7 @@
         v-if="club.link"
         target="_blank"
       >
-        <v-icon>mdi-link</v-icon>Links
+        <v-icon class="mr-2">mdi-link</v-icon>Links
       </v-btn>
     </div>
   </div>
@@ -39,17 +39,6 @@ export default {
 </script>
 
 <style scoped>
-.button {
-  background: var(--color-primary);
-  border: none;
-  color: white;
-}
-
-.button:hover,
-.button:active {
-  background: var(--color-primary-dark) !important;
-}
-
 .club-card {
   width: 420px;
   height: 369px;
