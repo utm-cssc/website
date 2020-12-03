@@ -40,8 +40,8 @@ export default {
 
 <style scoped>
 .club-card {
-  width: 420px;
-  height: 369px;
+  width: 343px;
+  height: 375px;
   border-radius: 12px;
   background: var(--bg);
   box-shadow: 10px 20px 35px 10px rgba(0, 0, 0, 0.25);
@@ -67,7 +67,7 @@ export default {
   font-size: 18px;
   line-height: 1.6;
   height: 263px;
-  width: 384px;
+  width: 100%;
   overflow: hidden;
   color: var(--color-body);
 }
