@@ -57,20 +57,8 @@
         <li>
           <p class="more pt-5 pb-3">More Links</p>
           <div class="links">
-            <nuxt-link to="/resources">
-              Resourses
-            </nuxt-link>
-            <nuxt-link to="/ask-jack">
-              Ask Jack
-            </nuxt-link>
-            <nuxt-link to="/calendar">
-              Calendar
-            </nuxt-link>
-            <nuxt-link to="/course-manager">
-              Course Manager
-            </nuxt-link>
-            <nuxt-link to="/clubs">
-              MCS Clubs
+            <nuxt-link v-for="l in navItems" :key="l.link" :to="l.link">
+              {{ l.title }}
             </nuxt-link>
           </div>
         </li>
@@ -87,6 +75,49 @@ import GithubIcon from '../static/icons/github.svg?inline'
 
 export default {
   components: {GithubIcon, DiscordIcon, InstagramIcon, FacebookIcon},
+  data() {
+    return {
+      navItems: [
+        {
+          title: 'Resources',
+          link: '/resources',
+        },
+        {
+          title: 'Calendar',
+          link: '/calendar',
+        },
+        {
+          title: 'Ask Jack',
+          link: '/ask-jack/',
+        },
+        {
+          title: 'Tech of the Month',
+          link: '/tech-of-the-month',
+        },
+        {
+          title: 'Projects',
+          link: '/projects',
+        },
+        {
+          title: 'Course Manager',
+          link: '/course-manager',
+        },
+
+        {
+          title: 'Clubs',
+          link: '/clubs',
+        },
+        {
+          title: 'Documentation',
+          link: '/docs',
+        },
+        {
+          title: 'Contributing',
+          link: '/contributing',
+        },
+      ],
+    }
+  },
 }
 </script>
 

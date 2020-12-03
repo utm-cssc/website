@@ -12,11 +12,17 @@
         <div class="position text-center">{{ position }}</div>
       </div>
       <div class="flex mb-4">
-        <DiscordIcon
-          @click="copyToClipboard"
-          :title="isCopied"
-          class="logo mr-3 pointer"
-        />
+        <v-tooltip top>
+          <template v-slot:activator="{on, attrs}">
+            <DiscordIcon
+              v-bind="attrs"
+              v-on="on"
+              @click="copyToClipboard"
+              class="logo mr-3 pointer"
+            />
+          </template>
+          <span>{{ isCopied }}</span>
+        </v-tooltip>
         <a :href="emailAddress">
           <EmailIcon class="logo mr-3" />
         </a>
@@ -90,13 +96,13 @@ export default {
         .then(() => {
           this.isCopied = 'Copied!'
           setTimeout(() => {
-            this.isCopied = 'Click to copy username'
+            this.isCopied = 'Copy username'
           }, 5000)
         })
         .catch(() => {
           this.isCopied = 'Try Again!'
           setTimeout(() => {
-            this.isCopied = 'Click to copy username'
+            this.isCopied = 'Copy username'
           }, 1000)
         })
     },

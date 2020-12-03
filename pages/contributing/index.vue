@@ -37,8 +37,8 @@ export default {
             'Help us by creating implementing features for other students and make UTM a more open source community.',
           icon: '/icons/collaboration.svg',
           button: {
-            label: 'Check out our guide and docs',
-            link: '/docs',
+            label: 'Contribution guide',
+            link: '/docs/getting-started',
           },
         },
       ],
