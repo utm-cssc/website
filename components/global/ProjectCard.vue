@@ -13,8 +13,9 @@
 
     <div class="flex mt-2 ml-auto">
       <v-btn
-        size="lg"
-        class="button mr-2 flex align-content-center"
+        large
+        color="primary"
+        class="mr-2"
         :href="project.repo"
         v-if="project.repo"
         target="_blank"
@@ -41,8 +42,8 @@
         </div>
       </v-btn>
       <v-btn
-        size="lg"
-        class="button mr-2 flex align-content-center"
+        large
+        color="primary"
         v-if="project.demo"
         :href="project.demo"
         target="_blank"
@@ -85,17 +86,6 @@ export default {
 </script>
 
 <style scoped>
-.button {
-  background: var(--color-primary);
-  border: none;
-  color: white;
-}
-
-.button:hover,
-.button:active {
-  background: var(--color-primary-dark) !important;
-}
-
 .project-card {
   width: 343px;
   height: 263px;

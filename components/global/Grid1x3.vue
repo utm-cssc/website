@@ -17,7 +17,7 @@
 <script>
 export default {
   props: {
-    children: Array
-  }
+    children: Array,
+  },
 }
 </script>

@@ -2,10 +2,10 @@
   <div>
     <v-expansion-panels accordion>
       <v-expansion-panel v-for="(info, index) in data" :key="index">
-        <v-expansion-panel-header
+        <v-expansion-panel-header v-if="courses[info]"
           >{{ info }} : {{ courses[info].title }}</v-expansion-panel-header
         >
-        <v-expansion-panel-content>
+        <v-expansion-panel-content v-if="courses[info]">
           {{ courses[info].desc }}
           <div class="mt-2">
             <v-btn
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import coursesDataStore from '@/assets/courses.json'
+import coursesDataStore from '~/assets/courses.json'
 export default {
   props: {
     data: {
