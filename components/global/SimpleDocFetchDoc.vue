@@ -7,7 +7,7 @@
       :desc="block.description"
       :img-src="''"
       :link="'https://simpledoc.utm.utoronto.ca/#/DocumentView/' + block.id"
-      :button="'Try it out!'"
+      :button="'Check it out on SimpleDoc'"
     />
   </div>
 </template>
