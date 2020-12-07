@@ -1,11 +1,10 @@
 <template>
   <div>
-    <grid-1-x-2-noimage
+    <grid-1-x-2
       v-for="block in titles"
       :key="block.id"
       :title="block.title"
       :desc="block.description"
-      :img-src="''"
       :link="'https://simpledoc.utm.utoronto.ca/#/DocumentView/' + block.id"
       :button="'Check it out on SimpleDoc'"
     />

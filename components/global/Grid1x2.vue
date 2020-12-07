@@ -2,6 +2,7 @@
   <div class="markdown-body mb-5">
     <div class="flex justify-between items-center py-6">
       <div
+        v-if="imgSrc != ''"
         :class="{
           'order-md-last': !reversed,
           'justify-md-end': !reversed,
@@ -10,7 +11,10 @@
       >
         <img class="feature-img mb-5 mb-md-0" :src="imgSrc" />
       </div>
-      <div class="w-1/2 hidden sm:flex flex-col justify-end">
+      <div
+        class="hidden sm:flex flex-col justify-end"
+        :class="imgSrc != '' ? 'w-1/2' : ''"
+      >
         <h3 v-if="title != ''" class="text-xl font-bold">
           {{ title }}
         </h3>
@@ -42,7 +46,10 @@
 <script>
 export default {
   props: {
-    imgSrc: String,
+    imgSrc: {
+      type: String,
+      default: '',
+    },
     title: {
       type: String,
       default: '',
