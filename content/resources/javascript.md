@@ -5,13 +5,14 @@ desc: Make you websites dynamic by using a powerful modern scripting language!
 link: javascript
 tags:
   - web
-  - language
+  - languages
 ---
 
 # Javascript
 
 ### Prequisites for this module:
-- Basic understanding of HTML 
+
+- Basic understanding of HTML
 - Understand the motivation and usage of CSS
 - Have a beginner level knowledge of programming in a object oriented language
 
@@ -25,11 +26,17 @@ tags:
 
 ### JQuery
 
-<grid-1-x-2 link="https://www.w3schools.com/jquery/" button="Start Learning" img-Src="https://www.webdesignerdepot.com/cdn-origin/uploads/2019/07/featured_jquery.jpg" desc="JQuery is JavaScript library that simplifies common JavaScript tasks that usually take many lines of code such as DOM manipulation and AJAX server calls. Furthermore, it allows you to auto-load data and auto-update elements on page load."></grid-1-x-2>                                                                                                                                                                                     
+<grid-1-x-2 link="https://www.w3schools.com/jquery/" button="Start Learning" img-Src="https://www.webdesignerdepot.com/cdn-origin/uploads/2019/07/featured_jquery.jpg" desc="JQuery is JavaScript library that simplifies common JavaScript tasks that usually take many lines of code such as DOM manipulation and AJAX server calls. Furthermore, it allows you to auto-load data and auto-update elements on page load."></grid-1-x-2>
 
 ### JavaScript Frontend Frameworks
- 
-Managing indvidual HTML, CSS and JavaScript files can become very difficult to handle once your site gets very large. In order to solve this problem, we use "JavaScript Frameworks" for frontend development. It allows you to write HTML, CSS and JavaScript in a standardized, consistent and organized way to maxmize scalability. This site for instance is built on a framework called "NuxtJS". Here are some JavaScript frameworks you can look into, some of which have resource pages on this site:
+
+Managing indvidual HTML, CSS and JavaScript files can become very difficult to
+handle once your site gets very large. In order to solve this problem, we use
+"JavaScript Frameworks" for frontend development. It allows you to write HTML,
+CSS and JavaScript in a standardized, consistent and organized way to maxmize
+scalability. This site for instance is built on a framework called "NuxtJS".
+Here are some JavaScript frameworks you can look into, some of which have
+resource pages on this site:
 
 - [ReactJS]
 - [VueJS]

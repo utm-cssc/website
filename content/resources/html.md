@@ -5,7 +5,7 @@ desc: Learn the language that forms the skeleton of every webpage!
 link: html
 tags:
   - web
-  - language
+  - languages
 ---
 
 # Introduction
