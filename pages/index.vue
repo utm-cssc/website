@@ -84,8 +84,8 @@ export default {
         link: 'resources',
       },
       button2: {
-        label: 'Calendar',
-        link: 'calendar',
+        label: 'MCS Townhall Notes',
+        link: '../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf',
       },
     }
   },
