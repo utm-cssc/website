@@ -1,7 +1,10 @@
 ---
 title: Internship Applications
-icon: /icons/internship-applications.svg
+icon: /icons/resume.svg
 desc: Work at your dream company!
+link: internship-apps
+tags:
+  - career
 ---
 
 # Internship Applications
