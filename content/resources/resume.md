@@ -84,9 +84,8 @@ interview. Sounds fair :)
 ![Getting the right experience](./project-classes-example.png) _An example of
 school projects on a resume_
 
-::: warning Assignments on Github Please do not publicly upload your assignment
-code to Github. Your assignment code may be copied, which would result in an
-academic offense for both parties. :::
+Please do not publicly upload your assignment code to Github. Your assignment
+code may be copied, which would result in an academic offense for both parties.
 
 ### Get an internship
 
