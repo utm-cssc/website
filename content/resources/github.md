@@ -43,16 +43,16 @@ energy!
   
   <div class="scroll-child">
 
-### Git Basics Cheat Sheet
+## Git Basics Cheat Sheet
 
    <iframe src="https://education.github.com/git-cheat-sheet-education.pdf" width="480" height="640"></iframe>
    </div>
 </div>
 
-### Github 101 for beginners!
+## Github 101 for beginners!
 
 <VideoContainer vid-src="https://www.youtube.com/embed/SWYqp7iY_Tc"></VideoContainer>
 
-### Git vs Github
+## Git vs Github
 
 <VideoContainer vid-src="https://www.youtube.com/embed/wpISo9TNjfU"></VideoContainer>
