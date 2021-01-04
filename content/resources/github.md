@@ -19,7 +19,7 @@ work on projects from anywhere.
 
 ## Why Github?
 
-Github has many advantages, such as the ability to create repositories, a
+Github has many advantages such as the ability to create repositories, having a
 location where all files for a project are stored, as well as the ability to
 fork a repository. This allows other developers to create new projects based off
 existing projects.
@@ -32,11 +32,11 @@ showcasing their projects to potential employers.
 
 ## How do I get started?
 
-<grid-1-x-2 reversed=true button="Start Learning!" link="https://lab.github.com/githubtraining/introduction-to-github" img-src="https://repository-images.githubusercontent.com/136195276/40cbd080-586d-11ea-94a3-6ca7934240ad" desc="Learn how to use Github through an interactive free course offer by Github!" button="Start Learning!"></grid-1-x-2>
+<grid-1-x-2 :reversed="true" button="Start Learning!" link="https://lab.github.com/githubtraining/introduction-to-github" img-src="https://repository-images.githubusercontent.com/136195276/40cbd080-586d-11ea-94a3-6ca7934240ad" desc="Learn how to use Github through an interactive free course offer by Github!" button="Start Learning!"></grid-1-x-2>
 
 ## Cheat Sheets
 
-Cheat sheets displays essential syntax that the users can use to save time and
+Cheat sheets display essential syntax that users can use to save time and
 energy!
 
 <div class="scrolling-wrapper">
