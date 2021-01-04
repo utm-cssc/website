@@ -9,7 +9,7 @@ tags:
   - self-development
 ---
 
-# Mindset
+# Growth Mindset
 
 Our mindset shapes our belief in what we can and can't do.
 
