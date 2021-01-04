@@ -13,7 +13,7 @@
               large
               color="primary"
               v-if="courses[info].link"
-              :href="'./' + info.toString().toLowerCase()"
+              :href="'/resources/' + info.toString().toLowerCase()"
             >
               Check out the resource page!
             </v-btn>
