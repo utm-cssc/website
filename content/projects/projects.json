@@ -24,7 +24,7 @@
     },
     {
       "name": "UofTea",
-      "desc": "UofTea is a web app meant to help students find information and reviews of courses and professor at the University of Toronto",
+      "desc": "UofTea is a web app meant to help students find information and reviews of courses and professors at UofT",
       "logo": "/logos/projects/UofTea.png",
       "repo": "https://github.com/Salazareo/UofTea",
       "demo": "https://uoftea.ca/",
