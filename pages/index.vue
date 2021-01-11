@@ -85,7 +85,7 @@ export default {
       },
       button2: {
         label: 'Winter Welcome',
-        link: '/winter-welcome-vote',
+        link: '/winter-welcome-survey',
         // ../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf
       },
     }
