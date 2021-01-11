@@ -25,7 +25,7 @@
     {
       "name": "UofTea",
       "desc": "UofTea is a web app meant to help students find information and reviews of courses and professor at the University of Toronto",
-      "logo": "/logos/projects/viaplanner.png",
+      "logo": "/logos/projects/UofTea.png",
       "repo": "https://github.com/Salazareo/UofTea",
       "demo": "https://uoftea.ca/",
       "tags": ["student"]
@@ -33,7 +33,7 @@
     {
       "name": "Resume-Words",
       "desc": "Resume-Words helps tailor your resume to individual job postings using AI and NLP",
-      "logo": "/logos/projects/proformance.svg",
+      "logo": "/logos/projects/resume-words.png",
       "repo": "https://github.com/ShahmeerShahid/ResumeWords/",
       "demo": "https://resume-words.com/",
       "tags": ["student"]
