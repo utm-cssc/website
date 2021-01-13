@@ -1,5 +1,6 @@
 <template>
   <div class="mt-5 pb-5">
+    Note: Use the Google Chrome browser if the form doesn't load!
     <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLSfvrurm7e6cs7bPw9AbdpD2S446T7x4_XMTRaT5my0e5c5pXw/viewform"
       width="100%"
