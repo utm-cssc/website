@@ -4,6 +4,8 @@
   <a href="https://cssc.utm.utoronto.ca/">
     <img src="/assets/logo/cssc-logo.png" width="200px" align="center">
   </a>
+  <a href="https://hub.docker.com/r/utmcssc/website"><img src="https://img.shields.io/docker/cloud/build/utmcscsc/website" alt="Docker Build Status"></a>
+  <a href="https://hub.docker.com/r/utmcssc/website"><img src="https://img.shields.io/docker/pulls/utmcssc/website" alt="Docker Pulls"></a>
 </p>
   <h4 align="center">Supporting MCS Students</h4>
   <p align="center" width="100%">
