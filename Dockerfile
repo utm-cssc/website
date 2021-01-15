@@ -1,4 +1,5 @@
 FROM node:current
+ENV HOST 0.0.0.0
 
 # Create app directory
 RUN mkdir -p /usr/cssc-website
