@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build --target server",
-    "start": "nuxt start",
+    "start": "HOST=0.0.0.0 nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve",
     "generate": "nuxt build --target static && nuxt export",
