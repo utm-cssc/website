@@ -78,5 +78,12 @@
       "demo": "http://www.futurist.network",
       "tags": ["grey-software"]
     }
+    {
+       "name": "SimpleDoc",
+       "desc": "Simplified documentation collection for courses at UTM",
+       "repo": "https://github.com/simpledocutm/simpledoc",
+       "demo": "simpledoc.utm.utoronto.ca",
+       "tags": ["student"]
+     }
   ]
 }
