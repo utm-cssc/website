@@ -52,6 +52,10 @@ export default {
           title: 'Contributing',
           link: '/contributing',
         },
+        {
+          title: 'Winter Welcome Survey',
+          link: '/winter-welcome-survey'
+        },
       ],
     }
   },
