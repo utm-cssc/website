@@ -80,12 +80,12 @@ export default {
         },
       ],
       button1: {
-        label: 'Resources',
-        link: 'resources',
+        label: 'Winter Welcome Guestbook',
+        link: 'resources/winter-welcome',
       },
       button2: {
-        label: 'Winter Welcome',
-        link: 'winter-welcome-survey',
+        label: 'Treasure Hunt',
+        link: 'treasure-hunt',
         // ../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf
       },
     }
