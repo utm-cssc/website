@@ -80,7 +80,7 @@ export default {
         },
       ],
       button1: {
-        label: 'Winter Welcome Names',
+        label: 'Winter Welcome Guestbook',
         link: 'resources/winter-welcome',
       },
       button2: {
