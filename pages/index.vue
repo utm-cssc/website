@@ -5,7 +5,7 @@
       <CenteredHero
         icon="../icons/cssc-logo-without-title.svg"
         title="UTM CSSC"
-        desc="Your UTM Computer Science Community Website"
+        desc="Helping MCS Students"
         :button1="button1"
         :button2="button2"
       />
