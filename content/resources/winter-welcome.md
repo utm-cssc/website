@@ -7,9 +7,10 @@ tags:
   - winter-welcome
 ---
 
-# Place your name below!
-- Chris
-- Alexandra <3
-- Jandersssss
-- Coco uwu
+# Place your full name below!
+
+- Chris Lim
+- Alexandra Thompson
+- Jessica Anderson
+- Coco Liang
 - VyVy Ngo
