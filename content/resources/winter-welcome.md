@@ -16,3 +16,4 @@ tags:
 - VyVy Ngo
 - Onimisi Ayira
 - Syed Zain Basit
+- Daksh Malhotra
