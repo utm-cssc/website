@@ -20,10 +20,6 @@ export default {
           link: '/resources',
         },
         {
-          title: 'Winter Welcome Survey',
-          link: '/winter-welcome-survey'
-        },
-        {
           title: 'Calendar',
           link: '/calendar',
         },
@@ -55,7 +51,7 @@ export default {
         {
           title: 'Contributing',
           link: '/contributing',
-        }
+        },
       ],
     }
   },

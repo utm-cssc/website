@@ -17,11 +17,11 @@
           >Resources</nuxt-link
         >
         <nuxt-link
-          to="/winter-welcome-survey"
+          to="/calendar"
           class="nav-link mr-4"
           @click.native="checked = false"
         >
-          Winter Welcome Survey
+          Calendar
         </nuxt-link>
       </div>
       <div class="navbar-spacer"></div>
