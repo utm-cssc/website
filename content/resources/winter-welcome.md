@@ -20,3 +20,4 @@ tags:
 - Peter Ghobrial
 - CSSC Jack
 - Ethan Chung
+- Emilie Mangion
