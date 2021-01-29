@@ -19,3 +19,4 @@ tags:
 - Daksh Malhotra
 - Peter Ghobrial
 - CSSC Jack
+- Ethan Chung
