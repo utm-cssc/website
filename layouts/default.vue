@@ -3,8 +3,8 @@
     <cssc-nav></cssc-nav>
     <v-main>
       <nuxt />
+      <cssc-footer />
     </v-main>
-    <cssc-footer />
   </v-app>
 </template>
 
