@@ -84,8 +84,8 @@ export default {
         link: 'resources/winter-welcome',
       },
       button2: {
-        label: 'Treasure Hunt',
-        link: 'treasure-hunt',
+        label: 'Resources',
+        link: 'resources',
         // ../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf
       },
     }
