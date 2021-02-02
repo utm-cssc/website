@@ -61,7 +61,7 @@ assignees: ''
 ### Additional details ℹ️ 
 
 <!--
-  Is there anything else you can add about this bugs?
+  Is there anything else you can add about this bug?
   You might want to link to related issues here, if you haven't already.
 -->
 
