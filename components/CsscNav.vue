@@ -34,6 +34,9 @@
         <a href="https://github.com/utm-cssc" class="ml-4">
           <GithubIcon class="nav-icon" />
         </a>
+        <a href="https://www.instagram.com/utm.cssc" class="ml-4">
+          <InstagramIcon class="nav-icon" />
+        </a>
       </div>
       <DarkModeButton class="mx-4" />
       <v-app-bar-nav-icon
@@ -51,10 +54,11 @@
 <script>
 import DiscordIcon from '~/static/icons/discord.svg?inline'
 import GithubIcon from '~/static/icons/github.svg?inline'
+import InstagramIcon from '~/static/icons/instagram.svg?inline'
 import NavDrawer from '~/components/NavDrawer'
 
 export default {
-  components: {GithubIcon, DiscordIcon, NavDrawer},
+  components: {GithubIcon, DiscordIcon, NavDrawer, InstagramIcon},
 
   data() {
     return {
