@@ -80,8 +80,8 @@ export default {
         },
       ],
       button1: {
-        label: 'Winter Welcome Guestbook',
-        link: 'resources/winter-welcome',
+        label: 'Ask Jack',
+        link: 'ask-jack',
       },
       button2: {
         label: 'Resources',
