@@ -11,7 +11,7 @@ tags:
 
 ## [Angel List](https://angel.co/jobs)
 
-![AngelList](./angel-list.jpg)
+![AngelList](./internship-apps/angel-list.jpg)
 
 Apply privately to startup internships with one application. No middlemen · See
 salary and equity upfront.
