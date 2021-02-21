@@ -17,12 +17,14 @@
         What is CSSC?
       </div>
       <p>
-        The Computer Science Student Community (CSSC) is an open space for
-        Computer Science students to come in and ask questions about their
-        university and post-university career. We act as liaisons to the
-        Computer Science faculty to ensure that all students can seek the
-        appropriate support and guidance. CSSC seeks to support students through
-        community initiatives built upon inclusivity and empowerment.
+        The Computer Science Student Community (CSSC) is a community
+        organization overseen by the Computer Science Faculty in MCS. Taking its
+        roots from the Hacklab, the CSSC is tasked to support students’ academic
+        and professional needs throughout their university career all while
+        providing space and opportunity for community growth. The CSSC also acts
+        as a central hub for computer science students to seek guidance, advice,
+        and support. Furthermore, they act as a supporting pillar between all
+        MCS student clubs/societies.
       </p>
     </div>
     <CenteredThreeColumnGrid :children="features" :rounded="false" />
@@ -61,21 +63,27 @@ export default {
     return {
       features: [
         {
-          title: 'Growth',
+          title: 'Student Support and Guidance',
           desc:
-            "CSSC is dedicated to your academic and professional growth! We're here for you with opportunities, spaces and resources to inform your computer science journey through university!",
+            'The CSSC is an open space for Computer Science students to come in and ask questions about their university and post-university career. We cover topics such as: technology, school, mental health, personal goals, and career development. We act as liaisons to the Computer Science faculty to ensure that all students can seek appropriate support and guidance. The CSSC seeks to support students through community initiatives built upon inclusivity and empowerment.',
+          icon: './icons/student_support_guidance.svg',
+        },
+        {
+          title: 'Academic and Professional Growth',
+          desc:
+            'The CSSC will be collaborating with the MCS organizations and hosting multiple workshops throughout the academic year to better equip students with technological knowledge sought after by employers in the industry. We provide students with opportunities, space, and resources to work on community projects, technical interview questions, and fun technical events so students can gain experience outside of the classroom. The CSSC also aims to inform students of what options they have post-graduation with a Computer Science degree and how they can combine this degree with other fields.',
           icon: './icons/growth.svg',
         },
         {
           title: 'Resources',
           desc:
-            'Our technology team is devoted to developing processes and tools to help you succeed! We curate from across the internet and produce original content for our community!',
+            'The CSSC has devoted our technology team to develop processes and tools to help Computer Science students succeed academically and professionally. We curate resources from across the internet and produce original content all the while keeping the interest of students as the top priority.',
           icon: './icons/resources.svg',
         },
         {
           title: 'Collaboration',
           desc:
-            'We work closely with other MCS clubs and societies in order to achieve common goals in the CS community!',
+            'The CSSC provides support to all of the clubs/societies belonging to UTM’s MCS community. We provide spaces and resources for MCS organizations and work closely with them in order to achieve common goals; some of which are: community building, academic achievements, professional development, mental wellness, diversity, equity and inclusion.',
           icon: './icons/collaboration.svg',
         },
       ],
