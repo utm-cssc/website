@@ -11,7 +11,6 @@
   </p>
 </h1>
 <p align="center">
-  <a href="http://cssc.utm.utoronto.ca/"><img src="https://api.netlify.com/api/v1/badges/9e91f5db-d9f7-420c-8dd9-c4b901cbe250/deploy-status" alt="UTMCSSC Website"></a>
   <a href="https://hub.docker.com/r/utmcssc/website"><img src="https://img.shields.io/docker/cloud/build/utmcssc/website" alt="Docker Build Status"></a>
   <a href="https://hub.docker.com/r/utmcssc/website"><img src="https://img.shields.io/docker/pulls/utmcssc/website" alt="Docker Pulls"></a>
 </p>
