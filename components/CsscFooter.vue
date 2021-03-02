@@ -48,7 +48,7 @@
 
         <li>
           <p class="desc" style="padding: 20px 0;">
-            Copyright UTM CSSC - 2020
+            Copyright UTM CSSC - {{ getCurrDate() }}
           </p>
         </li>
       </div>
@@ -75,6 +75,12 @@ import GithubIcon from '../static/icons/github.svg?inline'
 
 export default {
   components: {GithubIcon, DiscordIcon, InstagramIcon, FacebookIcon},
+  methods: {
+    getCurrDate() {
+      const currentDate = new Date()
+      return currentDate.getFullYear()
+    },
+  },
   data() {
     return {
       navItems: [
