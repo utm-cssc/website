@@ -84,6 +84,13 @@
       "repo": "https://github.com/simpledocutm/simpledoc",
       "demo": "https://simpledoc.utm.utoronto.ca",
       "tags": ["student"]
+    },
+    {
+      "name": "Buddy Study Online",
+      "logo": "/logos/projects/BuddyStudyOnline.png",
+      "desc": "A space for all students to study while chatting through a cute avatar without the pressure of revealing your face",
+      "repo": "https://github.com/BuddyStudyOnline",
+      "tags": ["hackathon"]
     }
   ]
 }
