@@ -67,7 +67,7 @@
               </v-toolbar>
               <v-card-text>
                 <span
-                  style="font-size: 16px;"
+                  style="font-size: 16px; color: #525151;"
                   v-html="selectedEvent.details"
                 ></span>
               </v-card-text>
