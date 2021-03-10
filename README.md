@@ -42,7 +42,7 @@ post-university career!
   > common goals in the CS community!
 
 ## Installation
-
+### Yarn Installation
 1. Install the required dependencies
 
 ```
@@ -55,7 +55,18 @@ yarn install
 yarn run dev
 ```
 
-3. The website will be listening and serving on port `3000`
+### Docker Installation
+1. Pull the image from Docker Hub
+```
+docker pull utmcssc/website
+```
+
+2. Start the server
+```
+docker run --name utmcssc_website-p 4000:3000 utmcssc/website
+```
+The website will be listening and serving on port `3000`
+
 
 ## Contact
 
