@@ -3,11 +3,14 @@
     class="flip flex align-center justify-center my-3 mx-3"
     :class="{flipping: isClicked}"
   >
-    <div class="front card flex flex-col justify-between align-center">
-      <div class="mt-5 pointer mb-4" @click="isClicked = !isClicked">
+    <div
+      class="front card flex flex-col justify-between align-center"
+      @click="isClicked = !isClicked"
+    >
+      <div class="mt-5 pointer mb-4">
         <img :src="imgSrc" :alt="imgAlt" class="circle" />
       </div>
-      <div class="pointe mb-5" @click="isClicked = !isClicked">
+      <div class="pointe mb-5">
         <div class="name text-center">{{ name }}</div>
         <div class="position text-center">{{ position }}</div>
       </div>
@@ -159,6 +162,12 @@ export default {
   min-height: 350px;
   transform: rotateY(0deg);
   background-color: var(--bg);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.front:hover {
+  transform: perspective(600px) rotateY(30deg);
 }
 
 .flipping > .front {
