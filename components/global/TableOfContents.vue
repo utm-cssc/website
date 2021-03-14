@@ -62,7 +62,7 @@ a:hover {
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 88vh;
-  top: 0;
+  top: 100px;
 }
 
 @media (max-width: 1200px) {
