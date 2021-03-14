@@ -9,6 +9,7 @@
         icon="../../icons/quiz.svg"
         title="Ask Jack!"
         desc="Ask all of your university and computer science questions to upper year students who have been in your shoes!"
+        :button1="button1"
       />
     </div>
     <a id="ask-upper-year-form"></a>
@@ -126,6 +127,11 @@ export default {
         {text: 'Yes', value: 'Yes'},
         {text: 'No', value: 'No'},
       ],
+      button1: {
+        label: 'MCS Townhall Notes',
+        link:
+          '../../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf',
+      },
       tagOptions: [
         {text: 'POSt', value: 'POSt'},
         {text: 'Technology', value: 'Technology'},
