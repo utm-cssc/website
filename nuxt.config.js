@@ -101,6 +101,7 @@ export default {
         },
       },
     ],
+    ['nuxt-matomo', {matomoUrl: '//utoronto.matomo.cloud', siteId: 1}],
   ],
   env: {
     apiKey: process.env.API_KEY,

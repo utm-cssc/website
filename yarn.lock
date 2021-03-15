@@ -9388,6 +9388,11 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
 
+nuxt-matomo@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/nuxt-matomo/-/nuxt-matomo-1.2.4.tgz#2cd3f212996e0c35ade08f23563987438608e469"
+  integrity sha512-09cIWnj6v58CMbEDS+mVTnJ97BaO/fJaQDPk31sa27jejcD80bIvNowkAJMj4OcVWMeeIVTljClMHE6249cFtw==
+
 nuxt-mq@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/nuxt-mq/-/nuxt-mq-2.0.1.tgz#0cea38a4be08df3b601d8714dd123edf044246c1"

@@ -31,6 +31,7 @@
     "dotenv": "^8.2.0",
     "firebase": "^7.19.1",
     "nuxt": "^2.14.7",
+    "nuxt-matomo": "^1.2.4",
     "nuxt-mq": "^2.0.1",
     "vue-apexcharts": "^1.6.0",
     "vue-typed-js": "^0.1.2",
