@@ -15,6 +15,11 @@ export default {
         defer: true,
         type: 'text/javascript',
       },
+      {
+        type: 'text/javascript',
+        src: 'http://cdn.matomo.cloud/utoronto.matomo.cloud/matomo.js',
+        defer: true,
+      },
     ],
     meta: [
       {charset: 'utf-8'},
