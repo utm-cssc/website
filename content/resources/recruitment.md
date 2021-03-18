@@ -1,7 +1,7 @@
 ---
 title: Recruitment
-icon: /icons/android.svg
-desc: We're Hiring
+icon: /icons/recruitment.svg
+desc: We're Hiring! 🎉
 link: recruitment
 tags:
   - recruitment
