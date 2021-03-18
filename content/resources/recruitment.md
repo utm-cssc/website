@@ -154,13 +154,13 @@ Start your application [here](https://forms.gle/7PaxdfDZV34vpaN99)!
 - Be able to proactively create and execute marketing plans independently.
 - Have the ability to manage a team and incorporate all team members’ ideas.
 
-Nice to have:
+Good to have:
 
 - Previous experience in a marketing role in an academic organization.
 
 ---
 
-## Social Media Officer
+## Social Media Coordinator
 
 Start your application [here](https://forms.gle/7PaxdfDZV34vpaN99)!
 
