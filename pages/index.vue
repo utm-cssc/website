@@ -5,7 +5,7 @@
       <CenteredHero
         icon="../icons/cssc-logo-without-title.svg"
         title="UTM CSSC"
-        desc="Helping MCS Students"
+        desc="We're recruiting!🎉"
         :button1="button1"
         :button2="button2"
       />
@@ -92,8 +92,8 @@ export default {
         link: 'ask-jack',
       },
       button2: {
-        label: 'Resources',
-        link: 'resources',
+        label: 'Apply Here! 🎉',
+        link: '/resources/recruitment',
         // ../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf
       },
     }

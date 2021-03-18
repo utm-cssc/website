@@ -8,7 +8,7 @@
       <CenteredHero
         icon="../../icons/quiz.svg"
         title="Ask Jack!"
-        desc="Ask all of your university and computer science questions to upper year students who have been in your shoes!"
+        desc="Ask all of your university and computer science questions here!"
         :button1="button1"
       />
     </div>

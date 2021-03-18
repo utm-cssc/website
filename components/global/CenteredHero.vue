@@ -121,7 +121,7 @@ export default {
 }
 
 .hero-tag {
-  font-size: 32px;
+  font-size: 40px;
   color: var(--color-text);
   letter-spacing: -0.032em;
   line-height: 1.5;
