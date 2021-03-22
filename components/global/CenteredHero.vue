@@ -9,6 +9,9 @@
         <p class="hero-tag">
           {{ desc }}
         </p>
+        <p class="hero-tag hero-additional">
+          {{ additionalInfo }}
+        </p>
       </div>
     </div>
     <div class="mt-4 flex justify-center flex-wrap">
@@ -41,6 +44,7 @@ export default {
   props: {
     icon: String,
     desc: String,
+    additionalInfo: String,
     title: String,
     button1: {
       label: {
@@ -125,6 +129,10 @@ export default {
   color: var(--color-text);
   letter-spacing: -0.032em;
   line-height: 1.5;
+}
+
+.hero-additional {
+  font-size: 30px;
 }
 
 .btn-icon {

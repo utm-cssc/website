@@ -6,6 +6,7 @@
         icon="../icons/cssc-logo-without-title.svg"
         title="UTM CSSC"
         desc="We're recruiting!🎉"
+        additionalInfo="Deadline: Friday, March 26th, 11:59pm"
         :button1="button1"
         :button2="button2"
       />
