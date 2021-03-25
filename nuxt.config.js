@@ -6,6 +6,7 @@ export default {
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
    */
+  serverMiddleware: ['~/middleware/seo.js'],
   head: {
     title: 'CSSC Website',
     script: [
