@@ -1,4 +1,4 @@
-FROM node:15.12.0-alpine3.10
+FROM node:current
 ENV HOST 0.0.0.0
 
 # Create app directory
