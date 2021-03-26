@@ -9,7 +9,7 @@ tags:
 
 # CSSC is Recruiting! 🎉
 
-## Deadline: Friday, March 26th, 11:59pm
+## Deadline: Saturday, March 27th, 11:59pm
 
 The Computer Science Student Community (CSSC) is a community organization
 overseen by the Computer Science Faculty with the goal of providing support,
