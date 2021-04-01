@@ -5,8 +5,8 @@ ENV HOST 0.0.0.0
 RUN mkdir -p /usr/cssc-website
 
 # Bundle app source
-COPY . /usr/cssc-website
-WORKDIR /usr/cssc-website
+COPY . ~/cssc-website
+WORKDIR ~/cssc-website
 
 RUN yarn
 RUN yarn build
