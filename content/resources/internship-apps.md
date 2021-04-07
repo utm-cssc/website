@@ -40,3 +40,6 @@ can bring valuable experience to the table having studied in Canada.
 If you've been called in for an interview, make sure you familiarize yourself
 with the interview formats
 [**here**](https://yangshun.github.io/tech-interview-handbook/interview-formats).
+
+Sample interview with DSC and CSSC
+<grid-1-x-2 :reversed="true" link="https://www.youtube.com/watch?v=aDFjfiklNPA" img-Src="http://i3.ytimg.com/vi/aDFjfiklNPA/maxresdefault.jpg" desc="Interview Prep 101 with DSC and CSSC!" button="Nail your next interview!"></grid-1-x-2>
