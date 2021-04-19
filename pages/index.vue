@@ -5,8 +5,7 @@
       <CenteredHero
         icon="../icons/cssc-logo-without-title.svg"
         title="UTM CSSC"
-        desc="We're recruiting!🎉"
-        additionalInfo="Deadline: Saturday, March 27th, 11:59pm"
+        desc="Helping MCS Students"
         :button1="button1"
         :button2="button2"
       />
@@ -93,8 +92,8 @@ export default {
         link: 'ask-jack',
       },
       button2: {
-        label: 'Apply Here! 🎉',
-        link: '/resources/recruitment',
+        label: 'Resources',
+        link: '/resources',
         // ../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf
       },
     }
