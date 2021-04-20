@@ -53,8 +53,8 @@ export default {
           link: '/contributing',
         },
         {
-          title: 'Past Team',
-          link: '/past-team',
+          title: 'Past Teams',
+          link: '/past-teams',
         },
       ],
     }
