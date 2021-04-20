@@ -100,7 +100,7 @@ export default {
   },
   async asyncData({$axios, $content, params, error}) {
     const teamDataStore = await $content('team').fetch()
-    const currentTeam = teamDataStore[0].team
+    const currentTeam = teamDataStore[1].team
     const contributors = []
     await $axios
       .$get('https://api.github.com/repos/utm-cssc/website/contributors')

@@ -43,5 +43,7 @@ a {
 .icon {
   width: 36px;
   height: 36px;
+  background: none !important;
+  filter: var(--filter-exam-text);
 }
 </style>
