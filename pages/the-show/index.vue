@@ -31,7 +31,7 @@
       </div>
     </section>
 
-    <section v-for="event in events" :key="event.name">
+    <section class="event-card" v-for="event in events" :key="event.name">
       <h1 class="section-title">{{ event.name }}</h1>
       <div class="box-style">
         <div class="contests-text-container">
@@ -66,22 +66,22 @@ export default {
         {
           name: 'Competitions',
           hosting: [
-            {name: 'Trivia Night (ft. MCS Profs!)', desc: 'BAP! BAP!'},
-            {name: 'Bob Ross MS Paint Night', desc: 'Very good painter indeed'},
+            {name: 'Trivia Night (ft. MCS Profs!)', img: 'trivia.svg'},
+            {name: 'Bob Ross MS Paint Night', img: 'paint.svg'},
           ],
         },
         {
           name: 'Workshops',
           hosting: [
-            {name: 'Keep it QL with GraphQL', desc: 'GraphQL all the way'},
-            {name: 'Kubernetes Workshop', desc: 'K 8 K 8 K 8 K 8'},
+            {name: 'Keep it QL with GraphQL', img: 'graphql.svg'},
+            {name: 'Kubernetes Workshop', img: 'kubernetes.svg'},
           ],
         },
         {
           name: 'Activities',
           hosting: [
-            {name: 'Poker Tournament', desc: '$$$$$$$$$$$'},
-            {name: 'Minecraft Building Challenge', desc: 'Brrrrr'},
+            {name: 'Poker Tournament', img: 'poker.svg'},
+            {name: 'Minecraft Building Challenge', img: 'minecraft.svg'},
           ],
         },
       ],
@@ -114,7 +114,7 @@ export default {
   font-size: 42px;
   color: white;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .box-style {
@@ -127,5 +127,9 @@ export default {
 
 .contests-text-container {
   margin: 2em;
+}
+
+.event-card {
+  margin-bottom: 20px !important;
 }
 </style>

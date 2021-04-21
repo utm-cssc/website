@@ -190,7 +190,6 @@ export default {
 }
 
 .card {
-  min-height: 343px;
   border-radius: 12px;
   box-shadow: 7px 0 29px 0 rgba(0, 0, 0, 0.19);
 }

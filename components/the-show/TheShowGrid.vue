@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="columns row" v-for="i in rowCount" :key="i">
-      <div class="column is-one-quater" v-for="j in cols" :key="j">
+    <div class="row" v-for="i in rowCount" :key="i">
+      <div v-for="j in cols" :key="j">
         <div v-if="itemExists(i, j)" class="card rounded-card project-box">
-          <div class="title has-text-centered">{{ getItem(i, j).name }}</div>
-          <div>{{ getItem(i, j).desc }}</div>
+          <div class="title">{{ getItem(i, j).name }}</div>
+          <!--          <img class="event-img" :src="`/the-show/${getItem(i, j).img}`">-->
         </div>
       </div>
     </div>
@@ -46,8 +46,8 @@ export default {
 
 <style scoped>
 .project-box {
-  padding: 12px 20px;
-  height: 100%;
+  padding: 10px 10px;
+  margin-right: 20px;
   border-radius: 25px !important;
   background-color: rgba(100, 100, 100, 1) !important;
   color: white !important;
@@ -61,5 +61,10 @@ export default {
   font-size: 24px !important;
   color: white !important;
   height: 48px;
+}
+
+.event-img {
+  width: 100%;
+  height: 200px;
 }
 </style>
