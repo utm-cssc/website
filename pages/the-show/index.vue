@@ -31,27 +31,11 @@
       </div>
     </section>
 
-    <section>
-      <h1 class="section-title">Competitions</h1>
+    <section v-for="event in events" :key="event.name">
+      <h1 class="section-title">{{ event.name }}</h1>
       <div class="box-style">
         <div class="contests-text-container">
-          <TheShowGrid :items="competitions"></TheShowGrid>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h1 class="section-title">Activities</h1>
-      <div class="box-style">
-        <div class="contests-text-container">
-          <TheShowGrid :items="competitions"></TheShowGrid>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h1 class="section-title">Workshops</h1>
-      <div class="box-style">
-        <div class="contests-text-container">
-          <TheShowGrid :items="competitions"></TheShowGrid>
+          <TheShowGrid :items="event.hosting"></TheShowGrid>
         </div>
       </div>
     </section>
@@ -78,20 +62,28 @@ export default {
         {name: 'wisc', link: 'https://www.wiscutm.com/'},
         {name: 'whitevan', link: 'https://www.white-van.xyz'},
       ],
-      competitions: [
-        {name: 'Trivia Night (ft. MCS Profs!)', desc: 'BAP! BAP!'},
-        {name: 'Bob Ross MS Paint Night', desc: 'Very good painter indeed'},
-      ],
-      workshops: [
+      events: [
         {
-          name: 'Keep it QL with GraphQL',
-          desc: 'Neo4J sucks. GraphQL all the way',
+          name: 'Competitions',
+          hosting: [
+            {name: 'Trivia Night (ft. MCS Profs!)', desc: 'BAP! BAP!'},
+            {name: 'Bob Ross MS Paint Night', desc: 'Very good painter indeed'},
+          ],
         },
-        {name: 'Kubernetes Workshop', desc: 'K8 K8 K8'},
-      ],
-      activites: [
-        {name: 'Poker Tournament', desc: '$$$$$$$$$$$4'},
-        {name: 'Minecraft Building Challenge', desc: 'Brrrrr'},
+        {
+          name: 'Workshops',
+          hosting: [
+            {name: 'Keep it QL with GraphQL', desc: 'GraphQL all the way'},
+            {name: 'Kubernetes Workshop', desc: 'K 8 K 8 K 8 K 8'},
+          ],
+        },
+        {
+          name: 'Activities',
+          hosting: [
+            {name: 'Poker Tournament', desc: '$$$$$$$$$$$'},
+            {name: 'Minecraft Building Challenge', desc: 'Brrrrr'},
+          ],
+        },
       ],
     }
   },
