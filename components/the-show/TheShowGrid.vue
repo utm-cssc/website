@@ -62,6 +62,7 @@ export default {
   font-size: 24px !important;
   color: white !important;
   height: 48px;
+  margin-bottom: 35px;
 }
 
 .event-img {

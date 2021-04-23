@@ -1,8 +1,8 @@
 <template>
-  <div id="timer">
+  <div v-if="days + hours + minutes + seconds > 0" id="timer">
     <div class="days">
       <div class="numbers">{{ days }}</div>
-      day
+      days
     </div>
     <div class="hours">
       <div class="numbers">{{ hours }}</div>
@@ -17,6 +17,7 @@
       seconds
     </div>
   </div>
+  <div v-else class="show-begin">Let The Show Begin! 🎉</div>
 </template>
 
 <script>
@@ -73,5 +74,11 @@ export default {
   display: inline-block;
   padding: 0px 3px 2px 3px;
   border-radius: 5px;
+}
+
+.show-begin {
+  font-weight: 700px;
+  text-align: center;
+  font-size: 50px;
 }
 </style>

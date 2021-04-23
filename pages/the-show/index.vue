@@ -4,7 +4,7 @@
       <TheShowNavBar />
       <TheShowHero />
       <div class="society-container">
-        <div v-for="society in societies" :key="society.name">
+        <div v-for="society in societies" :key="society.name" class="society">
           <a :href="society.link">
             <img
               class="society-img"
@@ -52,18 +52,26 @@
             class="contests-text-container"
           >
             <div class="prizeName">{{ prize.name }}</div>
-            <img class="prize-img" :src="`/the-show/${prize.img}`" />
+            <div class="prize-img-container">
+              <img class="prize-img" :src="`/the-show/${prize.img}`" />
+            </div>
           </div>
+        </div>
+        <div class="prize-additional">
+          + Giftcards, Google Minis, Bose Speakers, Gaming Keyboards, Mice and
+          MUCH MORE!
         </div>
       </div>
 
       <div>
         <div class="society-container">
           <div v-for="society in societies" :key="society.name">
-            <img
-              class="society-img"
-              :src="`/the-show/societies/${society.name}.png`"
-            />
+            <a :href="society.link">
+              <img
+                class="society-img"
+                :src="`/the-show/societies/${society.name}.png`"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -154,6 +162,25 @@ export default {
   padding-bottom: 20px;
 }
 
+@media (max-width: 950px) {
+  .society-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .society {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .society-img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .main {
   min-height: 100vh;
 }
@@ -180,10 +207,6 @@ export default {
   margin-bottom: 20px !important;
 }
 
-.prize-img {
-  width: 250px;
-}
-
 .prize-container {
   display: flex;
   flex-direction: row;
@@ -192,10 +215,31 @@ export default {
   margin-top: 20px;
 }
 
+@media (max-width: 950px) {
+  .prize-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 .prizeName {
   text-align: center;
   margin-bottom: 50px;
   font-weight: 700;
   font-size: 30px;
+}
+
+.prize-additional {
+  text-align: center;
+  font-weight: 700;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.prize-img-container {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
 }
 </style>
