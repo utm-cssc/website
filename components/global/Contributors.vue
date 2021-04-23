@@ -1,9 +1,9 @@
 <template>
   <!-- Preconditions:
-  Whereever you use this component we need to includ this following script
+  Whereever you use this component we need to include this following script
   in the page for get all the contributors.
 
-  Note: This call is not included in this coponent as nuxt doesn't all to call async functions
+  Note: This call is not included in this component as nuxt doesn't all to call async functions
         on components.
 
   async asyncData ({ $axios }) {

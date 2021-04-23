@@ -92,8 +92,8 @@ export default {
         link: 'ask-jack',
       },
       button2: {
-        label: 'Resources',
-        link: '/resources',
+        label: 'The Show!',
+        link: '/the-show',
         // ../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf
       },
     }
