@@ -4,7 +4,7 @@
       <div v-for="j in cols" :key="j">
         <div v-if="itemExists(i, j)" class="card rounded-card project-box">
           <div class="title">{{ getItem(i, j).name }}</div>
-          <!--          <img class="event-img" :src="`/the-show/${getItem(i, j).img}`">-->
+          <img class="event-img" :src="`/the-show/${getItem(i, j).img}`" />
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@ export default {
   props: {
     cols: {
       type: Number,
-      default: 3,
+      default: 5,
     },
     items: {
       type: Array,
@@ -47,7 +47,7 @@ export default {
 <style scoped>
 .project-box {
   padding: 10px 10px;
-  margin-right: 20px;
+  margin: 20px;
   border-radius: 25px !important;
   background-color: rgba(100, 100, 100, 1) !important;
   color: white !important;
@@ -58,6 +58,7 @@ export default {
 }
 
 .title {
+  text-align: center;
   font-size: 24px !important;
   color: white !important;
   height: 48px;

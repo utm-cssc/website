@@ -14,7 +14,7 @@ export default {}
 @import '@/assets/styles/customize-vuetify.css';
 
 .bg {
-  background-image: url('/the-show/background.svg') !important;
+  background: url('/the-show/background.svg') !important;
   background-size: cover !important;
 }
 </style>

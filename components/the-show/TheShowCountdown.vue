@@ -51,7 +51,7 @@ export default {
 .numbers {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
-  font-size: 5.2em;
+  font-size: 5em;
   font-weight: 800;
   margin: 0px 50px 0 50px;
 }
