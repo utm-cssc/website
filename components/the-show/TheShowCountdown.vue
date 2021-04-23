@@ -2,7 +2,7 @@
   <div id="timer">
     <div class="days">
       <div class="numbers">{{ days }}</div>
-      days
+      day
     </div>
     <div class="hours">
       <div class="numbers">{{ hours }}</div>
@@ -51,7 +51,7 @@ export default {
 .numbers {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
-  font-size: 5em;
+  font-size: 4.3em;
   font-weight: 800;
   margin: 0px 50px 0 50px;
 }

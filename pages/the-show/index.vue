@@ -151,7 +151,7 @@ export default {
 .society-container {
   display: flex;
   justify-content: space-evenly;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .main {

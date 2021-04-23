@@ -15,14 +15,7 @@ export default {
   data() {
     return {
       drawerOpen: false,
-      navItems: [
-        'About',
-        'Event Schedule',
-        'Competitions',
-        'Workshops',
-        'Activities',
-        'Prizes',
-      ],
+      navItems: ['About', 'Competitions', 'Workshops', 'Activities', 'Prizes'],
     }
   },
 }
@@ -34,8 +27,8 @@ export default {
   justify-content: space-evenly;
   border-radius: 25px !important;
   background-color: rgba(113, 112, 112, 1) !important;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 15px;
+  padding: 15px;
 }
 
 .navItem {
@@ -46,5 +39,13 @@ export default {
 
 .navItem:hover {
   color: #3e3e3e;
+}
+
+@media (max-width: 950px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 </style>
