@@ -1,4 +1,4 @@
-<template class="v-application--wrap">
+<template>
   <div class="container">
     <section class="main">
       <TheShowNavBar />
@@ -15,7 +15,7 @@
       </div>
       <TheShowCountdown />
     </section>
-    <section>
+    <div>
       <a id="about" />
       <h1 class="section-title">About</h1>
       <div class="box-style">
@@ -67,7 +67,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
