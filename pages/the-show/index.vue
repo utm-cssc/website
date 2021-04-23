@@ -19,7 +19,7 @@
       <a id="about" />
       <h1 class="section-title">About</h1>
       <div class="box-style">
-        <div class="contests-text-container">
+        <div class="about-text-container">
           The Show must go on!
           <br />
           <br />
@@ -199,8 +199,14 @@ export default {
   margin: 0px;
 }
 
+.about-text-container,
 .contests-text-container {
   margin: 2em;
+}
+
+.about-text-container {
+  font-weight: 400;
+  font-size: 30px;
 }
 
 .event-card {
