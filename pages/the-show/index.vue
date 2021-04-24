@@ -103,39 +103,69 @@ export default {
         {
           name: 'Competitions',
           hosting: [
-            {name: 'Poker Tournament', img: 'poker.svg'},
-            {name: 'Minecraft Building Challenge', img: 'minecraft.svg'},
-            {name: 'Capture the Flag', img: 'ctf.svg'},
+            {name: 'Poker Tournament', img: 'poker.svg', link: ''},
+            {
+              name: 'Minecraft Building Challenge',
+              img: 'minecraft.svg',
+              link: '',
+            },
+            {
+              name: 'Capture the Flag',
+              img: 'ctf.svg',
+              link: 'https://utmctf.tk',
+            },
             {
               name: 'Competitive Programming',
               img: 'competitiveprogramming.svg',
+              link:
+                'https://docs.google.com/forms/d/e/1FAIpQLSe5sqtumrK6neFAps5jOpUY3bzopCHCkVhk7SjbWvXMpaIkUA/viewform',
             },
-            {name: 'Comp-stantial Dilemma', img: 'csd.svg'},
+            {
+              name: 'Comp-stantial Dilemma',
+              img: 'csd.svg',
+              link:
+                'https://docs.google.com/forms/d/e/1FAIpQLSetNfcYBbnmuu4SHmBlIDN-7B1ULb5GpadAepyQ26DSumH4Rg/viewform',
+            },
           ],
         },
         {
           name: 'Workshops',
           hosting: [
-            {name: 'Keep it QL with GraphQL', img: 'graphql.svg'},
-            {name: 'Kubernetes Workshop', img: 'kubernetes.svg'},
-            {name: 'Meditation and Mindfulness', img: 'meditation.svg'},
+            {
+              name: 'Keep it QL with GraphQL',
+              img: 'graphql.svg',
+              link: 'https://github.com/white-van/graphql-workshop',
+            },
+            {name: 'Kubernetes Workshop', img: 'kubernetes.svg', link: ''},
+            {
+              name: 'Meditation and Mindfulness',
+              img: 'meditation.svg',
+              link: '',
+            },
             {
               name: 'Intro to Artificial Intelligence/Machine Learning',
               img: 'aiml.svg',
+              link: '',
             },
           ],
         },
         {
           name: 'Activities',
           hosting: [
-            {name: 'Trivia Night (ft. MCS Profs!)', img: 'trivia.svg'},
-            {name: 'Bob Ross MS Paint Night', img: 'paint.svg'},
-            {name: 'Game Night', img: 'gamenight.svg'},
+            {
+              name: 'Trivia Night (ft. MCS Profs!)',
+              img: 'trivia.svg',
+              link: '',
+            },
+            {name: 'Bob Ross MS Paint Night', img: 'paint.svg', link: ''},
+            {name: 'Game Night', img: 'gamenight.svg', link: ''},
             {
               name: 'Infinity War (ft. Professors Mike Pawliuk & Ilir Dema)',
               img: 'infinity.svg',
+              link:
+                'https://docs.google.com/document/d/15xt5IhtrfdKMB-B4_lJJRZl6_-jWCaeRSMwV3U4nxN8/edit',
             },
-            {name: 'Lightning Talks', img: 'lightningtalk.svg'},
+            {name: 'Lightning Talks', img: 'lightningtalk.svg', link: ''},
           ],
         },
       ],

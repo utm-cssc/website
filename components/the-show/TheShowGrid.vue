@@ -3,8 +3,17 @@
     <div class="row" v-for="i in rowCount" :key="i">
       <div v-for="j in cols" :key="j">
         <div v-if="itemExists(i, j)" class="card rounded-card project-box">
-          <div class="title">{{ getItem(i, j).name }}</div>
-          <img class="event-img" :src="`/the-show/${getItem(i, j).img}`" />
+          <a
+            v-if="`${getItem(i, j).link}`.length > 0"
+            :href="`${getItem(i, j).link}`"
+          >
+            <div class="title">{{ getItem(i, j).name }}</div>
+            <img class="event-img" :src="`/the-show/${getItem(i, j).img}`" />
+          </a>
+          <a v-else>
+            <div class="title">{{ getItem(i, j).name }}</div>
+            <img class="event-img" :src="`/the-show/${getItem(i, j).img}`" />
+          </a>
         </div>
       </div>
     </div>
@@ -51,6 +60,11 @@ export default {
   border-radius: 25px !important;
   background-color: rgba(100, 100, 100, 1) !important;
   color: white !important;
+}
+
+.project-box:hover {
+  background-color: rgba(100, 100, 100, 0.8) !important;
+  cursor: pointer;
 }
 
 .row {
