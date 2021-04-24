@@ -91,13 +91,14 @@ export default {
   data() {
     return {
       societies: [
-        {name: 'cssc', link: 'https://cssc.utm.utoronto.ca/discord'},
+        {name: 'cssc', link: 'https://cssc.utm.utoronto.ca'},
         {name: 'dsc', link: 'https://discord.gg/8xKTpsv'},
         {name: 'mcss', link: 'https://discord.gg/5K3TuF7DkY'},
         {name: 'utm_robotics', link: 'https://discord.gg/bE4a3g4'},
         {name: 'utm_sam', link: 'http://utmsam.sa.utoronto.ca/'},
         {name: 'wisc', link: 'https://www.wiscutm.com/'},
-        {name: 'whitevan', link: 'https://www.white-van.xyz'},
+        {name: 'whitevan', link: 'https://discord.gg/e4fCRDtuAa'},
+        {name: 'artclub', link: ' https://discord.gg/TChtJQWFJR'},
       ],
       events: [
         {
