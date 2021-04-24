@@ -137,7 +137,11 @@ export default {
               img: 'graphql.svg',
               link: 'https://github.com/white-van/graphql-workshop',
             },
-            {name: 'Kubernetes Workshop', img: 'kubernetes.svg', link: ''},
+            {
+              name: 'Kubernetes Workshop',
+              img: 'kubernetes.svg',
+              link: 'https://github.com/white-van/k8s-demo',
+            },
             {
               name: 'Meditation and Mindfulness',
               img: 'meditation.svg',
