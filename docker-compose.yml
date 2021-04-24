@@ -1,0 +1,16 @@
+version: "3"
+services:
+  utm_cssc:
+    container_name: utm_cssc
+    image: utmcssc/website
+    ports:
+      - "4000:3000"
+    restart: always
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_CLEANUP=true
+    command: --interval 30
