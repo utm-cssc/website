@@ -103,8 +103,8 @@ export default {
         {
           name: 'Competitions',
           hosting: [
-            {name: 'Trivia Night (ft. MCS Profs!)', img: 'trivia.svg'},
-            {name: 'Bob Ross MS Paint Night', img: 'paint.svg'},
+            {name: 'Poker Tournament', img: 'poker.svg'},
+            {name: 'Minecraft Building Challenge', img: 'minecraft.svg'},
             {name: 'Capture the Flag', img: 'ctf.svg'},
             {
               name: 'Competitive Programming',
@@ -128,8 +128,8 @@ export default {
         {
           name: 'Activities',
           hosting: [
-            {name: 'Poker Tournament', img: 'poker.svg'},
-            {name: 'Minecraft Building Challenge', img: 'minecraft.svg'},
+            {name: 'Trivia Night (ft. MCS Profs!)', img: 'trivia.svg'},
+            {name: 'Bob Ross MS Paint Night', img: 'paint.svg'},
             {name: 'Game Night', img: 'gamenight.svg'},
             {
               name: 'Infinity War (ft. Professors Mike Pawliuk & Ilir Dema)',
