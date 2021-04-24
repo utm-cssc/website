@@ -29,7 +29,7 @@ export default {
   methods: {
     tick: function() {
       const today = new Date().getTime()
-      const theShowDate = new Date('Apr 23, 2021 18:00:00').getTime()
+      const theShowDate = new Date('Apr 24, 2021 18:00:00').getTime()
       const diff = theShowDate - today
       this.days = Math.floor(diff / (1000 * 60 * 60 * 24))
       this.hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
