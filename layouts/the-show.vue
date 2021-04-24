@@ -1,6 +1,6 @@
 <template>
-  <v-app class="bg pg-layout">
-    <v-main>
+  <v-app class="bg">
+    <v-main class="pg-layout">
       <nuxt />
     </v-main>
   </v-app>
