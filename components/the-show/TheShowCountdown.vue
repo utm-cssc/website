@@ -77,7 +77,7 @@ export default {
 }
 
 .show-begin {
-  font-weight: 700px;
+  font-weight: 700;
   text-align: center;
   font-size: 50px;
   color: white;

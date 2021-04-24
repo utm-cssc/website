@@ -157,6 +157,9 @@ export default {
 }
 
 .society-container {
+  background-color: #717070;
+  border-radius: 25px;
+  padding-top: 10px;
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 20px;

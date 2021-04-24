@@ -4,8 +4,8 @@
       v-for="navItem in navItems"
       :key="navItem"
       class="navItem"
-      :href="`#${navItem.toLowerCase()}`"
-      >{{ navItem }}</a
+      :href="`${navItem.link}`"
+      >{{ navItem.name }}</a
     >
   </div>
 </template>
@@ -15,7 +15,14 @@ export default {
   data() {
     return {
       drawerOpen: false,
-      navItems: ['About', 'Competitions', 'Workshops', 'Activities', 'Prizes'],
+      navItems: [
+        {name: 'About', link: '#about'},
+        {name: 'Schedule', link: '/the-show/schedule.pdf'},
+        {name: 'Competitions', link: '#competitions'},
+        {name: 'Workshops', link: '#workshops'},
+        {name: 'Activities', link: '#activities'},
+        {name: 'Prizes', link: '#prizes'},
+      ],
     }
   },
 }
