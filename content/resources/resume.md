@@ -74,7 +74,7 @@ the Coding Interview_
 
 ### Take the big project classes
 
-If you did worked hard and did well in a non-trivial project for a 200+ level
+If you worked hard and did well in a non-trivial project for a 200+ level
 Computer Science course here at UTM, you likely gained expertise that you can
 talk about in your resume.
 
