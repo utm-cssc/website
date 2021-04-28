@@ -148,7 +148,7 @@ export default {
   position: absolute;
   opacity: 0;
   z-index: 1;
-  height: 80%;
+  height: 100%;
   transform: rotateY(-180deg);
   -ms-transform: rotateY(-180deg);
   -webkit-transform: rotateY(-180deg);

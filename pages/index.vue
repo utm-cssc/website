@@ -6,6 +6,7 @@
         icon="../icons/cssc-logo-without-title.svg"
         title="UTM CSSC"
         desc="Helping MCS Students"
+        additionalInfo="Have a great summer! 🌞"
         :button1="button1"
         :button2="button2"
       />
