@@ -1,4 +1,4 @@
-FROM node:current
+FROM node:15
 ENV HOST 0.0.0.0
 
 # Create app directory
