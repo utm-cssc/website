@@ -1,49 +1,40 @@
 {
   "team": [
     {
-      "name": "Alexandra Thompson",
-      "imgSrc": "/team/AlexThompson.jpg",
-      "position": "General Manager",
-      "message": "Alexandra found her passion for working with students in her time as an undergraduate Computer Science teaching assistant. She enjoys conversations on the ups and downs of student life and her experience as an undergraduate. Alexandra loves to share her tips on overcoming struggles in university.",
-      "discord": "LovecraftsSiren#8059",
-      "email": "jenniferalexandrathompson@mail.utoronto.ca",
-      "linkedin": "https://www.linkedin.com/in/jenalexthompson"
-    },
-    {
-      "name": "Chris Lim",
-      "imgSrc": "https://avatars1.githubusercontent.com/u/24628243?s=400&u=0edf079732c29b3c8cdd0358a39210d57d301002&v=4",
-      "position": "Technical Director",
-      "message": "Chris is our tech lead! He recently finished a CSC492 project where he created a tinder-like application for students to match with school clubs! If you need help with your personal projects or want to learn a new technology, he's your go to man!",
-      "discord": "Eat My Shuriken#1325",
-      "email": "christopher.limtungtseung@utoronto.ca",
-      "linkedin": "https://www.linkedin.com/in/hiimchrislim"
-    },
-    {
       "name": "Jessica Anderson",
       "imgSrc": "/team/jess.jpg",
-      "position": "Operations Director",
+      "position": "Executive Director",
       "message": "Jessica was accepted into UTM as an Accounting Student, but ended up wanting to do Computer Science, so she is ready to tackle any of your POSt questions. She always struggles to choose which courses are most important to take and she's ready to share her findings!",
       "discord": "janders#8886",
       "email": "jess.anderson@mail.utoronto.ca",
       "linkedin": "https://www.linkedin.com/in/jessicaanderson9"
     },
     {
-      "name": "VyVy Ngo",
+      "name": "Nameera Azim",
+      "imgSrc": "/team/Nameera.png",
+      "position": "Communications Director",
+      "message": "Nameera dedicates her time to connecting with the students within the Computer Science community to learn about what type of support they need and advocating for changes that improve their University experience. Feel free to shoot her message if you want to talk about anything - from internships to Earnest Hemmingway to new Marvel movies.",
+      "discord": "Nameera#2802",
+      "email": "nameera.azim@mail.utoronto.ca",
+      "linkedin": "https://www.linkedin.com/in/nameera-azim-1924a21b6/"
+    },
+    {
+      "name": "Naaz Sibia",
       "imgSrc": "https://avatars.githubusercontent.com/u/45834118?s=460&u=83382baac5f0a500fa99646a4d5899fe391f7328&v=4",
-      "position": "Student Resource Curator",
+      "position": "Operations Director",
       "message": "As the student resource curator, VyVy wants to create a welcoming computer science environment by providing students access to any information they need. She has a passion learning and grabs any information within her reach. In her spare time, she enjoys knitting and some Skyrim.",
       "discord": "SleepyVyvy#9713",
       "email": "vyvy.ngo@mail.utoronto.ca",
       "linkedin": "https://www.linkedin.com/in/tuong-vy-n-614b4213b/"
     },
     {
-      "name": "Nameera Azim",
-      "imgSrc": "/team/Nameera.png",
-      "position": "Student Culture Coordinator",
-      "message": "Nameera dedicates her time to connecting with the students within the Computer Science community to learn about what type of support they need and advocating for changes that improve their University experience. Feel free to shoot her message if you want to talk about anything - from internships to Earnest Hemmingway to new Marvel movies.",
-      "discord": "Nameera#2802",
-      "email": "nameera.azim@mail.utoronto.ca",
-      "linkedin": "https://www.linkedin.com/in/nameera-azim-1924a21b6/"
+      "name": "Jarrod Servilla",
+      "imgSrc": "https://avatars.githubusercontent.com/u/45128231?v=4",
+      "position": "Technical Director",
+      "message": "As the tech director, Jarrod creates initiatives to provide students with technical skills and mentorship to help them find internships or make cool projects!",
+      "discord": "jc#1000",
+      "email": "jarrod.servilla@utoronto.ca",
+      "linkedin": "https://www.linkedin.com/in/jarrod-servilla"
     },
     {
       "name": "Michael Liut",
