@@ -97,10 +97,6 @@ export default {
           link: '/ask-jack/',
         },
         {
-          title: 'Tech of the Month',
-          link: '/tech-of-the-month',
-        },
-        {
           title: 'Projects',
           link: '/projects',
         },
