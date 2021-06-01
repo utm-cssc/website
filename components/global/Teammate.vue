@@ -8,7 +8,7 @@
       @click="isClicked = !isClicked"
     >
       <div class="mt-5 pointer mb-4">
-        <v-tooltip bottom>
+        <v-tooltip bottom v-if="website">
           <template v-slot:activator="{on, attrs}">
             <a :href="website" target="_blank" v-bind="attrs" v-on="on">
               <img
@@ -19,8 +19,16 @@
               />
             </a>
           </template>
-          <span v-if="website">{{ websiteTooltip }}</span>
+          <span>{{ websiteTooltip }}</span>
         </v-tooltip>
+        <a :href="website" target="_blank" v-else>
+          <img
+            :src="imgSrc"
+            :alt="imgAlt"
+            class="circle"
+            @click="clickPersonalSite"
+          />
+        </a>
       </div>
       <div class="pointe mb-5">
         <div class="name text-center">{{ name }}</div>
@@ -43,9 +51,6 @@
         </a>
         <a v-if="linkedin" :href="linkedin">
           <LinkedinIcon class="logo" />
-        </a>
-        <a v-if="website" :href="website">
-          <WebsiteIcon class="logo" />
         </a>
       </div>
     </div>
