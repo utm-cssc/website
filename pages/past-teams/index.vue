@@ -30,14 +30,7 @@
 <script>
 export default {
   data: () => {
-    return {
-      selected: '',
-    }
-  },
-  computed: {
-    years() {
-      return [2017, 2018]
-    },
+    return {}
   },
   async asyncData({$axios, $content, params, error}) {
     const teamDataStore = await $content('team').fetch()
