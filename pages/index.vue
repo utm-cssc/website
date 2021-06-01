@@ -45,6 +45,7 @@
           :discord="mate.discord"
           :email="mate.email"
           :linkedin="mate.linkedin"
+          :website="mate.website"
         />
       </div>
     </div>

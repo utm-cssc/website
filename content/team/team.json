@@ -2,7 +2,7 @@
   "team": [
     {
       "name": "Jessica Anderson",
-      "imgSrc": "/team/jess.jpg",
+      "imgSrc": "/team/2021/jess.jpg",
       "position": "Executive Director",
       "message": "Jessica was accepted into UTM as an Accounting Student, but ended up wanting to do Computer Science, so she is ready to tackle any of your POSt questions. She always struggles to choose which courses are most important to take and she's ready to share her findings!",
       "discord": "janders#8886",
@@ -11,30 +11,32 @@
     },
     {
       "name": "Nameera Azim",
-      "imgSrc": "/team/Nameera.png",
-      "position": "Communications Director",
-      "message": "Nameera dedicates her time to connecting with the students within the Computer Science community to learn about what type of support they need and advocating for changes that improve their University experience. Feel free to shoot her message if you want to talk about anything - from internships to Earnest Hemmingway to new Marvel movies.",
+      "imgSrc": "/team/2021/Nameera.png",
+      "position": "Director of Communications",
+      "message": "Nameera is a third-year student specializing in Computer Science and minoring in both Statistics and Business. On lazy days, you can probably find her reading, painting, fangirling over an MCU movie, watching the Premier League, or messing around with her ukulele! Feel free to reach out!",
       "discord": "Nameera#2802",
       "email": "nameera.azim@mail.utoronto.ca",
       "linkedin": "https://www.linkedin.com/in/nameera-azim-1924a21b6/"
     },
     {
       "name": "Naaz Sibia",
-      "imgSrc": "https://avatars.githubusercontent.com/u/45834118?s=460&u=83382baac5f0a500fa99646a4d5899fe391f7328&v=4",
-      "position": "Operations Director",
-      "message": "As the student resource curator, VyVy wants to create a welcoming computer science environment by providing students access to any information they need. She has a passion learning and grabs any information within her reach. In her spare time, she enjoys knitting and some Skyrim.",
-      "discord": "SleepyVyvy#9713",
+      "imgSrc": "/team/2021/Naaz.png",
+      "position": "Director of Operations",
+      "message": "Naaz likes preference learning and Human-Computer Interaction (with a CS-ed focus). She also likes talking about mental health, and courses she's TA'ed. When not looking into the mentioned topics, or working to finish her bachelor's degree, she likes having 3 am discussions with friends, drawing chibis, and eating Chinese food.",
+      "discord": "Blossom#1234",
       "email": "vyvy.ngo@mail.utoronto.ca",
-      "linkedin": "https://www.linkedin.com/in/tuong-vy-n-614b4213b/"
+      "linkedin": "https://www.linkedin.com/in/tuong-vy-n-614b4213b/",
+      "website": "http://naazsibia.com"
     },
     {
       "name": "Jarrod Servilla",
       "imgSrc": "https://avatars.githubusercontent.com/u/45128231?v=4",
-      "position": "Technical Director",
-      "message": "As the tech director, Jarrod creates initiatives to provide students with technical skills and mentorship to help them find internships or make cool projects!",
+      "position": "Director of Technology",
+      "message": "As the tech director, Jarrod creates initiatives to equip students with technical skills to help them find internships or make cool projects! He's an avid Kanye stan & plays lots of strategy games. Some accomplishments: Hit Diamond for every set in Teamfight Tactics, Top 4'd a Magic: The Gathering Standard PPTQ",
       "discord": "jc#1000",
       "email": "jarrod.servilla@utoronto.ca",
-      "linkedin": "https://www.linkedin.com/in/jarrod-servilla"
+      "linkedin": "https://www.linkedin.com/in/jarrod-servilla",
+      "website": "https://jarrodservilla.com"
     },
     {
       "name": "Michael Liut",
@@ -43,7 +45,8 @@
       "message": "Michael is a Computer Science educator who prides himself in fostering an environment of educational excellence through active and experiential learning. In recent years he has assisted in the development and implementation of active learning materials/strategies in several Computer Science courses at UTM. Michael enjoys travelling, and is an avid scuba diver.",
       "discord": "Mike's Here#5684",
       "email": " michael.liut@utoronto.ca",
-      "linkedin": "https://www.linkedin.com/in/mliut"
+      "linkedin": "https://www.linkedin.com/in/mliut",
+      "website": "https://www.michaelliut.ca/"
     }
   ]
 }

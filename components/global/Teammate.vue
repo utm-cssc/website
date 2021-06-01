@@ -8,14 +8,26 @@
       @click="isClicked = !isClicked"
     >
       <div class="mt-5 pointer mb-4">
-        <img :src="imgSrc" :alt="imgAlt" class="circle" />
+        <v-tooltip bottom>
+          <template v-slot:activator="{on, attrs}">
+            <a :href="website" target="_blank" v-bind="attrs" v-on="on">
+              <img
+                :src="imgSrc"
+                :alt="imgAlt"
+                class="circle"
+                @click="clickPersonalSite"
+              />
+            </a>
+          </template>
+          <span v-if="website">{{ websiteTooltip }}</span>
+        </v-tooltip>
       </div>
       <div class="pointe mb-5">
         <div class="name text-center">{{ name }}</div>
         <div class="position text-center">{{ position }}</div>
       </div>
       <div class="flex mb-4">
-        <v-tooltip top>
+        <v-tooltip v-if="discord" top>
           <template v-slot:activator="{on, attrs}">
             <DiscordIcon
               v-bind="attrs"
@@ -31,6 +43,9 @@
         </a>
         <a v-if="linkedin" :href="linkedin">
           <LinkedinIcon class="logo" />
+        </a>
+        <a v-if="website" :href="website">
+          <WebsiteIcon class="logo" />
         </a>
       </div>
     </div>
@@ -54,6 +69,7 @@ export default {
     return {
       isCopied: 'Click to copy username',
       isClicked: false,
+      websiteTooltip: 'Click to visit personal website',
     }
   },
   props: {
@@ -83,6 +99,9 @@ export default {
     linkedin: {
       type: String,
     },
+    website: {
+      type: String,
+    },
   },
   computed: {
     imgAlt() {
@@ -108,6 +127,10 @@ export default {
             this.isCopied = 'Copy username'
           }, 1000)
         })
+      e.stopPropagation()
+    },
+    clickPersonalSite(e) {
+      e.stopPropagation()
     },
   },
 }
