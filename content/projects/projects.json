@@ -46,15 +46,24 @@
       "tags": ["student-projects"]
     },
     {
+      "name": "CSSC",
+      "desc": "A community organization overseen by the Computer Science Faculty dedicated to helping students!",
+      "repo": "https://github.com/utm-cssc",
+      "logo": "/logos/cssc-logo-without-title.png",
+      "tags": ["student-orgs"]
+    },
+    {
       "name": "White Van",
       "desc": "A student run community, based on Discord, where you can hangout, talk about projects, get and give help, and more.",
       "repo": "https://github.com/white-van",
+      "logo": "/logos/wv.png",
       "tags": ["student-orgs"]
     },
     {
       "name": "Developer Student Community",
       "desc": "DSC is a community focused on getting hands-on development experience, often focused on writing code to help the community.",
       "repo": "https://github.com/dscutm",
+      "logo": "/logos/dsc.png",
       "tags": ["student-orgs"]
     },
     {
