@@ -5,7 +5,7 @@
       "desc": "With Nox, students and professors can have better lectures through real-time questions and feedback!",
       "logo": "/logos/projects/nox.png",
       "repo": "https://github.com/ShoaibAhmadKhan/Nox",
-      "tags": ["student"]
+      "tags": ["student-projects"]
     },
     {
       "name": "ViaPlanner",
@@ -13,14 +13,14 @@
       "logo": "/logos/projects/viaplanner.png",
       "repo": "https://github.com/VIAplanner/via-timetable",
       "demo": "https://timetable.viaplanner.ca/about",
-      "tags": ["student"]
+      "tags": ["student-projects"]
     },
     {
       "name": "Proformance",
       "desc": "Proformance allows squash coaches to analyse their players' performance on Android.",
       "logo": "/logos/projects/proformance.svg",
       "repo": "https://github.com/OsamaSaleh289/Squash-Video-Analysis-Project",
-      "tags": ["student"]
+      "tags": ["student-projects"]
     },
     {
       "name": "UofTea",
@@ -28,7 +28,7 @@
       "logo": "/logos/projects/UofTea.png",
       "repo": "https://github.com/Salazareo/UofTea",
       "demo": "https://uoftea.ca/",
-      "tags": ["student"]
+      "tags": ["student-projects"]
     },
     {
       "name": "Resume-Words",
@@ -36,7 +36,33 @@
       "logo": "/logos/projects/resume-words.png",
       "repo": "https://github.com/ShahmeerShahid/ResumeWords/",
       "demo": "https://resume-words.com/",
-      "tags": ["student"]
+      "tags": ["student-projects"]
+    },
+    {
+      "name": "SimpleDoc",
+      "desc": "Simplified documentation collection for courses at UTM",
+      "repo": "https://github.com/simpledocutm/simpledoc",
+      "demo": "https://simpledoc.utm.utoronto.ca",
+      "tags": ["student-projects"]
+    },
+    {
+      "name": "White Van",
+      "desc": "A student run community, based on Discord, where you can hangout, talk about projects, get and give help, and more.",
+      "repo": "https://github.com/white-van",
+      "tags": ["student-orgs"]
+    },
+    {
+      "name": "Developer Student Community",
+      "desc": "DSC is a community focused on getting hands-on development experience, often focused on writing code to help the community.",
+      "repo": "https://github.com/dscutm",
+      "tags": ["student-orgs"]
+    },
+    {
+      "name": "Buddy Study Online",
+      "logo": "/logos/projects/BuddyStudyOnline.png",
+      "desc": "A space for all students to study while chatting through a cute avatar without the pressure of revealing your face",
+      "repo": "https://github.com/BuddyStudyOnline",
+      "tags": ["hackathon"]
     },
     {
       "name": "Toonin",
@@ -77,20 +103,6 @@
       "repo": "https://github.com/grey-software/futurist.network",
       "demo": "http://www.futurist.network",
       "tags": ["grey-software"]
-    },
-    {
-      "name": "SimpleDoc",
-      "desc": "Simplified documentation collection for courses at UTM",
-      "repo": "https://github.com/simpledocutm/simpledoc",
-      "demo": "https://simpledoc.utm.utoronto.ca",
-      "tags": ["student"]
-    },
-    {
-      "name": "Buddy Study Online",
-      "logo": "/logos/projects/BuddyStudyOnline.png",
-      "desc": "A space for all students to study while chatting through a cute avatar without the pressure of revealing your face",
-      "repo": "https://github.com/BuddyStudyOnline",
-      "tags": ["hackathon"]
     }
   ]
 }
