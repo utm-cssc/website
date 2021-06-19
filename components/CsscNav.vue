@@ -6,7 +6,7 @@
         to="/"
         @click.native="checked = false"
       >
-        <img class="logo" src="/icons/cssc-logo-without-title.svg" />
+        <img class="logo" src="/icons/cssc-logo-without-title.png" />
         <span class="logo-text font-bold">UTM CSSC</span>
       </nuxt-link>
       <div class="nav-internal" v-if="$mq === 'lg' || $mq === 'xl'">
@@ -102,6 +102,7 @@ export default {
   height: fit-content;
   font-size: 22px;
   padding: 8px;
+  color: var(--color-secondary);
 }
 
 .nav-link:hover {

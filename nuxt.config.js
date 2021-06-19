@@ -133,10 +133,10 @@ export default {
     theme: {
       themes: {
         dark: {
-          primary: '#00d097',
+          primary: '#5F759B',
         },
         light: {
-          primary: '#00d097',
+          primary: '#00204E',
         },
       },
     },

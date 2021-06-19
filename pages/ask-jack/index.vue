@@ -181,7 +181,7 @@ export default {
 
 <style scoped>
 .button {
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary) !important;
   border: none;
   color: white;
 }

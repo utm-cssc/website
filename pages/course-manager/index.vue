@@ -72,6 +72,7 @@
       <div v-for="course in courses" :key="course.code"></div>
       <v-list>
         <v-list-group
+          class="course-container"
           v-for="(course, index) in courses"
           :key="course.code"
           v-model="courseStates[index].expanded"
@@ -175,6 +176,10 @@ export default {
 </script>
 
 <style scoped>
+.course-container {
+  box-shadow: 0px 0px 5px 1px grey;
+}
+
 /* @media screen and (max-width: 600px) {
   .v-application--is-ltr
    > .v-list-group--no-action

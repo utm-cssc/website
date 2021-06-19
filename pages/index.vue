@@ -3,7 +3,7 @@
     <!-- Title -->
     <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
-        icon="../icons/cssc-logo-without-title.svg"
+        icon="../icons/cssc-logo-without-title.png"
         title="UTM CSSC"
         desc="Helping MCS Students"
         additionalInfo="Have a great summer! 🌞"

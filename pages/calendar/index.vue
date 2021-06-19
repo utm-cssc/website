@@ -45,7 +45,7 @@
           <v-calendar
             ref="calendar"
             v-model="focus"
-            color="var(--color-primary-light)"
+            color="var(--color-primary-dark)"
             :events="monthEvents"
             :event-color="getEventColor"
             event-text-color="#ffffff"
