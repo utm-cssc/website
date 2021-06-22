@@ -4,30 +4,35 @@
       "name": "UTM MCSS",
       "desc": "The MCSS encourages a social, academic and career-related support system among students and faculty. The Society encourages faculty and student interaction outside of the formal lecture, tutorial and lab setting.",
       "logo": "/logos/mcss.png",
+      "darkModeLogo": "/logos/mcss.png",
       "link": "https://linktr.ee/UTMMCSS"
     },
     {
       "name": "UTM Robotics",
       "desc": "The Robotics club seeks to empower the club's members and the broader student community to collaborate on robotics projects. We hope to create a place for innovation for applied computer science, and promote interest in robotics and its applications at UTM.",
       "logo": "/logos/robotics.png",
+      "darkModeLogo": "/logos/robotics.png",
       "link": "https://utmrobotics.com"
     },
     {
       "name": "UTM WISC",
       "desc": "The Women in Science and Computing Club exists to create a welcoming space for those who identify as female in STEM. We hope to retain female students in STEM programs and build a connected support community to prepare them for their future.",
       "logo": "/logos/wisc.png",
+      "darkModeLogo": "/logos/wisc.png",
       "link": "https://linktr.ee/WISCUTM"
     },
     {
       "name": "UTM DSC",
       "desc": "Developer Student Clubs is a student led community backed by Google Developers aimed at empowering undergraduates from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from Google.",
       "logo": "/logos/dsc.png",
+      "darkModeLogo": "/logos/dsc.png",
       "link": "https://linktr.ee/DSCUTM"
     },
     {
       "name": "UTM SAM",
       "desc": "UTM SAM believes in the power of collaboration. UTMSAM is dedicated to bringing talents from the technological aspect and the business aspect together. By filling out each others’ knowledge gap, we could accomplish so much more!",
       "logo": "/logos/sam.png",
+      "darkModeLogo": "/logos/sam-inverted.png",
       "link": "https://linktr.ee/UTMSAM"
     }
   ]
