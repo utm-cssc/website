@@ -1,7 +1,8 @@
 <template>
   <div class="club-card p-4 mr-4 mb-4">
     <div class="flex align-center my-3">
-      <img class="logo justify-start" :src="club.logo" />
+      <img class="logo justify-start" v-if="isDark" :src="club.darkModeLogo" />
+      <img class="logo justify-start" v-if="!isDark" :src="club.logo" />
       <div class="ml-3">
         <h5 class="club-heading">{{ club.name }}</h5>
       </div>
@@ -27,6 +28,11 @@
 
 <script>
 export default {
+  computed: {
+    isDark() {
+      return this.$nuxt.$colorMode.value == 'dark'
+    },
+  },
   props: {
     club: {
       name: String,

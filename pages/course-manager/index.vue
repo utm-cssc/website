@@ -23,6 +23,7 @@
                       <v-text-field
                         v-model="courseUnderEdit.name"
                         label="Course Name"
+                        :rules="courseNameRule"
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
@@ -113,9 +114,7 @@
 <script>
 import {mapState, mapMutations} from 'vuex'
 export default {
-  created() {
-    console.log('created')
-  },
+  created() {},
   data() {
     return {
       loaded: false,
@@ -127,16 +126,22 @@ export default {
         name: '',
         assessments: [],
       },
+      courseNameRule: [
+        value =>
+          this.courses.findIndex(course => course.name === value) === -1 ||
+          'A course with this name already exists',
+        value => value.length > 0 || 'Name cannot be empty',
+      ],
       courseCodeRule: [
+        value => value.length > 0 || 'Code cannot be empty',
         value =>
           this.courses.findIndex(course => course.code === value) === -1 ||
-          'A course with this name already exists',
+          'A course with this code already exists',
       ],
       courseToDelete: {},
     }
   },
   mounted() {
-    console.log('mounted')
     this.loaded = true
   },
   computed: {
