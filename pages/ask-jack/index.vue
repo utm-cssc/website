@@ -27,8 +27,14 @@
     </p>
     <div class="jack_cheer_container">
       <img
-        class="feature-img mb-5 mb-md-0 jack_cheer"
-        src="~/static/ask-jack/jack_cheer.png"
+        class="feature-img mx-80 jack_cheer"
+        v-if="isDark"
+        src="~/static/ask-jack/jack_white.svg"
+      />
+      <img
+        class="feature-img mx-80 jack_cheer"
+        v-else
+        src="~/static/ask-jack/jack_black.svg"
       />
     </div>
     <div class="mb-3 mt-2 cssc-heading">Behind the Scenes</div>
@@ -156,6 +162,11 @@ export default {
         {text: 'Other', value: 'Other'},
       ],
     }
+  },
+  computed: {
+    isDark() {
+      return this.$nuxt.$colorMode.value == 'dark'
+    },
   },
   async asyncData({$content, params, error}) {
     const allFAQ = []
