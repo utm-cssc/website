@@ -27,12 +27,12 @@
     </p>
     <div class="jack_cheer_container">
       <img
-        class="feature-img mx-80 jack_cheer"
+        class="feature-img mb-5 mb-md-0 jack_cheer"
         v-if="isDark"
         src="~/static/ask-jack/jack_white.svg"
       />
       <img
-        class="feature-img mx-80 jack_cheer"
+        class="feature-img mb-5 mb-md-0 jack_cheer"
         v-else
         src="~/static/ask-jack/jack_black.svg"
       />
@@ -216,5 +216,7 @@ export default {
 
 .jack_cheer {
   box-sizing: border-box;
+  margin-left: 25rem;
+  margin-right: 25rem;
 }
 </style>
