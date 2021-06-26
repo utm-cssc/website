@@ -6,7 +6,7 @@
         to="/"
         @click.native="checked = false"
       >
-        <img class="logo" src="/icons/cssc-logo-without-title.svg" />
+        <img class="logo" src="/icons/cssc-logo-blue.svg" />
         <span class="logo-text font-bold">UTM CSSC</span>
       </nuxt-link>
       <div class="nav-internal" v-if="$mq === 'lg' || $mq === 'xl'">

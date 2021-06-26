@@ -2,7 +2,7 @@
   <p align="center">UTM CSSC Website</p>
   <p align="center" width="100%">
   <a href="https://cssc.utm.utoronto.ca/">
-    <img src="/assets/logo/cssc-logo.png" width="200px" align="center">
+    <img src="/assets/logo/cssc-logo.svg" width="200px" align="center">
   </a>
   </p>
   <h4 align="center">Supporting MCS Students</h4>
@@ -42,7 +42,9 @@ post-university career!
   > common goals in the CS community!
 
 ## Installation
+
 ### Yarn Installation
+
 1. Install the required dependencies
 
 ```
@@ -56,17 +58,20 @@ yarn run dev
 ```
 
 ### Docker Installation
+
 1. Pull the image from Docker Hub
+
 ```
 docker pull utmcssc/website
 ```
 
 2. Start the server
+
 ```
 docker run -d --name utmcssc_website -p 3000:3000 utmcssc/website
 ```
-The website will be listening and serving on port `3000`
 
+The website will be listening and serving on port `3000`
 
 ## Contact
 
