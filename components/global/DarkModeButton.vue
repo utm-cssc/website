@@ -3,11 +3,13 @@
     <LightIcon
       class="btn-dark-mode light"
       v-if="isDark"
+      id="light-mode-icon"
       @click="$colorMode.preference = 'light'"
     />
     <DarkIcon
       class="btn-dark-mode"
       v-else
+      id="dark-mode-icon"
       @click="$colorMode.preference = 'dark'"
     />
   </div>

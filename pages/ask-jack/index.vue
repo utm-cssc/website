@@ -65,8 +65,9 @@
         <v-checkbox
           v-model="selectedTags"
           :value="tagOption.value"
+          :id="tagOption.value"
         ></v-checkbox>
-        <span>{{ tagOption.text }}</span>
+        <label :for="tagOption.value">{{ tagOption.text }}</label>
       </div>
       <div class="mt-3 cssc-heading">Email</div>
       <p class="mb-2">

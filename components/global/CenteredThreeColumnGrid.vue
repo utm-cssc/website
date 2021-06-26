@@ -9,6 +9,7 @@
         :title="child.title"
         :desc="child.desc"
         :icon="child.icon"
+        :alt="child.alt"
         :rounded="rounded"
         :button="child.button"
         class="px-2"
