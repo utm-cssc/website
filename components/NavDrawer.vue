@@ -49,6 +49,10 @@ export default {
           link: '/contributing',
         },
         {
+          title: 'Learn More',
+          link: '/learn-more',
+        },
+        {
           title: 'Past Teams',
           link: '/past-teams',
         },

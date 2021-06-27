@@ -1,17 +1,5 @@
 <template>
   <div class="container">
-    <!-- Title -->
-    <div class="mt-5 flex flex-column justify-center align-center">
-      <CenteredHero
-        icon="../icons/cssc-logo-without-title.svg"
-        title="UTM CSSC"
-        desc="Helping MCS Students"
-        additionalInfo="Have a great summer! 🌞"
-        :button1="button1"
-        :button2="button2"
-      />
-    </div>
-    <a id="cssc-moto" />
     <!-- What is CSSC -->
     <div class="my-5">
       <div class="cssc-heading">
@@ -34,19 +22,24 @@
       <div class="cssc-heading">
         Meet the Team
       </div>
-      <div class="teams">
-        <Teammate
-          v-for="mate in executiveTeam"
-          :key="mate.name"
-          :imgSrc="mate.imgSrc"
-          :name="mate.name"
-          :position="mate.position"
-          :message="mate.message"
-          :discord="mate.discord"
-          :email="mate.email"
-          :linkedin="mate.linkedin"
-          :website="mate.website"
-        />
+      <div v-for="team in teams" :key="team.name">
+        <div class="cssc-subheadings">
+          {{ team.name }}
+        </div>
+        <div class="teams">
+          <Teammate
+            v-for="mate in team.members"
+            :key="mate.name"
+            :imgSrc="mate.imgSrc"
+            :name="mate.name"
+            :position="mate.position"
+            :message="mate.message"
+            :discord="mate.discord"
+            :email="mate.email"
+            :linkedin="mate.linkedin"
+            :website="mate.website"
+          />
+        </div>
       </div>
     </div>
     <!-- Collabutors Section -->
@@ -85,7 +78,7 @@ export default {
         {
           title: 'Collaboration with MCS Clubs and Societies',
           desc:
-            'The CSSC contributes resources to assist all clubs and societies within the MCS community.',
+            'The CSSC contributes resources to assist all clubs and societies within the MCS community',
           icon: './icons/collaboration.svg',
         },
       ],
@@ -102,7 +95,15 @@ export default {
   },
   async asyncData({$axios, $content, params, error}) {
     const teamDataStore = await $content('team').fetch()
-    const executiveTeam = teamDataStore[1].teams[0].members
+    const teams = teamDataStore[1].teams
+    /*
+    const executiveTeam = teamDataStore[1].executive_team
+    const communicationsTeam = teamDataStore[1].communications_team
+    const logisticsTeam = teamDataStore[1].logistics_team
+    const marketingTeam = teamDataStore[1].marketing_team
+    const technologyTeam = teamDataStore[1].technology_team
+     */
+
     const contributors = []
     await $axios
       .$get('https://api.github.com/repos/utm-cssc/website/contributors')
@@ -120,7 +121,8 @@ export default {
         console.log(e.message)
         console.log({statusCode: 404, message: 'Something went wrong'})
       })
-    return {contributors, executiveTeam}
+    //return {contributors, executiveTeam, communicationsTeam, logisticsTeam, marketingTeam, technologyTeam}
+    return {contributors, teams}
   },
 }
 </script>
@@ -129,7 +131,6 @@ export default {
 .teams {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .hero-full-height {
