@@ -4,6 +4,7 @@
     <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../icons/cssc-logo-without-title.svg"
+        alt="CSSC Logo"
         title="Clubs"
         desc="Get involved in the community!"
       />

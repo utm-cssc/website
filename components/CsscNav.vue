@@ -6,7 +6,11 @@
         to="/"
         @click.native="checked = false"
       >
-        <img class="logo" src="/icons/cssc-logo-without-title.svg" />
+        <img
+          class="logo"
+          src="/icons/cssc-logo-without-title.svg"
+          alt="CSSC Logo"
+        />
         <span class="logo-text font-bold">UTM CSSC</span>
       </nuxt-link>
       <div class="nav-internal" v-if="$mq === 'lg' || $mq === 'xl'">
@@ -28,13 +32,21 @@
       <SearchBar class="mx-4" />
 
       <div class="nav-external ml-auto" v-if="$mq === 'lg' || $mq === 'xl'">
-        <a href="https://cssc.utm.utoronto.ca/discord">
-          <DiscordIcon class="nav-icon" />
+        <a aria-label="discord" href="https://cssc.utm.utoronto.ca/discord">
+          <DiscordIcon id="header-discord" class="nav-icon" />
         </a>
-        <a href="https://github.com/utm-cssc" class="ml-4">
+        <a
+          aria-label="cssc github"
+          href="https://github.com/utm-cssc"
+          class="ml-4"
+        >
           <GithubIcon class="nav-icon" />
         </a>
-        <a href="https://www.instagram.com/utm.cssc" class="ml-4">
+        <a
+          aria-label="instagram"
+          href="https://www.instagram.com/utm.cssc"
+          class="ml-4"
+        >
           <InstagramIcon class="nav-icon" />
         </a>
       </div>
@@ -42,6 +54,7 @@
       <v-app-bar-nav-icon
         class="ml-auto"
         x-large
+        aria-label="Toggle Drawer"
         @click="drawerOpen = !drawerOpen"
       ></v-app-bar-nav-icon>
     </v-app-bar>

@@ -1,9 +1,9 @@
 <template>
   <div class="project-card pl-4 p-2 mr-4 mb-4 pb-3">
     <div class="flex align-center my-3">
-      <img class="logo justify-start" :src="project.logo" />
+      <img class="logo justify-start" :alt="project.name" :src="project.logo" />
       <div class="ml-3">
-        <h5 class="project-heading">{{ project.name }}</h5>
+        <h2 class="project-heading">{{ project.name }}</h2>
       </div>
     </div>
 
