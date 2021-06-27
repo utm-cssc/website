@@ -173,9 +173,7 @@ export default {
     const allFAQ = []
     const faqs = await $content('faq/faq').fetch()
     const lines = faqs.body.children[0].children[0].value.split('\n')
-    console.log(lines)
     for (let i = 0; i < lines.length; i++) {
-      console.log(faqs.body[0])
       const currentFAQ = lines[i].split('|')
       if (currentFAQ[0] != '' && currentFAQ[1] != '') {
         const FAQ = {
@@ -185,7 +183,6 @@ export default {
         allFAQ.push(FAQ)
       }
     }
-    console.log(allFAQ)
     return {allFAQ}
   },
 }

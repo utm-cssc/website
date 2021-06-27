@@ -27,7 +27,6 @@
 export default {
   async asyncData({$content, params, error}) {
     const projectsDataStore = await $content('projects').fetch()
-    console.log(projectsDataStore)
     const tags = new Set()
     const projects = []
     for (const projectData of projectsDataStore[0].projects) {
@@ -51,7 +50,6 @@ export default {
       const filteredProjects = this.projects.filter(project =>
         project.tags.includes(tag),
       )
-      console.log(filteredProjects)
       return filteredProjects
     },
   },

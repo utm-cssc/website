@@ -39,13 +39,6 @@
       "tags": ["student-projects"]
     },
     {
-      "name": "SimpleDoc",
-      "desc": "Simplified documentation collection for courses at UTM",
-      "repo": "https://github.com/simpledocutm/simpledoc",
-      "demo": "https://simpledoc.utm.utoronto.ca",
-      "tags": ["student-projects"]
-    },
-    {
       "name": "CSSC",
       "desc": "A community organization overseen by the Computer Science Faculty dedicated to helping students!",
       "repo": "https://github.com/utm-cssc",

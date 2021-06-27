@@ -20,7 +20,6 @@ export default {
   async asyncData({$content, params, error}) {
     const docsDataStore = await $content('docs').fetch()
     let docs = []
-    console.log(docsDataStore)
     for (const docsData of docsDataStore) {
       const doc = {
         title: docsData.title,

@@ -156,7 +156,6 @@ export default {
       nativeEvent.stopPropagation()
     },
     readCSVData(data, clubName) {
-      // console.log(data)
       // checks if the event data is returned properly
       if (typeof data === 'string' && data.length > 0) {
         const lines = data.split('\n')

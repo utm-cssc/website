@@ -10,7 +10,6 @@
 <script>
 export default {
   async asyncData({$content, params, error}) {
-    console.log(params.slug)
     const page = await $content('', params.slug).fetch()
 
     return {page}

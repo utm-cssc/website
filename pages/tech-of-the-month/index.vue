@@ -74,7 +74,6 @@ export default {
         voteOptions = result
       }
     })
-    console.log(retrievedData)
     // Set the dynamic data to the corresponding variable
     return {
       voteOptions,

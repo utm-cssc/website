@@ -53,7 +53,6 @@ export const mutations = {
   deleteAssessment(state, payload) {
     const courseCode = payload.courseCode
     const assessmentName = payload.assessment.name
-    console.log(payload)
     const courseIndex = state.courses.findIndex(
       course => course.code === courseCode,
     )
@@ -64,7 +63,6 @@ export const mutations = {
     const indexToDelete = state.courses[courseIndex].assessments.findIndex(
       element => element.name === assessmentName,
     )
-    console.log(indexToDelete)
     state.courses[courseIndex].assessments.splice(indexToDelete, 1)
   },
   addAssessment(state, payload) {
