@@ -28,7 +28,13 @@
     <div class="jack_cheer_container">
       <img
         class="feature-img mb-5 mb-md-0 jack_cheer"
-        src="~/static/ask-jack/jack_cheer.png"
+        v-if="isDark"
+        src="~/static/ask-jack/jack_white.svg"
+      />
+      <img
+        class="feature-img mb-5 mb-md-0 jack_cheer"
+        v-else
+        src="~/static/ask-jack/jack_black.svg"
       />
     </div>
     <div class="mb-3 mt-2 cssc-heading">Behind the Scenes</div>
@@ -158,6 +164,11 @@ export default {
       ],
     }
   },
+  computed: {
+    isDark() {
+      return this.$nuxt.$colorMode.value == 'dark'
+    },
+  },
   async asyncData({$content, params, error}) {
     const allFAQ = []
     const faqs = await $content('faq/faq').fetch()
@@ -182,7 +193,7 @@ export default {
 
 <style scoped>
 .button {
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary) !important;
   border: none;
   color: white;
 }
@@ -206,5 +217,7 @@ export default {
 
 .jack_cheer {
   box-sizing: border-box;
+  margin-left: 25rem;
+  margin-right: 25rem;
 }
 </style>

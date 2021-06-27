@@ -4,7 +4,7 @@
       <div class="flex-col">
         <nuxt-link to="/">
           <span class="flex align-items-center link">
-            <img src="/icons/cssc-logo-without-title.svg" alt="CSSC LOGO" />
+            <img src="/icons/cssc-logo-blue.svg" alt="CSSC LOGO" />
             <h1 class="font-bold">UTM CSSC</h1>
           </span>
         </nuxt-link>

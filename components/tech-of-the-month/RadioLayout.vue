@@ -160,7 +160,7 @@ export default {
 
 /* Hover effects */
 .descContainers:hover input ~ .radioBtn {
-  background-color: #00d097;
+  background-color: #c5dcff;
   transition-duration: 1s;
 }
 
