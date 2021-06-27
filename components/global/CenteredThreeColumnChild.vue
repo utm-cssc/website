@@ -5,10 +5,11 @@
       :class="{'round-photo': rounded}"
       class="mx-auto col-icon"
       :src="icon"
+      :alt="alt"
     />
-    <h3 class="my-3 title">
+    <h2 class="my-3 title">
       {{ title }}
-    </h3>
+    </h2>
     <p class="desc">
       {{ desc }}
     </p>
@@ -33,6 +34,7 @@ export default {
     icon: String,
     desc: String,
     rounded: Boolean,
+    alt: String,
     button: {
       label: {
         type: String,

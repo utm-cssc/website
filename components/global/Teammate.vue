@@ -40,18 +40,28 @@
             <DiscordIcon
               v-bind="attrs"
               v-on="on"
+              aria-label="Copy Discord name"
+              :id="appendName('-discord-icon')"
               @click="copyToClipboard"
               class="logo mr-3 pointer"
             />
           </template>
           <span>{{ isCopied }}</span>
         </v-tooltip>
-        <a :href="emailAddress">
-          <EmailIcon class="logo mr-3" />
-        </a>
-        <a v-if="linkedin" :href="linkedin">
-          <LinkedinIcon class="logo" />
-        </a>
+        <span>
+          <a :aria-label="appendName('Email')" :href="emailAddress">
+            <EmailIcon class="logo mr-3" :id="appendName('-email-icon')" />
+          </a>
+        </span>
+        <span>
+          <a
+            v-if="linkedin"
+            :aria-label="appendName('Linkedin')"
+            :href="linkedin"
+          >
+            <LinkedinIcon class="logo" :id="appendName('-linkedin-icon')" />
+          </a>
+        </span>
       </div>
     </div>
     <div
@@ -114,6 +124,11 @@ export default {
     },
     emailAddress() {
       return 'mailto:' + this.email
+    },
+    appendName() {
+      return suffix => {
+        return `${this.name}${suffix}`
+      }
     },
   },
   methods: {

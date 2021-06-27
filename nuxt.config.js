@@ -7,6 +7,9 @@ export default {
    */
   serverMiddleware: ['~/middleware/seo.js'],
   head: {
+    htmlAttrs: {
+      lang: 'en',
+    },
     title: 'CSSC Website',
     script: [
       {src: 'https://plausible.io/js/plausible.js', async: true, defer: true},

@@ -4,6 +4,7 @@
     <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../icons/cssc-logo-blue.svg"
+        alt="CSSC Logo"
         title="UTM CSSC"
         desc="Helping MCS Students"
         additionalInfo="Have a great summer! 🌞"
@@ -69,24 +70,28 @@ export default {
           desc:
             'The CSSC is an open space for Computer Science students to come in and ask questions about their university and post-university career. We cover topics such as: technology, school, mental health, personal goals, and career development. We act as liaisons to the Computer Science faculty to ensure that all students can seek appropriate support and guidance. The CSSC seeks to support students through community initiatives built upon inclusivity and empowerment.',
           icon: './icons/student_support_guidance.svg',
+          alt: 'Guidance for Students',
         },
         {
           title: 'Academic and Professional Growth',
           desc:
             'The CSSC will be collaborating with the MCS organizations and hosting multiple workshops throughout the academic year to better equip students with technological knowledge sought after by employers in the industry. We provide students with opportunities, space, and resources to work on community projects, technical interview questions, and fun technical events so students can gain experience outside of the classroom. The CSSC also aims to inform students of what options they have post-graduation with a Computer Science degree and how they can combine this degree with other fields.',
           icon: './icons/growth.svg',
+          alt: 'Academic Growth',
         },
         {
           title: 'Resources',
           desc:
             'The CSSC has devoted our technology team to develop processes and tools to help Computer Science students succeed academically and professionally. We curate resources from across the internet and produce original content all the while keeping the interest of students as the top priority.',
           icon: './icons/resources.svg',
+          alt: 'Resources',
         },
         {
           title: 'Collaboration',
           desc:
             'The CSSC provides support to all of the clubs/societies belonging to UTM’s MCS community. We provide spaces and resources for MCS organizations and work closely with them in order to achieve common goals; some of which are: community building, academic achievements, professional development, mental wellness, diversity, equity and inclusion.',
           icon: './icons/collaboration.svg',
+          alt: 'Collaboration',
         },
       ],
       button1: {
