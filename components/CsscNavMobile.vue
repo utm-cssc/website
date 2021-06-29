@@ -5,7 +5,11 @@
       to="/"
       @click.native="checked = false"
     >
-      <img class="logo" src="/icons/cssc-logo-blue.svg" alt="CSSC Logo" />
+      <img
+        class="logo"
+        src="/logos/cssc-logo-blue-no-text.png"
+        alt="CSSC Logo"
+      />
     </nuxt-link>
     <SearchBar class="mx-auto search" />
     <dark-mode-button class="mx-4" />

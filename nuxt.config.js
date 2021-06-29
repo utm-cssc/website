@@ -1,5 +1,5 @@
 require('dotenv').config()
-const OG_IMAGE = 'https://cssc.utm.utoronto.ca/logos/cssc-logo-blue.svg'
+const OG_IMAGE = 'https://cssc.utm.utoronto.ca/logos/cssc-logo-blue-no-text.png'
 export default {
   /*
    ** Headers of the page
@@ -41,7 +41,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/logos/cssc-logo-blue.svg',
+        href: '/logos/cssc-logo-blue-no-text.png',
       },
       {
         rel: 'stylesheet',
