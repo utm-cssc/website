@@ -35,7 +35,7 @@
         <div class="position text-center">{{ position }}</div>
       </div>
       <div class="flex mb-4">
-        <v-tooltip v-if="discord" top>
+        <v-tooltip v-if="discord !== undefined" top>
           <template v-slot:activator="{on, attrs}">
             <DiscordIcon
               v-bind="attrs"
@@ -109,7 +109,6 @@ export default {
     },
     discord: {
       type: String,
-      required: true,
     },
     linkedin: {
       type: String,

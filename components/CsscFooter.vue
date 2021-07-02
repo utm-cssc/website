@@ -95,6 +95,10 @@ export default {
     return {
       navItems: [
         {
+          title: 'Learn More',
+          link: '/learn-more',
+        },
+        {
           title: 'Resources',
           link: '/resources',
         },
