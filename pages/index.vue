@@ -96,8 +96,8 @@ export default {
         },
       ],
       button1: {
-        label: 'Ask Jack',
-        link: 'ask-jack',
+        label: 'Learn More',
+        link: '/learn-more',
       },
       button2: {
         label: 'Resources',
@@ -105,14 +105,14 @@ export default {
         // ../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf
       },
       button3: {
-        label: 'Learn More',
-        link: '/learn-more',
+        label: 'Ask Jack',
+        link: 'ask-jack',
       },
     }
   },
   async asyncData({$axios, $content, params, error}) {
     const teamDataStore = await $content('team').fetch()
-    const executiveTeam = teamDataStore[1].teams[0].members
+    const executiveTeam = teamDataStore[0].teams[0].members
     const contributors = []
     await $axios
       .$get('https://api.github.com/repos/utm-cssc/website/contributors')

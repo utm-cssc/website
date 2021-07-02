@@ -95,14 +95,7 @@ export default {
   },
   async asyncData({$axios, $content, params, error}) {
     const teamDataStore = await $content('team').fetch()
-    const teams = teamDataStore[1].teams
-    /*
-    const executiveTeam = teamDataStore[1].executive_team
-    const communicationsTeam = teamDataStore[1].communications_team
-    const logisticsTeam = teamDataStore[1].logistics_team
-    const marketingTeam = teamDataStore[1].marketing_team
-    const technologyTeam = teamDataStore[1].technology_team
-     */
+    const teams = teamDataStore[0].teams
 
     const contributors = []
     await $axios
