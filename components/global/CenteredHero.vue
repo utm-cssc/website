@@ -34,21 +34,6 @@
         <img v-if="button2.icon" class="btn-icon mx-2" :src="button2.icon" />
         {{ button2.label }}
       </v-btn>
-
-      <!--
-      v-btn
-        v-if="button2 && button2.link && button2.label"
-        :href="button2.link"
-        :size="gtmd"
-        variant="outline-primary"
-        class="btn-cta-alt mb-3"
-        x-large
-      >
-        <img v-if="button2.icon" class="btn-icon mx-2" :src="button2.icon" />
-        {{ button2.label }}
-      </v-btn>
-      -->
-
       <v-btn
         v-if="button3 && button3.link && button3.label"
         :href="button3.link"

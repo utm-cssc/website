@@ -9,6 +9,7 @@
         additionalInfo="Have a great summer! 🌞"
         :button1="button1"
         :button2="button2"
+        :button3="button3"
       />
     </div>
     <a id="cssc-moto" />
@@ -97,6 +98,10 @@ export default {
         label: 'Resources',
         link: '/resources',
         // ../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf
+      },
+      button3: {
+        label: 'Learn More',
+        link: '/learn-more',
       },
     }
   },
