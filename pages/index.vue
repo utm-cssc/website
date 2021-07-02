@@ -3,7 +3,8 @@
     <!-- Title -->
     <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
-        icon="../icons/cssc-logo-without-title.svg"
+        icon="../icons/cssc-logo-blue.svg"
+        alt="CSSC Logo"
         title="UTM CSSC"
         desc="Helping MCS Students"
         additionalInfo="Have a great summer! 🌞"
@@ -70,24 +71,28 @@ export default {
           desc:
             'The CSSC aims to support all students within the Computer Science community and provide them with appropriate resources to combat their issues.',
           icon: './icons/student_support_guidance.svg',
+          alt: 'Guidance for Students',
         },
         {
           title: 'Academic and Professional Growth',
           desc:
             'The CSSC aims to equip students with knowledge that helps them tailor their university experience to support their careers and post-graduation goals and aspirations.',
           icon: './icons/growth.svg',
+          alt: 'Academic Growth',
         },
         {
           title: 'Development of Technology Resources',
           desc:
             'The CSSC has devoted our technology team to develop processes and tools to help Computer Science students succeed academically and professionally.',
           icon: './icons/resources.svg',
+          alt: 'Resources',
         },
         {
           title: 'Collaboration with MCS Clubs and Societies',
           desc:
             'The CSSC contributes resources to assist all clubs and societies within the MCS community.',
           icon: './icons/collaboration.svg',
+          alt: 'Collaboration',
         },
       ],
       button1: {

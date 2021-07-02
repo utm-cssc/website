@@ -115,8 +115,8 @@ export default {
 }
 
 .btn-cta {
-  background-color: var(--color-primary) !important;
-  border-color: var(--color-primary) !important;
+  background-color: #5d7493 !important;
+  border-color: #5d7493 !important;
   outline: none;
   font-size: 1.42rem;
   color: #fff;

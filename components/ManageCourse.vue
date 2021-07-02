@@ -247,7 +247,6 @@ export default {
     calculateGradeData(courseData, desiredScore) {
       let currentWeight = 0
       let percentScored = 0
-      console.log(courseData)
       courseData.assessments.forEach(assessment => {
         const grade = parseInt(assessment.grade)
         const weight = parseInt(assessment.weight)
@@ -267,14 +266,13 @@ export default {
         percentScored: percentScored.toFixed(2),
         percentLeft: percentLeft,
       }
-      console.log(returnPayload)
+
       return returnPayload
     },
     closeGrades() {
       this.showGrades = false
     },
     editAssessment(assessment) {
-      console.log(this.course)
       Object.assign(this.assessmentUnderEdit, assessment)
       this.assessmentUnderEditName = assessment.name
       this.editAssessmentDialog = true
@@ -311,15 +309,12 @@ export default {
       if (this.assessmentUnderEditName !== '') {
         // index causing error
         // Ensure data model types are consistent
-        console.log('editing')
-        console.log(this.assessmentUnderEdit)
         this.dispatchEditAssessment({
           courseCode: this.course.code,
           assessment: this.assessmentUnderEdit,
         })
         this.assessmentUnderEditName = ''
       } else {
-        console.log('adding')
         this.commitAddAssessment({
           courseCode: this.course.code,
           assessment: this.assessmentUnderEdit,
@@ -330,18 +325,14 @@ export default {
     },
     calculatePercentageLeft(course) {
       const totalPercent = course.assessments.reduce((total, assessment) => {
-        console.log(assessment.weight)
         return total + parseInt(assessment.weight)
       }, 0)
-      console.log('totalPercent ' + totalPercent)
       return 100 - totalPercent
     },
     calculatePercentageScored(course) {
       const totalPercent = course.assessments.reduce((total, assessment) => {
-        console.log(assessment.weight)
         return total + (assessment.grade / 100) * assessment.weight
       }, 0)
-      console.log('totalPercent ' + totalPercent)
       return totalPercent.toFixed(2)
     },
   },

@@ -1,15 +1,15 @@
 <template>
-  <div class="container mt-5">
+  <footer class="container mt-5">
     <div class="mt-5 flex flex-row flex-wrap justify-space-between row-0">
       <div class="flex-col">
         <nuxt-link to="/">
-          <li class="flex align-items-center link">
-            <img src="/icons/cssc-logo-without-title.svg" />
+          <span class="flex align-items-center link">
+            <img src="/icons/cssc-logo-blue.svg" alt="CSSC LOGO" />
             <h1 class="font-bold">UTM CSSC</h1>
-          </li>
+          </span>
         </nuxt-link>
 
-        <li>
+        <span>
           <p class="desc">
             The Computer Science Student Community (CSSC) is an open space for
             Computer Science students to come in and ask questions about their
@@ -17,54 +17,64 @@
             Computer Science faculty to ensure that all students can seek the
             appropriate support and guidance.
           </p>
-        </li>
+        </span>
 
-        <li class="hello">
+        <span class="hello">
           <p>Come say hello <b>@UTM Hacklab DH2014</b></p>
-        </li>
+        </span>
 
-        <li>
+        <span>
           <div class="footer-links">
-            <a href="https://discord.gg/SHwbmVg" class="footer-link">
-              <DiscordIcon class="logo" />
+            <a
+              aria-label="Discord-link"
+              href="https://discord.gg/SHwbmVg"
+              class="footer-link"
+            >
+              <DiscordIcon id="footer-discord" class="logo" />
             </a>
             <a
+              aria-label="Instagram"
               href="https://www.instagram.com/utm.cssc"
               class="footer-link ml-2"
             >
-              <InstagramIcon class="logo" />
+              <InstagramIcon id="footer-instagram" class="logo" />
             </a>
             <a
+              aria-label="Facebook"
               href="https://www.facebook.com/utmcssc/"
               class="footer-link ml-2"
             >
-              <FacebookIcon class="logo" />
+              <FacebookIcon id="footer-facebook" class="logo" />
             </a>
-            <a href="https://github.com/utm-cssc" class="footer-link ml-2">
-              <GithubIcon class="logo" />
+            <a
+              aria-label="Github"
+              href="https://github.com/utm-cssc"
+              class="footer-link ml-2"
+            >
+              <GithubIcon id="footer-github" class="logo" />
             </a>
           </div>
-        </li>
+        </span>
 
-        <li>
+        <span>
           <p class="desc" style="padding: 20px 0;">
             Copyright UTM CSSC - {{ getCurrDate() }}
           </p>
-        </li>
+        </span>
       </div>
 
       <div class="flex-column">
-        <li>
+        <span>
           <p class="more pt-5 pb-3">More Links</p>
           <div class="links">
             <nuxt-link v-for="l in navItems" :key="l.link" :to="l.link">
               {{ l.title }}
             </nuxt-link>
           </div>
-        </li>
+        </span>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>

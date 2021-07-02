@@ -171,7 +171,7 @@ export default {
         if (emailAdded) {
           this.primaryMessage = 'Subscribed!'
           this.setAlertVisibility(true, false, false)
-          this.bgColour = '#00d097'
+          this.bgColour = '#c5dcff'
         } else {
           this.setAlertVisibility(false, false, true)
         }
@@ -182,7 +182,7 @@ export default {
         if (emailRemoved) {
           this.primaryMessage = 'Unsubscribed!'
           this.setAlertVisibility(true, false, false)
-          this.bgColour = '#00d097'
+          this.bgColour = '#c5dcff'
         } else {
           this.primaryMessage = 'You are not subscribed'
           this.setAlertVisibility(true, false, false)
@@ -317,7 +317,7 @@ export default {
           this.updateSeries()
           this.primaryMessage = 'Vote has been submitted'
           this.setAlertVisibility(true, false, false)
-          this.bgColour = '#00d097'
+          this.bgColour = '#c5dcff'
           this.revote = false
           this.$refs.radioComponent.reset()
         }
@@ -330,7 +330,7 @@ export default {
 <style scoped>
 /* Hover effects */
 .submitButton:hover {
-  color: #00d097;
+  color: #c5dcff;
   transition-duration: 0.5s;
 }
 

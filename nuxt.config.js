@@ -1,6 +1,5 @@
 require('dotenv').config()
-const OG_IMAGE =
-  'https://cssc.utm.utoronto.ca/logos/cssc-logo-without-title.png'
+const OG_IMAGE = 'https://cssc.utm.utoronto.ca/logos/cssc-logo-blue-no-text.png'
 export default {
   /*
    ** Headers of the page
@@ -8,6 +7,9 @@ export default {
    */
   serverMiddleware: ['~/middleware/seo.js'],
   head: {
+    htmlAttrs: {
+      lang: 'en',
+    },
     title: 'CSSC Website',
     script: [
       {src: 'https://plausible.io/js/plausible.js', async: true, defer: true},
@@ -39,7 +41,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/logos/cssc-logo-without-title.png',
+        href: '/logos/cssc-logo-blue-no-text.png',
       },
       {
         rel: 'stylesheet',
@@ -133,10 +135,10 @@ export default {
     theme: {
       themes: {
         dark: {
-          primary: '#00d097',
+          primary: '#5F759B',
         },
         light: {
-          primary: '#00d097',
+          primary: '#00204E',
         },
       },
     },

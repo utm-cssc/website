@@ -3,7 +3,8 @@
     <!-- Title -->
     <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
-        icon="../icons/cssc-logo-without-title.svg"
+        icon="../icons/cssc-logo-blue.svg"
+        alt="CSSC Logo"
         title="Clubs"
         desc="Get involved in the community!"
       />
@@ -19,7 +20,6 @@
 export default {
   async asyncData({$content, params, error}) {
     const clubs = await $content('clubs').fetch()
-    console.log(clubs)
     return {clubs: clubs[0].clubs}
   },
 }

@@ -45,7 +45,6 @@ export default {
           value: result.slug,
         }
       })
-      console.log(searchResults)
       return searchResults
     },
   },
@@ -69,20 +68,11 @@ export default {
     },
   },
   methods: {
-    // async getTitleSearchResults(searchQuery) {
-    //   const titleSearchResults = await this.$content('resources')
-    //     .search('title', searchQuery)
-    //     .fetch()
-
-    //   console.log(titleSearchResults)
-    //   return titleSearchResults
-    // },
     async getTagsSearchResults(searchQuery) {
       const tagsSearchResults = await this.$content('resources')
         .where({tags: {$contains: searchQuery}})
         .fetch()
 
-      console.log(tagsSearchResults)
       return tagsSearchResults
     },
   },
