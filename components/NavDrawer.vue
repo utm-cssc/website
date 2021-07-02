@@ -16,6 +16,10 @@ export default {
     return {
       navItems: [
         {
+          title: 'Learn More',
+          link: '/learn-more',
+        },
+        {
           title: 'Resources',
           link: '/resources',
         },
@@ -47,10 +51,6 @@ export default {
         {
           title: 'Contributing',
           link: '/contributing',
-        },
-        {
-          title: 'Learn More',
-          link: '/learn-more',
         },
         {
           title: 'Past Teams',

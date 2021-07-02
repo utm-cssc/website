@@ -95,6 +95,14 @@
           "message": "I'm currently a part of the Business/Economics department. I enjoy connecting with people outside of my program and learning and contributing to the CS department. Being involved in the operations team provided me insight into the team and its goals in general. Whether you are a CS student or not feel free to connect if you would like to know more about our events!",
           "email": "nitya.srivastava@mail.utoronto.ca",
           "linkedin": "https://www.linkedin.com/in/nityasrivastava/"
+        },
+        {
+          "name": "Akira Takaki",
+          "imgSrc": "/team/2021/Akira.png",
+          "position": "Logistics Officer",
+          "message": "Akira is learning math and cs in university, but while he isn't beepboop-ing or looking at arcane runes, he loves to play strategy games with friends like Settlers of Catan or Age of Empires 3. He's a big foodie, having grown up in Toronto and been exposed to the multicultural mosaic!",
+          "email": "akira.takaki@utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/akira-takaki-8b025a184/"
         }
       ]
     },
