@@ -18,13 +18,25 @@
       <v-btn
         v-if="button1 && button1.link && button1.label"
         :href="button1.link"
-        class="mr-4 btn-cta mb-3"
+        class="mr-4 btn-cta-alt mb-3"
         x-large
       >
         <img v-if="button1.icon" class="btn-icon mx-2" :src="button1.icon" />
         {{ button1.label }}
       </v-btn>
       <v-btn
+        v-if="button2 && button2.link && button2.label"
+        :href="button2.link"
+        variant="outline-primary"
+        class="mr-4 btn-cta mb-3"
+        x-large
+      >
+        <img v-if="button2.icon" class="btn-icon mx-2" :src="button2.icon" />
+        {{ button2.label }}
+      </v-btn>
+
+      <!--
+      v-btn
         v-if="button2 && button2.link && button2.label"
         :href="button2.link"
         :size="gtmd"
@@ -34,6 +46,18 @@
       >
         <img v-if="button2.icon" class="btn-icon mx-2" :src="button2.icon" />
         {{ button2.label }}
+      </v-btn>
+      -->
+
+      <v-btn
+        v-if="button3 && button3.link && button3.label"
+        :href="button3.link"
+        variant="outline-primary"
+        class="mr-4 btn-cta-alt mb-3"
+        x-large
+      >
+        <img v-if="button3.icon" class="btn-icon mx-2" :src="button3.icon" />
+        {{ button3.label }}
       </v-btn>
     </div>
   </div>
@@ -61,6 +85,20 @@ export default {
       },
     },
     button2: {
+      label: {
+        type: String,
+        default: '',
+      },
+      link: {
+        type: String,
+        default: '',
+      },
+      icon: {
+        type: String,
+        default: '',
+      },
+    },
+    button3: {
       label: {
         type: String,
         default: '',
