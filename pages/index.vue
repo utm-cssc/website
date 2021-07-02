@@ -34,7 +34,7 @@
     <!-- Tech Team -->
     <div class="my-5">
       <div class="cssc-heading">
-        Meet the Team
+        Leadership
       </div>
       <div class="teams">
         <Teammate
