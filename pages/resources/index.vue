@@ -41,6 +41,7 @@
         class="px-5"
       >
         <div
+          v-if="isValidTag(tag)"
           class="mt-2 mb-3 ml-3 cssc-heading resource-tag"
           :class="{caps: containsUTM(tag)}"
         >
@@ -101,13 +102,13 @@ export default {
   methods: {
     isValidTag(tag) {
       // Returns whether a tag is valid
+      return this.tags.has(tag) || this.keywords.has(tag)
     },
     resourcesForTag(tag) {
-      const filteredResources = this.resources.filter(
+      let filteredResources = this.resources.filter(
         resource =>
           resource.tags.includes(tag) || resource.keywords?.includes(tag),
       )
-      // If selected isn't empty, check if the resources are already shown, if it is remove it
       return filteredResources
     },
     removeFilterOption(item) {
