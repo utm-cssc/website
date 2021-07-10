@@ -6,10 +6,11 @@ desc:
   iOS and Android!
 link: react-native
 tags:
-  - web
-  - frontend
-  - framework
   - mobile
+keywords:
+  - framework
+  - frontend
+  - javascript
 ---
 
 # React Native

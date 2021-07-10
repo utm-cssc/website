@@ -125,7 +125,7 @@ export default {
    ** See https://content.nuxtjs.org/configuration
    */
   content: {
-    nestedProperties: ['resources.tags'],
+    nestedProperties: ['resources.tags', 'resources.keywords'],
   },
   /*
    ** Build configuration

@@ -7,6 +7,7 @@ desc:
 link: robotics
 tags:
   - robotics
+keywords:
   - computer-vision
   - artificial-intelligence
 ---

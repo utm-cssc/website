@@ -6,6 +6,8 @@ desc:
 link: vue
 tags:
   - web
+keywords:
+  - javascript
   - frontend
   - framework
 ---
