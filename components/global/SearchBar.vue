@@ -61,7 +61,12 @@ export default {
       // const tagsSearchResults = this.getTagsSearchResults(searchQuery)
 
       this.searchEntries = await this.$content('resources')
-        .where({tags: {$contains: searchQuery}})
+        .where({
+          $or: [
+            {tags: {$contains: searchQuery}},
+            {keywords: {$contains: searchQuery}},
+          ],
+        })
         .fetch()
 
       this.searching = false
@@ -70,7 +75,12 @@ export default {
   methods: {
     async getTagsSearchResults(searchQuery) {
       const tagsSearchResults = await this.$content('resources')
-        .where({tags: {$contains: searchQuery}})
+        .where({
+          $or: [
+            {tags: {$contains: searchQuery}},
+            {keywords: {$contains: searchQuery}},
+          ],
+        })
         .fetch()
 
       return tagsSearchResults
