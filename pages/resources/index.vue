@@ -12,7 +12,7 @@
     <v-container>
       <v-combobox
         v-model="selected"
-        :items="sortedTags"
+        :items="allTags"
         chips
         clearable
         label="Search for resources!"
@@ -41,6 +41,7 @@
         class="px-5"
       >
         <div
+          v-if="isValidTag(tag)"
           class="mt-2 mb-3 ml-3 cssc-heading resource-tag"
           :class="{caps: containsUTM(tag)}"
         >
@@ -57,6 +58,7 @@ export default {
   async asyncData({$content, params, error}) {
     const resourcesDataStore = await $content('resources').fetch()
     const tags = new Set()
+    const keywords = new Set()
     const resources = []
     for (const resourceData of resourcesDataStore) {
       const resource = {
@@ -65,13 +67,17 @@ export default {
         icon: resourceData.icon,
         link: `/resources/${resourceData.link}`,
         tags: resourceData.tags,
+        keywords: resourceData.keywords,
       }
       resource.tags.forEach(tag => {
         tags.add(tag)
       })
+      resource.keywords?.forEach(keyword => {
+        keywords.add(keyword)
+      })
       resources.push(resource)
     }
-    return {resources, tags}
+    return {resources, tags, keywords}
   },
   data() {
     return {
@@ -88,11 +94,20 @@ export default {
       )
       return sortedTags
     },
+    allTags() {
+      const allTags = Array.from(new Set([...this.tags, ...this.keywords]))
+      return allTags
+    },
   },
   methods: {
+    isValidTag(tag) {
+      // Returns whether a tag is valid
+      return this.tags.has(tag) || this.keywords.has(tag)
+    },
     resourcesForTag(tag) {
-      const filteredResources = this.resources.filter(resource =>
-        resource.tags.includes(tag),
+      let filteredResources = this.resources.filter(
+        resource =>
+          resource.tags.includes(tag) || resource.keywords?.includes(tag),
       )
       return filteredResources
     },

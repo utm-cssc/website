@@ -5,6 +5,8 @@
       :href="link"
       :style="{background: color}"
       @mouseover="hovered = true"
+      @focusin="onFocus(true)"
+      @focusout="onFocus(false)"
       @mouseleave="hovered = false"
     >
       <figure class="resource-icon">
@@ -15,10 +17,12 @@
         />
       </figure>
       <transition name="slide-out" mode="out-in">
-        <div v-if="!hovered" class="resource-title">{{ title }}</div>
+        <div v-if="!hovered && !focused" class="resource-title">
+          {{ title }}
+        </div>
       </transition>
       <transition name="slide-in">
-        <div v-show="hovered" class="resource-desc">{{ desc }}</div>
+        <div v-show="hovered || focused" class="resource-desc">{{ desc }}</div>
       </transition>
     </a>
   </div>
@@ -53,7 +57,13 @@ export default {
   data() {
     return {
       hovered: false,
+      focused: false,
     }
+  },
+  methods: {
+    onFocus(current) {
+      this.focused = current
+    },
   },
 }
 </script>
