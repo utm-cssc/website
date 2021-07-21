@@ -11,6 +11,7 @@
     :items="searchResults"
     :loading="searching"
     no-filter
+    @change="handleSelect"
     clearable
   >
     <template v-slot:item="data">
@@ -34,6 +35,7 @@ export default {
     return {
       searchQuery: '',
       searching: false,
+      selectedSearchEntry: null,
       searchEntries: [],
     }
   },
@@ -57,8 +59,6 @@ export default {
       if (this.articles.length > 0) return
       if (this.searching) return
       this.searching = true
-      // const titleSearchResults = this.getTitleSearchResults(searchQuery)
-      // const tagsSearchResults = this.getTagsSearchResults(searchQuery)
 
       this.searchEntries = await this.$content('resources')
         .where({
@@ -73,17 +73,8 @@ export default {
     },
   },
   methods: {
-    async getTagsSearchResults(searchQuery) {
-      const tagsSearchResults = await this.$content('resources')
-        .where({
-          $or: [
-            {tags: {$contains: searchQuery}},
-            {keywords: {$contains: searchQuery}},
-          ],
-        })
-        .fetch()
-
-      return tagsSearchResults
+    handleSelect(e) {
+      this.$router.push(`/resources/${e}`)
     },
   },
 }
