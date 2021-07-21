@@ -22,6 +22,15 @@ def clean_tags(tags1, tags2):
     return ','.join(lst)
 
 
+def relevant_tags(info):
+    ans = ""
+    dct = {"drop": "Drop Deadlines", "Credit/No Credit": "Cr/NCr", "break": "Breaks", "Break": "Breaks", "LWD": "LWD", "enrolment": "Enrolment", "Form": "Forms and Petitions", "form": "Forms and Petitions", "Petition": "Forms and Petitions", "petition": "Forms and Petitions"}
+    for x in dct:
+        if x in info:
+            ans += "," + dct[x]
+    return ans
+
+
 write_to_csv = {}
 
 
@@ -36,11 +45,11 @@ def parse_html_to_csv(url, tags):
         info = dateinfo.find(class_='info').text
         date = dateinfo.find(class_='title').text
         dict_key = tuple([info, info] + parsedate(date))
-        if dict_key not in write_to_csv:
-            write_to_csv[dict_key] = tags
-        else:
-            old_tags = write_to_csv[dict_key] 
-            write_to_csv[dict_key] = clean_tags(old_tags, tags)
+        tags2 = tags + relevant_tags(info)
+        old_tags = tags2
+        if dict_key in write_to_csv:
+            old_tags = write_to_csv[dict_key]
+        write_to_csv[dict_key] = clean_tags(old_tags, tags)
 
 
 urls = ["https://student.utm.utoronto.ca/importantDates/importantDates.php?sub_type=Academic&sub_session=Summer&sub_search_term=",
