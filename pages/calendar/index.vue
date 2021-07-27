@@ -99,28 +99,18 @@ export default {
       day: 'Day',
       '4day': '4 Days',
     },
+    colors: {
+      'Important Dates': '#2a9bd5',
+    },
     selectedEvent: {},
     selectedElement: null,
     selectedOpen: false,
     monthEvents: [],
     allEvents: [],
-    colors: {
-      CSSC: 'var(--color-primary)',
-      MCSS: 'var(--color-mcss)',
-      UTMSAM: 'var(--color-utmsam)',
-      DSC: 'var(--color-dsc)',
-      WISC: 'var(--color-wisc)',
-      Robotics: 'var(--color-robotics)',
-    },
-    names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics'],
   }),
   mounted() {
-    this.readCSVData(this.mcss, 'MCSS')
-    this.readCSVData(this.wisc, 'WISC')
-    this.readCSVData(this.utmsam, 'UTMSAM')
-    this.readCSVData(this.dsc, 'DSC')
-    this.readCSVData(this.cssc, 'CSSC')
-    this.readCSVData(this.robotics, 'Robotics')
+    this.readCSVData(this.importantDates)
+    //this.parseData(this.clubEvents); <- TODO: add colors and parse
   },
   methods: {
     viewDay({date}) {
@@ -155,99 +145,52 @@ export default {
 
       nativeEvent.stopPropagation()
     },
-    readCSVData(data, clubName) {
+    readCSVData(data) {
+      // title, description, start, end, [...] <- tags
       // checks if the event data is returned properly
       if (typeof data === 'string' && data.length > 0) {
-        const lines = data.split('\n')
-        const output = []
-        for (let i = 1; i < lines.length - 1; i++) {
-          const current = lines[i].split(', ')
+        const lines = data.split('\n').slice(1)
+        const output = lines.map(line => {
+          const current = line.split('|')
           // checks for error in the event
-          if (current.length === 6) {
+          if (current.length >= 4) {
             const event = {
-              color: this.colors[clubName],
+              color: this.colors['Important Dates'],
               name: current[0],
               details: current[1],
-              start: `${current[2]} ${current[3]}:00`,
-              end: `${current[4]} ${current[5]}:00`,
+              start: `${current[2]} 00:00`,
+              end: `${current[3]} 24:00`,
+              tags: this.parseTags(current.slice(4)),
+              timed: true,
             }
-            output.push(event)
+            return event
           }
-        }
-        this.monthEvents.push(...output)
+          return {}
+        })
+        this.monthEvents.push(...output.slice(0, output.length - 1))
       }
+    },
+    parseTags(tags) {
+      /**
+       * Takes in list of tags, returns cleaned data
+       * eg: "Summer" -> ["Summer"]
+       * ["Summer, Financial"] -> ["Summer", "Financial"]
+       */
+      return []
     },
   },
   async asyncData({$axios}) {
-    let wisc = ''
-    let mcss = ''
-    let utmsam = ''
-    let cssc = ''
-    let robotics = ''
-    let dsc = ''
-    await Promise.all([
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/WISC.csv',
-        )
-        .then(res => {
-          wisc = res
-        })
-        .catch(() => {
-          wisc = ''
-        }),
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/MCSS.csv',
-        )
-        .then(res => {
-          mcss = res
-        })
-        .catch(() => {
-          mcss = ''
-        }),
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/UTMSAM.csv',
-        )
-        .then(res => {
-          utmsam = res
-        })
-        .catch(() => {
-          utmsam = ''
-        }),
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv',
-        )
-        .then(res => {
-          cssc = res
-        })
-        .catch(() => {
-          cssc = ''
-        }),
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/Robotics.csv',
-        )
-        .then(res => {
-          robotics = res
-        })
-        .catch(() => {
-          robotics = ''
-        }),
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/DSC.csv',
-        )
-        .then(res => {
-          dsc = res
-        })
-        .catch(() => {
-          dsc = ''
-        }),
-    ])
-    return {wisc, mcss, utmsam, cssc, robotics, dsc}
+    const importantDates = await $axios
+      .$get(
+        'https://raw.githubusercontent.com/utm-cssc/website/integrate-calendar/content/important-dates/important_dates.csv',
+      )
+      .then(res => res) //Todo: change develop to master
+    const clubEvents = await $axios
+      .$get(
+        'https://spreadsheets.google.com/feeds/list/1KxxUGm1z_w0lDFkDbFhdSY2coxIGeZQMQbAwqzPA-4o/1/public/values?alt=json',
+      )
+      .then(res => res.feed.entry)
+    return {importantDates, clubEvents}
   },
 }
 </script>
