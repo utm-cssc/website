@@ -64,7 +64,7 @@ for i in range(4):
 
 with open('important_dates.csv', 'w', newline='') as csvfile:
 
-    spamwriter = csv.writer(csvfile, delimiter=',')
+    spamwriter = csv.writer(csvfile, delimiter='|')
     spamwriter.writerow(['Title', 'Description', 'Start Date', 'End Date', 'Tags'])
 
     for item in write_to_csv:
