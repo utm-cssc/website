@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Learn More",
+    "tags": "learn more",
+    "keywords": [],
+    "url": "learn-more"
+  },
+  {
+    "title": "Resources",
+    "tags": "resources",
+    "keywords": [],
+    "url": "resources"
+  },
+  {
+    "title": "Calendar",
+    "tags": "calendar",
+    "keywords": "events",
+    "url": "calendar"
+  },
+  {
+    "title": "Ask Jack",
+    "tags": "ask jack",
+    "keywords": [],
+    "url": "ask-jack"
+  },
+  {
+    "title": "Projects",
+    "tags": "projects",
+    "keywords": [],
+    "url": "projects"
+  },
+  {
+    "title": "Course Manager",
+    "tags": "course manager",
+    "keywords": [],
+    "url": "course-manager"
+  },
+  {
+    "title": "Clubs",
+    "tags": "clubs",
+    "keywords": [],
+    "url": "clubs"
+  },
+  {
+    "title": "Documentation",
+    "tags": "documentation,docs",
+    "keywords": [],
+    "url": "docs"
+  },
+  {
+    "title": "Contributing",
+    "tags": "contributing",
+    "keywords": [],
+    "url": "contributing"
+  },
+  {
+    "title": "Past Teams",
+    "tags": "past teams",
+    "keywords": [],
+    "url": "past-teams"
+  }
+]

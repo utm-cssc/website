@@ -19,9 +19,7 @@
         <v-list-item-content v-text="data.item"></v-list-item-content>
       </template>
       <template v-else>
-        <v-list-item-content
-          @click="$router.push(`/resources/${data.item.value}`)"
-        >
+        <v-list-item-content @click="$router.push(`${data.item.value}`)">
           <v-list-item-title v-html="data.item.text"></v-list-item-title>
         </v-list-item-content>
       </template>
@@ -41,12 +39,15 @@ export default {
   },
   computed: {
     searchResults() {
-      const searchResults = this.searchEntries.map(result => {
-        return {
-          text: `Resources > ${result.title}`,
-          value: result.slug,
-        }
-      })
+      const searchResults =
+        this.searchEntries &&
+        this.searchEntries.map(result => {
+          console.log(result)
+          return {
+            text: `${result.title}`,
+            value: result.url,
+          }
+        })
       return searchResults
     },
   },
@@ -59,7 +60,16 @@ export default {
       if (this.articles.length > 0) return
       if (this.searching) return
       this.searching = true
-
+      this.searchEntries = await this.$content('navigation')
+        .where({
+          $or: [
+            {title: {$regex: [searchQuery, 'i']}},
+            {tags: {$regex: [searchQuery, 'i']}},
+            {keywords: {$regex: [searchQuery, 'i']}},
+          ],
+        })
+        .fetch()
+      /*
       this.searchEntries = await this.$content('resources')
         .where({
           $or: [
@@ -67,14 +77,15 @@ export default {
             {keywords: {$contains: searchQuery}},
           ],
         })
-        .fetch()
+        .fetch()*/
 
       this.searching = false
     },
   },
   methods: {
     handleSelect(e) {
-      this.$router.push(`/resources/${e}`)
+      if (!e) return
+      this.$router.push(`/${e}/`)
     },
   },
 }
