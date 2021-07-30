@@ -1,11 +1,12 @@
 {
   "projects": [
     {
-      "name": "Nox",
-      "desc": "With Nox, students and professors can have better lectures through real-time questions and feedback!",
-      "logo": "/logos/projects/nox.png",
-      "repo": "https://github.com/ShoaibAhmadKhan/Nox",
-      "tags": ["student-projects"]
+      "name": "ULinks",
+      "desc": "ULinks is a directory enabling students to join group chats for courses or communities within their school.",
+      "logo": "/logos/projects/ulinks.png",
+      "repo": "https://github.com/jcserv/ulinks",
+      "demo": "https://ulinks.io",
+      "tags": ["cssc-projects"]
     },
     {
       "name": "ViaPlanner",
@@ -13,6 +14,21 @@
       "logo": "/logos/projects/viaplanner.png",
       "repo": "https://github.com/VIAplanner/via-timetable",
       "demo": "https://timetable.viaplanner.ca/about",
+      "tags": ["cssc-projects"]
+    },
+    {
+      "name": "CSSC Website",
+      "desc": "The CSSC Website is an open space for students to ask questions, use academic tools, and get connected within the CS community.",
+      "logo": "/logos/cssc-logo-blue-no-text.png",
+      "repo": "https://github.com/utm-cssc/website",
+      "demo": "https://cssc.utm.utoronto.ca",
+      "tags": ["cssc-projects"]
+    },
+    {
+      "name": "Nox",
+      "desc": "With Nox, students and professors can have better lectures through real-time questions and feedback!",
+      "logo": "/logos/projects/nox.png",
+      "repo": "https://github.com/ShoaibAhmadKhan/Nox",
       "tags": ["student-projects"]
     },
     {
