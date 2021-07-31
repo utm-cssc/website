@@ -101,6 +101,12 @@ export default {
     },
     colors: {
       'Important Dates': '#2a9bd5',
+      WiSC: '#cfac53',
+      'UTM DSC': '#37b67b',
+      'UTM Robotics': '#929292',
+      MCSS: '#9999d4',
+      UTMSAM: '#5e8edb',
+      CSSC: '#3e607c',
     },
     selectedEvent: {},
     selectedElement: null,
@@ -110,7 +116,7 @@ export default {
   }),
   mounted() {
     this.readCSVData(this.importantDates)
-    //this.parseData(this.clubEvents); <- TODO: add colors and parse
+    this.readEventsData(this.clubEvents)
   },
   methods: {
     viewDay({date}) {
@@ -148,11 +154,14 @@ export default {
     readCSVData(data) {
       // title, description, start, end, [...] <- tags
       // checks if the event data is returned properly
+
       if (typeof data === 'string' && data.length > 0) {
         const lines = data.split('\n').slice(1)
+
         const output = lines.map(line => {
           const current = line.split('|')
           // checks for error in the event
+
           if (current.length >= 4) {
             const event = {
               color: this.colors['Important Dates'],
@@ -165,16 +174,62 @@ export default {
             }
             return event
           }
+
           return {}
         })
         this.monthEvents.push(...output.slice(0, output.length - 1))
       }
     },
+    readEventsData(data) {
+      /**
+       *  club, name, description, start date, end date,
+       *  start time, end time, [...] <- tags
+       */
+
+      // checks if the event data is returned properly
+      if (typeof data === 'object' && data.length > 0) {
+        const mappedEvents = data.map(entry => {
+          const startTime = entry.gsx$starttime.$t
+          const endTime = entry.gsx$endtime.$t
+          const start = new Date(`${entry.gsx$startdate.$t} ${startTime}`)
+          const end = new Date(`${entry.gsx$enddate.$t} ${endTime}`)
+          const allDay = startTime === '' && endTime === ''
+          const endIsAfterStart = start < end || (!(end < start) && allDay)
+
+          // Checks for errors in the event
+          if (
+            !endIsAfterStart ||
+            (startTime === '' && endTime !== '') ||
+            (startTime !== '' && endTime === '')
+          ) {
+            return null
+          }
+
+          return {
+            color: this.colors[entry.gsx$club.$t],
+            name: entry.gsx$eventname.$t,
+            details: entry.gsx$description.$t,
+            start: start,
+            end: end,
+            tags: this.parseTags(entry.gsx$searchtags.$t),
+            timed: !allDay,
+          }
+        })
+        const output = mappedEvents.filter(event => event !== null)
+        this.monthEvents.push(...output)
+      }
+    },
     parseTags(tags) {
       /**
        * Takes in list of tags, returns cleaned data
-       * eg: "Summer" -> ["Summer"]
+       *
+       * For important dates tags:
+       * "Summer" -> ["Summer"]
        * ["Summer, Financial"] -> ["Summer", "Financial"]
+       *
+       * For club event tags:
+       * "Web" -> ["Web"]
+       * "Web, React" -> ["Web", "React"]
        */
       return []
     },
