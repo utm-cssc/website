@@ -42,7 +42,6 @@ export default {
       const searchResults =
         this.searchEntries &&
         this.searchEntries.map(result => {
-          console.log(result)
           return {
             text: `${result.title}`,
             value: result.url,
@@ -64,21 +63,25 @@ export default {
         .where({
           $or: [
             {title: {$regex: [searchQuery, 'i']}},
-            {tags: {$regex: [searchQuery, 'i']}},
-            {keywords: {$regex: [searchQuery, 'i']}},
-          ],
-        })
-        .fetch()
-      /*
-      this.searchEntries = await this.$content('resources')
-        .where({
-          $or: [
             {tags: {$contains: searchQuery}},
             {keywords: {$contains: searchQuery}},
           ],
         })
-        .fetch()*/
-
+        .fetch()
+      const resourceResults = await this.$content('resources')
+        .where({
+          $or: [
+            {title: {$regex: [searchQuery, 'i']}},
+            {tags: {$contains: searchQuery}},
+            {keywords: {$contains: searchQuery}},
+          ],
+        })
+        .fetch()
+      resourceResults.forEach(v => {
+        v.title = `Resources > ${v.title}`
+        v.url = v.path.slice(1) // have to remove leading slash otherwise push will 404
+      })
+      this.searchEntries = this.searchEntries.concat(resourceResults)
       this.searching = false
     },
   },

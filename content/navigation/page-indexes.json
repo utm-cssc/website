@@ -1,61 +1,68 @@
 [
   {
     "title": "Learn More",
-    "tags": "learn more",
-    "keywords": [],
+    "tags": [],
+    "keywords": ["about", "about us"],
     "url": "learn-more"
   },
   {
     "title": "Resources",
-    "tags": "resources",
+    "tags": [],
     "keywords": [],
     "url": "resources"
   },
   {
     "title": "Calendar",
-    "tags": "calendar",
-    "keywords": "events",
+    "tags": [],
+    "keywords": ["events", "workshops"],
     "url": "calendar"
   },
   {
     "title": "Ask Jack",
-    "tags": "ask jack",
-    "keywords": [],
+    "tags": [],
+    "keywords": ["help", "advice"],
     "url": "ask-jack"
   },
   {
     "title": "Projects",
-    "tags": "projects",
-    "keywords": [],
+    "tags": [],
+    "keywords": ["side", "side projects"],
     "url": "projects"
   },
   {
     "title": "Course Manager",
-    "tags": "course manager",
-    "keywords": [],
+    "tags": [],
+    "keywords": ["grade", "grades", "grades calculator", "grade calculator"],
     "url": "course-manager"
   },
   {
     "title": "Clubs",
-    "tags": "clubs",
-    "keywords": [],
+    "tags": [],
+    "keywords": [
+      "org",
+      "organizations",
+      "student orgs",
+      "student organizations",
+      "involvement",
+      "campus involvement"
+    ],
     "url": "clubs"
   },
   {
     "title": "Documentation",
-    "tags": "documentation,docs",
+    "tags": [],
     "keywords": [],
     "url": "docs"
   },
   {
     "title": "Contributing",
-    "tags": "contributing",
-    "keywords": [],
+    "tags": [],
+    "keywords": ["open source"],
     "url": "contributing"
   },
   {
     "title": "Past Teams",
-    "tags": "past teams",
+    "tags": [],
     "keywords": [],
     "url": "past-teams"
   }

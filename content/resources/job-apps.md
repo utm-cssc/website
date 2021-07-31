@@ -5,6 +5,10 @@ desc: Learn how to make your resume stand out and where to apply!
 link: job-apps
 tags:
   - career
+keywords:
+  - internship
+  - pey
+  - co-op
 ---
 
 # All About Job Applications

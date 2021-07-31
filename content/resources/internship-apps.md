@@ -5,6 +5,10 @@ desc: Work at your dream company!
 link: internship-apps
 tags:
   - career
+keywords:
+  - pey
+  - co-op
+  - internship
 ---
 
 # Internship Applications
