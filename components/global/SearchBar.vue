@@ -19,7 +19,7 @@
         <v-list-item-content v-text="data.item"></v-list-item-content>
       </template>
       <template v-else>
-        <v-list-item-content @click="$router.push(`${data.item.value}`)">
+        <v-list-item-content>
           <v-list-item-title v-html="data.item.text"></v-list-item-title>
         </v-list-item-content>
       </template>
@@ -33,6 +33,7 @@ export default {
     return {
       searchQuery: '',
       searching: false,
+      selectedSearchEntry: null,
       searchEntries: [],
     }
   },
