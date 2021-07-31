@@ -1,13 +1,18 @@
 ---
 
 title: Android icon: /icons/android.svg desc: Build apps for phones, tablets,
-cars and the next billion mobile users on Android! link: android tags:
-
-- mobile keywords:
+cars and the next billion mobile users on Android! 
+link: android 
+tags:
+- mobile 
+keywords:
 - android
 - java
 - frontend
-- mobile development ---# Android Development
+- mobile development 
+---
+
+# Android Development
 
 ## Learn
 
