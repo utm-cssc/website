@@ -33,7 +33,6 @@ export default {
     return {
       searchQuery: '',
       searching: false,
-      selectedSearchEntry: null,
       searchEntries: [],
     }
   },
