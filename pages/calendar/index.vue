@@ -169,7 +169,7 @@ export default {
               details: current[1],
               start: `${current[2]} 00:00`,
               end: `${current[3]} 24:00`,
-              tags: this.parseTags(current.slice(4)),
+              tags: this.parseImportantDatesTags(current.slice(4)),
               timed: true,
             }
             return event
@@ -211,7 +211,7 @@ export default {
             details: entry.gsx$description.$t,
             start: start,
             end: end,
-            tags: this.parseTags(entry.gsx$searchtags.$t),
+            tags: this.parseClubTags(entry.gsx$searchtags.$t),
             timed: !allDay,
           }
         })
@@ -219,15 +219,17 @@ export default {
         this.monthEvents.push(...output)
       }
     },
-    parseTags(tags) {
+    parseImportantDatesTags(tags) {
       /**
        * Takes in list of tags, returns cleaned data
-       *
-       * For important dates tags:
-       * "Summer" -> ["Summer"]
+       * eg: "Summer" -> ["Summer"]
        * ["Summer, Financial"] -> ["Summer", "Financial"]
-       *
-       * For club event tags:
+       */
+      return []
+    },
+    parseClubTags(tags) {
+      /**
+       * Takes in a list of tags, returns cleaned data
        * "Web" -> ["Web"]
        * "Web, React" -> ["Web", "React"]
        */
