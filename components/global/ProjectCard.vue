@@ -11,7 +11,7 @@
       <p>{{ project.desc }}</p>
     </div>
 
-    <div class="flex mt-2 ml-auto">
+    <div class="flex mt-4 ml-auto">
       <v-btn
         large
         color="primary"

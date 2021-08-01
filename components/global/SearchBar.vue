@@ -11,6 +11,7 @@
     :items="searchResults"
     :loading="searching"
     no-filter
+    @change="handleSelect"
     clearable
   >
     <template v-slot:item="data">
@@ -18,9 +19,7 @@
         <v-list-item-content v-text="data.item"></v-list-item-content>
       </template>
       <template v-else>
-        <v-list-item-content
-          @click="$router.push(`/resources/${data.item.value}`)"
-        >
+        <v-list-item-content>
           <v-list-item-title v-html="data.item.text"></v-list-item-title>
         </v-list-item-content>
       </template>
@@ -34,17 +33,20 @@ export default {
     return {
       searchQuery: '',
       searching: false,
+      selectedSearchEntry: null,
       searchEntries: [],
     }
   },
   computed: {
     searchResults() {
-      const searchResults = this.searchEntries.map(result => {
-        return {
-          text: `Resources > ${result.title}`,
-          value: result.slug,
-        }
-      })
+      const searchResults =
+        this.searchEntries &&
+        this.searchEntries.map(result => {
+          return {
+            text: `${result.title}`,
+            value: result.url,
+          }
+        })
       return searchResults
     },
   },
@@ -57,33 +59,36 @@ export default {
       if (this.articles.length > 0) return
       if (this.searching) return
       this.searching = true
-      // const titleSearchResults = this.getTitleSearchResults(searchQuery)
-      // const tagsSearchResults = this.getTagsSearchResults(searchQuery)
-
-      this.searchEntries = await this.$content('resources')
+      this.searchEntries = await this.$content('navigation')
         .where({
           $or: [
+            {title: {$regex: [searchQuery, 'i']}},
             {tags: {$contains: searchQuery}},
             {keywords: {$contains: searchQuery}},
           ],
         })
         .fetch()
-
+      const resourceResults = await this.$content('resources')
+        .where({
+          $or: [
+            {title: {$regex: [searchQuery, 'i']}},
+            {tags: {$contains: searchQuery}},
+            {keywords: {$contains: searchQuery}},
+          ],
+        })
+        .fetch()
+      resourceResults.forEach(v => {
+        v.title = `Resources > ${v.title}`
+        v.url = v.path.slice(1) // have to remove leading slash otherwise push will 404
+      })
+      this.searchEntries = this.searchEntries.concat(resourceResults)
       this.searching = false
     },
   },
   methods: {
-    async getTagsSearchResults(searchQuery) {
-      const tagsSearchResults = await this.$content('resources')
-        .where({
-          $or: [
-            {tags: {$contains: searchQuery}},
-            {keywords: {$contains: searchQuery}},
-          ],
-        })
-        .fetch()
-
-      return tagsSearchResults
+    handleSelect(e) {
+      if (!e) return
+      this.$router.push(`/${e}/`)
     },
   },
 }

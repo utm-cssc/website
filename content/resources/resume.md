@@ -7,6 +7,9 @@ desc:
 link: resume
 tags:
   - career
+keywords:
+  - pey
+  - internship
 ---
 
 # Resume Help

@@ -1,0 +1,69 @@
+[
+  {
+    "title": "Learn More",
+    "tags": [],
+    "keywords": ["about", "about us"],
+    "url": "learn-more"
+  },
+  {
+    "title": "Resources",
+    "tags": [],
+    "keywords": [],
+    "url": "resources"
+  },
+  {
+    "title": "Calendar",
+    "tags": [],
+    "keywords": ["events", "workshops"],
+    "url": "calendar"
+  },
+  {
+    "title": "Ask Jack",
+    "tags": [],
+    "keywords": ["help", "advice"],
+    "url": "ask-jack"
+  },
+  {
+    "title": "Projects",
+    "tags": [],
+    "keywords": ["side", "side projects"],
+    "url": "projects"
+  },
+  {
+    "title": "Course Manager",
+    "tags": [],
+    "keywords": ["grade", "grades", "grades calculator", "grade calculator"],
+    "url": "course-manager"
+  },
+  {
+    "title": "Clubs",
+    "tags": [],
+    "keywords": [
+      "org",
+      "organizations",
+      "student orgs",
+      "student organizations",
+      "involvement",
+      "campus involvement"
+    ],
+    "url": "clubs"
+  },
+  {
+    "title": "Documentation",
+    "tags": [],
+    "keywords": [],
+    "url": "docs"
+  },
+  {
+    "title": "Contributing",
+    "tags": [],
+    "keywords": ["open source"],
+    "url": "contributing"
+  },
+  {
+    "title": "Past Teams",
+    "tags": [],
+    "keywords": [],
+    "url": "past-teams"
+  }
+]
