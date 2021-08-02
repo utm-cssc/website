@@ -115,6 +115,13 @@
 </template>
 
 <script>
+import {
+  IMPORTANT_DATES_CSV,
+  GITHUB_CLUB_FORM_RESPONSES,
+  CALENDAR_COLORS,
+  CLUBS,
+} from '~/constants'
+
 export default {
   data: () => ({
     focus: '',
@@ -125,30 +132,21 @@ export default {
       day: 'Day',
       '4day': '4 Days',
     },
-    colors: {
-      'Important Dates': '#2a9bd5',
-      WiSC: '#cfac53',
-      'UTM DSC': '#37b67b',
-      'UTM Robotics': '#929292',
-      MCSS: '#9999d4',
-      UTMSAM: '#5e8edb',
-      CSSC: '#3e607c',
-    },
-    filters: [
-      'Important Dates',
-      'CSSC',
-      'DSC',
-      'MCSS',
-      'WISC',
-      'UTM Robotics',
-      'UTMSAM',
-    ],
+    colors: CALENDAR_COLORS,
+    filters: ['Important Dates', ...CLUBS],
     selectedEvent: {},
     selectedElement: null,
     selectedOpen: false,
     monthEvents: [],
     allEvents: [],
-    selectedFilters: ['CSSC', 'DSC', 'MCSS', 'WISC', 'UTM Robotics', 'UTMSAM'],
+    selectedFilters: [
+      'CSSC',
+      'UTM DSC',
+      'MCSS',
+      'WiSC',
+      'UTM Robotics',
+      'UTMSAM',
+    ],
   }),
   mounted() {
     this.readCSVData(this.importantDates)
@@ -282,14 +280,10 @@ export default {
   },
   async asyncData({$axios}) {
     const importantDates = await $axios
-      .$get(
-        'https://raw.githubusercontent.com/utm-cssc/website/integrate-calendar/content/important-dates/important_dates.csv',
-      )
+      .$get(IMPORTANT_DATES_CSV)
       .then(res => res)
     const clubEvents = await $axios
-      .$get(
-        'https://spreadsheets.google.com/feeds/list/1KxxUGm1z_w0lDFkDbFhdSY2coxIGeZQMQbAwqzPA-4o/1/public/values?alt=json',
-      )
+      .$get(GITHUB_CLUB_FORM_RESPONSES)
       .then(res => res.feed.entry)
     return {importantDates, clubEvents}
   },
