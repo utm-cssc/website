@@ -1,6 +1,32 @@
 <template>
   <v-container>
     <v-row class="fill-height">
+      <template v-if="$vuetify.breakpoint.sm || $vuetify.breakpoint.xs">
+        <v-card-title> Filters </v-card-title>
+        <template v-for="filter in filters">
+          <v-checkbox
+            :key="filter"
+            :value="filter"
+            v-model="selectedFilters"
+            :label="filter"
+            :color="colors[filter]"
+          />
+        </template>
+      </template>
+      <template v-else>
+        <v-card class="p-3" max-width="400">
+          <v-card-title> Filters </v-card-title>
+          <template v-for="filter in filters">
+            <v-checkbox
+              :key="filter"
+              :value="filter"
+              v-model="selectedFilters"
+              :label="filter"
+              :color="colors[filter]"
+            />
+          </template>
+        </v-card>
+      </template>
       <v-col>
         <v-sheet height="64">
           <v-toolbar flat color="primary">
@@ -46,7 +72,7 @@
             ref="calendar"
             v-model="focus"
             color="var(--color-primary-dark)"
-            :events="monthEvents"
+            :events="filteredEvents"
             :event-color="getEventColor"
             event-text-color="#ffffff"
             :type="type"
@@ -108,15 +134,32 @@ export default {
       UTMSAM: '#5e8edb',
       CSSC: '#3e607c',
     },
+    filters: [
+      'Important Dates',
+      'CSSC',
+      'DSC',
+      'MCSS',
+      'WISC',
+      'UTM Robotics',
+      'UTMSAM',
+    ],
     selectedEvent: {},
     selectedElement: null,
     selectedOpen: false,
     monthEvents: [],
     allEvents: [],
+    selectedFilters: ['CSSC', 'DSC', 'MCSS', 'WISC', 'UTM Robotics', 'UTMSAM'],
   }),
   mounted() {
     this.readCSVData(this.importantDates)
     this.readEventsData(this.clubEvents)
+  },
+  computed: {
+    filteredEvents() {
+      return this.monthEvents.filter(event =>
+        this.selectedFilters.includes(event.type),
+      )
+    },
   },
   methods: {
     viewDay({date}) {
@@ -157,7 +200,6 @@ export default {
 
       if (typeof data === 'string' && data.length > 0) {
         const lines = data.split('\n').slice(1)
-
         const output = lines.map(line => {
           const current = line.split('|')
           // checks for error in the event
@@ -166,11 +208,12 @@ export default {
             const event = {
               color: this.colors['Important Dates'],
               name: current[0],
+              type: 'Important Dates',
               details: current[1],
-              start: `${current[2]} 00:00`,
-              end: `${current[3]} 24:00`,
+              start: new Date(`${current[2]} 00:00`),
+              end: new Date(`${current[2]} 24:00`),
               tags: this.parseImportantDatesTags(current.slice(4)),
-              timed: true,
+              timed: false,
             }
             return event
           }
@@ -211,6 +254,7 @@ export default {
             details: entry.gsx$description.$t,
             start: start,
             end: end,
+            type: entry.gsx$club.$t,
             tags: this.parseClubTags(entry.gsx$searchtags.$t),
             timed: !allDay,
           }
@@ -241,7 +285,7 @@ export default {
       .$get(
         'https://raw.githubusercontent.com/utm-cssc/website/integrate-calendar/content/important-dates/important_dates.csv',
       )
-      .then(res => res) //Todo: change develop to master
+      .then(res => res)
     const clubEvents = await $axios
       .$get(
         'https://spreadsheets.google.com/feeds/list/1KxxUGm1z_w0lDFkDbFhdSY2coxIGeZQMQbAwqzPA-4o/1/public/values?alt=json',
