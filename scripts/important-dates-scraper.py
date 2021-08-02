@@ -12,7 +12,8 @@ def parsedate(date):
         end = datetime.strptime(dates[1].strip(), '%B %d, %Y')
     start = start.strftime('%Y-%m-%d')
     end = end.strftime('%Y-%m-%d')
-    return [start, end]
+    # return [start, end]
+    return [end]
 
 
 def clean_tags(tags1, tags2):
@@ -65,7 +66,8 @@ for i in range(4):
 with open('important_dates.csv', 'w', newline='') as csvfile:
 
     spamwriter = csv.writer(csvfile, delimiter='|')
-    spamwriter.writerow(['Title', 'Description', 'Start Date', 'End Date', 'Tags'])
+    # spamwriter.writerow(['Title', 'Description', 'Start Date', 'End Date', 'Tags'])
+    spamwriter.writerow(['Title', 'Description', 'End Date', 'Tags'])
 
     for item in write_to_csv:
         spamwriter.writerow(list(item) + [write_to_csv[item]])
