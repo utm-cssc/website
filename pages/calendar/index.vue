@@ -234,10 +234,16 @@ export default {
       // checks if the event data is returned properly
       if (typeof data === 'object' && data.length > 0) {
         const mappedEvents = data.map(entry => {
-          const startTime = entry.gsx$starttime.$t
-          const endTime = entry.gsx$endtime.$t
-          const start = new Date(`${entry.gsx$startdate.$t} ${startTime}`)
-          const end = new Date(`${entry.gsx$enddate.$t} ${endTime}`)
+          const startTime = entry?.gsx$starttime?.$t
+          const endTime = entry?.gsx$endtime?.$t
+          const startDate = entry.gsx$startdate?.$t
+          const endDate = entry.gsx$enddate?.$t
+          const clubName = entry.gsx$club?.$t
+          const eventName = entry.gsx$eventname?.$t
+          const description = entry.gsx$description.$t
+
+          const start = new Date(`${startDate} ${startTime}`)
+          const end = new Date(`${endDate} ${endTime}`)
           const allDay = startTime === '' && endTime === ''
           const endIsAfterStart = start < end || (!(end < start) && allDay)
 
@@ -251,12 +257,12 @@ export default {
           }
 
           return {
-            color: this.colors[entry.gsx$club.$t],
-            name: entry.gsx$eventname.$t,
-            details: entry.gsx$description.$t,
+            color: this.colors[clubName],
+            name: eventName,
+            details: description,
             start: start,
             end: end,
-            type: entry.gsx$club.$t,
+            type: clubName,
             tags: this.parseClubTags(entry.gsx$searchtags.$t),
             timed: !allDay,
           }

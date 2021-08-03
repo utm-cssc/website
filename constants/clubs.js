@@ -4,17 +4,17 @@ export const CALENDAR_COLORS = {
   'UTM DSC': '#37b67b',
   'UTM Robotics': '#929292',
   MCSS: '#9999d4',
-  UTMSAM: '#5e8edb',
+  UTMSAM: '#FD4273',
   CSSC: '#3e607c',
 }
 
 export const CLUBS = [
-  'WiSC',
-  'UTM DSC',
-  'UTM Robotics',
-  'MCSS',
-  'UTMSAM',
   'CSSC',
+  'MCSS',
+  'UTM DSC',
+  'UTMSAM',
+  'UTM Robotics',
+  'WiSC',
 ]
 
 export default {CALENDAR_COLORS, CLUBS}
