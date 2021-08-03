@@ -203,13 +203,17 @@ export default {
           // checks for error in the event
 
           if (current.length >= 4) {
+            let name =
+              current[0]?.[0] == '"'
+                ? current[0].slice(1, current[0].length - 1)
+                : current[0]
             const event = {
               color: this.colors['Important Dates'],
-              name: current[0],
+              name: name,
               type: 'Important Dates',
-              details: current[1],
+              details: name,
               start: new Date(`${current[2]} 00:00`),
-              end: new Date(`${current[2]} 24:00`),
+              end: new Date(`${current[3]} 23:59`),
               tags: this.parseImportantDatesTags(current.slice(4)),
               timed: false,
             }
