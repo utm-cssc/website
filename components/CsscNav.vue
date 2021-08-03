@@ -58,7 +58,13 @@
         @click="drawerOpen = !drawerOpen"
       ></v-app-bar-nav-icon>
     </v-app-bar>
-    <v-navigation-drawer disable-resize-watcher app v-model="drawerOpen" right>
+    <v-navigation-drawer
+      temporary
+      disable-resize-watcher
+      v-model="drawerOpen"
+      fixed
+      right
+    >
       <nav-drawer />
     </v-navigation-drawer>
   </div>

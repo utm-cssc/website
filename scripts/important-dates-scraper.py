@@ -3,6 +3,31 @@ from bs4 import BeautifulSoup
 import csv
 from datetime import datetime
 
+included_titles = [
+    'request'
+]
+
+def clean_entry(entry):
+    title, description, start_date, end_date = entry
+    if start_date != end_date:
+        # is a range
+        if any([True if 'request' in title.lower() else False for included_title in included_titles]):
+            # Collapse events
+            if title[0:14] == 'Request period':
+                title = 'Deadline ' + title[15:]
+            elif title[0:7] == 'Request':
+                title = 'Deadline to r' + title[1:]
+            elif 'Program selection' in title:
+                title = 'Deadline for ' + title[0:27]
+            elif 'November Convocation' in title:
+                title = 'Last day to apply for November Convocation'
+            description = title
+            start_date = end_date
+        if 'Accept an invitation' in title:
+            title = 'Deadline to a' + title[1:]
+            description = title
+            start_date = end_date
+    return tuple([title, description, start_date, end_date])
 
 def parsedate(date):
     dates = date.split('-');
@@ -44,7 +69,7 @@ def parse_html_to_csv(url, tags):
     for dateinfo in soup.find_all(class_='date'):
         info = dateinfo.find(class_='info').text
         date = dateinfo.find(class_='title').text
-        dict_key = tuple([info, info] + parsedate(date))
+        dict_key = clean_entry([info, info] + parsedate(date))
         tags2 = tags + relevant_tags(info)
         old_tags = tags2
         if dict_key in write_to_csv:
@@ -64,8 +89,9 @@ for i in range(4):
 
 with open('important_dates.csv', 'w', newline='') as csvfile:
 
-    spamwriter = csv.writer(csvfile, delimiter=',')
-    spamwriter.writerow(['Title', 'Description', 'Start Date', 'End Date', 'Tags'])
+    spamwriter = csv.writer(csvfile, delimiter='|')
+    # spamwriter.writerow(['Title', 'Description', 'Start Date', 'End Date', 'Tags'])
+    spamwriter.writerow(['Title', 'Description','Start Date', 'End Date', 'Tags'])
 
     for item in write_to_csv:
         spamwriter.writerow(list(item) + [write_to_csv[item]])

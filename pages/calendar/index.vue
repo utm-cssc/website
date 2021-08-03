@@ -1,6 +1,32 @@
 <template>
   <v-container>
     <v-row class="fill-height">
+      <template v-if="$vuetify.breakpoint.sm || $vuetify.breakpoint.xs">
+        <v-card-title> Filters </v-card-title>
+        <template v-for="filter in filters">
+          <v-checkbox
+            :key="filter"
+            :value="filter"
+            v-model="selectedFilters"
+            :label="filter"
+            :color="colors[filter]"
+          />
+        </template>
+      </template>
+      <template v-else>
+        <v-card class="p-3" max-width="400">
+          <v-card-title> Filters </v-card-title>
+          <template v-for="filter in filters">
+            <v-checkbox
+              :key="filter"
+              :value="filter"
+              v-model="selectedFilters"
+              :label="filter"
+              :color="colors[filter]"
+            />
+          </template>
+        </v-card>
+      </template>
       <v-col>
         <v-sheet height="64">
           <v-toolbar flat color="primary">
@@ -46,7 +72,7 @@
             ref="calendar"
             v-model="focus"
             color="var(--color-primary-dark)"
-            :events="monthEvents"
+            :events="filteredEvents"
             :event-color="getEventColor"
             event-text-color="#ffffff"
             :type="type"
@@ -89,6 +115,13 @@
 </template>
 
 <script>
+import {
+  IMPORTANT_DATES_CSV,
+  GITHUB_CLUB_FORM_RESPONSES,
+  CALENDAR_COLORS,
+  CLUBS,
+} from '~/constants'
+
 export default {
   data: () => ({
     focus: '',
@@ -99,28 +132,32 @@ export default {
       day: 'Day',
       '4day': '4 Days',
     },
+    colors: CALENDAR_COLORS,
+    filters: ['Important Dates', ...CLUBS],
     selectedEvent: {},
     selectedElement: null,
     selectedOpen: false,
     monthEvents: [],
     allEvents: [],
-    colors: {
-      CSSC: 'var(--color-primary)',
-      MCSS: 'var(--color-mcss)',
-      UTMSAM: 'var(--color-utmsam)',
-      DSC: 'var(--color-dsc)',
-      WISC: 'var(--color-wisc)',
-      Robotics: 'var(--color-robotics)',
-    },
-    names: ['CSSC', 'MCSS', 'UTMSAM', 'DSC', 'WISC', 'Robotics'],
+    selectedFilters: [
+      'CSSC',
+      'UTM DSC',
+      'MCSS',
+      'WiSC',
+      'UTM Robotics',
+      'UTMSAM',
+    ],
   }),
   mounted() {
-    this.readCSVData(this.mcss, 'MCSS')
-    this.readCSVData(this.wisc, 'WISC')
-    this.readCSVData(this.utmsam, 'UTMSAM')
-    this.readCSVData(this.dsc, 'DSC')
-    this.readCSVData(this.cssc, 'CSSC')
-    this.readCSVData(this.robotics, 'Robotics')
+    this.readCSVData(this.importantDates)
+    this.readEventsData(this.clubEvents)
+  },
+  computed: {
+    filteredEvents() {
+      return this.monthEvents.filter(event =>
+        this.selectedFilters.includes(event.type),
+      )
+    },
   },
   methods: {
     viewDay({date}) {
@@ -155,99 +192,110 @@ export default {
 
       nativeEvent.stopPropagation()
     },
-    readCSVData(data, clubName) {
+    readCSVData(data) {
+      // title, description, start, end, [...] <- tags
       // checks if the event data is returned properly
+
       if (typeof data === 'string' && data.length > 0) {
-        const lines = data.split('\n')
-        const output = []
-        for (let i = 1; i < lines.length - 1; i++) {
-          const current = lines[i].split(', ')
+        const lines = data.split('\n').slice(1)
+        const output = lines.map(line => {
+          const current = line.split('|')
           // checks for error in the event
-          if (current.length === 6) {
+
+          if (current.length >= 4) {
+            let name =
+              current[0]?.[0] == '"'
+                ? current[0].slice(1, current[0].length - 1)
+                : current[0]
             const event = {
-              color: this.colors[clubName],
-              name: current[0],
-              details: current[1],
-              start: `${current[2]} ${current[3]}:00`,
-              end: `${current[4]} ${current[5]}:00`,
+              color: this.colors['Important Dates'],
+              name: name,
+              type: 'Important Dates',
+              details: name,
+              start: new Date(`${current[2]} 00:00`),
+              end: new Date(`${current[3]} 23:59`),
+              tags: this.parseImportantDatesTags(current.slice(4)),
+              timed: false,
             }
-            output.push(event)
+            return event
           }
-        }
+
+          return {}
+        })
+        this.monthEvents.push(...output.slice(0, output.length - 1))
+      }
+    },
+    readEventsData(data) {
+      /**
+       *  club, name, description, start date, end date,
+       *  start time, end time, [...] <- tags
+       */
+
+      // checks if the event data is returned properly
+      if (typeof data === 'object' && data.length > 0) {
+        const mappedEvents = data.map(entry => {
+          const startTime = entry?.gsx$starttime?.$t
+          const endTime = entry?.gsx$endtime?.$t
+          const startDate = entry.gsx$startdate?.$t
+          const endDate = entry.gsx$enddate?.$t
+          const clubName = entry.gsx$club?.$t
+          const eventName = entry.gsx$eventname?.$t
+          const description = entry.gsx$description.$t
+
+          const start = new Date(`${startDate} ${startTime}`)
+          const end = new Date(`${endDate} ${endTime}`)
+          const allDay = startTime === '' && endTime === ''
+          const endIsAfterStart = start < end || (!(end < start) && allDay)
+
+          // Checks for errors in the event
+          if (
+            !endIsAfterStart ||
+            (startTime === '' && endTime !== '') ||
+            (startTime !== '' && endTime === '')
+          ) {
+            return null
+          }
+
+          return {
+            color: this.colors[clubName],
+            name: eventName,
+            details: description,
+            start: start,
+            end: end,
+            type: clubName,
+            tags: this.parseClubTags(entry.gsx$searchtags.$t),
+            timed: !allDay,
+          }
+        })
+        const output = mappedEvents.filter(event => event !== null)
         this.monthEvents.push(...output)
       }
     },
+    parseImportantDatesTags(tags) {
+      /**
+       * Takes in list of tags, returns cleaned data
+       * eg: "Summer" -> ["Summer"]
+       * ["Summer, Financial"] -> ["Summer", "Financial"]
+       */
+      return []
+    },
+    parseClubTags(tags) {
+      /**
+       * Takes in a list of tags, returns cleaned data
+       * "Web" -> ["Web"]
+       * "Web, React" -> ["Web", "React"]
+       */
+      return []
+    },
   },
   async asyncData({$axios}) {
-    let wisc = ''
-    let mcss = ''
-    let utmsam = ''
-    let cssc = ''
-    let robotics = ''
-    let dsc = ''
-    await Promise.all([
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/WISC.csv',
-        )
-        .then(res => {
-          wisc = res
-        })
-        .catch(() => {
-          wisc = ''
-        }),
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/MCSS.csv',
-        )
-        .then(res => {
-          mcss = res
-        })
-        .catch(() => {
-          mcss = ''
-        }),
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/UTMSAM.csv',
-        )
-        .then(res => {
-          utmsam = res
-        })
-        .catch(() => {
-          utmsam = ''
-        }),
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/CSSC.csv',
-        )
-        .then(res => {
-          cssc = res
-        })
-        .catch(() => {
-          cssc = ''
-        }),
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/Robotics.csv',
-        )
-        .then(res => {
-          robotics = res
-        })
-        .catch(() => {
-          robotics = ''
-        }),
-      $axios
-        .$get(
-          'https://raw.githubusercontent.com/utm-cssc/unified-calendar-data/master/DSC.csv',
-        )
-        .then(res => {
-          dsc = res
-        })
-        .catch(() => {
-          dsc = ''
-        }),
-    ])
-    return {wisc, mcss, utmsam, cssc, robotics, dsc}
+    const importantDates = await $axios
+      .$get(IMPORTANT_DATES_CSV)
+      .then(res => res)
+    const clubEvents = await $axios
+      .$get(GITHUB_CLUB_FORM_RESPONSES)
+      .then(res => res?.feed?.entry)
+    return {importantDates, clubEvents}
   },
 }
 </script>
