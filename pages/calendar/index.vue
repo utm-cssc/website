@@ -294,7 +294,7 @@ export default {
       .then(res => res)
     const clubEvents = await $axios
       .$get(GITHUB_CLUB_FORM_RESPONSES)
-      .then(res => res.feed.entry)
+      .then(res => res?.feed?.entry)
     return {importantDates, clubEvents}
   },
 }
