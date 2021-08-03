@@ -23,6 +23,10 @@ def clean_entry(entry):
                 title = 'Last day to apply for November Convocation'
             description = title
             start_date = end_date
+        if 'Accept an invitation' in title:
+            title = 'Deadline to a' + title[1:]
+            description = title
+            start_date = end_date
     return tuple([title, description, start_date, end_date])
 
 def parsedate(date):
