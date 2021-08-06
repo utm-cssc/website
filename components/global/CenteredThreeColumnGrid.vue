@@ -1,5 +1,5 @@
 <template>
-  <div class="row" style="margin-top: 230px; margin-bottom: 230px;">
+  <div class="row" style="margin-top: 15%; margin-bottom: 15%;">
     <div
       v-for="child in children"
       :key="child.title"
