@@ -11,7 +11,7 @@ The search bar is utilized to provide easy navigation for users. The code can be
 found under components/global/SearchBar.vue. The search bar leverages Nuxt to
 search through content in a database query-like manner.
 
-There are two parts to the results generated: page indexes and resources.
+There are three areas that we search over: page indexes, resources, and docs.
 
 Page indexes are defined under content/navigation/page-indexes.json with the
 following schema:
@@ -26,4 +26,5 @@ following schema:
 ```
 
 To extend functionality, you would use Nuxt to query content in a similar manner
-to navigation and resources.
+to navigation and resources, format the results, and then concatenate it to
+`this.searchResults`.
