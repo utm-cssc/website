@@ -13,7 +13,7 @@
     <p class="desc">
       {{ desc }}
     </p>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center" style="justify-content: center;">
       <v-btn
         v-if="button && button.link && button.label"
         :href="button.link"
