@@ -12268,6 +12268,13 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
+simple-analytics-vue@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/simple-analytics-vue/-/simple-analytics-vue-1.1.5.tgz#8937c63fb6708b9d3a3fa982d3f4c003125cefa4"
+  integrity sha512-Oio9vDSxvVqAaL4sseXWynqwzyCDGhqXZLXZNDZpY0aQVErQXxsU43TfLM1eRRMStZG2M0FCnsCCyAqwT3ftOw==
+  dependencies:
+    vue "^2.6.11"
+
 simple-swizzle@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/simple-swizzle/-/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"
@@ -13965,6 +13972,11 @@ vue-typed-js@^0.1.2:
   integrity sha512-9kDGuz17uYJghe/1hepRWiWYssgUFtrKnMGPHlWjVRxdvs/d9xYYWMkgzztjhx1R1B33hXkN8ctmkzCYHQ+caA==
   dependencies:
     typed.js "git+https://github.com/mattboldt/typed.js.git"
+
+vue@^2.6.11:
+  version "2.6.14"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
+  integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
 
 vue@^2.6.12:
   version "2.6.12"
