@@ -59,29 +59,17 @@ export default {
       if (this.articles.length > 0) return
       if (this.searching) return
       this.searching = true
-      this.searchEntries = await this.$content('navigation')
-        .where({
-          $or: [
-            {title: {$regex: [searchQuery, 'i']}},
-            {tags: {$contains: searchQuery}},
-            {keywords: {$contains: searchQuery}},
-          ],
-        })
-        .fetch()
-      const resourceResults = await this.$content('resources')
-        .where({
-          $or: [
-            {title: {$regex: [searchQuery, 'i']}},
-            {tags: {$contains: searchQuery}},
-            {keywords: {$contains: searchQuery}},
-          ],
-        })
-        .fetch()
-      resourceResults.forEach(v => {
-        v.title = `Resources > ${v.title}`
-        v.url = v.path.slice(1) // have to remove leading slash otherwise push will 404
-      })
-      this.searchEntries = this.searchEntries.concat(resourceResults)
+      const searchParams = [
+        {title: {$regex: [searchQuery, 'i']}},
+        {tags: {$contains: searchQuery}},
+        {keywords: {$contains: searchQuery}},
+      ]
+      const navResults = await this.fetchContent('navigation', searchParams)
+      const resourceResults = await this.fetchContent('resources', searchParams)
+      const docsResults = await this.fetchContent('docs', [searchParams[0]])
+      this.formatResults('Resources', resourceResults)
+      this.formatResults('Docs', docsResults)
+      this.searchEntries = navResults.concat(resourceResults, docsResults)
       this.searching = false
     },
   },
@@ -89,6 +77,19 @@ export default {
     handleSelect(e) {
       if (!e) return
       this.$router.push(`/${e}/`)
+    },
+    async fetchContent(store, params) {
+      return await this.$content(store)
+        .where({
+          $or: params,
+        })
+        .fetch()
+    },
+    formatResults(prefix, results) {
+      results.forEach(v => {
+        v.title = `${prefix} > ${v.title}`
+        v.url = v.path.slice(1) // have to remove leading slash otherwise push will 404
+      })
     },
   },
 }

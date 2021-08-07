@@ -55,10 +55,24 @@
       "tags": ["student-projects"]
     },
     {
+      "name": "Buddy Study Online",
+      "logo": "/logos/projects/BuddyStudyOnline.png",
+      "desc": "A space for all students to study while chatting through a cute avatar without the pressure of revealing your face",
+      "repo": "https://github.com/BuddyStudyOnline",
+      "tags": ["student-projects"]
+    },
+    {
       "name": "CSSC",
       "desc": "A community organization overseen by the Computer Science Faculty dedicated to helping students!",
       "repo": "https://github.com/utm-cssc",
       "logo": "/logos/cssc-logo-blue.svg",
+      "tags": ["student-orgs"]
+    },
+    {
+      "name": "UTM Robotics",
+      "desc": "Helping to bridge the gap between applied computer science and robotics.",
+      "repo": "https://github.com/UTM-Robotics",
+      "logo": "/logos/robotics.png",
       "tags": ["student-orgs"]
     },
     {
@@ -70,17 +84,10 @@
     },
     {
       "name": "Developer Student Community",
-      "desc": "DSC is a community focused on getting hands-on development experience, often focused on writing code to help the community.",
+      "desc": "DSC is a community focused on getting hands-on dev experience, focused on the community.",
       "repo": "https://github.com/dscutm",
       "logo": "/logos/dsc.png",
       "tags": ["student-orgs"]
-    },
-    {
-      "name": "Buddy Study Online",
-      "logo": "/logos/projects/BuddyStudyOnline.png",
-      "desc": "A space for all students to study while chatting through a cute avatar without the pressure of revealing your face",
-      "repo": "https://github.com/BuddyStudyOnline",
-      "tags": ["hackathon"]
     },
     {
       "name": "Toonin",
