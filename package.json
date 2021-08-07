@@ -33,6 +33,7 @@
     "nuxt": "^2.14.7",
     "nuxt-matomo": "^1.2.4",
     "nuxt-mq": "^2.0.1",
+    "simple-analytics-vue": "^1.1.5",
     "vue-apexcharts": "^1.6.0",
     "vue-typed-js": "^0.1.2",
     "vuex-persistedstate": "^4.0.0-beta.1"

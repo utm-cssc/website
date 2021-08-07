@@ -12,16 +12,10 @@ export default {
     },
     title: 'CSSC Website',
     script: [
-      {src: 'https://plausible.io/js/plausible.js', async: true, defer: true},
       {
         src: 'https://script.opentracker.net/?site=cssc.utm.utoronto.ca',
         defer: true,
         type: 'text/javascript',
-      },
-      {
-        type: 'text/javascript',
-        src: 'http://cdn.matomo.cloud/utoronto.matomo.cloud/matomo.js',
-        defer: true,
       },
     ],
     meta: [
@@ -63,7 +57,11 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['@/plugins/vue-typed-js.js', '@/plugins/persisted-state.client.js'],
+  plugins: [
+    '@/plugins/vue-typed-js.js',
+    '@/plugins/persisted-state.client.js',
+    '@/plugins/simple-analytics.js',
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
