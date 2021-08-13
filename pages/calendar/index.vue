@@ -292,9 +292,11 @@ export default {
     const importantDates = await $axios
       .$get(IMPORTANT_DATES_CSV)
       .then(res => res)
+      .catch(err => console.log(err))
     const clubEvents = await $axios
       .$get(GITHUB_CLUB_FORM_RESPONSES)
       .then(res => res?.feed?.entry)
+      .catch(err => console.log(err))
     return {importantDates, clubEvents}
   },
 }
