@@ -115,12 +115,7 @@
 </template>
 
 <script>
-import {
-  IMPORTANT_DATES_CSV,
-  GITHUB_CLUB_FORM_RESPONSES,
-  CALENDAR_COLORS,
-  CLUBS,
-} from '~/constants'
+import {GITHUB_CLUB_FORM_RESPONSES, CALENDAR_COLORS, CLUBS} from '~/constants'
 
 export default {
   data: () => ({
@@ -195,34 +190,31 @@ export default {
     readCSVData(data) {
       // title, description, start, end, [...] <- tags
       // checks if the event data is returned properly
-
-      if (typeof data === 'string' && data.length > 0) {
-        const lines = data.split('\n').slice(1)
-        const output = lines.map(line => {
-          const current = line.split('|')
-          // checks for error in the event
-
-          if (current.length >= 4) {
-            let name =
-              current[0]?.[0] == '"'
-                ? current[0].slice(1, current[0].length - 1)
-                : current[0]
+      if (Array.isArray(data) & (data.length > 0)) {
+        const output = data.map(
+          ({
+            Description: description,
+            Title: title,
+            'Start Date': start,
+            'End Date': end,
+            Tags: tags,
+          }) => {
             const event = {
               color: this.colors['Important Dates'],
-              name: name,
+              name: title,
               type: 'Important Dates',
-              details: name,
-              start: new Date(`${current[2]} 00:00`),
-              end: new Date(`${current[3]} 23:59`),
-              tags: this.parseImportantDatesTags(current.slice(4)),
+              details: description,
+              start: new Date(`${start} 00:00`.replace(/ /g, 'T')),
+              end: new Date(`${end} 23:59`.replace(/ /g, 'T')),
+              tags: this.parseImportantDatesTags(tags),
               timed: false,
             }
+            console.log(start, end)
             return event
-          }
+          },
+        )
 
-          return {}
-        })
-        this.monthEvents.push(...output.slice(0, output.length - 1))
+        this.monthEvents.push(...output)
       }
     },
     readEventsData(data) {
@@ -242,8 +234,8 @@ export default {
           const eventName = entry.gsx$eventname?.$t
           const description = entry.gsx$description.$t
 
-          const start = new Date(`${startDate} ${startTime}`)
-          const end = new Date(`${endDate} ${endTime}`)
+          const start = new Date(`${startDate} ${startTime}`.replace(/ /g, 'T'))
+          const end = new Date(`${endDate} ${endTime}`.replace(/ /g, 'T'))
           const allDay = startTime === '' && endTime === ''
           const endIsAfterStart = start < end || (!(end < start) && allDay)
 
@@ -288,16 +280,15 @@ export default {
       return []
     },
   },
-  async asyncData({$axios}) {
-    const importantDates = await $axios
-      .$get(IMPORTANT_DATES_CSV)
-      .then(res => res)
-      .catch(err => console.log(err))
+  async asyncData({$axios, $content}) {
+    const importantDates = await $content('important-dates')
+      .only(['body'])
+      .fetch()
     const clubEvents = await $axios
       .$get(GITHUB_CLUB_FORM_RESPONSES)
       .then(res => res?.feed?.entry)
       .catch(err => console.log(err))
-    return {importantDates, clubEvents}
+    return {importantDates: importantDates?.[0]?.body, clubEvents}
   },
 }
 </script>
