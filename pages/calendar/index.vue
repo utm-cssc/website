@@ -209,7 +209,6 @@ export default {
               tags: this.parseImportantDatesTags(tags),
               timed: false,
             }
-            console.log(start, end)
             return event
           },
         )
