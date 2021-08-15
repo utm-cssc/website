@@ -124,6 +124,7 @@ export default {
    */
   content: {
     nestedProperties: ['resources.tags', 'resources.keywords'],
+    csv: {delimiter: '|'},
   },
   /*
    ** Build configuration
