@@ -12,6 +12,26 @@
             :color="colors[filter]"
           />
         </template>
+        <v-autocomplete
+          placeholder="Search for Events"
+          solo
+          :search-input.sync="searchQuery"
+          :items="searchResults"
+          :loading="searching"
+          @change="handleSelect"
+          hide-no-data
+        >
+          <template v-slot:item="data">
+            <template v-if="typeof data.item !== 'object'">
+              <v-list-item-content v-text="data.item"></v-list-item-content>
+            </template>
+            <template v-else>
+              <v-list-item-content>
+                <v-list-item-title v-html="data.item.text"></v-list-item-title>
+              </v-list-item-content>
+            </template>
+          </template>
+        </v-autocomplete>
       </template>
       <template v-else>
         <v-card class="p-3" max-width="400">
@@ -42,31 +62,35 @@
             <v-toolbar-title class="pl-3 calendar_nav" v-if="$refs.calendar">
               {{ $refs.calendar.title }}
             </v-toolbar-title>
-            <v-autocomplete
-              placeholder="Search for Events"
-              solo
-              prepend-inner-icon="mdi-magnify"
-              clearable
-              :search-input.sync="searchQuery"
-              :items="searchResults"
-              :loading="searching"
-              @change="handleSelect"
-              hide-no-data
-              class="pt-8 pl-5 pr-5"
-            >
-              <template v-slot:item="data">
-                <template v-if="typeof data.item !== 'object'">
-                  <v-list-item-content v-text="data.item"></v-list-item-content>
+            <template v-if="!$vuetify.breakpoint.sm && !$vuetify.breakpoint.xs">
+              <v-autocomplete
+                placeholder="Search for Events"
+                solo
+                prepend-inner-icon="mdi-magnify"
+                clearable
+                :search-input.sync="searchQuery"
+                :items="searchResults"
+                :loading="searching"
+                @change="handleSelect"
+                hide-no-data
+                class="pt-8 pl-5 pr-5"
+              >
+                <template v-slot:item="data">
+                  <template v-if="typeof data.item !== 'object'">
+                    <v-list-item-content
+                      v-text="data.item"
+                    ></v-list-item-content>
+                  </template>
+                  <template v-else>
+                    <v-list-item-content>
+                      <v-list-item-title
+                        v-html="data.item.text"
+                      ></v-list-item-title>
+                    </v-list-item-content>
+                  </template>
                 </template>
-                <template v-else>
-                  <v-list-item-content>
-                    <v-list-item-title
-                      v-html="data.item.text"
-                    ></v-list-item-title>
-                  </v-list-item-content>
-                </template>
-              </template>
-            </v-autocomplete>
+              </v-autocomplete>
+            </template>
             <v-menu bottom right>
               <template v-slot:activator="{on, attrs}">
                 <v-btn outlined color="#ffffff" v-bind="attrs" v-on="on">
