@@ -30,6 +30,7 @@
     "apexcharts": "^3.20.0",
     "dotenv": "^8.2.0",
     "firebase": "^7.19.1",
+    "fuse.js": "^6.4.6",
     "nuxt": "^2.14.7",
     "nuxt-matomo": "^1.2.4",
     "nuxt-mq": "^2.0.1",
