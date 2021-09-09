@@ -222,8 +222,6 @@ export default {
        *  start time, end time, [...] <- tags
        */
 
-      console.log(data)
-
       // checks if the event data is returned properly
       if (typeof data === 'object' && data.length > 0) {
         const mappedEvents = data.map(entry => {
