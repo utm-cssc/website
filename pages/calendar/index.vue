@@ -222,27 +222,37 @@ export default {
        *  start time, end time, [...] <- tags
        */
 
+      console.log(data)
+
       // checks if the event data is returned properly
       if (typeof data === 'object' && data.length > 0) {
         const mappedEvents = data.map(entry => {
-          const startTime = entry?.gsx$starttime?.$t
-          const endTime = entry?.gsx$endtime?.$t
-          const startDate = entry.gsx$startdate?.$t
-          const endDate = entry.gsx$enddate?.$t
-          const clubName = entry.gsx$club?.$t
-          const eventName = entry.gsx$eventname?.$t
-          const description = entry.gsx$description.$t
+          //sheets.data.value
+          const clubName = entry.values[1].formattedValue
+          const eventName = entry.values[2].formattedValue
+          const description = entry.values[3].formattedValue
+          const startDate = entry.values[4].formattedValue
+          const endDate = entry.values[5].formattedValue
+          let startTime = entry.values[6]?.formattedValue
+          let endTime = entry.values[7]?.formattedValue
+          let searchTags = entry.values[8]?.formattedValue
 
-          const start = new Date(`${startDate} ${startTime}`.replace(/ /g, 'T'))
-          const end = new Date(`${endDate} ${endTime}`.replace(/ /g, 'T'))
-          const allDay = startTime === '' && endTime === ''
+          const start = startTime
+            ? new Date(`${startDate} ${startTime}`)
+            : new Date(startDate)
+          const end = endTime
+            ? new Date(`${endDate} ${endTime}`)
+            : new Date(endDate)
+          const allDay =
+            typeof startTime === 'undefined' && typeof endTime === 'undefined'
           const endIsAfterStart = start < end || (!(end < start) && allDay)
 
           // Checks for errors in the event
           if (
             !endIsAfterStart ||
-            (startTime === '' && endTime !== '') ||
-            (startTime !== '' && endTime === '')
+            (typeof startTime === 'undefined' &&
+              typeof endTime !== 'undefined') ||
+            (typeof startTime !== 'undefined' && endTime === 'undefined')
           ) {
             return null
           }
@@ -254,7 +264,7 @@ export default {
             start: start,
             end: end,
             type: clubName,
-            tags: this.parseClubTags(entry.gsx$searchtags.$t),
+            tags: this.parseClubTags(searchTags),
             timed: !allDay,
           }
         })
@@ -285,7 +295,7 @@ export default {
       .fetch()
     const clubEvents = await $axios
       .$get(GITHUB_CLUB_FORM_RESPONSES)
-      .then(res => res?.feed?.entry)
+      .then(res => res?.sheets?.[0].data?.[0].rowData.slice(1))
       .catch(err => console.log(err))
     return {importantDates: importantDates?.[0]?.body, clubEvents}
   },
