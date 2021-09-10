@@ -134,14 +134,7 @@ export default {
     selectedOpen: false,
     monthEvents: [],
     allEvents: [],
-    selectedFilters: [
-      'CSSC',
-      'UTM DSC',
-      'MCSS',
-      'WiSC',
-      'UTM Robotics',
-      'UTMSAM',
-    ],
+    selectedFilters: ['CSSC', 'GDSC', 'MCSS', 'WiSC', 'UTM Robotics', 'UTMSAM'],
   }),
   mounted() {
     this.readCSVData(this.importantDates)
