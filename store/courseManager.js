@@ -1,48 +1,38 @@
 export const state = () => ({
   courses: [
     {
-      name: 'Introduction to Computer Science',
-      code: 'CSC148',
+      name: 'Introduction to Computer Programming',
+      code: 'CSC108',
       assessments: [
         {
-          name: 'Peerwise',
-          weight: 6,
-          grade: 100,
+          name: 'Labs',
+          weight: 30,
+          grade: 80,
         },
         {
-          name: 'Preps',
-          weight: 9,
-          grade: 100,
-        },
-        {
-          name: 'Exercise 1',
-          weight: 5,
+          name: 'PCRS',
+          weight: 15,
           grade: 100,
         },
         {
           name: 'Test 1',
-          weight: 7,
+          weight: 10,
           grade: 80,
         },
         {
-          name: 'Assignment 1',
-          weight: 15,
-          grade: 100,
+          name: 'Test 2',
+          weight: 10,
+          grade: 85,
         },
         {
-          name: 'Exercise 2',
+          name: 'Test - Floating Weight',
           weight: 5,
           grade: 100,
         },
         {
-          name: 'Test 2',
-          weight: 13,
-          grade: 84,
-        },
-        {
-          name: 'Assignment 2',
-          weight: 15,
-          grade: 90,
+          name: 'Final Exam',
+          weight: 30,
+          grade: 85,
         },
       ],
     },
