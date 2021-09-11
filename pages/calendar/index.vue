@@ -12,6 +12,26 @@
             :color="colors[filter]"
           />
         </template>
+        <v-autocomplete
+          placeholder="Search for Events"
+          solo
+          :search-input.sync="searchQuery"
+          :items="searchResults"
+          :loading="searching"
+          @change="handleSelect"
+          hide-no-data
+        >
+          <template v-slot:item="data">
+            <template v-if="typeof data.item !== 'object'">
+              <v-list-item-content v-text="data.item"></v-list-item-content>
+            </template>
+            <template v-else>
+              <v-list-item-content>
+                <v-list-item-title v-html="data.item.text"></v-list-item-title>
+              </v-list-item-content>
+            </template>
+          </template>
+        </v-autocomplete>
       </template>
       <template v-else>
         <v-card class="p-3" max-width="400">
@@ -42,7 +62,35 @@
             <v-toolbar-title class="pl-3 calendar_nav" v-if="$refs.calendar">
               {{ $refs.calendar.title }}
             </v-toolbar-title>
-            <v-spacer></v-spacer>
+            <template v-if="!$vuetify.breakpoint.sm && !$vuetify.breakpoint.xs">
+              <v-autocomplete
+                placeholder="Search for Events"
+                solo
+                prepend-inner-icon="mdi-magnify"
+                clearable
+                :search-input.sync="searchQuery"
+                :items="searchResults"
+                :loading="searching"
+                @change="handleSelect"
+                hide-no-data
+                class="pt-8 pl-5 pr-5"
+              >
+                <template v-slot:item="data">
+                  <template v-if="typeof data.item !== 'object'">
+                    <v-list-item-content
+                      v-text="data.item"
+                    ></v-list-item-content>
+                  </template>
+                  <template v-else>
+                    <v-list-item-content>
+                      <v-list-item-title
+                        v-html="data.item.text"
+                      ></v-list-item-title>
+                    </v-list-item-content>
+                  </template>
+                </template>
+              </v-autocomplete>
+            </template>
             <v-menu bottom right>
               <template v-slot:activator="{on, attrs}">
                 <v-btn outlined color="#ffffff" v-bind="attrs" v-on="on">
@@ -116,7 +164,7 @@
 
 <script>
 import {GITHUB_CLUB_FORM_RESPONSES, CALENDAR_COLORS, CLUBS} from '~/constants'
-
+import Fuse from 'fuse.js'
 export default {
   data: () => ({
     focus: '',
@@ -132,26 +180,53 @@ export default {
     selectedEvent: {},
     selectedElement: null,
     selectedOpen: false,
+
     monthEvents: [],
     allEvents: [],
-    selectedFilters: [
-      'CSSC',
-      'UTM DSC',
-      'MCSS',
-      'WiSC',
-      'UTM Robotics',
-      'UTMSAM',
-    ],
+    selectedFilters: ['CSSC', 'GDSC', 'MCSS', 'WiSC', 'UTM Robotics', 'UTMSAM'],
+    searchQuery: '',
+    searching: false,
+    searchEntries: [],
   }),
   mounted() {
-    this.readCSVData(this.importantDates)
     this.readEventsData(this.clubEvents)
+    this.readCSVData(this.importantDates)
   },
   computed: {
     filteredEvents() {
       return this.monthEvents.filter(event =>
         this.selectedFilters.includes(event.type),
       )
+    },
+    fuseCollection() {
+      return new Fuse(this.filteredEvents, {
+        keys: ['name', 'details'],
+        ignoreLocation: true,
+      })
+    },
+    searchResults() {
+      const searchResults =
+        this.searchEntries &&
+        this.searchEntries.map(result => {
+          let text = result.item.name
+          if (text.length > 75) {
+            text = text.slice(0, 75) + '...'
+          }
+          return {
+            text: `${text}`,
+            value: `${result.item.start}`,
+          }
+        })
+      return searchResults.slice(0, 5)
+    },
+  },
+  watch: {
+    async searchQuery(searchQuery) {
+      if (!searchQuery) {
+        this.searchEntries = []
+        return
+      }
+      this.searchEntries = this.fuseCollection.search(searchQuery)
     },
   },
   methods: {
@@ -164,6 +239,14 @@ export default {
     },
     setToday() {
       this.focus = ''
+    },
+    handleSelect(e) {
+      if (!e) return
+      const date = new Date(e)
+      this.focus = new Date(date.getTime() - date.getTimezoneOffset() * 60000)
+        .toISOString()
+        .split('T')[0]
+      this.type = '4day'
     },
     prev() {
       this.$refs.calendar.prev()
@@ -225,24 +308,32 @@ export default {
       // checks if the event data is returned properly
       if (typeof data === 'object' && data.length > 0) {
         const mappedEvents = data.map(entry => {
-          const startTime = entry?.gsx$starttime?.$t
-          const endTime = entry?.gsx$endtime?.$t
-          const startDate = entry.gsx$startdate?.$t
-          const endDate = entry.gsx$enddate?.$t
-          const clubName = entry.gsx$club?.$t
-          const eventName = entry.gsx$eventname?.$t
-          const description = entry.gsx$description.$t
+          //sheets.data.value
+          const clubName = entry.values[1].formattedValue
+          const eventName = entry.values[2].formattedValue
+          const description = entry.values[3].formattedValue
+          const startDate = entry.values[4].formattedValue
+          const endDate = entry.values[5].formattedValue
+          let startTime = entry.values[6]?.formattedValue
+          let endTime = entry.values[7]?.formattedValue
+          let searchTags = entry.values[8]?.formattedValue
 
-          const start = new Date(`${startDate} ${startTime}`.replace(/ /g, 'T'))
-          const end = new Date(`${endDate} ${endTime}`.replace(/ /g, 'T'))
-          const allDay = startTime === '' && endTime === ''
+          const start = startTime
+            ? new Date(`${startDate} ${startTime}`)
+            : new Date(startDate)
+          const end = endTime
+            ? new Date(`${endDate} ${endTime}`)
+            : new Date(endDate)
+          const allDay =
+            typeof startTime === 'undefined' && typeof endTime === 'undefined'
           const endIsAfterStart = start < end || (!(end < start) && allDay)
 
           // Checks for errors in the event
           if (
             !endIsAfterStart ||
-            (startTime === '' && endTime !== '') ||
-            (startTime !== '' && endTime === '')
+            (typeof startTime === 'undefined' &&
+              typeof endTime !== 'undefined') ||
+            (typeof startTime !== 'undefined' && endTime === 'undefined')
           ) {
             return null
           }
@@ -254,7 +345,7 @@ export default {
             start: start,
             end: end,
             type: clubName,
-            tags: this.parseClubTags(entry.gsx$searchtags.$t),
+            tags: this.parseClubTags(searchTags),
             timed: !allDay,
           }
         })
@@ -285,7 +376,7 @@ export default {
       .fetch()
     const clubEvents = await $axios
       .$get(GITHUB_CLUB_FORM_RESPONSES)
-      .then(res => res?.feed?.entry)
+      .then(res => res?.sheets?.[0].data?.[0].rowData.slice(1))
       .catch(err => console.log(err))
     return {importantDates: importantDates?.[0]?.body, clubEvents}
   },
