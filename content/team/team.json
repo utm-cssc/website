@@ -142,16 +142,6 @@
       "name": "Technology",
       "members": [
         {
-          "name": "Aaron Goidel",
-          "imgSrc": "/team/2021/Aaron.jpg",
-          "position": "Technology Officer",
-          "message": "Aaron is a passionate dev, with loves for music and food. He is a Linux contributor and works as a backend engineer while he studies. He is always working on side projects and loves to help students learn to develop more complex projects.",
-          "discord": "AaronCG#0489",
-          "email": "aaron.goidel@mail.utoronto.ca",
-          "linkedin": "https://www.linkedin.com/in/aaroncgoidel",
-          "website": "https://aarongoidel.com"
-        },
-        {
           "name": "Yousef Bulbulia",
           "imgSrc": "/team/2021/Yousef.jpg",
           "position": "Technology Officer",
