@@ -6,8 +6,17 @@ export const CALENDAR_COLORS = {
   MCSS: '#9999d4',
   UTMSAM: '#FD4273',
   CSSC: '#3e607c',
+  'Career Centre': '#FF8C00',
 }
 
-export const CLUBS = ['CSSC', 'MCSS', 'GDSC', 'UTMSAM', 'UTM Robotics', 'WiSC']
+export const CLUBS = [
+  'CSSC',
+  'MCSS',
+  'GDSC',
+  'UTMSAM',
+  'UTM Robotics',
+  'WiSC',
+  'Career Centre',
+]
 
 export default {CALENDAR_COLORS, CLUBS}
