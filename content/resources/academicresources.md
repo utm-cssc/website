@@ -2,11 +2,9 @@
 title: Academic Resources
 icon: /icons/academic_resources.svg
 desc: Academic Resources
-link: # TODO
+link: academicresources
 tags:
   - utm-cs
-keywords:
-  - # TODO
 ---
 
 # Academic Resources
