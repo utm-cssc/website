@@ -33,8 +33,8 @@ export default {
     return {}
   },
   async asyncData({$axios, $content, params, error}) {
-    const teamDataStore = await $content('team').fetch()
-    const pastTeam = teamDataStore[0].teams
+    const teamDataStore = await $content('team', 'past-teams').fetch()
+    const pastTeam = teamDataStore?.teams
     return {pastTeam}
   },
 }

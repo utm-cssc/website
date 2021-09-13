@@ -111,8 +111,8 @@ export default {
     }
   },
   async asyncData({$axios, $content, params, error}) {
-    const teamDataStore = await $content('team').fetch()
-    const executiveTeam = teamDataStore[1].teams[0].members
+    const teamDataStore = await $content('team', 'team').fetch()
+    const executiveTeam = teamDataStore?.teams[0].members
     const contributors = []
     await $axios
       .$get('https://api.github.com/repos/utm-cssc/website/contributors')

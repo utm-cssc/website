@@ -183,7 +183,15 @@ export default {
 
     monthEvents: [],
     allEvents: [],
-    selectedFilters: ['CSSC', 'GDSC', 'MCSS', 'WiSC', 'UTM Robotics', 'UTMSAM'],
+    selectedFilters: [
+      'CSSC',
+      'GDSC',
+      'MCSS',
+      'WiSC',
+      'UTM Robotics',
+      'UTMSAM',
+      'Career Centre',
+    ],
     searchQuery: '',
     searching: false,
     searchEntries: [],
