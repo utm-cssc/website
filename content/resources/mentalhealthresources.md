@@ -1,3 +1,11 @@
+---
+title: CSC108
+icon: /icons/csc108.svg
+desc: Introduction to Computer Programming
+link: mentalhealthresources
+tags:
+  - utm-cs
+---
 
 # Mental Health Resources
 
