@@ -1,8 +1,8 @@
 ---
-title: Internship Applications
+title: Internships
 icon: /icons/resume.svg
 desc: Work at your dream company!
-link: internship-apps
+link: internships
 tags:
   - career
 keywords:
@@ -11,7 +11,33 @@ keywords:
   - internship
 ---
 
-# Internship Applications
+# Internships
+
+## Internship Track
+
+For 2021-2022, one of our initiatives is the Internship Track!
+
+It will include events such as:
+
+- Interview Prep Workshop (joint initiative w/ GDSC)
+- Mock Interviews/Resume Reviews (joint initiative with UTM GDSC)
+- Recruiting/Networking Sessions with companies
+- Panel presentations where you can hear from UTM alumni/students' experiences
+  with:
+  - Internships
+  - New Grad
+  - Grad School
+
+### Intern Panel
+
+We kicked it off with the Intern Panel on where we be talked about UofT's PEY
+system, what you need to apply, as well as experiences from UTM students that
+have interned at Microsoft, Palantir, Red Hat, and more.
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR-D0eD5Ss2lGoIb_VlGtkEpsS-17oIxyZhkC53U7JTPbYUpv5v0pRw4TFFkhhNDuqY8heucIpSj0HJ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<a href="https://utoronto.zoom.us/rec/share/ZBYcxKYzRowm_uzFAzoGxhmTgwu0kG4IVZEiEm-o9ScMH3zhunUiQKaZKrzkHYZ9.qJTvdsqPc8kUBKT5" target="_blank">Zoom
+Recording</a> Passcode: Gw6PQ=LaXq
 
 ## [Angel List](https://angel.co/jobs)
 
