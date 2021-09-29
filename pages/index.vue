@@ -7,7 +7,7 @@
         alt="CSSC Logo"
         title="UTM CSSC"
         desc="Helping MCS Students"
-        additionalInfo="Have a great summer! 🌞"
+        additionalInfo="Check out our calendar to stay on top of MCS events!"
         :button1="button1"
         :button2="button2"
         :button3="button3"

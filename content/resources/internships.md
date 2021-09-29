@@ -9,6 +9,8 @@ keywords:
   - pey
   - co-op
   - internship
+  - intern panel
+  - internship track
 ---
 
 # Internships
