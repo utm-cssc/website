@@ -36,10 +36,20 @@ We kicked it off with the Intern Panel on where we be talked about UofT's PEY
 system, what you need to apply, as well as experiences from UTM students that
 have interned at Microsoft, Palantir, Red Hat, and more.
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR-D0eD5Ss2lGoIb_VlGtkEpsS-17oIxyZhkC53U7JTPbYUpv5v0pRw4TFFkhhNDuqY8heucIpSj0HJ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR-D0eD5Ss2lGoIb_VlGtkEpsS-17oIxyZhkC53U7JTPbYUpv5v0pRw4TFFkhhNDuqY8heucIpSj0HJ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 <a href="https://utoronto.zoom.us/rec/share/ZBYcxKYzRowm_uzFAzoGxhmTgwu0kG4IVZEiEm-o9ScMH3zhunUiQKaZKrzkHYZ9.qJTvdsqPc8kUBKT5" target="_blank">Zoom
 Recording</a> Passcode: Gw6PQ=LaXq
+
+### How To Ace Your Technical Interview Workshop
+
+Hosted with UTM GDSC, we go over the intricacies of technical interviews: how to
+prepare, what to expect, and then go through an interview scenario!
+
+<a href="https://docs.google.com/presentation/d/12kGX7Iwsedi5g6s5fpCqOxSX4tu-gz3p/edit?usp=sharing&ouid=112765398008299751652&rtpof=true&sd=true" target="_blank">Slides</a>
+
+<a href="https://utoronto.zoom.us/rec/play/hB43jiYgbPlbPtfqjTnB8VuedtjG2NuSJU0cgEmP6frWdF7L4Vs1SR_7DzHqw-V6Pk1zQNYHx3PLEQJZ.f4EzUwHnVLA08KfL?autoplay=true" target="_blank">Zoom
+Recording</a> Passcode: JA%hfnh73h
 
 ## [Angel List](https://angel.co/jobs)
 
