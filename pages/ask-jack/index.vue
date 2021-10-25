@@ -10,6 +10,7 @@
         title="Ask Jack!"
         desc="Ask all of your university and computer science questions here!"
         :button1="button1"
+        :button2="button2"
       />
     </div>
     <a id="ask-upper-year-form"></a>
@@ -134,10 +135,14 @@ export default {
         {text: 'Yes', value: 'Yes'},
         {text: 'No', value: 'No'},
       ],
-      button1: {
+      button2: {
         label: 'MCS Townhall Notes',
         link:
-          '../../../resources/mcs-townhall/cssc_mcs_townhall_notes_2020.pdf',
+          '../../../resources/mcs-townhall/cssc_mcs_townhall_notes_2021.pdf',
+      },
+      button1: {
+        label: 'MCS Townhall Slides',
+        link: '../../../resources/mcs-townhall/mcs_townhall_slides_2021.pdf',
       },
       tagOptions: [
         {text: 'POSt', value: 'POSt'},

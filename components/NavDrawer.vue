@@ -32,17 +32,20 @@ export default {
           link: '/ask-jack/',
         },
         {
+          title: 'Course Manager',
+          link: '/course-manager',
+        },
+        {
+          title: 'Clubs',
+          link: '/clubs',
+        },
+        {
           title: 'Projects',
           link: '/projects',
         },
         {
-          title: 'Course Manager',
-          link: '/course-manager',
-        },
-
-        {
-          title: 'Clubs',
-          link: '/clubs',
+          title: 'Past Teams',
+          link: '/past-teams',
         },
         {
           title: 'Documentation',
@@ -51,10 +54,6 @@ export default {
         {
           title: 'Contributing',
           link: '/contributing',
-        },
-        {
-          title: 'Past Teams',
-          link: '/past-teams',
         },
       ],
     }
