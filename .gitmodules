@@ -1,6 +1,3 @@
-[submodule "content/unified-calendar-data"]
-	path = content/unified-calendar-data
-	url = https://github.com/utm-cssc/unified-calendar-data
 [submodule "content/faq"]
 	path = content/faq
 	url = https://github.com/utm-cssc/faq
