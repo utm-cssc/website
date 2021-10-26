@@ -43,6 +43,11 @@ post-university career!
 
 ## Installation
 
+### Github
+
+1. git pull git@github.com:utm-cssc/website.git
+2. git submodule update --init --recursive
+
 ### Yarn Installation
 
 1. Install the required dependencies
