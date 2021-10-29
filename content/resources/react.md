@@ -62,6 +62,20 @@ a user clicking a button) and selectively updates the DOM only.
 
 ## Getting Started
 
+### React Fundamentals Workshop
+
+This workshop was held on Thursday Oct 28th, 2021 by UTM GDSC and CSSC! In it,
+you'll learn about all the fundamentals of React and go step by step to building
+a full stack react application.
+
+<a href="https://docs.google.com/presentation/d/e/2PACX-1vQAYK4hgHk-xXm13XTEW0YcIpdKyyX2E2a9HA4Bpa7sTbNP3k6_eUZTVy5gZEkAu56unINQrQRAFHDl/pub?start=false&loop=false&delayms=3000" target="_blank">Slides</a>
+
+<a href="https://github.com/utm-cssc/full-stack-react-workshop" target="_blank">Github
+Repo</a>
+
+<a href="https://utoronto.zoom.us/rec/share/QG1xxbC_sjXaODQm_CMoYwjsX8Flezk4bkyKy86sf_MbFcrSICGaMEleIPWNf71E.mP-ilDAi6shw6ic7" target="_blank">Zoom
+Recording</a>, PWD: reactworkshop\$1
+
 ### Introduction to Reactjs
 
 <grid-1-x-2 :reversed=false img-src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" link="https://www.youtube.com/playlist?list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS" button="Start Learning!" desc="In this series of videos, you will be introduced fundamental concepts of React as you build a small project."></grid-1-x-2>
