@@ -153,12 +153,21 @@
         </v-toolbar>
       </template>
       <template v-slot:[`item.actions`]="{item}" class="justify-center">
-        <v-row>
+        <v-row align="center" justify="start">
           <v-checkbox v-model="item.include"></v-checkbox>
-          <v-icon small class="mr-2" @click="editAssessment(item)">
+          <v-icon
+            med
+            class="ml-2 mr-2"
+            style="height: 25px;"
+            @click="editAssessment(item)"
+          >
             mdi-pencil
           </v-icon>
-          <v-icon small @click="showDeleteDialog(item.name)">
+          <v-icon
+            med
+            style="height: 25px;"
+            @click="showDeleteDialog(item.name)"
+          >
             mdi-delete
           </v-icon>
         </v-row>
