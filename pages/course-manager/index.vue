@@ -15,7 +15,6 @@
               <v-card-title>
                 <span class="headline">New Course</span>
               </v-card-title>
-
               <v-card-text>
                 <v-container>
                   <v-row>
@@ -36,7 +35,6 @@
                   </v-row>
                 </v-container>
               </v-card-text>
-
               <v-card-actions>
                 <v-spacer />
                 <v-btn color="primary" text @click="addCourseDialog = false">
@@ -92,7 +90,6 @@
               <v-icon>mdi-delete</v-icon>
             </v-list-item-icon>
           </template>
-
           <v-list-item>
             <v-list-item-content>
               <ManageCourse :course="course" />
