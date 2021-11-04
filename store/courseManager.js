@@ -5,31 +5,37 @@ export const state = () => ({
       code: 'CSC108',
       assessments: [
         {
+          include: true,
           name: 'Labs',
           weight: 30,
           grade: 80,
         },
         {
+          include: true,
           name: 'PCRS',
           weight: 15,
           grade: 100,
         },
         {
+          include: true,
           name: 'Test 1',
           weight: 10,
           grade: 80,
         },
         {
+          include: true,
           name: 'Test 2',
           weight: 10,
           grade: 85,
         },
         {
+          include: true,
           name: 'Test - Floating Weight',
           weight: 5,
           grade: 100,
         },
         {
+          include: true,
           name: 'Final Exam',
           weight: 30,
           grade: 85,

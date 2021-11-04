@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div v-if="calculateGradeData(course, 100).percentLeft === 0">
-      Your final score is
-      {{ calculateGradeData(course, 100).percentScored }}
-    </div>
-    <div v-else>
+    <div>
+      <h2 class="font-bold mb-4">
+        Your current grade is
+        {{ calculateGradeData(course, 100).percentScored }}%
+      </h2>
       <h3 class="flex align-items-center text-xl font-bold mb-4">
         {{ 100 - calculatePercentageLeft(course) }}% Completed:
         <span class="text-green-500 ml-3"
@@ -21,28 +21,49 @@
           }}%
         </span>
       </h3>
-      <h3 class="font-weight-bold mb-3">
-        In the remaining {{ calculatePercentageLeft(course) }}% of the course,
-        you need
-      </h3>
-      <div class="flex justify-space-around flex-wrap">
-        <div
-          class="flex-col align-center m-3"
-          v-for="gpaDenom in gpaDenoms.filter(
-            gpaDenom =>
-              calculateGradeData(course, gpaDenom.minScore).requiredScore > 0 &&
-              calculateGradeData(course, gpaDenom.minScore).requiredScore <=
-                100,
-          )"
-          :key="gpaDenom.name"
-        >
-          <p>
-            <span class="font-weight-bold"
-              >{{ calculateGradeData(course, gpaDenom.minScore).requiredScore }}
-              %
-            </span>
-            for a <span class="font-weight-bold"> {{ gpaDenom.name }} </span>
-          </p>
+      <div v-if="calculateGradeData(course, 100).percentLeft !== 0">
+        <v-row>
+          <h3 class="font-weight-bold ml-4 mb-3">What do I need for a</h3>
+          <v-select
+            v-model="selectedGpaDenom"
+            :items="
+              gpaDenoms
+                .filter(
+                  x => calculateGradeData(course, x.minScore).requiredScore > 0,
+                )
+                .map(x => x.name)
+            "
+            class="ml-2"
+          />?
+        </v-row>
+        <div v-if="selectedGpaDenom != ''">
+          <h3 class="font-weight-bold mb-3">
+            In the remaining {{ calculatePercentageLeft(course) }}% of the
+            course, you need
+          </h3>
+          <div
+            class="m-3"
+            v-for="gpaDenom in gpaDenoms.filter(
+              gpaDenom =>
+                selectedGpaDenom == gpaDenom.name &&
+                calculateGradeData(course, gpaDenom.minScore).requiredScore >
+                  0 &&
+                calculateGradeData(course, gpaDenom.minScore).requiredScore <=
+                  100,
+            )"
+            :key="gpaDenom.name"
+          >
+            <p>
+              <span class="font-weight-bold"
+                >{{
+                  calculateGradeData(course, gpaDenom.minScore).requiredScore
+                }}
+                %
+              </span>
+              for a
+              <span class="font-weight-bold"> {{ gpaDenom.name }} </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -131,11 +152,25 @@
           </v-dialog>
         </v-toolbar>
       </template>
-      <template v-slot:[`item.actions`]="{item}">
-        <v-icon small class="mr-2" @click="editAssessment(item)">
-          mdi-pencil
-        </v-icon>
-        <v-icon small @click="showDeleteDialog(item.name)"> mdi-delete </v-icon>
+      <template v-slot:[`item.actions`]="{item}" class="justify-center">
+        <v-row align="center" justify="start">
+          <v-checkbox v-model="item.include"></v-checkbox>
+          <v-icon
+            med
+            class="ml-2 mr-2"
+            style="height: 25px;"
+            @click="editAssessment(item)"
+          >
+            mdi-pencil
+          </v-icon>
+          <v-icon
+            med
+            style="height: 25px;"
+            @click="showDeleteDialog(item.name)"
+          >
+            mdi-delete
+          </v-icon>
+        </v-row>
       </template>
     </v-data-table>
   </div>
@@ -186,24 +221,21 @@ export default {
         },
       ],
       gpaDenoms: gpaDenoms,
+      selectedGpaDenom: '',
       assessmentUnderEditName: '',
       assessmentUnderEdit: {
+        include: true,
         name: '',
         weight: 0,
         grade: 0,
       },
       defaultItem: {
+        include: true,
         name: '',
         weight: 0,
         grade: 0,
       },
     }
-  },
-  mounted() {
-    console.log('mounted')
-  },
-  created() {
-    console.log('created')
   },
   computed: {
     isDialogEditing() {
@@ -248,10 +280,12 @@ export default {
       let currentWeight = 0
       let percentScored = 0
       courseData.assessments.forEach(assessment => {
-        const grade = parseInt(assessment.grade)
-        const weight = parseInt(assessment.weight)
-        currentWeight += weight
-        percentScored += (grade / 100) * weight
+        if (assessment.include) {
+          const grade = parseInt(assessment.grade)
+          const weight = parseInt(assessment.weight)
+          currentWeight += weight
+          percentScored += (grade / 100) * weight
+        }
       })
       // Overall Percentages
       const percentLeft = 100 - currentWeight
@@ -324,15 +358,21 @@ export default {
       this.close()
     },
     calculatePercentageLeft(course) {
-      const totalPercent = course.assessments.reduce((total, assessment) => {
-        return total + parseInt(assessment.weight)
-      }, 0)
+      let totalPercent = 0
+      course.assessments.forEach(assessment => {
+        if (assessment.include) {
+          totalPercent += parseInt(assessment.weight)
+        }
+      })
       return 100 - totalPercent
     },
     calculatePercentageScored(course) {
-      const totalPercent = course.assessments.reduce((total, assessment) => {
-        return total + (assessment.grade / 100) * assessment.weight
-      }, 0)
+      let totalPercent = 0
+      course.assessments.forEach(assessment => {
+        if (assessment.include) {
+          totalPercent += (assessment.grade / 100) * assessment.weight
+        }
+      })
       return totalPercent.toFixed(2)
     },
   },
