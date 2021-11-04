@@ -22,15 +22,24 @@
         </span>
       </h3>
       <div v-if="calculateGradeData(course, 100).percentLeft !== 0">
-        <h3 class="font-weight-bold mb-3">
-          In the remaining {{ calculatePercentageLeft(course) }}% of the course,
-          you need
-        </h3>
-        <div class="flex justify-space-around flex-wrap">
+        <v-row>
+          <h3 class="font-weight-bold ml-4 mb-3">What do I need for a</h3>
+          <v-select
+            v-model="selectedGpaDenom"
+            :items="gpaDenoms.map(x => x.name)"
+            class="ml-2"
+          />?
+        </v-row>
+        <div v-if="selectedGpaDenom != ''">
+          <h3 class="font-weight-bold mb-3">
+            In the remaining {{ calculatePercentageLeft(course) }}% of the
+            course, you need
+          </h3>
           <div
-            class="flex-col align-center m-3"
+            class="m-3"
             v-for="gpaDenom in gpaDenoms.filter(
               gpaDenom =>
+                selectedGpaDenom == gpaDenom.name &&
                 calculateGradeData(course, gpaDenom.minScore).requiredScore >
                   0 &&
                 calculateGradeData(course, gpaDenom.minScore).requiredScore <=
@@ -45,7 +54,8 @@
                 }}
                 %
               </span>
-              for a <span class="font-weight-bold"> {{ gpaDenom.name }} </span>
+              for a
+              <span class="font-weight-bold"> {{ gpaDenom.name }} </span>
             </p>
           </div>
         </div>
@@ -196,6 +206,7 @@ export default {
         },
       ],
       gpaDenoms: gpaDenoms,
+      selectedGpaDenom: '',
       assessmentUnderEditName: '',
       assessmentUnderEdit: {
         include: true,
