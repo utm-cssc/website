@@ -26,7 +26,13 @@
           <h3 class="font-weight-bold ml-4 mb-3">What do I need for a</h3>
           <v-select
             v-model="selectedGpaDenom"
-            :items="gpaDenoms.map(x => x.name)"
+            :items="
+              gpaDenoms
+                .filter(
+                  x => calculateGradeData(course, x.minScore).requiredScore > 0,
+                )
+                .map(x => x.name)
+            "
             class="ml-2"
           />?
         </v-row>
