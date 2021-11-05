@@ -281,14 +281,14 @@ export default {
       let percentScored = 0
       courseData.assessments.forEach(assessment => {
         if (assessment.include) {
-          const grade = parseInt(assessment.grade)
-          const weight = parseInt(assessment.weight)
+          const grade = parseFloat(assessment.grade)
+          const weight = parseFloat(assessment.weight)
           currentWeight += weight
           percentScored += (grade / 100) * weight
         }
       })
       // Overall Percentages
-      const percentLeft = 100 - currentWeight
+      const percentLeft = 100 - currentWeight.toFixed(2)
       // const percentLost = currentWeight - percentScored
 
       const scoreRequired = (
@@ -361,10 +361,10 @@ export default {
       let totalPercent = 0
       course.assessments.forEach(assessment => {
         if (assessment.include) {
-          totalPercent += parseInt(assessment.weight)
+          totalPercent += parseFloat(assessment.weight)
         }
       })
-      return 100 - totalPercent
+      return 100 - totalPercent.toFixed(2)
     },
     calculatePercentageScored(course) {
       let totalPercent = 0
