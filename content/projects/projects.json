@@ -1,19 +1,18 @@
 {
   "projects": [
     {
-      "name": "ULinks",
-      "desc": "ULinks is a directory enabling students to join group chats for courses or communities within their school.",
-      "logo": "/logos/projects/ulinks.png",
-      "repo": "https://github.com/jcserv/ulinks",
-      "demo": "https://ulinks.io",
-      "tags": ["cssc-projects"]
-    },
-    {
       "name": "ViaPlanner",
       "desc": "Viaplanner is designed to simplify and optimizes the course selection process for UofT students.",
       "logo": "/logos/projects/viaplanner.png",
       "repo": "https://github.com/VIAplanner/via-timetable",
       "demo": "https://timetable.viaplanner.ca/about",
+      "tags": ["cssc-projects"]
+    },
+    {
+      "name": "ULinks",
+      "desc": "ULinks is a directory enabling students to join group chats for courses or communities within their school.",
+      "logo": "/logos/projects/ulinks.png",
+      "repo": "https://github.com/jcserv/ulinks",
       "tags": ["cssc-projects"]
     },
     {
