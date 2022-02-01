@@ -32,14 +32,22 @@
           "website": "https://www.naazsibia.com/home"
         },
         {
-          "name": "Jarrod Servilla",
-          "imgSrc": "https://avatars.githubusercontent.com/u/45128231?v=4",
+          "name": "Ritvik Bhardwaj",
+          "imgSrc": "/team/2021/Ritvik.jpg",
           "position": "Director of Technology",
-          "message": "As the tech director, Jarrod creates initiatives to equip students with technical skills to help them find internships or make cool projects! He's an avid Kanye stan & plays lots of strategy games. Some accomplishments: Hit Diamond for every set in Teamfight Tactics, Top 4'd a Magic: The Gathering Standard PPTQ",
-          "discord": "jc#1000",
-          "email": "jarrod.servilla@utoronto.ca",
-          "linkedin": "http://linkedin.com/in/jarrod-servilla",
-          "website": "https://jarrodservilla.com"
+          "message": "Ritvik is a CS specialist with a hunger to learn new and exciting technologies. He loves learning about new things related to computer science :D",
+          "discord": "Iota#6763",
+          "email": "ritvik.bhardwaj@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/ritvik-bhardwaj/"
+        },
+        {
+          "name": "Yousef Bulbulia",
+          "imgSrc": "/team/2021/Yousef.jpg",
+          "position": "Director of Technology",
+          "message": "Yousef is a third year student double majoring in math and CS and minoring in statistics. As a technology officer, he's always up to helping out students with any technical questions they may have! When he's not busy, you can find him playing guitar, hanging out on UTM discord servers, or dying in Apex Legends.",
+          "discord": "Yousef#4126",
+          "email": "yousef.bulbulia@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/yousef-bulbulia/"
         },
         {
           "name": "Michael Liut",
@@ -87,22 +95,6 @@
           "email": "hayden.mak@mail.utoronto.ca",
           "linkedin": "https://www.linkedin.com/in/haydenmlh/",
           "website": "https://haydenmlh.github.io/"
-        },
-        {
-          "name": "Nitya Srivastava",
-          "imgSrc": "/team/2021/Nitya.jpg",
-          "position": "Finance Officer",
-          "message": "Nitya is currently a part of the Business/Economics department. She enjoys connecting with people outside of her program and learning and contributing to the CS department. Being involved in the operations team provided her insight into the team and its goals in general. Whether you are a CS student or not feel free to connect if you would like to know more about our events!",
-          "email": "nitya.srivastava@mail.utoronto.ca",
-          "linkedin": "https://www.linkedin.com/in/nityasrivastava/"
-        },
-        {
-          "name": "Akira Takaki",
-          "imgSrc": "/team/2021/Akira.png",
-          "position": "Logistics Officer",
-          "message": "Akira is learning math and cs in university, but while he isn't beepboop-ing or looking at arcane runes, he loves to play strategy games with friends like Settlers of Catan or Age of Empires 3. He's a big foodie, having grown up in Toronto and been exposed to the multicultural mosaic!",
-          "email": "akira.takaki@utoronto.ca",
-          "linkedin": "https://www.linkedin.com/in/akira-takaki-8b025a184/"
         }
       ]
     },
@@ -160,22 +152,21 @@
           "linkedin": "https://www.linkedin.com/in/huonggiangbui/"
         },
         {
-          "name": "Ritvik Bhardwaj",
-          "imgSrc": "/team/2021/Ritvik.jpg",
+          "name": "Brian Zhang",
+          "imgSrc": "/team/2022/brian.png",
           "position": "Technology Officer",
-          "message": "Ritvik is a CS specialist with a hunger to learn new and exciting technologies. He loves learning about new things related to computer science :D",
-          "discord": "Iota#6763",
-          "email": "ritvik.bhardwaj@mail.utoronto.ca",
-          "linkedin": "https://www.linkedin.com/in/ritvik-bhardwaj/"
+          "message": "Brian is a second-year majoring in computer science and CCIT with a keen interest in front-end development. He enjoys high-level software development as a whole but otherwise you can find him in one of UTM's many student communities or watching YouTube videos and playing various video games!",
+          "discord": "Pyo#8018",
+          "email": "bria.zhang@mail.utoronto.ca"
         },
         {
-          "name": "Maryam Gohargani",
-          "imgSrc": "/team/2021/Maryam.jpg",
+          "name": "Manav Bhojak",
+          "imgSrc": "/team/2022/manav.png",
           "position": "Technology Officer",
-          "message": "Maryam is passionate about algorithms, low-level programming, and compilers. In her spare time, she hangs out on UTM's Discord communities and plays Legend of Zelda: BotW. Feel free to reach out to her for academic support or to give recommendations for ramen places in Toronto.",
-          "discord": "magnesium#9005",
-          "email": "maryam.gohargani@utoronto.ca",
-          "linkedin": "https://www.linkedin.com/in/maryam-gohargani/"
+          "message": "Manav is a fourth-year computer science specialist, with an interest in backend software development. He likes solving interesting complex problems and learning new things while doing so.",
+          "discord": "manu#0300",
+          "email": "manav.bhojak@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/manav-bhojak-788aa1169"
         }
       ]
     }
