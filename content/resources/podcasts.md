@@ -13,7 +13,7 @@ tags:
 
 ### Arsala
 
-The following clips are taken from Hacklab coordinator [Arsala's appearance](https://anchor.fm/yasmeen3/episodes/Technological-Problem-Solver-Hack-Lab-Series-Arsala-eajij1) on the [Yasmeen Podcast](https://anchor.fm/yasmeen3)
+The following clips are taken from Hacklab coordinator [Arsala's appearance](https://open.spotify.com/episode/3wjrStfzLt1PKFbHkVtI1l) on the [Yasmeen Podcast](https://open.spotify.com/show/48DzS7x134TsQuE7uvz9Wi)
 
 **What got you into Computer Science?**
 

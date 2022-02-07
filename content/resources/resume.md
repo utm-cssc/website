@@ -94,7 +94,7 @@ code may be copied, which would result in an academic offense for both parties.
 
 _"I need experience to get experience"_ **is real**
 
-Check out where you can apply [here](/resources/internship-apps)
+Check out where you can apply [here](/resources/internships)
 
 Build your professional network to leverage personal recommendations when
 looking for jobs. Join our
@@ -146,4 +146,4 @@ Read what she has to say
 ## Next Steps: Applications
 
 When you're ready to apply and show off your resume, check out our
-[**guide**](/resources/internship-apps) on where to apply.
+[**guide**](/resources/internships) on where to apply.

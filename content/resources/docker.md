@@ -66,7 +66,7 @@ fingertips.
 
 ### Docker Compose Cheat Sheet
 
-   <iframe src="https://cheatography.com//gauravpandey44/cheat-sheets/docker-compose/pdf_bw/" width="480" height="640"></iframe>
+   <iframe src="https://www.programonaut.com/wp-content/uploads/2021/07/docker-compose-cheat-sheet.pdf" width="480" height="640"></iframe>
    </div>
 </div>
 
@@ -106,4 +106,4 @@ and scale your applications with container orchestration systems!
 
 ### Docker Swarm
 
-<grid-1-x-2 :reversed="true" img-Src="https://raw.githubusercontent.com/play-with-docker/play-with-docker/master/www/assets/swarm.png" link="https://rominirani.com/docker-swarm-tutorial-b67470cf8872" button="Explore Docker Swarm!" desc="Another widely used orchestration system for managing containers!"></grid-1-x-2>
+<grid-1-x-2 :reversed="true" img-Src="https://raw.githubusercontent.com/docker-library/docs/471fa6e4cb58062ccbf91afc111980f9c7004981/swarm/logo.png" link="https://rominirani.com/docker-swarm-tutorial-b67470cf8872" button="Explore Docker Swarm!" desc="Another widely used orchestration system for managing containers!"></grid-1-x-2>
