@@ -51,7 +51,7 @@ application should 'look' and 'feel' are met.
 
 ### Frontend Masters
 
-<grid-1-x-2 desc="Learn more about what you need to become a successful frontend web developer!" link="https://frontendmasters.com/books/front-end-handbook/2018/what-is-a-FD.html" button="Check it out!" img-Src="https://invexi.com/wp-content/uploads/2015/06/frontend.jpg"></grid-1-x-2>
+<grid-1-x-2 desc="Learn more about what you need to become a successful frontend web developer!" link="https://frontendmasters.com/books/front-end-handbook/2018/what-is-a-FD.html" button="Check it out!" img-Src="https://static.packt-cdn.com/products/9781838648121/graphics/assets/9a5e3a54-0f0e-42a2-ab09-3ab748173cfe.png"></grid-1-x-2>
 
 ## Backend Development
 
@@ -87,13 +87,13 @@ then extracted from the database and used in other parts of the application.
 
 <div class="scrolling-wrapper">
   <div class="scroll-child">
-   <iframe src="https://lifeyourway.net/printables/blogging-html-cheat-sheet.pdf" style="width:550px;height:500px;"></iframe>
+   <iframe src="https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf" style="width:550px;height:500px;"></iframe>
   </div>
   <div class="scroll-child">
     <iframe src="https://courses.cs.washington.edu/courses/cse154/16sp/cheat-sheets/css-cheat-sheet.pdf" style="width:580px;height:500px;"></iframe>
   </div>
   <div class="scroll-child">
-   <iframe src="https://cheatography.com/davechild/cheat-sheets/javascript/pdf/" style="width:600px;height:500px;"></iframe>
+   <iframe src="https://courses.cs.washington.edu/courses/cse154/16sp/cheat-sheets/javascript-cheat-sheet-v1.pdf" style="width:600px;height:500px;"></iframe>
   </div>
 </div>
 
@@ -150,7 +150,7 @@ its built-in components for authentication and data connections. Django is
 becoming extremely popular due to python being the default language for most
 Machine Learning developers.
 
-<grid-1-x-2 :reversed="true" desc="If you would like to get started with django, here are step-by-step tutorials on building various types of applications" link="https://realpython.com/tutorials/django/" button="Get started with Django" img-Src="https://www.sayonetech.com/media/uploads/zinnia/Python-Django-Web-Development.jpg"></grid-1-x-2>
+<grid-1-x-2 :reversed="true" desc="If you would like to get started with django, here are step-by-step tutorials on building various types of applications" link="https://realpython.com/tutorials/django/" button="Get started with Django" img-Src="https://twilio-cms-prod.s3.amazonaws.com/original_images/django-dark.png"></grid-1-x-2>
 
 ## Web Content Accessibility Guide 2.0 (WCAG 2.0)
 
