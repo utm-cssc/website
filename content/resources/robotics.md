@@ -83,4 +83,4 @@ in the environment?
 
 ### Robotics: Locomotion Engineering
 
-<grid-1-x-2 :reversed="true" link="https://www.edx.org/course/robotics-vision-intelligence-and-machine-learning" img-Src="https://prod-discovery.edx-cdn.org/media/course/image/d68e7a3b-1c08-4d4e-bbea-18f5e0590695-f1831c8c44b9.small.jpg" button="Start Learning!"  desc="Learn how to design, build, and program dynamical, legged robots that can operate in the real world."></grid-1-x-2>
+<grid-1-x-2 :reversed="true" link="https://www.edx.org/course/robotics-locomotion-engineering" img-Src="https://prod-discovery.edx-cdn.org/media/course/image/d68e7a3b-1c08-4d4e-bbea-18f5e0590695-f1831c8c44b9.small.jpg" button="Start Learning!"  desc="Learn how to design, build, and program dynamical, legged robots that can operate in the real world."></grid-1-x-2>

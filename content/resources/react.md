@@ -148,14 +148,8 @@ projects that you can work on to hone your skills.
 
 ### Try some interview questions
 
-<grid-1-x-2 :reversed=false desc="13 Essential React Interview Questions to try out" img-src="https://media-exp1.licdn.com/dms/image/C560BAQEJlZg66jWL4w/company-logo_200_200/0?e=2159024400&v=beta&t=wezZWtcLiFf4WisIPTFrpeNPo6ERqeQ6bXIJ7bhOkdk" link="https://www.toptal.com/react/interview-questions" button="Check it out!" />
+<grid-1-x-2 :reversed=false desc="13 Essential React Interview Questions to try out" img-src="https://media-exp1.licdn.com/dms/image/C560BAQEJlZg66jWL4w/company-logo_200_200/0?e=2159024400&v=beta&t=wezZWtcLiFf4WisIPTFrpeNPo6ERqeQ6bXIJ7bhOkdk" link="https://www.toptal.com/react/interview-questions" button="Check it out!"></grid-1-x-2>
 
 ### Learn React Native
 
 <grid-1-x-2 :reversed=false desc="React Native allows you to create native apps for Android and iOS. Entend your knowledge to make mobile applications." img-src="https://www.mindinventory.com/blog/wp-content/uploads/2018/11/ios-android-development-using-react-native.png" button="Check it out!" link="/resources/react-native"></grid-1-x-2>
-
-### Create your own project
-
-If you have a good application idea and don't know where to start, contact us at
-[Microsoft Teams](/microsoft-teams/) or meet us at room 2014 in UTM's Deerfield
-Hall building.

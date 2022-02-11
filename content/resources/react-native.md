@@ -44,7 +44,7 @@ iOS simultaneously.
 
 #### CS50: Mobile App Development with React Native
 
-<grid-1-x-2 :reversed="true" img-Src="https://www.harvard.edu/sites/default/files/user13/harvard_shield.png" desc="Learn about mobile app development with React Native, offered by Harvard University." link="https://online-learning.harvard.edu/course/cs50s-mobile-app-development-react-native?gclid=CjwKCAjwkun1BRAIEiwA2mJRWdbcLlJoxHpDS1-Pv9ezjxWPqTlQB70tzZtwav8-cMLrBdK6hn-xkhoCw9cQAvD_BwE" button="Start Learning!"></grid-1-x-2>
+<grid-1-x-2 :reversed="true" img-Src="https://pll.harvard.edu/sites/default/files/styles/header/public/course/CS50M_pll.png?itok=xvw9rMbT" desc="Learn about mobile app development with React Native, offered by Harvard University." link="https://online-learning.harvard.edu/course/cs50s-mobile-app-development-react-native?gclid=CjwKCAjwkun1BRAIEiwA2mJRWdbcLlJoxHpDS1-Pv9ezjxWPqTlQB70tzZtwav8-cMLrBdK6hn-xkhoCw9cQAvD_BwE" button="Start Learning!"></grid-1-x-2>
 
 ## Cheat Sheets
 
@@ -62,7 +62,7 @@ fingertips.
 ## Essential syntax for React Native
 
 Essential Syntax for React Native from
-[NativeBase](https://docs.nativebase.io/docs/CheatSheet.html)
+[NativeBase](https://docs-v2.nativebase.io/docs/CheatSheet.html)
 
 ## VS Code Extensions
 
@@ -72,7 +72,7 @@ Essential Syntax for React Native from
 
 #### React Native Tools
 
-<grid-1-x-2 :reversed="true" desc="For debugging and integrated commands in React Native" img-Src="https://github.com/Microsoft/vscode-react-native/raw/master/images/react-features.gif" link="https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native" button="Check it out!"></grid-1-x-2>
+<grid-1-x-2 :reversed="true" desc="For debugging and integrated commands in React Native" img-Src="https://msjsdiag.gallerycdn.vsassets.io/extensions/msjsdiag/vscode-react-native/1.9.0/1642428608017/Microsoft.VisualStudio.Services.Icons.Default" link="https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native" button="Check it out!"></grid-1-x-2>
 
 ## Useful Resources
 
@@ -110,9 +110,3 @@ few projects that you can work on to hone your skills.
 #### Flight Tracker
 
 <grid-1-x-2 desc="This application will tell you about the status of a file that you put in by consuming various APIs" img-Src="https://siri-cdn.appadvice.com/apptributes/us-east-1%3Af9757185-8fd9-4f9b-b3cf-2b4ad1dd2ab1/1563902905614_flight-xl.jpg"></grid-1-x-2>
-
-### Create your own project
-
-If you have a good application idea, and don't know where to start, Contact us
-at [Microsoft Teams](/microsoft-teams/) or meet us at room 2014 in UTM's
-Deerfield Hall building.

@@ -15,7 +15,7 @@ keywords:
 
 ![An Image](https://www.edureka.co/blog/wp-content/uploads/2019/06/What-is-HTML.jpg)
 HyperText Markup Language, also known as HTML, is the building blocks of all
-websites. HTML is combined with [CSS](../css) and [Javascript](../Javascript) to
+websites. HTML is combined with [CSS](./css) and [Javascript](./javascript) to
 further enhance both the functionality and the appearance of the website.
 
 HTML is a markup languge, not to be confused as a programming language or a
@@ -82,7 +82,7 @@ paragraphs[1] is the second <p> element, etc.
 ```
 
 Then you are free to change the individual elements as you wish. You can read
-more about this in the [Javascript](../Javascript) resource page
+more about this in the [Javascript](./javascript) resource page
 
 ## What can I do with HTML
 
@@ -98,10 +98,10 @@ more about this in the [Javascript](../Javascript) resource page
 
 - Internet navigation
   - Utilizing hyperlinks and hypertext, users can be redirected to other web
-    pages, like this [UTM Hacklab](../)!
+    pages, like this [CSSC Website](../../)!
 - Multiple frameworks to choose from!!
-  - [React](../React)
-  - [Vue](../Vue)
+  - [React](./react)
+  - [Vue](./vue)
   - Angular
   - Nuxt!!
 - Creating games!

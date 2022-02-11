@@ -23,4 +23,4 @@ We encourage you to explore these curated collections and subscribe to collectio
 
 ## Awwwards Collections
 
-<grid-1-x-2 link="https://www.awwwards.com/collections/" button="Explore!" desc="Awwwards curates collections of resources for inspiration, UI/UX, Web Technologies, and more!" img-src="https://pbs.twimg.com/profile_images/1209449339225071618/jOafELQ4_400x400.png"></grid-1-x-2>
+<grid-1-x-2 link="https://www.awwwards.com/collections/" button="Explore!" desc="Awwwards curates collections of resources for inspiration, UI/UX, Web Technologies, and more!" img-src="https://pbs.twimg.com/profile_images/1486666078365392896/MtM198m1_400x400.png"></grid-1-x-2>
