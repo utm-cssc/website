@@ -3,7 +3,7 @@
     <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../../icons/projects.svg"
-        title="Projects"
+        title="Open Source Directory"
         desc="Discover student and community made projects!"
       />
     </div>
