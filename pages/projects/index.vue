@@ -24,34 +24,14 @@
 </template>
 
 <script>
+import {OPEN_SOURCE_PROJECT_FORM_RESPONSES} from '~/constants'
 export default {
-  async asyncData({$content, params, error}) {
-    const projectsDataStore = await $content('projects').fetch()
-    const tags = new Set()
-    const projects = []
-    for (const projectData of projectsDataStore[0].projects) {
-      const project = {
-        name: projectData.name,
-        desc: projectData.desc,
-        repo: projectData.repo,
-        logo: projectData.logo,
-        demo: projectData.demo,
-        tags: projectData.tags,
-      }
-      project.tags.forEach(tag => {
-        tags.add(tag)
-      })
-      projects.push(project)
-    }
-    return {projects, tags}
-  },
-  methods: {
-    projectsForTag(tag) {
-      const filteredProjects = this.projects.filter(project =>
-        project.tags.includes(tag),
-      )
-      return filteredProjects
-    },
+  async asyncData({$axios}) {
+    const projects = await $axios
+      .$get(OPEN_SOURCE_PROJECT_FORM_RESPONSES)
+      .then(res => console.log(res?.['values'].slice(1)))
+      .catch(err => console.log(err))
+    return {projects}
   },
 }
 </script>
