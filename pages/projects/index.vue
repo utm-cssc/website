@@ -8,13 +8,13 @@
       />
     </div>
     <a id="projects" />
-    <div v-for="tag in tags" :key="tag" class="container px-5">
+    <div class="container px-5">
       <div class="mt-2 mb-5 cssc-heading resource-tag">
-        {{ tag.replace('-', ' ') }}
+        Student Projects
       </div>
       <div class="project-cards-container">
         <ProjectCard
-          v-for="(project, index) in projectsForTag(tag)"
+          v-for="(project, index) in projects"
           :key="index"
           :project="project"
         />
@@ -27,10 +27,23 @@
 import {OPEN_SOURCE_PROJECT_FORM_RESPONSES} from '~/constants'
 export default {
   async asyncData({$axios}) {
-    const projects = await $axios
+    const projects = []
+    const projectData = await $axios
       .$get(OPEN_SOURCE_PROJECT_FORM_RESPONSES)
-      .then(res => console.log(res?.['values'].slice(1)))
+      .then(res => res?.['values'].slice(1))
       .catch(err => console.log(err))
+    for (const proj of projectData) {
+      if (proj[11] === 'Y') {
+        const project = {
+          name: proj[3],
+          desc: proj[5],
+          repo: proj[4],
+          logo: proj[8],
+          gdsc: proj[10] === 'Yes' ? proj[10] : '',
+        }
+        projects.push(project)
+      }
+    }
     return {projects}
   },
 }
