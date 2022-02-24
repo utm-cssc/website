@@ -20,6 +20,18 @@
         />
       </div>
     </div>
+    <div class="container px-5">
+      <div class="mt-2 mb-5 cssc-heading resource-tag">
+        Student Organizations
+      </div>
+      <div class="project-cards-container">
+        <ProjectCard
+          v-for="(club, index) in studentOrgs['clubs']"
+          :key="index"
+          :project="club"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,6 +40,7 @@ import {OPEN_SOURCE_PROJECT_FORM_RESPONSES} from '~/constants'
 export default {
   async asyncData({$axios}) {
     const projects = []
+    const studentOrgs = require('~/content/orgs/orgs.json')
     const projectData = await $axios
       .$get(OPEN_SOURCE_PROJECT_FORM_RESPONSES)
       .then(res => res?.['values'].slice(1))
@@ -44,7 +57,7 @@ export default {
         projects.push(project)
       }
     }
-    return {projects}
+    return {projects, studentOrgs}
   },
 }
 </script>

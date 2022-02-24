@@ -4,29 +4,25 @@
       "name": "CSSC",
       "desc": "A community organization overseen by the Computer Science Faculty dedicated to helping students!",
       "logo": "/logos/cssc-logo-blue.png",
-      "darkModeLogo": "/logos/cssc-logo-blue.png",
-      "link": "https://linktr.ee/UTMMCSS"
+      "repo": "https://linktr.ee/UTMMCSS"
     },
     {
       "name": "UTM Robotics",
       "desc": "The Robotics club seeks to empower the club's members and the broader student community to collaborate on robotics projects. We hope to create a place for innovation for applied computer science, and promote interest in robotics and its applications at UTM.",
       "logo": "/logos/robotics.png",
-      "darkModeLogo": "/logos/robotics.png",
-      "link": "https://github.com/UTM-Robotics"
+      "repo": "https://github.com/UTM-Robotics"
     },
     {
       "name": "White Van",
       "desc": "A student run community, based on Discord, where you can hangout, talk about projects, get and give help, and more.",
       "logo": "/logos/wv.png",
-      "darkModeLogo": "/logos/wv.png",
-      "link": "https://github.com/white-van"
+      "repo": "https://github.com/white-van"
     },
     {
       "name": "UTM DSC",
       "desc": "DSC is a community focused on getting hands-on dev experience, focused on the community.",
       "logo": "/logos/dsc.png",
-      "darkModeLogo": "/logos/dsc.png",
-      "link": "https://github.com/dscutm"
+      "repo": "https://github.com/dscutm"
     }
   ]
 }
