@@ -40,7 +40,7 @@ import {OPEN_SOURCE_PROJECT_FORM_RESPONSES} from '~/constants'
 export default {
   async asyncData({$axios}) {
     const projects = []
-    const studentOrgs = require('~/content/orgs/orgs.json')
+    const studentOrgs = require('~/content/student-orgs/student_orgs.json')
     const projectData = await $axios
       .$get(OPEN_SOURCE_PROJECT_FORM_RESPONSES)
       .then(res => res?.['values'].slice(1))

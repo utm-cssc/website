@@ -119,7 +119,7 @@ export default {
           link: '/clubs',
         },
         {
-          title: 'Projects',
+          title: 'Open Source',
           link: '/projects',
         },
         {
