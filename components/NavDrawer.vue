@@ -28,7 +28,7 @@ export default {
           link: '/ask-jack/',
         },
         {
-          title: 'Open-Source',
+          title: 'Open Source',
           link: '/projects',
         },
         {

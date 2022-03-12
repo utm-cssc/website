@@ -3,14 +3,14 @@
     <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../../icons/projects.svg"
-        title="Open-Source Directory"
+        title="Open Source Directory"
         desc="Contribute to student and community made projects!"
       />
     </div>
     <a id="projects" />
     <div class="container px-5">
       <div class="mt-2 mb-5 cssc-heading resource-tag">
-        The Open-Source Directory
+        The Open Source Directory
       </div>
       <p>
         Want to gain development experience while collaborating with other
