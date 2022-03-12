@@ -43,7 +43,6 @@ export default {
           title: 'Clubs',
           link: '/clubs',
         },
-
         {
           title: 'Past Teams',
           link: '/past-teams',
