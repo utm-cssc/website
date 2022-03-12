@@ -3,20 +3,49 @@
     <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../../icons/projects.svg"
-        title="Projects"
-        desc="Discover student and community made projects!"
+        title="Open Source Directory"
+        desc="Contribute to student and community made projects!"
       />
     </div>
     <a id="projects" />
-    <div v-for="tag in tags" :key="tag" class="container px-5">
+    <div class="container px-5">
       <div class="mt-2 mb-5 cssc-heading resource-tag">
-        {{ tag.replace('-', ' ') }}
+        The Open Source Directory
+      </div>
+      <p>
+        Want to gain development experience while collaborating with other
+        students in the community? Try contributing to student-led open source
+        projects! Here you can find a collection of projects that are looking
+        for contributors. Or, if you have a project that could benefit from
+        outside help,
+        <u>
+          <a href="https://forms.gle/H3ehZyzNnY87mq1r8"
+            >add your project to the directory!</a
+          >
+        </u>
+      </p>
+    </div>
+    <div class="container px-5">
+      <div class="mt-2 mb-5 cssc-heading resource-tag">
+        Student Projects
       </div>
       <div class="project-cards-container">
         <ProjectCard
-          v-for="(project, index) in projectsForTag(tag)"
+          v-for="(project, index) in projects"
           :key="index"
           :project="project"
+        />
+      </div>
+    </div>
+    <div class="container px-5">
+      <div class="mt-2 mb-5 cssc-heading resource-tag">
+        Student Organizations
+      </div>
+      <div class="project-cards-container">
+        <ProjectCard
+          v-for="(club, index) in studentOrgs['clubs']"
+          :key="index"
+          :project="club"
         />
       </div>
     </div>
@@ -24,34 +53,29 @@
 </template>
 
 <script>
+import {OPEN_SOURCE_PROJECT_FORM_RESPONSES} from '~/constants'
 export default {
-  async asyncData({$content, params, error}) {
-    const projectsDataStore = await $content('projects').fetch()
-    const tags = new Set()
+  async asyncData({$axios}) {
     const projects = []
-    for (const projectData of projectsDataStore[0].projects) {
-      const project = {
-        name: projectData.name,
-        desc: projectData.desc,
-        repo: projectData.repo,
-        logo: projectData.logo,
-        demo: projectData.demo,
-        tags: projectData.tags,
+    const studentOrgs = require('~/content/student-orgs/student_orgs.json')
+    const projectData = await $axios
+      .$get(OPEN_SOURCE_PROJECT_FORM_RESPONSES)
+      .then(res => res?.['values'].slice(1))
+      .catch(err => console.log(err))
+    for (const proj of projectData) {
+      if (proj[11] === 'Y') {
+        const logoID = proj[8].split('id=')
+        const project = {
+          name: proj[3],
+          desc: proj[5],
+          repo: proj[4],
+          logo: 'https://drive.google.com/uc?export=view&id=' + logoID[1],
+          gdsc: proj[10] === 'Yes' ? proj[10] : '',
+        }
+        projects.push(project)
       }
-      project.tags.forEach(tag => {
-        tags.add(tag)
-      })
-      projects.push(project)
     }
-    return {projects, tags}
-  },
-  methods: {
-    projectsForTag(tag) {
-      const filteredProjects = this.projects.filter(project =>
-        project.tags.includes(tag),
-      )
-      return filteredProjects
-    },
+    return {projects, studentOrgs}
   },
 }
 </script>
