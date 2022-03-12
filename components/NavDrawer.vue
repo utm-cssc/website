@@ -24,25 +24,26 @@ export default {
           link: '/resources',
         },
         {
-          title: 'Calendar',
-          link: '/calendar',
-        },
-        {
           title: 'Ask Jack',
           link: '/ask-jack/',
+        },
+        {
+          title: 'Open-Source',
+          link: '/projects',
         },
         {
           title: 'Course Manager',
           link: '/course-manager',
         },
         {
+          title: 'Calendar',
+          link: '/calendar',
+        },
+        {
           title: 'Clubs',
           link: '/clubs',
         },
-        {
-          title: 'Open Source',
-          link: '/projects',
-        },
+
         {
           title: 'Past Teams',
           link: '/past-teams',

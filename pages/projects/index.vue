@@ -3,14 +3,14 @@
     <div class="mt-5 flex flex-column justify-center align-center">
       <CenteredHero
         icon="../../icons/projects.svg"
-        title="Open Source Directory"
-        desc="Discover student and community made projects!"
+        title="Open-Source Directory"
+        desc="Contribute to student and community made projects!"
       />
     </div>
     <a id="projects" />
     <div class="container px-5">
       <div class="mt-2 mb-5 cssc-heading resource-tag">
-        About Open Source
+        The Open-Source Directory
       </div>
       <p>
         Want to gain development experience while collaborating with other
@@ -18,9 +18,11 @@
         projects! Here you can find a collection of projects that are looking
         for contributors. Or, if you have a project that could benefit from
         outside help,
-        <a href="https://forms.gle/H3ehZyzNnY87mq1r8"
-          >add your project to the directory!</a
-        >
+        <u>
+          <a href="https://forms.gle/H3ehZyzNnY87mq1r8"
+            >add your project to the directory!</a
+          >
+        </u>
       </p>
     </div>
     <div class="container px-5">
