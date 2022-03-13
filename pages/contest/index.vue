@@ -45,8 +45,8 @@
       number of points which students will earn after solving them.
       Additionally, students can earn points by creating their own issues and
       solving those. Any issues that a student creates and solves will be
-      evaluated by the judges to determine how many points they will earn for
-      that issue. The more quality the issue, the more points it will get!
+      evaluated by mentors to determine how many points they will earn for that
+      issue. The more quality the issue, the more points it will get!
       <br /><br />
 
       Once the contest ends, the judges will evaluate the pull requests and
