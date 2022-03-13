@@ -4,6 +4,13 @@
 
 <template>
   <div class="container">
+    <div class="mt-5 flex flex-column justify-center align-center">
+      <CenteredHero
+        icon="../../icons/projects.svg"
+        title="Open Source Contest"
+        desc="Compete to be the best contributor!"
+      />
+    </div>
     <div class="mb-3 mt-2 cssc-heading">Open Source Contest</div>
     <p class="mb-3">
       The Open Source Contest is an 11-day long competition where students
