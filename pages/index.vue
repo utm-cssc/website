@@ -7,10 +7,11 @@
         alt="CSSC Logo"
         title="UTM CSSC"
         desc="Helping MCS Students"
-        additionalInfo="Check out our calendar to stay on top of MCS events!"
+        additionalInfo="Check out the open source contest for a fun way to contribute to open source!"
         :button1="button1"
         :button2="button2"
         :button3="button3"
+        :button4="button4"
       />
     </div>
     <a id="cssc-moto" />
@@ -107,6 +108,10 @@ export default {
       button3: {
         label: 'Ask Jack',
         link: 'ask-jack',
+      },
+      button4: {
+        label: 'Open Source Contest',
+        link: 'contest',
       },
     }
   },

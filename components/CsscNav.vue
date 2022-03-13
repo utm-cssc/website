@@ -27,6 +27,13 @@
         >
           Calendar
         </nuxt-link>
+        <nuxt-link
+          to="/contest"
+          class="nav-link mr-4"
+          @click.native="checked = false"
+        >
+          Contest
+        </nuxt-link>
       </div>
       <div class="navbar-spacer"></div>
       <SearchBar class="mx-4" />

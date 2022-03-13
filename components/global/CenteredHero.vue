@@ -44,6 +44,16 @@
         <img v-if="button3.icon" class="btn-icon mx-2" :src="button3.icon" />
         {{ button3.label }}
       </v-btn>
+      <v-btn
+        v-if="button4 && button4.link && button4.label"
+        :href="button4.link"
+        variant="outline-primary"
+        class="mr-4 btn-cta mb-3"
+        x-large
+      >
+        <img v-if="button4.icon" class="btn-icon mx-2" :src="button4.icon" />
+        {{ button4.label }}
+      </v-btn>
     </div>
   </div>
 </template>
@@ -84,6 +94,20 @@ export default {
       },
     },
     button3: {
+      label: {
+        type: String,
+        default: '',
+      },
+      link: {
+        type: String,
+        default: '',
+      },
+      icon: {
+        type: String,
+        default: '',
+      },
+    },
+    button4: {
       label: {
         type: String,
         default: '',

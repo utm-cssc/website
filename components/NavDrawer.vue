@@ -40,6 +40,10 @@ export default {
           link: '/calendar',
         },
         {
+          title: 'Open Source Contest',
+          link: '/contest',
+        },
+        {
           title: 'Clubs',
           link: '/clubs',
         },
