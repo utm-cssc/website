@@ -22,8 +22,12 @@
     <div class="mb-3 mt-2 cssc-heading">How it Works</div>
     <p class="mb-5">
       Students will be competing for three awards: Best Contributor, Best Issue,
-      and Best Pull Request. The winner of each award will receive a GitHub
-      Invertocat hoodie as a prize! <br /><br />
+      and Best Pull Request.
+      <b
+        >The winner of each award will receive a GitHub Invertocat hoodie as a
+        prize!</b
+      >
+      <br /><br />
 
       When the contest starts, students will receive GitHub invitations to join
       the open source repositories for the projects they will be contributing
@@ -56,11 +60,13 @@
     <div class="mb-3 mt-2 cssc-heading">How to Enter</div>
     <p class="mb-3">
       To sign up for the contest, fill in the
-      <a href="https://forms.gle/bk5Ey88F6tfXZ2s49">sign-up form</a> by the end
-      of March 16th! In order to keep yourself updated on the contest as it
-      unfolds, join the contest
-      <a href="https://discord.gg/MMDfbdy6FK">Discord server</a> to receive
-      announcements, instructions, and help from mentors.
+      <u><a href="https://forms.gle/bk5Ey88F6tfXZ2s49">sign-up form</a></u> by
+      the end of March 16th! In order to keep yourself updated on the contest as
+      it unfolds, join the contest
+      <u><a href="https://discord.gg/MMDfbdy6FK">Discord server</a></u> to
+      receive announcements, instructions, and help from mentors. Make sure to
+      join, as this is where all communication about the contest will take
+      place!
     </p>
   </div>
 </template>
