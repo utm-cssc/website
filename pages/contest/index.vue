@@ -60,9 +60,9 @@
     <div class="mb-3 mt-2 cssc-heading">How to Enter</div>
     <p class="mb-3">
       To sign up for the contest, fill in the
-      <u><a href="https://forms.gle/bk5Ey88F6tfXZ2s49">sign-up form</a></u> by
-      the end of March 16th! In order to keep yourself updated on the contest as
-      it unfolds, join the contest
+      <u><a href="https://forms.gle/bk5Ey88F6tfXZ2s49">registration form</a></u>
+      by the end of March 16th! In order to keep yourself updated on the contest
+      as it unfolds, join the contest
       <u><a href="https://discord.gg/MMDfbdy6FK">Discord server</a></u> to
       receive announcements, instructions, and help from mentors. Make sure to
       join, as this is where all communication about the contest will take
