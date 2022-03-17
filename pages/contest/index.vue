@@ -53,6 +53,15 @@
       issues made by students to determine the winners of the prizes!
       <br /><br />
     </p>
+    <div>
+      <div class="mb-3 mt-2 cssc-heading">Leaderboard</div>
+      <v-data-table
+        :headers="headers"
+        :items="users"
+        item-key="name"
+        class="elevation-1"
+      />
+    </div>
     <div class="mb-3 mt-2 cssc-heading">How to Enter</div>
     <p class="mb-3">
       To sign up for the contest, fill in the
@@ -85,7 +94,29 @@
 
 <script>
 export default {
+  data() {
+    return {
+      users: [],
+    }
+  },
   computed: {
+    headers() {
+      return [
+        {
+          text: 'Rank',
+          align: 'start',
+          sortable: false,
+          value: 'rank',
+        },
+        {
+          text: 'Github Username',
+          value: 'username',
+        },
+        {text: 'Points', value: 'points', sortable: true},
+        {text: 'Issues Solved', value: 'solved', sortable: true},
+        {text: 'Issues Created', value: 'created', sortable: true},
+      ]
+    },
     isDark() {
       return this.$nuxt.$colorMode.value == 'dark'
     },
