@@ -62,57 +62,29 @@
       <a href="https://discord.gg/MMDfbdy6FK">Discord server</a> to receive
       announcements, instructions, and help from mentors.
     </p>
+    <div class="mb-3 mt-2 cssc-heading">Resources</div>
+    <div>
+      <grid-1-x-2
+        img-src="../../icons/Open_Source_Contest.png"
+        link="/resources/javascriptguide"
+        title="How to get started with Open Source"
+        desc="The basics to Git and Github"
+        button="Check it out!"
+      ></grid-1-x-2>
+      <grid-1-x-2
+        title="Quick Guide to Javascript"
+        :reversed="true"
+        img-src="https://miro.medium.com/max/1400/1*UvWOnSlWP7AbbOtSVUeHMg.png"
+        link="/resources/javascriptguide"
+        desc="Learn how to use Javascript in a few seconds"
+        button="Learn more!"
+      ></grid-1-x-2>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  data: () => {
-    return {
-      question: '',
-      email: '',
-      labels: [],
-      selectedUpperYear: [],
-      selectedTags: [],
-      shareQuestion: [],
-      shareQuestionOptions: [
-        {text: 'Yes', value: 'Yes'},
-        {text: 'No', value: 'No'},
-      ],
-      button2: {
-        label: 'MCS Townhall Notes',
-        link:
-          '../../../resources/mcs-townhall/cssc_mcs_townhall_notes_2021.pdf',
-      },
-      button1: {
-        label: 'MCS Townhall Slides',
-        link: '../../../resources/mcs-townhall/mcs_townhall_slides_2021.pdf',
-      },
-      tagOptions: [
-        {text: 'POSt', value: 'POSt'},
-        {text: 'Technology', value: 'Technology'},
-        {text: 'Becoming a TA', value: 'Becoming a TA'},
-        {text: 'Personal Projects', value: 'Personal Projects'},
-        {
-          text: 'General First Year Question',
-          value: 'General First Year Question',
-        },
-        {
-          text:
-            'General CS Course Questions (e.g. What to expect?, Course Prerequisites?, etc.)',
-          value: 'General CS Question',
-        },
-        {text: 'Academic Offences', value: 'Academic Offences'},
-        {
-          text: 'Accessibility and Mental Health',
-          value: 'Accessibility and Mental Health',
-        },
-        {text: 'Emailing Professors', value: 'Emailing Professors'},
-        {text: 'CS Internships', value: 'CS Internships'},
-        {text: 'Other', value: 'Other'},
-      ],
-    }
-  },
   computed: {
     isDark() {
       return this.$nuxt.$colorMode.value == 'dark'
