@@ -18,7 +18,7 @@
     <!-- What is CSSC -->
     <div class="my-5">
       <div class="cssc-heading">
-        What is CSSC?
+        HI RITVIK!!!
       </div>
       <p>
         The Computer Science Student Community (CSSC) is a community
