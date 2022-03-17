@@ -80,7 +80,6 @@
     <div class="mb-3 mt-2 cssc-heading">Resources</div>
     <div>
       <grid-1-x-2
-        img-src="../../icons/Open_Source_Contest.png"
         link="/resources/javascriptguide"
         title="How to get started with Open Source"
         desc="The basics to Git and Github"
@@ -88,11 +87,15 @@
       ></grid-1-x-2>
       <grid-1-x-2
         title="Quick Guide to Javascript"
-        :reversed="true"
-        img-src="https://miro.medium.com/max/1400/1*UvWOnSlWP7AbbOtSVUeHMg.png"
         link="/resources/javascriptguide"
         desc="Learn how to use Javascript in a few seconds"
-        button="Learn more!"
+        button="Check it out!"
+      ></grid-1-x-2>
+      <grid-1-x-2
+        title="AnonBot: a Guide"
+        link="/resources/anonbotguide"
+        desc="Gain an overview of the AnonBot project!"
+        button="Check it out!"
       ></grid-1-x-2>
     </div>
   </div>
