@@ -80,19 +80,22 @@
     <div class="mb-3 mt-2 cssc-heading">Resources</div>
     <div>
       <grid-1-x-2
-        img-src="../../icons/Open_Source_Contest.png"
-        link="/resources/javascriptguide"
+        link="https://huonggiangbui.notion.site/Open-source-Contribution-Guideline-f578ed76a7e64212bf79a1b0e8906164"
         title="How to get started with Open Source"
         desc="The basics to Git and Github"
         button="Check it out!"
       ></grid-1-x-2>
       <grid-1-x-2
         title="Quick Guide to Javascript"
-        :reversed="true"
-        img-src="https://miro.medium.com/max/1400/1*UvWOnSlWP7AbbOtSVUeHMg.png"
-        link="/resources/javascriptguide"
+        link="https://huonggiangbui.notion.site/JS-Quick-Guideline-2c7a3c733a424d01a4173b5f50d1a595"
         desc="Learn how to use Javascript in a few seconds"
-        button="Learn more!"
+        button="Check it out!"
+      ></grid-1-x-2>
+      <grid-1-x-2
+        title="AnonBot: a Guide"
+        link="https://www.notion.so/AnonBot-A-Guide-25b6733b7da84d418d4fc137fdbc8166"
+        desc="Get an overview of the AnonBot project"
+        button="Check it out!"
       ></grid-1-x-2>
     </div>
   </div>
