@@ -92,8 +92,8 @@
         button="Check it out!"
       ></grid-1-x-2>
       <grid-1-x-2
-        title="AnonBot: a Guide"
         link="https://www.notion.so/AnonBot-A-Guide-25b6733b7da84d418d4fc137fdbc8166"
+        title="AnonBot: a Guide"
         desc="Get an overview of the AnonBot project"
         button="Check it out!"
       ></grid-1-x-2>
