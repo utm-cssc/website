@@ -13,7 +13,7 @@ keywords:
 
 # Docker
 
-## What is Docker?
+## What Is Docker?
 
 Docker is a virtualization platform used to create and deploy applications by
 using containers.
@@ -24,7 +24,11 @@ packaging and effortlessly deploying their applications on many systems!
 Docker accelerates a developer's workflow while providing the flexibility with
 using their choice of tools, deployment variables and much more!
 
-## What are Containers?
+## Why Docker?
+
+<VideoContainer vid-src="https://www.youtube.com/embed/_dfLOzuIg2o"></VideoContainer>
+
+## What Are Containers?
 
 Containers are lightweight, standalone, executable packages that can be easily
 run from one computer to the next.
@@ -36,17 +40,13 @@ Containers make use of a shared underlying OS kernel to run their applications
 as opposed to traditionally running multiple VMs each with their own individual
 OS.
 
-<grid-1-x-2 button="Check it out!" :reversed="true" link="https://www.netapp.com/us/info/what-are-containers.aspx" img-src="https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-and-vm-transparent-bg.png" desc="Find out more about containers and their benefits!"></grid-1-x-2>
+<grid-1-x-2 button="Check it out!" :reversed="true" link="https://www.netapp.com/us/info/what-are-containers.aspx" img-src="https://nickjanetakis.com/assets/blog/cards/differences-between-a-dockerfile-docker-image-and-docker-container-001320c81dd8d2989df10d0bec36341fd6a94b043f6f9de1c26ee79eaf16e566.jpg" desc="Find out more about containers and their benefits!"></grid-1-x-2>
 
-## Why Docker?
+## How Do I Get Started?
 
-<VideoContainer vid-src="https://www.youtube.com/embed/_dfLOzuIg2o"></VideoContainer>
+### Docker 101 for Developers!
 
-## How do I get started?
-
-### Docker 101 for developers!
-
-<grid-1-x-2 button="Start Learning!" link="https://www.docker.com/101-tutorial" img-src="https://www.docker.com/sites/default/files/d8/2020-03/playwithdockertoo.png" desc="In this course, you will learn the Docker basics through a series of interactive tutorials!" button="Start Learning!"></grid-1-x-2>
+<grid-1-x-2 button="Start Learning!" link="https://www.docker.com/101-tutorial" img-src="https://containerjournal.com/wp-content/uploads/2015/07/4P9pfv_Txb-1280x720.jpg" desc="In this course, you will learn the Docker basics through a series of interactive tutorials!" button="Start Learning!"></grid-1-x-2>
 
 ## Cheat Sheets
 
@@ -79,9 +79,9 @@ fingertips.
 
 <grid-1-x-2 img-Src="https://raw.githubusercontent.com/katacoda/scenario-examples/master/assets/avatar.png" link="https://www.katacoda.com/courses/docker" button="Check it out!" desc="Get more hands on experience with Docker and containers through interactive labs and scenarios!"></grid-1-x-2>
 
-### Play with Docker
+### Play With Docker
 
-<grid-1-x-2 :reversed="true" img-Src="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2020-01/Moby-and-Friends.jpeg?itok=pwBxOtY6" link="https://training.play-with-docker.com/" button="Check it out!" desc="More labs and tutorials that are specific to Developers, System Administrators and more!"></grid-1-x-2>
+<grid-1-x-2 :reversed="true" img-Src="https://miro.medium.com/proxy/1*hClfljxq29JkJrgiwR_v5g.png" link="https://training.play-with-docker.com/" button="Check it out!" desc="More labs and tutorials that are specific to Developers, System Administrators and more!"></grid-1-x-2>
 
 ## Docker Tools
 

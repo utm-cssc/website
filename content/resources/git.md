@@ -9,7 +9,7 @@ tags:
 
 # Git
 
-## What is Git?
+## What Is Git?
 
 Git is a version control system for keeping track of changes in any set of files
 and was originally designed for collaborative work among progammers.
@@ -20,7 +20,7 @@ versions with ease.
 
 <grid-1-x-2 button="Check it out!" link="https://www.atlassian.com/git/tutorials/why-git" img-src="https://www.devguide.at/wp-content/uploads/2019/06/git-branches-1.png" desc="Find out more on the advantages of using Git"></grid-1-x-2>
 
-## What is Version Control?
+## What Is Version Control?
 
 Version control is a practice for tracking and managing changes to applications.
 It enables developers to simultaneously work on a single application in which
@@ -30,7 +30,7 @@ their changes to the rest of the team.
 Version control is specifically useful for branching and merging different
 instances of the application to allow an asynchronous workflow.
 
-## A more in-depth explanation on Version Control
+### In-Depth Explanation
 
 <VideoContainer vid-src="https://www.youtube.com/embed/9GKpbI1siow"></VideoContainer>
 

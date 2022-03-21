@@ -11,7 +11,7 @@ keywords:
 
 # UI/UX Design
 
-## What is UI Design?
+## What Is UI Design?
 
 UI design—or user interface design—refers to the design of user interfaces and
 their associated aesthetics. A user interface is typically the graphical element
@@ -22,7 +22,7 @@ Therefore UI design concerns itself with the overall look of a product and its
 aesthetic appeal. Good UI design is crucial, as a user interface will typically
 be the first element of a product a user will recognize.
 
-## What is UX Design?
+## What Is UX Design?
 
 UX design—or user experience design—refers to the design of user experiences. A
 user experience refers to the journey and experience a user will undergo when
@@ -33,7 +33,7 @@ Those designing user experiences will need to consider how the user will
 interact with a product and what features the user will be exposed to, and how
 these features will be delivered.
 
-## What's the difference?
+## What’s the Difference?
 
 There is a common misconception that UI and UX refer to the same concepts due to
 their focuses in the design of a product. While both UI and UX are related, they
@@ -46,7 +46,7 @@ visual design of the product.
 
 <VideoContainer vid-src="https://www.youtube.com/embed/5CxXhyhT6Fc"></VideoContainer>
 
-## How do I get started?
+## How Do I Get Started?
 
 <VideoContainer vid-src="https://www.youtube.com/embed/t0aCoqXKFOU"></VideoContainer>
 

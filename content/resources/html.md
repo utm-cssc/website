@@ -11,7 +11,7 @@ keywords:
 
 # Introduction
 
-## What is HTML?
+## What Is HTML?
 
 ![An Image](https://www.edureka.co/blog/wp-content/uploads/2019/06/What-is-HTML.jpg)
 HyperText Markup Language, also known as HTML, is the building blocks of all
@@ -42,7 +42,7 @@ as this simple HTML document.
 normal once you refresh the page! This is because the changes you make, will not
 affect the original source code the website is loaded from**
 
-### Some HTML elements are:
+### HTML Element Examples
 
 - <div\> - A generic container
 - <head\> - Contains metadata informations about the document
@@ -66,11 +66,11 @@ the element that is enclosing it. The model is extremely helpful the user is
 trying to access and modify elements within a script since users can look for
 elements by specifying parts of the model they wish to change.
 
-#### Example of the structure:
+#### Structure Example:
 
 ![An Image](https://www.w3schools.com/js/pic_htmltree.gif)
 
-#### Consider the example about this current web page:
+#### Consider this Webpage Example:
 
 By using "getElementsByTagName("p")", you can find all the paragraph elements
 within the document.
@@ -84,7 +84,7 @@ paragraphs[1] is the second <p> element, etc.
 Then you are free to change the individual elements as you wish. You can read
 more about this in the [Javascript](./javascript) resource page
 
-## What can I do with HTML
+## What Can I Do With HTML?
 
 - Create websites!
 
@@ -107,7 +107,7 @@ more about this in the [Javascript](./javascript) resource page
 - Creating games!
   - Web base games by utilizing frameworks and scripts!
 
-## Link to resources
+## Link to Resources
 
 <grid-1-x-2 title="Basic tutorial of HTML" :reversed=true img-src="https://www.w3.org/blog/wp-content/uploads/2019/07/logo-MDNWebDocs.png" link="https://developer.mozilla.org/en-US/docs/Web/HTML" desc="Learn HTML from basic tutorials to advance topics" button="Check it out!"></grid-1-x-2>
 

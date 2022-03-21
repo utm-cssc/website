@@ -13,7 +13,7 @@ keywords:
 
 # React
 
-## What is React
+## What Is React?
 
 React (also known as ReactJS or React.js) is an open-source declarative,
 efficient and flexible JavaScript library for building user interfaces. React
@@ -48,11 +48,11 @@ a user clicking a button) and selectively updates the DOM only.
 
 <grid-1-x-2 :reversed=false link="https://skillcrush.com/blog/what-is-react-js/#dom" desc="Find more about React and their benefits!" img-src="https://mk0skillcrush9jajt6o.kinstacdn.com/wp-content/themes/skillcrush-corgi/img/retina-icons/Skillcrush_Logo@2x.png" button="Click here!" ></grid-1-x-2>
 
-### Companies using React
+### Companies Using React
 
 <LogoGrid :logos="['netflix', 'apple', 'dropbox', 'microsoft', 'facebook']"></LogoGrid>
 
-### React is Awesome
+### React Is Awesome
 
 <VideoContainer vid-src="https://www.youtube.com/embed/SH2tck0pHWI"></VideoContainer>
 
@@ -76,7 +76,7 @@ Recording</a>, PWD: reactworkshop\$1
 
 <grid-1-x-2 :reversed=false img-src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" link="https://www.youtube.com/playlist?list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS" button="Start Learning!" desc="In this series of videos, you will be introduced fundamental concepts of React as you build a small project."></grid-1-x-2>
 
-### Reactjs in-depth course
+### Reactjs In-Depth Course
 
 <grid-1-x-2 img-src="https://scrimba.com/static/art/castcover.png" link="https://scrimba.com/course/glearnreact" button="Go to Tutorial!" desc="This in-depth course allows you to learn React in an interactive way at Scrimba"></grid-1-x-2>
 
@@ -91,7 +91,7 @@ fingertips.
 
 <iframe src="https://ihatetomatoes.net/wp-content/uploads/2017/01/react-cheat-sheet.pdf" width="700" height="550"></iframe>
 
-## Essential syntax
+## Essential Syntax
 
 <grid-1-x-2 img-src="https://assets.devhints.io/previews/react.jpg?t=20200403231925" link="https://devhints.io/react" button="Read Docs" desc="Essential Syntaxs for React from devhints.io"></grid-1-x-2>
 
@@ -107,7 +107,7 @@ fingertips.
 
 ## Useful Resources
 
-### Awesome resourses from the React ecosystem
+### Awesome Resources From the React Ecosystem
 
 <grid-1-x-2 desc="A collection of awesome things regarding the React ecosystem." img-src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" link="https://github.com/enaqx/awesome-react" button="Check it out!"></grid-1-x-2>
 
@@ -132,7 +132,7 @@ fingertips.
 We at the CSSC believe in learning by doing. So here are some ideas for a few
 projects that you can work on to hone your skills.
 
-### Create a simple application
+### Create a Simple Application
 
 #### Todo App
 
@@ -146,7 +146,7 @@ projects that you can work on to hone your skills.
 
 <grid-1-x-2 desc="Create a single page web application which uses a search input and Giphy’s API to display gifs on a page." img-src="https://miro.medium.com/max/1000/1*B_Ny6pA3KiFfl_9EhZfziQ.png"></grid-1-x-2>
 
-### Try some interview questions
+### Try Some Interview Questions
 
 <grid-1-x-2 :reversed=false desc="13 Essential React Interview Questions to try out" img-src="https://media-exp1.licdn.com/dms/image/C560BAQEJlZg66jWL4w/company-logo_200_200/0?e=2159024400&v=beta&t=wezZWtcLiFf4WisIPTFrpeNPo6ERqeQ6bXIJ7bhOkdk" link="https://www.toptal.com/react/interview-questions" button="Check it out!"></grid-1-x-2>
 

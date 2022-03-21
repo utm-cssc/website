@@ -11,7 +11,7 @@ keywords:
 
 # Introduction
 
-## What is REST?
+## What Is REST?
 
 Representational state transfer, also known as REST, is a software architectural
 style that defines a set of constraints to be used for creating Web services. By
@@ -22,7 +22,7 @@ to request and access the web resources.
 
 <VideoContainer vid-src="https://www.youtube.com/embed/Q-BpqyOT3a8"></VideoContainer>
 
-## Why use REST
+## Why REST?
 
 REST allows web services to have faster performance, reliability and ease of
 access. This is all achieved by using a stateless protocol and standard
@@ -37,9 +37,9 @@ One of the most important uses of REST is that it allows the use of
 microservice, which is a very important concept as we start working with larger
 web services.
 
-# Learning REST
+## Learning REST
 
-## How it works
+### How It Works
 
 The REST API is mainly composed of requests which is a way for the web service
 to communicate with the servers or other web services. Once a request has been
@@ -80,19 +80,19 @@ Commonly used HTTP methods are:
 
 ## Online Tutorials
 
-### A Guide to REST using Nodejs and Javascript
+### A Guide to REST Using Nodejs and Javascript
 
 <grid-1-x-2 img-Src="https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/rest-api-code-main.png" link="https://www.youtube.com/watch?v=pKd0Rpw7O48" button="Check it out!" desc="Learn to imeplement the REST API with NodeJS and Javascript"></grid-1-x-2>
 
-### The Complete Guide to Build RESTFful APIS - Udemy
+### The Complete Guide to Build RESTful APIS - Udemy
 
 <grid-1-x-2 :reversed="true" img-Src="https://adrianmejia.com/images/RESTfulAPIs_NodeJS__mongodb_large.png" link="https://www.udemy.com/course/nodejs-master-class/" button="Check it out!" desc="Follow a complete guide offered by Udemy to build a RESTful API using NodeJS"></grid-1-x-2>
 
-### Learn Rest with LinkedIn
+### Learn Rest With LinkedIn
 
 <grid-1-x-2 img-Src="https://cdn.lynda.com/course/651230/651230-637199637396278584-16x9.jpg" link="https://www.linkedin.com/learning/topics/apis" button="Check it out!" desc="Learn how to use the REST API on LinkedIn Learning. LinkedIn Learning is accessible to all UofT students!"></grid-1-x-2>
 
-### Using Rest with Spring
+### Using Rest With Spring
 
 <grid-1-x-2 :reversed="true" img-Src="https://spring.io/images/OG-Spring.png" link="https://spring.io/guides/tutorials/rest/" button="Check it out!" desc="Learn to create a RESTful service with the Spring framework!"></grid-1-x-2>
 

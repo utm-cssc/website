@@ -11,7 +11,7 @@ keywords:
 
 # Grad School
 
-### Grad School Panel
+## Grad School Panel
 
 On November 14th, we partnered with MCSS to host the Grad School Panel where we
 asked some current grad school students at universities like MIT, Cornell, and

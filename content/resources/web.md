@@ -16,15 +16,15 @@ of rapidly evolving tools to work with.
 
 ## Web Fundamentals
 
-### What is the World Wide Web?
+### What Is the World Wide Web?
 
 <VideoContainer vid-src="https://www.youtube.com/embed/guvsH5OFizE"></VideoContainer>
 
-### What are Web Pages, Websites and Web applications?
+### What Are Web Pages, Websites and Web Applications?
 
 <VideoContainer vid-src="https://www.youtube.com/embed/ylbQrYhfa18"></VideoContainer>
 
-### What are Web Pages made of?
+### What Are Web Pages Made Of?
 
 The content of a webpage is rendered using HTML. HTML is a markup language which
 means its purpose is to render information in the format you specified using
@@ -65,11 +65,11 @@ per your application's description.
 Usually, this involves working with databases to store data from users which is
 then extracted from the database and used in other parts of the application.
 
-### What You Need to Know to be a Backend Developer
+### What You Need to Know to Be a Backend Developer
 
 <grid-1-x-2 :reversed="true" desc="Check out this video on how to get started as a backend developer" link="https://www.youtube.com/watch?v=0Kv_k4ypj6o" button="Get Started Now!" img-Src="https://codecondo.com/wp-content/uploads/2017/09/back-end-developer.jpg"></grid-1-x-2>
 
-## How do I get started with web development?
+## How Do I Get Started With Web Development?
 
 ### Scrimba
 
@@ -83,7 +83,7 @@ then extracted from the database and used in other parts of the application.
 
 <grid-1-x-2 desc="A community-created roadmap for modern backend web development." img-Src="/resources/web/backend-roadmap.png" button="Check it out!" link="https://roadmap.sh/backend"></grid-1-x-2>
 
-## HTML, CSS & JavaScript Cheat sheets!
+## HTML, CSS & JavaScript Cheat Sheets
 
 <div class="scrolling-wrapper">
   <div class="scroll-child">
@@ -121,7 +121,7 @@ frontend development.
 
 <grid-1-x-2 desc="Here are a list of video tutorials you could use if you want to get started with a backend framework" link="https://dev.to/iamsaeeddev/5-free-tutorials-you-should-complete-to-master-the-back-end-3077" img-Src="https://kellton-revamp-prod.s3.amazonaws.com/s3fs-public/inline-images/Backend%20Frameworks-02.jpg" button="Check it out!"></grid-1-x-2>
 
-### Web development tools you should know
+### Web Development Tools You Should Know
 
 When you start developing your web application, you will need an array of tools
 to keep help your development agile and your code scalable. This includes using
@@ -129,7 +129,7 @@ version control (like Git) and deployment containers (like Docker).
 
 <grid-1-x-2 :reversed="true" desc="Here are some essential tools you should definetly know before you start your next project!" link="https://www.freecodecamp.org/news/handy-web-development-toolkit/" img-Src="https://www.freecodecamp.org/news/content/images/size/w2000/2020/04/screely-1586183781361.png" button="Check it out!"></grid-1-x-2>
 
-## Selected frameworks to help you get started!
+## Selected Frameworks to Help You Get Started!
 
 ### ReactJS
 

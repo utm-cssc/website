@@ -15,7 +15,7 @@ keywords:
 
 Written by: Jarrod Servilla
 
-## What is PEY?
+## What Is PEY?
 
 PEY (Professional Experience Year) is an optional, 12–16 month co-op program
 that students at all of the University of Toronto’s campus can do after their
@@ -289,7 +289,7 @@ I try to do the following:
    similar in leetcode/class before.
 4. Discuss time & space complexity.
 
-## Q&A
+## What to Ask
 
 Lastly, the recruiter will ask you if you have any questions. Always have some
 on hand, since interviews are a two-way street. You wanna know whether you would

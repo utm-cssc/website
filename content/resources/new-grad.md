@@ -12,7 +12,7 @@ keywords:
 
 # New Grad
 
-### New Grad Panel
+## New Grad Panel
 
 On Nov 5th, we hosted the New Grad Panel where we asked some UTM alumni working
 at companies like DoorDash, Veeva Systems, and Loopio about the new grad job
