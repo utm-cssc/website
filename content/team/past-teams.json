@@ -1,6 +1,156 @@
 {
   "teams": [
     {
+      "year": "2022 Winter",
+      "members": [
+        {
+          "name": "Jessica Anderson",
+          "imgSrc": "/team/2021/jess.jpg",
+          "position": "Executive Director",
+          "message": "Jessica was accepted into UTM as an Accounting Student, but ended up wanting to do Computer Science, so she is ready to tackle any of your POSt questions. She always struggles to choose which courses are most important to take and she's ready to share her findings!",
+          "discord": "janders#8886",
+          "email": "jess.anderson@utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/jessicaanderson9/"
+        },
+        {
+          "name": "Nameera Azim",
+          "imgSrc": "/team/2021/Nameera.png",
+          "position": "Director of Communications",
+          "message": "Nameera is a third-year student specializing in Computer Science and minoring in both Statistics and Business. On lazy days, you can probably find her reading, painting, fangirling over an MCU movie, watching the Premier League, or messing around with her ukulele! Feel free to reach out!",
+          "discord": "Nameera#2802",
+          "email": "nameera.azim@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/nameera-azim-1924a21b6/"
+        },
+        {
+          "name": "Naaz Sibia",
+          "imgSrc": "/team/2021/Naaz.png",
+          "position": "Director of Operations",
+          "message": "Naaz likes preference learning and Human-Computer Interaction (with a CS-ed focus). She also likes talking about mental health, and courses she's TA'ed. When not looking into the mentioned topics, or working to finish her bachelor's degree, she likes having 3 am discussions with friends, drawing chibis, and eating Chinese food.",
+          "discord": "Blossom#1234",
+          "email": "naaz.sibia@utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/naaz-sibia/",
+          "website": "https://www.naazsibia.com/home"
+        },
+        {
+          "name": "Ritvik Bhardwaj",
+          "imgSrc": "/team/2021/Ritvik.jpg",
+          "position": "Director of Technology",
+          "message": "Ritvik is a CS specialist with a hunger to learn new and exciting technologies. He loves learning about new things related to computer science :D",
+          "discord": "Iota#6763",
+          "email": "ritvik.bhardwaj@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/ritvik-bhardwaj/"
+        },
+        {
+          "name": "Yousef Bulbulia",
+          "imgSrc": "/team/2021/Yousef.jpg",
+          "position": "Director of Technology",
+          "message": "Yousef is a third year student double majoring in math and CS. As a co-tech director, he helps create and support initiatives that help students grow themselves academically and professionally. When he's not busy, you can find him playing guitar, hanging out on UTM discord servers, or dying in Apex Legends.",
+          "discord": "Yousef#4126",
+          "email": "yousef.bulbulia@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/yousef-bulbulia/"
+        },
+        {
+          "name": "Michael Liut",
+          "imgSrc": "/team/Michael.png",
+          "position": "Faculty Advisor",
+          "message": "Michael is a Computer Science educator who prides himself in fostering an environment of educational excellence through active and experiential learning. In recent years he has assisted in the development and implementation of active learning materials/strategies in several Computer Science courses at UTM. Michael enjoys travelling, and is an avid scuba diver.",
+          "discord": "Mike's Here#5684",
+          "email": " michael.liut@utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/mliut",
+          "website": "https://www.michaelliut.ca/"
+        },
+        {
+          "name": "Isha Kerpal",
+          "imgSrc": "/team/2021/Isha.jpg",
+          "position": "Communications Officer",
+          "message": "Isha enjoys handling the social media accounts for CSSC, helping plan our promotion strategies, and responding to the questions we get on our platforms from students. She enjoys overseeing the planning of events and making sure the process is smooth for the entire CSSC team.",
+          "email": "isha.kerpal@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/isha-kerpal-6a923819b"
+        },
+        {
+          "name": "Leila Uy",
+          "imgSrc": "/team/2021/Leila.jpg",
+          "position": "Communications Officer",
+          "message": "In her free time, she enjoys going to unique food places with her friends. Whether it's taiyaki ice cream or 24-inch sliced pizza, she knows a place you can go together and she'll try anything at least once.",
+          "discord": "KitKat#7118",
+          "email": "leila.uy@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/leila-uy-306272180"
+        },
+        {
+          "name": "Hayden Mak",
+          "imgSrc": "/team/2021/Hayden.jpg",
+          "position": "Logistics Officer",
+          "message": "Hayden is a CS Specialist who really enjoys photography. You can find him around campus photographing events, listening to music, or at the RAWC table tennis room!",
+          "discord": "hayden#3088",
+          "email": "hayden.mak@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/haydenmlh/",
+          "website": "https://haydenmlh.github.io/"
+        },
+        {
+          "name": "Sukhman Vig",
+          "imgSrc": "/team/2021/Sukhman.jpg",
+          "position": "Marketing Officer",
+          "message": "Sukhman is studying Computer Science, Statistics and CCIT at UofT. She found her passion for supporting students while working as a Leadership and Mentorship Assistant at the Centre for Student Engagement. She enjoys conversations about student life, finding success as a woman in tech and mental health strategies.",
+          "email": "sukhman.vig@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/sukhman-vig-9a5622164/"
+        },
+        {
+          "name": "Kiara Callender",
+          "imgSrc": "/team/2021/Kiara.jpg",
+          "position": "Social Media Coordinator",
+          "message": "Second Year student at UTM studying Computer Science and Criminology. She enjoys anything anime and gaming related and she loves dogs!",
+          "discord": "kxanxc#6666",
+          "email": "kiara.callender@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/kiara-callender-5757081b5/",
+          "website": "https://github.com/kxanxc"
+        },
+        {
+          "name": "Elysia Monde Zhi Yong",
+          "imgSrc": "/team/2021/Elysia.jpg",
+          "position": "Graphic Designer",
+          "message": "Elysia is a CS Specialist and an avid drinker of pure black coffee. Why? For the energy to grind both CS projects, and digital drawings of course. Mostly the latter though.",
+          "discord": "popos#7178",
+          "email": "elysia.yong@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/elysia-y/"
+        },
+        {
+          "name": "Andriy Drozd",
+          "imgSrc": "/team/2022/Andriy.jpeg",
+          "position": "Technology Officer",
+          "message": "Andriy is a third year Computer Science Specialist with an interest in web development. Andriy likes to learn and work with bleeding-edge technology.",
+          "discord": "yarn#0006",
+          "email": "andriy.drozd@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/andriy-drozd-946758184/"
+        },
+        {
+          "name": "Giang Bui",
+          "imgSrc": "/team/2022/Giang.jpg",
+          "position": "Technology Officer",
+          "message": "First year student studying Computer Science and Management, with a passion for software development. Giang loves learning and experimenting with new technologies. In her free time, Giang enjoys cooking (and eating, so feel free to DM her for food tour :D), knitting and reading (her favorite genre is detective fiction).",
+          "discord": "huonggiangbui#4835",
+          "email": "giang.bui@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/huonggiangbui/"
+        },
+        {
+          "name": "Brian Zhang",
+          "imgSrc": "/team/2022/brian.png",
+          "position": "Technology Officer",
+          "message": "Brian is a second-year majoring in computer science and CCIT with a keen interest in front-end development. He enjoys high-level software development as a whole but otherwise you can find him in one of UTM's many student communities or watching YouTube videos and playing various video games!",
+          "discord": "Pyo#8018",
+          "email": "bria.zhang@mail.utoronto.ca"
+        },
+        {
+          "name": "Manav Bhojak",
+          "imgSrc": "/team/2022/manav.png",
+          "position": "Technology Officer",
+          "message": "Manav is a fourth-year computer science specialist, with an interest in backend software development. He likes solving interesting complex problems and learning new things while doing so.",
+          "discord": "manu#0300",
+          "email": "manav.bhojak@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/manav-bhojak-788aa1169"
+        }
+      ]
+    },
+    {
       "year": "2021 Fall",
       "members": [
         {
