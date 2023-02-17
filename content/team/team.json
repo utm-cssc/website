@@ -42,7 +42,7 @@
           "name": "Manjoy Malhotra",
           "imgSrc": "/team/2022/Joy.png",
           "position": "Director of Technology",
-          "message": "Let's explore !",
+          "message": "Joy is a fifth year student double majoring in Computer Science and Professional Writing. She loves learning new tech, getting to explore different perspectives and learning about new culture’s, and teaching. She hopes to run initiatives that support students’ academic and career growth, and creating opportunities for students in the CS community!",
           "discord": "joy#7269"
         },
         {
@@ -71,6 +71,7 @@
           "name": "Devishi Ranjan",
           "imgSrc": "/team/2022/Devishi.png",
           "position": "Communications Officer",
+          "message": "Devishi is a fourth year computer science and CCIT double major. She is excited to work on CSSC initiatives!",
           "discord": "wovenstarlight#4579"
         }
       ]
@@ -79,17 +80,17 @@
       "name": "Logistics",
       "members": [
         {
-          "name": "Le",
+          "name": "Le Nguyen",
           "imgSrc": "/team/2022/Le.png",
           "position": "Logistics Officer",
-          "message": "If I won an award for laziness I would send someone to pick it up for me.",
+          "message": "Le is a second year statistics major with a double minor in math and computer science. She is interested in data analytics and data science. In her free time, she enjoys listening to music and watching youtube videos.",
           "discord": "lenguyen1605#1987"
         },
         {
           "name": "Kevin Ni",
           "imgSrc": "/team/2022/Kevin.png",
           "position": "Logistics Officer",
-          "message": " McDonald's Reject",
+          "message": "Kevin is a second year specializing in computer science and majoring in statistics. His primary interests are in machine learning and data science. You might find him procrastinating by attending other people's lectures or watching YouTube in an empty classroom.",
           "discord": "Knee#5776"
         }
       ]
@@ -98,7 +99,7 @@
       "name": "Marketing",
       "members": [
         {
-          "name": "Joshua",
+          "name": "Joshua Spencer",
           "imgSrc": "/team/2022/Joshua.png",
           "position": "Social Media Coordinator",
           "message": "I do not exist.",
@@ -138,7 +139,7 @@
           "name": "Sukhman Vig",
           "imgSrc": "/team/2022/Sukhman.png",
           "position": "Technology Officer",
-          "message": "Sukhman is studying Computer Science, Statistics and CCIT at UofT. She found her passion for supporting students while working as a Leadership and Mentorship Assistant at the Centre for Student Engagement. She enjoys conversations about student life, finding success as a woman in tech and mental health strategies.",
+          "message": "Sukhman Vig is a fourth year student at UofT studying Computer Science, Statistics and Communication Culture Information Technology. She is someone who is passionate about using technology, data analysis, and communication to solve complex problems, create new products and services, and bring people together in innovative ways. She is a creative, curious, and driven individual with a deep interest in learning how technology can be used to transform the world we live in.",
           "email": "sukhman.vig@mail.utoronto.ca",
           "linkedin": "https://www.linkedin.com/in/sukhman-vig-9a5622164/"
         },
