@@ -16,7 +16,7 @@
           "name": "VyVy Ngo",
           "imgSrc": "https://avatars.githubusercontent.com/u/45834118?s=460&u=83382baac5f0a500fa99646a4d5899fe391f7328&v=4",
           "position": "Vice Executive Director",
-          "message": "I like going to the dentist and that's off putting for some people.",
+          "message": "As the vice-executive director, VyVy wants to create a welcoming computer science environment by providing students access to any information they need. She has a passion learning and grabs any information within her reach. In her spare time, she enjoys book illumination and playing Skyrim.",
           "discord": "SleepyVyvy#9713",
           "email": "vyvy.ngo@mail.utoronto.ca",
           "linkedin": "https://www.linkedin.com/in/tuong-vy-n-614b4213b/"
@@ -32,7 +32,7 @@
           "name": "Kiara Callender",
           "imgSrc": "/team/2022/Kiara.png",
           "position": "Director of Operations",
-          "message": "Third Year student at UTM studying Computer Science and Criminology. She enjoys anything anime and gaming related and she loves dogs!",
+          "message": "Third Year student at UTM studying Computer Science and Criminology with a minor in political science. She enjoys anything anime and gaming related and she loves dogs!",
           "discord": "kxanxc#6666",
           "email": "kiara.callender@mail.utoronto.ca",
           "linkedin": "https://www.linkedin.com/in/kiara-callender-5757081b5/",
@@ -64,7 +64,7 @@
           "name": "Riya Shah",
           "imgSrc": "/team/2022/Riya.png",
           "position": "Communications Officer",
-          "message": "I always have to spell out GIS full form hehe, I love fridays!",
+          "message": "Riya Shah is a third year UofT student majoring in Geographical Information Systems (GIS), minoring in Biology and Biomedical communications. She’s a natural collaborator, always eager to work with others to find innovative solutions to challenging problems. She loves watching netflix, hiking and painting aside from working on a variety of projects. In her free time, she really loves making vlogs of fun adventurous trips.",
           "discord": "Buzzbee#5972"
         },
         {
@@ -84,6 +84,13 @@
           "position": "Logistics Officer",
           "message": "If I won an award for laziness I would send someone to pick it up for me.",
           "discord": "lenguyen1605#1987"
+        },
+        {
+          "name": "Kevin Ni",
+          "imgSrc": "/team/2022/Kevin.png",
+          "position": "Logistics Officer",
+          "message": " McDonald's Reject",
+          "discord": "Knee#5776"
         }
       ]
     },
@@ -93,7 +100,7 @@
         {
           "name": "Joshua",
           "imgSrc": "/team/2022/Joshua.png",
-          "position": "Marketing Officer & Social Media Coordinator",
+          "position": "Social Media Coordinator",
           "message": "I do not exist.",
           "discord": "urlord jumpsuit#5605"
         },
@@ -101,15 +108,9 @@
           "name": "Emma Teng",
           "imgSrc": "/team/2022/Emma.png",
           "position": "Social Media Coordinator",
-          "message": "send help",
-          "discord": "serendipity#4185"
-        },
-        {
-          "name": "Kevin Ni",
-          "imgSrc": "/team/2022/Kevin.png",
-          "position": "Social Media Coordinator",
-          "message": " McDonald's Reject",
-          "discord": "Knee#5776"
+          "message": "Emma is a second-year CS and Stats major. She enjoys small projects and badminton. She also likes to rest but you can often spot her in the library struggling over stats and pulling all-nighters.",
+          "discord": "serendipity#4185",
+          "linkedin": "https://www.linkedin.com/in/e-teng/"
         }
       ]
     },
@@ -145,7 +146,7 @@
           "name": "Manav Bhojak",
           "imgSrc": "/team/2022/manav.png",
           "position": "Technology Officer",
-          "message": "Something funny.",
+          "message": "Manav is a 4th year computer science major interested in backend development. He enjoys coding, playing video games, and going out with friends. ",
           "discord": "manu#0300",
           "email": "manav.bhojak@mail.utoronto.ca",
           "linkedin": "https://www.linkedin.com/in/manav-bhojak-788aa1169"
