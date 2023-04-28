@@ -24,7 +24,7 @@
     {
       "name": "UTM GDSC",
       "desc": "Google Developer Student Clubs is a student led community backed by Google Developers that empowers undergraduates from all disciplines to grow their knowledge in technology, build solutions for their local communities, and more.",
-      "logo": "/logos/gdsc.",
+      "logo": "/logos/gdsc.svg",
       "darkModeLogo": "/logos/gdsc-dark.svg",
       "link": "https://gdscutm.com"
     },
