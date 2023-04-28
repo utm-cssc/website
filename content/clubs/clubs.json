@@ -22,11 +22,11 @@
       "link": "https://linktr.ee/WISCUTM"
     },
     {
-      "name": "UTM DSC",
-      "desc": "Developer Student Clubs is a student led community backed by Google Developers aimed at empowering undergraduates from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from Google.",
-      "logo": "/logos/dsc.png",
-      "darkModeLogo": "/logos/dsc.png",
-      "link": "https://linktr.ee/DSCUTM"
+      "name": "UTM GDSC",
+      "desc": "Google Developer Student Clubs is a student led community backed by Google Developers that empowers undergraduates from all disciplines to grow their knowledge in technology, build solutions for their local communities, and more.",
+      "logo": "/logos/gdsc.",
+      "darkModeLogo": "/logos/gdsc-dark.svg",
+      "link": "https://gdscutm.com"
     },
     {
       "name": "UTM SAM",
