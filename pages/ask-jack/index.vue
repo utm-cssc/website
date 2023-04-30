@@ -175,20 +175,32 @@ export default {
     },
   },
   async asyncData({$content, params, error}) {
-    const allFAQ = []
-    const faqs = await $content('faq/faq').fetch()
-    const lines = faqs.body.children[0].children[0].value.split('\n')
-    for (let i = 0; i < lines.length; i++) {
-      const currentFAQ = lines[i].split('|')
-      if (currentFAQ[0] != '' && currentFAQ[1] != '') {
-        const FAQ = {
-          question: currentFAQ[0],
-          answer: currentFAQ[1],
+    try {
+      const allFAQ = []
+      const faqs = await $content('faq/faq').fetch()
+      const lines = faqs.body.children[0].children[0].value.split('\n')
+      for (let i = 0; i < lines.length; i++) {
+        const currentFAQ = lines[i].split('|')
+        if (currentFAQ[0] != '' && currentFAQ[1] != '') {
+          const FAQ = {
+            question: currentFAQ[0],
+            answer: currentFAQ[1],
+          }
+          allFAQ.push(FAQ)
         }
-        allFAQ.push(FAQ)
+      }
+      return {allFAQ}
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data)
+        console.log(error.response.status)
+        console.log(error.response.headers)
+      } else if (error.request) {
+        console.log(error.request)
+      } else {
+        console.log('Error', error.message)
       }
     }
-    return {allFAQ}
   },
 }
 </script>

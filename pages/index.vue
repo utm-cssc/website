@@ -107,7 +107,7 @@ export default {
       },
       button3: {
         label: 'Ask Jack',
-        link: 'ask-jack',
+        link: '/ask-jack',
       },
       button4: {
         label: 'Open Source Contest',
