@@ -22,7 +22,7 @@ website pages by separating content from design.
 CSS gives us the opportunity to play with a page layout, adjust colors and
 fonts, add effects to images, etc.
 
-## What is CSS
+## What Is CSS?
 
 Cascading Style Sheets (CSS) is a style sheet language used for describing the
 presentation of a document written in a markup language like HTML. CSS is a

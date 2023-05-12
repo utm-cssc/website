@@ -14,7 +14,7 @@ keywords:
 
 # Vue
 
-## What is Vue?
+## What Is Vue?
 
 Vue (pronounced like view) is a progressive framework for building user
 interfaces.
@@ -26,11 +26,11 @@ It consists of an approachable core library that focuses on the view layer only,
 and an ecosystem of supporting libraries that helps you tackle complexity in
 large Single-Page Applications.
 
-### Why Vue.js
+## Why Vue.js?
 
 <VideoContainer vid-src="https://player.vimeo.com/video/247494684?autoplay=1&color=4fc08d&title=0&byline=0&portrait=0"></VideoContainer>
 
-## How do I get Started?
+## How Do I Get Started?
 
 ### Intro to Vue.js Video Course
 

@@ -52,7 +52,7 @@ A collection of example student resumes from UTM.
 
 </div>
 
-## Resume templates
+## Resume Templates
 
 ### Canva
 
@@ -75,7 +75,7 @@ A collection of example student resumes from UTM.
 ![Getting the right experience](./getting-right-exp.png) _Taken from Cracking
 the Coding Interview_
 
-### Take the big project classes
+### Take the Big Project Classes
 
 If you worked hard and did well in a non-trivial project for a 200+ level
 Computer Science course here at UTM, you likely gained expertise that you can
@@ -90,7 +90,7 @@ school projects on a resume_
 Please do not publicly upload your assignment code to Github. Your assignment
 code may be copied, which would result in an academic offense for both parties.
 
-### Get an internship
+### Get an Internship
 
 _"I need experience to get experience"_ **is real**
 
@@ -101,7 +101,7 @@ looking for jobs. Join our
 [LinkedIn Community](https://www.linkedin.com/groups/8798043/) to connect with
 UTM students in the industry.
 
-### Start something
+### Start Something
 
 Starting self-initiated projects are an excellent way to acquire the skills that
 go into building and maintaining real world systems.
@@ -143,7 +143,7 @@ guidance section for the
 Read what she has to say
 [here](https://yangshun.github.io/tech-interview-handbook/resume/)
 
-## Next Steps: Applications
+## Next Step: Applications
 
 When you're ready to apply and show off your resume, check out our
 [**guide**](/resources/internships) on where to apply.

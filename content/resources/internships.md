@@ -41,7 +41,7 @@ have interned at Microsoft, Palantir, Red Hat, and more.
 <a href="https://utoronto.zoom.us/rec/share/ZBYcxKYzRowm_uzFAzoGxhmTgwu0kG4IVZEiEm-o9ScMH3zhunUiQKaZKrzkHYZ9.qJTvdsqPc8kUBKT5" target="_blank">Zoom
 Recording</a> Passcode: Gw6PQ=LaXq
 
-### How To Ace Your Technical Interview Workshop
+### How to Ace Your Technical Interview Workshop
 
 Hosted with UTM GDSC, we go over the intricacies of technical interviews: how to
 prepare, what to expect, and then go through an interview scenario!
@@ -70,7 +70,7 @@ pay, Angellist has plenty of options for you!
 <grid-1-x-2 :reversed="true" link="https://github.com/pittcsc/Summer2022-Internships" img-Src="https://i.imgur.com/PNNGb.jpg" desc="Keep track of internships for Summer 2022 for undergraduates interested in tech, SWE, and related fields.
 All positions are open to anyone enrolled in a Bachelor's degree program." button="Find out more"></grid-1-x-2>
 
-## Tech internships in International Countries
+## Tech Internships in International Countries
 
 We're looking into this. We haven't forgotten our international friends.
 

@@ -93,7 +93,7 @@ For new TAs: be realistic with your course load when you TA for the first time!
 TAing can be a lot of work, and the last thing you want is a mountain of
 deadlines and due dates between your courses and TAing.
 
-## I got a TAship! What's next?
+## I Got a TAship! What's Next?
 
 Congratulations! Here’s a short outline of things you will be expected to do:
 

@@ -11,7 +11,7 @@ keywords:
 
 # Figma
 
-## What is Figma?
+## What Is Figma?
 
 Figma is a primarily web-based tool used to seamlessly design and prototype user
 interfaces. Created by Dylan Field and Evan Wallace, from the beginning Figma's
@@ -27,7 +27,7 @@ prototype and share their designs through features such as team libraries.
 
 <VideoContainer vid-src="https://www.youtube.com/embed/-FiFCSoNMxM"></VideoContainer>
 
-## How do I get started?
+## How Do I Get Started?
 
 <grid-1-x-2 :reversed="true" button="Start Learning!" link="https://www.youtube.com/playlist?list=PLXDU_eVOJTx7QHLShNqIXL1Cgbxj7HlN4" img-src="https://img.youtube.com/vi/Cx2dkpBxst8/maxresdefault.jpg" desc="Learn how to use Figma through their free video series on YouTube!" button="Start Learning!"></grid-1-x-2>
 

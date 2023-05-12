@@ -9,7 +9,7 @@ tags:
 
 # Github
 
-## What is Github?
+## What Is Github?
 
 GitHub is a code hosting platform for version control and collaboration. Github
 utlizies the open source version control [Git](./git) and allows developers to
@@ -30,7 +30,7 @@ showcasing their projects to potential employers.
 
 <grid-1-x-2 button="Start Learning!" link="https://www.thebalancecareers.com/what-is-github-and-why-should-i-use-it-2071946" img-src="https://www.freecodecamp.org/news/content/images/2019/11/cover-pic.jpeg" desc="A more indepth introduction to Github" button="Start Reading!"></grid-1-x-2>
 
-## How do I get started?
+## How Do I Get Started?
 
 <grid-1-x-2 :reversed="true" button="Start Learning!" link="https://lab.github.com/githubtraining/introduction-to-github" img-src="https://repository-images.githubusercontent.com/136195276/40cbd080-586d-11ea-94a3-6ca7934240ad" desc="Learn how to use Github through an interactive free course offer by Github!" button="Start Learning!"></grid-1-x-2>
 
@@ -43,13 +43,13 @@ energy!
   
   <div class="scroll-child">
 
-## Git Basics Cheat Sheet
+### Git Basics Cheat Sheet
 
    <iframe src="https://education.github.com/git-cheat-sheet-education.pdf" width="480" height="640"></iframe>
    </div>
 </div>
 
-## Github 101 for beginners!
+## Github 101 for Beginners!
 
 <VideoContainer vid-src="https://www.youtube.com/embed/SWYqp7iY_Tc"></VideoContainer>
 

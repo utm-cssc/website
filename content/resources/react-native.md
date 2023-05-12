@@ -15,7 +15,7 @@ keywords:
 
 # React Native
 
-## What is React Native?
+## What Is React Native?
 
 React Native is a JavaScript framework for writing real, natively rendering
 mobile applications for iOS and Android. It’s based on React, Facebook’s
@@ -32,13 +32,13 @@ iOS simultaneously.
 
 <VideoContainer vid-src="https://www.youtube.com/embed/FJ6tXatsq1c"></VideoContainer>
 
-### Companies using React Native
+### Companies Using React Native
 
 <LogoGrid :logos="['instagram', 'skype', 'facebook', 'discord']"></LogoGrid>
 
 ## Getting Started
 
-#### React Native for you!
+#### React Native for You!
 
 <grid-1-x-2 desc="In this series of videos, you will be introduced fundamental concepts of React Native." link="https://www.youtube.com/playlist?list=PL4cUxeGkcC9ixPU-QkScoRBVxtPPzVjrQ" img-Src="/resources/react-native/react-native.png" button="Start Learning!"></grid-1-x-2>
 
@@ -51,7 +51,7 @@ iOS simultaneously.
 Cheat sheets save you time and energy by giving you essential syntax at your
 fingertips.
 
-### React syntax
+### React Syntax
 
 <iframe src="https://ihatetomatoes.net/wp-content/uploads/2017/01/react-cheat-sheet.pdf" width="700" height="550"></iframe>
 
@@ -59,7 +59,7 @@ fingertips.
 
 <grid-1-x-2 :reversed="true" desc="Check out the styling cheat sheet" link="https://github.com/vhpoet/react-native-styling-cheat-sheet" img-Src="https://camo.githubusercontent.com/4009dd58f523f3933a60531e33cf1366497fc92e/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f42356139626b4c6f75456c4f4d2f67697068792e676966" button="Click here!"></grid-1-x-2>
 
-## Essential syntax for React Native
+## Essential Syntax for React Native
 
 Essential Syntax for React Native from
 [NativeBase](https://docs-v2.nativebase.io/docs/CheatSheet.html)
@@ -80,11 +80,11 @@ Essential Syntax for React Native from
 
 <grid-1-x-2 desc="This library allows you to add routes and navigation for your React Native apps" link="https://reactnavigation.org/" img-Src="https://reactnavigation.org/img/spiro.svg" button="Chack it out!"></grid-1-x-2>
 
-### React Native vector icons
+### React Native Vector Icons
 
 <grid-1-x-2 :reversed="true" desc="Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling." link="https://oblador.github.io/react-native-vector-icons/" img-Src="https://cloud.githubusercontent.com/assets/378279/12009887/33f4ae1c-ac8d-11e5-8666-7a87458753ee.png" button="Check it out!"></grid-1-x-2>
 
-### React Native device info
+### React Native Device Info
 
 <grid-1-x-2 desc="This library provides the device information for React Native iOS and Android applications" link="https://github.com/react-native-community/react-native-device-info" button="Check it out!" img-Src="https://miro.medium.com/max/3200/1*qXcjSfRj0C0ir2yMsYiRyw.jpeg"></grid-1-x-2>
 
@@ -101,9 +101,9 @@ Essential Syntax for React Native from
 We at the Hacklab, believe in learning by doing. So here are some ideas for a
 few projects that you can work on to hone your skills.
 
-### Create a simple application
+### Create a Simple Application
 
-#### Expense Tracker app
+#### Expense Tracker App
 
 <grid-1-x-2 desc="Create an application to track your expenses. You can connect it to your credit card which can keep track of all your expenses and categorizes it in different categories." img-Src="https://cdn.dribbble.com/users/3765746/screenshots/6913781/expense_tracker__2_.png"></grid-1-x-2>
 
