@@ -18,7 +18,7 @@ style that defines a set of constraints to be used for creating Web services. By
 using a uniform and predefined set of stateless operations, it allows any system
 to request and access the web resources.
 
-![An Image](https://www.astera.com/wp-content/uploads/2020/01/rest.png)
+![An Image](https://phpenthusiast.com/theme/assets/images/blog/what_is_rest_api.png)
 
 <VideoContainer vid-src="https://www.youtube.com/embed/Q-BpqyOT3a8"></VideoContainer>
 

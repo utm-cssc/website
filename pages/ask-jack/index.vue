@@ -26,18 +26,6 @@
       I’ll try my best to answer all your burning questions! Until then, this is
       Jack signing off!
     </p>
-    <div class="jack_cheer_container">
-      <img
-        class="feature-img mb-5 mb-md-0 jack_cheer"
-        v-if="isDark"
-        src="~/static/ask-jack/jack_white.svg"
-      />
-      <img
-        class="feature-img mb-5 mb-md-0 jack_cheer"
-        v-else
-        src="~/static/ask-jack/jack_black.svg"
-      />
-    </div>
     <div class="mb-3 mt-2 cssc-heading">Behind the Scenes</div>
     <p class="mb-5">
       Ask Jack is an initiative created by CSSC for students and driven by

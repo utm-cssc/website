@@ -7,7 +7,6 @@
         alt="CSSC Logo"
         title="UTM CSSC"
         desc="Helping MCS Students"
-        additionalInfo="Check out the open source contest for a fun way to contribute to open source!"
         :button1="button1"
         :button2="button2"
         :button3="button3"
@@ -107,11 +106,11 @@ export default {
       },
       button3: {
         label: 'Ask Jack',
-        link: 'ask-jack',
+        link: '/ask-jack',
       },
       button4: {
-        label: 'Open Source Contest',
-        link: 'contest',
+        label: 'Now Hiring!',
+        link: '/now-hiring',
       },
     }
   },
@@ -145,6 +144,14 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.btn-cta {
+  background-color: #5d7493 !important;
+  border-color: #5d7493 !important;
+  outline: none;
+  font-size: 1.42rem;
+  color: #fff;
 }
 
 .hero-full-height {
