@@ -2,6 +2,9 @@
   <div class="container">
     <!-- Title -->
     <div class="mt-5 flex flex-column justify-center align-center">
+      <v-btn class="btn-cta mt-2" :href="button4.link" x-large>
+        {{ button4.label }}
+      </v-btn>
       <CenteredHero
         icon="../icons/cssc-logo-blue.svg"
         alt="CSSC Logo"
@@ -105,7 +108,11 @@ export default {
       },
       button3: {
         label: 'Ask Jack',
-        link: 'ask-jack',
+        link: '/ask-jack',
+      },
+      button4: {
+        label: 'Now Hiring!',
+        link: '/now-hiring',
       },
     }
   },
@@ -139,6 +146,14 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.btn-cta {
+  background-color: #5d7493 !important;
+  border-color: #5d7493 !important;
+  outline: none;
+  font-size: 1.42rem;
+  color: #fff;
 }
 
 .hero-full-height {
