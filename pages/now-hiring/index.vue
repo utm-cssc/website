@@ -17,16 +17,16 @@
         apply to join CSSC today!
       </p>
     </div>
+    <div class="mt-5 mb-5 flex justify-center">
+      <v-btn class="btn-cta mt-2" :href="button1.link" target="_blank" x-large>
+        {{ button1.label }}
+      </v-btn>
+    </div>
     <div class="flex justify-center space-evenly flex-wrap">
       <img class="slide" :src="slide1" />
       <img class="slide" :src="slide2" />
       <img class="slide" :src="slide3" />
       <img class="slide" :src="slide4" />
-    </div>
-    <div class="mt-5 flex justify-center">
-      <v-btn class="btn-cta mt-2" :href="button1.link" target="_blank" x-large>
-        {{ button1.label }}
-      </v-btn>
     </div>
   </div>
 </template>

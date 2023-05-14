@@ -2,9 +2,6 @@
   <div class="container">
     <!-- Title -->
     <div class="mt-5 flex flex-column justify-center align-center">
-      <v-btn class="btn-cta mt-2" :href="button4.link" x-large>
-        {{ button4.label }}
-      </v-btn>
       <CenteredHero
         icon="../icons/cssc-logo-blue.svg"
         alt="CSSC Logo"
@@ -13,6 +10,7 @@
         :button1="button1"
         :button2="button2"
         :button3="button3"
+        :button4="button4"
       />
     </div>
     <a id="cssc-moto" />
