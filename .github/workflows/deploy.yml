@@ -1,0 +1,21 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    environment:
+      name: production
+      url: https://cssc.utm.utoronto.ca/
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: compose build
+        run: docker compose build
+
+      - name: compose up
+        run: docker compose up -d
