@@ -13,7 +13,8 @@ jobs:
       url: https://cssc.utm.utoronto.ca/
     steps:
       - uses: actions/checkout@v2
-
+        with:
+          submodules: recursive
       - name: compose build
         run: docker compose build
 
