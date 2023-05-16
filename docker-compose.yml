@@ -2,7 +2,8 @@ version: "3"
 services:
   utm_cssc:
     container_name: utm_cssc
-    image: utmcssc/website
+    build:
+      dockerfile: Dockerfile
     ports:
       - "4000:3000"
     restart: always
