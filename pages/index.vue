@@ -10,7 +10,6 @@
         :button1="button1"
         :button2="button2"
         :button3="button3"
-        :button4="button4"
       />
     </div>
     <a id="cssc-moto" />
@@ -107,10 +106,6 @@ export default {
       button3: {
         label: 'Ask Jack',
         link: '/ask-jack',
-      },
-      button4: {
-        label: 'Now Hiring!',
-        link: '/now-hiring',
       },
     }
   },
