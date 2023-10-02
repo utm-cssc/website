@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <!-- What is CSSC -->
     <div class="my-5">
       <div class="cssc-heading">
         We're Hiring!
