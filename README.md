@@ -43,40 +43,36 @@ post-university career!
 
 ## Installation
 
-### Github
+### Pull the project on Github
 
 1. git pull git@github.com:utm-cssc/website.git
 2. git submodule update --init --recursive
 
-### Yarn Installation
+### Install Docker
 
-1. Install the required dependencies
+Install Docker on your machine by following the instructions on the [Docker](https://docs.docker.com/get-docker/) website.
 
-```
-yarn install
-```
+### Running Docker container locally
 
-2. Run the web server
+1. Build the image of the website
 
 ```
-yarn run dev
-```
-
-### Docker Installation
-
-1. Pull the image from Docker Hub
-
-```
-docker pull utmcssc/website
+docker compose build
 ```
 
 2. Start the server
 
 ```
-docker run -d --name utmcssc_website -p 3000:3000 utmcssc/website
+docker compose up -d
 ```
 
-The website will be listening and serving on port `3000`
+The website will be listening and serving on `localhost:4000`.
+
+The log can be found on Docker Desktop, or by running the following command:
+
+```
+docker compose logs -f
+```
 
 ## Contact
 
