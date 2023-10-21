@@ -64,19 +64,16 @@ yarn run dev
 
 ### Docker Installation
 
-1. Pull the image from Docker Hub
-
-```
-docker pull utmcssc/website
-```
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
 2. Start the server
 
 ```
-docker run -d --name utmcssc_website -p 3000:3000 utmcssc/website
+docker compose build # Build the docker image
+docker compose up -d # Run in detached mode
 ```
 
-The website will be listening and serving on port `3000`
+The website will be listening and serving on `localhost:4000`
 
 ## Contact
 
