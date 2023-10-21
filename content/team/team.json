@@ -7,7 +7,7 @@
           "name": "Kiara Callender",
           "imgSrc": "/team/2022/Kiara.png",
           "position": "Executive Director",
-          "message": "Third Year student at UTM studying Computer Science and Criminology with a minor in political science. She enjoys anything anime and gaming related and she loves dogs!",
+          "message": "Fourth Year student at UTM studying Computer Science and Criminology with a minor in political science. She enjoys anything anime and gaming related and she loves dogs!",
           "discord": "kxanxc",
           "email": "kiara.callender@mail.utoronto.ca",
           "linkedin": "https://www.linkedin.com/in/kiara-callender-5757081b5/",
@@ -22,7 +22,7 @@
         },
         {
           "name": "Giang Bui",
-          "imgSrc": "/team/2023/giang.png",
+          "imgSrc": "/team/2023/giang.JPG",
           "position": "Director of Technology",
           "message": "everyday at cssc is a banger",
           "discord": "huonggiangbui",
@@ -32,76 +32,16 @@
         {
           "name": "Kevin Ni",
           "imgSrc": "/team/2022/Kevin.png",
-          "position": "Director of Logistics",
-          "message": "Kevin is a second year specializing in computer science and majoring in statistics. His primary interests are in machine learning and data science. You might find him procrastinating by attending other people's lectures or watching YouTube in an empty classroom.",
+          "position": "Director of Operations",
+          "message": "Kevin is a third year specializing in computer science and majoring in statistics. His primary interests are in machine learning and data science. You might find him procrastinating by attending other people's lectures or watching YouTube in an empty classroom.",
           "discord": "kni20021"
         },
         {
           "name": "Andi Bergen",
-          "imgSrc": "/team/andi.jpg",
+          "imgSrc": "/team/2023/andi.png",
           "position": "Faculty Advisor",
           "message": "Andi is an Computer Science professor at UTN, He is passionate about computer security and teach many of those courses at UTM.",
           "email": "andi.bergen@utoronto.ca"
-        }
-      ]
-    },
-    {
-      "name": "Logistics",
-      "members": [
-        {
-          "name": "Le Nguyen",
-          "imgSrc": "/team/2022/Le.png",
-          "position": "Logistics Officer",
-          "message": "Le is a second year statistics major with a double minor in math and computer science. She is interested in data analytics and data science. In her free time, she enjoys listening to music and watching youtube videos.",
-          "discord": "nl010203"
-        },
-        {
-          "name": "Dan Nguyen",
-          "imgSrc": "/team/2023/dan.jpg",
-          "position": "Logistics Officer",
-          "message": "Dan is a second year specializing in computer science and majoring in mathematics. In his free time he enjoys playing badminton and biking.",
-          "discord": "nuhgooyin"
-        },
-        {
-          "name": "Waleed Haddad",
-          "imgSrc": "/team/2023/waleed.png",
-          "position": "Logistics Officer",
-          "message": "I’m a 3rd year UTM student, majoring in CS and minoring in GIS and Math. I love talking to people and I’m usually the one making plans in my friend groups, which leads to being a Logistics Coordinator for CSSC! I hope to plan and host a bunch of exciting CS events, especially for the 1st and 2nd years, so keep a lookout this year!",
-          "discord": "beepbeep6030"
-        }
-      ]
-    },
-    {
-      "name": "Marketing",
-      "members": [
-        {
-          "name": "Amber Richardson",
-          "imgSrc": "/team/2023/amber.jpeg",
-          "position": "Social Media Coordinator",
-          "message": "I am a second year, with a major in computer science, a minor in math, and a minor in professional writing and communication. While I’m still exploring computer science subfields of interest, I currently enjoy web and game development, and cybersecurity. When I have free time, I enjoy crocheting, writing, and playing video games!",
-          "discord": "am.bear_333"
-        },
-        {
-          "name": "Joshua Spencer",
-          "imgSrc": "/team/2023/joshua.png",
-          "position": "Social Media Coordinator",
-          "message": "A real person from a place that does not exist",
-          "discord": "urlordjumpsuit"
-        },
-        {
-          "name": "Emma Teng",
-          "imgSrc": "/team/2022/Emma.png",
-          "position": "Social Media Coordinator",
-          "message": "Emma is a second-year CS and Stats major. She enjoys small projects and badminton. She also likes to rest but you can often spot her in the library struggling over stats and pulling all-nighters.",
-          "discord": "serendipity#4185",
-          "linkedin": "https://www.linkedin.com/in/e-teng/"
-        },
-        {
-          "name": "Emma Dong",
-          "imgSrc": "/team/2023/emmaDong.png",
-          "position": "Social Media Coordinator",
-          "message": "help arrived!",
-          "discord": "xentrally"
         }
       ]
     },
@@ -138,6 +78,61 @@
           "discord": "manu#0300",
           "email": "manav.bhojak@mail.utoronto.ca",
           "linkedin": "https://www.linkedin.com/in/manav-bhojak-788aa1169"
+        }
+      ]
+    },
+    {
+      "name": "Operations",
+      "members": [
+        {
+          "name": "Le Nguyen",
+          "imgSrc": "/team/2022/Le.png",
+          "position": "Logistics Officer",
+          "message": "Le is a third year statistics major with a double minor in math and computer science. She is interested in data analytics and data science. In her free time, she enjoys listening to music and watching youtube videos.",
+          "discord": "nl010203"
+        },
+        {
+          "name": "Dan Nguyen",
+          "imgSrc": "/team/2023/dan.jpg",
+          "position": "Logistics Officer",
+          "message": "Dan is a second year specializing in computer science and majoring in mathematics. In his free time he enjoys playing badminton and biking.",
+          "discord": "nuhgooyin"
+        },
+        {
+          "name": "Waleed Haddad",
+          "imgSrc": "/team/2023/waleed.png",
+          "position": "Logistics Officer",
+          "message": "I’m a 3rd year UTM student, majoring in CS and minoring in GIS and Math. I love talking to people and I’m usually the one making plans in my friend groups, which leads to being a Logistics Coordinator for CSSC! I hope to plan and host a bunch of exciting CS events, especially for the 1st and 2nd years, so keep a lookout this year!",
+          "discord": "beepbeep6030"
+        },
+        {
+          "name": "Amber Richardson",
+          "imgSrc": "/team/2023/amber.jpeg",
+          "position": "Social Media Coordinator",
+          "message": "I am a second year, with a major in computer science, a minor in math, and a minor in professional writing and communication. While I’m still exploring computer science subfields of interest, I currently enjoy web and game development, and cybersecurity. When I have free time, I enjoy crocheting, writing, and playing video games!",
+          "discord": "am.bear_333"
+        },
+        {
+          "name": "Joshua Spencer",
+          "imgSrc": "/team/2023/joshua.png",
+          "position": "Social Media Coordinator",
+          "message": "A real person from a place that does not exist",
+          "discord": "urlordjumpsuit"
+        },
+        {
+          "name": "Emma Teng",
+          "imgSrc": "/team/2022/Emma.png",
+          "position": "Social Media Coordinator",
+          "message": "Emma is a third-year CS and Stats major. She enjoys small projects and badminton. She also likes to rest but you can often spot her in the library struggling over stats and pulling all-nighters.",
+          "discord": "serendipity#4185",
+          "linkedin": "https://www.linkedin.com/in/e-teng/"
+        },
+        {
+          "name": "Emma Dong",
+          "imgSrc": "/team/2023/emmaDong.png",
+          "position": "Social Media Coordinator",
+          "message": "help arrived!",
+          "discord": "xentrally"
         }
       ]
     }
