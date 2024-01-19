@@ -1,14 +1,12 @@
 FROM node:lts
 ENV HOST 0.0.0.0
 
-# Create app directory
-RUN mkdir -p /usr/cssc-website
-
-# Bundle app source
-COPY . ~/cssc-website
 WORKDIR ~/cssc-website
 
-RUN yarn
-RUN yarn build
+COPY package.json package-lock.json ./
+RUN npm ci
 
-CMD [ "yarn", "start" ]
+COPY . .
+RUN npm run build
+
+CMD [ "npm", "start" ]
