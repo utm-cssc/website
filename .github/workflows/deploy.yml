@@ -23,5 +23,4 @@ jobs:
 
       - name: cleanup
         run: |
-          docker image prune -f
-          docker builder prune -f
+          docker system prune -a -f
