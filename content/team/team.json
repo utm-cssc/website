@@ -21,13 +21,13 @@
           "discord": "dakshchan"
         },
         {
-          "name": "Giang Bui",
-          "imgSrc": "/team/2023/giang.JPG",
+          "name": "Aaron Shah",
+          "imgSrc": "/team/2023/aaron.jpeg",
           "position": "Director of Technology",
-          "message": "everyday at cssc is a banger",
-          "discord": "huonggiangbui",
-          "email": "giang.bui@mail.utoronto.ca",
-          "linkedin": "https://www.linkedin.com/in/huonggiangbui/"
+          "message": "computer (everyday at cssc is a banger)",
+          "discord": "bqf",
+          "linkedin": "https://www.linkedin.com/in/aaron-shah/",
+          "website": "https://0dm.github.io/"
         },
         {
           "name": "Kevin Ni",
@@ -48,13 +48,6 @@
     {
       "name": "Technology",
       "members": [
-        {
-          "name": "Aaron Shah",
-          "imgSrc": "/team/2023/aaron.jpeg",
-          "position": "Technology Officer",
-          "message": "computer",
-          "discord": "bqf"
-        },
         {
           "name": "Brian Zhang",
           "imgSrc": "/team/2022/brian.png",
