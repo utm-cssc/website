@@ -1,53 +1,36 @@
 {
-  "teams": [
-    {
+  "teams": [{
       "name": "Executive",
-      "members": [
-        {
-          "name": "Kiara Callender",
-          "imgSrc": "/team/2022/Kiara.png",
-          "position": "Executive Director",
-          "message": "Fourth Year student at UTM studying Computer Science and Criminology with a minor in political science. She enjoys anything anime and gaming related and she loves dogs!",
-          "discord": "kxanxc",
-          "email": "kiara.callender@mail.utoronto.ca",
-          "linkedin": "https://www.linkedin.com/in/kiara-callender-5757081b5/",
-          "website": "https://github.com/kxanxc"
+      "members": [{
+          "name": "Emma Teng",
+          "imgSrc": "/team/2024/emmateng.jpg",
+          "position": "President",
+          "message": "Barely alive, hardly living",
+          "discord": "kunleee",
+          "email": "e.teng@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/e-teng/"
         },
         {
-          "name": "Daksh Malhotra",
-          "imgSrc": "/team/2023/daksh.png",
-          "position": "Vice-Executive Director",
-          "message": "Hello Kitty",
-          "discord": "dakshchan"
-        },
-        {
-          "name": "Aaron Shah",
-          "imgSrc": "/team/2023/aaron.jpeg",
-          "position": "Director of Technology",
-          "message": "computer (everyday at cssc is a banger)",
-          "discord": "bqf",
-          "linkedin": "https://www.linkedin.com/in/aaron-shah/",
-          "website": "https://0dm.github.io/"
-        },
-        {
-          "name": "Kevin Ni",
-          "imgSrc": "/team/2022/Kevin.png",
-          "position": "Director of Operations",
-          "message": "Kevin is a third year specializing in computer science and majoring in statistics. His primary interests are in machine learning and data science. You might find him procrastinating by attending other people's lectures or watching YouTube in an empty classroom.",
-          "discord": "kni20021"
-        },
-        {
-          "name": "Andi Bergen",
-          "imgSrc": "/team/2023/andi.png",
-          "position": "Faculty Advisor",
-          "message": "Andi is an Computer Science professor at UTN, He is passionate about computer security and teach many of those courses at UTM.",
-          "email": "andi.bergen@utoronto.ca"
+          "name": "Emma Dong",
+          "imgSrc": "/team/2024/emmadong.png",
+          "position": "Vice President",
+          "message": "no one believes that I, a casual cosplayer and genshin player for 4 years, I touch grass... I blame my 2 hour commute :(",
+          "discord": "xentrally"
         }
       ]
     },
     {
       "name": "Technology",
-      "members": [
+      "members": [{
+          "name": "Aaron Shah",
+          "imgSrc": "/team/2024/aaron.JPEG",
+          "position": "Director of Technology",
+          "email": "aaron.shah@mail.utoronto.ca",
+          "message": "computer",
+          "discord": "bqf",
+          "linkedin": "https://www.linkedin.com/in/aaron-shah/",
+          "website": "https://0dm.github.io/"
+        },
         {
           "name": "Brian Zhang",
           "imgSrc": "/team/2022/brian.png",
@@ -57,75 +40,120 @@
           "email": "bria.zhang@mail.utoronto.ca"
         },
         {
-          "name": "Ido Ben Haim",
-          "imgSrc": "/team/2023/ido.jpg",
+          "name": "Joey Wang",
+          "imgSrc": "/team/2024/zhengyu.jpg",
           "position": "Technology Officer",
-          "message": "Hey there! I am a 2nd year CS student. I love skiing, tennis and problem solving. I love to chat so make sure you stop and say hello if you see me around campus :)",
-          "discord": "g.g.g.g"
+          "message": "Computer Science Specialist and Applied Statistics Major at the University of Toronto with a strong focus on building practical software solutions. I’m skilled in Java, Python, and web development frameworks. Find more about me at: wzy403.com",
+          "discord": "woshiyingyan"
         },
         {
-          "name": "Manav Bhojak",
-          "imgSrc": "/team/2022/manav.png",
+          "name": "Frederick Pu",
+          "imgSrc": "/team/2024/freddy.jpg",
           "position": "Technology Officer",
-          "message": "Manav is a 4th year computer science major interested in backend development. He enjoys coding, playing video games, and going out with friends. ",
-          "discord": "manu#0300",
-          "email": "manav.bhojak@mail.utoronto.ca",
-          "linkedin": "https://www.linkedin.com/in/manav-bhojak-788aa1169"
+          "message": "I like to ski and I like logic",
+          "discord": "freddyfozzy"
+        },
+        {
+          "name": "Charlie Giannis",
+          "imgSrc": "/team/2024/charles.jpg",
+          "position": "Technology Officer",
+          "message": "Hi! I'm a 3rd year computer science specialist student and iOS developer. I spend my time coding, gaming, and rediscovering the beauty of nature. I'm looking forward to connecting with others who as passionate about software development as I am!",
+          "discord": "oatscg"
+        },
+        {
+          "name": "Luis Felipe Varoni",
+          "imgSrc": "/team/2024/luis.jpg",
+          "position": "Technology Officer",
+          "message": "I think everyone should use vim",
+          "discord": "patea"
+        },
+        {
+          "name": "Ido Ben Haim",
+          "imgSrc": "/team/2024/ido.jpg",
+          "position": "Technology Officer",
+          "message": "Hi everyone 👋, my name is Ido. My academic interests are computer science, math, and physics research but I also like playing tennis, soccer, and ping pong. Please don't by shy and say hello if you spot me wandering DH 😀",
+          "discord": "g.g.g.g"
         }
       ]
     },
     {
       "name": "Operations",
-      "members": [
-        {
-          "name": "Le Nguyen",
-          "imgSrc": "/team/2022/Le.png",
-          "position": "Logistics Officer",
-          "message": "Le is a third year statistics major with a double minor in math and computer science. She is interested in data analytics and data science. In her free time, she enjoys listening to music and watching youtube videos.",
-          "discord": "nl010203"
-        },
-        {
-          "name": "Dan Nguyen",
-          "imgSrc": "/team/2023/dan.jpg",
-          "position": "Logistics Officer",
-          "message": "Dan is a second year specializing in computer science and majoring in mathematics. In his free time he enjoys playing badminton and biking.",
-          "discord": "nuhgooyin"
-        },
-        {
-          "name": "Waleed Haddad",
-          "imgSrc": "/team/2023/waleed.png",
-          "position": "Logistics Officer",
-          "message": "I’m a 3rd year UTM student, majoring in CS and minoring in GIS and Math. I love talking to people and I’m usually the one making plans in my friend groups, which leads to being a Logistics Coordinator for CSSC! I hope to plan and host a bunch of exciting CS events, especially for the 1st and 2nd years, so keep a lookout this year!",
-          "discord": "beepbeep6030"
-        },
-        {
+      "members": [{
           "name": "Amber Richardson",
-          "imgSrc": "/team/2023/amber.jpeg",
-          "position": "Social Media Coordinator",
-          "message": "I am a second year, with a major in computer science, a minor in math, and a minor in professional writing and communication. While I’m still exploring computer science subfields of interest, I currently enjoy web and game development, and cybersecurity. When I have free time, I enjoy crocheting, writing, and playing video games!",
+          "imgSrc": "/team/2024/amber.JPG",
+          "position": "Director of Operations",
+          "message": "I have too many things on the go, but I'm having fun at least? Interests: crochet, reading, writing, video games, CSed/pedagogy research",
           "discord": "am.bear_333"
         },
         {
+          "name": "Vivian Cai",
+          "imgSrc": "/team/2024/xiaoyu.HEIC",
+          "position": "Finance Officer",
+          "message": "4th-year undergraduate at the University of Toronto, spec on STA, major on CSC. This fall semester is TAing STA302. -225 hours in Stardew Valley with the Perfection achievement",
+          "discord": "smart_vivian"
+        },
+        {
+          "name": "Muhammad Alif Naufal",
+          "imgSrc": "/team/2024/muhammad.jpeg",
+          "position": "Logistic Officer",
+          "message": "I really want a pet iguana ",
+          "discord": "leafeo"
+        },
+        {
+          "name": "Rithika Yerra",
+          "imgSrc": "/team/2024/rithika.JPG",
+          "position": "Logistic Officer",
+          "message": "Hey all! I’m a computer science student here at UTM, and I’m super excited to be a part of this team!",
+          "discord": "Ghosteah"
+        },
+        {
+          "name": "Sara Elayyat",
+          "imgSrc": "/team/2024/sara.jpeg",
+          "position": "Logistic Officer",
+          "message": "Hi! I am a first-year CS, Math, and Stats student and my role is Logistics Officer.",
+          "discord": "sme2006"
+        },
+        {
+          "name": "Michelle Wei",
+          "imgSrc": "/team/2024/momo.jpg",
+          "position": "Marketing Officer",
+          "message": "hello hello everyone i am Michelle, I am a fourth year student studying math&stat major, cs minor. I have a cute dog named Max, and he is a 6 year-old chinese rural dog & japanese spitz mix and he is super cute! I like to play with my dog and play nintendo switch games when I am not busy. My fav games are Zelda and Animal Crossing and Splatoon3! If you are interested in playing these games plz tell me so we can play together!!!!!",
+          "discord": "miccchhheeelle"
+        },
+        {
           "name": "Joshua Spencer",
-          "imgSrc": "/team/2023/joshua.png",
-          "position": "Social Media Coordinator",
-          "message": "A real person from a place that does not exist",
+          "imgSrc": "/team/2024/joshua.jpeg",
+          "position": "Marketing Officer",
+          "message": "Surviving somehow",
           "discord": "urlordjumpsuit"
         },
         {
-          "name": "Emma Teng",
-          "imgSrc": "/team/2022/Emma.png",
-          "position": "Social Media Coordinator",
-          "message": "Emma is a third-year CS and Stats major. She enjoys small projects and badminton. She also likes to rest but you can often spot her in the library struggling over stats and pulling all-nighters.",
-          "discord": "serendipity#4185",
-          "linkedin": "https://www.linkedin.com/in/e-teng/"
+          "name": "Yousef Sadiq",
+          "imgSrc": "/team/2024/yousef.jpeg",
+          "position": "Marketing Officer",
+          "message": "My name is Yousef, and I’m currently a first year student hoping to major in Computer Science and CCIT. I’ve always had a passion for creativity within technology and I aspire to be a game designer.",
+          "discord": "youseftheace"
         },
         {
-          "name": "Emma Dong",
-          "imgSrc": "/team/2023/emmaDong.png",
-          "position": "Social Media Coordinator",
-          "message": "help arrived!",
-          "discord": "xentrally"
+          "name": "Mark Gobriel",
+          "imgSrc": "/team/2024/mark.JPG",
+          "position": "Marketing Officer",
+          "message": "Second-year Computer Science major with minors in Mathematical Sciences and Business",
+          "discord": "fishytent92"
+        },
+        {
+          "name": "Maria Gavrilov",
+          "imgSrc": "/team/2024/maria.jpeg",
+          "position": "Marketing Officer",
+          "message": "Hi! I’m Maria, and I have a passion for math and all things creative! When I’m not studying, you’ll probably find me hiking, stargazing, reading, painting, running, destroying my roommates in Settlers of Catan, or trying something new. I can’t wait to connect with all of you!",
+          "discord": "marluvsgengar"
+        },
+        {
+          "name": "Fizzah Saggar",
+          "imgSrc": "/team/2024/fizzah.jpeg",
+          "position": "Marketing Officer",
+          "message": "Hey guys, I’m a second year comp sci spec! When I’m not knee-deep in code, you can find me mastering: sleeping, reading and endlessly scrolling on instagram 🤭 (obviously right when I have so much to do). Super excited on sharing these skills this year and making it a little-less scroll heavy :D",
+          "discord": "fizzirule"
         }
       ]
     }
