@@ -1,7 +1,9 @@
 {
-  "teams": [{
+  "teams": [
+    {
       "name": "Executive",
-      "members": [{
+      "members": [
+        {
           "name": "Emma Teng",
           "imgSrc": "/team/2024/emmateng.jpg",
           "position": "President",
@@ -21,7 +23,8 @@
     },
     {
       "name": "Technology",
-      "members": [{
+      "members": [
+        {
           "name": "Aaron Shah",
           "imgSrc": "/team/2024/aaron.JPEG",
           "position": "Director of Technology",
@@ -33,10 +36,11 @@
         },
         {
           "name": "Brian Zhang",
-          "imgSrc": "/team/2022/brian.png",
+          "imgSrc": "/team/2024/brian.png",
           "position": "Technology Officer",
-          "message": "Brian is a third year majoring in computer science and CCIT with a keen interest in front-end development. He enjoys high-level software development as a whole but otherwise you can find him in one of UTM's many student communities or watching YouTube videos and playing various video games!",
+          "message": "Hello! I'm a CS major specializing in apps meant to enhance student quality of life and CSed research. GM in TFT (I spend too much time playing).",
           "discord": "pyo",
+          "linkedin": "https://www.linkedin.com/in/brianzhang/",
           "email": "bria.zhang@mail.utoronto.ca"
         },
         {
@@ -78,7 +82,8 @@
     },
     {
       "name": "Operations",
-      "members": [{
+      "members": [
+        {
           "name": "Amber Richardson",
           "imgSrc": "/team/2024/amber.JPG",
           "position": "Director of Operations",
@@ -87,7 +92,7 @@
         },
         {
           "name": "Vivian Cai",
-          "imgSrc": "/team/2024/xiaoyu.HEIC",
+          "imgSrc": "/team/2024/xiaoyu.png",
           "position": "Finance Officer",
           "message": "4th-year undergraduate at the University of Toronto, spec on STA, major on CSC. This fall semester is TAing STA302. -225 hours in Stardew Valley with the Perfection achievement",
           "discord": "smart_vivian"
