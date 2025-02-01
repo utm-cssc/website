@@ -27,7 +27,7 @@
           <div class="footer-links">
             <a
               aria-label="Discord-link"
-              href="https://discord.gg/SHwbmVg"
+              href="https://discord.gg/5pC56y2Nz4"
               class="footer-link"
             >
               <DiscordIcon id="footer-discord" class="logo" />
