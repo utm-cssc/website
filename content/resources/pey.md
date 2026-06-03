@@ -126,6 +126,13 @@ Intel have strictly set pay guidelines.
 You will need a resume, cover letter, and your unofficial transcript (Acorn ->
 Academic History -> Complete Academic History -> Download as PDF).
 
+Besides the PEY portal, it can help to keep a small weekly search routine for
+external postings. For Canada-specific student roles, [Hanzilla Jobs](https://jobs.hanzilla.co/internships/)
+tracks internships, co-ops, new-grad, junior, and entry-level jobs across tech,
+finance, engineering, business, sciences, and other fields, with a
+[Toronto/GTA location page](https://jobs.hanzilla.co/locations/toronto/) that
+can be useful for UTM students.
+
 ### Resume
 
 This is not the end-all-be-all format, feel free to tweak it to your preference.
