@@ -4,20 +4,30 @@
       "name": "Executive",
       "members": [
         {
-          "name": "Emma Teng",
-          "imgSrc": "/team/2024/emmateng.jpg",
+          "name": "Fizzah Saggar",
+          "imgSrc": "/team/2026/Fizzah.jpg",
           "position": "President",
-          "message": "Barely alive, hardly living",
-          "discord": "kunleee",
-          "email": "e.teng@mail.utoronto.ca",
-          "linkedin": "https://www.linkedin.com/in/e-teng/"
+          "message": "collectively making cssc great again 😛😛",
+          "discord": "fizzirule",
+          "email": "fizzah.saggar@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/fizzah-saggar"
         },
         {
-          "name": "Emma Dong",
-          "imgSrc": "/team/2024/emmadong.png",
+          "name": "Varshini Srinivasan",
+          "imgSrc": "/team/2026/Varshini.jpg",
           "position": "Vice President",
-          "message": "no one believes that I, a casual cosplayer and genshin player for 4 years, I touch grass... I blame my 2 hour commute :(",
-          "discord": "xentrally"
+          "message": "i love to code!",
+          "discord": "varshini2212",
+          "email": "varshini.srinivasan@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/varshini-srinivasan-605844360"
+        },
+        {
+          "name": "Kaashvi Bhandari",
+          "imgSrc": "/team/2026/blank.jpg",
+          "position": "Vice President",
+          "message": "I'm a second-year Accounting Specialist student with a minor in Economics at UTM! In my free time, I enjoy listening to music, reading, and trying new things.",
+          "discord": "Kaashvi_.",
+          "email": "Kaashvi.Bhandari@mail.utoronto.ca"
         }
       ]
     },
@@ -25,58 +35,56 @@
       "name": "Technology",
       "members": [
         {
-          "name": "Aaron Shah",
-          "imgSrc": "/team/2024/aaron.JPEG",
+          "name": "Harsh Dhabalia",
+          "imgSrc": "/team/2026/blank.jpg",
           "position": "Director of Technology",
-          "email": "aaron.shah@mail.utoronto.ca",
-          "message": "computer",
-          "discord": "bqf",
-          "linkedin": "https://www.linkedin.com/in/aaron-shah/",
-          "website": "https://0dm.github.io/"
+          "message": "My Bermuda Triangle is a Square: Uni -> Sports -> Movies -> Sleep",
+          "discord": "i_accept_cookies",
+          "email": "harsh.dhabalia@mail.utoronto.ca"
         },
         {
-          "name": "Brian Zhang",
-          "imgSrc": "/team/2024/brian.png",
+          "name": "Legolas Zhang",
+          "imgSrc": "/team/2026/Legolas.png",
           "position": "Technology Officer",
-          "message": "Hello! I'm a CS major specializing in apps meant to enhance student quality of life and CSed research. GM in TFT (I spend too much time playing).",
-          "discord": "pyo",
-          "linkedin": "https://www.linkedin.com/in/brianzhang/",
-          "email": "bria.zhang@mail.utoronto.ca"
+          "message": "Dabbler in video games, literature, and modding. Ideas are hard.",
+          "discord": "MrDuck557",
+          "email": "legolas.zhang@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/legolas-zhang-1ab023381/"
         },
         {
-          "name": "Joey Wang",
-          "imgSrc": "/team/2024/zhengyu.jpg",
+          "name": "Mustafa Ahmed",
+          "imgSrc": "/team/2026/Mustafa.jpeg",
           "position": "Technology Officer",
-          "message": "Computer Science Specialist and Applied Statistics Major at the University of Toronto with a strong focus on building practical software solutions. I’m skilled in Java, Python, and web development frameworks. Find more about me at: wzy403.com",
-          "discord": "woshiyingyan"
+          "message": "yeo, I larp anime and movies and cars and games (and CS related stuff too ig..), so we can chat, especially other first years like me.",
+          "discord": "omustafa.",
+          "email": "mustafal.ahmed@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/mustafaahmed14"
         },
         {
-          "name": "Frederick Pu",
-          "imgSrc": "/team/2024/freddy.jpg",
+          "name": "Renfred Alonge",
+          "imgSrc": "/team/2026/Renfred.JPG",
           "position": "Technology Officer",
-          "message": "I like to ski and I like logic",
-          "discord": "freddyfozzy"
+          "message": "Hey, I'm Renfred! I'm studying Computer Science and Mathematics at the University of Toronto, and I'm really into machine learning and software development. I also have a bit of a blursed side and enjoy turning random ideas into things that probably didn't need to exist. Outside of tech, I'm a casual chess player and love learning, creating, and trying new things.",
+          "discord": "renfrrd",
+          "email": "renfred.alonge@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/renfred-ai"
         },
         {
-          "name": "Charlie Giannis",
-          "imgSrc": "/team/2024/charles.jpg",
+          "name": "Sunny Yoo",
+          "imgSrc": "/team/2026/Sunny.png",
           "position": "Technology Officer",
-          "message": "Hi! I'm a 3rd year computer science specialist student and iOS developer. I spend my time coding, gaming, and rediscovering the beauty of nature. I'm looking forward to connecting with others who as passionate about software development as I am!",
-          "discord": "oatscg"
+          "message": "i love to sleeep :D",
+          "discord": "sunny6962",
+          "email": "sunny.yoo@mail.utoronto.ca",
+          "linkedin": "http://www.linkedin.com/in/han-sun-yoo-0057172b0"
         },
         {
-          "name": "Luis Felipe Varoni",
-          "imgSrc": "/team/2024/luis.jpg",
+          "name": "Carol Wang",
+          "imgSrc": "/team/2026/blank.jpg",
           "position": "Technology Officer",
-          "message": "I think everyone should use vim",
-          "discord": "patea"
-        },
-        {
-          "name": "Ido Ben Haim",
-          "imgSrc": "/team/2024/ido.jpg",
-          "position": "Technology Officer",
-          "message": "Hi everyone 👋, my name is Ido. My academic interests are computer science, math, and physics research but I also like playing tennis, soccer, and ping pong. Please don't by shy and say hello if you spot me wandering DH 😀",
-          "discord": "g.g.g.g"
+          "message": "Hi! I'm Carol. I really like eating takis, going to hackathons, and climbing. Looking forward to meeting everyone!",
+          "discord": "caroolio",
+          "email": "carolzj.wang@mail.utoronto.ca"
         }
       ]
     },
@@ -84,81 +92,87 @@
       "name": "Operations",
       "members": [
         {
-          "name": "Amber Richardson",
-          "imgSrc": "/team/2024/amber.JPG",
+          "name": "Bhuvan Teja Kudupudi",
+          "imgSrc": "/team/2026/blank.jpg",
           "position": "Director of Operations",
-          "message": "I have too many things on the go, but I'm having fun at least? Interests: crochet, reading, writing, video games, CSed/pedagogy research",
-          "discord": "am.bear_333"
+          "message": "Hi, I'm Bhuvan! I'm a second-year Computer Science and Applied Mathematics student at UTM and the Director of Logistics at CSSC. Outside of university, you can catch me building projects, playing GeoGuessr, and enjoying racing games.",
+          "discord": "bhuvank123",
+          "email": "bhuvanteja.kudupudi@mail.utoronto.ca"
         },
         {
-          "name": "Vivian Cai",
-          "imgSrc": "/team/2024/xiaoyu.png",
+          "name": "Avery Alvarez",
+          "imgSrc": "/team/2026/blank.jpg",
           "position": "Finance Officer",
-          "message": "4th-year undergraduate at the University of Toronto, spec on STA, major on CSC. This fall semester is TAing STA302. -225 hours in Stardew Valley with the Perfection achievement",
-          "discord": "smart_vivian"
+          "message": "Hi, my name is Avery. I'm a second-year student studying Computer Science and Math. Outside of school, I produce music, hit the gym, watch movies, and work on fun projects in my free time. I'm passionate about integrating AI into software engineering, exploring ethical ways to use it, and focusing on machine learning in my personal studies.",
+          "discord": "avry.msc07",
+          "email": "avery.alvarez@mail.utoronto.ca"
         },
         {
-          "name": "Muhammad Alif Naufal",
-          "imgSrc": "/team/2024/muhammad.jpeg",
+          "name": "Pankti Patel",
+          "imgSrc": "/team/2026/Pankti.jpg",
           "position": "Logistic Officer",
-          "message": "I really want a pet iguana ",
-          "discord": "leafeo"
+          "message": "travel, eat, sleep & repeat",
+          "discord": "pankti4573",
+          "email": "ppankti.patel@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/pankti-patel-19b5982b5"
         },
         {
-          "name": "Rithika Yerra",
-          "imgSrc": "/team/2024/rithika.JPG",
+          "name": "Wania Khan",
+          "imgSrc": "/team/2026/blank.jpg",
           "position": "Logistic Officer",
-          "message": "Hey all! I’m a computer science student here at UTM, and I’m super excited to be a part of this team!",
-          "discord": "Ghosteah"
+          "message": "My name is Wania, I am a second year CS specialist and I love exploring downtown Toronto!",
+          "discord": "wna4124",
+          "email": "waniaa.khan@mail.utoronto.ca"
         },
         {
-          "name": "Sara Elayyat",
-          "imgSrc": "/team/2024/sara.jpeg",
+          "name": "Fahad Farhan",
+          "imgSrc": "/team/2026/blank.jpg",
           "position": "Logistic Officer",
-          "message": "Hi! I am a first-year CS, Math, and Stats student and my role is Logistics Officer.",
-          "discord": "sme2006"
+          "message": "He/Him. I love video games and comics, I'm working my hardest to get into the computer science major, and I hope to bench 2 plates by the end of the (academic) year.",
+          "discord": "JigglyRibs/Alphahad",
+          "email": "fahad.farhan@mail.utoronto.ca"
         },
         {
-          "name": "Michelle Wei",
-          "imgSrc": "/team/2024/momo.jpg",
-          "position": "Marketing Officer",
-          "message": "hello hello everyone i am Michelle, I am a fourth year student studying math&stat major, cs minor. I have a cute dog named Max, and he is a 6 year-old chinese rural dog & japanese spitz mix and he is super cute! I like to play with my dog and play nintendo switch games when I am not busy. My fav games are Zelda and Animal Crossing and Splatoon3! If you are interested in playing these games plz tell me so we can play together!!!!!",
-          "discord": "miccchhheeelle"
+          "name": "Atharva Shinde",
+          "imgSrc": "/team/2026/blank.jpg",
+          "position": "Logistic Officer",
+          "message": "Hi everyone! I'm Atharva from Mumbai, India and I'll be a Logistics Officer for UTM CSSC 26-27. Along with loving to code my interests include public speaking, listening to music (boom bap is my favorite) and clothing (pls lmk some good thrift spots in Mississauga/Toronto). I am excited to join the team, interact with you all and contribute to this wonderful community. Look forward to working with you all! Feel free to reach out to me on Instagram @atha_shin",
+          "discord": "chakgot",
+          "email": "atharva.shinde@mail.utoronto.ca"
         },
         {
-          "name": "Joshua Spencer",
-          "imgSrc": "/team/2024/joshua.jpeg",
-          "position": "Marketing Officer",
-          "message": "Surviving somehow",
-          "discord": "urlordjumpsuit"
+          "name": "Ciboney Hinds",
+          "imgSrc": "/team/2026/Ciboney.jpeg",
+          "position": "Director of Marketing",
+          "message": "In computer science to prove that I know how to problem solve",
+          "discord": "cibhoney",
+          "email": "c.hinds@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/ciboneyh777"
         },
         {
-          "name": "Yousef Sadiq",
-          "imgSrc": "/team/2024/yousef.jpeg",
+          "name": "Tracy Chiem",
+          "imgSrc": "/team/2026/Tracy.jpg",
           "position": "Marketing Officer",
-          "message": "My name is Yousef, and I’m currently a first year student hoping to major in Computer Science and CCIT. I’ve always had a passion for creativity within technology and I aspire to be a game designer.",
-          "discord": "youseftheace"
+          "message": "Hey, I am studying CS and Math at UTM! :) The best advice I can give is to be kind to yourself <3 Trust that everything will work out!",
+          "discord": "trailee",
+          "email": "tracy.chiem@mail.utoronto.ca",
+          "linkedin": "https://www.linkedin.com/in/tracy-chiem"
         },
         {
-          "name": "Mark Gobriel",
-          "imgSrc": "/team/2024/mark.JPG",
+          "name": "Triman Jaggi",
+          "imgSrc": "/team/2026/blank.jpg",
           "position": "Marketing Officer",
-          "message": "Second-year Computer Science major with minors in Mathematical Sciences and Business",
-          "discord": "fishytent92"
+          "message": "Hi everyone! I'm Triman and I'm super excited to be joining the team as a Marketing Officer! Outside of school, I love trying new hobbies, and finding new places to eat. Can't wait to meet everyone and work together this year!",
+          "discord": "triman_j",
+          "email": "triman.jaggi@mail.utoronto.ca"
         },
         {
-          "name": "Maria Gavrilov",
-          "imgSrc": "/team/2024/maria.jpeg",
+          "name": "Alia Khan",
+          "imgSrc": "/team/2026/blank.jpg",
           "position": "Marketing Officer",
-          "message": "Hi! I’m Maria, and I have a passion for math and all things creative! When I’m not studying, you’ll probably find me hiking, stargazing, reading, painting, running, destroying my roommates in Settlers of Catan, or trying something new. I can’t wait to connect with all of you!",
-          "discord": "marluvsgengar"
-        },
-        {
-          "name": "Fizzah Saggar",
-          "imgSrc": "/team/2024/fizzah.jpeg",
-          "position": "Marketing Officer",
-          "message": "Hey guys, I’m a second year comp sci spec! When I’m not knee-deep in code, you can find me mastering: sleeping, reading and endlessly scrolling on instagram 🤭 (obviously right when I have so much to do). Super excited on sharing these skills this year and making it a little-less scroll heavy :D",
-          "discord": "fizzirule"
+          "message": "Hey! I'm Alia, and I love getting involved, meeting new people, and coming up with creative ideas. I'm excited to be part of CSSC, connect with other students, and help create events and opportunities that people want to be part of!",
+          "discord": "alia_k05_27229",
+          "email": "aliaaa.khan@mail.utoronto.ca"
         }
       ]
     }
